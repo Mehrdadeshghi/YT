@@ -1,0 +1,238 @@
+{
+ "ep": 20,
+ "prog": 0,
+ "title": "Jeanne Calment",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "He bet on her death.",
+  "*Big mistake.*"
+ ],
+ "desc": "Arles, France · 1875–1997",
+ "source": "https://en.wikipedia.org/wiki/Jeanne_Calment",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "In nineteen sixty-five, a notary bet on a ninety-year-old woman's death."
+  },
+  {
+   "at": "+0.15",
+   "text": "Big mistake."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Jeanne Calment, from Arles, France.",
+     "cap": "*Jeanne Calment.* Arles, France."
+    }
+   ],
+   "visual": {
+    "type": "map",
+    "lat0": 43.7,
+    "cam": [
+     [
+      0,
+      [
+       -6,
+       40,
+       16,
+       52
+      ]
+     ],
+     [
+      0.9,
+      [
+       3.2,
+       42.9,
+       6.0,
+       44.5
+      ]
+     ]
+    ],
+    "layers": [
+     {
+      "type": "label",
+      "lon": 4.9,
+      "lat": 43.1,
+      "text": "MEDITERRANEAN",
+      "at": 1.1,
+      "water": true
+     },
+     {
+      "type": "dot",
+      "lon": 5.37,
+      "lat": 43.3,
+      "text": "Marseille",
+      "at": 1.3
+     },
+     {
+      "type": "pin",
+      "lon": 4.63,
+      "lat": 43.68,
+      "text": "Arles",
+      "at": 1.6
+     }
+    ]
+   }
+  },
+  {
+   "dur": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He'd pay her twenty-five hundred francs a month.",
+     "cap": "He pays her *2,500 francs* a month."
+    },
+    {
+     "at": "+0.15",
+     "text": "When she died, her apartment was his.",
+     "cap": "When she dies, *her flat is his.*"
+    }
+   ],
+   "visual": {
+    "type": "stats",
+    "tiles": [
+     {
+      "at": 0.5,
+      "text": "2,500 F",
+      "label": "paid to her every month"
+     },
+     {
+      "at": 2.75,
+      "text": "Her flat",
+      "label": "his, the day she dies"
+     }
+    ]
+   }
+  },
+  {
+   "dur": 4.5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He waited. Five years. Ten. Twenty. Thirty.",
+     "cap": "He waited. 5 years. 10. 20. *30.*"
+    }
+   ],
+   "visual": {
+    "type": "years",
+    "at": 1.0,
+    "dur": 2.1,
+    "from": 1965,
+    "to": 1995,
+    "ageFrom": 90
+   }
+  },
+  {
+   "dur": 7,
+   "cues": [
+    {
+     "at": 0.3,
+     "type": "riser",
+     "gain": 0.8,
+     "p": 1.3
+    }
+   ],
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then, in nineteen ninety-five, the notary died.",
+     "cap": "Then, in 1995... *the notary died.*"
+    },
+    {
+     "at": "+0.2",
+     "text": "She was still alive. And already paid more than double the flat's value.",
+     "cap": "She was *still alive.* Already paid *more than double* the flat's value."
+    }
+   ],
+   "visual": {
+    "type": "stamp",
+    "at": 2.55,
+    "year": "1995",
+    "sub": "December 25, 1995",
+    "text": "HE DIED FIRST"
+   }
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "She lived to a hundred and twenty-two. The oldest person ever verified.",
+     "cap": "She lived to *122.* The oldest person *ever verified.*"
+    }
+   ],
+   "visual": {
+    "type": "stats",
+    "tiles": [
+     {
+      "at": 0.5,
+      "count": 122,
+      "label": "years, 164 days · verified",
+      "big": true
+     }
+    ]
+   }
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Oh, and as a teen, she met Vincent van Gogh. Her review?",
+     "cap": "Oh, and as a teen, she met *Van Gogh.* Her review?"
+    },
+    {
+     "at": "+0.2",
+     "text": "Very disagreeable.",
+     "cap": "*\"Very disagreeable.\"*"
+    }
+   ],
+   "visual": {
+    "type": "quote",
+    "at": 3.8,
+    "typeDur": 0.7,
+    "text": "Very disagreeable.",
+    "by": "Jeanne Calment on Vincent van Gogh",
+    "size": 110
+   },
+   "noCap": [
+    1
+   ]
+  },
+  {
+   "dur": 5,
+   "foot": {
+    "at": 0.8,
+    "text": "Subscribe for the next spin."
+   },
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Her verdict on the deal? In life, one sometimes makes bad deals.",
+     "cap": "Her verdict: *\"In life, one sometimes makes bad deals.\"*"
+    }
+   ],
+   "visual": {
+    "type": "quote",
+    "at": 1.75,
+    "typeDur": 1.9,
+    "text": "In life, one sometimes makes bad deals.",
+    "by": "Jeanne Calment"
+   },
+   "noCap": [
+    0
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Jeanne Calment"
+  }
+ ]
+}

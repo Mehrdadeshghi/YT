@@ -1,0 +1,263 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:"Archivo Black";src:url(fonts/ArchivoBlack.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url(fonts/Inter-700.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Inter";src:url(fonts/Inter-800.woff2) format("woff2");font-weight:800}
+@font-face{font-family:"Serif";src:url(fonts/Serif-700.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"JBMono";src:url(fonts/Mono-500.woff2) format("woff2");font-weight:500}
+html,body{margin:0;background:#0C0B0A}canvas{display:block}
+</style></head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script src="lib/topojson-client.min.js"></script>
+<script>
+// =====================================================================
+// WIKI ROULETTE — CINE flagship look (dark, full-bleed, hard cuts).
+// Pure function of time: window.seek(t). Sound cues: window.CUES.
+// Story visuals are bespoke per episode (EPISODE_VIS), voice + captions come from episodes/<ep>.json
+// =====================================================================
+const EPID = new URLSearchParams(location.search).get('ep') || '020';
+const W = 1080, H = 1920, BEAT = 0.5, PRE = 0.5, FQ = 60;
+const c = document.getElementById('c'), g = c.getContext('2d');
+const BG = '#0C0B0A', TXT = '#F4EEE3', DIM = '#8C857A', GOLD = '#FFC23D', RED = '#FF3B30',
+      PANEL = '#141311', EDGE = '#2C2925', PAPER = '#EDE6D8', PINK = '#1A1714';
+let DUR = 44, SCENES = [], WORLD = [], EP = null;
+
+// ---------- math ----------
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, p) => a + (b - a) * p;
+function spring(t, k = 170, d = 26) {
+  if (t <= 0) return 0;
+  const w0 = Math.sqrt(k), z = d / (2 * w0);
+  if (z < 1) { const wd = w0 * Math.sqrt(1 - z * z);
+    return 1 - Math.exp(-z * w0 * t) * (Math.cos(wd * t) + (z * w0 / wd) * Math.sin(wd * t)); }
+  return 1 - Math.exp(-w0 * t) * (1 + w0 * t);
+}
+function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+  let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+  t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const tq = (t) => Math.round(t * FQ) / FQ;
+const ease = (x) => { x = clamp(x); return x * x * (3 - 2 * x); };
+const fmt = (n) => Math.round(n).toLocaleString('en-US');
+
+// ---------- cues ----------
+const CUES = []; window.CUES = CUES;
+const cue = (t, type, gain = 1, p = 0) => { if (t >= 0) CUES.push({ t: +t.toFixed(3), type, gain, p }); };
+
+// ---------- type ----------
+const F = { ui: (s, w = 800) => `${w} ${s}px Inter`, disp: (s) => `400 ${s}px "Archivo Black"`,
+            serif: (s) => `700 ${s}px Serif`, mono: (s) => `500 ${s}px JBMono` };
+function fit(str, fam, size, maxW) { g.font = F[fam](size); const w = g.measureText(str).width; return w > maxW ? size * maxW / w : size; }
+function text(str, x, y, fam, size, color, o = {}) {
+  g.save(); g.font = F[fam](size); g.fillStyle = color; g.textAlign = o.align || 'left';
+  if (o.ls) g.letterSpacing = o.ls + 'px'; if (o.alpha != null) g.globalAlpha *= clamp(o.alpha);
+  if (o.shadow) { g.shadowColor = 'rgba(0,0,0,0.65)'; g.shadowBlur = 24; g.shadowOffsetY = 6; }
+  g.fillText(str, x, y); g.restore();
+}
+// a line that rises out of a mask, word by word
+function rise(str, x, y, fam, size, color, t, tIn, o = {}) {
+  g.save(); g.font = F[fam](size); g.textAlign = 'left';
+  const words = str.split(' '), sp = g.measureText(' ').width, ws = words.map((w) => g.measureText(w).width);
+  const total = ws.reduce((a, b) => a + b, 0) + sp * (words.length - 1);
+  let cx = o.align === 'center' ? x - total / 2 : x;
+  words.forEach((w, i) => { const p = spring(t - tIn - i * (o.stagger ?? 0.06), 260, 24);
+    if (p > 0.001) { g.save(); g.beginPath(); g.rect(cx - 20, y - size * 1.05, ws[i] + 40, size * 1.35); g.clip();
+      g.fillStyle = (o.colors && o.colors[i]) || color; g.fillText(w, cx, y + (1 - p) * size * 1.1); g.restore(); }
+    cx += ws[i] + sp; });
+  g.restore(); return total;
+}
+function rrect(x, y, w, h, r) { g.beginPath(); g.roundRect(x, y, w, h, r); }
+function chip(str, x, y, t, tIn, o = {}) {
+  const s = spring(t - tIn, 300, 20); if (s <= 0.001) return;
+  g.save(); g.font = F.mono(o.size || 32); g.letterSpacing = '3px'; const w = g.measureText(str).width + 48, h = (o.size || 32) * 1.9;
+  g.translate(x, y); g.scale(s, s); const x0 = o.align === 'left' ? 0 : -w / 2;
+  rrect(x0, -h / 2, w, h, h / 2); g.fillStyle = o.bg || GOLD; g.fill();
+  g.fillStyle = o.fg || BG; g.textAlign = 'left'; g.fillText(str, x0 + 24, (o.size || 32) * 0.36); g.restore();
+}
+
+// ---------- atmosphere: glow, dust, vignette, grain ----------
+const DUST = []; { const r = rng(42); for (let i = 0; i < 70; i++) DUST.push({ x: r() * W, y: r() * H, z: 0.2 + r() * 0.8, ph: r() * 6.28 }); }
+function atmosphere(t, glow) {
+  g.fillStyle = BG; g.fillRect(0, 0, W, H);
+  if (glow) { const gr = g.createRadialGradient(glow.x, glow.y, 0, glow.x, glow.y, glow.r);
+    gr.addColorStop(0, glow.c); gr.addColorStop(1, 'rgba(12,11,10,0)'); g.fillStyle = gr; g.fillRect(0, 0, W, H); }
+  for (const d of DUST) { const y = ((d.y - t * 26 * d.z) % H + H) % H, x = d.x + Math.sin(t * 0.7 + d.ph) * 14 * d.z;
+    g.globalAlpha = 0.05 + 0.16 * d.z; g.fillStyle = '#FFE9C2'; g.beginPath(); g.arc(x, y, 1.2 + 2.6 * d.z, 0, 6.283); g.fill(); }
+  g.globalAlpha = 1;
+}
+const VIG = document.createElement('canvas'); VIG.width = W; VIG.height = H;
+{ const x = VIG.getContext('2d'), gr = x.createRadialGradient(W / 2, H * 0.45, H * 0.28, W / 2, H * 0.45, H * 0.78);
+  gr.addColorStop(0, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(0,0,0,0.62)'); x.fillStyle = gr; x.fillRect(0, 0, W, H); }
+const GRAIN = [];
+for (let n = 0; n < 4; n++) { const cv = document.createElement('canvas'); cv.width = 540; cv.height = 960;
+  const cx = cv.getContext('2d'), im = cx.createImageData(540, 960), r = rng(900 + n);
+  for (let i = 0; i < im.data.length; i += 4) { const v = r() > 0.5 ? 255 : 0; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = r() * 9; }
+  cx.putImageData(im, 0, 0); GRAIN.push(cv); }
+
+// ---------- series chrome ----------
+function tag(t, i, n) {
+  text('WIKI ROULETTE', 80, 305, 'mono', 28, DIM, { ls: 5 });
+  g.font = F.mono(28); g.letterSpacing = '5px'; const w = g.measureText('WIKI ROULETTE').width; g.letterSpacing = '0px';
+  rrect(80 + w + 22, 276, 96, 40, 20); g.fillStyle = GOLD; g.fill(); text('#' + String(EP.ep).padStart(3, '0'), 80 + w + 34, 305, 'mono', 26, BG);
+  if (i == null) return;
+  for (let k = 0; k < n; k++) { const x = 1000 - (n - k) * 34 + 10; g.fillStyle = k < i ? GOLD : k === i ? TXT : '#3A3631';
+    g.beginPath(); g.arc(x, 294, k === i ? 8 : 6, 0, 6.283); g.fill(); }
+}
+
+// ---------- captions: big, centred, current word boxed in gold ----------
+function makeCaptions(segs, placed, skip = []) {
+  return (segs || []).map((sg, si) => {
+    const pl = placed[si]; if (!pl || !sg.cap || skip.includes(si)) return null;
+    const raw = sg.cap.split(' ').filter(Boolean); let acc = false;
+    const words = raw.map((tok) => { let w = tok, a = acc;
+      if (w.startsWith('*')) { a = true; acc = true; w = w.slice(1); }
+      if (w.endsWith('*')) { w = w.slice(0, -1); acc = false; }
+      const plain = w.replace(/[^A-Za-z0-9]/g, ''), digits = (w.match(/[0-9]/g) || []).length;
+      const wt = Math.max(2, plain.length - digits) + digits * 2.6 + (/[.?!:,]["”]?$/.test(w) ? 3 : 0);
+      return { w, a, wt }; });
+    const total = words.reduce((q, x) => q + x.wt, 0), span = Math.max(0.3, pl.end - pl.at - 0.08);
+    let cc = pl.at + 0.04; words.forEach((x) => { x.t0 = cc; cc += span * x.wt / total; x.t1 = cc; });
+    const chunks = []; let cur = [], len = 0;
+    const END = (w) => /[.?!:]["”]?$/.test(w);
+    const toEnd = (k) => { let n = 0; for (let j = k + 1; j < words.length; j++) { n++; if (END(words[j].w)) break; } return n; };
+    words.forEach((x, k) => { cur.push(k); len += x.w.length + 1;
+      if (END(x.w) || (len > 22 && toEnd(k) > 2)) { chunks.push(cur); cur = []; len = 0; } });
+    if (cur.length) chunks.push(cur);
+    return { at: pl.at, end: pl.end, words, chunks };
+  }).filter(Boolean);
+}
+function captions(t, caps, yc = 1300) {
+  const sg = caps.find((q) => t >= q.at - 0.05 && t <= q.end + 0.4); if (!sg) return;
+  let k = 0; sg.words.forEach((x, j) => { if (t >= x.t0 - 0.02) k = j; });
+  const ch = sg.chunks.find((q) => q.includes(k)); if (!ch) return;
+  const S = 92; g.font = F.ui(S); const sp = g.measureText(' ').width;
+  const lines = [[]]; let lw = 0;
+  ch.forEach((j) => { const w = g.measureText(sg.words[j].w).width; if (lw + w > 860 && lines.at(-1).length) { lines.push([]); lw = 0; } lines.at(-1).push(j); lw += w + sp; });
+  const LH = 112, y0 = yc - (lines.length - 1) * LH / 2 + 32;
+  lines.forEach((ln, li) => {
+    const widths = ln.map((j) => g.measureText(sg.words[j].w).width), tot = widths.reduce((a, b) => a + b, 0) + sp * (ln.length - 1);
+    let x = 540 - tot / 2; const y = y0 + li * LH;
+    ln.forEach((j, q) => { const wd = sg.words[j], w = widths[q];
+      if (t >= wd.t0 - 0.02) { const p = spring(t - wd.t0 + 0.02, 480, 26), now = j === k && t < sg.end + 0.08;
+        g.save(); g.translate(x + w / 2, y - S * 0.35); const sc = (0.8 + 0.2 * p) * (now ? 1.06 : 1); g.scale(sc, sc); g.translate(-w / 2, S * 0.35);
+        if (now) { rrect(-16, -S * 0.86, w + 32, S * 1.12, 18); g.fillStyle = GOLD; g.fill(); }
+        g.font = F.ui(S); g.textAlign = 'left'; g.lineJoin = 'round';
+        if (!now) { g.lineWidth = 14; g.strokeStyle = 'rgba(0,0,0,0.55)'; g.strokeText(wd.w, 0, 0); }
+        g.fillStyle = now ? BG : wd.a ? GOLD : TXT; g.fillText(wd.w, 0, 0);
+        g.restore(); }
+      x += w + sp; }); });
+}
+
+// =====================================================================
+// MAP (dark, full bleed)
+// =====================================================================
+let MAPPATH = null, MAPCOS = 1;
+function mapInit(lat0) { MAPCOS = Math.cos(lat0 * Math.PI / 180); MAPPATH = new Path2D();
+  for (const f of WORLD) { const polys = f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates;
+    for (const poly of polys) for (const ring of poly) { ring.forEach(([lo, la], j) => j ? MAPPATH.lineTo(lo * MAPCOS, -la) : MAPPATH.moveTo(lo * MAPCOS, -la)); MAPPATH.closePath(); } } }
+function mapCam(lon, lat, span, cy) { const k = W / (span * MAPCOS);
+  return { k, P: (lo, la) => [540 + (lo - lon) * MAPCOS * k, cy + (lat - la) * k],
+    apply: () => { g.translate(540, cy); g.scale(k, k); g.translate(-lon * MAPCOS, lat); } }; }
+
+// =====================================================================
+// ECG
+// =====================================================================
+const gau = (x, m, s) => Math.exp(-(((x - m) / s) ** 2));
+const ecg = (ph) => 0.1 * gau(ph, 0.2, 0.03) - 0.12 * gau(ph, 0.36, 0.01) + gau(ph, 0.4, 0.012) - 0.26 * gau(ph, 0.44, 0.012) + 0.24 * gau(ph, 0.65, 0.05);
+function monitor(T, y, label, sub, color, period, flatAt, o = {}) {
+  const x0 = 80, w = 920, h = 250;
+  rrect(x0, y, w, h, 28); g.fillStyle = PANEL; g.fill(); g.lineWidth = 3; g.strokeStyle = o.edge || EDGE; g.stroke();
+  g.save(); rrect(x0, y, w, h, 28); g.clip();
+  g.strokeStyle = 'rgba(255,255,255,0.05)'; g.lineWidth = 2; g.beginPath();
+  for (let gx = x0 + 40; gx < x0 + w; gx += 46) { g.moveTo(gx, y); g.lineTo(gx, y + h); } for (let gy = y + 30; gy < y + h; gy += 46) { g.moveTo(x0, gy); g.lineTo(x0 + w, gy); } g.stroke();
+  const dead = flatAt != null && T >= flatAt, col = dead ? RED : color, base = y + 170, amp = 105, spd = 520, X1 = x0 + w - 60;
+  const val = (tt) => (flatAt != null && tt >= flatAt) ? 0 : ecg(((tt / period) % 1 + 1) % 1);
+  const gr = g.createLinearGradient(x0, 0, X1, 0); gr.addColorStop(0, 'rgba(0,0,0,0)'); gr.addColorStop(0.35, col); gr.addColorStop(1, col);
+  g.beginPath(); for (let x = x0 + 20; x <= X1; x += 3) { const v = val(T - (X1 - x) / spd); x === x0 + 20 ? g.moveTo(x, base - v * amp) : g.lineTo(x, base - v * amp); }
+  g.lineJoin = 'round'; g.strokeStyle = gr; g.globalAlpha = 0.25; g.lineWidth = 16; g.stroke(); g.globalAlpha = 1; g.lineWidth = 5; g.stroke();
+  const vy = base - val(T) * amp; g.fillStyle = col; g.beginPath(); g.arc(X1, vy, 9, 0, 6.283); g.fill();
+  g.restore();
+  text(label, x0 + 36, y + 58, 'mono', 30, dead ? RED : color, { ls: 4 });
+  g.save(); g.font = F.disp(64); g.textAlign = 'right'; g.fillStyle = TXT; g.fillText(sub, x0 + w - 36, y + 76); g.restore();
+  if (o.subLabel) text(o.subLabel, x0 + w - 36, y + 112, 'mono', 22, DIM, { align: 'right', ls: 2 });
+}
+
+// =====================================================================
+// =====================================================================
+// Episode visuals live in cine/<ep>.js and fill VIS: VIS.open, VIS[0..n-1]  (build(K, S) -> draw(t))
+// =====================================================================
+const VIS = {}, PHOTOS = {}, CREDITS = {};
+// shared: the hook, stacked big on frame 0 (last line in gold); returns the y below it
+function hook(t, lines, y0 = 500, o = {}) {
+  const s = Math.min(...lines.map((l) => fit(l, 'disp', o.size || 150, 920)));
+  lines.forEach((l, i) => { const last = i === lines.length - 1;
+    text(l, 80, y0 + i * s * 1.02, 'disp', s, last ? GOLD : TXT, { shadow: true }); });
+  return y0 + (lines.length - 1) * s * 1.02;
+}
+
+// =====================================================================
+// timeline: hard cuts with a punch-in; the loop point is a cut back to the hook
+// =====================================================================
+function voPlace(segs = [], durs = []) {
+  let end = 0;
+  return segs.map((sg, i) => { const d = durs[i] ? durs[i].dur : 0;
+    const at = typeof sg.at === 'string' ? end + parseFloat(sg.at) : sg.at;
+    end = at + d; return { at, end, file: durs[i] && durs[i].file }; });
+}
+const ceilHalf = (x) => Math.ceil(x * 2) / 2;
+function build(ep, voice) {
+  EP = ep; const V = voice || { open: [], scenes: [] };
+  const openVO = voPlace(ep.vo_open, V.open);
+  const openDur = Math.max(4, ceilHalf(openVO.at(-1).end + 0.6));
+  openVO.forEach((v) => cue(v.at, 'vo', 1, v.file));
+  SCENES = [{ from: 0, to: openDur, pre: 0, draw: VIS.open((e, ty, gn, p) => cue(e, ty, gn, p)) }];
+  let t = openDur;
+  ep.scenes.forEach((sc, i) => {
+    const vo = voPlace(sc.vo, V.scenes[i]), dur = Math.max(sc.dur, ceilHalf(vo.at(-1).end + 0.3)), from = t;
+    vo.forEach((v) => cue(from + v.at - PRE, 'vo', 1, v.file));
+    const K = (e, ty, gn, p) => cue(from + e - PRE, ty, gn, p), vis = VIS[i](K, { vo });
+    const caps = makeCaptions(sc.vo, vo, sc.noCap || []);
+    SCENES.push({ from, to: from + dur, pre: PRE, draw: (lt) => { vis(lt); if (caps.length) captions(lt, caps); } });
+    t += dur; });
+  const last = SCENES.at(-1), pad = (2 - (t % 2)) % 2; last.to += pad; t += pad;
+  DUR = t; SCENES.slice(1).forEach((s) => cue(s.from - 0.2, 'whoosh', 0.8));
+  CUES.sort((a, b) => a.t - b.t);
+  window.DUR = DUR; window.EP = { ep: ep.ep, prog: ep.prog || 0, title: ep.title, dur: DUR, openDur, look: 'cine', mood: ep.mood || 'clock' };
+}
+const CUT = 0.05;
+function draw(t) {
+  g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1;
+  const i = SCENES.findIndex((s) => t < s.to - CUT), s = SCENES[i < 0 ? SCENES.length - 1 : i];
+  const since = t - (s.from - CUT), until = (s.to - CUT) - t;
+  const punchIn = s.from > 0 ? 1 + 0.07 * (1 - spring(since, 260, 30)) : 1;
+  const punchOut = until < 0.14 ? 1 + 0.05 * Math.pow(1 - until / 0.14, 2) : 1;
+  const drift = 1 + 0.012 * clamp(since / 6);
+  const k = punchIn * punchOut * drift;
+  g.save(); g.translate(W / 2, H / 2); g.scale(k, k); g.translate(-W / 2, -H / 2);
+  s.draw(t - s.from + s.pre); g.restore();
+  g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1;
+  if (s.from > 0 && since < 0.09) { g.fillStyle = '#FFF4DE'; g.globalAlpha = 0.18 * (1 - since / 0.09); g.fillRect(0, 0, W, H); g.globalAlpha = 1; }
+  g.drawImage(VIG, 0, 0);
+  g.drawImage(GRAIN[Math.floor(t * 15) % 4], 0, 0, W, H);
+}
+window.seek = (t) => { draw(t); return true; };
+async function boot() {
+  const [ep, topo, voice] = await Promise.all([fetch(`episodes/${EPID}.json`).then((r) => r.json()), fetch('lib/countries-50m.json').then((r) => r.json()),
+    fetch(`episodes/${EPID}.voice.json`).then((r) => r.ok ? r.json() : null).catch(() => null)]);
+  WORLD = topojson.feature(topo, topo.objects.countries).features; mapInit(ep.lat0 ?? 44);
+  // real photos (fetched by fetch_photos.py in CI): PHOTOS[id] = Image, CREDITS[id] = 'Photo: … / license'. Missing → drawn fallback.
+  const cred = await fetch(`assets/photos/${EPID}.credits.json`).then((r) => r.ok ? r.json() : {}).catch(() => ({}));
+  await Promise.all((ep.photos || []).map((p) => new Promise((res) => { const im = new Image();
+    im.onload = () => { PHOTOS[p.id] = im; CREDITS[p.id] = cred[p.id] ? cred[p.id].credit : ''; res(); }; im.onerror = () => res(); im.src = `assets/photos/${EPID}_${p.id}.jpg`; })));
+  const load = (src) => new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = src; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
+  await load('cine/common.js'); await load(`cine/${EPID}.js`);
+  if (0) await new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = `cine/${EPID}.js`; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
+  build(ep, voice);
+}
+window.ready = Promise.all(['800 40px Inter', '700 40px Inter', '400 40px "Archivo Black"', '700 40px Serif', '500 40px JBMono']
+  .map((f) => document.fonts.load(f))).then(() => document.fonts.ready).then(boot);
+if (!navigator.webdriver) window.ready.then(() => { const t0 = performance.now();
+  (function loop() { draw(((performance.now() - t0) / 1000) % DUR); requestAnimationFrame(loop); })(); });
+</script>
+</body></html>

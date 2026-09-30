@@ -1,0 +1,99 @@
+{
+ "ep": 23,
+ "prog": 0,
+ "mood": "clock",
+ "lat0": 42,
+ "title": "Monowi, Nebraska",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "POPULATION: 1.",
+  "SHE'S ALSO",
+  "THE MAYOR."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Monowi,_Nebraska",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This town in Nebraska has exactly one resident."
+  },
+  {
+   "at": "+0.15",
+   "text": "And she runs everything."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Monowi, Nebraska. In the nineteen thirties, about a hundred and fifty people lived here.",
+     "cap": "*Monowi, Nebraska.* In the 1930s: about *150 people.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then they left, one by one.",
+     "cap": "Then they left. *One by one.*"
+    },
+    {
+     "at": "+0.15",
+     "text": "In 2004, her husband Rudy died, and Elsie Eiler was alone.",
+     "cap": "In *2004,* her husband Rudy died. *Elsie Eiler* was alone."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So Elsie is the mayor. The clerk. The treasurer. And the librarian.",
+     "cap": "So Elsie is the *mayor.* The *clerk.* The *treasurer.* The *librarian.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "As mayor, she issued herself a liquor license, for the town's only bar.",
+     "cap": "As mayor, she issued *herself* a liquor license. For the town's only bar."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "She also keeps a library of about five thousand books, in memory of Rudy.",
+     "cap": "A library of *5,000 books.* In memory of *Rudy.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And every year, she files a road plan, so the town keeps its streetlights on.",
+     "cap": "Every year she files a road plan... so the *streetlights stay on.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "sign",
+   "article": "Monowi, Nebraska"
+  }
+ ]
+}

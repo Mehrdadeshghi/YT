@@ -1,0 +1,7 @@
+{
+  "name": "wiki-roulette-shorts",
+  "private": true,
+  "type": "module",
+  "description": "Wiki Roulette YouTube Shorts: deterministic canvas renders, synthesized score, Kokoro voice-over",
+  "dependencies": { "playwright": "1.56.0" }
+}

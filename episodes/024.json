@@ -1,0 +1,88 @@
+{
+ "ep": 24,
+ "prog": 1,
+ "mood": "deep",
+ "title": "Bobbit worm",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "IT'S UP TO",
+  "3 METERS LONG.",
+  "YOU'D NEVER SEE IT."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Bobbit_worm",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This worm can grow to nearly three meters."
+  },
+  {
+   "at": "+0.15",
+   "text": "And you'd never see it coming."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's the bobbit worm. It buries its whole body in the sea floor.",
+     "cap": "The *bobbit worm.* It buries its *whole body* in the sea floor."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Only its antennae stick out. And it waits.",
+     "cap": "Only its *antennae* stick out. And it *waits.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When prey comes close, it strikes, with jaws that can snap some prey in half.",
+     "cap": "Then it *strikes.* Jaws that can snap prey *in half.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The longest one ever measured was two hundred ninety-nine centimeters.",
+     "cap": "The longest ever measured: *299 cm.*"
+    },
+    {
+     "at": "+0.15",
+     "text": "That's longer than the tallest human who ever lived.",
+     "cap": "Longer than the *tallest human ever.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And fossil burrows show they've hunted like this for twenty million years.",
+     "cap": "Fossil burrows: *20 million years* of hunting like this."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "worm",
+   "article": "Bobbit worm"
+  }
+ ]
+}

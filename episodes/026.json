@@ -1,0 +1,78 @@
+{
+ "ep": 26,
+ "prog": 2,
+ "mood": "clock",
+ "title": "Dord",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "THIS FAKE WORD",
+  "WAS IN THE",
+  "DICTIONARY."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Dord",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "For five years, a famous American dictionary had a word that doesn't exist."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The word was dord. Meaning: density.",
+     "cap": "The word: *dord.* Meaning: *density.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1931, an editor sent in a note: capital D or small d can mean density.",
+     "cap": "*1931:* a note. *\"D or d\"* can mean density."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But headwords were typed with spaces between the letters. D, o, r, d.",
+     "cap": "But headwords were typed *with spaces.* D o r d..."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So D or d became dord. It was printed in 1934.",
+     "cap": "\"D or d\" became *\"dord.\"* Printed in *1934.*"
+    }
+   ]
+  },
+  {
+   "dur": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1939, an editor noticed it had no word origin.",
+     "cap": "*1939:* an editor noticed it had *no word origin.*"
+    },
+    {
+     "at": "+0.15",
+     "text": "By 1947 it was gone. The word that never was.",
+     "cap": "Gone by *1947.* The word that *never was.*"
+    }
+   ]
+  }
+ ]
+}

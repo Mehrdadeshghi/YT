@@ -1,0 +1,26 @@
+{
+ "ep": 21,
+ "prog": 1,
+ "mood": "deep",
+ "title": "Whale fall",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": ["A DEAD WHALE", "FEEDS THE DEEP", "FOR 100 YEARS."],
+ "desc": "Deep sea · 1,000+ m",
+ "source": "https://en.wikipedia.org/wiki/Whale_fall",
+ "vo_open": [
+  {"at": 0, "text": "A dead whale can feed the deep sea for up to a hundred years."},
+  {"at": "+0.15", "text": "Here's how."}
+ ],
+ "scenes": [
+  {"dur": 5, "vo": [{"at": 0.45, "text": "When a whale dies, it sinks. Often more than a thousand meters, into total darkness.", "cap": "When a whale dies, *it sinks.* Often *1,000+ meters* down. Into total darkness."}]},
+  {"dur": 6, "vo": [{"at": 0.45, "text": "First come the hagfish and sleeper sharks.", "cap": "First: *hagfish* and *sleeper sharks.*"},
+                    {"at": "+0.15", "text": "They strip up to sixty kilos of flesh a day.", "cap": "Up to *60 kg* of flesh a day."}]},
+  {"dur": 5, "vo": [{"at": 0.45, "text": "Then come bone-eating worms. They dissolve the bones with acid.", "cap": "Then: *bone-eating worms.* They dissolve bone with *acid.*"}]},
+  {"dur": 6, "vo": [{"at": 0.45, "text": "Last, bacteria feed on the fat inside the bones. For fifty, maybe a hundred years.", "cap": "Then *bacteria* eat the fat inside the bones. For *50... maybe 100 years.*"}]},
+  {"dur": 6, "vo": [{"at": 0.45, "text": "But humans hunted the great whales.", "cap": "But we *hunted the great whales.*"},
+                    {"at": "+0.15", "text": "That may have cut life in the deep sea by more than thirty percent.", "cap": "That may have cut deep-sea life by *more than 30%.*"}]},
+  {"dur": 5, "vo": [{"at": 0.45, "text": "Right now, there may be six hundred ninety thousand whale falls down there.", "cap": "Right now, there may be *690,000* whale falls down there."}]}
+ ]
+}

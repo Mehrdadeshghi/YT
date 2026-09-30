@@ -1,0 +1,84 @@
+{
+ "ep": 25,
+ "prog": 1,
+ "mood": "deep",
+ "lat0": -40,
+ "title": "Bloop",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "THE OCEAN",
+  "MADE A SOUND.",
+  "WHAT WAS IT?"
+ ],
+ "source": "https://en.wikipedia.org/wiki/Bloop",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "In 1997, the ocean made a sound so big, people wondered what could be down there."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "American scientists picked it up in the South Pacific, off South America.",
+     "cap": "*NOAA* picked it up in the *South Pacific.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Sensors up to forty-eight hundred kilometers apart all heard it.",
+     "cap": "Sensors up to *4,800 km* apart *all heard it.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "They named it the Bloop.",
+     "cap": "They named it: *the Bloop.*"
+    },
+    {
+     "at": "+0.15",
+     "text": "Some wondered if a creature bigger than any whale was out there.",
+     "cap": "Something *bigger than any whale?*"
+    }
+   ]
+  },
+  {
+   "dur": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The answer came in 2012. It wasn't alive.",
+     "cap": "The answer came in *2012.* It *wasn't alive.*"
+    },
+    {
+     "at": "+0.15",
+     "text": "It was an icequake: Antarctic ice, cracking and breaking apart.",
+     "cap": "An *icequake.* Antarctic ice, *cracking apart.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The ocean's great mystery monster was ice.",
+     "cap": "The ocean's mystery monster... *was ice.*"
+    }
+   ]
+  }
+ ]
+}

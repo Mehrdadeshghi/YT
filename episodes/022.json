@@ -1,0 +1,114 @@
+{
+ "ep": 22,
+ "prog": 2,
+ "mood": "deep",
+ "lat0": 6,
+ "title": "Lake Nyos disaster",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "THIS LAKE",
+  "KILLED",
+  "1,746 PEOPLE."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Lake_Nyos_disaster",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This quiet lake killed seventeen hundred and forty-six people."
+  },
+  {
+   "at": "+0.15",
+   "text": "No flood. No fire."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Lake Nyos sits in the crater of an old volcano.",
+     "cap": "Lake Nyos sits in an *old volcano.*"
+    },
+    {
+     "at": "+0.15",
+     "text": "Deep down, its water was full of carbon dioxide.",
+     "cap": "Deep down: water full of *CO₂.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "On August twenty-first, 1986, it all came up at once.",
+     "cap": "*August 21, 1986:* it all came up at once."
+    },
+    {
+     "at": "+0.15",
+     "text": "A column of foam, a hundred meters high.",
+     "cap": "A column of foam *100 meters* high."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Up to three hundred thousand tons of gas. Heavier than air, it rolled downhill.",
+     "cap": "Up to *300,000 tons* of gas. Heavier than air, it *rolled downhill.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It reached villages up to twenty-five kilometers away.",
+     "cap": "It reached villages up to *25 km* away."
+    },
+    {
+     "at": "+0.15",
+     "text": "Nearly everyone in the closest village suffocated.",
+     "cap": "Nearly everyone in the closest village *suffocated.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Seventeen forty-six people. Thirty-five hundred animals.",
+     "cap": "*1,746* people. *3,500* animals."
+    },
+    {
+     "at": "+0.15",
+     "text": "And the blue lake had turned deep red.",
+     "cap": "And the blue lake turned *deep red.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Since 2001, pipes let the gas escape from the bottom, so it can't build up again.",
+     "cap": "Since *2001,* pipes vent the gas... so it can't build up again."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lake",
+   "article": "Lake Nyos"
+  }
+ ]
+}
