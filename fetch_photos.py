@@ -52,7 +52,8 @@ def fetch(ep, spec, credits):
         url = ii.get("thumburl") or ii["url"]; dst = f"{OUT}/{ep}_{spec['id']}.jpg"
         with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r, open(dst, "wb") as f:
             f.write(r.read())
-        author = clean(meta.get("Artist", {}).get("value")) or "unknown"
+        author = clean(re.sub(r"<[^>]+>", " ", meta.get("Artist", {}).get("value") or "")) or "unknown"
+        if re.search(r"unknown author|anonymous", author, re.I): author = "Unknown author"
         credits[spec["id"]] = {"file": name, "author": author[:80], "license": lic, "page": ii.get("descriptionurl"),
                                "credit": f"Photo: {author[:40]} / {lic}"}
         print(f"   ok   {dst} <- {name} [{lic}]"); return
