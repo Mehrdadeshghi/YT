@@ -1,0 +1,83 @@
+{
+ "ep": 36,
+ "prog": 0,
+ "mood": "deep",
+ "title": "Vesna Vulović",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "SHE FELL",
+  "10 KILOMETERS.",
+  "NO PARACHUTE."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Vesna_Vulovi%C4%87",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "She fell ten kilometers without a parachute."
+  },
+  {
+   "at": "+0.15",
+   "text": "And survived."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1972, Vesna Vulović, twenty-two, was working as a flight attendant.",
+     "cap": "*1972.* Vesna Vulović, *22*, flight attendant."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "A bomb went off in the baggage hold. The plane broke apart in the sky.",
+     "cap": "A *bomb* in the baggage hold. The plane *broke apart.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "She fell ten thousand, one hundred and sixty meters.",
+     "cap": "She fell *10,160 meters.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Fractured skull. Broken legs. Broken vertebrae. But she was the only survivor of twenty-eight.",
+     "cap": "Fractured skull. Broken legs. The *only survivor* of *28.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Guinness recorded it as the highest fall ever survived without a parachute.",
+     "cap": "*Guinness:* highest fall ever survived *without a parachute.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Vesna Vulović"
+  }
+ ]
+}

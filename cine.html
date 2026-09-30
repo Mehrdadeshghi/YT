@@ -111,8 +111,8 @@ function makeCaptions(segs, placed, skip = []) {
     const pl = placed[si]; if (!pl || !sg.cap || skip.includes(si)) return null;
     const raw = sg.cap.split(' ').filter(Boolean); let acc = false;
     const words = raw.map((tok) => { let w = tok, a = acc;
-      if (w.startsWith('*')) { a = true; acc = true; w = w.slice(1); }
-      if (w.endsWith('*')) { w = w.slice(0, -1); acc = false; }
+      if (/^[^A-Za-z0-9]*\*/.test(w)) { a = true; acc = true; w = w.replace('*', ''); }
+      if (/\*[^A-Za-z0-9]*$/.test(w)) { w = w.replace(/\*(?=[^*]*$)/, ''); acc = false; }
       const plain = w.replace(/[^A-Za-z0-9]/g, ''), digits = (w.match(/[0-9]/g) || []).length;
       const wt = Math.max(2, plain.length - digits) + digits * 2.6 + (/[.?!:,]["”]?$/.test(w) ? 3 : 0);
       return { w, a, wt }; });

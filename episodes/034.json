@@ -1,0 +1,83 @@
+{
+ "ep": 34,
+ "prog": 2,
+ "mood": "deep",
+ "title": "Anatoli Bugorski",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "HE PUT HIS HEAD",
+  "IN A PARTICLE",
+  "ACCELERATOR."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Anatoli_Bugorski",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This scientist put his head in a particle accelerator."
+  },
+  {
+   "at": "+0.15",
+   "text": "It was switched on."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Anatoli Bugorski was checking faulty equipment on the U-70 synchrotron in the Soviet Union.",
+     "cap": "Anatoli Bugorski. The *U-70 synchrotron.* Faulty equipment."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "A proton beam went straight through his head. He saw a flash, brighter than a thousand suns.",
+     "cap": "A *proton beam* through his head. A flash *brighter than a thousand suns.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He felt no pain. But the dose was far beyond what doctors thought anyone could survive.",
+     "cap": "*No pain.* But a dose far beyond anything *survivable.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The left half of his face was paralyzed, and he lost the hearing in his left ear.",
+     "cap": "Left half of his face *paralyzed.* Left ear: *deaf.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But his mind was fine. He finished his PhD, and kept working as a physicist.",
+     "cap": "But his mind was *fine.* He finished his *PhD.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Anatoli Bugorski"
+  }
+ ]
+}

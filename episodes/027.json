@@ -1,0 +1,89 @@
+{
+ "ep": 27,
+ "prog": 1,
+ "mood": "deep",
+ "title": "Violet Jessop",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "SHE SURVIVED",
+  "THE TITANIC.",
+  "AND ITS 2 SISTERS."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Violet_Jessop",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Violet Jessop survived the Titanic."
+  },
+  {
+   "at": "+0.15",
+   "text": "And the disasters of both its sister ships."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1911, she was a stewardess on the Olympic, when it collided with a British warship.",
+     "cap": "*1911:* stewardess on the *Olympic.* It hit a *British warship.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Seven months later, she was on the Olympic's sister ship. The Titanic.",
+     "cap": "7 months later: its sister ship. *The Titanic.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "As it sank, an officer handed her a baby to look after, in lifeboat sixteen.",
+     "cap": "In *lifeboat 16*, an officer handed her *a baby.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1916, she served on the third sister, the Britannic. It sank too.",
+     "cap": "*1916:* the third sister, *Britannic.* It sank too."
+    },
+    {
+     "at": "+0.15",
+     "text": "She jumped from her lifeboat, as the propellers shredded the boats around her.",
+     "cap": "She jumped, as the propellers *shredded the lifeboats.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "She kept working at sea, and lived to eighty-three.",
+     "cap": "She kept working at sea... and lived to *83.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Violet Jessop"
+  }
+ ],
+ "lat0": 50
+}

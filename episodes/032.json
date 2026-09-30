@@ -1,0 +1,84 @@
+{
+ "ep": 32,
+ "prog": 0,
+ "mood": "clock",
+ "title": "Wojtek (bear)",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "THIS BEAR",
+  "WAS A SOLDIER.",
+  "A CORPORAL."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Wojtek_(bear)",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This bear served in the Polish army."
+  },
+  {
+   "at": "+0.15",
+   "text": "And got promoted."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1942, Polish soldiers in Iran adopted a bear cub, and named him Wojtek.",
+     "cap": "*1942, Iran:* Polish soldiers adopt a bear cub. *Wojtek.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He drank beer, marched on two legs, and slept next to the soldiers when it was cold.",
+     "cap": "He drank *beer*, marched on *two legs*, slept next to the soldiers."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "To keep him, they made it official. Wojtek was enlisted as a private.",
+     "cap": "To keep him, they made it official: *Private Wojtek.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "At the Battle of Monte Cassino, he carried forty-five kilo crates of artillery shells. He never dropped one.",
+     "cap": "*Monte Cassino:* he carried *45 kg* crates of shells. He *never dropped one.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He was promoted to corporal. And a bear carrying a shell became his unit's emblem.",
+     "cap": "Promoted to *corporal.* A bear with a shell became the unit's *emblem.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Wojtek (bear)"
+  }
+ ],
+ "lat0": 40
+}

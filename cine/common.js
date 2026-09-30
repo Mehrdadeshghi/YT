@@ -110,3 +110,29 @@ function photo(t, src, x, y, w, h, o = {}) {
   const cr = o.credit ?? CREDITS[src]; if (cr) { g.font = F.mono(18); let c = cr; while (g.measureText(c).width > w - 40 && c.length > 10) c = c.slice(0, -2); text(c, x + 20, y + h - 18, 'mono', 18, 'rgba(255,255,255,0.8)', { ls: 1 }); }
   g.restore(); return true;
 }
+
+// ---------- more shared drawings ----------
+// an ocean liner in side view, bow to the right; o: {hull, funnels, tilt, hospital, sink (0..1 clip below water)}
+function liner(x, y, s, o = {}) {
+  g.save(); g.translate(x, y); g.rotate(o.tilt || 0); g.scale(s, s);
+  const hull = o.hull || '#15181B';
+  g.fillStyle = hull; g.beginPath(); g.moveTo(-300, -40); g.lineTo(300, -40); g.lineTo(330, -58); g.lineTo(300, 30); g.lineTo(-270, 30); g.lineTo(-310, -10); g.closePath(); g.fill();
+  if (o.hospital) { g.fillStyle = '#2F8A4A'; g.fillRect(-285, -12, 580, 10); g.fillStyle = RED; [-150, 150].forEach((cx) => { g.fillRect(cx - 14, -34, 28, 8); g.fillRect(cx - 4, -44, 8, 28); }); }
+  g.fillStyle = o.hospital ? '#E9E6DE' : '#E8E1D0'; g.fillRect(-230, -70, 440, 30); g.fillRect(-190, -88, 330, 18);
+  g.fillStyle = 'rgba(0,0,0,0.35)'; for (let i = -220; i < 200; i += 18) g.fillRect(i, -62, 8, 6);
+  for (let k = 0; k < 4; k++) { const fx = -150 + k * 85; g.fillStyle = o.funnels || '#C9A15A'; g.fillRect(fx, -150, 36, 62); g.fillStyle = '#111'; g.fillRect(fx, -150, 36, 16); }
+  g.strokeStyle = 'rgba(200,200,200,0.5)'; g.lineWidth = 2; g.beginPath(); g.moveTo(-280, -40); g.lineTo(-250, -190); g.moveTo(290, -40); g.lineTo(250, -190); g.stroke();
+  g.restore();
+}
+function nightSea(t, wl = 1000, o = {}) {
+  const sky = g.createLinearGradient(0, 0, 0, wl); sky.addColorStop(0, o.top || '#05070B'); sky.addColorStop(1, o.hor || '#1A2432'); g.fillStyle = sky; g.fillRect(0, 0, W, wl);
+  const r = rng(o.seed || 7); for (let i = 0; i < 90; i++) { const x = r() * W, y = r() * wl * 0.8; g.fillStyle = `rgba(255,250,240,${0.35 * r() * (0.6 + 0.4 * Math.sin(t * 2 + i))})`; g.fillRect(x, y, 2, 2); }
+}
+function waterOver(t, wl = 1000, o = {}) {           // water drawn in front (hides what's below the line)
+  const sea = g.createLinearGradient(0, wl, 0, H); sea.addColorStop(0, o.c1 || '#0E2233'); sea.addColorStop(1, '#030507'); g.fillStyle = sea;
+  g.beginPath(); g.moveTo(0, wl); for (let x = 0; x <= W; x += 20) g.lineTo(x, wl + Math.sin(x / 50 + t * 2) * 5 + Math.sin(x / 23 - t * 3) * 2); g.lineTo(W, H); g.lineTo(0, H); g.closePath(); g.fill();
+  g.strokeStyle = 'rgba(180,210,230,0.35)'; g.lineWidth = 2; g.beginPath(); for (let x = 0; x <= W; x += 20) g.lineTo(x, wl + Math.sin(x / 50 + t * 2) * 5); g.stroke();
+}
+// standard hook photo card on frame 0 (drawn fallback stays underneath when there is no photo)
+const hookPhoto = (t, id = 'lead', o = {}) => photo(t, id, 80, o.y ?? 830, 920, o.h ?? 480, { zoom: [1, 1.08], dur: 5, focus: o.focus || [0.5, 0.35] });
+function checkMark(x, y, s, col = GOLD) { g.strokeStyle = col; g.lineWidth = 10 * s; g.lineCap = 'round'; g.lineJoin = 'round'; g.beginPath(); g.moveTo(x - 22 * s, y); g.lineTo(x - 6 * s, y + 16 * s); g.lineTo(x + 24 * s, y - 18 * s); g.stroke(); }

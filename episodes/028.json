@@ -1,0 +1,84 @@
+{
+ "ep": 28,
+ "prog": 2,
+ "mood": "clock",
+ "title": "Emu War",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "AUSTRALIA",
+  "WENT TO WAR WITH",
+  "BIRDS. AND LOST."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Emu_War",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Australia once went to war with emus."
+  },
+  {
+   "at": "+0.15",
+   "text": "The emus won."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "About twenty thousand emus were eating farmers' crops in Western Australia.",
+     "cap": "About *20,000 emus* were eating the crops."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So the army sent in two machine guns and ten thousand rounds of ammunition.",
+     "cap": "The army sent *2 machine guns.* *10,000 rounds.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The commander claimed nine hundred eighty-six kills, with nine thousand eight hundred sixty rounds.",
+     "cap": "*9,860* rounds. *986* claimed kills."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He said they could face machine guns with the invulnerability of tanks.",
+     "cap": "\"They can face machine guns with the *invulnerability of tanks.*\""
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The army pulled out. Farmers asked for the military three more times. The answer was always no.",
+     "cap": "The army pulled out. Farmers asked *3 more times.* Always *no.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Emu War"
+  }
+ ],
+ "lat0": -31
+}

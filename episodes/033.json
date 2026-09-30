@@ -1,0 +1,83 @@
+{
+ "ep": 33,
+ "prog": 1,
+ "mood": "clock",
+ "title": "Cadaver Synod",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "A POPE",
+  "PUT A DEAD POPE",
+  "ON TRIAL."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Cadaver_Synod",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "In 897, a pope dug up the previous pope."
+  },
+  {
+   "at": "+0.15",
+   "text": "And put his corpse on trial."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Pope Formosus had been dead for about nine months, when Pope Stephen the Sixth had him dug up.",
+     "cap": "Dead for *9 months.* Then Pope Stephen VI had him *dug up.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The corpse was propped up on a throne. A deacon had to answer for him.",
+     "cap": "The corpse sat *on a throne.* A deacon *answered for him.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The verdict: guilty. His time as pope was declared null and void.",
+     "cap": "Verdict: *guilty.* His papacy: *null and void.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "They cut off three fingers of his right hand, and threw the body into the Tiber.",
+     "cap": "*3 fingers* cut off. The body thrown into the *Tiber.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Rome turned against Stephen. That summer, he was strangled in prison.",
+     "cap": "Rome turned on Stephen. That summer, he was *strangled in prison.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Cadaver Synod"
+  }
+ ]
+}

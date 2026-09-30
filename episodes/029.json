@@ -1,0 +1,83 @@
+{
+ "ep": 29,
+ "prog": 0,
+ "mood": "clock",
+ "title": "Frank Hayes (jockey)",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "HE WON HIS",
+  "FIRST RACE.",
+  "ALREADY DEAD."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Frank_Hayes_(jockey)",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This jockey won the first race of his life."
+  },
+  {
+   "at": "+0.15",
+   "text": "He was already dead."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "June fourth, 1923. Frank Hayes, twenty-two, rides a horse called Sweet Kiss.",
+     "cap": "*June 4, 1923.* Frank Hayes, *22*, rides *Sweet Kiss.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Sweet Kiss was a twenty-to-one outsider. Hayes had never won a race.",
+     "cap": "A *20-to-1* outsider. Hayes had *never won* a race."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Late in the race, Hayes had a heart attack. But his body stayed in the saddle.",
+     "cap": "Late in the race: a *heart attack.* His body *stayed in the saddle.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Sweet Kiss crossed the line first. Nobody noticed, until they came to congratulate him.",
+     "cap": "She crossed the line *first.* Nobody noticed... until they came to *congratulate him.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The horse never raced again. People called her: Sweet Kiss of Death.",
+     "cap": "She never raced again. They called her: *Sweet Kiss of Death.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Frank Hayes (jockey)"
+  }
+ ]
+}

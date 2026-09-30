@@ -1,0 +1,84 @@
+{
+ "ep": 35,
+ "prog": 1,
+ "mood": "deep",
+ "title": "Hiroo Onoda",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "THE WAR ENDED",
+  "IN 1945.",
+  "HE KEPT FIGHTING."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Hiroo_Onoda",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "The war ended in 1945."
+  },
+  {
+   "at": "+0.15",
+   "text": "He kept fighting until 1974."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Hiroo Onoda was hiding in the jungle on Lubang Island, in the Philippines.",
+     "cap": "Hiroo Onoda. The jungle of *Lubang Island.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Leaflets told him Japan had surrendered. He thought it was enemy propaganda.",
+     "cap": "Leaflets: *the war is over.* He thought it was *propaganda.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He held out for twenty-eight years and six months.",
+     "cap": "He held out for *28 years, 6 months.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1974, a young Japanese adventurer found him. Onoda still refused to surrender.",
+     "cap": "*1974:* an adventurer found him. He *still refused.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Only when his old commander flew in and relieved him of duty, did he finally give up.",
+     "cap": "Only his *old commander* could end it. He flew in... and relieved him of duty."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Hiroo Onoda"
+  }
+ ],
+ "lat0": 13
+}

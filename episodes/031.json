@@ -1,0 +1,80 @@
+{
+ "ep": 31,
+ "prog": 2,
+ "mood": "clock",
+ "title": "Great Molasses Flood",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "A WAVE OF",
+  "MOLASSES",
+  "HIT BOSTON."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Great_Molasses_Flood",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "In 1919, a wave of molasses flooded Boston."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "One tank held eight point seven million liters of molasses.",
+     "cap": "One tank: *8.7 million liters* of molasses."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It burst. A wave up to eight meters high raced through the streets at fifty-six kilometers an hour.",
+     "cap": "It *burst.* A wave up to *8 m* high. *56 km/h.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Warm molasses flows fast. But in the cold air it thickened, and trapped people like glue.",
+     "cap": "In the cold, it *thickened*... and trapped people *like glue.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Twenty-one people died. A hundred and fifty were injured.",
+     "cap": "*21* dead. *150* injured."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "For decades, locals said the area still smelled of molasses on hot summer days.",
+     "cap": "For *decades*, the area still smelled of molasses on hot days."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Great Molasses Flood"
+  }
+ ],
+ "lat0": 42
+}

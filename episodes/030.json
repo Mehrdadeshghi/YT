@@ -1,0 +1,84 @@
+{
+ "ep": 30,
+ "prog": 1,
+ "mood": "deep",
+ "title": "Tsutomu Yamaguchi",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "HE SURVIVED",
+  "HIROSHIMA.",
+  "THEN NAGASAKI."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Tsutomu_Yamaguchi",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "He survived the atomic bomb in Hiroshima."
+  },
+  {
+   "at": "+0.15",
+   "text": "Three days later, he was in Nagasaki."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "August sixth, 1945. Tsutomu Yamaguchi was in Hiroshima on a business trip.",
+     "cap": "*August 6, 1945.* Tsutomu Yamaguchi, on a *business trip.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He was three kilometers from the blast. It burst his eardrums and burned his upper body.",
+     "cap": "*3 km* from the blast. Burst eardrums. *Serious burns.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The next day, he went home. To Nagasaki.",
+     "cap": "The next day, he went home. *To Nagasaki.*"
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "On August ninth, he was telling his boss about Hiroshima, when the second bomb exploded.",
+     "cap": "*August 9:* telling his boss about Hiroshima... when the *second bomb* exploded."
+    }
+   ]
+  },
+  {
+   "dur": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He survived again. In 2009, Japan recognized him as a double survivor. He lived to ninety-three.",
+     "cap": "He survived *again.* Officially a *double survivor* in 2009. He lived to *93.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Tsutomu Yamaguchi"
+  }
+ ],
+ "lat0": 34
+}
