@@ -63,6 +63,11 @@
      "at": 0.45,
      "text": "Soon after, Voyager's cameras were switched off. For good.",
      "cap": "Then its cameras were *switched off.* For good."
+    },
+    {
+     "at": "0.35",
+     "text": "Does this make you feel small, or lucky? Tell me in the comments. And subscribe for more.",
+     "cta": true
     }
    ]
   }
@@ -74,8 +79,8 @@
   }
  ],
  "cta": {
-  "q": "Did you spot the dot first?",
-  "a": "YES",
-  "b": "NO"
+  "q": "Does this make you feel…",
+  "a": "SMALL",
+  "b": "LUCKY"
  }
 }

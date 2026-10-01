@@ -60,6 +60,11 @@
      "at": 0.45,
      "text": "No crater, because it exploded in the air, five to ten kilometers up.",
      "cap": "No crater: it exploded *in the air.* *5–10 km* up."
+    },
+    {
+     "at": "0.35",
+     "text": "What do you think it was? Asteroid, or comet? Tell me in the comments. And subscribe for more.",
+     "cta": true
     }
    ]
   }
@@ -72,7 +77,7 @@
  ],
  "lat0": 61,
  "cta": {
-  "q": "Asteroid or comet?",
+  "q": "What was it really?",
   "a": "ASTEROID",
   "b": "COMET"
  }

@@ -70,6 +70,11 @@
      "at": 0.45,
      "text": "Now, the government is trying to put it out.",
      "cap": "Now they're trying to *put it out.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Should they put it out, or keep it burning? Tell me in the comments. And subscribe for more.",
+     "cta": true
     }
    ]
   }
@@ -82,8 +87,8 @@
  ],
  "lat0": 40,
  "cta": {
-  "q": "Would you visit it?",
-  "a": "YES",
-  "b": "NO"
+  "q": "Put it out, or keep it burning?",
+  "a": "PUT IT OUT",
+  "b": "KEEP IT"
  }
 }

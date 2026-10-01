@@ -70,6 +70,11 @@
      "at": 0.45,
      "text": "It's weaker today. But still dangerous.",
      "cap": "Weaker today. *Still dangerous.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Would you stand next to it for ten seconds? Tell me in the comments. And subscribe for more.",
+     "cta": true
     }
    ]
   }
@@ -82,7 +87,7 @@
  ],
  "lat0": 51,
  "cta": {
-  "q": "Would you visit Chernobyl?",
+  "q": "Would you stand there for 10 seconds?",
   "a": "YES",
   "b": "NO"
  }

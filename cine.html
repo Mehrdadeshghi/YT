@@ -224,8 +224,12 @@ function build(ep, voice) {
   DUR = t; SCENES.slice(1).forEach((s) => cue(s.from - (ep.transition === 'whip' ? 0.12 : 0.2), 'whoosh', ep.transition === 'whip' ? 1 : 0.8));
   // engagement: a subscribe nudge mid-video, a comment question on the last scene (no VO, so the loop stays seamless)
   const mid = SCENES.find((sc) => sc.from <= DUR * 0.45 && DUR * 0.45 < sc.to) || SCENES[Math.floor(SCENES.length / 2)];
-  CTA = Object.assign({ q: 'Did you know this?', a: 'YES', b: 'NO' }, ep.cta || {}, { subAt: mid.from + 1.0, comAt: last.from + 1.0, end: DUR });
-  if (ep.cta !== false) { cue(CTA.subAt, 'pop', 0.6, 600); cue(CTA.subAt + 0.75, 'click', 0.9); cue(CTA.comAt, 'pop', 0.8, 800); }
+  // a spoken call to action ("cta": true segment, no caption) in the last scene drives the comment card and a second subscribe tap
+  const lsc = ep.scenes.at(-1), lvo = voPlace(lsc.vo, V.scenes[ep.scenes.length - 1]), ci = lsc.vo.findIndex((v) => v.cta);
+  const comAt = ci >= 0 ? last.from + lvo[ci].at - PRE : last.from + 1.0, subEnd = ci >= 0 ? last.from + lvo[ci].at - PRE + (lvo[ci].end - lvo[ci].at) * 0.62 : null;
+  CTA = Object.assign({ q: 'Did you know this?', a: 'YES', b: 'NO' }, ep.cta || {}, { subAt: mid.from + 1.0, comAt, subEnd, end: DUR });
+  if (ep.cta !== false) { cue(CTA.subAt, 'pop', 0.6, 600); cue(CTA.subAt + 0.75, 'click', 0.9); cue(CTA.comAt, 'pop', 0.8, 800);
+    if (subEnd) { cue(subEnd, 'pop', 0.6, 600); cue(subEnd + 0.75, 'click', 0.9); } }
   CUES.sort((a, b) => a.t - b.t);
   window.DUR = DUR; window.EP = { ep: ep.ep, prog: ep.prog || 0, title: ep.title, dur: DUR, openDur, look: 'cine', mood: ep.mood || 'clock' };
 }
@@ -260,16 +264,18 @@ function draw(t) {
 function bell(x, y, s, rot) { g.save(); g.translate(x, y); g.rotate(rot); g.scale(s, s); g.fillStyle = TXT; g.beginPath(); g.moveTo(-22, 14); g.quadraticCurveTo(-20, -24, 0, -26); g.quadraticCurveTo(20, -24, 22, 14); g.lineTo(28, 20); g.lineTo(-28, 20); g.closePath(); g.fill(); g.beginPath(); g.arc(0, 26, 7, 0, 6.283); g.fill(); g.restore(); }
 function cursorHand(x, y, press) { g.save(); g.translate(x, y); g.scale(1 - 0.12 * press, 1 - 0.12 * press); g.fillStyle = '#FFFFFF'; g.strokeStyle = '#111'; g.lineWidth = 4;
   g.beginPath(); g.moveTo(0, 0); g.lineTo(0, 58); g.lineTo(14, 46); g.lineTo(26, 72); g.lineTo(36, 67); g.lineTo(24, 42); g.lineTo(42, 42); g.closePath(); g.fill(); g.stroke(); g.restore(); }
-function engage(t) {
-  g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1;
-  const ls = t - CTA.subAt;                                   // ---- subscribe nudge (≈2.8 s)
-  if (ls > 0 && ls < 2.9) { const s = spring(ls, 260, 18), out = clamp((ls - 2.5) / 0.4), y = 1480 + (1 - s) * 420 + out * 420, on = ls > 0.75;
+function subPill(ls, Y, life) {                              // ---- subscribe nudge with a tap
+  if (ls > 0 && ls < life) { const s = spring(ls, 260, 18), out = clamp((ls - life + 0.4) / 0.4), y = Y + (1 - s) * (1920 - Y + 60) + out * 420, on = ls > 0.75;
     g.save(); g.globalAlpha = 1 - out; g.translate(540, y); const w = on ? 470 : 430;
     g.shadowColor = 'rgba(0,0,0,0.5)'; g.shadowBlur = 30; rrect(-w / 2, -46, w, 92, 46); g.fillStyle = on ? '#2B2A28' : '#FF0033'; g.fill(); g.shadowBlur = 0;
     text(on ? 'SUBSCRIBED' : 'SUBSCRIBE', on ? -40 : 0, 16, 'ui', 44, TXT, { align: 'center' });
     if (on) { bell(170, -4, 0.9, Math.sin((ls - 0.75) * 30) * 0.4 * Math.exp(-(ls - 0.75) * 3)); }
     const cx = lerp(380, 60, ease(ls / 0.6)), cy = lerp(260, 10, ease(ls / 0.6)), pr = ls > 0.65 && ls < 0.9 ? 1 : 0; if (ls < 1.6) cursorHand(cx, cy, pr);
     g.restore(); }
+}
+function engage(t) {
+  g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1;
+  subPill(t - CTA.subAt, 1480, 2.9); if (CTA.subEnd) subPill(t - CTA.subEnd, 1290, 99);
   const lc = t - CTA.comAt;                                   // ---- comment question (last scene)
   if (lc > 0) { const s = spring(lc, 220, 18), y = 1400 + (1 - s) * 520; g.save(); g.translate(0, y);
     g.shadowColor = 'rgba(0,0,0,0.55)'; g.shadowBlur = 36; rrect(70, 0, 860, 200, 34); g.fillStyle = 'rgba(244,238,227,0.96)'; g.fill(); g.shadowBlur = 0;

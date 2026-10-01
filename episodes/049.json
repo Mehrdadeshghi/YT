@@ -70,6 +70,11 @@
      "at": 0.45,
      "text": "For months, sunsets around the world glowed red.",
      "cap": "For months, sunsets worldwide *glowed red.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Would you live next to a volcano? Tell me in the comments. And subscribe for more.",
+     "cta": true
     }
    ]
   }
@@ -81,7 +86,7 @@
   }
  ],
  "cta": {
-  "q": "Would you live near a volcano?",
+  "q": "Would you live next to a volcano?",
   "a": "YES",
   "b": "NO"
  }

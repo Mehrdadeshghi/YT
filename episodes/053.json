@@ -60,6 +60,11 @@
      "at": 0.45,
      "text": "About three thousand galaxies. In one speck of sky.",
      "cap": "About *3,000 galaxies.* In *one speck* of sky."
+    },
+    {
+     "at": "0.35",
+     "text": "Do you think we're alone out there? Tell me in the comments. And subscribe for more.",
+     "cta": true
     }
    ]
   }
