@@ -8,7 +8,7 @@ Each episode JSON may list  "photos": [{"id": "lead", "article": "Jeanne Calment
                                         {"id": "sign", "article": "Monowi, Nebraska", "match": "sign"}]
   id       name the visuals use:  photo(t, 'lead', ...)
   article  English Wikipedia article to take the image from
-  match    optional: pick the first article image whose file name contains this word; default = the article's lead image
+  match    optional: pick the first article image whose file name contains this word; default = ONLY the article's lead image
 Only freely licensed files (public domain / CC0 / CC BY / CC BY-SA) are used.
 Writes assets/photos/<ep>_<id>.jpg and assets/photos/<ep>.credits.json (author, license, source page).
 If a photo can't be found, the episode renders with its drawn fallback.
@@ -37,9 +37,11 @@ def candidates(article, match):
     page = api(action="query", titles=article, prop="pageimages|images", piprop="name", imlimit="max", redirects=1)["query"]["pages"][0]
     names = [i["title"] for i in page.get("images", []) if i["title"].lower().endswith((".jpg", ".jpeg", ".png"))]
     lead = page.get("pageimage")
-    if match:
-        return [n for n in names if match.lower() in n.lower()] + ([f"File:{lead}"] if lead else [])
-    return ([f"File:{lead}"] if lead else []) + names
+    if match:   # explicit choice: only files whose name contains the match word
+        return [n for n in names if match.lower() in n.lower()]
+    # default: ONLY the article's lead image. Other images in an article can be unrelated
+    # (navboxes, comparisons), so no fallback: a missing lead image means the drawn version is used.
+    return [f"File:{lead}"] if lead else []
 
 def fetch(ep, spec, credits):
     for name in candidates(spec["article"], spec.get("match"))[:12]:
