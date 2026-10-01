@@ -1,0 +1,99 @@
+{
+ "ep": 57,
+ "prog": 1,
+ "mood": "epic",
+ "title": "Falkland Islands sovereignty dispute",
+ "look": "cine",
+ "map": true,
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "300 YEARS.",
+  "4 FLAGS.",
+  "ONE WAR."
+ ],
+ "speed": 1.2,
+ "sub": 1,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/Falkland_Islands_sovereignty_dispute",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Three hundred years. Four flags. One war."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "1690: a British captain lands first.",
+     "cap": "*1690:* a British captain lands *first.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "1764: France settles. 1765: Britain too.",
+     "cap": "*1764:* France settles. *1765:* Britain too."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then France hands it to Spain. By 1811, everyone's gone.",
+     "cap": "France hands it to *Spain.* By *1811,* everyone's *gone.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "1820: Buenos Aires claims it. 1833: Britain returns, and stays.",
+     "cap": "*1820:* Buenos Aires claims it. *1833:* Britain *returns.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "1982: Argentina invades. Seventy-four days of war.",
+     "cap": "*1982:* Argentina *invades.* *74 days* of war."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "2013: 99.8 percent vote to stay British.",
+     "cap": "*2013:* *99.8%* vote to stay *British.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Britain, or Argentina: who should own them? Comment below, and subscribe.",
+     "cta": true
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Who should own the Falklands?",
+  "a": "BRITAIN",
+  "b": "ARGENTINA"
+ },
+ "photos": []
+}

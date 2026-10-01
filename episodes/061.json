@@ -1,0 +1,84 @@
+{
+ "ep": 61,
+ "prog": 1,
+ "mood": "deep",
+ "title": "Diomede Islands",
+ "look": "cine",
+ "map": true,
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "4 KM APART.",
+  "21 HOURS",
+  "APART."
+ ],
+ "speed": 1.2,
+ "sub": 1,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/Diomede_Islands",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "These two islands are four kilometers apart. And twenty-one hours apart."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The Diomede Islands, in the Bering Strait. Big Diomede is Russian. Little Diomede is American.",
+     "cap": "*Big Diomede:* Russia. *Little Diomede:* USA."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Between them runs the International Date Line.",
+     "cap": "Between them runs the *Date Line.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So Big Diomede is twenty-one hours ahead. They call it Tomorrow Island.",
+     "cap": "*21 hours* ahead: *Tomorrow Island.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1987, Lynne Cox swam across. From America, into the Soviet Union.",
+     "cap": "*1987:* Lynne Cox *swam across.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Would you swim into tomorrow? Yes or no? Comment below, and subscribe.",
+     "cta": true
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Would you swim into tomorrow?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Diomede Islands"
+  }
+ ]
+}

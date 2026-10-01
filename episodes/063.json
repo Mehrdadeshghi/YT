@@ -1,0 +1,84 @@
+{
+ "ep": 63,
+ "prog": 1,
+ "mood": "deep",
+ "title": "Kaliningrad Oblast",
+ "look": "cine",
+ "map": true,
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "A PIECE OF RUSSIA",
+  "SURROUNDED",
+  "BY THE EU."
+ ],
+ "speed": 1.2,
+ "sub": 1,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/Kaliningrad_Oblast",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This piece of Russia is surrounded by the European Union."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Kaliningrad. Between Poland and Lithuania, on the Baltic Sea.",
+     "cap": "*Kaliningrad:* between *Poland* and *Lithuania.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Until 1945 it was German: Königsberg, in East Prussia. The home town of Immanuel Kant.",
+     "cap": "Until *1945:* German *Königsberg.* Kant's home town."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "After the war, the Soviet Union took it. In 1946, it was renamed Kaliningrad.",
+     "cap": "*1946:* renamed *Kaliningrad.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Since 1990, it has had no land connection to the rest of Russia.",
+     "cap": "Since *1990:* no land link to *Russia.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Would you visit Kaliningrad? Yes or no? Comment below, and subscribe.",
+     "cta": true
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Would you visit Kaliningrad?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "photos": [
+  {
+   "id": "kant",
+   "article": "Immanuel Kant"
+  }
+ ]
+}

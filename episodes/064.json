@@ -1,0 +1,84 @@
+{
+ "ep": 64,
+ "prog": 1,
+ "mood": "clock",
+ "title": "Neutral Moresnet",
+ "look": "cine",
+ "map": true,
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "A COUNTRY",
+  "THAT EXISTED",
+  "FOR A ZINC MINE."
+ ],
+ "speed": 1.2,
+ "sub": 1,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/Neutral_Moresnet",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "For over a hundred years, a tiny territory existed because of one zinc mine."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "1816. Prussia and the Netherlands could not agree who gets a valuable zinc mine.",
+     "cap": "*1816:* who gets the *zinc mine?*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So they made it neutral. Neutral Moresnet: just three and a half square kilometers.",
+     "cap": "*Neutral Moresnet:* just *3.5 km².*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1908, people wanted to make it the first Esperanto-speaking state: Amikejo.",
+     "cap": "*1908:* plan for the first *Esperanto state.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1920, the Treaty of Versailles gave it to Belgium. And it vanished from the map.",
+     "cap": "*1920:* given to *Belgium.* Gone from the map."
+    },
+    {
+     "at": "0.35",
+     "text": "Should tiny neutral places like this still exist? Yes or no? Comment below, and subscribe.",
+     "cta": true
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Should tiny neutral states exist?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Neutral Moresnet"
+  }
+ ]
+}

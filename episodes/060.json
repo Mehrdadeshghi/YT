@@ -1,0 +1,84 @@
+{
+ "ep": 60,
+ "prog": 1,
+ "mood": "clock",
+ "title": "Baarle-Hertog",
+ "look": "cine",
+ "map": true,
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "THIS BORDER",
+  "GOES THROUGH",
+  "FRONT DOORS."
+ ],
+ "speed": 1.2,
+ "sub": 1,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/Baarle-Hertog",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "In this town, the border goes right through front doors."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Baarle. Where the Netherlands and Belgium are mixed together like a puzzle.",
+     "cap": "*Baarle:* Netherlands and Belgium, mixed like a *puzzle.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Twenty-two pieces of Belgium sit inside the Netherlands. And inside those: seven pieces of the Netherlands.",
+     "cap": "*22* Belgian enclaves. Inside them: *7* Dutch ones."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The border runs through one front door. So the house has two addresses.",
+     "cap": "The border splits a front door: *two addresses.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When Dutch closing time came earlier, guests could simply move to a table on the Belgian side.",
+     "cap": "Closing time? Move to the *Belgian table.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Would you live in a house split by a border? Yes or no? Comment below, and subscribe.",
+     "cta": true
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Would you live in a split house?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Baarle-Hertog"
+  }
+ ]
+}

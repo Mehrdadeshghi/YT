@@ -1,0 +1,94 @@
+{
+ "ep": 59,
+ "prog": 1,
+ "mood": "clock",
+ "title": "Whisky War (Hans Island)",
+ "look": "cine",
+ "map": true,
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "TWO COUNTRIES",
+  "FOUGHT OVER THIS",
+  "WITH ALCOHOL."
+ ],
+ "speed": 1.2,
+ "sub": 1,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/Whisky_War",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "For forty-nine years, two countries fought over this rock. With alcohol."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Hans Island. One point three square kilometers of bare rock, between Canada and Greenland.",
+     "cap": "*Hans Island:* *1.3 km²* of rock between *Canada* and *Greenland.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1984, Canada planted its flag, and left a bottle of whisky.",
+     "cap": "*1984:* Canada leaves a flag and *whisky.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Denmark's minister answered: a Danish flag, and a bottle of schnapps.",
+     "cap": "Denmark replies: a flag and *schnapps.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "For decades, they took turns. Flags and bottles, back and forth.",
+     "cap": "For decades: flags and bottles, *back and forth.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 2022, they finally split the island nearly in half.",
+     "cap": "*2022:* the island is split *nearly in half.*"
+    },
+    {
+     "at": "0.35",
+     "text": "So who won the Whisky War? Canada, or Denmark? Comment below, and subscribe.",
+     "cta": true
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Who won the Whisky War?",
+  "a": "CANADA",
+  "b": "DENMARK"
+ },
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Hans Island"
+  }
+ ]
+}

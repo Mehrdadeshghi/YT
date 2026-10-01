@@ -1,0 +1,47 @@
+// Wiki Roulette #057 — Falkland Islands: 300 years, 4 flags, one war (map documentary)
+const FK = [-59.5, -51.75], PL = [-58.13, -51.55], PE = [-60.07, -51.36], ST = [-57.85, -51.69], BA = [-58.38, -34.6], LON = [-0.13, 51.5];
+const ISL = 'Falkland Is.';
+VIS.open = (K) => { K(0.2, 'whoosh', 0.9); [0.55, 0.95, 1.35, 1.75].forEach((a) => K(a, 'hit', 0.6)); K(2.0, 'riser', 0.4, 1.8);
+  return (t) => { earth(t, camPath(t, [[0, -35, 5, 3.4, 0, 0], [0.15, FK[0], FK[1], 0.26, 42, 0]], { k: 10, d: 6.4 }));
+    territory(ISL, GOLD, 0.25 + 0.15 * Math.sin(t * 4), { stroke: GOLD });
+    ['GB', 'FR', 'ES', 'AR'].forEach((c, i) => flag(c, 170 + i * 247, 1330, 190, t + i, { s: spring(t - 0.55 - i * 0.4, 260, 16) }));
+    tag(t); hook(t, EP.hook, 480); }; };
+VIS[0] = (K) => { K(0.45, 'hit', 1); K(0.9, 'whoosh', 0.6); K(3.0, 'land', 0.9);
+  return (t) => { earth(t, camPath(t, [[0, -28, 5, 2.7, 0, 0], [2.2, FK[0], FK[1], 0.16, 38, 0]], { k: 16, d: 8 }));
+    place(...LON, 'BRITAIN', t, 0.5); arc3d(LON, FK, ease((t - 0.8) / 1.8), '#FFFFFF', { lift: 0.05 }); flagPin(...LON, 'GB', t, 0.6, { w: 100, pole: 80 });
+    if (t > 2.9) { territory(ISL, '#FFFFFF', 0.3, { stroke: '#FFFFFF' }); place(-59.4, -51.6, 'FALKLAND SOUND', t, 3.1, { size: 28 }); }
+    tag(t, 0, 6); yearTag(1690, t, 0.45); label('FIRST RECORDED LANDING', 84, 625, t, 0.9, { color: GOLD }); }; };
+VIS[1] = (K) => { K(0.6, 'thump', 0.9); K(0.65, 'pop', 0.8, 700); K(3.6, 'thump', 0.9); K(3.65, 'pop', 0.8, 900);
+  return (t) => { earth(t, camPath(t, [[0, FK[0], FK[1], 0.16, 38, 0], [0.1, -59.1, -51.65, 0.12, 46, -8]], { k: 6, d: 4.9 })); const b = 3.6;
+    territory(ISL, '#0055A4', 0.35 * clamp((t - 0.6) * 3), {}); flagPin(...PL, 'FR', t, 0.6, { label: 'PORT LOUIS' });
+    if (t > b) flagPin(...PE, 'GB', t, b, { label: 'PORT EGMONT', left: true });
+    tag(t, 1, 6); yearTag(t < b ? 1764 : 1765, t, t < b ? 0.45 : b, { color: t < b ? '#7FB2FF' : TXT }); label(t < b ? 'FRANCE SETTLES FIRST' : 'BRITAIN BUILDS ITS OWN FORT', 84, 625, t, t < b ? 0.8 : b + 0.2, { color: GOLD }); }; };
+VIS[2] = (K) => { K(0.9, 'swish', 0.8); K(1.1, 'pop', 0.9, 600); for (let i = 0; i < 10; i++) K(2.2 + i * 0.08, 'tick', 0.4); K(3.4, 'mute', 1, 0.6); K(3.45, 'thump', 1);
+  return (t) => { earth(t, camPath(t, [[0, -59.1, -51.65, 0.12, 46, -8], [0.1, -59.1, -51.65, 0.13, 40, 8]], { k: 5, d: 4.4 }));
+    const sw = clamp((t - 0.9) / 0.4), gone = clamp((t - 3.4) / 0.6);
+    territory(ISL, sw < 0.5 ? '#0055A4' : '#F1BF00', 0.35 * (1 - gone), {}); territory(ISL, '#8C857A', 0.45 * gone, { stroke: '#8C857A', glow: 0 });
+    flagPin(...PL, sw < 0.5 ? 'FR' : 'ES', t, 0, { s: Math.abs(1 - 2 * sw) * (1 - gone) + (sw === 0 ? 0 : 0), label: 'PORT LOUIS' }); flagPin(...PE, 'GB', t, 0, { s: 1 - gone, label: 'PORT EGMONT', left: true });
+    tag(t, 2, 6); const y = Math.round(ramp(t, 2.2, 1.2, 1767, 1811)); yearTag(y, t, 0.45, { color: y >= 1811 ? GOLD : TXT });
+    label(t < 2.2 ? 'FRANCE → SPAIN' : 'SPAIN AND BRITAIN WITHDRAW', 84, 625, t, 0.9, { color: GOLD }); stampText('EMPTY', 540, 1080, t, 3.5, { size: 110, rot: -0.08, color: '#C9C3B8' }); }; };
+VIS[3] = (K) => { K(0.5, 'whoosh', 0.8); K(2.0, 'hit', 1); K(4.3, 'whoosh', 0.8); K(5.4, 'hit', 1.2); K(5.45, 'crack', 0.6);
+  return (t) => { const b = 4.3; earth(t, camPath(t, [[0, -60, -46, 1.25, 8, 0], [b, FK[0], FK[1], 0.14, 38, 0]], { k: 14, d: 7.5 }));
+    place(...BA, 'BUENOS AIRES', t, 0.4, {}); arc3d(BA, PL, ease((t - 0.6) / 1.3), '#74ACDF', { lift: 0.02 });
+    const gbOn = t > 5.4; territory(ISL, gbOn ? '#C8102E' : '#74ACDF', 0.45 * clamp((t - 2.0) * 3), { stroke: gbOn ? '#FFFFFF' : '#74ACDF' });
+    flagPin(...PL, 'AR', t, 2.0, { s: gbOn ? 0 : 1, w: 120 }); if (gbOn) { flagPin(...PL, 'GB', t, 5.4, { w: 130, label: 'PORT LOUIS' }); shockRing(...MAP.P(...PL).slice(0, 2), t, 5.4, 300); }
+    flash(t, 5.4, 0.35, 0.12); tag(t, 3, 6); yearTag(t < 5.4 ? 1820 : 1833, t, t < 5.4 ? 0.45 : 5.4, { color: t < 5.4 ? '#9FCBEF' : TXT });
+    label(t < 5.4 ? 'BUENOS AIRES CLAIMS THEM' : 'BRITAIN RETURNS — AND STAYS', 84, 625, t, t < 5.4 ? 0.8 : 5.6, { color: GOLD }); }; };
+VIS[4] = (K) => { K(0.45, 'hit', 1.2); K(0.5, 'riser', 0.6, 1); K(1.5, 'hit', 1.3); K(1.55, 'crack', 1); for (let i = 0; i < 14; i++) K(2.4 + i * 0.1, 'tick', 0.4); K(3.9, 'thump', 1.2);
+  return (t) => { const c = camPath(t, [[0, -63, -49, 0.75, 20, 0], [0.1, -61, -50.5, 0.62, 30, 0]], { k: 4, d: 4 }); g.save(); g.translate(shake(t, 1.5, 16), 0); earth(t, c);
+    territory('Argentina', '#74ACDF', 0.45, { stroke: '#74ACDF', glow: 10 }); territory(ISL, '#C8102E', 0.4, { stroke: '#FFFFFF' });
+    arc3d([-67.7, -53.8], ST, ease((t - 0.5) / 1.0), RED, { w: 12, lift: 0.01 }); arc3d([-65.2, -47.7], [-58.6, -51.5], ease((t - 0.7) / 1.0), RED, { w: 9, lift: 0.01 });
+    if (t > 1.5) { const [x, y] = MAP.P(...ST); shockRing(x, y, t % 1.2 + 1.5, 1.5, 260, '255,90,60'); glowDot(x, y, 120, '255,120,60', 0.5 + 0.3 * Math.sin(t * 9)); } g.restore();
+    flash(t, 1.5, 0.5, 0.15, '#FFE0C0'); tag(t, 4, 6); yearTag(1982, t, 0.45, { color: RED });
+    if (t > 2.4) popNum(`${Math.round(ramp(t, 2.4, 1.4, 0, 74))} DAYS OF WAR`, 80, 670, fit('74 DAYS OF WAR', 'disp', 90, 920), TXT, t, 2.4);
+    if (t > 3.9) chip('907 KILLED', 80, 740, t, 3.9, { size: 34, align: 'left', bg: RED, fg: TXT }); }; };
+VIS[5] = (K) => { K(0.45, 'pop', 0.8, 500); for (let i = 0; i < 12; i++) K(1.0 + i * 0.12, 'tick', 0.45); K(2.6, 'hit', 1);
+  return (t) => { earth(t, camPath(t, [[0, FK[0], FK[1], 0.18, 40, -20], [0.1, FK[0], FK[1], 0.15, 46, 30]], { k: 1.2, d: 2.2 }));
+    territory(ISL, '#C8102E', 0.35, { stroke: '#FFFFFF' }); g.fillStyle = 'rgba(5,8,14,0.45)'; g.fillRect(0, 0, W, H);
+    const v = ramp(t, 1.0, 1.5, 0, 99.8); g.fillStyle = '#2B2A28'; rrect(80, 720, 920, 70, 35); g.fill(); g.fillStyle = '#C8102E'; rrect(80, 720, 920 * v / 100, 70, 35); g.fill();
+    text(`STAY BRITISH ${v.toFixed(1)}%`, 110, 768, 'ui', 36, TXT); text('0.2%', 990, 830, 'mono', 26, DIM, { align: 'right' });
+    tag(t, 5, 6); yearTag(2013, t, 0.45); label('REFERENDUM · 92% TURNOUT', 84, 625, t, 0.8, { color: GOLD });
+    if (t > 4.6) versus('GB', 'AR', 'BRITAIN', 'ARGENTINA', t, 4.6, 1000); }; };
