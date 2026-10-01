@@ -46,9 +46,11 @@ const MAP = (() => {
     vec3 q = n * 60.;
     float nd = fb2(n * 9.), n2 = fb2(n * 4. + 7.);
     float fine = land > 0.01 ? fbm(n * detail) : .5;                       // terrain detail scaled to the camera altitude
-    vec3 lc = biome(degrees(lat), nd, n2) * (.72 + .55 * fine);
+    vec3 lc = biome(degrees(lat), nd, n2) * (.78 + .45 * fine);
+    lc = mix(lc, vec3(dot(lc, vec3(.33))), .25);                         // slightly muted so highlights pop
+    vec2 gr = vec2(dFdx(fine), dFdy(fine)); lc *= clamp(1. + (gr.y - gr.x) * 14., .55, 1.45);   // hill-shade from the detail field
     float deep = 1. - d.g;
-    vec3 wc = mix(vec3(.06,.32,.42), vec3(.02,.08,.18), smoothstep(0., 1., deep)) * (.92 + .16 * fb2(n * detail * .5 + time * .05));
+    vec3 wc = mix(vec3(.07,.40,.52), vec3(.015,.07,.17), smoothstep(0., .9, deep)) * (.92 + .16 * fb2(n * detail * .5 + time * .05));
     vec3 col = mix(wc, lc, land);
     float dif = clamp(dot(n, sun), 0., 1.), amb = .35;
     col *= amb + .85 * dif;
@@ -98,10 +100,17 @@ const MAP = (() => {
   function PV(p) { const d = add(p, cam.C, -1), z0 = dot(d, cam.f), vis = dot(p, add(cam.C, p, -1)) > 0 && z0 > 0, z = Math.max(z0, 0.002);
     return [W / 2 + dot(d, cam.r) / (z * cam.tanH * cam.asp) * W / 2, H / 2 - dot(d, cam.u) / (z * cam.tanH) * H / 2, vis, z0 > 0]; }
   const P = (lo, la) => PV(V3(lo, la));
+  // polygon projection: points behind the horizon slide onto the limb, then the ring is clipped at the near plane
+  function ringPath(v) { const L = Math.hypot(...cam.C), Cn = cam.C.map((q) => q / L), hz = 1 / L, sq = Math.sqrt(Math.max(0, 1 - hz * hz)); let anyVis = false;
+    const pts = v.map((p) => { const k = dot(p, Cn); if (k >= hz) { anyVis = true; return p; } const r = add(p, Cn, -k), rl = Math.hypot(...r) || 1; return add(Cn.map((q) => q * hz), r, sq / rl); });
+    if (!anyVis) return null; const cs = pts.map((p) => { const d = add(p, cam.C, -1); return [dot(d, cam.r), dot(d, cam.u), dot(d, cam.f)]; }), zn = 0.0005, out = [];
+    for (let i = 0; i < cs.length; i++) { const a = cs[i], b = cs[(i + 1) % cs.length], ai = a[2] >= zn, bi = b[2] >= zn; if (ai) out.push(a);
+      if (ai !== bi) { const u = (zn - a[2]) / (b[2] - a[2]); out.push([a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, zn]); } }
+    return out.map(([x, y, z]) => [W / 2 + x / (z * cam.tanH * cam.asp) * W / 2, H / 2 - y / (z * cam.tanH) * H / 2]); }
   function trace(pts, close) { g.beginPath(); let pen = false;
     for (const p of pts) { const [x, y, vis] = PV(p); if (!vis) { pen = false; continue; } pen ? g.lineTo(x, y) : g.moveTo(x, y); pen = true; } if (close) g.closePath(); }
   const near = (c, lim) => dot(c, V3(cam.lon, cam.lat)) > lim;
-  return { init, setCam, render, P, PV, V3, trace, near, get cam() { return cam; }, get rings() { return RINGS3; }, get mesh() { return MESH; }, canvas: cv };
+  return { init, setCam, render, P, PV, V3, trace, near, ringPath, get cam() { return cam; }, get rings() { return RINGS3; }, get mesh() { return MESH; }, canvas: cv };
 })();
 
 // ---------------------------------------------------------------- camera path
@@ -113,7 +122,7 @@ function camPath(t, keys, o = {}) { const k0 = keys[0]; let lon = k0[1], lat = k
     if (k[6]) hop += k[6] * Math.sin(Math.PI * q); }
   return { lon, lat, alt: Math.exp(la) * (1 + hop), tilt: ti, head: hd }; }
 // space + planet; returns the camera (for overlays)
-function earth(t, c, o = {}) { const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, '#02040A'); gr.addColorStop(1, '#070B16'); g.fillStyle = gr; g.fillRect(0, 0, W, H);
+function earth(t, c, o = {}) { const dr = o.drift ?? 1; c = { ...c, head: (c.head || 0) + dr * t * 1.6, alt: c.alt * Math.exp(-dr * 0.018 * t) }; const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, '#02040A'); gr.addColorStop(1, '#070B16'); g.fillStyle = gr; g.fillRect(0, 0, W, H);
   stars(t, 220, 77); MAP.setCam(c); if (!window.NOGL) MAP.render(t); g.imageSmoothingQuality = 'high'; g.drawImage(MAP.canvas, 0, 0, W, H);
   if (o.coast !== false) coasts(o);
   const sh = g.createLinearGradient(0, 0, 0, 820); sh.addColorStop(0, 'rgba(2,4,10,0.72)'); sh.addColorStop(1, 'rgba(2,4,10,0)'); g.fillStyle = sh; g.fillRect(0, 0, W, 820);
@@ -125,24 +134,27 @@ function coasts(o = {}) { const lim = Math.cos(Math.min(1.4, MAP.cam.alt * 1.2 +
   g.strokeStyle = o.borderCol || 'rgba(255,255,255,0.55)'; g.lineWidth = 2.2; g.setLineDash([10, 7]);
   for (const l of MAP.mesh) { if (!MAP.near(l[0], lim - 0.35) && !MAP.near(l[l.length - 1], lim - 0.35)) continue; MAP.trace(l, false); g.stroke(); } g.setLineDash([]); g.restore(); }
 // fill a country (topojson name) or a custom [[lon,lat],…] polygon
-function territory(who, col, a = 0.55, o = {}) { if (a <= 0) return; g.save(); g.globalAlpha = a; g.fillStyle = col;
+function territory(who, col, a = 0.55, o = {}) { if (a <= 0) return; if (o.zoomFade !== false) a *= 0.4 + 0.6 * clamp(MAP.cam.alt / 0.06); g.save(); g.globalAlpha = a; g.fillStyle = col;
   const rings = typeof who === 'string' ? MAP.rings.filter((r) => r.name === who).map((r) => r.v) : [who.map(([lo, la]) => MAP.V3(lo, la))];
-  const T = MAP.V3(MAP.cam.lon, MAP.cam.lat); g.beginPath();
-  for (const v of rings) { if (v.every((p) => p[0] * T[0] + p[1] * T[1] + p[2] * T[2] < 0.2)) continue; v.forEach((p, i) => { const [x, y] = MAP.PV(p); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.closePath(); }
-  g.fill('evenodd'); if (o.stroke) { g.globalAlpha = Math.min(1, a * 1.8); g.strokeStyle = o.stroke; g.lineWidth = o.lw || 4; g.shadowColor = o.stroke; g.shadowBlur = o.glow ?? 18; g.stroke(); } g.restore(); }
+  const path = new Path2D(); for (const v of rings) { const q = MAP.ringPath(v); if (!q || q.length < 3) continue; q.forEach(([x, y], i) => i ? path.lineTo(x, y) : path.moveTo(x, y)); path.closePath(); }
+  if (o.spot) { const sp = new Path2D(); sp.rect(-50, -50, W + 100, H + 100); sp.addPath(path); g.save(); g.globalAlpha = o.spot; g.fillStyle = 'rgba(2,6,14,1)'; g.fill(sp, 'evenodd'); g.restore(); }
+  g.fill(path, 'evenodd'); if (o.stroke) { g.globalAlpha = Math.min(1, a * 1.8); g.strokeStyle = o.stroke; g.lineWidth = o.lw || 4; g.shadowColor = o.stroke; g.shadowBlur = o.glow ?? 18; g.stroke(path); } g.restore(); }
 // great-circle arrow from A to B, drawn to progress p
 function arc3d(A, B, p, col = GOLD, o = {}) { if (p <= 0) return; const a = MAP.V3(...A), b = MAP.V3(...B), om = Math.acos(clamp(a[0] * b[0] + a[1] * b[1] + a[2] * b[2], -1, 1)), n = 80, pts = [];
   for (let i = 0; i <= n * clamp(p); i++) { const u = i / n, s = Math.sin(om) || 1, k1 = Math.sin((1 - u) * om) / s, k2 = Math.sin(u * om) / s, lift = 1 + (o.lift ?? 0.02) * Math.sin(Math.PI * u);
     pts.push(MAP.PV([(a[0] * k1 + b[0] * k2) * lift, (a[1] * k1 + b[1] * k2) * lift, (a[2] * k1 + b[2] * k2) * lift])); }
-  g.save(); g.strokeStyle = col; g.lineWidth = o.w || 7; g.lineCap = 'round'; g.shadowColor = col; g.shadowBlur = 16; if (o.dash) g.setLineDash(o.dash);
-  g.beginPath(); pts.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.stroke(); g.setLineDash([]);
+  if ((o.a ?? 1) <= 0) return; g.save(); g.globalAlpha = o.a ?? 1; g.strokeStyle = col; g.lineWidth = o.w || 7; g.lineCap = 'round'; g.shadowColor = col; g.shadowBlur = 16; if (o.dash) g.setLineDash(o.dash);
+  g.beginPath(); let pen = false; pts.forEach(([x, y, v]) => { if (!v) { pen = false; return; } pen ? g.lineTo(x, y) : g.moveTo(x, y); pen = true; }); g.stroke(); g.setLineDash([]);
+  if (!pts.at(-1)[2]) { g.restore(); return; }
   if (pts.length > 2) { const [x1, y1] = pts.at(-1), [x0, y0] = pts.at(-3), an = Math.atan2(y1 - y0, x1 - x0); g.fillStyle = col; g.beginPath(); g.moveTo(x1 + Math.cos(an) * 22, y1 + Math.sin(an) * 22);
     g.lineTo(x1 + Math.cos(an + 2.5) * 22, y1 + Math.sin(an + 2.5) * 22); g.lineTo(x1 + Math.cos(an - 2.5) * 22, y1 + Math.sin(an - 2.5) * 22); g.fill(); }
   g.restore(); }
 // a place label with a dot, anchored on the map
 function place(lon, lat, name, t, tIn, o = {}) { const [x, y, vis] = MAP.P(lon, lat); if (!vis || t < tIn) return; const s = spring(t - tIn, 300, 18);
   g.save(); g.fillStyle = o.color || TXT; g.beginPath(); g.arc(x, y, 8 * s, 0, 6.283); g.fill(); g.strokeStyle = 'rgba(0,0,0,0.6)'; g.lineWidth = 3; g.stroke();
-  if (name) { g.globalAlpha = clamp(s); const dx = o.left ? -20 : 20; text(name, x + dx, y + (o.dy ?? 10), 'ui', o.size || 34, o.color || TXT, { align: o.left ? 'right' : 'left', shadow: true }); } g.restore(); return [x, y]; }
+  if (name) { g.globalAlpha = clamp(s); const fs = o.size || 40; g.font = F.ui(fs); const tw = g.measureText(name).width, dx = o.left ? -24 - tw - 28 : 24, y0 = y - fs * 0.62 + (o.dy ?? 0);
+    g.fillStyle = 'rgba(6,10,18,0.78)'; rrect(x + dx, y0 - 8, tw + 28, fs + 16, (fs + 16) / 2); g.fill(); g.strokeStyle = o.color || 'rgba(255,255,255,0.35)'; g.lineWidth = 2; g.stroke();
+    text(name, x + dx + 14, y0 + fs * 0.82, 'ui', fs, o.color || TXT); } g.restore(); return [x, y]; }
 
 // ---------------------------------------------------------------- flags (drawn, waving)
 function flagBase(code, w, h, X = g) { const F = (c, x, y, ww, hh) => { X.fillStyle = c; X.fillRect(x, y, ww, hh); };
@@ -200,7 +212,7 @@ function flagPin(lon, lat, code, t, tIn, o = {}) { const [x, y, vis] = MAP.P(lon
   const ph = (o.pole || 110) * s; g.save(); g.strokeStyle = '#EDE6D8'; g.lineWidth = 5; g.beginPath(); g.moveTo(x, y); g.lineTo(x, y - ph); g.stroke();
   g.fillStyle = 'rgba(0,0,0,0.5)'; g.beginPath(); g.ellipse(x, y, 14, 5, 0, 0, 6.283); g.fill(); g.restore();
   const w = (o.w || 130) * s; flag(code, x + w / 2 + 2, y - ph + w * 0.3, w, t, { s: 1 });
-  if (o.label) text(o.label, x + (o.left ? -16 : 16), y + 44, 'ui', o.size || 36, TXT, { align: o.left ? 'right' : 'left', shadow: true }); }
+  if (o.label) { const fs = o.size || 36; g.font = F.ui(fs); const tw = g.measureText(o.label).width; mapLabel(o.label, o.left ? x - tw - 44 : x + 16, y + 54, TXT, fs); } }
 
 // framed real photo (only if CI found one) with a caption strip
 function photoCard(t, id, x, y, w, h, tIn, cap) { if (!hasPhoto(id) || t < tIn) return false; const s = spring(t - tIn, 200, 18);
@@ -220,3 +232,17 @@ function islandPoly(lon, lat, rxKm, ryKm, rot = 0, seed = 1) { const r = rng(see
 function line3d(pts, p, col = GOLD, o = {}) { const n = Math.max(2, Math.ceil(pts.length * clamp(p))); g.save(); g.strokeStyle = col; g.lineWidth = o.w || 5; g.shadowColor = col; g.shadowBlur = o.glow ?? 10;
   if (o.dash) g.setLineDash(o.dash); g.beginPath(); let pen = false; for (let i = 0; i < n; i++) { const [x, y, v] = MAP.P(...pts[i]); if (!v) { pen = false; continue; } pen ? g.lineTo(x, y) : g.moveTo(x, y); pen = true; } g.stroke(); g.restore(); }
 const densify = (pts, k = 20) => { const out = []; for (let i = 0; i < pts.length - 1; i++) for (let j = 0; j < k; j++) { const u = j / k; out.push([lerp(pts[i][0], pts[i + 1][0], u), lerp(pts[i][1], pts[i + 1][1], u)]); } out.push(pts.at(-1)); return out; };
+
+// documentary inset: a framed detail map that floats over the moving globe (fn draws in local coords 0..w × 0..h)
+function inset(t, tIn, title, fn, o = {}) { const s = spring(t - tIn, 220, 20); if (s <= 0.01) return; const x = o.x ?? 60, y = o.y ?? 660, w = o.w ?? 960, h = o.h ?? 560;
+  g.save(); g.globalAlpha = clamp(s * 1.4); g.translate(x + w / 2, y + h / 2); g.scale(0.9 + 0.1 * s, 0.9 + 0.1 * s); g.translate(-w / 2, -h / 2);
+  g.shadowColor = 'rgba(0,0,0,0.7)'; g.shadowBlur = 50; g.fillStyle = '#0B1520'; rrect(0, 0, w, h, 26); g.fill(); g.shadowBlur = 0;
+  g.save(); rrect(0, 0, w, h, 26); g.clip(); const z = 1 + 0.06 * (t - tIn) / 6; g.translate(w / 2, h / 2); g.scale(z, z); g.translate(-w / 2, -h / 2); fn(w, h); g.restore();
+  g.strokeStyle = 'rgba(255,255,255,0.25)'; g.lineWidth = 3; rrect(0, 0, w, h, 26); g.stroke();
+  if (title) { g.font = F.mono(24); g.letterSpacing = '4px'; const tw = g.measureText(title).width + 40; g.letterSpacing = '0px'; g.fillStyle = GOLD; rrect(24, -22, tw, 44, 22); g.fill(); text(title, 44, 9, 'mono', 24, BG, { ls: 4 }); }
+  g.restore(); }
+// flat-map helpers for insets
+function waterBG(w, h, t, col = '#123A5A') { g.fillStyle = col; g.fillRect(0, 0, w, h); g.strokeStyle = 'rgba(160,210,240,0.10)'; g.lineWidth = 2;
+  for (let k = 0; k < 26; k++) { const y = k * 24 + 8, x0 = ((t * 30 + k * 71) % 160) - 160; for (let x = x0; x < w; x += 160) { g.beginPath(); g.moveTo(x, y); g.lineTo(x + 50, y); g.stroke(); } } }
+function mapLabel(str, x, y, col = TXT, size = 30, o = {}) { g.font = F.ui(size); const tw = g.measureText(str).width; g.fillStyle = 'rgba(6,10,18,0.72)'; rrect(x - (o.center ? tw / 2 + 14 : 0), y - size * 0.95, tw + 28, size * 1.35, size * 0.67); g.fill();
+  text(str, x + (o.center ? 0 : 14), y, 'ui', size, col, { align: o.center ? 'center' : 'left' }); }
