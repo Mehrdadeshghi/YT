@@ -69,5 +69,10 @@
    "id": "lead",
    "article": "Hubble Deep Field"
   }
- ]
+ ],
+ "cta": {
+  "q": "Are we alone out there?",
+  "a": "YES",
+  "b": "NO"
+ }
 }

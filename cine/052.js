@@ -35,4 +35,4 @@ VIS[3] = (K) => { K(0.4, 'whoosh', 1); K(1.3, 'hit', 1.3); K(1.35, 'mute', 1, 0.
     g.strokeStyle = 'rgba(255,255,255,0.4)'; g.lineWidth = 2; g.beginPath(); g.moveTo(990, GR); g.lineTo(990, GR - 11 * KM); g.stroke(); for (let k = 0; k <= 10; k++) g.fillRect(980, GR - k * KM, 20, 2);
     if (t > 1.8) { const p = ease((t - 1.8) / 0.5); g.fillStyle = 'rgba(255,194,61,0.18)'; g.fillRect(940, GR - 10 * KM, 100, 5 * KM * p); g.strokeStyle = GOLD; g.lineWidth = 5; g.strokeRect(940, GR - 10 * KM, 100, 5 * KM * p); }
     flash(t, 1.3, 0.6, 0.15, '#FFF2D0'); tag(t, 3, 4); rgbPop('IN THE AIR', 80, 520, fit('IN THE AIR', 'disp', 150, 820), TXT, t, 1.3); label('5–10 KM UP', 84, 585, t, 1.8, { color: GOLD, size: 36 });
-    stampText('NO CRATER', 540, 1640, t, 3.2, { size: 96, rot: -0.06 }); }; };
+    stampText('NO CRATER', 540, 1090, t, 3.2, { size: 96, rot: -0.06 }); }; };

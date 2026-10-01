@@ -70,5 +70,10 @@
    "article": "Tunguska event"
   }
  ],
- "lat0": 61
+ "lat0": 61,
+ "cta": {
+  "q": "Asteroid or comet?",
+  "a": "ASTEROID",
+  "b": "COMET"
+ }
 }

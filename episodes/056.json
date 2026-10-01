@@ -80,5 +80,10 @@
    "article": "Elephant's Foot (Chernobyl)"
   }
  ],
- "lat0": 51
+ "lat0": 51,
+ "cta": {
+  "q": "Would you visit Chernobyl?",
+  "a": "YES",
+  "b": "NO"
+ }
 }

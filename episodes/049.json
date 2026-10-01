@@ -79,5 +79,10 @@
    "id": "lead",
    "article": "1883 eruption of Krakatoa"
   }
- ]
+ ],
+ "cta": {
+  "q": "Would you live near a volcano?",
+  "a": "YES",
+  "b": "NO"
+ }
 }

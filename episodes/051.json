@@ -80,5 +80,10 @@
    "article": "Challenger Deep"
   }
  ],
- "lat0": 11
+ "lat0": 11,
+ "cta": {
+  "q": "Would you dive down there?",
+  "a": "YES",
+  "b": "NO"
+ }
 }

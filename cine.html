@@ -22,7 +22,7 @@ const W = 1080, H = 1920, BEAT = 0.5, PRE = 0.5, FQ = 60;
 const c = document.getElementById('c'), g = c.getContext('2d');
 const BG = '#0C0B0A', TXT = '#F4EEE3', DIM = '#8C857A', GOLD = '#FFC23D', RED = '#FF3B30',
       PANEL = '#141311', EDGE = '#2C2925', PAPER = '#EDE6D8', PINK = '#1A1714';
-let DUR = 44, SCENES = [], WORLD = [], EP = null;
+let DUR = 44, SCENES = [], WORLD = [], EP = null, CTA = null;
 
 // ---------- math ----------
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
@@ -222,6 +222,10 @@ function build(ep, voice) {
     t += dur; });
   const last = SCENES.at(-1), pad = (2 - (t % 2)) % 2; last.to += pad; t += pad;
   DUR = t; SCENES.slice(1).forEach((s) => cue(s.from - (ep.transition === 'whip' ? 0.12 : 0.2), 'whoosh', ep.transition === 'whip' ? 1 : 0.8));
+  // engagement: a subscribe nudge mid-video, a comment question on the last scene (no VO, so the loop stays seamless)
+  const mid = SCENES.find((sc) => sc.from <= DUR * 0.45 && DUR * 0.45 < sc.to) || SCENES[Math.floor(SCENES.length / 2)];
+  CTA = Object.assign({ q: 'Did you know this?', a: 'YES', b: 'NO' }, ep.cta || {}, { subAt: mid.from + 1.0, comAt: last.from + 1.0, end: DUR });
+  if (ep.cta !== false) { cue(CTA.subAt, 'pop', 0.6, 600); cue(CTA.subAt + 0.75, 'click', 0.9); cue(CTA.comAt, 'pop', 0.8, 800); }
   CUES.sort((a, b) => a.t - b.t);
   window.DUR = DUR; window.EP = { ep: ep.ep, prog: ep.prog || 0, title: ep.title, dur: DUR, openDur, look: 'cine', mood: ep.mood || 'clock' };
 }
@@ -250,7 +254,32 @@ function draw(t) {
     const gr = g.createLinearGradient(x - 220, 0, x + 220, 0); gr.addColorStop(0, 'rgba(255,230,190,0)'); gr.addColorStop(0.5, 'rgba(255,230,190,0.10)'); gr.addColorStop(1, 'rgba(255,230,190,0)');
     g.setTransform(1, 0, -0.35, 1, 0, 0); g.fillStyle = gr; g.fillRect(x - 220 + 0, 0, 440 + 700, H); g.restore(); }
   g.drawImage(VIG, 0, 0);
+  if (CTA && EP.cta !== false) engage(t);
   g.drawImage(GRAIN[Math.floor(t * 15) % 4], 0, 0, W, H);
+}
+function bell(x, y, s, rot) { g.save(); g.translate(x, y); g.rotate(rot); g.scale(s, s); g.fillStyle = TXT; g.beginPath(); g.moveTo(-22, 14); g.quadraticCurveTo(-20, -24, 0, -26); g.quadraticCurveTo(20, -24, 22, 14); g.lineTo(28, 20); g.lineTo(-28, 20); g.closePath(); g.fill(); g.beginPath(); g.arc(0, 26, 7, 0, 6.283); g.fill(); g.restore(); }
+function cursorHand(x, y, press) { g.save(); g.translate(x, y); g.scale(1 - 0.12 * press, 1 - 0.12 * press); g.fillStyle = '#FFFFFF'; g.strokeStyle = '#111'; g.lineWidth = 4;
+  g.beginPath(); g.moveTo(0, 0); g.lineTo(0, 58); g.lineTo(14, 46); g.lineTo(26, 72); g.lineTo(36, 67); g.lineTo(24, 42); g.lineTo(42, 42); g.closePath(); g.fill(); g.stroke(); g.restore(); }
+function engage(t) {
+  g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1;
+  const ls = t - CTA.subAt;                                   // ---- subscribe nudge (≈2.8 s)
+  if (ls > 0 && ls < 2.9) { const s = spring(ls, 260, 18), out = clamp((ls - 2.5) / 0.4), y = 1480 + (1 - s) * 420 + out * 420, on = ls > 0.75;
+    g.save(); g.globalAlpha = 1 - out; g.translate(540, y); const w = on ? 470 : 430;
+    g.shadowColor = 'rgba(0,0,0,0.5)'; g.shadowBlur = 30; rrect(-w / 2, -46, w, 92, 46); g.fillStyle = on ? '#2B2A28' : '#FF0033'; g.fill(); g.shadowBlur = 0;
+    text(on ? 'SUBSCRIBED' : 'SUBSCRIBE', on ? -40 : 0, 16, 'ui', 44, TXT, { align: 'center' });
+    if (on) { bell(170, -4, 0.9, Math.sin((ls - 0.75) * 30) * 0.4 * Math.exp(-(ls - 0.75) * 3)); }
+    const cx = lerp(380, 60, ease(ls / 0.6)), cy = lerp(260, 10, ease(ls / 0.6)), pr = ls > 0.65 && ls < 0.9 ? 1 : 0; if (ls < 1.6) cursorHand(cx, cy, pr);
+    g.restore(); }
+  const lc = t - CTA.comAt;                                   // ---- comment question (last scene)
+  if (lc > 0) { const s = spring(lc, 220, 18), y = 1400 + (1 - s) * 520; g.save(); g.translate(0, y);
+    g.shadowColor = 'rgba(0,0,0,0.55)'; g.shadowBlur = 36; rrect(70, 0, 860, 200, 34); g.fillStyle = 'rgba(244,238,227,0.96)'; g.fill(); g.shadowBlur = 0;
+    g.fillStyle = GOLD; rrect(104, 28, 58, 46, 13); g.fill(); g.beginPath(); g.moveTo(118, 72); g.lineTo(112, 90); g.lineTo(138, 72); g.fill();
+    g.fillStyle = BG; [120, 133, 146].forEach((x) => { g.beginPath(); g.arc(x, 51, 4.5, 0, 6.283); g.fill(); });
+    const q = CTA.q, qs = fit(q, 'ui', 46, 720); text(q, 180, 68, 'ui', qs, BG);
+    [[CTA.a, 108], [CTA.b, 108 + 40 + Math.max(200, (g.font = F.ui(36), g.measureText(CTA.a).width + 80))]].forEach(([lab, x], k) => {
+      const p = 1 + 0.05 * Math.max(0, Math.sin((lc - 0.6 - k * 0.25) * 5)) * (lc > 0.6); g.font = F.ui(36); const w = Math.max(200, g.measureText(lab).width + 80);
+      g.save(); g.translate(x + w / 2, 142); g.scale(p, p); rrect(-w / 2, -32, w, 64, 32); g.fillStyle = k ? '#2B2A28' : GOLD; g.fill(); text(lab, 0, 13, 'ui', 36, k ? TXT : BG, { align: 'center' }); g.restore(); });
+    g.restore(); }
 }
 window.seek = (t) => { draw(t); return true; };
 async function boot() {

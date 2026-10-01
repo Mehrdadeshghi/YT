@@ -80,5 +80,10 @@
    "article": "Darvaza gas crater"
   }
  ],
- "lat0": 40
+ "lat0": 40,
+ "cta": {
+  "q": "Would you visit it?",
+  "a": "YES",
+  "b": "NO"
+ }
 }

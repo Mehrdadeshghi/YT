@@ -80,5 +80,10 @@
    "article": "Tsar Bomba"
   }
  ],
- "lat0": 73
+ "lat0": 73,
+ "cta": {
+  "q": "Did you know it was half power?",
+  "a": "YES",
+  "b": "NO"
+ }
 }

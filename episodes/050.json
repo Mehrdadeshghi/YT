@@ -72,5 +72,10 @@
    "id": "lead",
    "article": "Pale Blue Dot"
   }
- ]
+ ],
+ "cta": {
+  "q": "Did you spot the dot first?",
+  "a": "YES",
+  "b": "NO"
+ }
 }
