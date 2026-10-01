@@ -5,18 +5,18 @@ const BLOBS = (() => { const r = rng(60), out = []; for (let i = 0; i < 22; i++)
 function blob(x, y, rx, ry, rot, seed, col, a = 1) { const r = rng(seed); g.save(); g.globalAlpha = a; g.fillStyle = col; g.beginPath();
   for (let i = 0; i < 12; i++) { const an = i / 12 * 6.283, k = 0.75 + 0.35 * r(); g.lineTo(x + Math.cos(an + rot) * rx * k, y + Math.sin(an + rot) * ry * k); } g.closePath(); g.fill();
   g.strokeStyle = 'rgba(255,255,255,0.85)'; g.lineWidth = 2.5; g.setLineDash([7, 5]); g.stroke(); g.setLineDash([]); g.restore(); }
-function bg(t, keys, dim = 0.35) { earth(t, camPath(t, keys, { k: 3, d: 3.4 })); territory('Netherlands', NLC, 0.6, { stroke: '#FFD0A0', glow: 8 }); territory('Belgium', BEC, 0.55, { stroke: '#FFC2BE', glow: 8 });
+function bg(t, keys, dim = 0.35) { earth(t, camPath(t, keys, { k: 3, d: 3.4 })); territory('Netherlands', NLC, 0.38, { stroke: '#FFD0A0', glow: 8 }); territory('Belgium', BEC, 0.34, { stroke: '#FFC2BE', glow: 8 });
   if (dim) { g.fillStyle = `rgba(2,6,14,${dim})`; g.fillRect(0, 0, W, H); } }
 function town(w, h, t) { g.fillStyle = '#2E3A2A'; g.fillRect(0, 0, w, h); g.fillStyle = 'rgba(255,127,30,0.42)'; g.fillRect(0, 0, w, h);
   const r = rng(61); g.strokeStyle = 'rgba(240,230,210,0.35)'; g.lineWidth = 5; for (let i = 0; i < 7; i++) { g.beginPath(); g.moveTo(r() * w, 0); g.bezierCurveTo(r() * w, h * 0.4, r() * w, h * 0.7, r() * w, h); g.stroke(); }
   g.fillStyle = 'rgba(20,16,12,0.35)'; for (let i = 0; i < 120; i++) g.fillRect(r() * w, r() * h, 8 + r() * 14, 8 + r() * 14); }
 VIS.open = (K) => { K(0.2, 'whoosh', 0.9); K(2.2, 'thump', 0.9);
   return (t) => { earth(t, camPath(t, [[0, 0, 40, 2.8, 0, 0], [0.15, BL[0], BL[1], 0.03, 45, 0]], { k: 10, d: 6.4 }));
-    territory('Netherlands', NLC, 0.6, { stroke: '#FFD0A0' }); territory('Belgium', BEC, 0.55, { stroke: '#FFC2BE' }); const [x, y] = MAP.P(...BL); shockRing(x, y, t % 1 + 1, 1, 160, '255,255,255', 2);
+    territory('Netherlands', NLC, 0.45, { stroke: '#FFD0A0' }); territory('Belgium', BEC, 0.4, { stroke: '#FFC2BE' }); const [x, y] = MAP.P(...BL); shockRing(x, y, t % 1 + 1, 1, 160, '255,255,255', 2);
     tag(t); hook(t, EP.hook, 480); }; };
 VIS[0] = (K) => { K(0.6, 'land', 0.8); K(1.6, 'pop', 0.8, 600); K(2.3, 'pop', 0.8, 800);
   return (t) => { bg(t, [[0, BL[0], BL[1], 0.03, 45, 0], [0.1, BL[0], BL[1] - 0.02, 0.02, 50, 12]], 0);
-    place(...BL, 'BAARLE', t, 0.6, { color: GOLD, size: 44 }); place(5.2, 51.62, 'NETHERLANDS', t, 1.6, { color: '#FFD0A0', size: 40 }); place(4.75, 51.28, 'BELGIUM', t, 2.3, { color: '#FFC2BE', size: 40, left: true });
+    place(...BL, 'BAARLE', t, 0.6, { color: GOLD, size: 44 }); place(4.98, 51.53, 'NETHERLANDS', t, 1.6, { color: '#FFD0A0', size: 40 }); place(4.82, 51.37, 'BELGIUM', t, 2.3, { color: '#FFC2BE', size: 40 });
     tag(t, 0, 4); rgbPop('BAARLE', 80, 560, 170, TXT, t, 0.45); }; };
 VIS[1] = (K) => { for (let i = 0; i < 22; i++) K(0.5 + i * 0.07, 'pop', 0.35, 500 + i * 20); for (let i = 0; i < 7; i++) K(3.6 + i * 0.12, 'pop', 0.5, 900);
   const IN = [0, 0, 0, 0, 0, 0, 1];
@@ -46,6 +46,6 @@ VIS[3] = (K) => { K(0.6, 'tick', 0.8); K(1.8, 'beep', 0.8); K(2.6, 'swish', 0.8)
       g.strokeStyle = 'rgba(0,0,0,0.25)'; g.lineWidth = 2; for (let x = 0; x < w; x += 60) { g.beginPath(); g.moveTo(x, 0); g.lineTo(x, h); g.stroke(); }
       g.save(); g.strokeStyle = '#FFFFFF'; g.lineWidth = 6; g.setLineDash([18, 12]); g.beginPath(); g.moveTo(w / 2, 0); g.lineTo(w / 2, h); g.stroke(); g.restore();
       const table = (x, y) => { g.fillStyle = '#6E5236'; g.beginPath(); g.arc(x, y, 60, 0, 6.283); g.fill(); g.strokeStyle = '#2A1C10'; g.lineWidth = 4; g.stroke(); }; table(240, 270); table(w - 240, 270);
-      const mv = ease((t - 2.6) / 1.0); G.forEach(([x, y], i) => { const xx = lerp(x, x + (w - 480), mv) + Math.sin(t * 3 + i) * 3; g.fillStyle = ['#E8D9A8', '#C9A884', '#EDE6D8', '#B0C8FF'][i]; g.beginPath(); g.arc(xx, y, 26, 0, 6.283); g.fill(); g.strokeStyle = 'rgba(0,0,0,0.5)'; g.lineWidth = 3; g.stroke(); });
+      const mv = ease((t - 2.6) / 1.0); G.forEach(([x, y], i) => { const xx = lerp(x, x + (w - 480), mv) + Math.sin(t * 3 + i) * 3 + (t > 4.5 ? Math.sin(t * 7 + i * 1.7) * 8 : 0); g.fillStyle = ['#E8D9A8', '#C9A884', '#EDE6D8', '#B0C8FF'][i]; g.beginPath(); g.arc(xx, y, 26, 0, 6.283); g.fill(); g.strokeStyle = 'rgba(0,0,0,0.5)'; g.lineWidth = 3; g.stroke(); });
       mapLabel('NETHERLANDS', 30, h - 24, '#FFD0A0', 26); mapLabel('BELGIUM', w - 180, h - 24, '#FFC2BE', 26); clockFace(w - 90, 90, 60, 0, ramp(t, 0.3, 1.5, 50, 60), {}); });
     if (t > 1.8) chip('NL: CLOSING TIME', 80, 470, t, 1.8, { size: 32, align: 'left', bg: NLC, fg: BG }); if (t > 3.6) chip('BE: STILL OPEN', 80, 570, t, 3.6, { size: 32, align: 'left', bg: '#FF8A80', fg: BG }); }; };

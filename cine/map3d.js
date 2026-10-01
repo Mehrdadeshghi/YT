@@ -21,7 +21,7 @@ const MAP = (() => {
   float fb2(vec3 p){ return .65 * vn(p) + .35 * vn(p * 2.1); }
   vec3 biome(float lat, float n, float n2){
     float a = abs(lat);
-    vec3 trop = vec3(.13,.27,.12), sav = vec3(.42,.42,.22), des = vec3(.70,.58,.38), tem = vec3(.25,.36,.18), bor = vec3(.16,.25,.15), tun = vec3(.42,.40,.33), ice = vec3(.92,.94,.97);
+    vec3 trop = vec3(.13,.27,.12), sav = vec3(.42,.42,.22), des = vec3(.70,.58,.38), tem = vec3(.20,.42,.17), bor = vec3(.14,.30,.15), tun = vec3(.42,.40,.33), ice = vec3(.92,.94,.97);
     float j = (n - .5) * 9.;
     vec3 c = mix(trop, sav, smoothstep(10., 18., a + j));
     c = mix(c, des, smoothstep(18., 24., a + j) * (1. - smoothstep(32., 38., a + j)) * smoothstep(.35, .6, n2));
@@ -47,7 +47,7 @@ const MAP = (() => {
     float nd = fb2(n * 9.), n2 = fb2(n * 4. + 7.);
     float fine = land > 0.01 ? fbm(n * detail) : .5;                       // terrain detail scaled to the camera altitude
     vec3 lc = biome(degrees(lat), nd, n2) * (.78 + .45 * fine);
-    lc = mix(lc, vec3(dot(lc, vec3(.33))), .25);                         // slightly muted so highlights pop
+    lc = mix(lc, vec3(dot(lc, vec3(.33))), .12);                         // slightly muted so highlights pop
     vec2 gr = vec2(dFdx(fine), dFdy(fine)); lc *= clamp(1. + (gr.y - gr.x) * 14., .55, 1.45);   // hill-shade from the detail field
     float deep = 1. - d.g;
     vec3 wc = mix(vec3(.07,.40,.52), vec3(.015,.07,.17), smoothstep(0., .9, deep)) * (.92 + .16 * fb2(n * detail * .5 + time * .05));

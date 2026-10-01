@@ -44,5 +44,5 @@ VIS[5] = (K) => { K(0.45, 'pop', 0.8, 500); for (let i = 0; i < 12; i++) K(1.0 +
     territory(ISL, '#C8102E', 0.55 + 0.15 * Math.sin(t * 3), { stroke: '#FFFFFF', spot: 0.45 });
     const v = ramp(t, 1.0, 1.5, 0, 99.8), ba = 1 - clamp((t - 4.2) / 0.4); g.save(); g.globalAlpha = ba; g.fillStyle = '#2B2A28'; rrect(80, 720, 920, 70, 35); g.fill(); g.fillStyle = '#C8102E'; rrect(80, 720, 920 * v / 100, 70, 35); g.fill();
     text(`STAY BRITISH ${v.toFixed(1)}%`, 110, 768, 'ui', 36, TXT); text('0.2%', 990, 830, 'mono', 26, DIM, { align: 'right' }); g.restore();
-    tag(t, 5, 6); yearTag(2013, t, 0.45); label('REFERENDUM · 92% TURNOUT', 84, 625, t, 0.8, { color: GOLD });
-    if (t > 4.6) versus('GB', 'AR', 'BRITAIN', 'ARGENTINA', t, 4.6, 800); }; };
+    tag(t, 5, 6); g.save(); g.globalAlpha = 1 - clamp((t - 4.2) / 0.4); yearTag(2013, t, 0.45); label('REFERENDUM · 92% TURNOUT', 84, 625, t, 0.8, { color: GOLD }); g.restore();
+    if (t > 4.6) versus('GB', 'AR', 'BRITAIN', 'ARGENTINA', t, 4.6, 600); }; };
