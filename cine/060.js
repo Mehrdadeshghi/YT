@@ -16,7 +16,7 @@ VIS.open = (K) => { K(0.2, 'whoosh', 0.9); K(2.2, 'thump', 0.9);
     tag(t); hook(t, EP.hook, 480); }; };
 VIS[0] = (K) => { K(0.6, 'land', 0.8); K(1.6, 'pop', 0.8, 600); K(2.3, 'pop', 0.8, 800);
   return (t) => { bg(t, [[0, BL[0], BL[1], 0.03, 45, 0], [0.1, BL[0], BL[1] - 0.02, 0.02, 50, 12]], 0);
-    place(...BL, 'BAARLE', t, 0.6, { color: GOLD, size: 44 }); place(4.98, 51.53, 'NETHERLANDS', t, 1.6, { color: '#FFD0A0', size: 40 }); place(4.82, 51.37, 'BELGIUM', t, 2.3, { color: '#FFC2BE', size: 40 });
+    place(...BL, 'BAARLE', t, 0.6, { color: GOLD, size: 44 }); place(5.5, 52.0, 'NETHERLANDS', t, 1.6, { color: '#FFD0A0', size: 40 }); place(4.3, 51.05, 'BELGIUM', t, 2.3, { color: '#FFC2BE', size: 40, left: true });
     tag(t, 0, 4); rgbPop('BAARLE', 80, 560, 170, TXT, t, 0.45); }; };
 VIS[1] = (K) => { for (let i = 0; i < 22; i++) K(0.5 + i * 0.07, 'pop', 0.35, 500 + i * 20); for (let i = 0; i < 7; i++) K(3.6 + i * 0.12, 'pop', 0.5, 900);
   const IN = [0, 0, 0, 0, 0, 0, 1];

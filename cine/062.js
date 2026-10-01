@@ -3,7 +3,7 @@ const PR = [-123.055, 48.985], CAC = '#D80621', USC = '#3C6BD8';
 const PRP = [[-123.093, 49.0], [-123.022, 49.0], [-123.025, 48.985], [-123.035, 48.975], [-123.05, 48.967], [-123.07, 48.968], [-123.085, 48.975], [-123.093, 48.99]];
 const ROUTE = densify([[-123.064, 49.0], [-123.07, 49.02], [-123.06, 49.05], [-122.98, 49.07], [-122.88, 49.08], [-122.79, 49.06], [-122.76, 49.02], [-122.756, 49.002], [-122.75, 48.985]], 12);
 const P49 = densify([[-123.5, 49], [-122.3, 49]], 40);
-function base(t, keys, o = {}) { earth(t, camPath(t, keys, o)); territory('Canada', CAC, 0.3, {}); territory('United States of America', USC, 0.3, {});
+function base(t, keys, o = {}) { earth(t, camPath(t, keys, o), { minAlt: 0.028 }); territory('Canada', CAC, 0.3, {}); territory('United States of America', USC, 0.3, {});
   territory(PRP, '#4A5A38', 1, {}); territory(PRP, USC, 0.7, { stroke: '#B0C8FF', glow: 16 }); }
 function bus(x, y, s, dir = 1) { g.save(); g.translate(x, y); g.scale(s * dir, s); g.fillStyle = '#F6B40E'; rrect(-60, -30, 120, 50, 10); g.fill(); g.fillStyle = '#1A1714'; for (let i = 0; i < 4; i++) g.fillRect(-50 + i * 26, -22, 18, 16);
   g.beginPath(); g.arc(-34, 22, 11, 0, 6.283); g.arc(34, 22, 11, 0, 6.283); g.fill(); g.restore(); }

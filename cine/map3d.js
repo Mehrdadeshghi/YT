@@ -3,6 +3,10 @@
 // One equirectangular data texture is generated from the topojson at boot: R = land coverage, G = shallow-water halo.
 // Land colour (biomes by latitude) and terrain detail are procedural, so the coast stays crisp at any zoom.
 // Vector overlays (coasts, borders, territory fills, arcs, pins, flags) are projected in JS with the same camera.
+const EARTH = { world: null, tile: null, tb: null };
+async function loadEarth(ep) { const im = (src) => new Promise((res) => { const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = src; });
+  EARTH.world = await im('assets/earth/world.jpg'); const meta = await fetch('assets/earth/tiles.json').then((r) => r.ok ? r.json() : {}).catch(() => ({}));
+  if (meta[ep]) { EARTH.tile = await im(`assets/earth/${ep}.jpg`); const m = meta[ep]; EARTH.tb = [m.lon0, m.lon1, m.lat0, m.lat1]; } }
 const MAP = (() => {
   const TW = 8192, TH = 4096;
   const GS = 0.5, cv = document.createElement('canvas'); cv.width = W * GS; cv.height = H * GS;
@@ -12,50 +16,39 @@ const MAP = (() => {
   in vec2 p; out vec2 v; void main(){ v = p; gl_Position = vec4(p, 0., 1.); }`;
   const FS = `#version 300 es
   precision highp float; in vec2 v; out vec4 o;
-  uniform sampler2D tex; uniform vec3 C, F, R, Up; uniform float tanH, asp, detail, time;
+  uniform sampler2D tex, earth, tile; uniform vec4 tb; uniform float hasTile;
+  uniform vec3 C, F, R, Up; uniform float tanH, asp, detail, time;
   float h3(vec3 p){ p = fract(p * 0.3183099 + .1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
   float vn(vec3 x){ vec3 i = floor(x), f = fract(x); f = f*f*(3.-2.*f);
     return mix(mix(mix(h3(i), h3(i+vec3(1,0,0)), f.x), mix(h3(i+vec3(0,1,0)), h3(i+vec3(1,1,0)), f.x), f.y),
                mix(mix(h3(i+vec3(0,0,1)), h3(i+vec3(1,0,1)), f.x), mix(h3(i+vec3(0,1,1)), h3(i+vec3(1,1,1)), f.x), f.y), f.z); }
-  float fbm(vec3 p){ float a = .5, s = 0.; for (int k = 0; k < 4; k++){ s += a * vn(p); p *= 2.03; a *= .5; } return s; }
   float fb2(vec3 p){ return .65 * vn(p) + .35 * vn(p * 2.1); }
-  vec3 biome(float lat, float n, float n2){
-    float a = abs(lat);
-    vec3 trop = vec3(.13,.27,.12), sav = vec3(.42,.42,.22), des = vec3(.70,.58,.38), tem = vec3(.20,.42,.17), bor = vec3(.14,.30,.15), tun = vec3(.42,.40,.33), ice = vec3(.92,.94,.97);
-    float j = (n - .5) * 9.;
-    vec3 c = mix(trop, sav, smoothstep(10., 18., a + j));
-    c = mix(c, des, smoothstep(18., 24., a + j) * (1. - smoothstep(32., 38., a + j)) * smoothstep(.35, .6, n2));
-    c = mix(c, tem, smoothstep(32., 40., a + j));
-    c = mix(c, bor, smoothstep(50., 56., a + j));
-    c = mix(c, tun, smoothstep(60., 66., a + j));
-    c = mix(c, ice, smoothstep(70., 76., a + j * .6));
-    if (lat < -60.) c = ice;
-    return c; }
   void main(){
     vec3 rd = normalize(F + v.x * tanH * asp * R + v.y * tanH * Up);
     float b = dot(C, rd), c = dot(C, C) - 1., disc = b * b - c;
-    vec3 sun = normalize(-R * .45 + Up * .55 - F * .7);
-    if (disc < 0.) { float dmin = sqrt(max(0., dot(C, C) - b * b)); float gl = exp(-(dmin - 1.) * 18.) * step(0., -b);
-      o = vec4(vec3(.35, .6, 1.) * gl, gl * .9); return; }
+    vec3 sun = normalize(-R * .35 + Up * .6 - F * .72);
+    if (disc < 0.) { float dmin = sqrt(max(0., dot(C, C) - b * b)); float gl = exp(-(dmin - 1.) * 16.) * step(0., -b);
+      o = vec4(vec3(.40, .62, 1.) * gl, gl * .85); return; }
     float tt = -b - sqrt(disc); vec3 p = C + tt * rd, n = normalize(p);
     float lat = asin(clamp(n.z, -1., 1.)), lon = atan(n.y, n.x);
     vec2 uv = vec2((lon + 3.14159265) / 6.2831853, (1.5707963 - lat) / 3.14159265);
     vec4 d = texture(tex, uv);
-    float aa = max(fwidth(d.r) * 1.2, .02);
+    float aa = max(fwidth(d.r) * 1.2, .012);
     float land = smoothstep(.5 - aa, .5 + aa, d.r);
-    vec3 q = n * 60.;
-    float nd = fb2(n * 9.), n2 = fb2(n * 4. + 7.);
-    float fine = land > 0.01 ? fbm(n * detail) : .5;                       // terrain detail scaled to the camera altitude
-    vec3 lc = biome(degrees(lat), nd, n2) * (.78 + .45 * fine);
-    lc = mix(lc, vec3(dot(lc, vec3(.33))), .12);                         // slightly muted so highlights pop
-    vec2 gr = vec2(dFdx(fine), dFdy(fine)); lc *= clamp(1. + (gr.y - gr.x) * 14., .55, 1.45);   // hill-shade from the detail field
+    // land colour: regional tile where available, else the world raster
+    vec3 lc = texture(earth, uv).rgb;
+    if (hasTile > .5) { float lo = degrees(lon), la = degrees(lat); vec2 tuv = vec2((lo - tb.x) / (tb.y - tb.x), (tb.w - la) / (tb.w - tb.z));
+      if (tuv.x > 0. && tuv.x < 1. && tuv.y > 0. && tuv.y < 1.) { float e = smoothstep(0., .06, min(min(tuv.x, 1. - tuv.x), min(tuv.y, 1. - tuv.y))); lc = mix(lc, texture(tile, tuv).rgb, e); } }
+    // cinematic grade: deeper greens, warmer deserts, more contrast; fine grain adds texture past the raster's resolution
+    lc = pow(lc, vec3(1.35)); lc = mix(vec3(dot(lc, vec3(.3, .59, .11))), lc, 1.35); lc *= vec3(.86, .95, .82);
+    float fine = fb2(n * detail); lc *= .88 + .24 * fine;
     float deep = 1. - d.g;
-    vec3 wc = mix(vec3(.07,.40,.52), vec3(.015,.07,.17), smoothstep(0., .9, deep)) * (.92 + .16 * fb2(n * detail * .5 + time * .05));
+    vec3 wc = mix(vec3(.10, .44, .56), vec3(.012, .07, .17), smoothstep(0., .9, deep)) * (.92 + .16 * fb2(n * detail * .5 + time * .05));
     vec3 col = mix(wc, lc, land);
-    float dif = clamp(dot(n, sun), 0., 1.), amb = .35;
-    col *= amb + .85 * dif;
-    vec3 h = normalize(sun - rd); col += (1. - land) * pow(max(dot(n, h), 0.), 140.) * .16;
-    float rim = pow(1. - max(dot(n, -rd), 0.), 3.); col = mix(col, vec3(.45, .7, 1.), rim * .55);
+    float dif = clamp(dot(n, sun), 0., 1.), amb = .38;
+    col *= amb + .8 * dif;
+    vec3 h = normalize(sun - rd); col += (1. - land) * pow(max(dot(n, h), 0.), 140.) * .14;
+    float rim = pow(1. - max(dot(n, -rd), 0.), 3.); col = mix(col, vec3(.45, .7, 1.), rim * .5);
     o = vec4(col, 1.); }`;
   function sh(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; }
   function init(topo) {
@@ -77,7 +70,10 @@ const MAP = (() => {
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, t); gl.generateMipmap(gl.TEXTURE_2D);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-    for (const k of ['tex', 'C', 'F', 'R', 'Up', 'tanH', 'asp', 'detail', 'time']) U[k] = gl.getUniformLocation(prog, k);
+    for (const k of ['tex', 'earth', 'tile', 'tb', 'hasTile', 'C', 'F', 'R', 'Up', 'tanH', 'asp', 'detail', 'time']) U[k] = gl.getUniformLocation(prog, k);
+    const mk = (unit, im, wrapS) => { const q = gl.createTexture(); gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, q); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, im); gl.generateMipmap(gl.TEXTURE_2D);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, wrapS); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE); return q; };
+    if (EARTH.world) mk(1, EARTH.world, gl.REPEAT); if (EARTH.tile) mk(2, EARTH.tile, gl.CLAMP_TO_EDGE); gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, tx);
     gl.viewport(0, 0, cv.width, cv.height);
     // ---- vector data for overlays: rings as unit vectors + bbox; internal borders mesh
     const toV = (lo, la) => { const a = lo * D2R, b = la * D2R, cb = Math.cos(b); return [cb * Math.cos(a), cb * Math.sin(a), Math.sin(b)]; };
@@ -94,7 +90,7 @@ const MAP = (() => {
     const f = nrm(add(T, C, -1)), r = nrm(cross(f, Fh)), u = cross(r, f);
     cam = { ...c, C, f, r, u, tanH: Math.tan(20 * D2R), asp: W / H }; return cam; }
   function render(t) { gl.useProgram(prog); gl.uniform3fv(U.C, cam.C); gl.uniform3fv(U.F, cam.f); gl.uniform3fv(U.R, cam.r); gl.uniform3fv(U.Up, cam.u);
-    gl.uniform1f(U.tanH, cam.tanH); gl.uniform1f(U.asp, cam.asp); gl.uniform1f(U.detail, clamp(3 / cam.alt, 12, 4000)); gl.uniform1f(U.time, t); gl.uniform1i(U.tex, 0);
+    gl.uniform1f(U.tanH, cam.tanH); gl.uniform1f(U.asp, cam.asp); gl.uniform1f(U.detail, clamp(6 / cam.alt, 40, 6000)); gl.uniform1f(U.time, t); gl.uniform1i(U.tex, 0); gl.uniform1i(U.earth, 1); gl.uniform1i(U.tile, 2); gl.uniform1f(U.hasTile, EARTH.tile ? 1 : 0); if (EARTH.tb) gl.uniform4fv(U.tb, EARTH.tb);
     gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); }
   // project a unit vector → [x, y, visible]
   function PV(p) { const d = add(p, cam.C, -1), z0 = dot(d, cam.f), vis = dot(p, add(cam.C, p, -1)) > 0 && z0 > 0, z = Math.max(z0, 0.002);
@@ -122,7 +118,7 @@ function camPath(t, keys, o = {}) { const k0 = keys[0]; let lon = k0[1], lat = k
     if (k[6]) hop += k[6] * Math.sin(Math.PI * q); }
   return { lon, lat, alt: Math.exp(la) * (1 + hop), tilt: ti, head: hd }; }
 // space + planet; returns the camera (for overlays)
-function earth(t, c, o = {}) { const dr = o.drift ?? 1; c = { ...c, head: (c.head || 0) + dr * t * 1.6, alt: c.alt * Math.exp(-dr * 0.018 * t) }; const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, '#02040A'); gr.addColorStop(1, '#070B16'); g.fillStyle = gr; g.fillRect(0, 0, W, H);
+function earth(t, c, o = {}) { const dr = o.drift ?? 1; c = { ...c, head: (c.head || 0) + dr * t * 1.6, alt: Math.max(o.minAlt ?? 0.075, c.alt * Math.exp(-dr * 0.018 * t)) }; const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, '#02040A'); gr.addColorStop(1, '#070B16'); g.fillStyle = gr; g.fillRect(0, 0, W, H);
   stars(t, 220, 77); MAP.setCam(c); if (!window.NOGL) MAP.render(t); g.imageSmoothingQuality = 'high'; g.drawImage(MAP.canvas, 0, 0, W, H);
   if (o.coast !== false) coasts(o);
   const sh = g.createLinearGradient(0, 0, 0, 820); sh.addColorStop(0, 'rgba(2,4,10,0.72)'); sh.addColorStop(1, 'rgba(2,4,10,0)'); g.fillStyle = sh; g.fillRect(0, 0, W, 820);
@@ -134,7 +130,7 @@ function coasts(o = {}) { const lim = Math.cos(Math.min(1.4, MAP.cam.alt * 1.2 +
   g.strokeStyle = o.borderCol || 'rgba(255,255,255,0.55)'; g.lineWidth = 2.2; g.setLineDash([10, 7]);
   for (const l of MAP.mesh) { if (!MAP.near(l[0], lim - 0.35) && !MAP.near(l[l.length - 1], lim - 0.35)) continue; MAP.trace(l, false); g.stroke(); } g.setLineDash([]); g.restore(); }
 // fill a country (topojson name) or a custom [[lon,lat],…] polygon
-function territory(who, col, a = 0.55, o = {}) { if (a <= 0) return; if (o.zoomFade !== false) a *= 0.4 + 0.6 * clamp(MAP.cam.alt / 0.06); g.save(); g.globalAlpha = a; g.fillStyle = col;
+function territory(who, col, a = 0.55, o = {}) { if (a <= 0) return; if (o.zoomFade !== false) a *= 0.55 + 0.45 * clamp(MAP.cam.alt / 0.12); g.save(); g.globalAlpha = a; g.fillStyle = col;
   const rings = typeof who === 'string' ? MAP.rings.filter((r) => r.name === who).map((r) => r.v) : [who.map(([lo, la]) => MAP.V3(lo, la))];
   const path = new Path2D(); for (const v of rings) { const q = MAP.ringPath(v); if (!q || q.length < 3) continue; q.forEach(([x, y], i) => i ? path.lineTo(x, y) : path.moveTo(x, y)); path.closePath(); }
   if (o.spot) { const sp = new Path2D(); sp.rect(-50, -50, W + 100, H + 100); sp.addPath(path); g.save(); g.globalAlpha = o.spot; g.fillStyle = 'rgba(2,6,14,1)'; g.fill(sp, 'evenodd'); g.restore(); }

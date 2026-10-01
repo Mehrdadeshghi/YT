@@ -24,7 +24,7 @@ VIS.open = (K) => { K(0.2, 'whoosh', 0.9); K(1.6, 'pop', 0.8, 500); K(2.2, 'pop'
 VIS[0] = (K) => { K(0.6, 'land', 0.8); K(1.8, 'pop', 0.8, 700); K(2.6, 'pop', 0.8, 500); K(3.4, 'whoosh', 0.6);
   return (t) => { bg(t, [[0, HI[0], HI[1], 0.08, 40, 0], [0.1, HI[0], HI[1], 0.05, 48, 10]], 0);
     place(...HI, 'HANS ISLAND', t, 0.6, { color: GOLD, size: 40 }); const [x, y] = MAP.P(...HI); if (t > 0.6) shockRing(x, y, t % 1.2 + 0.6, 0.6, 120, '255,194,61', 2);
-    place(-70, 80.4, 'CANADA', t, 1.8, { color: '#FFC2BE', size: 40, left: true }); place(-62, 81.2, 'GREENLAND', t, 2.6, { color: '#DDE8FF', size: 40 });
+    place(-69.5, 80.3, 'CANADA', t, 1.8, { color: '#FFC2BE', size: 40 }); place(-62, 81.2, 'GREENLAND', t, 2.6, { color: '#DDE8FF', size: 40 });
     inset(t, 3.4, '1.3 KM² OF BARE ROCK', (w, h) => isle(w, h, t), { y: 680, h: 420, x: 140, w: 800 });
     tag(t, 0, 5); rgbPop('NARES STRAIT', 80, 560, fit('NARES STRAIT', 'disp', 140, 920), TXT, t, 0.45); }; };
 VIS[1] = (K) => { K(0.45, 'hit', 0.9); K(1.4, 'thump', 1); K(2.8, 'pop', 1, 700);

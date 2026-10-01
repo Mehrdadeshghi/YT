@@ -18,8 +18,8 @@ VIS.open = (K) => { K(0.2, 'whoosh', 0.9); for (let i = 0; i < 6; i++) K(1.2 + i
     tag(t); hook(t, EP.hook, 480); }; };
 VIS[0] = (K) => { K(0.6, 'land', 0.8); K(1.8, 'pop', 0.8, 600); K(2.6, 'pop', 0.8, 800);
   return (t) => { bg(t, [[0, PI[0], PI[1], 0.03, 45, 0], [0.1, PI[0] + 0.02, PI[1] - 0.01, 0.016, 50, -15]]);
-    place(...PI, 'PHEASANT ISLAND', t, 0.6, { color: GOLD, size: 40 }); const [x, y] = MAP.P(...PI); if (t > 0.6) shockRing(x, y, t % 1.2 + 0.6, 0.6, 120, '255,194,61', 2);
-    place(-1.62, 43.42, 'FRANCE', t, 1.8, { color: '#BFD6FF', size: 44 }); place(-1.9, 43.27, 'SPAIN', t, 2.6, { color: '#FFC2BE', size: 44, left: true });
+    place(...PI, 'PHEASANT ISLAND', t, 0.6, { color: GOLD, size: 40, left: true }); const [x, y] = MAP.P(...PI); if (t > 0.6) shockRing(x, y, t % 1.2 + 0.6, 0.6, 120, '255,194,61', 2);
+    place(-0.9, 43.9, 'FRANCE', t, 1.8, { color: '#BFD6FF', size: 44 }); place(-2.6, 42.9, 'SPAIN', t, 2.6, { color: '#FFC2BE', size: 44, left: true });
     tag(t, 0, 4); rgbPop('BIDASOA RIVER', 80, 560, fit('BIDASOA RIVER', 'disp', 130, 920), TXT, t, 0.45); }; };
 VIS[1] = (K) => { K(0.3, 'whoosh', 0.7); K(0.45, 'hit', 1); for (let i = 0; i < 18; i++) K(2.1 + i * 0.06, 'type', 0.4); K(3.8, 'thump', 1);
   return (t) => { bg(t, [[0, PI[0], PI[1], 0.016, 50, -15], [0.1, PI[0], PI[1], 0.02, 40, 10]], { dim: 0.35 }); tag(t, 1, 4); yearTag(1659, t, 0.45);
