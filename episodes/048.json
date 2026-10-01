@@ -1,0 +1,75 @@
+{
+ "ep": 48,
+ "prog": 1,
+ "mood": "deep",
+ "title": "Oymyakon",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "−67.7°C.",
+  "PEOPLE",
+  "LIVE HERE."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Oymyakon",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Minus sixty-seven point seven degrees."
+  },
+  {
+   "at": "+0.12",
+   "text": "And people live here."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Oymyakon, in Siberia. The coldest permanently inhabited place on Earth.",
+     "cap": "*Oymyakon, Siberia.* The *coldest* inhabited place on Earth."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1933, it hit minus sixty-seven point seven degrees.",
+     "cap": "*1933:* *−67.7°C.* A record."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "School only closes below minus fifty-five.",
+     "cap": "School only closes below *−55°C.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "About five hundred people call it home.",
+     "cap": "About *500 people* call it *home.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Oymyakon"
+  }
+ ],
+ "lat0": 63,
+ "speed": 1.12
+}

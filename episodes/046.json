@@ -1,0 +1,71 @@
+{
+ "ep": 46,
+ "prog": 2,
+ "mood": "clock",
+ "title": "Tanganyika laughter epidemic",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "A LAUGHING",
+  "EPIDEMIC CLOSED",
+  "14 SCHOOLS."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Tanganyika_laughter_epidemic",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "In 1962, a laughter epidemic shut down fourteen schools."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It started at a girls' boarding school in Kashasha, in today's Tanzania.",
+     "cap": "It started at a *girls' boarding school* in Kashasha."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Soon, ninety-five of its hundred and fifty-nine students were affected.",
+     "cap": "Soon: *95 of 159* students."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It spread to nearby villages. About a thousand people. Fourteen schools closed.",
+     "cap": "It spread. About *1,000 people.* *14 schools* closed."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It lasted about eighteen months. Experts call it mass psychogenic illness.",
+     "cap": "About *18 months.* Diagnosis: *mass psychogenic illness.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Tanganyika laughter epidemic"
+  }
+ ],
+ "lat0": -1,
+ "speed": 1.12
+}

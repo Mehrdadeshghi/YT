@@ -1,0 +1,71 @@
+{
+ "ep": 42,
+ "prog": 1,
+ "mood": "clock",
+ "title": "Emperor Norton",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "HE DECLARED",
+  "HIMSELF EMPEROR",
+  "OF THE USA."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Emperor_Norton",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This man declared himself Emperor of the United States."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Joshua Norton lost his fortune betting on rice. Then he sent a newspaper his proclamation.",
+     "cap": "He lost his fortune *on rice.* Then: a *proclamation.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Emperor Norton the First ordered Congress dissolved. Congress ignored him.",
+     "cap": "*Emperor Norton I* ordered Congress *dissolved.* It ignored him."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But San Francisco played along. Some shops accepted his own money.",
+     "cap": "San Francisco *played along.* Some shops took *his money.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He also ordered a bridge across the bay. Today, there is one.",
+     "cap": "He ordered a *bridge across the bay.* Today, *there is one.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Emperor Norton"
+  }
+ ],
+ "lat0": 38,
+ "speed": 1.12
+}

@@ -1,0 +1,71 @@
+{
+ "ep": 45,
+ "prog": 1,
+ "mood": "clock",
+ "title": "Kowloon Walled City",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "33,000 PEOPLE",
+  "SMALLER THAN",
+  "4 FOOTBALL FIELDS."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Kowloon_Walled_City",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Thirty-three thousand people lived here, in a space smaller than four football fields."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Kowloon Walled City, Hong Kong. About three hundred buildings, grown into one.",
+     "cap": "*Kowloon Walled City.* About *300 buildings*, grown into one."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Up to fourteen stories. No higher, because of the airport nearby.",
+     "cap": "Up to *14 stories.* No higher: *the airport.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Almost no government control. Unlicensed dentists and doctors worked here freely.",
+     "cap": "Almost *no government.* Unlicensed *dentists* and *doctors.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Over one million people per square kilometer. It was demolished in 1994.",
+     "cap": "*1.25 million* people per km². Demolished in *1994.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Kowloon Walled City"
+  }
+ ],
+ "lat0": 22,
+ "speed": 1.12
+}

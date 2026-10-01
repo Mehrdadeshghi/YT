@@ -1,0 +1,75 @@
+{
+ "ep": 38,
+ "prog": 1,
+ "mood": "clock",
+ "title": "Hachikō",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "HIS OWNER",
+  "NEVER CAME BACK.",
+  "HE KEPT WAITING."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Hachik%C5%8D",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "His owner never came home."
+  },
+  {
+   "at": "+0.12",
+   "text": "He kept waiting for almost ten years."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Every day, Hachikō met Professor Ueno at Shibuya Station in Tokyo.",
+     "cap": "Every day, *Hachikō* met Professor Ueno at *Shibuya Station.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In May 1925, Ueno died suddenly. He never came back.",
+     "cap": "*May 1925:* Ueno died suddenly. He *never came back.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Hachikō kept returning to the station, almost every day, for nine years and nine months.",
+     "cap": "He kept coming back. For *9 years and 9 months.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1934, they built him a statue at the station. He was still alive.",
+     "cap": "*1934:* a statue at the station. He was *still alive.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Hachikō"
+  }
+ ],
+ "lat0": 36,
+ "speed": 1.12
+}

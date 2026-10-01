@@ -1,0 +1,71 @@
+{
+ "ep": 37,
+ "prog": 0,
+ "mood": "clock",
+ "title": "Anglo-Zanzibar War",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "THE SHORTEST",
+  "WAR IN HISTORY:",
+  "38 MINUTES."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "The shortest war in history lasted about thirty-eight minutes."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "August 1896. Britain told Zanzibar's new sultan: leave the palace by nine.",
+     "cap": "*Aug 1896.* Leave the palace by *9:00 a.m.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He didn't. At nine, British ships opened fire. By nine-forty, it was over.",
+     "cap": "At *9:00* the ships fired. By *9:40*, it was *over.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "About five hundred Zanzibari casualties. One British sailor wounded.",
+     "cap": "About *500* Zanzibari casualties. *1* British sailor wounded."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then Britain made his supporters pay for the shells.",
+     "cap": "Then Britain made them *pay for the shells.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Anglo-Zanzibar War"
+  }
+ ],
+ "lat0": -6,
+ "speed": 1.12
+}

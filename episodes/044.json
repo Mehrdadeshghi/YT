@@ -1,0 +1,69 @@
+{
+ "ep": 44,
+ "prog": 0,
+ "mood": "clock",
+ "title": "Charles Osborne (hiccups)",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "HE HICCUPED",
+  "FOR 68 YEARS."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Charles_Osborne_(hiccups)",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This man hiccuped for sixty-eight years."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1922, Charles Osborne was preparing to slaughter a hog. It collapsed on top of him.",
+     "cap": "*1922:* a *350-pound hog* collapsed on top of him."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He started hiccuping. And he didn't stop.",
+     "cap": "He started hiccuping. And *didn't stop.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "An estimated four hundred and thirty million hiccups. A Guinness world record.",
+     "cap": "An estimated *430 million hiccups.* A world record."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then, in 1990, they just stopped.",
+     "cap": "Then, in *1990*... they just *stopped.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Charles Osborne (hiccups)"
+  }
+ ],
+ "speed": 1.12
+}

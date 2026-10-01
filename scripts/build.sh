@@ -6,7 +6,7 @@ python3 fetch_photos.py "$@" || echo "photo fetch had problems — drawn fallbac
 mkdir -p dist
 for e in "$@"; do
   echo "::group::episode $e"
-  python3 voice.py "$e" --speed 1.1
+  python3 voice.py "$e"
   node render.mjs --page "cine.html?ep=$e" --name "ep$e" --fps 60 --sub 1 --crf 16
   ./finish.sh "$e"
   cp "out/ep$e/wiki_roulette_$e.mp4" dist/

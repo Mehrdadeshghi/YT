@@ -1,0 +1,71 @@
+{
+ "ep": 41,
+ "prog": 0,
+ "mood": "clock",
+ "title": "Kentucky meat shower",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "IN 1876,",
+  "IT RAINED",
+  "MEAT."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Kentucky_meat_shower",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "In 1876, it rained meat in Kentucky."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "March third. Near Olympia Springs, chunks of meat fell from the sky.",
+     "cap": "*March 3, 1876:* chunks of meat *fell from the sky.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Pieces up to ten centimeters wide. Some people tasted it. They guessed lamb, or deer.",
+     "cap": "Up to *10 cm* wide. People *tasted it.* Lamb? Deer?"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Lab tests later found lung tissue. From a horse, or a human baby.",
+     "cap": "Lab tests: *lung tissue.* From a horse... or a *human baby.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The best explanation? Vultures, throwing up while flying overhead.",
+     "cap": "Best explanation: *vultures*, throwing up *mid-flight.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Kentucky meat shower"
+  }
+ ],
+ "lat0": 38,
+ "speed": 1.12
+}

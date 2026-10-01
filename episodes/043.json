@@ -1,0 +1,70 @@
+{
+ "ep": 43,
+ "prog": 2,
+ "mood": "deep",
+ "title": "Operation Mincemeat",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "A DEAD MAN",
+  "FOOLED HITLER."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Operation_Mincemeat",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "In 1943, a dead man fooled Hitler."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "British intelligence dressed a corpse as Major William Martin, carrying fake secret letters.",
+     "cap": "A corpse becomes *Major William Martin.* With *fake secret letters.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The letters said the Allies would invade Greece and Sardinia. Not Sicily.",
+     "cap": "The plan: *Greece* and *Sardinia.* Not Sicily."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "A submarine released the body off Spain. The Germans read the letters, and believed them.",
+     "cap": "Released off *Spain.* The Germans *believed it.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Hitler moved troops to Greece. On July ninth, the Allies invaded Sicily.",
+     "cap": "Troops moved to *Greece.* July 9: the Allies hit *Sicily.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Operation Mincemeat"
+  }
+ ],
+ "lat0": 38,
+ "speed": 1.12
+}

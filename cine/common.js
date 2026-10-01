@@ -136,3 +136,16 @@ function waterOver(t, wl = 1000, o = {}) {           // water drawn in front (hi
 // standard hook photo card on frame 0 (drawn fallback stays underneath when there is no photo)
 const hookPhoto = (t, id = 'lead', o = {}) => photo(t, id, 80, o.y ?? 830, 920, o.h ?? 480, { zoom: [1, 1.08], dur: 5, focus: o.focus || [0.5, 0.35] });
 function checkMark(x, y, s, col = GOLD) { g.strokeStyle = col; g.lineWidth = 10 * s; g.lineCap = 'round'; g.lineJoin = 'round'; g.beginPath(); g.moveTo(x - 22 * s, y); g.lineTo(x - 6 * s, y + 16 * s); g.lineTo(x + 24 * s, y - 18 * s); g.stroke(); }
+
+// ---------- batch 3 helpers ----------
+function clockFace(x, y, r, hh, mm, o = {}) {           // analog clock; hh/mm may be fractional
+  g.save(); g.translate(x, y); g.fillStyle = o.face || '#EDE6D8'; g.beginPath(); g.arc(0, 0, r, 0, 6.283); g.fill(); g.lineWidth = r * 0.06; g.strokeStyle = PINK; g.stroke();
+  for (let i = 0; i < 12; i++) { const a = i / 12 * 6.283; g.fillStyle = PINK; g.fillRect(Math.cos(a) * r * 0.82 - 3, Math.sin(a) * r * 0.82 - 3, 6, 6); }
+  if (o.arcFrom != null) { g.fillStyle = 'rgba(255,59,48,0.35)'; g.beginPath(); g.moveTo(0, 0); g.arc(0, 0, r * 0.9, -Math.PI / 2 + o.arcFrom / 60 * 6.283, -Math.PI / 2 + mm / 60 * 6.283); g.closePath(); g.fill(); }
+  const ha = -Math.PI / 2 + ((hh % 12) + mm / 60) / 12 * 6.283, ma = -Math.PI / 2 + mm / 60 * 6.283;
+  g.strokeStyle = PINK; g.lineCap = 'round'; g.lineWidth = r * 0.07; g.beginPath(); g.moveTo(0, 0); g.lineTo(Math.cos(ha) * r * 0.5, Math.sin(ha) * r * 0.5); g.stroke();
+  g.lineWidth = r * 0.045; g.beginPath(); g.moveTo(0, 0); g.lineTo(Math.cos(ma) * r * 0.75, Math.sin(ma) * r * 0.75); g.stroke(); g.restore();
+}
+function snowfall(t, n = 120, a = 1, seed = 5) { const r = rng(seed); g.fillStyle = '#fff'; for (let i = 0; i < n; i++) { const x = (r() * W + Math.sin(t + i) * 30), y = ((r() * H + t * (60 + r() * 80)) % H); g.globalAlpha = a * (0.3 + 0.6 * r()); g.beginPath(); g.arc(x, y, 1.5 + r() * 3, 0, 6.283); g.fill(); } g.globalAlpha = 1; }
+function iconGrid(n, cols, x0, y0, dx, dy, fn) { for (let i = 0; i < n; i++) fn(x0 + (i % cols) * dx, y0 + Math.floor(i / cols) * dy, i); }
+function doc(x, y, w, h, rot, t, tIn, fn) { const s = spring(t - tIn, 170, 20); if (s <= 0) return; g.save(); g.translate(0, (1 - s) * 400); paper(x, y, w, h, rot); fn(); g.restore(); }

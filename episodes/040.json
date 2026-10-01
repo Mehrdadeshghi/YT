@@ -1,0 +1,75 @@
+{
+ "ep": 40,
+ "prog": 2,
+ "mood": "clock",
+ "title": "Stanislav Petrov",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "HE SAVED",
+  "THE WORLD.",
+  "THEY REPRIMANDED HIM."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Stanislav_Petrov",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This man may have saved the world."
+  },
+  {
+   "at": "+0.12",
+   "text": "He was reprimanded."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "September 1983. Stanislav Petrov is on duty at a Soviet early-warning center.",
+     "cap": "*Sept 1983.* Stanislav Petrov, on duty. *Soviet early warning.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The alarm: a missile launched from the USA. Then up to four more.",
+     "cap": "*ALARM:* a missile from the USA. Then *up to 4 more.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Protocol said: report it. He decided it was a false alarm, and didn't.",
+     "cap": "Protocol: *report it.* He called it a *false alarm.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He was right. It was sunlight on clouds. Later, he was reprimanded, over paperwork.",
+     "cap": "He was *right.* Sunlight on clouds. Later: reprimanded... *over paperwork.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Stanislav Petrov"
+  }
+ ],
+ "lat0": 55,
+ "speed": 1.12
+}

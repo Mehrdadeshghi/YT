@@ -1,0 +1,73 @@
+{
+ "ep": 47,
+ "prog": 0,
+ "mood": "clock",
+ "title": "Michel Lotito",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "HE ATE",
+  "AN AIRPLANE."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Michel_Lotito",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This man ate an airplane."
+  },
+  {
+   "at": "+0.12",
+   "text": "Reportedly."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Michel Lotito. They called him Monsieur Mangetout. Mister Eats-All.",
+     "cap": "*Michel Lotito.* \"Monsieur Mangetout\": *Mr. Eats-All.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Over two years, he's said to have eaten a whole Cessna one-fifty, piece by piece.",
+     "cap": "Over *2 years*: a whole *Cessna 150*, piece by piece."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Also: eighteen bicycles, seven TVs, and a coffin. Nearly nine tons of metal.",
+     "cap": "*18 bikes.* *7 TVs.* A *coffin.* Nearly *9 tons* of metal."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Guinness gave him a brass plaque for the strangest diet. He ate that too.",
+     "cap": "Guinness gave him a *brass plaque.* He *ate that too.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Michel Lotito"
+  }
+ ],
+ "speed": 1.12
+}

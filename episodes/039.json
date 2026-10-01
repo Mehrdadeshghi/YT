@@ -1,0 +1,71 @@
+{
+ "ep": 39,
+ "prog": 1,
+ "mood": "deep",
+ "title": "Point Nemo",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "THE CLOSEST",
+  "HUMANS HERE",
+  "ARE IN SPACE."
+ ],
+ "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "At this spot in the ocean, the closest humans are often in space."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's called Point Nemo. The place in the ocean farthest from any land.",
+     "cap": "*Point Nemo:* the farthest point from *any land.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The nearest land is two thousand six hundred and eighty-eight kilometers away.",
+     "cap": "Nearest land: *2,688 km* away."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The space station passes about four hundred kilometers overhead.",
+     "cap": "The *space station:* about *400 km* up."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's also where old spacecraft are crashed on purpose. The space station is planned to end there, in 2031.",
+     "cap": "A *spacecraft cemetery.* The ISS is planned to end there in *2031.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Point Nemo"
+  }
+ ],
+ "lat0": -49,
+ "speed": 1.12
+}
