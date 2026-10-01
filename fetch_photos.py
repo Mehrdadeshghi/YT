@@ -39,9 +39,13 @@ def candidates(article, match):
     lead = page.get("pageimage")
     if match:   # explicit choice: only files whose name contains the match word
         return [n for n in names if match.lower() in n.lower()]
-    # default: ONLY the article's lead image. Other images in an article can be unrelated
+    # default: the article's lead image. Other images in an article can be unrelated
     # (navboxes, comparisons), so no fallback: a missing lead image means the drawn version is used.
-    return [f"File:{lead}"] if lead else []
+    # Second choice: files whose name contains every main word of the article title (e.g. "Pale_Blue_Dot_….png").
+    words = [w for w in re.findall(r"[a-z0-9]+", article.lower()) if len(w) >= 3 and w not in ("the", "and", "of")]
+    named = [n for n in names if words and all(w in n.lower() for w in words)]
+    out = ([f"File:{lead}"] if lead else []) + named
+    return list(dict.fromkeys(out))
 
 def fetch(ep, spec, credits):
     for name in candidates(spec["article"], spec.get("match"))[:12]:
@@ -49,7 +53,7 @@ def fetch(ep, spec, credits):
         if "imageinfo" not in info: continue
         ii = info["imageinfo"][0]; meta = ii.get("extmetadata", {})
         lic = clean(meta.get("LicenseShortName", {}).get("value"))
-        if not FREE.search(lic) or ii.get("width", 0) < 600:
+        if not FREE.search(lic) or ii.get("width", 0) < 480:
             print(f"   skip {name} ({lic or 'no license'}, {ii.get('width')} px)"); continue
         url = ii.get("thumburl") or ii["url"]; dst = f"{OUT}/{ep}_{spec['id']}.jpg"
         with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r, open(dst, "wb") as f:

@@ -40,7 +40,7 @@ VIS[3] = (K) => { K(0.5, 'pop', 0.8, 500); K(1.5, 'click', 1); K(2.2, 'zap', 0.6
     g.fillStyle = '#2B2A28'; rrect(-80, -90, 160, 100, 14); g.fill(); g.fillStyle = '#111'; g.beginPath(); g.arc(-40, -40, 36, 0, 6.283); g.fill(); g.fillStyle = (t > 1.3 && t < 2.2 && Math.floor(t * 8) % 2) ? RED : '#4A2020'; g.beginPath(); g.arc(50, -70, 9, 0, 6.283); g.fill(); g.restore();
     flash(t, 2.2, 0.85, 0.2, '#FFFFFF');
     const s = spring(t - 2.6, 200, 18); if (s > 0) { g.save(); g.translate(540, 930); g.rotate(-0.06); g.scale(s, s); g.fillStyle = '#EDE6D8'; g.fillRect(-250, -210, 500, 470);
-      g.save(); g.beginPath(); g.rect(-220, -180, 440, 360); g.clip(); g.fillStyle = '#0A0A08'; g.fillRect(-220, -180, 440, 360); if (!photo(t, 'lead', -220, -180, 440, 360, { r: 0, credit: '' })) blob(t, 0, 150, 0.6); g.restore();
+      g.save(); g.beginPath(); g.rect(-220, -180, 440, 360); g.clip(); g.fillStyle = '#0A0A08'; g.fillRect(-220, -180, 440, 360); g.save(); g.globalCompositeOperation = 'lighter'; glowDot(-60, -40, 260, '255,255,230', 0.25); g.restore(); blob(t, 0, 150, 0.6); g.restore();
       text('1996', -220, 230, 'mono', 26, PINK, { ls: 3 }); g.restore(); }
     rgbPop('AUTOMATIC CAMERA', 80, 540, fit('AUTOMATIC CAMERA', 'disp', 120, 920), TXT, t, 0.45); label('ARTUR KORNEYEV · 1996', 84, 605, t, 1.0, { color: GOLD }); }; };
 VIS[4] = (K) => { K(0.4, 'geiger', 0.5, 3.4); K(2.0, 'scratch'); K(2.02, 'thump', 1.1);
