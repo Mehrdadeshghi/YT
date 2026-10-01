@@ -47,7 +47,12 @@ for (let bar = 0; bar < BARS; bar++) {
 }
 function heart(t, g) { for (const [o, gg] of [[0, 1], [0.2, 0.7]]) { let ph = 0;
   add(t + o, 0.3, (x) => { ph += (48 + 70 * Math.exp(-x * 30)) / SR; return Math.sin(2 * Math.PI * ph) * Math.exp(-x * 11); }, g * gg); } }
-if (MOOD === 'deep') {
+if (MOOD === 'epic') {
+  for (let t = OPEN; t < DUR - 0.01; t += 1) { let ph = 0; const big = !(t % 2);                       // taiko-like booms on every beat pair
+    add(t, 0.8, (x) => { ph += ((big ? 52 : 70) + 60 * Math.exp(-x * 20)) / SR; return Math.sin(2 * Math.PI * ph) * Math.exp(-x * 5) + noise() * 0.15 * Math.exp(-x * 40); }, big ? 0.75 : 0.45);
+    if (big) { const bp = new Biquad('bp', 900, 1.5); add(t + 0.5, 0.12, (x) => bp.p(noise()) * Math.exp(-x * 40), 0.25, 0.3); } }
+  for (let t = OPEN + 0.25; t < DUR - 0.01; t += 0.5) { const hp = new Biquad('hp', 7000, 0.7); add(t, 0.05, (x) => hp.p(noise()) * Math.exp(-x * 90), 0.06, (t % 1) ? 0.4 : -0.4); }
+} else if (MOOD === 'deep') {
   for (let t = OPEN; t < DUR - 0.01; t += 2) { let ph = 0;                       // slow deep boom on every bar
     add(t, 0.9, (x) => { ph += (38 + 40 * Math.exp(-x * 18)) / SR; return Math.sin(2 * Math.PI * ph) * Math.exp(-x * 4.5); }, 0.6); }
   for (let t = OPEN + 1; t < DUR - 0.01; t += 1) { const hp = new Biquad('hp', 5000, 0.7);   // soft shaker on the off-beat
@@ -76,6 +81,8 @@ const SFX = {
     add(t, len, (x, i) => { if (i % 32 === 0) bp.set(200 + 4000 * Math.pow(x / len, 2), 2);
       return bp.p(noise()) * Math.pow(x / len, 2) * 2; }, 0.5 * g); },
   mute: () => {},
+  geiger: (t, g, len = 1.5) => { const r = (() => { let s = Math.floor(t * 1000); return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; })();
+    let x = 0; while (x < len) { x += 0.01 + r() * 0.08 * (1.2 - Math.min(1, g)); const tt = t + x; add(tt, 0.01, (y) => (Math.random() * 0 + (r() - 0.5)) * Math.exp(-y * 600), 0.5 * Math.min(1, g)); } },
   bloop: (t, g) => { let ph = 0; const lp = new Biquad('lp', 600); add(t, 1.8, (x) => { ph += (70 + 190 * (x / 1.8) ** 1.5) / SR;
     return (Math.sin(2 * Math.PI * ph) + 0.3 * lp.p(noise())) * Math.sin(Math.PI * Math.min(1, x / 1.8)) ** 0.7; }, 0.55 * g); },
   type: (t, g) => { const bp = new Biquad('bp', 2400, 3); add(t, 0.06, (x) => (bp.p(noise()) * 2 + Math.sin(2 * Math.PI * 180 * x) * 0.6) * Math.exp(-x * 90), 0.5 * g); },

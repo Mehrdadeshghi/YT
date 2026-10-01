@@ -35,13 +35,6 @@ function sandFloor(y, t, o = {}) {
 }
 const BURIED = (() => { const p = []; for (let i = 0; i <= 90; i++) { const u = i / 90; p.push([560 - 380 * u + 60 * Math.sin(u * 9), 1060 + 200 * u + 50 * Math.sin(u * 13)]); } return p; })();
 
-function human(x, ground, h, col) {      // a slim standing silhouette, h px tall
-  if (h < 4) return; const r = h * 0.065; g.fillStyle = col;
-  g.beginPath(); g.arc(x, ground - h + r, r, 0, 6.283); g.fill();
-  g.beginPath(); g.roundRect(x - h * 0.105, ground - h * 0.84, h * 0.21, h * 0.4, h * 0.05); g.fill();
-  g.beginPath(); g.roundRect(x - h * 0.098, ground - h * 0.47, h * 0.085, h * 0.47, h * 0.03); g.roundRect(x + h * 0.013, ground - h * 0.47, h * 0.085, h * 0.47, h * 0.03); g.fill();
-  g.beginPath(); g.roundRect(x - h * 0.15, ground - h * 0.82, h * 0.05, h * 0.37, h * 0.025); g.roundRect(x + h * 0.1, ground - h * 0.82, h * 0.05, h * 0.37, h * 0.025); g.fill();
-}
 // ---- OPEN
 VIS.open = (K) => {
   K(2.2, 'thump', 0.5);

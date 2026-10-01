@@ -1,0 +1,84 @@
+{
+ "ep": 51,
+ "prog": 2,
+ "mood": "deep",
+ "title": "Challenger Deep",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "EVEREST",
+  "WOULD VANISH",
+  "IN HERE."
+ ],
+ "speed": 1.12,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/Challenger_Deep",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Drop Mount Everest in here, and it would vanish."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The Challenger Deep, in the Mariana Trench. The deepest known point in the ocean.",
+     "cap": "*Challenger Deep.* The deepest known point in the ocean."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's about ten thousand nine hundred meters deep. Everest is eight thousand eight hundred fifty tall.",
+     "cap": "*10,935 m* deep. Everest: *8,849 m.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Over two kilometers of water would still be above its summit.",
+     "cap": "*2+ km* of water above its summit."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The pressure is more than a thousand times the surface.",
+     "cap": "Pressure: *1,000×* the surface."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Only about twenty-seven people have ever been down there.",
+     "cap": "Only about *27 people* have been there."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Challenger Deep"
+  }
+ ],
+ "lat0": 11
+}

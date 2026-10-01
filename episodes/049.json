@@ -1,0 +1,83 @@
+{
+ "ep": 49,
+ "prog": 1,
+ "mood": "epic",
+ "title": "1883 eruption of Krakatoa",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "THE LOUDEST",
+  "SOUND IN",
+  "HISTORY."
+ ],
+ "speed": 1.12,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This was the loudest sound in recorded history."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "August 1883. Krakatoa explodes.",
+     "cap": "*August 1883.* Krakatoa *explodes.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It was heard four thousand eight hundred kilometers away. People thought it was cannon fire.",
+     "cap": "Heard *4,800 km* away. People thought it was *cannon fire.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its pressure wave circled the Earth more than three times.",
+     "cap": "The pressure wave circled Earth *3+ times.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Tsunamis up to forty-two meters. At least thirty-six thousand people died.",
+     "cap": "Tsunamis up to *42 m.* At least *36,000* dead."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "For months, sunsets around the world glowed red.",
+     "cap": "For months, sunsets worldwide *glowed red.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "1883 eruption of Krakatoa"
+  }
+ ]
+}

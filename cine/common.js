@@ -149,3 +149,63 @@ function clockFace(x, y, r, hh, mm, o = {}) {           // analog clock; hh/mm m
 function snowfall(t, n = 120, a = 1, seed = 5) { const r = rng(seed); g.fillStyle = '#fff'; for (let i = 0; i < n; i++) { const x = (r() * W + Math.sin(t + i) * 30), y = ((r() * H + t * (60 + r() * 80)) % H); g.globalAlpha = a * (0.3 + 0.6 * r()); g.beginPath(); g.arc(x, y, 1.5 + r() * 3, 0, 6.283); g.fill(); } g.globalAlpha = 1; }
 function iconGrid(n, cols, x0, y0, dx, dy, fn) { for (let i = 0; i < n; i++) fn(x0 + (i % cols) * dx, y0 + Math.floor(i / cols) * dy, i); }
 function doc(x, y, w, h, rot, t, tIn, fn) { const s = spring(t - tIn, 170, 20); if (s <= 0) return; g.save(); g.translate(0, (1 - s) * 400); paper(x, y, w, h, rot); fn(); g.restore(); }
+
+// ---------- v3 "wow" helpers: 3D globe, full-bleed photos, impact text, embers ----------
+const D2R = Math.PI / 180;
+let RINGS = null;
+function globeRings() { if (RINGS) return RINGS; RINGS = [];
+  for (const f of WORLD) { const polys = f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates;
+    for (const poly of polys) for (const ring of poly) { const a = new Float64Array(ring.length * 2); ring.forEach(([lo, la], j) => { a[j * 2] = lo * D2R; a[j * 2 + 1] = la * D2R; }); RINGS.push(a); } }
+  return RINGS; }
+function globeProj(lon0, lat0, cx, cy, R) { const l0 = lon0 * D2R, cl0 = Math.cos(lat0 * D2R), sl0 = Math.sin(lat0 * D2R);
+  return (lo, la) => { const l = lo - l0, cp = Math.cos(la), sp = Math.sin(la), cl = Math.cos(l); const x = cp * Math.sin(l), y = cl0 * sp - sl0 * cp * cl, c = sl0 * sp + cl0 * cp * cl;
+    if (c < 0) { const n = Math.hypot(x, y) || 1; return [cx + x / n * R, cy - y / n * R, c]; } return [cx + x * R, cy - y * R, c]; }; }
+// draws an orthographic, lit globe; returns P(lonDeg, latDeg) -> [x, y, visible]
+function globe(t, cx, cy, R, lon0, lat0, o = {}) {
+  const P = globeProj(lon0, lat0, cx, cy, R);
+  if (R < 4000) { const halo = g.createRadialGradient(cx, cy, R * 0.95, cx, cy, R * 1.18); halo.addColorStop(0, 'rgba(90,170,255,0.45)'); halo.addColorStop(1, 'rgba(90,170,255,0)'); g.fillStyle = halo; g.beginPath(); g.arc(cx, cy, R * 1.18, 0, 6.283); g.fill(); }
+  g.save(); g.beginPath(); g.arc(cx, cy, R, 0, 6.283); g.clip();
+  const oc = g.createRadialGradient(cx - R * 0.35, cy - R * 0.4, R * 0.1, cx, cy, R); oc.addColorStop(0, o.ocean1 || '#1F5E9A'); oc.addColorStop(1, o.ocean2 || '#071C33'); g.fillStyle = oc; g.fillRect(cx - R, cy - R, 2 * R, 2 * R);
+  if (o.grid !== false && R < 3000) { g.strokeStyle = 'rgba(160,210,255,0.12)'; g.lineWidth = 1.2; for (let lo = -180; lo < 180; lo += 30) { g.beginPath(); let st = false; for (let la = -90; la <= 90; la += 5) { const [x, y, c] = P(lo * D2R, la * D2R); if (c < 0) { st = false; continue; } st ? g.lineTo(x, y) : g.moveTo(x, y); st = true; } g.stroke(); }
+    for (let la = -60; la <= 60; la += 30) { g.beginPath(); let st = false; for (let lo = -180; lo <= 180; lo += 5) { const [x, y, c] = P(lo * D2R, la * D2R); if (c < 0) { st = false; continue; } st ? g.lineTo(x, y) : g.moveTo(x, y); st = true; } g.stroke(); } }
+  g.beginPath(); for (const a of globeRings()) { let any = false; for (let j = 0; j < a.length; j += 2) if (Math.cos(a[j + 1]) * Math.cos(a[j] - lon0 * D2R) * Math.cos(lat0 * D2R) + Math.sin(a[j + 1]) * Math.sin(lat0 * D2R) > -0.05) { any = true; break; } if (!any) continue;
+    for (let j = 0; j < a.length; j += 2) { const [x, y] = P(a[j], a[j + 1]); j ? g.lineTo(x, y) : g.moveTo(x, y); } g.closePath(); }
+  g.fillStyle = o.land || '#3A4A30'; g.fill(); g.strokeStyle = o.coast || 'rgba(255,240,200,0.25)'; g.lineWidth = Math.max(1, Math.min(3, R / 400)); g.stroke();
+  if (R < 4000) { const sh = g.createRadialGradient(cx - R * 0.45, cy - R * 0.5, R * 0.2, cx, cy, R * 1.05); sh.addColorStop(0, 'rgba(255,255,255,0.10)'); sh.addColorStop(0.6, 'rgba(0,0,0,0)'); sh.addColorStop(1, 'rgba(0,0,10,0.65)'); g.fillStyle = sh; g.fillRect(cx - R, cy - R, 2 * R, 2 * R); }
+  g.restore();
+  return (lo, la) => { const r = P(lo * D2R, la * D2R); return [r[0], r[1], r[2] > 0]; };
+}
+// camera keys: [[t, lon, lat, R], …] — R interpolates exponentially, spring-smoothed
+function globeCam(t, keys, k = 22, d = 9.5) { let lon = keys[0][1], lat = keys[0][2], lr = Math.log(keys[0][3]);
+  for (let i = 1; i < keys.length; i++) { const p = spring(t - keys[i][0], k, d); lon += (keys[i][1] - keys[i - 1][1]) * p; lat += (keys[i][2] - keys[i - 1][2]) * p; lr += (Math.log(keys[i][3]) - Math.log(keys[i - 1][3])) * p; }
+  return { lon, lat, R: Math.exp(lr) }; }
+function stars(t, n = 160, seed = 2) { const r = rng(seed); for (let i = 0; i < n; i++) { const x = r() * W, y = r() * H, s = r(); g.fillStyle = `rgba(255,255,255,${(0.2 + 0.6 * s) * (0.7 + 0.3 * Math.sin(t * 2 + i))})`; g.fillRect(x, y, 1 + s * 2, 1 + s * 2); } }
+// full-bleed real photo with Ken Burns and grade; returns false if not available
+function photoBG(t, id, o = {}) { const im = PHOTOS[id]; if (!im) return false;
+  const z = lerp((o.zoom || [1.05, 1.18])[0], (o.zoom || [1.05, 1.18])[1], clamp(t / (o.dur || 6))), [fx, fy] = o.focus || [0.5, 0.4];
+  const sc = Math.max(W / im.width, H / im.height) * z, dw = im.width * sc, dh = im.height * sc, px = (o.pan || 0) * t * 20;
+  g.save(); g.filter = o.blur ? `blur(${o.blur}px)` : 'none'; g.drawImage(im, (W - dw) * fx + px, (H - dh) * fy, dw, dh); g.filter = 'none';
+  const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, `rgba(8,8,10,${o.top ?? 0.75})`); gr.addColorStop(0.45, `rgba(8,8,10,${o.mid ?? 0.25})`); gr.addColorStop(1, `rgba(8,8,10,${o.bottom ?? 0.85})`); g.fillStyle = gr; g.fillRect(0, 0, W, H);
+  if (o.tint) { g.fillStyle = o.tint; g.fillRect(0, 0, W, H); }
+  if (CREDITS[id]) text(CREDITS[id].slice(0, 70), 80, 1560, 'mono', 18, 'rgba(255,255,255,0.55)', { ls: 1 });
+  g.restore(); return true; }
+// impact number/word: springs in with an RGB split that settles
+function rgbPop(str, x, y, size, color, t, tIn, o = {}) { const lt = t - tIn; if (lt < 0) return; const s = spring(lt, o.k || 320, o.d || 16), sp = 18 * Math.exp(-lt * 7);
+  g.save(); g.translate(x, y); g.scale(s, s); const al = o.align || 'left', fam = o.fam || 'disp';
+  if (sp > 0.5) { g.globalCompositeOperation = 'lighter'; text(str, -sp, 0, fam, size, 'rgba(255,40,60,0.8)', { align: al }); text(str, sp, 0, fam, size, 'rgba(40,200,255,0.8)', { align: al }); g.globalCompositeOperation = 'source-over'; }
+  text(str, 0, 0, fam, size, color, { align: al, shadow: true }); g.restore(); }
+function embers(t, x0, x1, y0, n = 60, seed = 3, col = [255, 150, 60]) { g.save(); g.globalCompositeOperation = 'lighter'; const r = rng(seed);
+  for (let i = 0; i < n; i++) { const ph = (t * (0.3 + r() * 0.5) + r()) % 1, x = lerp(x0, x1, r()) + Math.sin(t * 2 + i) * 30 * ph, y = y0 - ph * (500 + r() * 500), s = 2 + r() * 4;
+    g.fillStyle = `rgba(${col.join(',')},${(1 - ph) * 0.9})`; g.beginPath(); g.arc(x, y, s, 0, 6.283); g.fill(); } g.restore(); }
+function shockRing(x, y, t, t0, max = 900, col = '255,230,190', n = 3) { for (let k = 0; k < n; k++) { const p = clamp((t - t0) * 0.7 - k * 0.12); if (p <= 0 || p >= 1) continue;
+  g.strokeStyle = `rgba(${col},${(1 - p) * 0.8})`; g.lineWidth = 10 * (1 - p) + 2; g.beginPath(); g.arc(x, y, 20 + p * max, 0, 6.283); g.stroke(); } }
+
+function human(x, ground, h, col) {      // a slim standing silhouette, h px tall
+  if (h < 4) return; const r = h * 0.065; g.fillStyle = col;
+  g.beginPath(); g.arc(x, ground - h + r, r, 0, 6.283); g.fill();
+  g.beginPath(); g.roundRect(x - h * 0.105, ground - h * 0.84, h * 0.21, h * 0.4, h * 0.05); g.fill();
+  g.beginPath(); g.roundRect(x - h * 0.098, ground - h * 0.47, h * 0.085, h * 0.47, h * 0.03); g.roundRect(x + h * 0.013, ground - h * 0.47, h * 0.085, h * 0.47, h * 0.03); g.fill();
+  g.beginPath(); g.roundRect(x - h * 0.15, ground - h * 0.82, h * 0.05, h * 0.37, h * 0.025); g.roundRect(x + h * 0.1, ground - h * 0.82, h * 0.05, h * 0.37, h * 0.025); g.fill();
+}
+function ramp(t, t0, d, a, b) { const x = clamp((t - t0) / d); return lerp(a, b, 1 - Math.pow(1 - x, 3)); }   // ease-out counter
+function glowDot(x, y, r, col = '120,190,255', a = 1) { const gr = g.createRadialGradient(x, y, 0, x, y, r); gr.addColorStop(0, `rgba(${col},${a})`); gr.addColorStop(1, `rgba(${col},0)`); g.fillStyle = gr; g.fillRect(x - r, y - r, 2 * r, 2 * r); }

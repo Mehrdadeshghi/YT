@@ -1,0 +1,74 @@
+{
+ "ep": 52,
+ "prog": 0,
+ "mood": "epic",
+ "title": "Tunguska event",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "A FOREST",
+  "FLATTENED.",
+  "NO CRATER."
+ ],
+ "speed": 1.12,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/Tunguska_event",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Something flattened a whole forest. And left no crater."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "June 30th, 1908. Siberia. A blast over the Tunguska River.",
+     "cap": "*June 30, 1908.* Siberia. A *blast.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It flattened about two thousand one hundred fifty square kilometers of forest.",
+     "cap": "*2,150 km²* of forest. *Flattened.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The shock wave knocked people down more than sixty kilometers away.",
+     "cap": "People knocked down *60+ km* away."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "No crater, because it exploded in the air, five to ten kilometers up.",
+     "cap": "No crater: it exploded *in the air.* *5–10 km* up."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Tunguska event"
+  }
+ ],
+ "lat0": 61
+}

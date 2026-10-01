@@ -221,23 +221,34 @@ function build(ep, voice) {
     SCENES.push({ from, to: from + dur, pre: PRE, draw: (lt) => { vis(lt); if (caps.length) captions(lt, caps); } });
     t += dur; });
   const last = SCENES.at(-1), pad = (2 - (t % 2)) % 2; last.to += pad; t += pad;
-  DUR = t; SCENES.slice(1).forEach((s) => cue(s.from - 0.2, 'whoosh', 0.8));
+  DUR = t; SCENES.slice(1).forEach((s) => cue(s.from - (ep.transition === 'whip' ? 0.12 : 0.2), 'whoosh', ep.transition === 'whip' ? 1 : 0.8));
   CUES.sort((a, b) => a.t - b.t);
   window.DUR = DUR; window.EP = { ep: ep.ep, prog: ep.prog || 0, title: ep.title, dur: DUR, openDur, look: 'cine', mood: ep.mood || 'clock' };
 }
 const CUT = 0.05;
-function draw(t) {
-  g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1;
-  const i = SCENES.findIndex((s) => t < s.to - CUT), s = SCENES[i < 0 ? SCENES.length - 1 : i];
+function drawScene(s, t, dx = 0, dy = 0) {
   const since = t - (s.from - CUT), until = (s.to - CUT) - t;
-  const punchIn = s.from > 0 ? 1 + 0.07 * (1 - spring(since, 260, 30)) : 1;
-  const punchOut = until < 0.14 ? 1 + 0.05 * Math.pow(1 - until / 0.14, 2) : 1;
-  const drift = 1 + 0.012 * clamp(since / 6);
-  const k = punchIn * punchOut * drift;
-  g.save(); g.translate(W / 2, H / 2); g.scale(k, k); g.translate(-W / 2, -H / 2);
-  s.draw(t - s.from + s.pre); g.restore();
+  const punchIn = s.from > 0 && EP.transition !== 'whip' ? 1 + 0.07 * (1 - spring(since, 260, 30)) : 1;
+  const punchOut = until < 0.14 && EP.transition !== 'whip' ? 1 + 0.05 * Math.pow(1 - clamp(until / 0.14), 2) : 1;
+  const k = punchIn * punchOut * (1 + 0.012 * clamp(since / 6));
+  g.save(); g.translate(W / 2 + dx, H / 2 + dy); g.scale(k, k); g.translate(-W / 2, -H / 2);
+  g.beginPath(); g.rect(0, 0, W, H); g.clip(); s.draw(t - s.from + s.pre); g.restore();
+}
+const WHIP = 0.3;
+function draw(t) {
+  g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.fillStyle = BG; g.fillRect(0, 0, W, H);
+  const i = SCENES.findIndex((s) => t < s.to - CUT), si = i < 0 ? SCENES.length - 1 : i, s = SCENES[si];
+  const since = t - (s.from - CUT);
+  if (EP.transition === 'whip' && si > 0 && since < WHIP) {          // whip pan: both scenes slide, motion blur comes from sub-frames
+    const p = spring(since, 240, 30), dir = si % 2 ? 1 : -1, prev = SCENES[si - 1];
+    drawScene(prev, t, -dir * p * W * 1.05); drawScene(s, t, dir * (1 - p) * W * 1.05);
+  } else drawScene(s, t);
   g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1;
-  if (s.from > 0 && since < 0.09) { g.fillStyle = '#FFF4DE'; g.globalAlpha = 0.18 * (1 - since / 0.09); g.fillRect(0, 0, W, H); g.globalAlpha = 1; }
+  if (EP.transition !== 'whip' && s.from > 0 && since < 0.09) { g.fillStyle = '#FFF4DE'; g.globalAlpha = 0.18 * (1 - since / 0.09); g.fillRect(0, 0, W, H); g.globalAlpha = 1; }
+  if (EP.glint && s.from > 0 && since > 0.15 && since < 0.75) {      // a light streak sweeps across after each cut
+    const u = (since - 0.15) / 0.6, x = lerp(-600, W + 600, u); g.save(); g.globalCompositeOperation = 'lighter';
+    const gr = g.createLinearGradient(x - 220, 0, x + 220, 0); gr.addColorStop(0, 'rgba(255,230,190,0)'); gr.addColorStop(0.5, 'rgba(255,230,190,0.10)'); gr.addColorStop(1, 'rgba(255,230,190,0)');
+    g.setTransform(1, 0, -0.35, 1, 0, 0); g.fillStyle = gr; g.fillRect(x - 220 + 0, 0, 440 + 700, H); g.restore(); }
   g.drawImage(VIG, 0, 0);
   g.drawImage(GRAIN[Math.floor(t * 15) % 4], 0, 0, W, H);
 }

@@ -1,0 +1,76 @@
+{
+ "ep": 50,
+ "prog": 1,
+ "mood": "deep",
+ "title": "Pale Blue Dot",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "THAT TINY DOT",
+  "IS EARTH."
+ ],
+ "speed": 1.12,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/Pale_Blue_Dot",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "That tiny dot is Earth."
+  },
+  {
+   "at": "+0.12",
+   "text": "Seen from six billion kilometers."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1990, Voyager 1 was six billion kilometers from home.",
+     "cap": "*1990.* Voyager 1: *6 billion km* from home."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Carl Sagan pushed NASA to turn its camera back toward Earth, one last time.",
+     "cap": "Carl Sagan: turn the camera *back toward Earth.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In the photo, Earth is less than one pixel. Zero point one two of a pixel.",
+     "cap": "Earth: *0.12 of a pixel.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Soon after, Voyager's cameras were switched off. For good.",
+     "cap": "Then its cameras were *switched off.* For good."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Pale Blue Dot"
+  }
+ ]
+}

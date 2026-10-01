@@ -1,0 +1,84 @@
+{
+ "ep": 56,
+ "prog": 1,
+ "mood": "deep",
+ "title": "Elephant's Foot (Chernobyl)",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "IN 1986,",
+  "3 MINUTES HERE",
+  "COULD KILL YOU."
+ ],
+ "speed": 1.12,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/Elephant%27s_Foot_(Chernobyl)",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "In 1986, three minutes next to this could kill you."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The Elephant's Foot: melted nuclear fuel, sand and concrete, under Chernobyl.",
+     "cap": "*The Elephant's Foot.* Melted fuel, sand, concrete. *Chernobyl.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It was found eight months after the disaster, in December 1986.",
+     "cap": "Found *8 months later.* December 1986."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It gave off up to ten thousand roentgens an hour. A lethal dose in about three minutes.",
+     "cap": "Up to *10,000 roentgens/hour.* Lethal in about *3 minutes.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its most famous photo was taken with an automatic camera.",
+     "cap": "Its famous photo: an *automatic camera.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's weaker today. But still dangerous.",
+     "cap": "Weaker today. *Still dangerous.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Elephant's Foot (Chernobyl)"
+  }
+ ],
+ "lat0": 51
+}

@@ -1,0 +1,84 @@
+{
+ "ep": 55,
+ "prog": 0,
+ "mood": "epic",
+ "title": "Tsar Bomba",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "THE MOST POWERFUL",
+  "BOMB EVER",
+  "DETONATED."
+ ],
+ "speed": 1.12,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/Tsar_Bomba",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This was the most powerful bomb ever detonated."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "October 1961. The Soviets test the Tsar Bomba.",
+     "cap": "*Oct 1961.* The Soviets test the *Tsar Bomba.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Fifty megatons. About fifteen hundred times Hiroshima and Nagasaki combined.",
+     "cap": "*50 megatons.* About *1,570×* Hiroshima + Nagasaki."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The fireball was eight kilometers wide. The cloud rose sixty-seven kilometers.",
+     "cap": "Fireball: *8 km* wide. Cloud: *67 km* high."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Windows broke up to nine hundred kilometers away.",
+     "cap": "Windows broke *900 km* away."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And this was the toned-down version. It was designed for over a hundred.",
+     "cap": "And it was *toned down.* Designed for *100+.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Tsar Bomba"
+  }
+ ],
+ "lat0": 73
+}

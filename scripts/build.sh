@@ -7,7 +7,8 @@ mkdir -p dist
 for e in "$@"; do
   echo "::group::episode $e"
   python3 voice.py "$e"
-  node render.mjs --page "cine.html?ep=$e" --name "ep$e" --fps 60 --sub 1 --crf 16
+  SUB=$(python3 -c "import json;print(json.load(open('episodes/$e.json')).get('sub',1))")
+  node render.mjs --page "cine.html?ep=$e" --name "ep$e" --fps 60 --sub "$SUB" --crf 16
   ./finish.sh "$e"
   cp "out/ep$e/wiki_roulette_$e.mp4" dist/
   python3 - "$e" <<'PY'

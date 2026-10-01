@@ -1,0 +1,84 @@
+{
+ "ep": 54,
+ "prog": 2,
+ "mood": "epic",
+ "title": "Darvaza gas crater",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "hook": [
+  "THIS HOLE",
+  "HAS BEEN BURNING",
+  "SINCE 1971."
+ ],
+ "speed": 1.12,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "source": "https://en.wikipedia.org/wiki/Darvaza_gas_crater",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This hole in the desert has been on fire for over fifty years."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The Darvaza gas crater, in Turkmenistan. People call it the Door to Hell.",
+     "cap": "Turkmenistan. They call it: *the Door to Hell.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's about seventy meters wide, and thirty meters deep.",
+     "cap": "About *70 m* wide. *30 m* deep."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It was set on fire to burn off the gas. It was supposed to go out quickly.",
+     "cap": "Set on fire to *burn off the gas.* It should've gone out *fast.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It didn't. In 2013, one explorer climbed all the way to the bottom.",
+     "cap": "It didn't. *2013:* one explorer reached *the bottom.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Now, the government is trying to put it out.",
+     "cap": "Now they're trying to *put it out.*"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "lead",
+   "article": "Darvaza gas crater"
+  }
+ ],
+ "lat0": 40
+}
