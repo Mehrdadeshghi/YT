@@ -18,17 +18,22 @@ function shot(t, id, o = {}) {
   const [bx, by, bw, bh] = o.box || [0, 0, W, H], A = o.a || [0.5, 0.5, 1], B = o.b || A;
   const p = ease((t - (o.t0 ?? 0)) / (o.dur || 5)), u = lerp(A[0], B[0], p), v = lerp(A[1], B[1], p), z = lerp(A[2] ?? 1, B[2] ?? 1, p);
   const sc = Math.max(bw / im.width, bh / im.height) * z, dw = im.width * sc, dh = im.height * sc;
-  const [ax, ay] = o.anchor || [bx + bw / 2, by + bh * 0.46];
+  const [ax, ay] = o.anchor || (WIDE && !o.box ? [bw * 0.64, bh * 0.46] : [bx + bw / 2, by + bh * 0.46]);
   const dx = clamp(ax - u * dw, bx + bw - dw, bx), dy = clamp(ay - v * dh, by + bh - dh, by);
   g.save();
   if (o.box) { if (o.backdrop !== false) g.drawImage(blurOf(id), 0, 0, W, H); rrect(bx, by, bw, bh, o.r ?? 30); g.save(); g.clip(); }
   g.drawImage(im, dx, dy, dw, dh);
   if (o.box) { g.restore(); g.lineWidth = 3; g.strokeStyle = 'rgba(255,255,255,0.16)'; rrect(bx, by, bw, bh, o.r ?? 30); g.stroke(); }
+  else if (o.shade !== false && WIDE) {     // 16:9: dark left third (text) and bottom (captions)
+    const gl = g.createLinearGradient(0, 0, W, 0); gl.addColorStop(0, 'rgba(8,8,10,0.88)'); gl.addColorStop(0.3, 'rgba(8,8,10,0.6)'); gl.addColorStop(0.55, 'rgba(8,8,10,0.05)'); gl.addColorStop(1, 'rgba(8,8,10,0)');
+    g.fillStyle = gl; g.fillRect(0, 0, W, H); const gb = g.createLinearGradient(0, 0, 0, H); gb.addColorStop(0, 'rgba(8,8,10,0.45)'); gb.addColorStop(0.16, 'rgba(8,8,10,0)'); gb.addColorStop(0.72, 'rgba(8,8,10,0)'); gb.addColorStop(1, 'rgba(8,8,10,0.85)');
+    g.fillStyle = gb; g.fillRect(0, 0, W, H); }
   else if (o.shade !== false) {             // dark top (titles) and bottom (captions); the middle stays clean
     const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, 'rgba(8,8,10,0.86)'); gr.addColorStop(0.22, 'rgba(8,8,10,0.55)');
     gr.addColorStop(0.36, 'rgba(8,8,10,0.08)'); gr.addColorStop(0.58, 'rgba(8,8,10,0.08)'); gr.addColorStop(0.7, 'rgba(8,8,10,0.6)'); gr.addColorStop(1, 'rgba(8,8,10,0.9)');
     g.fillStyle = gr; g.fillRect(0, 0, W, H); }
-  const cr = o.credit ?? CREDITS[id]; if (cr) text(cr.slice(0, 64), o.box ? bx + 18 : 80, o.box ? by + bh - 16 : 1585, 'mono', 18, 'rgba(255,255,255,0.6)', { ls: 1 });
+  const cr = o.credit ?? CREDITS[id]; if (cr) { if (WIDE && !o.box) text(cr.slice(0, 70), W - 40, H - 22, 'mono', 18, 'rgba(255,255,255,0.6)', { ls: 1, align: 'right' });
+    else text(cr.slice(0, 64), o.box ? bx + 18 : 80, o.box ? by + bh - 16 : 1585, 'mono', 18, 'rgba(255,255,255,0.6)', { ls: 1 }); }
   g.restore();
   return (uu, vv) => [dx + uu * dw, dy + vv * dh];
 }
@@ -64,19 +69,19 @@ function ruler(t, tIn, x, y, len, str, o = {}) {
 }
 // a big fact: the number with an RGB split, a mono line under it
 function fact(t, tIn, big, small, o = {}) {
-  const y = o.y ?? 560, sz = fit(big, 'disp', o.size || 170, o.maxW || 920);
+  const y = o.y ?? (WIDE ? 330 : 560), sz = fit(big, 'disp', o.size || (WIDE ? 140 : 170), o.maxW || (WIDE ? 860 : 920));
   rgbPop(big, o.x ?? 80, y, sz, o.color || GOLD, t, tIn, { align: o.align || 'left' });
   if (small) label(small, (o.x ?? 80) + 4, y + 66, t, tIn + 0.35, { color: o.color2 || TXT, size: o.size2 || 32, align: o.align || 'left' });
 }
 // a light "data card": framed rounded panel for drawn comparisons
 function panel(x, y, w, h, a = 0.72) { g.save(); rrect(x, y, w, h, 30); g.fillStyle = `rgba(12,11,10,${a})`; g.fill(); g.lineWidth = 2; g.strokeStyle = 'rgba(255,255,255,0.12)'; g.stroke(); g.restore(); }
 // "REAL PHOTO" badge: tells the viewer this is not an illustration
-function realBadge(t, tIn, str = 'REAL PHOTO', y = 360) { chip('● ' + str, 80, y, t, tIn, { size: 24, align: 'left', bg: 'rgba(255,59,48,0.92)', fg: TXT }); }
+function realBadge(t, tIn, str = 'REAL PHOTO', y = WIDE ? 150 : 360) { chip('● ' + str, 80, y, t, tIn, { size: 24, align: 'left', bg: 'rgba(255,59,48,0.92)', fg: TXT }); }
 // fallback when a photo is missing
-function noPhoto(t) { atmosphere(t, { x: 540, y: 900, r: 900, c: 'rgba(40,90,120,0.35)' }); }
+function noPhoto(t) { atmosphere(t, { x: W / 2, y: H * 0.47, r: 900, c: 'rgba(40,90,120,0.35)' }); }
 // two stacked big lines (white, then gold) and an optional mono line
 function fact2(t, tIn, l1, l2, small, o = {}) {
-  const sz = Math.min(fit(l1, 'disp', o.size || 150, 920), fit(l2, 'disp', o.size || 150, 920)), y = o.y ?? 540;
+  const mw = o.maxW || (WIDE ? 860 : 920), sz = Math.min(fit(l1, 'disp', o.size || (WIDE ? 120 : 150), mw), fit(l2, 'disp', o.size || (WIDE ? 120 : 150), mw)), y = o.y ?? (WIDE ? 310 : 540);
   rgbPop(l1, 80, y, sz, o.c1 || TXT, t, tIn); rgbPop(l2, 80, y + sz * 1.0, sz, o.c2 || GOLD, t, tIn + 0.25);
   if (small) label(small, 84, y + sz + 66, t, tIn + 0.6, { color: o.c3 || TXT, size: 32 });
 }

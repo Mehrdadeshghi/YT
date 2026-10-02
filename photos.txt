@@ -1,6 +1,2 @@
 # Episodes whose photos to fetch for a preview (Photo preview workflow)
-065
-066
-067
-068
-069
+070

@@ -18,8 +18,9 @@ html,body{margin:0;background:#0C0B0A}canvas{display:block}
 // Story visuals are bespoke per episode (EPISODE_VIS), voice + captions come from episodes/<ep>.json
 // =====================================================================
 const EPID = new URLSearchParams(location.search).get('ep') || '020';
-const W = 1080, H = 1920, BEAT = 0.5, PRE = 0.5, FQ = 60;
-const c = document.getElementById('c'), g = c.getContext('2d');
+const WIDE = new URLSearchParams(location.search).has('wide');      // ?wide=1 → 16:9 long-form (1920×1080)
+const W = WIDE ? 1920 : 1080, H = WIDE ? 1080 : 1920, BEAT = 0.5, PRE = 0.5, FQ = 60;
+const c = document.getElementById('c'), g = c.getContext('2d'); c.width = W; c.height = H;
 const BG = '#0C0B0A', TXT = '#F4EEE3', DIM = '#8C857A', GOLD = '#FFC23D', RED = '#FF3B30',
       PANEL = '#141311', EDGE = '#2C2925', PAPER = '#EDE6D8', PINK = '#1A1714';
 let DUR = 44, SCENES = [], WORLD = [], EP = null, CTA = null, SCN = null;
@@ -87,20 +88,21 @@ function atmosphere(t, glow) {
   g.globalAlpha = 1;
 }
 const VIG = document.createElement('canvas'); VIG.width = W; VIG.height = H;
-{ const x = VIG.getContext('2d'), gr = x.createRadialGradient(W / 2, H * 0.45, H * 0.28, W / 2, H * 0.45, H * 0.78);
+{ const x = VIG.getContext('2d'), gr = x.createRadialGradient(W / 2, H * 0.45, Math.max(W, H) * 0.28, W / 2, H * 0.45, Math.max(W, H) * 0.78);
   gr.addColorStop(0, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(0,0,0,0.62)'); x.fillStyle = gr; x.fillRect(0, 0, W, H); }
 const GRAIN = [];
-for (let n = 0; n < 4; n++) { const cv = document.createElement('canvas'); cv.width = 540; cv.height = 960;
-  const cx = cv.getContext('2d'), im = cx.createImageData(540, 960), r = rng(900 + n);
+for (let n = 0; n < 4; n++) { const cv = document.createElement('canvas'); cv.width = W / 2; cv.height = H / 2;
+  const cx = cv.getContext('2d'), im = cx.createImageData(W / 2, H / 2), r = rng(900 + n);
   for (let i = 0; i < im.data.length; i += 4) { const v = r() > 0.5 ? 255 : 0; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = r() * 9; }
   cx.putImageData(im, 0, 0); GRAIN.push(cv); }
 
 // ---------- series chrome ----------
+const TAGY = WIDE ? 84 : 305;
 function tag(t, i, n) {
-  text('WIKI ROULETTE', 80, 305, 'mono', 28, DIM, { ls: 5 });
+  text('WIKI ROULETTE', 80, TAGY, 'mono', 28, DIM, { ls: 5 });
   g.font = F.mono(28); g.letterSpacing = '5px'; const w = g.measureText('WIKI ROULETTE').width; g.letterSpacing = '0px';
-  rrect(80 + w + 22, 276, 96, 40, 20); g.fillStyle = GOLD; g.fill(); text('#' + String(EP.ep).padStart(3, '0'), 80 + w + 34, 305, 'mono', 26, BG);
-  if (i == null) return; if (SCN != null) i = SCN;
+  rrect(80 + w + 22, TAGY - 29, 96, 40, 20); g.fillStyle = GOLD; g.fill(); text('#' + String(EP.ep).padStart(3, '0'), 80 + w + 34, TAGY, 'mono', 26, BG);
+  if (i == null || WIDE) return; if (SCN != null) i = SCN;
   for (let k = 0; k < n; k++) { const x = 1000 - (n - k) * 34 + 10; g.fillStyle = k < i ? GOLD : k === i ? TXT : '#3A3631';
     g.beginPath(); g.arc(x, 294, k === i ? 8 : 6, 0, 6.283); g.fill(); }
 }
@@ -127,17 +129,17 @@ function makeCaptions(segs, placed, skip = []) {
     return { at: pl.at, end: pl.end, words, chunks };
   }).filter(Boolean);
 }
-function captions(t, caps, yc = 1300) {
+function captions(t, caps, yc = WIDE ? 960 : 1300) {
   const sg = caps.find((q) => t >= q.at - 0.05 && t <= q.end + 0.4); if (!sg) return;
   let k = 0; sg.words.forEach((x, j) => { if (t >= x.t0 - 0.02) k = j; });
   const ch = sg.chunks.find((q) => q.includes(k)); if (!ch) return;
-  const S = 92; g.font = F.ui(S); const sp = g.measureText(' ').width;
+  const S = WIDE ? 64 : 92; g.font = F.ui(S); const sp = g.measureText(' ').width;
   const lines = [[]]; let lw = 0;
-  ch.forEach((j) => { const w = g.measureText(sg.words[j].w).width; if (lw + w > 860 && lines.at(-1).length) { lines.push([]); lw = 0; } lines.at(-1).push(j); lw += w + sp; });
-  const LH = 112, y0 = yc - (lines.length - 1) * LH / 2 + 32;
+  ch.forEach((j) => { const w = g.measureText(sg.words[j].w).width; if (lw + w > (WIDE ? 1400 : 860) && lines.at(-1).length) { lines.push([]); lw = 0; } lines.at(-1).push(j); lw += w + sp; });
+  const LH = WIDE ? 80 : 112, y0 = yc - (lines.length - 1) * LH / 2 + 32;
   lines.forEach((ln, li) => {
     const widths = ln.map((j) => g.measureText(sg.words[j].w).width), tot = widths.reduce((a, b) => a + b, 0) + sp * (ln.length - 1);
-    let x = 540 - tot / 2; const y = y0 + li * LH;
+    let x = W / 2 - tot / 2; const y = y0 + li * LH;
     ln.forEach((j, q) => { const wd = sg.words[j], w = widths[q];
       if (t >= wd.t0 - 0.02) { const p = spring(t - wd.t0 + 0.02, 480, 26), now = j === k && t < sg.end + 0.08;
         g.save(); g.translate(x + w / 2, y - S * 0.35); const sc = (0.8 + 0.2 * p) * (now ? 1.06 : 1); g.scale(sc, sc); g.translate(-w / 2, S * 0.35);
@@ -190,7 +192,7 @@ function monitor(T, y, label, sub, color, period, flatAt, o = {}) {
 const VIS = {}, PHOTOS = {}, CREDITS = {};
 // shared: the hook, stacked big on frame 0 (last line in gold); returns the y below it
 function hook(t, lines, y0 = 500, o = {}) {
-  const s = Math.min(...lines.map((l) => fit(l, 'disp', o.size || 150, 920)));
+  const s = Math.min(...lines.map((l) => fit(l, 'disp', o.size || 150, o.maxW || (WIDE ? 1300 : 920))));
   lines.forEach((l, i) => { const last = i === lines.length - 1;
     text(l, 80, y0 + i * s * 1.02, 'disp', s, last ? GOLD : TXT, { shadow: true }); });
   return y0 + (lines.length - 1) * s * 1.02;
@@ -228,7 +230,8 @@ function build(ep, voice) {
   const lsc = ep.scenes.at(-1), lvo = voPlace(lsc.vo, V.scenes[ep.scenes.length - 1]), ci = lsc.vo.findIndex((v) => v.cta);
   const comAt = ci >= 0 ? last.from + lvo[ci].at - PRE : last.from + 1.0, subEnd = ci >= 0 ? last.from + lvo[ci].at - PRE + (lvo[ci].end - lvo[ci].at) * 0.62 : null;
   CTA = Object.assign({ q: 'Did you know this?', a: 'YES', b: 'NO' }, ep.cta || {}, { subAt: mid.from + 1.0, comAt, subEnd, end: DUR });
-  if (ep.cta !== false) { cue(CTA.subAt, 'pop', 0.6, 600); cue(CTA.subAt + 0.75, 'click', 0.9); cue(CTA.comAt, 'pop', 0.8, 800);
+  if (WIDE) { CTA.subs = ep.scenes.map((sc, i) => sc.sub ? SCENES[i + 1].from + (sc.subAt ?? 1.0) : null).filter((x) => x != null); if (!CTA.subs.length) CTA.subs = [CTA.subAt]; }
+  if (ep.cta !== false) { (WIDE ? CTA.subs : [CTA.subAt]).forEach((s) => { cue(s, 'pop', 0.6, 600); cue(s + 0.75, 'click', 0.9); }); cue(CTA.comAt, 'pop', 0.8, 800);
     if (subEnd) { cue(subEnd, 'pop', 0.6, 600); cue(subEnd + 0.75, 'click', 0.9); } }
   CUES.sort((a, b) => a.t - b.t);
   window.DUR = DUR; window.EP = { ep: ep.ep, prog: ep.prog || 0, title: ep.title, dur: DUR, openDur, look: 'cine', mood: ep.mood || 'clock' };
@@ -265,8 +268,8 @@ function bell(x, y, s, rot) { g.save(); g.translate(x, y); g.rotate(rot); g.scal
 function cursorHand(x, y, press) { g.save(); g.translate(x, y); g.scale(1 - 0.12 * press, 1 - 0.12 * press); g.fillStyle = '#FFFFFF'; g.strokeStyle = '#111'; g.lineWidth = 4;
   g.beginPath(); g.moveTo(0, 0); g.lineTo(0, 58); g.lineTo(14, 46); g.lineTo(26, 72); g.lineTo(36, 67); g.lineTo(24, 42); g.lineTo(42, 42); g.closePath(); g.fill(); g.stroke(); g.restore(); }
 function subPill(ls, Y, life) {                              // ---- subscribe nudge with a tap
-  if (ls > 0 && ls < life) { const s = spring(ls, 260, 18), out = clamp((ls - life + 0.4) / 0.4), y = Y + (1 - s) * (1920 - Y + 60) + out * 420, on = ls > 0.75;
-    g.save(); g.globalAlpha = 1 - out; g.translate(540, y); const w = on ? 470 : 430;
+  if (ls > 0 && ls < life) { const s = spring(ls, 260, 18), out = clamp((ls - life + 0.4) / 0.4), y = Y + (1 - s) * (H - Y + 60) + out * 420, on = ls > 0.75;
+    g.save(); g.globalAlpha = 1 - out; g.translate(WIDE ? W - 300 : 540, y); const w = on ? 470 : 430;
     g.shadowColor = 'rgba(0,0,0,0.5)'; g.shadowBlur = 30; rrect(-w / 2, -46, w, 92, 46); g.fillStyle = on ? '#2B2A28' : '#FF0033'; g.fill(); g.shadowBlur = 0;
     text(on ? 'SUBSCRIBED' : 'SUBSCRIBE', on ? -40 : 0, 16, 'ui', 44, TXT, { align: 'center' });
     if (on) { bell(170, -4, 0.9, Math.sin((ls - 0.75) * 30) * 0.4 * Math.exp(-(ls - 0.75) * 3)); }
@@ -275,9 +278,10 @@ function subPill(ls, Y, life) {                              // ---- subscribe n
 }
 function engage(t) {
   g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1;
-  subPill(t - CTA.subAt, 1480, 2.9); if (CTA.subEnd) subPill(t - CTA.subEnd, 1290, 99);
+  if (WIDE) { (CTA.subs || [CTA.subAt]).forEach((s) => subPill(t - s, 150, 3.2)); if (CTA.subEnd) subPill(t - CTA.subEnd, 150, 99); }
+  else { subPill(t - CTA.subAt, 1480, 2.9); if (CTA.subEnd) subPill(t - CTA.subEnd, 1290, 99); }
   const lc = t - CTA.comAt;                                   // ---- comment question (last scene)
-  if (lc > 0) { const s = spring(lc, 220, 18), y = 1400 + (1 - s) * 520; g.save(); g.translate(0, y);
+  if (lc > 0) { const s = spring(lc, 220, 18), y = (WIDE ? H - 260 : 1400) + (1 - s) * 520; g.save(); g.translate(WIDE ? (W - 860) / 2 - 70 : 0, y);
     g.shadowColor = 'rgba(0,0,0,0.55)'; g.shadowBlur = 36; rrect(70, 0, 860, 200, 34); g.fillStyle = 'rgba(244,238,227,0.96)'; g.fill(); g.shadowBlur = 0;
     g.fillStyle = GOLD; rrect(104, 28, 58, 46, 13); g.fill(); g.beginPath(); g.moveTo(118, 72); g.lineTo(112, 90); g.lineTo(138, 72); g.fill();
     g.fillStyle = BG; [120, 133, 146].forEach((x) => { g.beginPath(); g.arc(x, 51, 4.5, 0, 6.283); g.fill(); });

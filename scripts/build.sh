@@ -8,7 +8,8 @@ for e in "$@"; do
   echo "::group::episode $e"
   python3 voice.py "$e"
   SUB=$(python3 -c "import json;print(json.load(open('episodes/$e.json')).get('sub',1))")
-  node render.mjs --page "cine.html?ep=$e" --name "ep$e" --fps 60 --sub "$SUB" --crf 16
+  WIDE=$(python3 -c "import json;print('&wide=1' if json.load(open('episodes/$e.json')).get('wide') else '')")
+  node render.mjs --page "cine.html?ep=$e$WIDE" --name "ep$e" --fps 60 --sub "$SUB" --crf 16
   ./finish.sh "$e"
   cp "out/ep$e/wiki_roulette_$e.mp4" dist/
   python3 - "$e" <<'PY'

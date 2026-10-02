@@ -8,7 +8,8 @@ const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ?
 const FPS = Number(arg('fps', 30)), SUB = Number(arg('sub', 2)), NAME = arg('name', 'main'), PAGE = arg('page', '');
 const dir = `out/${NAME}`; mkdirSync(dir, { recursive: true });
 const { page, close } = await openPage(chromium, PAGE);
-const meta = await page.evaluate(() => ({ dur: window.DUR, ep: window.EP || null, cues: window.CUES || [] }));
+const meta = await page.evaluate(() => ({ dur: window.DUR, ep: window.EP || null, cues: window.CUES || [], w: document.getElementById('c').width, h: document.getElementById('c').height }));
+const CLIP = { x: 0, y: 0, width: meta.w || 1080, height: meta.h || 1920 };
 writeFileSync(`${dir}/cues.json`, JSON.stringify(meta, null, 1));
 if (process.argv.includes('--cues-only')) { await close(); process.exit(0); }
 const DUR = meta.dur;
@@ -21,7 +22,7 @@ const total = Math.round(DUR * FPS * SUB), t0 = Date.now();
 for (let i = 0; i < total; i++) {
   const t = Math.max(0, i / (FPS * SUB) - (SUB - 1) / (2 * FPS * SUB));   // subframes centred on the output frame
   await page.evaluate((t) => window.seek(t), t);
-  const img = await page.screenshot(JPG ? { type: 'jpeg', quality: 95, clip: { x: 0, y: 0, width: 1080, height: 1920 } } : { type: 'png', clip: { x: 0, y: 0, width: 1080, height: 1920 } });
+  const img = await page.screenshot(JPG ? { type: 'jpeg', quality: 95, clip: CLIP } : { type: 'png', clip: CLIP });
   if (!ff.stdin.write(img)) await new Promise((r) => ff.stdin.once('drain', r));
   if (i % (FPS * SUB * 4) === 0) console.log(`[${NAME}] ${(i / (FPS * SUB)).toFixed(0)}s / ${DUR}s  (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
 }
