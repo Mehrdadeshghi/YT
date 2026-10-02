@@ -1,0 +1,127 @@
+{
+ "ep": 0,
+ "prog": 2,
+ "mood": "clock",
+ "title": "The Article About You (subscribe special)",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.12,
+ "sub": 1,
+ "glint": true,
+ "cta": false,
+ "openMin": 2.5,
+ "hook": [
+  "THERE'S AN ARTICLE",
+  "ABOUT YOU."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This is the encyclopedia article about you."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's empty.",
+     "cap": "It's *empty.*"
+    },
+    {
+     "at": "0.15",
+     "text": "Born: today.",
+     "cap": "Born: *today.*"
+    },
+    {
+     "at": "0.1",
+     "text": "Known for: being early.",
+     "cap": "Known for: *being early.*"
+    },
+    {
+     "at": "0.1",
+     "text": "Status: legend. Pending.",
+     "cap": "Status: *legend.* Pending."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 2026, this channel had exactly two subscribers.",
+     "cap": "*2026:* this channel had exactly *two subscribers.*"
+    },
+    {
+     "at": "0.15",
+     "text": "Historians still argue about who they were.",
+     "cap": "Historians still argue *who they were.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.3,
+     "text": "Eight new stories, every day.",
+     "cap": "*8 new stories* every day."
+    },
+    {
+     "at": "0.1",
+     "text": "A war humans lost to birds.",
+     "cap": "A war humans *lost to birds.*"
+    },
+    {
+     "at": "0.1",
+     "text": "A chicken that lived without a head.",
+     "cap": "A chicken that lived *without a head.*"
+    },
+    {
+     "at": "0.1",
+     "text": "A man who ate an airplane.",
+     "cap": "A man who *ate an airplane.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "This article needs one citation.",
+     "cap": "This article needs *one citation.*"
+    },
+    {
+     "at": "0.15",
+     "text": "You.",
+     "cap": "*You.*"
+    },
+    {
+     "at": "0.2",
+     "text": "Hit subscribe, and become subscriber number three.",
+     "cap": "Hit subscribe. Become *Subscriber No. 3.*"
+    }
+   ]
+  },
+  {
+   "dur": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Make history. Or at least, a footnote.",
+     "cap": "Make history. Or at least *a footnote.*"
+    },
+    {
+     "at": "0.17",
+     "text": "Until then, it stays empty.",
+     "cap": "Until then, it stays *empty.*"
+    }
+   ]
+  }
+ ],
+ "photos": []
+}
