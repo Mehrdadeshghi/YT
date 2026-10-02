@@ -1,6 +1,2 @@
 # Episodes to render on the next push (one per line). GitHub Actions renders them and publishes a Release.
-065
-066
-067
-068
-069
+070

@@ -151,5 +151,568 @@
    "id": "gl_hakarl",
    "file": "File:Hakarl near Bjarnahöfn in Iceland.JPG"
   }
- ]
+ ],
+ "prog": 0,
+ "mood": "deep",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.0,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "openMin": 9,
+ "hook": [
+  "7 DEEP-SEA",
+  "CREATURES THAT",
+  "LOOK FAKE."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Seven deep-sea creatures that look fake."
+  },
+  {
+   "at": "0.2",
+   "text": "All of them are real. And number one might be older than the United States."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Number seven. The pistol shrimp.",
+     "cap": "*#7:* The pistol shrimp."
+    }
+   ],
+   "vis": "ps_t"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It snaps its giant claw shut so fast that it fires a bubble, at ninety kilometers per hour.",
+     "cap": "It fires a bubble at *90 km/h.*"
+    }
+   ],
+   "vis": "ps1"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When that bubble collapses, it makes a sound of two hundred eighteen decibels underwater. Enough to stun a fish.",
+     "cap": "*218 dB* underwater. Enough to *stun a fish.*"
+    }
+   ],
+   "vis": "ps2"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The bubble even gives off a flash of light. Glowing like that would take over five thousand kelvin. Close to the surface of the Sun.",
+     "cap": "Over *5,000 K.* The Sun's surface: *5,772 K.*"
+    }
+   ],
+   "vis": "ps3"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And when a whole colony snaps at once, it's loud enough to interfere with sonar.",
+     "cap": "A colony can *jam sonar.*"
+    }
+   ],
+   "vis": "ps6"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Some live with a goby. The fish keeps watch, while the shrimp keeps one antenna on it.",
+     "cap": "Its lookout: a *goby.*"
+    }
+   ],
+   "vis": "ps4"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And one species was named after Pink Floyd, because of its bright pink claw.",
+     "cap": "Named after *Pink Floyd.*"
+    }
+   ],
+   "vis": "ps5"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Number six. The tongue-eating louse.",
+     "cap": "*#6:* The tongue-eating louse."
+    }
+   ],
+   "vis": "tl_t"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Look inside this fish's mouth. That's not its tongue. It's a parasite.",
+     "cap": "That's not a tongue. It's a *parasite.*"
+    }
+   ],
+   "vis": "tl1"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It gets in through the gills while it's young, and grabs onto the tongue.",
+     "cap": "It gets in through the *gills.*"
+    }
+   ],
+   "vis": "tl2"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then it cuts off the blood supply, until the tongue falls off.",
+     "cap": "It cuts the *blood supply.* The tongue *falls off.*"
+    }
+   ],
+   "vis": "tl3"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And it takes its place. The fish keeps using it, like a real tongue.",
+     "cap": "The fish uses it like a *real tongue.*"
+    }
+   ],
+   "vis": "tl4"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Even stranger: if a second male moves into the same fish, the first male turns into a female.",
+     "cap": "The first male *turns female.*"
+    }
+   ],
+   "vis": "tl6"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Females are only one to three centimeters long. And no, it's not harmful to humans.",
+     "cap": "Only *1–3 cm.* Not harmful to *humans.*"
+    }
+   ],
+   "vis": "tl5"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Number five. The black seadevil.",
+     "cap": "*#5:* The black seadevil."
+    }
+   ],
+   "vis": "sd_t"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It lives two hundred to fifteen hundred meters down, where sunlight never reaches.",
+     "cap": "*200–1,500 m* down. No *sunlight.*"
+    }
+   ],
+   "vis": "sd1"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So it makes its own light. The lure on its head glows, thanks to bacteria living inside it.",
+     "cap": "Its lure glows, thanks to *bacteria.*"
+    }
+   ],
+   "vis": "sd2"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its stomach stretches so much that it can eat a meal heavier than itself.",
+     "cap": "A meal *heavier than itself.*"
+    }
+   ],
+   "vis": "sd3"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Females grow to about fifteen centimeters. Males stay under three.",
+     "cap": "Females *15 cm.* Males *under 3.*"
+    }
+   ],
+   "vis": "sd4"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then, in February 2025, a living one was filmed at the surface, in daylight, off Tenerife.",
+     "cap": "*Feb 2025:* filmed alive at the *surface.*"
+    }
+   ],
+   "vis": "sd5"
+  },
+  {
+   "dur": 4,
+   "vis": "of_t",
+   "sub": true,
+   "subAt": 3.4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Number four. The giant oarfish.",
+     "cap": "*#4:* The giant oarfish."
+    },
+    {
+     "at": "0.3",
+     "text": "Quick favor: if you've learned something so far, subscribe. It really helps this tiny channel.",
+     "cap": "If you learned something: *subscribe.*"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's the longest bony fish alive. Seven to eight meters, maybe even more.",
+     "cap": "The longest bony fish: *7–8 m.*"
+    }
+   ],
+   "vis": "of1"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And it swims standing upright, tail down, rippling the long fin on its back.",
+     "cap": "It swims *upright.* Tail *down.*"
+    }
+   ],
+   "vis": "of5"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Healthy ones are almost never seen. Most are found sick, or washed up on a beach.",
+     "cap": "Healthy ones are *almost never seen.*"
+    }
+   ],
+   "vis": "of2"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "This one washed up in Bermuda in 1860. Sixteen feet long. People called it a sea serpent.",
+     "cap": "*Bermuda, 1860.* A *sea serpent?*"
+    }
+   ],
+   "vis": "of3"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In Japan, it's called the earthquake fish. Many washed up before the 2011 earthquake. But a 2019 study called the link an illusion.",
+     "cap": "Japan's *earthquake fish.* Science: *no link.*"
+    }
+   ],
+   "vis": "of4"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Number three. The goblin shark.",
+     "cap": "*#3:* The goblin shark."
+    }
+   ],
+   "vis": "gs_t"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its lineage is about a hundred twenty-five million years old. Scientists call it a living fossil.",
+     "cap": "A *125-million-year-old* lineage."
+    }
+   ],
+   "vis": "gs1"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its name comes from Japan: tenguzame, after the tengu, a goblin with a long nose.",
+     "cap": "Named after the *tengu.*"
+    }
+   ],
+   "vis": "gs5"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When it bites, its jaws shoot forward, almost to the end of its snout.",
+     "cap": "Its jaws *shoot forward.*"
+    }
+   ],
+   "vis": "gs2"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And it's pink, because you can see the blood vessels under its skin.",
+     "cap": "Pink, from *blood vessels* under the skin."
+    }
+   ],
+   "vis": "gs3"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 2023, a pregnant female caught off Taiwan was four point seven meters long, and weighed eight hundred kilos.",
+     "cap": "*4.7 m.* *800 kg.* Taiwan, *2023.*"
+    }
+   ],
+   "vis": "gs4"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Number two. The colossal squid.",
+     "cap": "*#2:* The colossal squid."
+    }
+   ],
+   "vis": "cs_t"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It has the biggest eyes of any known animal, ever. Up to thirty centimeters across. Bigger than a football.",
+     "cap": "Eyes up to *30 cm.* Bigger than a *football.*"
+    }
+   ],
+   "vis": "cs1"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The heaviest one ever caught weighed four hundred ninety-five kilos. It's now on display in New Zealand.",
+     "cap": "*495 kg.* The heaviest ever caught."
+    }
+   ],
+   "vis": "cs2"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its arms and tentacles carry hooks. Some of them can swivel.",
+     "cap": "*Hooks* on its arms. Some *swivel.*"
+    }
+   ],
+   "vis": "cs3"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Sperm whales hunt them. In the Antarctic, fourteen percent of the squid beaks in their stomachs are colossal squid.",
+     "cap": "*14%* of the beaks in sperm whales."
+    }
+   ],
+   "vis": "cs4"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And nobody filmed a living one until March 2025. It was a baby, about thirty centimeters long.",
+     "cap": "First filmed alive: *March 2025.*"
+    }
+   ],
+   "vis": "cs5"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And number one. The Greenland shark.",
+     "cap": "*#1:* The Greenland shark."
+    }
+   ],
+   "vis": "gl_t"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Scientists dated one using the lens of its eye. Three hundred ninety-two years old, give or take a hundred twenty. It was likely born before the United States existed.",
+     "cap": "*392 years.* Older than the *USA.*"
+    }
+   ],
+   "vis": "gl1"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It grows about one centimeter a year, and only becomes an adult at around a hundred fifty.",
+     "cap": "*1 cm* a year. Adult at *150.*"
+    }
+   ],
+   "vis": "gl2"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's also incredibly slow. It cruises at about a third of a meter per second.",
+     "cap": "It swims *0.34 m* per second."
+    }
+   ],
+   "vis": "gl7"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It can reach six point four meters, and more than a tonne.",
+     "cap": "Up to *6.4 m.* Over *1,000 kg.*"
+    }
+   ],
+   "vis": "gl3"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Many are almost blind. A parasite hangs from their eyes.",
+     "cap": "Almost *blind.* A parasite on its *eyes.*"
+    }
+   ],
+   "vis": "gl4"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Yet in their stomachs, scientists have found reindeer, moose, even polar bear.",
+     "cap": "*Reindeer.* *Moose.* *Polar bear.*"
+    }
+   ],
+   "vis": "gl5"
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its meat is toxic. In Iceland, it's fermented and dried into a dish called hákarl.",
+     "cap": "Toxic meat. Iceland makes *hákarl.*"
+    }
+   ],
+   "vis": "gl6"
+  },
+  {
+   "dur": 6,
+   "vis": "end",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So, seven creatures. Which one is the creepiest?",
+     "cap": "Which one is the *creepiest?*"
+    },
+    {
+     "at": "0.35",
+     "text": "Comment its number. I read every single comment. And subscribe for more.",
+     "cta": true
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Which one is the creepiest? Comment its number",
+  "a": "#1 SHARK",
+  "b": "#6 LOUSE"
+ },
+ "source": "https://en.wikipedia.org/wiki/Greenland_shark"
 }

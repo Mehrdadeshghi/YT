@@ -304,6 +304,8 @@ async function boot() {
   await load('cine/common.js'); if (ep.facts) await load('cine/facts.js'); if (ep.map) { await load('cine/map3d.js'); await loadEarth(EPID); MAP.init(topo); } await load(`cine/${EPID}.js`);
   if (0) await new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = `cine/${EPID}.js`; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
   build(ep, voice);
+  if (new URLSearchParams(location.search).has('thumb') && VIS.thumb) { const d = VIS.thumb(() => {});      // ?thumb=1 → the episode's thumbnail design
+    window.seek = (t) => { g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; d(t); return true; }; }
 }
 window.ready = Promise.all(['800 40px Inter', '700 40px Inter', '400 40px "Archivo Black"', '700 40px Serif', '500 40px JBMono']
   .map((f) => document.fonts.load(f))).then(() => document.fonts.ready).then(boot);
