@@ -1,6 +1,106 @@
 {
  "ep": 66,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.15,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "mood": "deep",
+ "facts": true,
+ "prog": 0,
  "title": "Greenland shark",
+ "hook": [
+  "THIS SHARK",
+  "MIGHT BE",
+  "400 YEARS OLD."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This shark might be 400 years old."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its eye lens was carbon dated: three hundred ninety-two years, give or take a hundred twenty.",
+     "cap": "Eye lens dated: *392 years.* Give or take 120."
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It grows about one centimeter a year, and becomes an adult at around a hundred fifty.",
+     "cap": "*1 cm* a year. Adult at *150.*"
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And it gets huge. Up to six point four meters, and more than a tonne.",
+     "cap": "Up to *6.4 m.* Over *1,000 kg.*"
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Many are almost blind. A parasite hangs from their eyes.",
+     "cap": "Almost *blind.* A parasite hangs from its *eyes.*"
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Yet in their stomachs: reindeer, moose, even polar bear.",
+     "cap": "In its stomach: *reindeer,* *moose,* *polar bear.*"
+    }
+   ],
+   "vis": 4
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its meat is toxic. In Iceland, they ferment it and dry it.",
+     "cap": "Its meat is *toxic.* Iceland *ferments* it."
+    },
+    {
+     "at": "0.35",
+     "text": "Would you try it? Yes or no? Tell me in the comments. And subscribe for more.",
+     "cta": true
+    }
+   ],
+   "vis": 5
+  }
+ ],
+ "cta": {
+  "q": "Would you try fermented shark?",
+  "a": "TRY IT",
+  "b": "NEVER"
+ },
+ "source": "https://en.wikipedia.org/wiki/Greenland_shark",
  "photos": [
   {
    "id": "lead",

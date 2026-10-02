@@ -1,6 +1,106 @@
 {
  "ep": 69,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.15,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "mood": "deep",
+ "facts": true,
+ "prog": 0,
  "title": "Alpheidae",
+ "hook": [
+  "THIS SHRIMP",
+  "HUNTS WITH",
+  "A BUBBLE."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This shrimp hunts with a bubble."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It snaps its giant claw so fast, it fires a bubble at ninety kilometers per hour.",
+     "cap": "A bubble at *90 km/h.*"
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When the bubble collapses: two hundred eighteen decibels. Enough to stun fish.",
+     "cap": "*218 dB.* Enough to *stun fish.*"
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It even flashes light. That glow would take over five thousand kelvin. Close to the Sun's surface.",
+     "cap": "Over *5,000 K.* The Sun's surface: *5,772 K.*"
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Whole colonies snapping together can jam sonar.",
+     "cap": "Colonies can *jam sonar.*"
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It lives with a goby. The fish keeps watch, the shrimp keeps a feeler on it.",
+     "cap": "Its lookout: a *goby.*"
+    }
+   ],
+   "vis": 4
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And one species was named after Pink Floyd, for its pink claw.",
+     "cap": "Named after *Pink Floyd.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Who wins: pistol shrimp, or mantis shrimp? Tell me in the comments. And subscribe for more.",
+     "cta": true
+    }
+   ],
+   "vis": 5
+  }
+ ],
+ "cta": {
+  "q": "Who wins?",
+  "a": "PISTOL SHRIMP",
+  "b": "MANTIS SHRIMP"
+ },
+ "source": "https://en.wikipedia.org/wiki/Alpheidae",
  "photos": [
   {
    "id": "lead",

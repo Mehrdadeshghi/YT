@@ -297,7 +297,7 @@ async function boot() {
   await Promise.all((ep.photos || []).map((p) => new Promise((res) => { const im = new Image();
     im.onload = () => { PHOTOS[p.id] = im; CREDITS[p.id] = cred[p.id] ? cred[p.id].credit : ''; res(); }; im.onerror = () => res(); im.src = `assets/photos/${EPID}_${p.id}.jpg`; })));
   const load = (src) => new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = src; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
-  await load('cine/common.js'); if (ep.map) { await load('cine/map3d.js'); await loadEarth(EPID); MAP.init(topo); } await load(`cine/${EPID}.js`);
+  await load('cine/common.js'); if (ep.facts) await load('cine/facts.js'); if (ep.map) { await load('cine/map3d.js'); await loadEarth(EPID); MAP.init(topo); } await load(`cine/${EPID}.js`);
   if (0) await new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = `cine/${EPID}.js`; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
   build(ep, voice);
 }

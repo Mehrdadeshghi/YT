@@ -1,6 +1,95 @@
 {
  "ep": 68,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.15,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "mood": "deep",
+ "facts": true,
+ "prog": 0,
  "title": "Colossal squid",
+ "hook": [
+  "THE BIGGEST",
+  "EYES OF ANY",
+  "ANIMAL. EVER."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "The biggest eyes of any animal. Ever."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The colossal squid's eyes are up to thirty centimeters wide. Bigger than a football.",
+     "cap": "Eyes up to *30 cm.* Bigger than a *football.*"
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The biggest one ever caught weighed four hundred ninety-five kilos. This one.",
+     "cap": "*495 kg.* The biggest ever caught."
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its arms and tentacles carry hooks. Some of them swivel.",
+     "cap": "*Hooks* on its arms. Some *swivel.*"
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Sperm whales hunt them. Fourteen percent of the beaks in their stomachs are colossal squid.",
+     "cap": "*14%* of beaks in sperm whale stomachs."
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Adults live up to four thousand meters deep. Nobody filmed one alive until 2025.",
+     "cap": "No one filmed one alive until *2025.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Is there something even bigger down there? Yes or no? Tell me in the comments. And subscribe for more.",
+     "cta": true
+    }
+   ],
+   "vis": 4
+  }
+ ],
+ "cta": {
+  "q": "Something bigger down there?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Colossal_squid",
  "photos": [
   {
    "id": "lead",

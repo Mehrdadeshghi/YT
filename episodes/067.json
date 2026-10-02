@@ -1,6 +1,95 @@
 {
  "ep": 67,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.15,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "mood": "deep",
+ "facts": true,
+ "prog": 0,
  "title": "Melanocetus johnsonii",
+ "hook": [
+  "THIS FISH",
+  "SHOULD NEVER",
+  "SEE DAYLIGHT."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This fish should never see daylight."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The black seadevil lives two hundred to fifteen hundred meters down, in total darkness.",
+     "cap": "It lives *200–1,500 m* down. In *darkness.*"
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It hunts with a glowing lure on its head. The light comes from bacteria.",
+     "cap": "A *glowing lure.* The light comes from *bacteria.*"
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its stomach stretches, so it can eat meals heavier than itself.",
+     "cap": "It eats meals *heavier than itself.*"
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Females grow to fifteen centimeters. Males stay under three.",
+     "cap": "Females *15 cm.* Males *under 3.*"
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In February 2025, one was filmed alive at the surface, off Tenerife.",
+     "cap": "*Feb 2025:* filmed alive at the *surface.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Why did it come up? Lost, or sick? Tell me in the comments. And subscribe for more.",
+     "cta": true
+    }
+   ],
+   "vis": 4
+  }
+ ],
+ "cta": {
+  "q": "Why did it come up?",
+  "a": "LOST",
+  "b": "SICK"
+ },
+ "source": "https://en.wikipedia.org/wiki/Melanocetus_johnsonii",
  "photos": [
   {
    "id": "lead",
