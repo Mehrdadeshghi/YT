@@ -1,6 +1,3 @@
-# Article title | Commons category
-Cymothoa exigua | Cymothoa exigua
-Greenland shark | Somniosus microcephalus
-Melanocetus johnsonii | Melanocetus johnsonii
-Colossal squid | Mesonychoteuthis hamiltoni
-Alpheidae | Alpheus
+Oarfish | Regalecus glesne
+Giant oarfish | Regalecidae
+Goblin shark | Mitsukurina owstoni
