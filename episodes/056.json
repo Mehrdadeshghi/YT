@@ -11,7 +11,7 @@
   "3 MINUTES HERE",
   "COULD KILL YOU."
  ],
- "speed": 1.12,
+ "speed": 1.15,
  "sub": 2,
  "transition": "whip",
  "glint": true,
@@ -19,7 +19,7 @@
  "vo_open": [
   {
    "at": 0,
-   "text": "In 1986, three minutes next to this could kill you."
+   "text": "Three minutes here could kill you."
   }
  ],
  "scenes": [
@@ -28,10 +28,22 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "The Elephant's Foot: melted nuclear fuel, sand and concrete, under Chernobyl.",
-     "cap": "*The Elephant's Foot.* Melted fuel, sand, concrete. *Chernobyl.*"
+     "text": "In 1986, it gave off up to ten thousand roentgens an hour.",
+     "cap": "*1986:* up to *10,000 roentgens/hour.*"
     }
-   ]
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's called the Elephant's Foot: melted fuel, sand and concrete, under Chernobyl.",
+     "cap": "*The Elephant's Foot:* melted fuel, sand, concrete. *Chernobyl.*"
+    }
+   ],
+   "vis": 0
   },
   {
    "dur": 4,
@@ -41,17 +53,8 @@
      "text": "It was found eight months after the disaster, in December 1986.",
      "cap": "Found *8 months later.* December 1986."
     }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "It gave off up to ten thousand roentgens an hour. A lethal dose in about three minutes.",
-     "cap": "Up to *10,000 roentgens/hour.* Lethal in about *3 minutes.*"
-    }
-   ]
+   ],
+   "vis": 1
   },
   {
    "dur": 4,
@@ -61,7 +64,8 @@
      "text": "Its most famous photo was taken with an automatic camera.",
      "cap": "Its famous photo: an *automatic camera.*"
     }
-   ]
+   ],
+   "vis": 3
   },
   {
    "dur": 4,
@@ -76,7 +80,8 @@
      "text": "Would you stand next to it for ten seconds? Tell me in the comments. And subscribe for more.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 4
   }
  ],
  "photos": [

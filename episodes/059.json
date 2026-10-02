@@ -20,7 +20,7 @@
  "vo_open": [
   {
    "at": 0,
-   "text": "For forty-nine years, two countries fought over this rock. With alcohol."
+   "text": "Two countries fought over this rock. With alcohol."
   }
  ],
  "scenes": [
@@ -29,20 +29,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Hans Island. One point three square kilometers of bare rock, between Canada and Greenland.",
-     "cap": "*Hans Island:* *1.3 km²* of rock between *Canada* and *Greenland.*"
-    }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
      "text": "In 1984, Canada planted its flag, and left a bottle of whisky.",
      "cap": "*1984:* Canada leaves a flag and *whisky.*"
     }
-   ]
+   ],
+   "vis": 1
   },
   {
    "dur": 4,
@@ -52,7 +43,19 @@
      "text": "Denmark's minister answered: a Danish flag, and a bottle of schnapps.",
      "cap": "Denmark replies: a flag and *schnapps.*"
     }
-   ]
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The rock: Hans Island. One point three square kilometers, between Canada and Greenland.",
+     "cap": "*Hans Island:* *1.3 km²* between *Canada* and *Greenland.*"
+    }
+   ],
+   "vis": 0
   },
   {
    "dur": 4,
@@ -62,7 +65,8 @@
      "text": "For decades, they took turns. Flags and bottles, back and forth.",
      "cap": "For decades: flags and bottles, *back and forth.*"
     }
-   ]
+   ],
+   "vis": 3
   },
   {
    "dur": 4,
@@ -77,7 +81,8 @@
      "text": "So who won the Whisky War? Canada, or Denmark? Comment below, and subscribe.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 4
   }
  ],
  "cta": {

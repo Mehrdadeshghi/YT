@@ -19,7 +19,7 @@ function pole(x, y, code, t, s = 1, w = 120) { if (s <= 0.01) return; g.strokeSt
 VIS.open = (K) => { K(0.2, 'whoosh', 0.9); K(1.6, 'pop', 0.8, 500); K(2.2, 'pop', 0.8, 800);
   return (t) => { earth(t, camPath(t, [[0, -40, 50, 2.8, 0, 0], [0.15, HI[0], HI[1], 0.08, 40, 0]], { k: 10, d: 6.4 }));
     territory('Canada', CAR, 0.5, { stroke: '#FFC2BE' }); territory('Greenland', GLC, 0.45, { stroke: '#DDE8FF' }); const [x, y] = MAP.P(...HI); shockRing(x, y, t % 1 + 1, 1, 140, '255,194,61', 2);
-    bottle(330, 1330, 1.7 * spring(t - 1.6, 260, 14), '#B8742A', 'WHISKY', { rot: -0.2 }); bottle(750, 1330, 1.7 * spring(t - 2.2, 260, 14), '#7FA8C9', 'SCHNAPPS', { rot: 0.2 });
+    bottle(330, 1330, 1.7 * spring(t - 1.0, 260, 14), '#B8742A', 'WHISKY', { rot: -0.2 }); bottle(750, 1330, 1.7 * spring(t - 1.5, 260, 14), '#7FA8C9', 'SCHNAPPS', { rot: 0.2 });
     tag(t); hook(t, EP.hook, 480); }; };
 VIS[0] = (K) => { K(0.6, 'land', 0.8); K(1.8, 'pop', 0.8, 700); K(2.6, 'pop', 0.8, 500); K(3.4, 'whoosh', 0.6);
   return (t) => { bg(t, [[0, HI[0], HI[1], 0.08, 40, 0], [0.1, HI[0], HI[1], 0.05, 48, 10]], 0);

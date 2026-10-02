@@ -20,7 +20,7 @@
  "vo_open": [
   {
    "at": 0,
-   "text": "This piece of Russia is surrounded by the European Union."
+   "text": "A piece of Russia, inside the EU."
   }
  ],
  "scenes": [
@@ -29,10 +29,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Kaliningrad. Between Poland and Lithuania, on the Baltic Sea.",
-     "cap": "*Kaliningrad:* between *Poland* and *Lithuania.*"
+     "text": "Since 1990, it has had no land connection to the rest of Russia.",
+     "cap": "Since *1990:* no land link to *Russia.*"
     }
-   ]
+   ],
+   "vis": 3
   },
   {
    "dur": 4,
@@ -42,7 +43,8 @@
      "text": "Until 1945 it was German: Königsberg, in East Prussia. The home town of Immanuel Kant.",
      "cap": "Until *1945:* German *Königsberg.* Kant's home town."
     }
-   ]
+   ],
+   "vis": 1
   },
   {
    "dur": 4,
@@ -52,22 +54,24 @@
      "text": "After the war, the Soviet Union took it. In 1946, it was renamed Kaliningrad.",
      "cap": "*1946:* renamed *Kaliningrad.*"
     }
-   ]
+   ],
+   "vis": 2
   },
   {
    "dur": 4,
    "vo": [
     {
      "at": 0.45,
-     "text": "Since 1990, it has had no land connection to the rest of Russia.",
-     "cap": "Since *1990:* no land link to *Russia.*"
+     "text": "Today it's Kaliningrad. Squeezed between Poland and Lithuania.",
+     "cap": "*Kaliningrad:* between *Poland* and *Lithuania.*"
     },
     {
      "at": "0.35",
      "text": "Would you visit Kaliningrad? Yes or no? Comment below, and subscribe.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 0
   }
  ],
  "cta": {

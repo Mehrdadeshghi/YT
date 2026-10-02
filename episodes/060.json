@@ -20,7 +20,7 @@
  "vo_open": [
   {
    "at": 0,
-   "text": "In this town, the border goes right through front doors."
+   "text": "Here, the border goes through front doors."
   }
  ],
  "scenes": [
@@ -29,10 +29,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Baarle. Where the Netherlands and Belgium are mixed together like a puzzle.",
-     "cap": "*Baarle:* Netherlands and Belgium, mixed like a *puzzle.*"
+     "text": "This front door is cut by the border. So the house has two addresses.",
+     "cap": "The border splits a front door: *two addresses.*"
     }
-   ]
+   ],
+   "vis": 2
   },
   {
    "dur": 4,
@@ -42,17 +43,19 @@
      "text": "Twenty-two pieces of Belgium sit inside the Netherlands. And inside those: seven pieces of the Netherlands.",
      "cap": "*22* Belgian enclaves. Inside them: *7* Dutch ones."
     }
-   ]
+   ],
+   "vis": 1
   },
   {
    "dur": 4,
    "vo": [
     {
      "at": 0.45,
-     "text": "The border runs through one front door. So the house has two addresses.",
-     "cap": "The border splits a front door: *two addresses.*"
+     "text": "This is Baarle. The Netherlands and Belgium, mixed like a puzzle.",
+     "cap": "*Baarle:* Netherlands and Belgium, mixed like a *puzzle.*"
     }
-   ]
+   ],
+   "vis": 0
   },
   {
    "dur": 4,
@@ -67,7 +70,8 @@
      "text": "Would you live in a house split by a border? Yes or no? Comment below, and subscribe.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 3
   }
  ],
  "cta": {

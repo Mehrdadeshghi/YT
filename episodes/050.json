@@ -10,7 +10,7 @@
   "THAT TINY DOT",
   "IS EARTH."
  ],
- "speed": 1.12,
+ "speed": 1.15,
  "sub": 2,
  "transition": "whip",
  "glint": true,
@@ -19,10 +19,6 @@
   {
    "at": 0,
    "text": "That tiny dot is Earth."
-  },
-  {
-   "at": "+0.12",
-   "text": "Seen from six billion kilometers."
   }
  ],
  "scenes": [
@@ -31,10 +27,22 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "In 1990, Voyager 1 was six billion kilometers from home.",
-     "cap": "*1990.* Voyager 1: *6 billion km* from home."
+     "text": "In this photo, Earth is less than one pixel. Zero point one two of a pixel.",
+     "cap": "Earth: less than *one pixel.* *0.12* of a pixel."
     }
-   ]
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Voyager 1 took it in 1990, six billion kilometers from home.",
+     "cap": "Voyager 1, *1990.* *6 billion km* from home."
+    }
+   ],
+   "vis": 0
   },
   {
    "dur": 4,
@@ -44,17 +52,8 @@
      "text": "Carl Sagan pushed NASA to turn its camera back toward Earth, one last time.",
      "cap": "Carl Sagan: turn the camera *back toward Earth.*"
     }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "In the photo, Earth is less than one pixel. Zero point one two of a pixel.",
-     "cap": "Earth: *0.12 of a pixel.*"
-    }
-   ]
+   ],
+   "vis": 1
   },
   {
    "dur": 4,
@@ -69,7 +68,8 @@
      "text": "Does this make you feel small, or lucky? Tell me in the comments. And subscribe for more.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 3
   }
  ],
  "photos": [

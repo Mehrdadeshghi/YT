@@ -11,7 +11,7 @@
   "FLATTENED.",
   "NO CRATER."
  ],
- "speed": 1.12,
+ "speed": 1.15,
  "sub": 2,
  "transition": "whip",
  "glint": true,
@@ -19,7 +19,7 @@
  "vo_open": [
   {
    "at": 0,
-   "text": "Something flattened a whole forest. And left no crater."
+   "text": "A forest flattened. No crater."
   }
  ],
  "scenes": [
@@ -28,20 +28,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "June 30th, 1908. Siberia. A blast over the Tunguska River.",
-     "cap": "*June 30, 1908.* Siberia. A *blast.*"
-    }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "It flattened about two thousand one hundred fifty square kilometers of forest.",
+     "text": "Two thousand one hundred fifty square kilometers of forest. Flattened.",
      "cap": "*2,150 km²* of forest. *Flattened.*"
     }
-   ]
+   ],
+   "vis": 1
   },
   {
    "dur": 4,
@@ -51,7 +42,19 @@
      "text": "The shock wave knocked people down more than sixty kilometers away.",
      "cap": "People knocked down *60+ km* away."
     }
-   ]
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It happened on June 30th, 1908, in Siberia.",
+     "cap": "*June 30, 1908.* *Siberia.*"
+    }
+   ],
+   "vis": 0
   },
   {
    "dur": 4,
@@ -66,7 +69,8 @@
      "text": "What do you think it was? Asteroid, or comet? Tell me in the comments. And subscribe for more.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 3
   }
  ],
  "photos": [

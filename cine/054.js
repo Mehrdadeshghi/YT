@@ -16,7 +16,7 @@ function pit(t, f = 1, gx = 190, gy = 780, w = 700, d = 280) { g.fillStyle = '#2
   if (f > 0) { g.save(); g.beginPath(); g.moveTo(gx, gy); g.lineTo(gx + 40, gy + d); g.lineTo(gx + w - 40, gy + d); g.lineTo(gx + w, gy); g.clip(); glowDot(gx + w / 2, gy + d, w * 0.6, '255,120,40', 0.7 * f); g.globalCompositeOperation = 'lighter';
     for (let x = gx + 50; x < gx + w - 40; x += 26) flame(x, gy + d + 4, (60 + 35 * Math.sin(t * 11 + x)) * f, 24, 0.7 * f); for (let k = 0; k < 10; k++) { const yy = gy + 40 + k * 26; flame(gx + 6 + k * 3.6 + 10, yy + 20, (24 + 10 * Math.sin(t * 13 + k)) * f, 8, 0.6 * f); flame(gx + w - 16 - k * 3.6, yy + 20, (24 + 10 * Math.sin(t * 12 + k)) * f, 8, 0.6 * f); } g.restore();
     embers(t, gx + 60, gx + w - 60, gy + d, Math.round(40 * f), 8); } }
-VIS.open = (K) => { K(0.3, 'riser', 0.5, 2); K(2.6, 'thump', 0.9);
+VIS.open = (K) => { K(0.3, 'riser', 0.5, 2); K(1.6, 'thump', 0.9);
   return (t) => { if (!photoBG(t, 'lead', { zoom: [1.05, 1.2], dur: 4, focus: [0.5, 0.6] })) { desert(t, 900); crater(t, 540, 1150, 440, 170, 1); }
     else embers(t, 200, 880, 1500, 40, 5); tag(t); hook(t, EP.hook, 480); }; };
 VIS[0] = (K) => { K(0.5, 'whoosh', 0.7); K(1.5, 'land', 0.7); K(2.4, 'hit', 1.1);

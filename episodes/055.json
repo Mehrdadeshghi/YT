@@ -11,7 +11,7 @@
   "BOMB EVER",
   "DETONATED."
  ],
- "speed": 1.12,
+ "speed": 1.15,
  "sub": 2,
  "transition": "whip",
  "glint": true,
@@ -19,7 +19,7 @@
  "vo_open": [
   {
    "at": 0,
-   "text": "This was the most powerful bomb ever detonated."
+   "text": "The most powerful bomb ever detonated."
   }
  ],
  "scenes": [
@@ -28,30 +28,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "October 1961. The Soviets test the Tsar Bomba.",
-     "cap": "*Oct 1961.* The Soviets test the *Tsar Bomba.*"
-    }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
      "text": "Fifty megatons. About fifteen hundred times Hiroshima and Nagasaki combined.",
      "cap": "*50 megatons.* About *1,570×* Hiroshima + Nagasaki."
     }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "The fireball was eight kilometers wide. The cloud rose sixty-seven kilometers.",
-     "cap": "Fireball: *8 km* wide. Cloud: *67 km* high."
-    }
-   ]
+   ],
+   "vis": 1
   },
   {
    "dur": 4,
@@ -61,7 +42,30 @@
      "text": "Windows broke up to nine hundred kilometers away.",
      "cap": "Windows broke *900 km* away."
     }
-   ]
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The fireball was eight kilometers wide. The cloud rose sixty-seven kilometers.",
+     "cap": "Fireball: *8 km* wide. Cloud: *67 km* high."
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It was the Soviet Tsar Bomba. October 1961.",
+     "cap": "The Soviet *Tsar Bomba.* *Oct 1961.*"
+    }
+   ],
+   "vis": 0
   },
   {
    "dur": 4,
@@ -76,7 +80,8 @@
      "text": "Would you have watched it from a hundred kilometers away? Tell me in the comments. And subscribe for more.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 4
   }
  ],
  "photos": [

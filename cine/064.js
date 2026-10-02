@@ -8,8 +8,8 @@ function mine(t, x, y, s) { g.save(); g.translate(x, y); g.scale(s, s); g.fillSt
   g.fillStyle = '#0B0908'; g.beginPath(); g.moveTo(-110, 120); g.lineTo(-110, 0); g.quadraticCurveTo(0, -100, 110, 0); g.lineTo(110, 120); g.fill(); g.strokeStyle = '#6E5236'; g.lineWidth = 16; g.beginPath(); g.moveTo(-120, 120); g.lineTo(-120, -6); g.quadraticCurveTo(0, -112, 120, -6); g.lineTo(120, 120); g.stroke();
   const cx = lerp(-40, 40, 0.5 + 0.5 * Math.sin(t)); g.fillStyle = '#5A5A60'; g.fillRect(cx - 60, 50, 120, 50); g.fillStyle = '#A8B0B8'; g.beginPath(); g.arc(cx - 20, 48, 20, 0, 6.283); g.arc(cx + 18, 44, 24, 0, 6.283); g.fill(); g.restore(); }
 VIS.open = (K) => { K(0.2, 'whoosh', 0.9); K(2.0, 'pop', 0.8, 600);
-  return (t) => { earth(t, camPath(t, [[0, 5, 45, 2.8, 0, 0], [0.15, NM[0], NM[1] - 0.01, 0.006, 42, 0]], { k: 10, d: 6.4 })); lands(0.35); triStripes(t, clamp((t - 1.6) * 3));
-    flag('NM', 540, 1380, 260, t, { s: spring(t - 2.0, 260, 16) }); tag(t); hook(t, EP.hook, 480); }; };
+  return (t) => { earth(t, camPath(t, [[0, 5, 45, 2.8, 0, 0], [0.15, NM[0], NM[1] - 0.01, 0.006, 42, 0]], { k: 10, d: 6.4 })); lands(0.35); triStripes(t, clamp((t - 0.8) * 3));
+    flag('NM', 540, 1380, 260, t, { s: spring(t - 1.0, 260, 16) }); tag(t); hook(t, EP.hook, 480); }; };
 VIS[0] = (K) => { K(0.45, 'hit', 0.9); K(1.6, 'thump', 0.8); K(3.2, 'pop', 0.8, 600);
   return (t) => { const sky = g.createLinearGradient(0, 0, 0, H); sky.addColorStop(0, '#120E0A'); sky.addColorStop(1, '#2C2218'); g.fillStyle = sky; g.fillRect(0, 0, W, H); glowDot(540, 1000, 500, '255,200,120', 0.12);
     mine(t, 540, 1080, 1.4 * spring(t - 1.4, 200, 18)); versus('PR', 'NL', 'PRUSSIA', 'NETHERLANDS', t, 3.0, 760);

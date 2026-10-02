@@ -20,7 +20,7 @@
  "vo_open": [
   {
    "at": 0,
-   "text": "To drive to this American town, you have to go through Canada."
+   "text": "To drive here, you must go through Canada."
   }
  ],
  "scenes": [
@@ -29,30 +29,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Point Roberts, Washington. A small tip of land, hanging below Canada.",
-     "cap": "*Point Roberts:* a tip of land below *Canada.*"
-    }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "In 1846, the border was set at the 49th parallel. And it cut this tip off.",
-     "cap": "*1846:* the border follows the *49th parallel.*"
-    }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
      "text": "To reach the rest of the US by road: forty kilometers through Canada. Two border crossings.",
      "cap": "*40 km* through Canada. *2* border crossings."
     }
-   ]
+   ],
+   "vis": 2
   },
   {
    "dur": 4,
@@ -61,13 +42,36 @@
      "at": 0.45,
      "text": "Older school kids cross the border four times a day.",
      "cap": "School kids cross the border *4 times* a day."
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Why? In 1846, the border was set at the 49th parallel. And it cut this tip off.",
+     "cap": "*1846:* the border follows the *49th parallel.*"
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "This is Point Roberts, Washington. A tip of land, hanging below Canada.",
+     "cap": "*Point Roberts:* a tip of land below *Canada.*"
     },
     {
      "at": "0.35",
      "text": "Should Point Roberts just join Canada? Yes or no? Comment below, and subscribe.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 0
   }
  ],
  "cta": {

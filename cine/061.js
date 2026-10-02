@@ -2,11 +2,11 @@
 const BD = [-169.08, 65.78], LD = [-168.93, 65.755], RUC = '#D52B1E', USC = '#3C6BD8';
 const BDP = islandPoly(...BD, 2.0, 4.2, 0.3, 61), LDP = islandPoly(...LD, 1.5, 2.3, 0.3, 62), DL = densify([[-168.977, 64.6], [-168.977, 67.0]], 30);
 function isles(t, o = {}) { territory(BDP, '#6E6658', 1, {}); territory(LDP, '#6E6658', 1, {}); territory(BDP, RUC, o.a ?? 0.55, { stroke: '#FFB0A8', glow: 10 }); territory(LDP, USC, o.a ?? 0.55, { stroke: '#B0C8FF', glow: 10 }); }
-VIS.open = (K) => { K(0.2, 'whoosh', 0.9); K(2.0, 'tick', 1); K(2.6, 'tick', 1);
+VIS.open = (K) => { K(0.2, 'whoosh', 0.9); K(0.6, 'tick', 1); K(1.0, 'tick', 1);
   return (t) => { earth(t, camPath(t, [[0, -150, 50, 2.8, 0, 0], [0.15, -169, 65.75, 0.045, 38, 0]], { k: 10, d: 6.4 }), { minAlt: 0.004 }); isles(t);
     territory('Russia', RUC, 0.5, { stroke: '#FFC2BE' }); territory('United States of America', USC, 0.5, { stroke: '#DDE8FF' }); isles(t); tag(t); hook(t, EP.hook, 480);
-    if (t > 2.0) { clockFace(300, 1350, 110, 13, 0, {}); text('MON', 300, 1520, 'disp', 50, '#B0C8FF', { align: 'center', shadow: true }); }
-    if (t > 2.6) { clockFace(780, 1350, 110, 10, 0, {}); text('TUE', 780, 1520, 'disp', 50, '#FFB0A8', { align: 'center', shadow: true }); } }; };
+    if (t > 0.6) { clockFace(300, 1350, 110, 13, 0, {}); text('MON', 300, 1520, 'disp', 50, '#B0C8FF', { align: 'center', shadow: true }); }
+    if (t > 1.0) { clockFace(780, 1350, 110, 10, 0, {}); text('TUE', 780, 1520, 'disp', 50, '#FFB0A8', { align: 'center', shadow: true }); } }; };
 VIS[0] = (K) => { K(0.6, 'land', 0.8); K(2.2, 'pop', 0.8, 600); K(3.6, 'pop', 0.8, 800); K(4.6, 'swish', 0.6);
   return (t) => { earth(t, camPath(t, [[0, -169, 65.75, 0.045, 38, 0], [0.4, -169, 65.77, 0.011, 45, 10]], { k: 3, d: 3.4 }), { minAlt: 0.004 }); territory('Russia', RUC, 0.5, { stroke: '#FFC2BE' }); territory('United States of America', USC, 0.5, { stroke: '#DDE8FF' }); isles(t);
     place(-170.6, 65.95, 'RUSSIA', t, 0.5, { color: '#FFC2BE', size: 38 }); place(-167.6, 65.55, 'ALASKA', t, 0.9, { color: '#DDE8FF', size: 38 });

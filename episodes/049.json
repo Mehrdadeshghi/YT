@@ -11,7 +11,7 @@
   "SOUND IN",
   "HISTORY."
  ],
- "speed": 1.12,
+ "speed": 1.15,
  "sub": 2,
  "transition": "whip",
  "glint": true,
@@ -19,7 +19,7 @@
  "vo_open": [
   {
    "at": 0,
-   "text": "This was the loudest sound in recorded history."
+   "text": "The loudest sound in history."
   }
  ],
  "scenes": [
@@ -28,20 +28,22 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "August 1883. Krakatoa explodes.",
-     "cap": "*August 1883.* Krakatoa *explodes.*"
+     "text": "It was heard four thousand eight hundred kilometers away. People thought it was cannon fire.",
+     "cap": "Heard *4,800 km* away. People thought it was *cannon fire.*"
     }
-   ]
+   ],
+   "vis": 1
   },
   {
    "dur": 4,
    "vo": [
     {
      "at": 0.45,
-     "text": "It was heard four thousand eight hundred kilometers away. People thought it was cannon fire.",
-     "cap": "Heard *4,800 km* away. People thought it was *cannon fire.*"
+     "text": "It was a volcano. Krakatoa, August 1883.",
+     "cap": "It was a volcano: *Krakatoa,* *1883.*"
     }
-   ]
+   ],
+   "vis": 0
   },
   {
    "dur": 4,
@@ -51,7 +53,8 @@
      "text": "Its pressure wave circled the Earth more than three times.",
      "cap": "The pressure wave circled Earth *3+ times.*"
     }
-   ]
+   ],
+   "vis": 2
   },
   {
    "dur": 4,
@@ -61,7 +64,8 @@
      "text": "Tsunamis up to forty-two meters. At least thirty-six thousand people died.",
      "cap": "Tsunamis up to *42 m.* At least *36,000* dead."
     }
-   ]
+   ],
+   "vis": 3
   },
   {
    "dur": 4,
@@ -76,7 +80,8 @@
      "text": "Would you live next to a volcano? Tell me in the comments. And subscribe for more.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 4
   }
  ],
  "photos": [

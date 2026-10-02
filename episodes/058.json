@@ -29,10 +29,22 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Pheasant Island. A tiny island in a river between France and Spain.",
+     "text": "February to July, it's Spanish. August to January, it's French.",
+     "cap": "Feb to Jul: *Spanish.* Aug to Jan: *French.*"
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's Pheasant Island, in a river between France and Spain.",
      "cap": "*Pheasant Island:* in a river between *France* and *Spain.*"
     }
-   ]
+   ],
+   "vis": 0
   },
   {
    "dur": 4,
@@ -42,17 +54,8 @@
      "text": "In 1659, the two kingdoms signed a peace treaty right here.",
      "cap": "*1659:* a peace treaty was signed *right here.*"
     }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "Since then: February to July, it's Spanish. August to January, it's French.",
-     "cap": "Feb to Jul: *Spanish.* Aug to Jan: *French.*"
-    }
-   ]
+   ],
+   "vis": 1
   },
   {
    "dur": 4,
@@ -67,7 +70,8 @@
      "text": "Should every border work like this? Yes or no? Comment below, and subscribe.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 3
   }
  ],
  "cta": {

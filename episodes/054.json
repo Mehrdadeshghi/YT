@@ -11,7 +11,7 @@
   "HAS BEEN BURNING",
   "SINCE 1971."
  ],
- "speed": 1.12,
+ "speed": 1.15,
  "sub": 2,
  "transition": "whip",
  "glint": true,
@@ -19,7 +19,7 @@
  "vo_open": [
   {
    "at": 0,
-   "text": "This hole in the desert has been on fire for over fifty years."
+   "text": "This hole has been burning for fifty years."
   }
  ],
  "scenes": [
@@ -28,30 +28,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "The Darvaza gas crater, in Turkmenistan. People call it the Door to Hell.",
-     "cap": "Turkmenistan. They call it: *the Door to Hell.*"
-    }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "It's about seventy meters wide, and thirty meters deep.",
-     "cap": "About *70 m* wide. *30 m* deep."
-    }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "It was set on fire to burn off the gas. It was supposed to go out quickly.",
+     "text": "It was set on fire on purpose, to burn off the gas. It was supposed to go out quickly.",
      "cap": "Set on fire to *burn off the gas.* It should've gone out *fast.*"
     }
-   ]
+   ],
+   "vis": 2
   },
   {
    "dur": 4,
@@ -61,7 +42,30 @@
      "text": "It didn't. In 2013, one explorer climbed all the way to the bottom.",
      "cap": "It didn't. *2013:* one explorer reached *the bottom.*"
     }
-   ]
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's about seventy meters wide, and thirty meters deep.",
+     "cap": "About *70 m* wide. *30 m* deep."
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "They call it the Door to Hell. The Darvaza crater, in Turkmenistan.",
+     "cap": "They call it *the Door to Hell.* Turkmenistan."
+    }
+   ],
+   "vis": 0
   },
   {
    "dur": 4,
@@ -76,7 +80,8 @@
      "text": "Should they put it out, or keep it burning? Tell me in the comments. And subscribe for more.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 4
   }
  ],
  "photos": [

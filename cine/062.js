@@ -9,9 +9,9 @@ function bus(x, y, s, dir = 1) { g.save(); g.translate(x, y); g.scale(s * dir, s
   g.beginPath(); g.arc(-34, 22, 11, 0, 6.283); g.arc(34, 22, 11, 0, 6.283); g.fill(); g.restore(); }
 function along(p) { const i = clamp(p) * (ROUTE.length - 1), k = Math.floor(i), u = i - k, a = ROUTE[k], b = ROUTE[Math.min(k + 1, ROUTE.length - 1)]; return MAP.P(lerp(a[0], b[0], u), lerp(a[1], b[1], u)); }
 const KV = [[0, -122.95, 49.03, 0.016, 32, 0]];
-VIS.open = (K) => { K(0.2, 'whoosh', 0.9); K(2.0, 'pop', 0.8, 600);
-  return (t) => { base(t, [[0, -100, 45, 2.8, 0, 0], [0.15, -123.0, 49.0, 0.018, 40, 0]], { k: 10, d: 6.4 }); place(...PR, 'POINT ROBERTS', t, 1.6, { color: '#B0C8FF', size: 40 });
-    flag('US', 300, 1380, 220, t, { s: spring(t - 2.0, 260, 16) }); flag('CA', 780, 1380, 220, t, { s: spring(t - 2.4, 260, 16) }); tag(t); hook(t, EP.hook, 480); }; };
+VIS.open = (K) => { K(0.2, 'whoosh', 0.9); K(0.8, 'pop', 0.8, 600);
+  return (t) => { base(t, [[0, -100, 45, 2.8, 0, 0], [0.15, -123.0, 49.0, 0.018, 40, 0]], { k: 10, d: 6.4 }); place(...PR, 'POINT ROBERTS', t, 0.6, { color: '#B0C8FF', size: 40 });
+    flag('US', 300, 1380, 220, t, { s: spring(t - 0.8, 260, 16) }); flag('CA', 780, 1380, 220, t, { s: spring(t - 1.2, 260, 16) }); tag(t); hook(t, EP.hook, 480); }; };
 VIS[0] = (K) => { K(0.6, 'land', 0.8); K(2.0, 'pop', 0.8, 600);
   return (t) => { base(t, [[0, -123.0, 49.0, 0.018, 40, 0], [0.1, -123.05, 49.0, 0.008, 45, 10]], { k: 3, d: 3.4 }); flagPin(...PR, 'US', t, 2.0, { label: 'POINT ROBERTS', w: 120 });
     tag(t, 0, 4); rgbPop('WASHINGTON, USA', 80, 540, fit('WASHINGTON, USA', 'disp', 120, 920), '#B0C8FF', t, 0.45); label('CANADA ALL AROUND BY LAND', 84, 605, t, 1.0, { color: GOLD }); }; };

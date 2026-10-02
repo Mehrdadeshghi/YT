@@ -20,7 +20,7 @@
  "vo_open": [
   {
    "at": 0,
-   "text": "For over a hundred years, a tiny territory existed because of one zinc mine."
+   "text": "A country that existed for one zinc mine."
   }
  ],
  "scenes": [
@@ -29,20 +29,22 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "1816. Prussia and the Netherlands could not agree who gets a valuable zinc mine.",
-     "cap": "*1816:* who gets the *zinc mine?*"
+     "text": "Neutral Moresnet. Just three and a half square kilometers, owned by no one.",
+     "cap": "*Neutral Moresnet:* just *3.5 km².*"
     }
-   ]
+   ],
+   "vis": 1
   },
   {
    "dur": 4,
    "vo": [
     {
      "at": 0.45,
-     "text": "So they made it neutral. Neutral Moresnet: just three and a half square kilometers.",
-     "cap": "*Neutral Moresnet:* just *3.5 km².*"
+     "text": "It started in 1816. Prussia and the Netherlands could not agree who gets the zinc.",
+     "cap": "*1816:* who gets the *zinc mine?*"
     }
-   ]
+   ],
+   "vis": 0
   },
   {
    "dur": 4,
@@ -52,7 +54,8 @@
      "text": "In 1908, people wanted to make it the first Esperanto-speaking state: Amikejo.",
      "cap": "*1908:* plan for the first *Esperanto state.*"
     }
-   ]
+   ],
+   "vis": 2
   },
   {
    "dur": 4,
@@ -67,7 +70,8 @@
      "text": "Should tiny neutral places like this still exist? Yes or no? Comment below, and subscribe.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 3
   }
  ],
  "cta": {

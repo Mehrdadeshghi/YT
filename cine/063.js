@@ -1,9 +1,9 @@
 // Wiki Roulette #063 — Kaliningrad: a piece of Russia surrounded by the EU
 const KG = [20.51, 54.71], MOS = [37.62, 55.75], EUC = '#2D5BD8', RUC = '#D52B1E';
 function eu(a = 0.4) { ['Poland', 'Lithuania', 'Latvia', 'Germany', 'Denmark', 'Sweden', 'Estonia'].forEach((n) => territory(n, EUC, a, { stroke: '#FFCC00', glow: 6, lw: 2 })); }
-VIS.open = (K) => { K(0.2, 'whoosh', 0.9); K(1.8, 'hit', 0.9);
-  return (t) => { earth(t, camPath(t, [[0, 40, 40, 2.8, 0, 0], [0.15, 21.4, 54.4, 0.14, 35, 0]], { k: 10, d: 6.4 })); eu(0.4); territory('Russia', RUC, 0.5 * clamp((t - 1.8) * 3), { stroke: '#FFB0A8' });
-    const [x, y] = MAP.P(...KG); if (t > 1.8) shockRing(x, y, t, 1.8, 260, '255,120,100', 2); tag(t); hook(t, EP.hook, 480); }; };
+VIS.open = (K) => { K(0.2, 'whoosh', 0.9); K(0.9, 'hit', 0.9);
+  return (t) => { earth(t, camPath(t, [[0, 40, 40, 2.8, 0, 0], [0.15, 21.4, 54.4, 0.14, 35, 0]], { k: 10, d: 6.4 })); eu(0.4); territory('Russia', RUC, 0.5 * clamp((t - 0.9) * 3), { stroke: '#FFB0A8' });
+    const [x, y] = MAP.P(...KG); if (t > 0.9) shockRing(x, y, t, 0.9, 260, '255,120,100', 2); tag(t); hook(t, EP.hook, 480); }; };
 VIS[0] = (K) => { K(0.6, 'land', 0.8); [1.6, 2.2, 2.8].forEach((a) => K(a, 'pop', 0.7, 700));
   return (t) => { earth(t, camPath(t, [[0, 21.4, 54.4, 0.14, 35, 0], [0.1, 21.6, 54.5, 0.16, 40, 8]], { k: 3, d: 3.4 })); eu(0.35); territory('Russia', RUC, 0.5, { stroke: '#FFB0A8' });
     place(...KG, 'KALININGRAD', t, 0.6, { size: 40 }); place(20.3, 53.1, 'POLAND', t, 1.6, { size: 32 }); place(23.6, 55.3, 'LITHUANIA', t, 2.2, { size: 32 }); place(18.6, 55.7, 'BALTIC SEA', t, 2.8, { size: 30, color: '#9FD0FF' });

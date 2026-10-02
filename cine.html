@@ -22,7 +22,7 @@ const W = 1080, H = 1920, BEAT = 0.5, PRE = 0.5, FQ = 60;
 const c = document.getElementById('c'), g = c.getContext('2d');
 const BG = '#0C0B0A', TXT = '#F4EEE3', DIM = '#8C857A', GOLD = '#FFC23D', RED = '#FF3B30',
       PANEL = '#141311', EDGE = '#2C2925', PAPER = '#EDE6D8', PINK = '#1A1714';
-let DUR = 44, SCENES = [], WORLD = [], EP = null, CTA = null;
+let DUR = 44, SCENES = [], WORLD = [], EP = null, CTA = null, SCN = null;
 
 // ---------- math ----------
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
@@ -100,7 +100,7 @@ function tag(t, i, n) {
   text('WIKI ROULETTE', 80, 305, 'mono', 28, DIM, { ls: 5 });
   g.font = F.mono(28); g.letterSpacing = '5px'; const w = g.measureText('WIKI ROULETTE').width; g.letterSpacing = '0px';
   rrect(80 + w + 22, 276, 96, 40, 20); g.fillStyle = GOLD; g.fill(); text('#' + String(EP.ep).padStart(3, '0'), 80 + w + 34, 305, 'mono', 26, BG);
-  if (i == null) return;
+  if (i == null) return; if (SCN != null) i = SCN;
   for (let k = 0; k < n; k++) { const x = 1000 - (n - k) * 34 + 10; g.fillStyle = k < i ? GOLD : k === i ? TXT : '#3A3631';
     g.beginPath(); g.arc(x, 294, k === i ? 8 : 6, 0, 6.283); g.fill(); }
 }
@@ -209,16 +209,16 @@ const ceilHalf = (x) => Math.ceil(x * 2) / 2;
 function build(ep, voice) {
   EP = ep; const V = voice || { open: [], scenes: [] };
   const openVO = voPlace(ep.vo_open, V.open);
-  const openDur = Math.max(4, ceilHalf(openVO.at(-1).end + 0.6));
+  const openDur = Math.max(ep.openMin ?? 2.5, ceilHalf(openVO.at(-1).end + 0.45));
   openVO.forEach((v) => cue(v.at, 'vo', 1, v.file));
   SCENES = [{ from: 0, to: openDur, pre: 0, draw: VIS.open((e, ty, gn, p) => cue(e, ty, gn, p)) }];
   let t = openDur;
   ep.scenes.forEach((sc, i) => {
     const vo = voPlace(sc.vo, V.scenes[i]), dur = Math.max(sc.dur, ceilHalf(vo.at(-1).end + 0.3)), from = t;
     vo.forEach((v) => cue(from + v.at - PRE, 'vo', 1, v.file));
-    const K = (e, ty, gn, p) => cue(from + e - PRE, ty, gn, p), vis = VIS[i](K, { vo });
+    const K = (e, ty, gn, p) => cue(from + e - PRE, ty, gn, p), vis = VIS[sc.vis ?? i](K, { vo });
     const caps = makeCaptions(sc.vo, vo, sc.noCap || []);
-    SCENES.push({ from, to: from + dur, pre: PRE, draw: (lt) => { vis(lt); if (caps.length) captions(lt, caps); } });
+    SCENES.push({ from, to: from + dur, pre: PRE, draw: (lt) => { SCN = i; vis(lt); if (caps.length) captions(lt, caps); } });
     t += dur; });
   const last = SCENES.at(-1), pad = (2 - (t % 2)) % 2; last.to += pad; t += pad;
   DUR = t; SCENES.slice(1).forEach((s) => cue(s.from - (ep.transition === 'whip' ? 0.12 : 0.2), 'whoosh', ep.transition === 'whip' ? 1 : 0.8));

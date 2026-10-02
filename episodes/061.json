@@ -20,7 +20,7 @@
  "vo_open": [
   {
    "at": 0,
-   "text": "These two islands are four kilometers apart. And twenty-one hours apart."
+   "text": "Four kilometers apart. Twenty-one hours apart."
   }
  ],
  "scenes": [
@@ -29,30 +29,33 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "The Diomede Islands, in the Bering Strait. Big Diomede is Russian. Little Diomede is American.",
-     "cap": "*Big Diomede:* Russia. *Little Diomede:* USA."
-    }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "Between them runs the International Date Line.",
-     "cap": "Between them runs the *Date Line.*"
-    }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "So Big Diomede is twenty-one hours ahead. They call it Tomorrow Island.",
+     "text": "This island is twenty-one hours ahead of that one. They call it Tomorrow Island.",
      "cap": "*21 hours* ahead: *Tomorrow Island.*"
     }
-   ]
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Because between them runs the International Date Line.",
+     "cap": "Between them runs the *Date Line.*"
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Big Diomede is Russian. Little Diomede is American.",
+     "cap": "*Big Diomede:* Russia. *Little Diomede:* USA."
+    }
+   ],
+   "vis": 0
   },
   {
    "dur": 4,
@@ -67,7 +70,8 @@
      "text": "Would you swim into tomorrow? Yes or no? Comment below, and subscribe.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 3
   }
  ],
  "cta": {

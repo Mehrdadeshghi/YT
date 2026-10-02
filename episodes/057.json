@@ -29,10 +29,22 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "1690: a British captain lands first.",
-     "cap": "*1690:* a British captain lands *first.*"
+     "text": "1982: Argentina invades. Seventy-four days of war.",
+     "cap": "*1982:* Argentina *invades.* *74 days* of war."
     }
-   ]
+   ],
+   "vis": 4
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But it began in 1690, when a British captain landed first.",
+     "cap": "It began in *1690:* a British captain lands *first.*"
+    }
+   ],
+   "vis": 0
   },
   {
    "dur": 4,
@@ -42,7 +54,8 @@
      "text": "1764: France settles. 1765: Britain too.",
      "cap": "*1764:* France settles. *1765:* Britain too."
     }
-   ]
+   ],
+   "vis": 1
   },
   {
    "dur": 4,
@@ -52,7 +65,8 @@
      "text": "Then France hands it to Spain. By 1811, everyone's gone.",
      "cap": "France hands it to *Spain.* By *1811,* everyone's *gone.*"
     }
-   ]
+   ],
+   "vis": 2
   },
   {
    "dur": 4,
@@ -62,17 +76,8 @@
      "text": "1820: Buenos Aires claims it. 1833: Britain returns, and stays.",
      "cap": "*1820:* Buenos Aires claims it. *1833:* Britain *returns.*"
     }
-   ]
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "1982: Argentina invades. Seventy-four days of war.",
-     "cap": "*1982:* Argentina *invades.* *74 days* of war."
-    }
-   ]
+   ],
+   "vis": 3
   },
   {
    "dur": 4,
@@ -87,7 +92,8 @@
      "text": "Britain, or Argentina: who should own them? Comment below, and subscribe.",
      "cta": true
     }
-   ]
+   ],
+   "vis": 5
   }
  ],
  "cta": {
