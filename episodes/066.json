@@ -1,0 +1,34 @@
+{
+ "ep": 66,
+ "title": "Greenland shark",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:Greenland shark profile.jpg"
+  },
+  {
+   "id": "deep",
+   "file": "File:Somniosus microcephalus okeanos.jpg"
+  },
+  {
+   "id": "ice",
+   "file": "File:Arctic Jaws.jpg"
+  },
+  {
+   "id": "expl",
+   "file": "File:Expl9984 (14318817140).jpg"
+  },
+  {
+   "id": "mount",
+   "file": "File:Taxidermied Greenland shark.jpg"
+  },
+  {
+   "id": "hakarl",
+   "file": "File:Hakarl near Bjarnahöfn in Iceland.JPG"
+  },
+  {
+   "id": "eye",
+   "file": "File:Somniosus microcephalus with Ommatokoita.png"
+  }
+ ]
+}

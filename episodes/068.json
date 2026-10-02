@@ -1,0 +1,34 @@
+{
+ "ep": 68,
+ "title": "Colossal squid",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:Colossal squid in Te Papa.jpg"
+  },
+  {
+   "id": "tepapa",
+   "file": "File:NZ070415 Colossal Squid 01.jpg"
+  },
+  {
+   "id": "human",
+   "file": "File:Calmarcolossal2.jpg"
+  },
+  {
+   "id": "club",
+   "file": "File:Colossal squid tentacular club, NHM (1).jpg"
+  },
+  {
+   "id": "beak",
+   "file": "File:Colossal squid beak - Natural History Museum, London.jpg"
+  },
+  {
+   "id": "tent",
+   "file": "File:Giant Squid (20495944085).jpg"
+  },
+  {
+   "id": "head",
+   "file": "File:Colossal squid head and limbs, NHM (1).jpg"
+  }
+ ]
+}

@@ -9,6 +9,8 @@ Each episode JSON may list  "photos": [{"id": "lead", "article": "Jeanne Calment
   id       name the visuals use:  photo(t, 'lead', ...)
   article  English Wikipedia article to take the image from
   match    optional: pick the first article image whose file name contains this word; default = ONLY the article's lead image
+  file     optional: an exact Wikimedia Commons file ("File:Greenland shark profile.jpg"), hand-picked from catalog.md
+           (no article needed). The licence check still applies.
 Only freely licensed files (public domain / CC0 / CC BY / CC BY-SA) are used.
 Writes assets/photos/<ep>_<id>.jpg and assets/photos/<ep>.credits.json (author, license, source page).
 If a photo can't be found, the episode renders with its drawn fallback.
@@ -33,7 +35,8 @@ def api(**p):
 
 def clean(html): return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", html or "")).strip()
 
-def candidates(article, match):
+def candidates(article, match, file=None):
+    if file: return [file if file.startswith("File:") else "File:" + file]
     page = api(action="query", titles=article, prop="pageimages|images", piprop="name", imlimit="max", redirects=1)["query"]["pages"][0]
     names = [i["title"] for i in page.get("images", []) if i["title"].lower().endswith((".jpg", ".jpeg", ".png"))]
     lead = page.get("pageimage")
@@ -46,16 +49,20 @@ def candidates(article, match):
     return [f"File:{lead}"] if lead else []
 
 def fetch(ep, spec, credits):
-    for name in candidates(spec["article"], spec.get("match"))[:12]:
+    for name in candidates(spec.get("article"), spec.get("match"), spec.get("file"))[:12]:
         info = api(action="query", titles=name, prop="imageinfo", iiprop="url|size|extmetadata", iiurlwidth=WIDTH)["query"]["pages"][0]
         if "imageinfo" not in info: continue
         ii = info["imageinfo"][0]; meta = ii.get("extmetadata", {})
         lic = clean(meta.get("LicenseShortName", {}).get("value"))
-        if not FREE.search(lic) or ii.get("width", 0) < 480:
+        if not FREE.search(lic) or max(ii.get("width", 0), ii.get("thumbwidth", 0)) < 480:
             print(f"   skip {name} ({lic or 'no license'}, {ii.get('width')} px)"); continue
         url = ii.get("thumburl") or ii["url"]; dst = f"{OUT}/{ep}_{spec['id']}.jpg"
-        with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r, open(dst, "wb") as f:
-            f.write(r.read())
+        with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r: data = r.read()
+        if not data.startswith(b"\xff\xd8"):   # png/svg thumbnails → convert to jpg on a paper-white background
+            from PIL import Image; import io
+            im = Image.open(io.BytesIO(data)).convert("RGBA"); bg = Image.new("RGB", im.size, (242, 238, 230)); bg.paste(im, mask=im.split()[3])
+            buf = io.BytesIO(); bg.save(buf, "JPEG", quality=92); data = buf.getvalue()
+        open(dst, "wb").write(data)
         author = clean(re.sub(r"<[^>]+>", " ", meta.get("Artist", {}).get("value") or "")) or "unknown"
         if re.search(r"unknown author|anonymous", author, re.I): author = "Unknown author"
         credits[spec["id"]] = {"file": name, "author": author[:80], "license": lic, "page": ii.get("descriptionurl"),

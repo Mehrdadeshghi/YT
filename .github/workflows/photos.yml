@@ -1,0 +1,20 @@
+name: Photo preview
+# push photos.txt (episode numbers) → fetch the episodes' photos exactly like the render does → Release photos-N (zip)
+on:
+  push:
+    branches: [main]
+    paths: [photos.txt]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -q pillow && python3 fetch_photos.py $(grep -v '^#' photos.txt | tr -s ' \n' ' ')
+      - run: cd assets/photos && zip -q ../../photos.zip *.jpg *.json
+      - env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release create "photos-${{ github.run_number }}" photos.zip --title "Photo preview ${{ github.run_number }}" --notes "Photos as the render will use them"
