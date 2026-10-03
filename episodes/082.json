@@ -1,0 +1,43 @@
+{
+ "ep": 82,
+ "title": "Great Red Spot",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:Great red spot juno 20170712.jpg"
+  },
+  {
+   "id": "earth",
+   "file": "File:Jupiter, Earth size comparison.jpg"
+  },
+  {
+   "id": "evo",
+   "file": "File:Evolution of GRS.jpg"
+  },
+  {
+   "id": "voy",
+   "file": "File:Great Red Spot From Voyager 1.jpg"
+  },
+  {
+   "id": "v1",
+   "video": "File:Jupiter - PJ7 - Great Red Spot Flyover (46500577734).webm",
+   "from": 0,
+   "len": 40,
+   "fps": 1
+  },
+  {
+   "id": "v2",
+   "video": "File:Jupiter’s Great Red Spot Is Shaking (SVS14702 GRS VERT MP4).webm",
+   "from": 0,
+   "len": 120,
+   "fps": 1
+  },
+  {
+   "id": "v3",
+   "video": "File:Jupiter from Voyager 1 PIA02855 max quality.ogv",
+   "from": 0,
+   "len": 8,
+   "fps": 1
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "ep": 80,
+ "title": "Naked mole-rat",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:Webs180130-rat.jpg"
+  },
+  {
+   "id": "eat",
+   "file": "File:Naked Mole Rat Eating.jpg"
+  },
+  {
+   "id": "kenya",
+   "file": "File:Naked Mole Rat (Heterocephalus glaber) (7662741774).jpg"
+  },
+  {
+   "id": "model",
+   "file": "File:Model of naked mole-rat soldiers, workers, and queen.jpg"
+  },
+  {
+   "id": "v1",
+   "video": "File:Nacktmulle (Zoo Dresden) (2).webm",
+   "from": 0,
+   "len": 10,
+   "fps": 1
+  },
+  {
+   "id": "v2",
+   "video": "File:Heterocephalus glaber June 2019.webm",
+   "from": 0,
+   "len": 18,
+   "fps": 1
+  },
+  {
+   "id": "v3",
+   "video": "File:Heterocephalus glaber 2010.ogv",
+   "from": 0,
+   "len": 9,
+   "fps": 1
+  },
+  {
+   "id": "v4",
+   "video": "File:Naked mole-rat (Heterocephalus glaber).webm",
+   "from": 0,
+   "len": 14,
+   "fps": 1
+  }
+ ]
+}

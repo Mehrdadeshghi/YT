@@ -1,0 +1,43 @@
+{
+ "ep": 79,
+ "title": "Tardigrade",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:SEM image of Milnesium tardigradum in active state - journal.pone.0045682.g001-2.png"
+  },
+  {
+   "id": "tun",
+   "file": "File:Richtersius coronifer in active and tun states.png"
+  },
+  {
+   "id": "micro",
+   "file": "File:Tardigrade under microscope.jpg"
+  },
+  {
+   "id": "first",
+   "file": "File:First Recorded Image of Tardigrade.jpg"
+  },
+  {
+   "id": "v1",
+   "video": "File:Тихоходка под микроскопом. 200х. Косое освещение.webm",
+   "from": 0,
+   "len": 90,
+   "fps": 1
+  },
+  {
+   "id": "v2",
+   "video": "File:Тихоходка из мха.webm",
+   "from": 0,
+   "len": 60,
+   "fps": 1
+  },
+  {
+   "id": "v3",
+   "video": "File:Desiccation-Tolerance-in-the-Tardigrade-Richtersius-coronifer-Relies-on-Muscle-Mediated-Structural-pone.0085091.s001.ogv",
+   "from": 0,
+   "len": 80,
+   "fps": 1
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "ep": 81,
+ "title": "Carrington Event",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:Carrington Richard drawing of 1859 sunspots.jpeg"
+  },
+  {
+   "id": "nyt",
+   "file": "File:Carrington Event in the New York Times on August 30, 1859.png"
+  },
+  {
+   "id": "iss",
+   "file": "File:Aurora Australis From ISS.JPG"
+  },
+  {
+   "id": "v1",
+   "video": "File:Largest Flare yet from Solar Cycle 25 (SVS14592 SDO X8pt7 flare May 14 2024 ProRes Outro).webm",
+   "from": 0,
+   "len": 75,
+   "fps": 1
+  },
+  {
+   "id": "v2",
+   "video": "File:Aurora from Atacama.webm",
+   "from": 0,
+   "len": 100,
+   "fps": 1
+  },
+  {
+   "id": "v3",
+   "video": "File:ISS views Aurora from the November 11-13, 2025 Geomagnetic Storm (SVS31375).webm",
+   "from": 0,
+   "len": 90,
+   "fps": 1
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "ep": 83,
+ "title": "Venus flytrap",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:Venus Flytrap showing trigger hairs.jpg"
+  },
+  {
+   "id": "fly",
+   "file": "File:Dionaea, muscoid fly.jpg"
+  },
+  {
+   "id": "brno",
+   "file": "File:Dionaea muscipula (3), exhibition in Botanical garden Brno.JPG"
+  },
+  {
+   "id": "flower",
+   "file": "File:Flowering Venus flytrap plant.jpg"
+  },
+  {
+   "id": "v1",
+   "video": "File:Venus Flytrap (time lapse).webm",
+   "from": 0,
+   "len": 90,
+   "fps": 1
+  },
+  {
+   "id": "v2",
+   "video": "File:Venus fly trap capturing prey.webm",
+   "from": 0,
+   "len": 90,
+   "fps": 1
+  }
+ ]
+}
