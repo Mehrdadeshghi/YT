@@ -14,3 +14,11 @@ You can also start a render by hand: Actions → Render Shorts → Run workflow 
 - `cine/<ep>.js`: the story visuals for one episode. `photo(t, id, …)` shows a real photo if it was fetched, otherwise the drawn version stays.
 - `episodes/<ep>.json`: hook, voice-over segments, captions, `photos: [{id, article, match?}]`.
 - `render.mjs`, `score_cine.mjs`, `finish.sh`, `voice.py`, `fetch_photos.py`, `scripts/build.sh`.
+
+
+## House standard (since #065, Oct 2026)
+- **Voice:** Kokoro `af_heart`, speed **1.30** (≈200–250 words/min while talking). Don't lower it.
+- **No dead air:** Shorts are `"tight"` by default — each scene ends ~0.2 s after its sentence; animations are time-compressed to fit; real video clips keep real-time playback.
+- **Ending:** during the spoken call to action, quick cuts through the episode's real photos/clips (no static end frame).
+- **Facts on screen:** real photos (`"file"`) and real footage (`"video"`, Commons/NOAA, free licences only), labelled REAL PHOTO / REAL FOOTAGE / MUSEUM MODEL / ILLUSTRATION.
+- **Engagement:** hook ≤ 2 s, strongest fact first, spoken opinion question + subscribe, comment card, "full video below" card when `related` is set.

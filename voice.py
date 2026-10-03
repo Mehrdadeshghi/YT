@@ -7,7 +7,7 @@ TTS = os.environ.get('TTS_DIR', 'models')
 ep = sys.argv[1]
 arg = lambda k, d: sys.argv[sys.argv.index('--' + k) + 1] if '--' + k in sys.argv else d
 E = json.load(open(f'episodes/{ep}.json'))
-VOICE, SPEED = arg('voice', E.get('voice', 'af_heart')), float(arg('speed', str(E.get('speed', 1.1))))
+VOICE, SPEED = arg('voice', E.get('voice', 'af_heart')), float(arg('speed', str(E.get('speed', 1.3))))   # house standard: 1.30 (fast, no dead air)
 out = f'out/ep{ep}/vo'; os.makedirs(out, exist_ok=True)
 k = Kokoro(f'{TTS}/kokoro-v1.0.onnx', f'{TTS}/voices-v1.0.bin')
 def synth(key, text):

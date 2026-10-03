@@ -209,6 +209,7 @@ function voPlace(segs = [], durs = []) {
 }
 const ceilHalf = (x) => Math.ceil(x * 2) / 2;
 function build(ep, voice) {
+  if (ep.tight == null && !WIDE) ep.tight = true;            // house standard for Shorts: no dead air (set "tight": false to opt out)
   EP = ep; const V = voice || { open: [], scenes: [] };
   const openVO = voPlace(ep.vo_open, V.open);
   const ceilQ = (x) => Math.ceil(x * 4) / 4;                 // ep.tight: no dead air — scenes end 0.2 s after the voice, animations are time-compressed to fit
