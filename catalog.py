@@ -19,19 +19,23 @@ def info(names):
         q = api(CM, action="query", titles="|".join(names[i:i + 40]), prop="imageinfo", iiprop="size|mime|extmetadata", iiextmetadatafilter="LicenseShortName|ImageDescription|Artist")
         for p in q.get("query", {}).get("pages", []):
             ii = (p.get("imageinfo") or [{}])[0]; m = ii.get("extmetadata", {})
-            out.append((p["title"], ii.get("width"), ii.get("height"), ii.get("mime"), clean(m.get("LicenseShortName", {}).get("value")), clean(m.get("Artist", {}).get("value"))[:60], clean(m.get("ImageDescription", {}).get("value"))[:220]))
+            out.append((p["title"], f'{ii.get("width")}x{ii.get("height")}' + (f' {ii["duration"]:.0f}s' if ii.get("duration") else ""), "", ii.get("mime"), clean(m.get("LicenseShortName", {}).get("value")), clean(m.get("Artist", {}).get("value"))[:60], clean(m.get("ImageDescription", {}).get("value"))[:220]))
     return out
 lines = ["# Photo catalog", ""]
 for row in open("catalog.txt"):
     row = row.strip()
     if not row or row.startswith("#"): continue
+    if row.lower().startswith("video:"):          # "video: goblin shark" → free videos on Commons matching the words
+        q = row[6:].strip(); hits = api(CM, action="query", list="search", srnamespace=6, srsearch=f"{q} filetype:video", srlimit=20).get("query", {}).get("search", [])
+        lines += [f"## VIDEOS: {q}"] + [f"- {t} | {w} | {lic} | {who} | {d}" for t, w, h, mt, lic, who, d in info([h["title"] for h in hits])] + [""]
+        continue
     art, _, cat = [x.strip() for x in row.partition("|")]
     pg = api(WP, action="query", titles=art, prop="images|pageimages", piprop="name", imlimit="max", redirects=1).get("query", {}).get("pages", [{}])[0]
     names = [i["title"] for i in pg.get("images", []) if re.search(r"\.(jpe?g|png|tiff?|svg)$", i["title"], re.I)]
     lines += [f"## {art}", f"lead: File:{pg.get('pageimage')}", "", "### in the article"]
-    lines += [f"- {t} | {w}x{h} | {lic} | {who} | {d}" for t, w, h, mt, lic, who, d in info(names)]
+    lines += [f"- {t} | {w} | {lic} | {who} | {d}" for t, w, h, mt, lic, who, d in info(names)]
     if cat:
         mem = api(CM, action="query", list="categorymembers", cmtitle=f"Category:{cat}", cmtype="file", cmlimit="80").get("query", {}).get("categorymembers", [])
-        lines += ["", f"### Commons category: {cat}"] + [f"- {t} | {w}x{h} | {lic} | {who} | {d}" for t, w, h, mt, lic, who, d in info([m['title'] for m in mem])]
+        lines += ["", f"### Commons category: {cat}"] + [f"- {t} | {w} | {lic} | {who} | {d}" for t, w, h, mt, lic, who, d in info([m['title'] for m in mem])]
     lines.append("")
 open("dist/catalog.md", "w").write("\n".join(lines)); print("\n".join(lines)[:3000])

@@ -1,3 +1,15 @@
-Giant isopod | Bathynomus giganteus
-Ocean sunfish | Mola mola
-Turritopsis dohrnii | Turritopsis dohrnii
+video: goblin shark
+video: oarfish
+video: Bathynomus
+video: Mola mola sunfish
+video: Turritopsis jellyfish
+video: Greenland shark Somniosus
+video: anglerfish
+video: dumbo octopus Grimpoteuthis
+video: vampire squid
+video: pistol shrimp snapping
+video: siphonophore
+video: colossal squid OR giant squid Architeuthis
+video: NOAA Okeanos deep sea
+video: hydrothermal vent
+video: brine pool
