@@ -70,11 +70,32 @@ def fetch(ep, spec, credits):
         print(f"   ok   {dst} <- {name} [{lic}]"); return
     print(f"   none found for {spec}")
 
+def fetch_video(ep, spec, credits):
+    """{"id": "x", "video": "File:….webm", "from": 12, "len": 5} → assets/clips/<ep>_<id>/0001.jpg … (30 fps, 1080 px wide)"""
+    import subprocess, shutil, tempfile
+    name = spec["video"] if spec["video"].startswith("File:") else "File:" + spec["video"]
+    q = api(action="query", titles=name, prop="videoinfo", viprop="url|size|derivatives|extmetadata")["query"]["pages"][0]
+    vi = (q.get("videoinfo") or [{}])[0]; meta = vi.get("extmetadata", {}); lic = clean(meta.get("LicenseShortName", {}).get("value"))
+    if not vi or not FREE.search(lic): print(f"   skip video {name} ({lic or 'no license'})"); return
+    ders = sorted([d for d in vi.get("derivatives", []) if d.get("height") and d["height"] <= 1080 and "webm" in d.get("type", "") + d.get("src", "")],
+                  key=lambda d: -d["height"])
+    url = ders[0]["src"] if ders else vi["url"]
+    tmp = tempfile.mkdtemp(); src = os.path.join(tmp, "v")
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=300) as r, open(src, "wb") as f: shutil.copyfileobj(r, f)
+    out = f"assets/clips/{ep}_{spec['id']}"; shutil.rmtree(out, ignore_errors=True); os.makedirs(out)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(spec.get("from", 0)), "-t", str(spec.get("len", 5)), "-i", src,
+                    "-vf", "fps=30,scale=1080:-2", "-q:v", "3", f"{out}/%04d.jpg"], check=True)
+    n = len([x for x in os.listdir(out) if x.endswith(".jpg")]); shutil.copy(f"{out}/0001.jpg", f"{OUT}/{ep}_{spec['id']}.jpg")
+    author = clean(re.sub(r"<[^>]+>", " ", meta.get("Artist", {}).get("value") or "")) or "unknown"
+    credits[spec["id"]] = {"file": name, "author": author[:80], "license": lic, "page": vi.get("descriptionurl"), "frames": n,
+                           "credit": f"Video: {author[:40]} / {lic}"}
+    print(f"   ok   {out} ({n} frames) <- {name} [{lic}] via {url[-40:]}")
+
 os.makedirs(OUT, exist_ok=True)
 for ep in sys.argv[1:]:
     E = json.load(open(f"episodes/{ep}.json")); credits = {}
     print(f"== {ep} {E.get('title')}")
     for spec in E.get("photos", []):
-        try: fetch(ep, spec, credits)
+        try: fetch_video(ep, spec, credits) if spec.get("video") else fetch(ep, spec, credits)
         except Exception as e: print("   error", spec, e)
     json.dump(credits, open(f"{OUT}/{ep}.credits.json", "w"), indent=1, ensure_ascii=False)

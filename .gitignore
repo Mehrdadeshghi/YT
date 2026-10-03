@@ -7,3 +7,4 @@ assets/photos/*.json
 __pycache__/
 episodes/*.voice.json
 models
+assets/clips/

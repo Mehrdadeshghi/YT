@@ -1,15 +1,13 @@
-video: goblin shark
-video: oarfish
-video: Bathynomus
-video: Mola mola sunfish
-video: Turritopsis jellyfish
-video: Greenland shark Somniosus
-video: anglerfish
-video: dumbo octopus Grimpoteuthis
-video: vampire squid
-video: pistol shrimp snapping
-video: siphonophore
-video: colossal squid OR giant squid Architeuthis
-video: NOAA Okeanos deep sea
-video: hydrothermal vent
-video: brine pool
+Graneledone boreopacifica | Graneledone boreopacifica
+Enypniastes | Enypniastes eximia
+Hydrothermal vent | Black smokers
+video: Graneledone
+video: Enypniastes
+video: black smoker vent
+video: NOAA octopus
+video: NOAA jellyfish
+video: NOAA shark
+video: NOAA anglerfish OR NOAA fish deep
+video: Okeanos Explorer 2017
+video: Okeanos Explorer 2019
+video: isopod

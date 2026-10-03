@@ -189,7 +189,7 @@ function monitor(T, y, label, sub, color, period, flatAt, o = {}) {
 // =====================================================================
 // Episode visuals live in cine/<ep>.js and fill VIS: VIS.open, VIS[0..n-1]  (build(K, S) -> draw(t))
 // =====================================================================
-const VIS = {}, PHOTOS = {}, CREDITS = {};
+const VIS = {}, PHOTOS = {}, CREDITS = {}, CLIPS = {};   // CLIPS[id] = [Image…] — real video footage as 30 fps frames
 // shared: the hook, stacked big on frame 0 (last line in gold); returns the y below it
 function hook(t, lines, y0 = 500, o = {}) {
   const s = Math.min(...lines.map((l) => fit(l, 'disp', o.size || 150, o.maxW || (WIDE ? 1300 : 920))));
@@ -310,6 +310,8 @@ async function boot() {
   const cred = await fetch(`assets/photos/${EPID}.credits.json`).then((r) => r.ok ? r.json() : {}).catch(() => ({}));
   await Promise.all((ep.photos || []).map((p) => new Promise((res) => { const im = new Image();
     im.onload = () => { PHOTOS[p.id] = im; CREDITS[p.id] = cred[p.id] ? cred[p.id].credit : ''; res(); }; im.onerror = () => res(); im.src = `assets/photos/${EPID}_${p.id}.jpg`; })));
+  await Promise.all((ep.photos || []).filter((p) => p.video && cred[p.id] && cred[p.id].frames).map((p) => Promise.all(Array.from({ length: cred[p.id].frames }, (_, i) =>
+    new Promise((res) => { const im = new Image(); im.onload = res; im.onerror = res; im.src = `assets/clips/${EPID}_${p.id}/${String(i + 1).padStart(4, '0')}.jpg`; (CLIPS[p.id] ||= [])[i] = im; })))));
   const load = (src) => new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = src; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
   await load('cine/common.js'); if (ep.facts) await load('cine/facts.js'); if (ep.map) { await load('cine/map3d.js'); await loadEarth(EPID); MAP.init(topo); } await load(`cine/${EPID}.js`);
   if (0) await new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = `cine/${EPID}.js`; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
