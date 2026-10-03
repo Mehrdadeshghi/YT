@@ -1,6 +1,103 @@
 {
  "ep": 79,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "prog": 0,
  "title": "Tardigrade",
+ "mood": "deep",
+ "hook": [
+  "THIS ANIMAL",
+  "SURVIVED",
+  "OPEN SPACE."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This animal survived open space.",
+   "es": "Este animal sobrevivió al espacio abierto."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 2007, dried-out tardigrades spent ten days exposed to open space. Some came back to life.",
+     "cap": "*10 days* in open space. Some *survived.*",
+     "es": "En 2007, tardígrados deshidratados pasaron diez días expuestos al espacio. Algunos volvieron a la vida."
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "They're called water bears, and they're only about half a millimeter long.",
+     "cap": "Water bears: *0.5 mm.*",
+     "es": "Se llaman osos de agua, y miden apenas medio milímetro."
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "To survive, they dry out into a tiny ball called a tun. And wait, for years.",
+     "cap": "They dry into a *tun.* For *years.*",
+     "es": "Para sobrevivir, se secan en una bolita llamada tun. Y esperan, durante años."
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "They've survived minus two hundred seventy-two degrees, and plus one hundred forty-nine.",
+     "cap": "*−272 °C* to *+149 °C.*",
+     "es": "Han sobrevivido a menos doscientos setenta y dos grados, y a más ciento cuarenta y nueve."
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And in 2019, a capsule of dried tardigrades crashed on the Moon.",
+     "cap": "*2019:* they crashed on the *Moon.*",
+     "es": "Y en 2019, una cápsula con tardígrados secos se estrelló en la Luna."
+    },
+    {
+     "at": "0.15",
+     "text": "Are they still alive up there? Yes or no? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Siguen vivos allá arriba? ¿Sí o no? Comenta y suscríbete."
+    }
+   ],
+   "vis": 4
+  }
+ ],
+ "cta": {
+  "q": "Still alive on the Moon?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Tardigrade",
  "photos": [
   {
    "id": "lead",
@@ -19,25 +116,34 @@
    "file": "File:First Recorded Image of Tardigrade.jpg"
   },
   {
-   "id": "v1",
+   "id": "ca",
    "video": "File:Тихоходка под микроскопом. 200х. Косое освещение.webm",
-   "from": 0,
-   "len": 90,
-   "fps": 1
+   "from": 3,
+   "len": 5
   },
   {
-   "id": "v2",
+   "id": "cb",
+   "video": "File:Тихоходка под микроскопом. 200х. Косое освещение.webm",
+   "from": 48,
+   "len": 5
+  },
+  {
+   "id": "cc",
    "video": "File:Тихоходка из мха.webm",
-   "from": 0,
-   "len": 60,
-   "fps": 1
+   "from": 2,
+   "len": 5
   },
   {
-   "id": "v3",
+   "id": "cd",
    "video": "File:Desiccation-Tolerance-in-the-Tardigrade-Richtersius-coronifer-Relies-on-Muscle-Mediated-Structural-pone.0085091.s001.ogv",
-   "from": 0,
-   "len": 80,
-   "fps": 1
+   "from": 24,
+   "len": 5
+  },
+  {
+   "id": "ce",
+   "video": "File:Desiccation-Tolerance-in-the-Tardigrade-Richtersius-coronifer-Relies-on-Muscle-Mediated-Structural-pone.0085091.s001.ogv",
+   "from": 54,
+   "len": 6
   }
  ]
 }

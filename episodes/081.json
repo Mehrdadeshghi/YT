@@ -1,6 +1,115 @@
 {
  "ep": 81,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "prog": 0,
  "title": "Carrington Event",
+ "mood": "epic",
+ "hook": [
+  "IN 1859,",
+  "THE SUN",
+  "HIT EARTH."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "In 1859, the Sun hit Earth.",
+   "es": "En 1859, el Sol golpeó la Tierra."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "On September first, 1859, astronomer Richard Carrington saw a giant flare explode on the Sun.",
+     "cap": "*Sept 1, 1859:* a giant *solar flare.*",
+     "es": "El primero de septiembre de 1859, el astrónomo Richard Carrington vio estallar una enorme llamarada en el Sol."
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its cloud of plasma reached Earth in just seventeen point six hours.",
+     "cap": "Earth hit in *17.6 hours.*",
+     "es": "Su nube de plasma llegó a la Tierra en solo diecisiete coma seis horas."
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Northern lights appeared as far south as Cuba, Hawaii and Colombia.",
+     "cap": "Auroras over *Cuba* and *Colombia.*",
+     "es": "Hubo auroras tan al sur como Cuba, Hawái y Colombia."
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Telegraphs failed. Operators got electric shocks, and pylons threw sparks.",
+     "cap": "Operators got *electric shocks.*",
+     "es": "Los telégrafos fallaron. Los operadores recibieron descargas, y los postes soltaban chispas."
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Two operators unplugged their batteries, and kept sending messages for two hours, on aurora power alone.",
+     "cap": "*2 hours* on *aurora power.*",
+     "es": "Dos operadores desconectaron sus baterías y siguieron enviando mensajes dos horas, solo con la energía de la aurora."
+    }
+   ],
+   "vis": 4
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "If it hit today, the U.S. alone could lose up to two point six trillion dollars.",
+     "cap": "Today: up to *$2.6 trillion.*",
+     "es": "Si pasara hoy, solo Estados Unidos podría perder hasta dos coma seis billones de dólares."
+    },
+    {
+     "at": "0.15",
+     "text": "Are we ready for the next one? Yes or no? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Estamos listos para la próxima? ¿Sí o no? Comenta y suscríbete."
+    }
+   ],
+   "vis": 5
+  }
+ ],
+ "cta": {
+  "q": "Are we ready for the next one?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Carrington_Event",
  "photos": [
   {
    "id": "lead",
@@ -15,25 +124,34 @@
    "file": "File:Aurora Australis From ISS.JPG"
   },
   {
-   "id": "v1",
+   "id": "ca",
    "video": "File:Largest Flare yet from Solar Cycle 25 (SVS14592 SDO X8pt7 flare May 14 2024 ProRes Outro).webm",
-   "from": 0,
-   "len": 75,
-   "fps": 1
+   "from": 3,
+   "len": 6
   },
   {
-   "id": "v2",
+   "id": "cb",
+   "video": "File:Largest Flare yet from Solar Cycle 25 (SVS14592 SDO X8pt7 flare May 14 2024 ProRes Outro).webm",
+   "from": 51,
+   "len": 6
+  },
+  {
+   "id": "cc",
    "video": "File:Aurora from Atacama.webm",
-   "from": 0,
-   "len": 100,
-   "fps": 1
+   "from": 1,
+   "len": 6
   },
   {
-   "id": "v3",
+   "id": "cd",
    "video": "File:ISS views Aurora from the November 11-13, 2025 Geomagnetic Storm (SVS31375).webm",
-   "from": 0,
-   "len": 90,
-   "fps": 1
+   "from": 18,
+   "len": 6
+  },
+  {
+   "id": "ce",
+   "video": "File:ISS views Aurora from the November 11-13, 2025 Geomagnetic Storm (SVS31375).webm",
+   "from": 51,
+   "len": 6
   }
  ]
 }

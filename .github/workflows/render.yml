@@ -48,7 +48,7 @@ jobs:
         run: |
           TAG="shorts-${{ github.run_number }}"
           { echo "Wiki Roulette: ${{ steps.eps.outputs.list }}"; echo; for f in dist/*.md; do cat "$f"; echo; echo "---"; done; } > notes.md
-          gh release create "$TAG" dist/*.mp4 dist/*.md --title "Shorts ${{ steps.eps.outputs.list }}" --notes-file notes.md
+          gh release create "$TAG" dist/*.mp4 dist/*.md $(ls dist/*.m4a 2>/dev/null) --title "Shorts ${{ steps.eps.outputs.list }}" --notes-file notes.md
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: shorts, path: dist/, retention-days: 30 }

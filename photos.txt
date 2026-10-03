@@ -1,4 +1,4 @@
-# Episodes whose photos to fetch for a preview (Photo preview workflow)
+# Episodes whose photos to fetch for a preview (Photo preview workflow) — final clips
 079
 080
 081

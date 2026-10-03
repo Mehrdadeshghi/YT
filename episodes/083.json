@@ -1,6 +1,103 @@
 {
  "ep": 83,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "prog": 0,
  "title": "Venus flytrap",
+ "mood": "clock",
+ "hook": [
+  "THIS PLANT",
+  "CAN",
+  "COUNT."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This plant can count.",
+   "es": "Esta planta sabe contar."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "A Venus flytrap only snaps shut if two trigger hairs are touched within twenty seconds.",
+     "cap": "*2 touches* within *20 seconds.*",
+     "es": "Una Venus atrapamoscas solo se cierra si tocas dos pelos sensores en menos de veinte segundos."
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then it closes in about a tenth of a second.",
+     "cap": "Shut in *0.1 seconds.*",
+     "es": "Entonces se cierra en una décima de segundo."
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And it waits for five more touches before it starts digesting.",
+     "cap": "*5 more touches.* Then it *digests.*",
+     "es": "Y espera cinco toques más antes de empezar a digerir."
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Digestion takes about ten days.",
+     "cap": "Digestion: *10 days.*",
+     "es": "La digestión tarda unos diez días."
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In the wild, it grows only within about a hundred kilometers of Wilmington, North Carolina.",
+     "cap": "Wild only near *Wilmington, NC.*",
+     "es": "En la naturaleza, solo crece a unos cien kilómetros de Wilmington, Carolina del Norte."
+    },
+    {
+     "at": "0.15",
+     "text": "Would you keep one at home? Yes or no? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Tendrías una en casa? ¿Sí o no? Comenta y suscríbete."
+    }
+   ],
+   "vis": 4
+  }
+ ],
+ "cta": {
+  "q": "Would you keep one at home?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Venus_flytrap",
  "photos": [
   {
    "id": "lead",
@@ -19,18 +116,28 @@
    "file": "File:Flowering Venus flytrap plant.jpg"
   },
   {
-   "id": "v1",
+   "id": "ca",
    "video": "File:Venus Flytrap (time lapse).webm",
-   "from": 0,
-   "len": 90,
-   "fps": 1
+   "from": 58,
+   "len": 8
   },
   {
-   "id": "v2",
+   "id": "cb",
    "video": "File:Venus fly trap capturing prey.webm",
-   "from": 0,
-   "len": 90,
-   "fps": 1
+   "from": 36,
+   "len": 6
+  },
+  {
+   "id": "cc",
+   "video": "File:Venus fly trap capturing prey.webm",
+   "from": 42,
+   "len": 6
+  },
+  {
+   "id": "cd",
+   "video": "File:Venus fly trap capturing prey.webm",
+   "from": 62,
+   "len": 6
   }
  ]
 }

@@ -1,6 +1,103 @@
 {
  "ep": 82,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "prog": 0,
  "title": "Great Red Spot",
+ "mood": "epic",
+ "hook": [
+  "THIS STORM",
+  "IS BIGGER",
+  "THAN EARTH."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This storm is bigger than Earth.",
+   "es": "Esta tormenta es más grande que la Tierra."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Jupiter's Great Red Spot is a storm wider than our whole planet.",
+     "cap": "Wider than *Earth.*",
+     "es": "La Gran Mancha Roja de Júpiter es una tormenta más ancha que todo nuestro planeta."
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its winds reach up to four hundred ninety-six kilometers per hour.",
+     "cap": "Winds up to *496 km/h.*",
+     "es": "Sus vientos alcanzan hasta cuatrocientos noventa y seis kilómetros por hora."
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It has been raging since at least 1831.",
+     "cap": "Raging since at least *1831.*",
+     "es": "Lleva rugiendo al menos desde 1831."
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But it's shrinking. Once three Earths wide, now about one point three.",
+     "cap": "Once *3 Earths.* Now *1.3.*",
+     "es": "Pero se está encogiendo. Antes medía tres Tierras, ahora una coma tres."
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And nobody knows for sure why it's red.",
+     "cap": "Why red? *Nobody knows.*",
+     "es": "Y nadie sabe con certeza por qué es roja."
+    },
+    {
+     "at": "0.15",
+     "text": "Will it vanish in our lifetime? Yes or no? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Desaparecerá en nuestra vida? ¿Sí o no? Comenta y suscríbete."
+    }
+   ],
+   "vis": 4
+  }
+ ],
+ "cta": {
+  "q": "Will it vanish in our lifetime?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Great_Red_Spot",
  "photos": [
   {
    "id": "lead",
@@ -19,25 +116,22 @@
    "file": "File:Great Red Spot From Voyager 1.jpg"
   },
   {
-   "id": "v1",
+   "id": "ca",
    "video": "File:Jupiter - PJ7 - Great Red Spot Flyover (46500577734).webm",
-   "from": 0,
-   "len": 40,
-   "fps": 1
+   "from": 12,
+   "len": 6
   },
   {
-   "id": "v2",
-   "video": "File:Jupiter’s Great Red Spot Is Shaking (SVS14702 GRS VERT MP4).webm",
-   "from": 0,
-   "len": 120,
-   "fps": 1
+   "id": "cb",
+   "video": "File:Jupiter - PJ7 - Great Red Spot Flyover (46500577734).webm",
+   "from": 18,
+   "len": 6
   },
   {
-   "id": "v3",
+   "id": "cc",
    "video": "File:Jupiter from Voyager 1 PIA02855 max quality.ogv",
    "from": 0,
-   "len": 8,
-   "fps": 1
+   "len": 7
   }
  ]
 }

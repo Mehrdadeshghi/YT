@@ -1,6 +1,115 @@
 {
  "ep": 80,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "prog": 0,
  "title": "Naked mole-rat",
+ "mood": "clock",
+ "hook": [
+  "THIS ANIMAL",
+  "BARELY",
+  "AGES."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This animal barely ages.",
+   "es": "Este animal casi no envejece."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Naked mole-rats can live more than thirty-seven years. Longer than any other rodent.",
+     "cap": "*37+ years.* The oldest *rodent.*",
+     "es": "Las ratas topo desnudas pueden vivir más de treinta y siete años. Más que cualquier otro roedor."
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And their risk of dying doesn't go up as they get older.",
+     "cap": "Their death risk *doesn't rise with age.*",
+     "es": "Y su riesgo de morir no aumenta con la edad."
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "They're highly resistant to cancer.",
+     "cap": "Highly resistant to *cancer.*",
+     "es": "Son muy resistentes al cáncer."
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "They feel no pain from acid, or from the chemical that makes chili burn.",
+     "cap": "*No pain* from *acid* or *chili.*",
+     "es": "No sienten dolor por el ácido, ni por la sustancia que hace picar el chile."
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "With zero oxygen, one survived eighteen minutes, unharmed.",
+     "cap": "*18 minutes* with *zero oxygen.*",
+     "es": "Sin nada de oxígeno, una sobrevivió dieciocho minutos, sin daño."
+    }
+   ],
+   "vis": 4
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And they live like ants: one queen, and a colony that can top three hundred.",
+     "cap": "Like ants: *one queen.*",
+     "es": "Y viven como hormigas: una reina, y una colonia de más de trescientas."
+    },
+    {
+     "at": "0.15",
+     "text": "Cute, or creepy? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Tierna o espeluznante? Comenta y suscríbete."
+    }
+   ],
+   "vis": 5
+  }
+ ],
+ "cta": {
+  "q": "Cute or creepy?",
+  "a": "CUTE",
+  "b": "CREEPY"
+ },
+ "source": "https://en.wikipedia.org/wiki/Naked_mole-rat",
  "photos": [
   {
    "id": "lead",
@@ -19,32 +128,28 @@
    "file": "File:Model of naked mole-rat soldiers, workers, and queen.jpg"
   },
   {
-   "id": "v1",
-   "video": "File:Nacktmulle (Zoo Dresden) (2).webm",
-   "from": 0,
-   "len": 10,
-   "fps": 1
-  },
-  {
-   "id": "v2",
-   "video": "File:Heterocephalus glaber June 2019.webm",
-   "from": 0,
-   "len": 18,
-   "fps": 1
-  },
-  {
-   "id": "v3",
-   "video": "File:Heterocephalus glaber 2010.ogv",
-   "from": 0,
-   "len": 9,
-   "fps": 1
-  },
-  {
-   "id": "v4",
+   "id": "ca",
    "video": "File:Naked mole-rat (Heterocephalus glaber).webm",
    "from": 0,
-   "len": 14,
-   "fps": 1
+   "len": 6
+  },
+  {
+   "id": "cb",
+   "video": "File:Naked mole-rat (Heterocephalus glaber).webm",
+   "from": 6,
+   "len": 6
+  },
+  {
+   "id": "cc",
+   "video": "File:Nacktmulle (Zoo Dresden) (2).webm",
+   "from": 0,
+   "len": 6
+  },
+  {
+   "id": "cd",
+   "video": "File:Heterocephalus glaber June 2019.webm",
+   "from": 0,
+   "len": 6
   }
  ]
 }
