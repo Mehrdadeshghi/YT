@@ -1,18 +1,8 @@
-video: tardigrade
-video: Ophiocordyceps zombie ant
-video: lyrebird
-video: naked mole-rat
-video: bombardier beetle
-video: Saturn hexagon
-video: Jupiter Juno
-video: Io volcano
-video: solar flare SDO
-video: Kilauea lava
-video: aurora ISS
-video: axolotl
-video: chameleon tongue
-video: mimosa pudica
-video: Venus flytrap
-video: army ants
-video: honeybee waggle dance
-video: slime mold Physarum
+Tardigrade | Tardigrada
+Naked mole-rat | Heterocephalus glaber
+Carrington Event | Carrington Event
+Great Red Spot | Great Red Spot
+Venus flytrap | Dionaea muscipula
+video: Carrington OR geomagnetic storm aurora
+video: Great Red Spot
+video: Dionaea muscipula
