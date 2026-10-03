@@ -54,7 +54,7 @@ def fetch(ep, spec, credits):
         if "imageinfo" not in info: continue
         ii = info["imageinfo"][0]; meta = ii.get("extmetadata", {})
         lic = clean(meta.get("LicenseShortName", {}).get("value"))
-        if not FREE.search(lic) or max(ii.get("width", 0), ii.get("thumbwidth", 0)) < 480:
+        if not FREE.search(lic) or max(ii.get("width", 0), ii.get("thumbwidth", 0)) < (360 if spec.get("file") else 480):
             print(f"   skip {name} ({lic or 'no license'}, {ii.get('width')} px)"); continue
         url = ii.get("thumburl") or ii["url"]; dst = f"{OUT}/{ep}_{spec['id']}.jpg"
         with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r: data = r.read()

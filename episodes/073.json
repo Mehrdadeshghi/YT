@@ -1,0 +1,34 @@
+{
+ "ep": 73,
+ "title": "Giant isopod",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:Bathynomus giganteus NOAA.jpg"
+  },
+  {
+   "id": "deep",
+   "file": "File:Bathynomus giganteus hi-res.jpg"
+  },
+  {
+   "id": "hand",
+   "file": "File:Bathynomus giganteus specimin being held by Dr. Nguyen Thanh Son.jpg"
+  },
+  {
+   "id": "toba",
+   "file": "File:Bathynomus giganteus, Toba Aquarium.jpg"
+  },
+  {
+   "id": "face",
+   "file": "File:Bathynomus giganteus front - MBA.png"
+  },
+  {
+   "id": "tank",
+   "file": "File:Laika ac Deep sea creatures (7472073020).jpg"
+  },
+  {
+   "id": "rel",
+   "file": "File:Greenland shark profile.jpg"
+  }
+ ]
+}

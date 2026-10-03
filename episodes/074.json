@@ -1,0 +1,38 @@
+{
+ "ep": 74,
+ "title": "Ocean sunfish",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:Mola mola.jpg"
+  },
+  {
+   "id": "divers",
+   "file": "File:Sanc1008 - Flickr - NOAA Photo Library.jpg"
+  },
+  {
+   "id": "caught",
+   "file": "File:Enormous Sunfish.jpg"
+  },
+  {
+   "id": "larva",
+   "file": "File:Molalavdj.jpg"
+  },
+  {
+   "id": "aqua",
+   "file": "File:Mola mola ocean sunfish Monterey Bay Aquarium 2.jpg"
+  },
+  {
+   "id": "skel",
+   "file": "File:Mola mola-Skelett, Naturhistorisches Museum Wien.jpg"
+  },
+  {
+   "id": "surface",
+   "file": "File:GFNMS -- Mola Mola (35221024103).jpg"
+  },
+  {
+   "id": "rel",
+   "file": "File:Greenland shark profile.jpg"
+  }
+ ]
+}

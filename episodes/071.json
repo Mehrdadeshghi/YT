@@ -1,0 +1,30 @@
+{
+ "ep": 71,
+ "title": "Goblin shark",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:Goblin shark (Mitsukurina owstoni).jpg"
+  },
+  {
+   "id": "jaws",
+   "file": "File:Mistukurina owstoni museum victoria - head detail.jpg"
+  },
+  {
+   "id": "snout",
+   "file": "File:Goblin shark snout.jpg"
+  },
+  {
+   "id": "head",
+   "file": "File:Hal - Mitsukurina owstoni - 1.jpg"
+  },
+  {
+   "id": "size",
+   "file": "File:Goblin shark size.svg"
+  },
+  {
+   "id": "rel",
+   "file": "File:Greenland shark profile.jpg"
+  }
+ ]
+}
