@@ -79,17 +79,6 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "No sunlight at all. The whole food chain runs on chemicals.",
-     "cap": "No sunlight. It runs on *chemicals.*"
-    }
-   ],
-   "vis": 4
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
      "text": "Some scientists think life on Earth may have started at vents like these.",
      "cap": "Did *life* start here?"
     },
@@ -99,7 +88,7 @@
      "cta": true
     }
    ],
-   "vis": 5
+   "vis": 4
   }
  ],
  "cta": {

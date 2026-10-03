@@ -290,7 +290,7 @@ function engage(t) {
       const p = 1 + 0.05 * Math.max(0, Math.sin((lc - 0.6 - k * 0.25) * 5)) * (lc > 0.6); g.font = F.ui(36); const w = Math.max(200, g.measureText(lab).width + 80);
       g.save(); g.translate(x + w / 2, 142); g.scale(p, p); rrect(-w / 2, -32, w, 64, 32); g.fillStyle = k ? '#2B2A28' : GOLD; g.fill(); text(lab, 0, 13, 'ui', 36, k ? TXT : BG, { align: 'center' }); g.restore(); });
     g.restore(); }
-  const lr = t - CTA.comAt + 0.2;                             // ---- "full video below" card (ep.related): sends Shorts viewers to a long video
+  const lr = t - CTA.comAt - 0.5;                             // ---- "full video below" card (ep.related): sends Shorts viewers to a long video
   if (CTA.related && lr > 0 && !WIDE) { const s = spring(lr, 240, 20), y = 1075 + (1 - s) * 60, bob = Math.sin(lr * 6) * 8 * (lr > 0.6);
     g.save(); g.globalAlpha = clamp(s * 1.4); g.shadowColor = 'rgba(0,0,0,0.55)'; g.shadowBlur = 30; rrect(70, y, 940, 150, 30); g.fillStyle = 'rgba(16,15,13,0.94)'; g.fill(); g.shadowBlur = 0;
     g.lineWidth = 3; g.strokeStyle = GOLD; g.stroke();
