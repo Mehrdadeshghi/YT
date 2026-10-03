@@ -1,34 +1,25 @@
 {
  "ep": 74,
- "title": "Ocean sunfish",
+ "title": "Enypniastes",
  "photos": [
   {
    "id": "lead",
-   "file": "File:Mola mola.jpg"
+   "file": "File:Enypniastes eximia Puerto Rico.jpg"
   },
   {
-   "id": "divers",
-   "file": "File:Sanc1008 - Flickr - NOAA Photo Library.jpg"
+   "id": "indo",
+   "file": "File:Enypniastes sp Indonesia.jpg"
   },
   {
-   "id": "caught",
-   "file": "File:Enormous Sunfish.jpg"
+   "id": "gom",
+   "file": "File:Enypniastes sp.jpg"
   },
   {
-   "id": "larva",
-   "file": "File:Molalavdj.jpg"
-  },
-  {
-   "id": "aqua",
-   "file": "File:Mola mola ocean sunfish Monterey Bay Aquarium 2.jpg"
-  },
-  {
-   "id": "skel",
-   "file": "File:Mola mola-Skelett, Naturhistorisches Museum Wien.jpg"
-  },
-  {
-   "id": "surface",
-   "file": "File:GFNMS -- Mola Mola (35221024103).jpg"
+   "id": "v1",
+   "video": "File:Ex1402-dive06 red animal.webm",
+   "from": 0,
+   "len": 50,
+   "fps": 1
   },
   {
    "id": "rel",

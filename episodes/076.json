@@ -1,0 +1,125 @@
+{
+ "ep": 76,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.15,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "mood": "deep",
+ "facts": true,
+ "prog": 0,
+ "related": {
+  "title": "7 Deep-Sea Creatures That Look Fake",
+  "photo": "rel",
+  "fx": 0.62,
+  "fy": 0.5
+ },
+ "hook": [
+  "THIS SHARK'S",
+  "JAWS SHOOT OUT",
+  "OF ITS FACE."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This shark's jaws shoot out of its face."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When the goblin shark bites, its jaws fly forward, almost to the tip of its snout.",
+     "cap": "Its jaws fly forward, *almost to the snout.*"
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Up to three point one four meters per second.",
+     "cap": "*3.14 m/s.*"
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's pink, because you can see the blood vessels under its skin.",
+     "cap": "Pink, from *blood vessels* under the skin."
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its lineage is about a hundred twenty-five million years old. A living fossil.",
+     "cap": "A *125-million-year-old* lineage."
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 2023, a pregnant female caught off Taiwan was four point seven meters long, and eight hundred kilos.",
+     "cap": "*4.7 m.* *800 kg.* Taiwan, *2023.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Would you swim with one? Yes or no? Comment below. Watch the full top seven, linked below. And subscribe.",
+     "cta": true
+    }
+   ],
+   "vis": 4
+  }
+ ],
+ "cta": {
+  "q": "Would you swim with one?",
+  "a": "YES",
+  "b": "NO WAY"
+ },
+ "source": "https://en.wikipedia.org/wiki/Goblin_shark",
+ "title": "Goblin shark",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:Goblin shark (Mitsukurina owstoni).jpg"
+  },
+  {
+   "id": "jaws",
+   "file": "File:Mistukurina owstoni museum victoria - head detail.jpg"
+  },
+  {
+   "id": "snout",
+   "file": "File:Goblin shark snout.jpg"
+  },
+  {
+   "id": "head",
+   "file": "File:Hal - Mitsukurina owstoni - 1.jpg"
+  },
+  {
+   "id": "size",
+   "file": "File:Goblin shark size.svg"
+  },
+  {
+   "id": "rel",
+   "file": "File:Greenland shark profile.jpg"
+  }
+ ]
+}

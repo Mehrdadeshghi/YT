@@ -84,7 +84,7 @@ def fetch_video(ep, spec, credits):
     with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=300) as r, open(src, "wb") as f: shutil.copyfileobj(r, f)
     out = f"assets/clips/{ep}_{spec['id']}"; shutil.rmtree(out, ignore_errors=True); os.makedirs(out)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(spec.get("from", 0)), "-t", str(spec.get("len", 5)), "-i", src,
-                    "-vf", "fps=30,scale=1080:-2", "-q:v", "3", f"{out}/%04d.jpg"], check=True)
+                    "-vf", f"fps={spec.get('fps', 30)},scale=1080:-2", "-q:v", "3", f"{out}/%04d.jpg"], check=True)
     n = len([x for x in os.listdir(out) if x.endswith(".jpg")]); shutil.copy(f"{out}/0001.jpg", f"{OUT}/{ep}_{spec['id']}.jpg")
     author = clean(re.sub(r"<[^>]+>", " ", meta.get("Artist", {}).get("value") or "")) or "unknown"
     credits[spec["id"]] = {"file": name, "author": author[:80], "license": lic, "page": vi.get("descriptionurl"), "frames": n,

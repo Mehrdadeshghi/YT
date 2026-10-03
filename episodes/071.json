@@ -1,26 +1,36 @@
 {
  "ep": 71,
- "title": "Goblin shark",
+ "title": "Giant isopod",
  "photos": [
   {
    "id": "lead",
-   "file": "File:Goblin shark (Mitsukurina owstoni).jpg"
+   "file": "File:Bathynomus giganteus NOAA.jpg"
   },
   {
-   "id": "jaws",
-   "file": "File:Mistukurina owstoni museum victoria - head detail.jpg"
+   "id": "hand",
+   "file": "File:Bathynomus giganteus specimin being held by Dr. Nguyen Thanh Son.jpg"
   },
   {
-   "id": "snout",
-   "file": "File:Goblin shark snout.jpg"
+   "id": "face",
+   "file": "File:Bathynomus giganteus front - MBA.png"
   },
   {
-   "id": "head",
-   "file": "File:Hal - Mitsukurina owstoni - 1.jpg"
+   "id": "tank",
+   "file": "File:Laika ac Deep sea creatures (7472073020).jpg"
   },
   {
-   "id": "size",
-   "file": "File:Goblin shark size.svg"
+   "id": "v1",
+   "video": "File:Bathynomus giganteus.webm",
+   "from": 0,
+   "len": 70,
+   "fps": 1
+  },
+  {
+   "id": "v2",
+   "video": "File:Bathynomus giganteus as seen by remotely operated vehicle (ROV) Deep Discoverer at a depth of 816 meters at South Reed, Gulf of Mexico, 2017-11-30.webm",
+   "from": 0,
+   "len": 70,
+   "fps": 1
   },
   {
    "id": "rel",

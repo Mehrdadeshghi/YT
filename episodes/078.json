@@ -1,0 +1,109 @@
+{
+ "ep": 78,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.15,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "mood": "deep",
+ "facts": true,
+ "prog": 0,
+ "related": {
+  "title": "7 Deep-Sea Creatures That Look Fake",
+  "photo": "rel",
+  "fx": 0.62,
+  "fy": 0.5
+ },
+ "hook": [
+  "THIS ANIMAL",
+  "CAN AGE",
+  "BACKWARDS."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This animal can age backwards."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's a jellyfish, Turritopsis dohrnii. Just four and a half millimeters wide.",
+     "cap": "Just *4.5 mm* wide."
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When it's injured, sick or old, it can turn back into a polyp, its baby stage.",
+     "cap": "It turns back into a *baby.*"
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then it grows up all over again. In one lab, a colony did this eleven times in two years.",
+     "cap": "*11 times* in *2 years.*"
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So it's called biologically immortal. But in the wild, most still get eaten or get sick.",
+     "cap": "Biologically *immortal.* But it can still *die.*"
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It was named in 1883, and it has spread around the world in ships' ballast water.",
+     "cap": "Spread worldwide by *ships.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Would you want to live forever? Yes or no? Watch the full top seven, linked below. And subscribe.",
+     "cta": true
+    }
+   ],
+   "vis": 4
+  }
+ ],
+ "cta": {
+  "q": "Would you want to live forever?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Turritopsis_dohrnii",
+ "title": "Turritopsis dohrnii",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:Turritopsisdohrnii.jpeg"
+  },
+  {
+   "id": "rel",
+   "file": "File:Greenland shark profile.jpg"
+  }
+ ]
+}

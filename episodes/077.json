@@ -1,0 +1,129 @@
+{
+ "ep": 77,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.15,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "mood": "deep",
+ "facts": true,
+ "prog": 0,
+ "related": {
+  "title": "7 Deep-Sea Creatures That Look Fake",
+  "photo": "rel",
+  "fx": 0.62,
+  "fy": 0.5
+ },
+ "hook": [
+  "DOES THIS FISH",
+  "PREDICT",
+  "EARTHQUAKES?"
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Does this fish predict earthquakes?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's the giant oarfish. The longest bony fish alive: seven to eight meters.",
+     "cap": "The longest bony fish: *7–8 m.*"
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Healthy ones are almost never seen. Most are found dying, or washed up on a beach.",
+     "cap": "Healthy ones are *almost never seen.*"
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In Japan it's called the earthquake fish. Many washed up before the 2011 earthquake.",
+     "cap": "Japan's *earthquake fish.*"
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But a 2019 study looked at the data, and called the link an illusion.",
+     "cap": "A *2019 study:* *no real link.*"
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Sailors once called it a sea serpent. This one washed up in Bermuda in 1860.",
+     "cap": "*Bermuda, 1860:* a *sea serpent?*"
+    },
+    {
+     "at": "0.35",
+     "text": "Do you believe animals can sense earthquakes? Yes or no? Watch the full top seven, linked below. And subscribe.",
+     "cta": true
+    }
+   ],
+   "vis": 4
+  }
+ ],
+ "cta": {
+  "q": "Can animals sense earthquakes?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Giant_oarfish",
+ "title": "Giant oarfish",
+ "photos": [
+  {
+   "id": "lead",
+   "file": "File:Regalecus glesne 297924803.jpg"
+  },
+  {
+   "id": "men",
+   "file": "File:Giant Oarfish.jpg"
+  },
+  {
+   "id": "bermuda",
+   "file": "File:Giant oarfish bermuda beach 1860.jpg"
+  },
+  {
+   "id": "nz",
+   "file": "File:Regalecus glesne NZ.jpg"
+  },
+  {
+   "id": "beach",
+   "file": "File:Ecomare - Haringkoning riemvis (haringkoning-riemvis-bert-sdw 04).jpg"
+  },
+  {
+   "id": "wien",
+   "file": "File:Regalecus glesne, Naturhistorisches Museum Wien.jpg"
+  },
+  {
+   "id": "rel",
+   "file": "File:Greenland shark profile.jpg"
+  }
+ ]
+}

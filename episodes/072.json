@@ -1,30 +1,37 @@
 {
  "ep": 72,
- "title": "Giant oarfish",
+ "title": "Ocean sunfish",
  "photos": [
   {
    "id": "lead",
-   "file": "File:Regalecus glesne 297924803.jpg"
+   "file": "File:Mola mola.jpg"
   },
   {
-   "id": "men",
-   "file": "File:Giant Oarfish.jpg"
+   "id": "divers",
+   "file": "File:Sanc1008 - Flickr - NOAA Photo Library.jpg"
   },
   {
-   "id": "bermuda",
-   "file": "File:Giant oarfish bermuda beach 1860.jpg"
+   "id": "caught",
+   "file": "File:Enormous Sunfish.jpg"
   },
   {
-   "id": "nz",
-   "file": "File:Regalecus glesne NZ.jpg"
+   "id": "larva",
+   "file": "File:Molalavdj.jpg"
   },
   {
-   "id": "beach",
-   "file": "File:Ecomare - Haringkoning riemvis (haringkoning-riemvis-bert-sdw 04).jpg"
+   "id": "skel",
+   "file": "File:Mola mola-Skelett, Naturhistorisches Museum Wien.jpg"
   },
   {
-   "id": "wien",
-   "file": "File:Regalecus glesne, Naturhistorisches Museum Wien.jpg"
+   "id": "surface",
+   "file": "File:GFNMS -- Mola Mola (35221024103).jpg"
+  },
+  {
+   "id": "v1",
+   "video": "File:Ocean sunfish - 2014 11 08.ogv",
+   "from": 0,
+   "len": 25,
+   "fps": 1
   },
   {
    "id": "rel",
