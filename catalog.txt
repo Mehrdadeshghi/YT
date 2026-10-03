@@ -1,13 +1,18 @@
-Graneledone boreopacifica | Graneledone boreopacifica
-Enypniastes | Enypniastes eximia
-Hydrothermal vent | Black smokers
-video: Graneledone
-video: Enypniastes
-video: black smoker vent
-video: NOAA octopus
-video: NOAA jellyfish
-video: NOAA shark
-video: NOAA anglerfish OR NOAA fish deep
-video: Okeanos Explorer 2017
-video: Okeanos Explorer 2019
-video: isopod
+video: tardigrade
+video: Ophiocordyceps zombie ant
+video: lyrebird
+video: naked mole-rat
+video: bombardier beetle
+video: Saturn hexagon
+video: Jupiter Juno
+video: Io volcano
+video: solar flare SDO
+video: Kilauea lava
+video: aurora ISS
+video: axolotl
+video: chameleon tongue
+video: mimosa pudica
+video: Venus flytrap
+video: army ants
+video: honeybee waggle dance
+video: slime mold Physarum
