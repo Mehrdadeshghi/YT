@@ -1,6 +1,102 @@
 {
  "ep": 73,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.15,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "mood": "deep",
+ "facts": true,
+ "prog": 0,
+ "related": {
+  "title": "7 Deep-Sea Creatures That Look Fake",
+  "photo": "rel",
+  "fx": 0.62,
+  "fy": 0.5,
+  "kicker": "7 MORE · FULL VIDEO BELOW"
+ },
  "title": "Graneledone boreopacifica",
+ "hook": [
+  "SHE GUARDED",
+  "HER EGGS FOR",
+  "4.5 YEARS."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "She guarded her eggs for four and a half years."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "This deep-sea octopus was watched brooding her eggs for fifty-three months.",
+     "cap": "*53 months* on her eggs."
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's the longest egg-brooding period of any known animal.",
+     "cap": "The longest of *any animal.*"
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The eggs were never left alone. And there's no evidence she ever ate again.",
+     "cap": "She *never ate again.*"
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "For comparison: most octopuses only live one or two years.",
+     "cap": "Most octopuses live *1–2 years.*"
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Her species lives in the dark, more than a kilometer down. This is real footage.",
+     "cap": "Real footage: *the deep sea.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Love, or instinct? Comment, subscribe, and watch seven more deep-sea creatures, linked below.",
+     "cta": true
+    }
+   ],
+   "vis": 4
+  }
+ ],
+ "cta": {
+  "q": "Love or instinct?",
+  "a": "LOVE",
+  "b": "INSTINCT"
+ },
+ "source": "https://en.wikipedia.org/wiki/Graneledone_boreopacifica",
  "photos": [
   {
    "id": "lead",
@@ -11,25 +107,34 @@
    "file": "File:Graneledone boreopacifica.jpg"
   },
   {
-   "id": "v1",
+   "id": "ca",
    "video": "File:Graneledone boreopacifica seafloor.webm",
-   "from": 0,
-   "len": 90,
-   "fps": 1
+   "from": 31,
+   "len": 5.5
   },
   {
-   "id": "v2",
-   "video": "File:Graneledone boreopacifica flees.webm",
-   "from": 0,
-   "len": 90,
-   "fps": 1
-  },
-  {
-   "id": "v3",
+   "id": "cb",
    "video": "File:Graneledone boreopacifica close-up.webm",
-   "from": 0,
-   "len": 90,
-   "fps": 1
+   "from": 17,
+   "len": 6
+  },
+  {
+   "id": "cc",
+   "video": "File:Graneledone boreopacifica flees.webm",
+   "from": 10,
+   "len": 6
+  },
+  {
+   "id": "cd",
+   "video": "File:Graneledone boreopacifica flees.webm",
+   "from": 26,
+   "len": 6
+  },
+  {
+   "id": "ce",
+   "video": "File:Graneledone boreopacifica seafloor.webm",
+   "from": 6,
+   "len": 5
   },
   {
    "id": "rel",

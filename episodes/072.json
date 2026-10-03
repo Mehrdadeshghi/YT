@@ -1,6 +1,113 @@
 {
  "ep": 72,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.15,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "mood": "deep",
+ "facts": true,
+ "prog": 0,
+ "related": {
+  "title": "7 Deep-Sea Creatures That Look Fake",
+  "photo": "rel",
+  "fx": 0.62,
+  "fy": 0.5,
+  "kicker": "7 MORE · FULL VIDEO BELOW"
+ },
  "title": "Ocean sunfish",
+ "hook": [
+  "THIS FISH LAYS",
+  "300 MILLION",
+  "EGGS."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This fish lays three hundred million eggs."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The ocean sunfish makes more eggs than any other known vertebrate. Up to three hundred million at once.",
+     "cap": "Up to *300 million eggs.*"
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Each one starts tiny. This larva is under three millimeters.",
+     "cap": "A larva: under *3 mm.*"
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And it can grow sixty million times heavier.",
+     "cap": "*60 million times* heavier."
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Adults weigh up to a tonne. Divers look small next to them.",
+     "cap": "Adults: up to *1,000 kg.*"
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It lies flat at the surface, maybe to warm up after deep, cold dives.",
+     "cap": "It *sunbathes* to warm up."
+    }
+   ],
+   "vis": 4
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And more than forty kinds of parasites can live on it, and inside it.",
+     "cap": "*40+ parasites.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Cute or creepy? Comment, subscribe, and watch seven more deep-sea creatures, linked below.",
+     "cta": true
+    }
+   ],
+   "vis": 5
+  }
+ ],
+ "cta": {
+  "q": "Cute or creepy?",
+  "a": "CUTE",
+  "b": "CREEPY"
+ },
+ "source": "https://en.wikipedia.org/wiki/Ocean_sunfish",
  "photos": [
   {
    "id": "lead",
@@ -27,11 +134,16 @@
    "file": "File:GFNMS -- Mola Mola (35221024103).jpg"
   },
   {
-   "id": "v1",
+   "id": "ca",
    "video": "File:Ocean sunfish - 2014 11 08.ogv",
-   "from": 0,
-   "len": 25,
-   "fps": 1
+   "from": 1,
+   "len": 6
+  },
+  {
+   "id": "cb",
+   "video": "File:Ocean sunfish - 2014 11 08.ogv",
+   "from": 12,
+   "len": 6
   },
   {
    "id": "rel",

@@ -1,6 +1,113 @@
 {
  "ep": 75,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.15,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "mood": "deep",
+ "facts": true,
+ "prog": 0,
+ "related": {
+  "title": "7 Deep-Sea Creatures That Look Fake",
+  "photo": "rel",
+  "fx": 0.62,
+  "fy": 0.5,
+  "kicker": "7 MORE · FULL VIDEO BELOW"
+ },
  "title": "Hydrothermal vent",
+ "hook": [
+  "THIS WATER",
+  "IS 400 °C.",
+  "IT DOESN'T BOIL."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This water is four hundred degrees. It doesn't boil."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Black smokers on the sea floor blast out water as hot as four hundred sixty-four degrees Celsius.",
+     "cap": "Up to *464 °C.*"
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It doesn't boil, because the pressure down there is crushing.",
+     "cap": "It can't boil: the *pressure.*"
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The chimneys grow huge. One, called Godzilla, reached forty meters before it fell over in 1996.",
+     "cap": "*Godzilla:* *40 m* tall."
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And there's life. Giant tube worms over two meters tall. No mouth. No gut. Bacteria feed them.",
+     "cap": "Tube worms: *2+ m.* *No mouth.*"
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "No sunlight at all. The whole food chain runs on chemicals.",
+     "cap": "No sunlight. It runs on *chemicals.*"
+    }
+   ],
+   "vis": 4
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Some scientists think life on Earth may have started at vents like these.",
+     "cap": "Did *life* start here?"
+    },
+    {
+     "at": "0.35",
+     "text": "Did life begin here? Yes or no? Comment, subscribe, and watch seven more deep-sea creatures, linked below.",
+     "cta": true
+    }
+   ],
+   "vis": 5
+  }
+ ],
+ "cta": {
+  "q": "Did life begin here?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Hydrothermal_vent",
  "photos": [
   {
    "id": "lead",
@@ -27,25 +134,40 @@
    "file": "File:MARUM Schwarzer Raucher.jpg"
   },
   {
-   "id": "v1",
-   "video": "File:Vue sur une cheminée hydrothermale (Ifremer 00701-81315).webm",
-   "from": 0,
-   "len": 25,
-   "fps": 1
-  },
-  {
-   "id": "v2",
-   "video": "File:Arrivée lente vers la source hydrothermale Tour Eiffel (Ifremer 00701-81288).webm",
-   "from": 0,
-   "len": 75,
-   "fps": 1
-  },
-  {
-   "id": "v3",
+   "id": "ca",
    "video": "File:0501-hydrothermal-vents-640x360.webm",
-   "from": 0,
-   "len": 70,
-   "fps": 1
+   "from": 11,
+   "len": 5
+  },
+  {
+   "id": "cb",
+   "video": "File:Vue sur une cheminée hydrothermale (Ifremer 00701-81315).webm",
+   "from": 10,
+   "len": 7
+  },
+  {
+   "id": "cc",
+   "video": "File:0501-hydrothermal-vents-640x360.webm",
+   "from": 21,
+   "len": 4.5
+  },
+  {
+   "id": "ce",
+   "video": "File:0501-hydrothermal-vents-640x360.webm",
+   "from": 43,
+   "len": 4.5
+  },
+  {
+   "id": "cf",
+   "video": "File:0501-hydrothermal-vents-640x360.webm",
+   "from": 48,
+   "len": 6
+  },
+  {
+   "id": "cg",
+   "video": "File:0501-hydrothermal-vents-640x360.webm",
+   "from": 17,
+   "len": 4
   },
   {
    "id": "rel",

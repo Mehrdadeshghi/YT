@@ -1,4 +1,4 @@
-# Episodes whose photos to fetch for a preview (Photo preview workflow) — clips v2
+# Episodes whose photos to fetch for a preview (Photo preview workflow) — clips v3 final
 071
 072
 073

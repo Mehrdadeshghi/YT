@@ -1,6 +1,102 @@
 {
  "ep": 74,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.15,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "mood": "deep",
+ "facts": true,
+ "prog": 0,
+ "related": {
+  "title": "7 Deep-Sea Creatures That Look Fake",
+  "photo": "rel",
+  "fx": 0.62,
+  "fy": 0.5,
+  "kicker": "7 MORE · FULL VIDEO BELOW"
+ },
  "title": "Enypniastes",
+ "hook": [
+  "THEY CALL IT THE",
+  "HEADLESS CHICKEN",
+  "MONSTER."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "They call it the headless chicken monster."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's not a chicken. It's a sea cucumber. And it swims.",
+     "cap": "A sea cucumber that *swims.*"
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its body is see-through. You can watch its gut, especially after a meal.",
+     "cap": "You can see its *gut.*"
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It rows through the dark with a sail on its front.",
+     "cap": "It rows with a *sail.*"
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's eleven to twenty-five centimeters long. And it can glow.",
+     "cap": "*11–25 cm.* It can *glow.*"
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 2018, a camera caught one off East Antarctica. The first ever seen in the Southern Ocean.",
+     "cap": "*2018:* first seen off *Antarctica.*"
+    },
+    {
+     "at": "0.35",
+     "text": "Better name: headless chicken, or Spanish dancer? Comment, subscribe, and watch seven more deep-sea creatures, linked below.",
+     "cta": true
+    }
+   ],
+   "vis": 4
+  }
+ ],
+ "cta": {
+  "q": "Which name is better?",
+  "a": "HEADLESS CHICKEN",
+  "b": "SPANISH DANCER"
+ },
+ "source": "https://en.wikipedia.org/wiki/Enypniastes",
  "photos": [
   {
    "id": "lead",
@@ -15,11 +111,28 @@
    "file": "File:Enypniastes sp.jpg"
   },
   {
-   "id": "v1",
+   "id": "ca",
    "video": "File:Ex1402-dive06 red animal.webm",
    "from": 0,
-   "len": 50,
-   "fps": 1
+   "len": 6
+  },
+  {
+   "id": "cb",
+   "video": "File:Ex1402-dive06 red animal.webm",
+   "from": 17,
+   "len": 6
+  },
+  {
+   "id": "cc",
+   "video": "File:Ex1402-dive06 red animal.webm",
+   "from": 32,
+   "len": 6
+  },
+  {
+   "id": "cd",
+   "video": "File:Ex1402-dive06 red animal.webm",
+   "from": 38,
+   "len": 6
   },
   {
    "id": "rel",

@@ -1,6 +1,102 @@
 {
  "ep": 71,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.15,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "mood": "deep",
+ "facts": true,
+ "prog": 0,
+ "related": {
+  "title": "7 Deep-Sea Creatures That Look Fake",
+  "photo": "rel",
+  "fx": 0.62,
+  "fy": 0.5,
+  "kicker": "7 MORE · FULL VIDEO BELOW"
+ },
  "title": "Giant isopod",
+ "hook": [
+  "IT WENT 5 YEARS",
+  "WITHOUT",
+  "EATING."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "It went five years without eating."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Giant isopods have survived more than five years without food, in captivity.",
+     "cap": "*5+ years* without food."
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "This is real footage, filmed by a robot eight hundred sixteen meters down.",
+     "cap": "Real footage: *816 m* down."
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "They live as deep as two thousand one hundred forty meters, and eat dead whales, fish and squid.",
+     "cap": "They eat *dead whales.*"
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The largest confirmed was about fifty centimeters long.",
+     "cap": "Up to *50 cm.*"
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Each eye has nearly four thousand facets. And their relatives? The tiny woodlice in your garden.",
+     "cap": "*4,000 facets* per eye."
+    },
+    {
+     "at": "0.35",
+     "text": "Would you eat one? Yes or no? Comment, subscribe, and watch seven more deep-sea creatures, linked below.",
+     "cta": true
+    }
+   ],
+   "vis": 4
+  }
+ ],
+ "cta": {
+  "q": "Would you eat one?",
+  "a": "YES",
+  "b": "NEVER"
+ },
+ "source": "https://en.wikipedia.org/wiki/Giant_isopod",
  "photos": [
   {
    "id": "lead",
@@ -19,18 +115,22 @@
    "file": "File:Laika ac Deep sea creatures (7472073020).jpg"
   },
   {
-   "id": "v1",
-   "video": "File:Bathynomus giganteus.webm",
-   "from": 0,
-   "len": 70,
-   "fps": 1
+   "id": "ca",
+   "video": "File:Bathynomus giganteus as seen by remotely operated vehicle (ROV) Deep Discoverer at a depth of 816 meters at South Reed, Gulf of Mexico, 2017-11-30.webm",
+   "from": 17,
+   "len": 5
   },
   {
-   "id": "v2",
+   "id": "cb",
    "video": "File:Bathynomus giganteus as seen by remotely operated vehicle (ROV) Deep Discoverer at a depth of 816 meters at South Reed, Gulf of Mexico, 2017-11-30.webm",
-   "from": 0,
-   "len": 70,
-   "fps": 1
+   "from": 31,
+   "len": 5.5
+  },
+  {
+   "id": "cc",
+   "video": "File:Bathynomus giganteus as seen by remotely operated vehicle (ROV) Deep Discoverer at a depth of 816 meters at South Reed, Gulf of Mexico, 2017-11-30.webm",
+   "from": 43,
+   "len": 5.5
   },
   {
    "id": "rel",
