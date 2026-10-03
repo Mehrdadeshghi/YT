@@ -3,7 +3,7 @@
  "look": "cine",
  "captions": true,
  "noOutro": true,
- "speed": 1.15,
+ "speed": 1.3,
  "sub": 2,
  "transition": "whip",
  "glint": true,
@@ -83,7 +83,7 @@
      "cap": "Real footage: *the deep sea.*"
     },
     {
-     "at": "0.35",
+     "at": "0.15",
      "text": "Love, or instinct? Comment, subscribe, and watch seven more deep-sea creatures, linked below.",
      "cta": true
     }
@@ -140,5 +140,6 @@
    "id": "rel",
    "file": "File:Greenland shark profile.jpg"
   }
- ]
+ ],
+ "tight": true
 }

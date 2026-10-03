@@ -23,7 +23,7 @@ const W = WIDE ? 1920 : 1080, H = WIDE ? 1080 : 1920, BEAT = 0.5, PRE = 0.5, FQ 
 const c = document.getElementById('c'), g = c.getContext('2d'); c.width = W; c.height = H;
 const BG = '#0C0B0A', TXT = '#F4EEE3', DIM = '#8C857A', GOLD = '#FFC23D', RED = '#FF3B30',
       PANEL = '#141311', EDGE = '#2C2925', PAPER = '#EDE6D8', PINK = '#1A1714';
-let DUR = 44, SCENES = [], WORLD = [], EP = null, CTA = null, SCN = null;
+let DUR = 44, SCENES = [], WORLD = [], EP = null, CTA = null, SCN = null, RT = null;   // RT: real (unwarped) scene time, for video clips
 
 // ---------- math ----------
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
@@ -189,7 +189,7 @@ function monitor(T, y, label, sub, color, period, flatAt, o = {}) {
 // =====================================================================
 // Episode visuals live in cine/<ep>.js and fill VIS: VIS.open, VIS[0..n-1]  (build(K, S) -> draw(t))
 // =====================================================================
-const VIS = {}, PHOTOS = {}, CREDITS = {}, CLIPS = {};   // CLIPS[id] = [Image…] — real video footage as 30 fps frames
+const VIS = {}, PHOTOS = {}, CREDITS = {}, CLIPS = {}, RECAP = [];   // CLIPS[id] = [Image…] — real video footage as 30 fps frames
 // shared: the hook, stacked big on frame 0 (last line in gold); returns the y below it
 function hook(t, lines, y0 = 500, o = {}) {
   const s = Math.min(...lines.map((l) => fit(l, 'disp', o.size || 150, o.maxW || (WIDE ? 1300 : 920))));
@@ -211,16 +211,18 @@ const ceilHalf = (x) => Math.ceil(x * 2) / 2;
 function build(ep, voice) {
   EP = ep; const V = voice || { open: [], scenes: [] };
   const openVO = voPlace(ep.vo_open, V.open);
-  const openDur = Math.max(ep.openMin ?? 2.5, ceilHalf(openVO.at(-1).end + 0.45));
+  const ceilQ = (x) => Math.ceil(x * 4) / 4;                 // ep.tight: no dead air — scenes end 0.2 s after the voice, animations are time-compressed to fit
+  const openDur = ep.tight ? Math.max(ep.openMin ?? 1.6, ceilQ(openVO.at(-1).end + 0.25)) : Math.max(ep.openMin ?? 2.5, ceilHalf(openVO.at(-1).end + 0.45));
   openVO.forEach((v) => cue(v.at, 'vo', 1, v.file));
   SCENES = [{ from: 0, to: openDur, pre: 0, draw: VIS.open((e, ty, gn, p) => cue(e, ty, gn, p)) }];
   let t = openDur;
   ep.scenes.forEach((sc, i) => {
-    const vo = voPlace(sc.vo, V.scenes[i]), dur = Math.max(sc.dur, ceilHalf(vo.at(-1).end + 0.3)), from = t;
+    const vo = voPlace(sc.vo, V.scenes[i]), slow = Math.max(sc.dur, ceilHalf(vo.at(-1).end + 0.3)), from = t;
+    const dur = ep.tight ? Math.max(1.6, ceilQ(vo.at(-1).end - PRE + 0.2)) : slow, warp = ep.tight ? Math.min(1.7, Math.max(1, (slow - PRE) / dur)) : 1;
     vo.forEach((v) => cue(from + v.at - PRE, 'vo', 1, v.file));
-    const K = (e, ty, gn, p) => cue(from + e - PRE, ty, gn, p), vis = VIS[sc.vis ?? i](K, { vo });
+    const K = (e, ty, gn, p) => cue(from + (e - PRE) / warp, ty, gn, p), vis = VIS[sc.vis ?? i](K, { vo });
     const caps = makeCaptions(sc.vo, vo, sc.noCap || []);
-    SCENES.push({ from, to: from + dur, pre: PRE, draw: (lt) => { SCN = i; vis(lt); if (caps.length) captions(lt, caps); } });
+    SCENES.push({ from, to: from + dur, pre: PRE, draw: (lt) => { SCN = i; RT = lt; vis(PRE + (lt - PRE) * warp); RT = null; if (caps.length) captions(lt, caps); } });
     t += dur; });
   const last = SCENES.at(-1), pad = (2 - (t % 2)) % 2; last.to += pad; t += pad;
   DUR = t; SCENES.slice(1).forEach((s) => cue(s.from - (ep.transition === 'whip' ? 0.12 : 0.2), 'whoosh', ep.transition === 'whip' ? 1 : 0.8));
@@ -260,6 +262,13 @@ function draw(t) {
     const u = (since - 0.15) / 0.6, x = lerp(-600, W + 600, u); g.save(); g.globalCompositeOperation = 'lighter';
     const gr = g.createLinearGradient(x - 220, 0, x + 220, 0); gr.addColorStop(0, 'rgba(255,230,190,0)'); gr.addColorStop(0.5, 'rgba(255,230,190,0.10)'); gr.addColorStop(1, 'rgba(255,230,190,0)');
     g.setTransform(1, 0, -0.35, 1, 0, 0); g.fillStyle = gr; g.fillRect(x - 220 + 0, 0, 440 + 700, H); g.restore(); }
+  if (CTA && RECAP.length && t > CTA.comAt + 0.6) {             // ep.tight: during the spoken call to action, quick cuts through the episode's real photos/clips (no static end)
+    const lt = t - CTA.comAt - 0.6, k = Math.floor(lt / 0.9), id = RECAP[k % RECAP.length], ph = lt - k * 0.9, fr = CLIPS[id];
+    const im = fr && fr.length ? fr[Math.min(fr.length - 1, Math.floor((ph + k * 0.3) * 30) % fr.length)] : PHOTOS[id];
+    if (im) { const sc = Math.max(W / im.width, H / im.height) * (1.05 + 0.06 * ph), dw = im.width * sc, dh = im.height * sc;
+      g.save(); g.globalAlpha = clamp(lt / 0.25); g.drawImage(im, (W - dw) / 2, (H - dh) * 0.45, dw, dh);
+      const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, 'rgba(8,8,10,0.7)'); gr.addColorStop(0.3, 'rgba(8,8,10,0.1)'); gr.addColorStop(0.6, 'rgba(8,8,10,0.25)'); gr.addColorStop(1, 'rgba(8,8,10,0.85)');
+      g.fillStyle = gr; g.fillRect(0, 0, W, H); g.restore(); if (ph < 0.08) flash(ph, 0, 0.2, 0.08); tag(t); } }
   g.drawImage(VIG, 0, 0);
   if (CTA && EP.cta !== false) engage(t);
   g.drawImage(GRAIN[Math.floor(t * 15) % 4], 0, 0, W, H);
@@ -316,6 +325,7 @@ async function boot() {
   await load('cine/common.js'); if (ep.facts) await load('cine/facts.js'); if (ep.map) { await load('cine/map3d.js'); await loadEarth(EPID); MAP.init(topo); } await load(`cine/${EPID}.js`);
   if (0) await new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = `cine/${EPID}.js`; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
   build(ep, voice);
+  if (ep.tight && !WIDE) (ep.photos || []).forEach((p) => { if (p.id !== 'rel' && (PHOTOS[p.id] || CLIPS[p.id])) RECAP.push(p.id); });
   if (new URLSearchParams(location.search).has('thumb') && VIS.thumb) { const d = VIS.thumb(() => {});      // ?thumb=1 → the episode's thumbnail design
     window.seek = (t) => { g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; d(t); return true; }; }
 }

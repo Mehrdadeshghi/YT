@@ -88,7 +88,7 @@ function fact2(t, tIn, l1, l2, small, o = {}) {
 
 // real video footage: plays the clip's frames (30 fps) inside shot(); holds the last frame when the clip ends
 function frameAt(id, lt, rate = 1) { const fr = CLIPS[id]; if (!fr || !fr.length) return null; return fr[Math.max(0, Math.min(fr.length - 1, Math.floor(lt * 30 * rate)))]; }
-function clip(t, id, o = {}) { const im = frameAt(id, t - (o.t0 ?? 0), o.rate || 1); return shot(t, id, Object.assign({ a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.06] }, o, im ? { img: im } : {})); }
+function clip(t, id, o = {}) { const im = frameAt(id, RT != null ? RT - PRE : t - (o.t0 ?? 0), o.rate || 1); return shot(t, id, Object.assign({ a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.06] }, o, im ? { img: im } : {})); }
 function footBadge(t, tIn, str = 'REAL FOOTAGE', y) { const yy = y ?? (WIDE ? 150 : 360), s = spring(t - tIn, 300, 20); if (s <= 0) return;
   chip('▶ ' + str, 80, yy, t, tIn, { size: 24, align: 'left', bg: 'rgba(255,59,48,0.92)', fg: TXT });
   if (Math.sin(t * 6) > 0) { g.fillStyle = RED; g.beginPath(); g.arc(W - 90, yy, 12, 0, 6.283); g.fill(); text('REC', W - 160, yy + 9, 'mono', 24, TXT); } }

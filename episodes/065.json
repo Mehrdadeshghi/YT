@@ -3,7 +3,7 @@
  "look": "cine",
  "captions": true,
  "noOutro": true,
- "speed": 1.15,
+ "speed": 1.3,
  "sub": 2,
  "transition": "whip",
  "glint": true,
@@ -87,7 +87,7 @@
      "cap": "*2005:* found in a red snapper in the *UK.*"
     },
     {
-     "at": "0.35",
+     "at": "0.15",
      "text": "Would you still eat fish? Yes or no? Tell me in the comments. And subscribe for more.",
      "cta": true
     }
@@ -126,5 +126,6 @@
    "id": "mouth",
    "file": "File:Cymothoa exigua.JPG"
   }
- ]
+ ],
+ "tight": true
 }
