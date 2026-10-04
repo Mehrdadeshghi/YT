@@ -12,6 +12,9 @@ out = f'out/ep{ep}/vo'; os.makedirs(out, exist_ok=True)
 LANG = E.get('lang', 'en')
 if LANG == 'de':                     # German: Piper "Thorsten" (see piper_de.py)
     import piper_de; k = piper_de.load(TTS); VOICE = 'thorsten'
+elif VOICE == 'clone':                # Mehrdad's own voice, cloned (Chatterbox): timbre from assets/voice/*.wav, pronunciation from the model
+    from clone_voice import Cloner
+    k = Cloner(E.get('voice_ref', 'assets/voice/mehrdad.wav')); SPEED = float(arg('speed', str(E.get('speed_clone', 1.15))))
 else:
     k = Kokoro(f'{TTS}/kokoro-v1.0.onnx', f'{TTS}/voices-v1.0.bin')
 def synth(key, text):

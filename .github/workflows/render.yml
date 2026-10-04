@@ -16,7 +16,7 @@ concurrency:
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 340
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -32,6 +32,9 @@ jobs:
       - name: Voice model cache
         uses: actions/cache@v4
         with: { path: models, key: kokoro-v1.0 }
+      - name: HF cache (voice clone)
+        uses: actions/cache@v4
+        with: { path: ~/.cache/huggingface, key: chatterbox-v1 }
       - name: Install tools
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
@@ -44,6 +47,10 @@ jobs:
           HF=https://huggingface.co/rhasspy/piper-voices/resolve/main/de/de_DE/thorsten/high
           [ -f models/de_DE-thorsten-high.onnx ] || curl -sSL -o models/de_DE-thorsten-high.onnx $HF/de_DE-thorsten-high.onnx
           [ -f models/de_DE-thorsten-high.onnx.json ] || curl -sSL -o models/de_DE-thorsten-high.onnx.json $HF/de_DE-thorsten-high.onnx.json
+      - name: Voice clone model (only if an episode uses "voice": "clone")
+        run: |
+          for e in ${{ steps.eps.outputs.list }}; do grep -q '"voice": *"clone"' episodes/$e.json && NEED=1; done
+          if [ -n "$NEED" ]; then pip install -q chatterbox-tts 2>&1 | tail -2; fi
       - name: Build
         run: scripts/build.sh ${{ steps.eps.outputs.list }}
       - name: Publish release
