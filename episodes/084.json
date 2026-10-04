@@ -1,0 +1,144 @@
+{
+ "ep": 84,
+ "title": "Instagram algorithm",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "prog": 1,
+ "mood": "clock",
+ "hook": [
+  "THERE IS NO",
+  "INSTAGRAM",
+  "ALGORITHM."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "There is no Instagram algorithm.",
+   "es": "No existe el algoritmo de Instagram."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Instagram says there's no single algorithm. Feed, Stories, Explore and Reels each have their own.",
+     "cap": "*Feed, Stories, Explore, Reels:* each has *its own.*",
+     "es": "Instagram dice que no hay un solo algoritmo. Feed, Historias, Explorar y Reels tienen cada uno el suyo."
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Together they weigh thousands of signals.",
+     "cap": "*Thousands* of signals.",
+     "es": "Juntos analizan miles de señales."
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "For every post, they predict: will you watch it? Like it? Share it? Save it?",
+     "cap": "Will you *watch?* *Like?* *Share?* *Save?*",
+     "es": "Para cada publicación predicen: ¿la verás? ¿Le darás me gusta? ¿La compartirás? ¿La guardarás?"
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Instagram's boss, Adam Mosseri, named the top three signals: watch time, likes, and sends.",
+     "cap": "Top 3: *watch time,* *likes,* *sends.*",
+     "es": "El jefe de Instagram, Adam Mosseri, nombró las tres señales clave: tiempo de visualización, me gusta y envíos."
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Likes count a bit more with your followers. Sends count more for reaching strangers.",
+     "cap": "*Sends* reach *strangers.*",
+     "es": "Los me gusta pesan más con tus seguidores. Los envíos pesan más para llegar a desconocidos."
+    }
+   ],
+   "vis": 4
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Reposting someone else's clip? Since 2022, Instagram is less likely to recommend it.",
+     "cap": "Reposts get *less reach.*",
+     "es": "¿Vuelves a subir el video de otro? Desde 2022, Instagram lo recomienda menos."
+    }
+   ],
+   "vis": 5
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Watermarks, low resolution, or a video that's mostly text can all get less reach.",
+     "cap": "*Watermarks* = *less reach.*",
+     "es": "Marcas de agua, baja resolución o un video lleno de texto pueden recibir menos alcance."
+    }
+   ],
+   "vis": 6
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And Trial Reels let you test a video on non-followers first.",
+     "cap": "*Trial Reels:* test on *strangers* first.",
+     "es": "Y los Reels de prueba te dejan probar un video primero con quienes no te siguen."
+    },
+    {
+     "at": "0.15",
+     "text": "Which app knows you better: Instagram or TikTok? Comment, send this to a friend, and subscribe.",
+     "cta": true,
+     "es": "¿Qué app te conoce mejor: Instagram o TikTok? Comenta, envíaselo a un amigo y suscríbete."
+    }
+   ],
+   "vis": 7
+  }
+ ],
+ "cta": {
+  "q": "Which app knows you better?",
+  "a": "INSTAGRAM",
+  "b": "TIKTOK"
+ },
+ "source": "https://about.instagram.com/blog/announcements/instagram-ranking-explained/",
+ "photos": [
+  {
+   "id": "boss",
+   "file": "File:Head of Instagram Adam Mosseri META (52321290009) (cropped).jpg"
+  }
+ ],
+ "recap": false
+}

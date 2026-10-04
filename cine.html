@@ -326,7 +326,7 @@ async function boot() {
   await load('cine/common.js'); if (ep.facts) await load('cine/facts.js'); if (ep.map) { await load('cine/map3d.js'); await loadEarth(EPID); MAP.init(topo); } await load(`cine/${EPID}.js`);
   if (0) await new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = `cine/${EPID}.js`; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
   build(ep, voice);
-  if (ep.tight && !WIDE) (ep.photos || []).forEach((p) => { if (p.id !== 'rel' && (PHOTOS[p.id] || CLIPS[p.id])) RECAP.push(p.id); });
+  if (ep.tight && !WIDE && ep.recap !== false) (ep.photos || []).forEach((p) => { if (p.id !== 'rel' && (PHOTOS[p.id] || CLIPS[p.id])) RECAP.push(p.id); });
   if (new URLSearchParams(location.search).has('thumb') && VIS.thumb) { const d = VIS.thumb(() => {});      // ?thumb=1 → the episode's thumbnail design
     window.seek = (t) => { g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; d(t); return true; }; }
 }
