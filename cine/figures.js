@@ -132,7 +132,7 @@ function fig(t, tIn, x, y, s, o = {}) {
   const sc = s * (o.noPop ? 1 : sp) * (1 - out);
   g.save(); g.translate(x + (o.dx ? o.dx(t) : 0), y); g.rotate((o.tilt || 0) + (1 - Math.min(1, sp)) * 0.3);
   g.scale(sc * (o.flip ? -1 : 1), sc);
-  g.save(); g.translate(14, 14); g.globalAlpha = 0.28; SK = 1; g.filter = 'blur(6px)'; figBody(o, t); g.filter = 'none'; g.restore();   // drop shadow
+  g.save(); g.translate(12, 12); g.globalAlpha = 0.25; SK = 1; figBody(o, t); g.restore();   // drop shadow (no blur filter: fast)
   g.globalAlpha = 1; g.save(); SK = 1; figBody(o, t); g.restore(); g.save(); SK = 0; figBody(o, t); g.restore();
   if (o.frozen) { const p = rr(-150, -520, 300, 530, 30); g.fillStyle = 'rgba(170,220,255,0.22)'; g.fill(p); g.lineWidth = 8; g.strokeStyle = 'rgba(230,248,255,0.9)'; g.stroke(p);
     g.strokeStyle = 'rgba(255,255,255,0.7)'; g.lineWidth = 6; g.beginPath(); g.moveTo(-120, -470); g.lineTo(-60, -500); g.moveTo(-125, -430); g.lineTo(-95, -445); g.stroke(); }
