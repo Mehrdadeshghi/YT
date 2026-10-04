@@ -87,12 +87,12 @@ VIS[6] = (K) => { K(0.5, 'whoosh', 0.5); for (let k = 0; k < 6; k++) K(1.0 + k *
     const yr = Math.min(2008, 1991 + Math.floor(Math.max(0, t - 0.9) * 14)); if (t > 0.9) popNum(String(yr), 540, 880, 120, yr === 2008 ? GOLD : TXT, t, 0.9, { align: 'center' });
     fact(t, 0.6, '17 YEARS', 'FIGHTING FOR A FINDER\'S REWARD', {}); }; };
 
-VIS[7] = (K) => { K(0.5, 'whoosh', 0.5); K(0.8, 'pop', 0.8); K(1.6, 'thump', 0.9); K(2.6, 'coin', 1); K(2.65, 'hit', 1.2);
+VIS[7] = (K) => { K(0.5, 'whoosh', 0.5); K(0.8, 'pop', 0.8); K(1.6, 'thump', 0.9); K(4.5, 'coin', 1); K(4.55, 'hit', 1.2);
   return (t) => { atmosphere(t); bg(t, 'museum', [0.4, 0.5, 1.0], [0.42, 0.5, 1.1]); dim(0.2); tag(t, 7, N);
-    const rich = t > 2.6;
+    const rich = t > 4.5;
     figS(t, 0.3, 790, 1240, 0.66, A(OFFICIAL, { face: rich ? 'sad' : 'smug', armR: 'hold', item: rich ? null : 'money', flip: true }));
-    figS(t, 0.4, 260, 1240, 0.66, A(ERIKA, { face: rich ? 'greedy' : (t > 1.5 ? 'angry' : 'shock'), armL: rich ? 'up' : 'down', armR: rich ? 'hold' : 'down', item: rich ? 'money' : null }));
-    bubble(t, 0.8, 780, 720, '€5,200?', { tx: 800, ty: 830, out: 2.5 });
-    bubble(t, 1.5, 260, 720, 'NO!', { tx: 260, ty: 880, out: 2.5, bg: '#FF3B30', fg: '#FFFFFF' });
-    burst(t, 2.6, 540, 760, 150, '€150,000', '#3DDC84');
+    figS(t, 0.4, 260, 1240, 0.66, A(ERIKA, { face: rich ? 'greedy' : (t > 2.3 ? 'angry' : 'shock'), armL: rich ? 'up' : 'down', armR: rich ? 'hold' : 'down', item: rich ? 'money' : null }));
+    bubble(t, 1.2, 780, 720, '€5,200?', { tx: 800, ty: 830, out: 4.4 });
+    bubble(t, 2.3, 260, 720, 'NO!', { tx: 260, ty: 880, out: 4.4, bg: '#FF3B30', fg: '#FFFFFF' });
+    burst(t, 4.5, 540, 760, 150, '€150,000', '#3DDC84');
     fact(t, 0.6, '2008:', 'SETTLED AFTER 17 YEARS', {}); }; };
