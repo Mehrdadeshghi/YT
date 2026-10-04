@@ -34,11 +34,11 @@ VIS.open = (K) => { K(0.1, 'hit', 1.2); K(0.15, 'whoosh', 0.8);
 VIS[0] = (K) => { [1.0, 1.25, 1.5, 1.75].forEach((x) => K(x, 'pop', 0.7));
   return (t) => { bgDark(t); tag(t, 0, 8);
     ['FEED', 'STORIES', 'EXPLORE', 'REELS'].forEach((n, i) => { const s = spring(t - 1.0 - i * 0.25, 260, 20); if (s <= 0) return;
-      const x = 80 + (i % 2) * 470, y = 800 + Math.floor(i / 2) * 240; g.save(); g.translate(x + 215, y + 110); g.scale(s, s); g.translate(-x - 215, -y - 110);
+      const x = 80 + (i % 2) * 470, y = 760 + Math.floor(i / 2) * 235; g.save(); g.translate(x + 215, y + 110); g.scale(s, s); g.translate(-x - 215, -y - 110);
       rrect(x, y, 430, 220, 30); g.fillStyle = 'rgba(20,19,18,0.92)'; g.fill(); g.lineWidth = 4; g.strokeStyle = igGrad(x, y, x + 430, y + 220); g.stroke();
       g.save(); g.translate(x + 215, y + 85); g.rotate(t * (1.5 + i * 0.4)); g.strokeStyle = IG[i]; g.lineWidth = 10; for (let k = 0; k < 8; k++) { g.rotate(Math.PI / 4); g.beginPath(); g.moveTo(0, 34); g.lineTo(0, 48); g.stroke(); }
       g.beginPath(); g.arc(0, 0, 34, 0, 6.283); g.stroke(); g.restore(); text(n, x + 215, y + 190, 'disp', 40, TXT, { align: 'center' }); g.restore(); });
-    fact2(t, 0.6, 'NO SINGLE', 'ALGORITHM.', 'EACH PART OF THE APP RANKS ITS OWN WAY'); source(t, 1.5, 'INSTAGRAM, "RANKING EXPLAINED"'); }; };
+    fact2(t, 0.6, 'NO SINGLE', 'ALGORITHM.', 'EACH PART OF THE APP RANKS ITS OWN WAY', { y: 500 }); source(t, 1.5, 'INSTAGRAM, "RANKING EXPLAINED"'); }; };
 
 VIS[1] = (K) => { K(0.6, 'riser', 0.5, 1); K(1.8, 'hit', 1);
   return (t) => { bgDark(t); tag(t, 1, 8); const cx = 540, cy = 1000, r = rng(11);
