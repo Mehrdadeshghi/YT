@@ -1,10 +1,9 @@
-image: Hundertjähriger Kalender
-image: hundertjährige Calender Hellwig
-image: Mauritius Knauer Langheim
-image: Raureif Frost
-image: Christoph von Hellwig
-video: rain
-video: Regen Straße
-video: Silvester Feuerwerk
-video: frost
-video: blizzard
+Elgin Marbles | Elgin Marbles
+Acropolis Museum | Parthenon Gallery (Acropolis Museum)
+Thomas Bruce, 7th Earl of Elgin
+Parthenon | Parthenon
+image: Duveen Gallery British Museum
+image: Parthenon frieze plaster cast Acropolis Museum
+video: Parthenon
+video: Acropolis Athens
+video: British Museum
