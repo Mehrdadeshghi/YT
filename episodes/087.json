@@ -1,0 +1,181 @@
+{
+ "ep": 87,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "prog": 0,
+ "title": "Ötzi",
+ "mood": "clock",
+ "hook": [
+  "2 COUNTRIES.",
+  "1 FROZEN MAN."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Two countries fought over one frozen man. Here's why.",
+   "es": "Dos países se pelearon por un hombre congelado. Esto es lo que pasó.",
+   "de": "Zwei Länder stritten sich um einen gefrorenen Mann. Und zwar so."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In nineteen ninety-one, two German hikers found a man frozen in the Alps.",
+     "cap": "*1991:* hikers find a *frozen man.*",
+     "es": "En 1991, dos excursionistas alemanes encontraron a un hombre congelado en los Alpes.",
+     "de": "Neunzehnhunderteinundneunzig fanden zwei deutsche Wanderer einen gefrorenen Mann in den Alpen."
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Austrian officials dug him out with a jackhammer. It damaged his hip.",
+     "cap": "Dug out with a *jackhammer.*",
+     "es": "Las autoridades austriacas lo sacaron con un martillo neumático. Le dañaron la cadera.",
+     "de": "Österreichische Behörden holten ihn mit einem Presslufthammer raus. Seine Hüfte wurde beschädigt."
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then scientists checked his age: about five thousand three hundred years.",
+     "cap": "Age: *5,300 years.*",
+     "es": "Luego los científicos midieron su edad: unos cinco mil trescientos años.",
+     "de": "Dann prüften Forscher sein Alter: etwa fünftausenddreihundert Jahre."
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But a new survey showed he was lying ninety-two meters inside Italy.",
+     "cap": "*92 meters* inside *Italy.*",
+     "es": "Pero una nueva medición mostró que estaba noventa y dos metros dentro de Italia.",
+     "de": "Aber eine neue Vermessung zeigte: Er lag zweiundneunzig Meter auf italienischem Boden."
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So Austria lost him. Today he lies in a museum in Bolzano, Italy.",
+     "cap": "Today: *Bolzano, Italy.*",
+     "es": "Así que Austria lo perdió. Hoy está en un museo en Bolzano, Italia.",
+     "de": "Also verlor Österreich ihn. Heute liegt er in einem Museum in Bozen, Italien."
+    }
+   ],
+   "vis": 4
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And he was murdered. In two thousand one, scans found an arrowhead in his shoulder.",
+     "cap": "*Murdered:* an *arrowhead* in his shoulder.",
+     "es": "Y fue asesinado. En 2001, unos escáneres hallaron una punta de flecha en su hombro.",
+     "de": "Und er wurde ermordet. Zweitausendeins fanden Scans eine Pfeilspitze in seiner Schulter."
+    }
+   ],
+   "vis": 5
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And the hikers? They fought seventeen years for a finder's reward.",
+     "cap": "*17 years* fighting for a *reward.*",
+     "es": "¿Y los excursionistas? Lucharon diecisiete años por una recompensa.",
+     "de": "Und die Wanderer? Sie kämpften siebzehn Jahre um einen Finderlohn."
+    }
+   ],
+   "vis": 6
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The first offer was about five thousand two hundred euros. The final deal in two thousand eight: one hundred fifty thousand.",
+     "cap": "First: *€5,200.* Final: *€150,000.*",
+     "es": "La primera oferta fue de unos cinco mil doscientos euros. El acuerdo final en 2008: ciento cincuenta mil.",
+     "de": "Das erste Angebot: etwa fünftausendzweihundert Euro. Die Einigung zweitausendacht: hundertfünfzigtausend."
+    },
+    {
+     "at": "0.15",
+     "text": "Who should own Ötzi: Italy or Austria? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿De quién debería ser Ötzi: de Italia o de Austria? Comenta y suscríbete.",
+     "de": "Wem sollte Ötzi gehören: Italien oder Österreich? Kommentier und abonnier!"
+    }
+   ],
+   "vis": 7
+  }
+ ],
+ "cta": {
+  "q": "Who should own Ötzi?",
+  "a": "ITALY",
+  "b": "AUSTRIA"
+ },
+ "source": "https://en.wikipedia.org/wiki/%C3%96tzi",
+ "photos": [
+  {
+   "id": "site",
+   "file": "File:Fundstelle Ötzi.jpg"
+  },
+  {
+   "id": "tisen",
+   "file": "File:Tisenjoch & Hauslabjoch.jpg"
+  },
+  {
+   "id": "obelisk",
+   "file": "File:Obelisk Eismann Fundstelle 20090908a.jpg"
+  },
+  {
+   "id": "glacier",
+   "file": "File:Glacier in Ötztal Alps.jpg"
+  },
+  {
+   "id": "museum",
+   "file": "File:BozenArchMuseum.jpg"
+  },
+  {
+   "id": "recon",
+   "file": "File:Ricostruzione di Ötzi.jpg"
+  },
+  {
+   "id": "axe",
+   "file": "File:Iceman's Copper Axe.jpg"
+  },
+  {
+   "id": "hut",
+   "file": "File:Alpine Wanderhütte Similaun zwischen Italien und Österreich.jpg"
+  }
+ ]
+}
