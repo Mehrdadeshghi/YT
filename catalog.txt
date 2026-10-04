@@ -1,8 +1,4 @@
-Tardigrade | Tardigrada
-Naked mole-rat | Heterocephalus glaber
-Carrington Event | Carrington Event
-Great Red Spot | Great Red Spot
-Venus flytrap | Dionaea muscipula
-video: Carrington OR geomagnetic storm aurora
-video: Great Red Spot
-video: Dionaea muscipula
+Adam Mosseri | Adam Mosseri
+video: smartphone scrolling
+video: person using smartphone
+video: social media phone
