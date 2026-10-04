@@ -1,0 +1,257 @@
+{
+ "ep": 86,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "prog": 0,
+ "title": "Elgin Marbles",
+ "mood": "clock",
+ "hook": [
+  "STOLEN",
+  "OR SAVED?"
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Stolen, or saved? More than half of what survives of the Parthenon's sculptures is in London, not Athens.",
+   "es": "¿Robados o salvados? Más de la mitad de las esculturas del Partenón que se conservan están en Londres, no en Atenas.",
+   "de": "Geraubt oder gerettet? Mehr als die Hälfte der erhaltenen Parthenon-Skulpturen steht in London, nicht in Athen."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Between 1801 and 1812, Lord Elgin's agents removed about half of them.",
+     "cap": "*1801–1812:* about *half* removed.",
+     "es": "Entre 1801 y 1812, los agentes de Lord Elgin se llevaron casi la mitad.",
+     "de": "Zwischen 1801 und 1812 ließ Lord Elgin etwa die Hälfte davon abtransportieren."
+    }
+   ],
+   "vis": 0
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "His Ottoman permit? No original has ever been found.",
+     "cap": "The permit? *No original* found.",
+     "es": "¿Su permiso otomano? Nunca se encontró el original.",
+     "de": "Seine osmanische Genehmigung? Ein Original wurde nie gefunden."
+    }
+   ],
+   "vis": 1
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 2024, Turkey said it knew of no such document.",
+     "cap": "*2024:* Turkey knows of *no such document.*",
+     "es": "En 2024, Turquía dijo no conocer tal documento.",
+     "de": "Zweitausendvierundzwanzig sagte die Türkei: So ein Dokument kennen wir nicht."
+    }
+   ],
+   "vis": 2
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In 1816, Parliament bought them for thirty-five thousand pounds, less than half what Elgin spent.",
+     "cap": "*1816:* sold for *£35,000.*",
+     "es": "En 1816, el Parlamento los compró por treinta y cinco mil libras, menos de la mitad de lo que gastó Elgin.",
+     "de": "Achtzehnhundertsechzehn kaufte das Parlament sie für fünfunddreißigtausend Pfund. Weniger als die Hälfte von Elgins Kosten."
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In the late 1930s, workers scraped them with chisels to make them look whiter.",
+     "cap": "Scraped with *chisels* to look *whiter.*",
+     "es": "A finales de los años treinta, unos obreros los rasparon con cinceles para que parecieran más blancos.",
+     "de": "Ende der Dreißigerjahre wurden sie mit Meißeln abgekratzt, damit sie weißer aussehen."
+    }
+   ],
+   "vis": 4
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Greece has asked for them back since 1983.",
+     "cap": "Greece asks *since 1983.*",
+     "es": "Grecia los reclama desde 1983.",
+     "de": "Griechenland fordert sie seit neunzehnhundertdreiundachtzig zurück."
+    }
+   ],
+   "vis": 5
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its new museum in Athens shows white casts where London's pieces belong.",
+     "cap": "Athens: *white casts* for the *missing pieces.*",
+     "es": "Su nuevo museo en Atenas muestra copias blancas donde faltan las piezas de Londres.",
+     "de": "Das neue Museum in Athen zeigt weiße Abgüsse, wo Londons Stücke fehlen."
+    }
+   ],
+   "vis": 6
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The British Museum says Elgin acquired them legally, and that six million visitors a year see them in London.",
+     "cap": "Museum: *legal.* *6 million* visitors a year.",
+     "es": "El Museo Británico dice que Elgin los adquirió legalmente y que seis millones de visitantes al año los ven en Londres.",
+     "de": "Das British Museum sagt: rechtmäßig erworben. Und sechs Millionen Besucher pro Jahr sehen sie in London."
+    }
+   ],
+   "vis": 7
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And a 1963 law forbids the museum from giving them away.",
+     "cap": "*1963 law:* it *can't* give them away.",
+     "es": "Y una ley de 1963 le prohíbe regalarlos.",
+     "de": "Und ein Gesetz von neunzehnhundertdreiundsechzig verbietet dem Museum, sie herzugeben."
+    }
+   ],
+   "vis": 8
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But in a 2021 poll, 59 percent of Brits said they belong in Greece.",
+     "cap": "*59%* of Brits: they belong in *Greece.*",
+     "es": "Pero en una encuesta de 2021, el 59 por ciento de los británicos dijo que pertenecen a Grecia.",
+     "de": "Aber in einer Umfrage von zweitausendeinundzwanzig sagten neunundfünfzig Prozent der Briten: Sie gehören nach Griechenland."
+    },
+    {
+     "at": "0.15",
+     "text": "So, should London give them back? Yes or no? Comment, and subscribe.",
+     "cta": true,
+     "es": "Entonces, ¿debe Londres devolverlos? ¿Sí o no? Comenta y suscríbete.",
+     "de": "Also: Soll London sie zurückgeben? Ja oder nein? Kommentier und abonnier!"
+    }
+   ],
+   "vis": 9
+  }
+ ],
+ "cta": {
+  "q": "Should London give them back?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Elgin_Marbles",
+ "photos": [
+  {
+   "id": "removal",
+   "file": "File:Removal of marbles from the Parthenon in 1801.jpg"
+  },
+  {
+   "id": "elgin",
+   "file": "File:7th Earl of Elgin by Anton Graff around 1788.jpg"
+  },
+  {
+   "id": "section",
+   "file": "File:Parthenon section annotated.svg"
+  },
+  {
+   "id": "room1819",
+   "file": "File:'The Trustees in the Temporary Elgin Room, 1819.jpg"
+  },
+  {
+   "id": "horse",
+   "file": "File:East pediment O Parthenon BM n2.jpg"
+  },
+  {
+   "id": "bmroom",
+   "file": "File:Elgin-marbles-jan-2024.jpg"
+  },
+  {
+   "id": "duveen",
+   "file": "File:London IMG 0153 (32726700638).jpg"
+  },
+  {
+   "id": "cast",
+   "file": "File:Block IV east frieze of the Parthenon plaster cast Acropolis Museum 01.jpg"
+  },
+  {
+   "id": "cast2",
+   "file": "File:Iris, Hera and Zeus frieze plaster cast, Acropolis Museum 01.jpg"
+  },
+  {
+   "id": "acromus",
+   "file": "File:Acropolis and Acropolis Museum.jpg"
+  },
+  {
+   "id": "acropolis",
+   "file": "File:The Acropolis of Athens viewed from the Hill of the Muses (14220794964).jpg"
+  },
+  {
+   "id": "pediment",
+   "file": "File:Parthenon pediment statues.jpg"
+  },
+  {
+   "id": "parth",
+   "video": "File:Parthenon by Jesper Stepputtis for the Wikimedia Foundation.webm",
+   "from": 0,
+   "len": 50,
+   "fps": 1
+  },
+  {
+   "id": "acro4k",
+   "video": "File:The Acropolis of Athens, Greece.webm",
+   "from": 0,
+   "len": 120,
+   "fps": 0.5
+  },
+  {
+   "id": "pedi",
+   "video": "File:Parthenon-marbles-east-pediment.ogv",
+   "from": 0,
+   "len": 10,
+   "fps": 2
+  },
+  {
+   "id": "bm",
+   "video": "File:The British Museum-HD.webm",
+   "from": 0,
+   "len": 126,
+   "fps": 0.5
+  },
+  {
+   "id": "a1921",
+   "video": "File:Acropolis (1921).webm",
+   "from": 0,
+   "len": 141,
+   "fps": 0.5
+  }
+ ]
+}
