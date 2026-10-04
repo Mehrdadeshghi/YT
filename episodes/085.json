@@ -59,20 +59,33 @@
   },
   {
    "dur": 4,
-   "vis": 2,
    "vo": [
     {
      "at": 0.45,
-     "text": "Aber weiße Weihnachten? Eher nicht. Vom zwanzigsten bis achtundzwanzigsten Dezember: meistens Regen.",
-     "cap": "*20. bis 28. Dezember:* meist *Regen.*",
-     "en": "But a white Christmas? Probably not. December twentieth to twenty-eighth: mostly rain.",
-     "es": "¿Navidad blanca? Mejor no. Del veinte al veintiocho de diciembre: casi siempre lluvia."
+     "text": "Aber weiße Weihnachten? Eher nicht.",
+     "cap": "Weiße Weihnachten? *Eher nicht.*",
+     "en": "But a white Christmas? Probably not.",
+     "es": "¿Navidad blanca? Mejor no."
     }
-   ]
+   ],
+   "vis": 2
   },
   {
    "dur": 4,
-   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Vom zwanzigsten bis achtundzwanzigsten Dezember: meistens Regen.",
+     "cap": "*20. bis 28. Dezember:* meist *Regen.*",
+     "en": "December twentieth to twenty-eighth: mostly rain.",
+     "es": "Del veinte al veintiocho de diciembre: casi siempre lluvia."
+    }
+   ],
+   "vis": 3
+  },
+  {
+   "dur": 4,
+   "vis": 4,
    "vo": [
     {
      "at": 0.45,
@@ -85,7 +98,7 @@
   },
   {
    "dur": 4,
-   "vis": 4,
+   "vis": 5,
    "vo": [
     {
      "at": 0.45,
@@ -98,33 +111,59 @@
   },
   {
    "dur": 4,
-   "vis": 5,
    "vo": [
     {
      "at": 0.45,
-     "text": "Das alles stammt von Abt Mauritius Knauer. Im Kloster Langheim in Franken schrieb er ab sechzehnhundertzweiundfünfzig sieben Jahre lang das Wetter auf.",
-     "cap": "Abt *Mauritius Knauer* · Kloster Langheim · *ab 1652*",
-     "en": "It all goes back to Abbot Mauritius Knauer. At Langheim Abbey in Franconia, he wrote down the weather for seven years, starting in sixteen fifty-two.",
-     "es": "Todo viene del abad Mauritius Knauer. En el monasterio de Langheim, en Franconia, anotó el tiempo durante siete años desde mil seiscientos cincuenta y dos."
+     "text": "Das alles stammt von Abt Mauritius Knauer.",
+     "cap": "Abt *Mauritius Knauer.*",
+     "en": "It all goes back to Abbot Mauritius Knauer.",
+     "es": "Todo viene del abad Mauritius Knauer."
     }
-   ]
+   ],
+   "vis": 6
   },
   {
    "dur": 4,
-   "vis": 6,
    "vo": [
     {
      "at": 0.45,
-     "text": "Seine Idee: Sieben Planeten regieren je ein Jahr. Zweitausendsechsundzwanzig ist ein Merkurjahr: eher kalt als warm.",
-     "cap": "*7 Planeten*, je *1 Jahr.* 2026: *Merkur.*",
-     "en": "His idea: seven planets each rule one year. Twenty twenty-six is a Mercury year: more cold than warm.",
-     "es": "Su idea: siete planetas gobiernan un año cada uno. Dos mil veintiséis es un año de Mercurio: más frío que cálido."
+     "text": "Im Kloster Langheim in Franken schrieb er ab sechzehnhundertzweiundfünfzig sieben Jahre lang das Wetter auf.",
+     "cap": "Kloster Langheim: *7 Jahre* Wetter, *ab 1652.*",
+     "en": "At Langheim Abbey in Franconia, he wrote down the weather for seven years, starting in sixteen fifty-two.",
+     "es": "En el monasterio de Langheim, en Franconia, anotó el tiempo durante siete años desde mil seiscientos cincuenta y dos."
     }
-   ]
+   ],
+   "vis": 7
   },
   {
    "dur": 4,
-   "vis": 7,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Seine Idee: Sieben Planeten regieren je ein Jahr.",
+     "cap": "*7 Planeten*, je *1 Jahr.*",
+     "en": "His idea: seven planets each rule one year.",
+     "es": "Su idea: siete planetas gobiernan un año cada uno."
+    }
+   ],
+   "vis": 8
+  },
+  {
+   "dur": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Zweitausendsechsundzwanzig ist ein Merkurjahr: eher kalt als warm.",
+     "cap": "2026: *Merkurjahr.* Eher *kalt.*",
+     "en": "Twenty twenty-six is a Mercury year: more cold than warm.",
+     "es": "Dos mil veintiséis es un año de Mercurio: más frío que cálido."
+    }
+   ],
+   "vis": 9
+  },
+  {
+   "dur": 4,
+   "vis": 10,
    "vo": [
     {
      "at": 0.45,
@@ -173,65 +212,58 @@
   {
    "id": "snow",
    "video": "File:Schneefall in Hohndorf MVI 0924.webm",
-   "from": 0,
-   "len": 41,
-   "fps": 1
-  },
-  {
-   "id": "berlin",
-   "video": "File:Berlin Karow lub 2025-01-10 Snowfall.webm",
-   "from": 0,
-   "len": 11,
-   "fps": 1
+   "from": 12,
+   "len": 5,
+   "fps": 30
   },
   {
    "id": "styria",
    "video": "File:Schneefall Styria 01.ogg",
-   "from": 0,
-   "len": 18,
-   "fps": 1
-  },
-  {
-   "id": "frost",
-   "video": "File:Haircap moss with sparkly frost in Tuntorp, Brastad.webm",
-   "from": 0,
-   "len": 33,
-   "fps": 1
-  },
-  {
-   "id": "rain",
-   "video": "File:Regen an der Eppenreuther Straße 20250608 C1418.webm",
-   "from": 0,
-   "len": 5,
-   "fps": 2
+   "from": 2,
+   "len": 6,
+   "fps": 30
   },
   {
    "id": "rain2",
    "video": "File:Rain in Sonoma - December 2025 - Sarah Stierch.webm",
    "from": 0,
-   "len": 19,
-   "fps": 1
+   "len": 6,
+   "fps": 30
   },
   {
-   "id": "fire",
-   "video": "File:2022-2023 Silvester Berlin 01.webm",
-   "from": 0,
-   "len": 20,
-   "fps": 1
+   "id": "rain3",
+   "video": "File:Rain in Sonoma - December 2025 - Sarah Stierch.webm",
+   "from": 8,
+   "len": 6,
+   "fps": 30
   },
   {
    "id": "bliz",
    "video": "File:Laurel Street during December 2022 Buffalo, New York blizzard - 20221223 - 02.webm",
-   "from": 0,
-   "len": 16,
-   "fps": 1
+   "from": 4,
+   "len": 7,
+   "fps": 30
+  },
+  {
+   "id": "fire",
+   "video": "File:2022-2023 Silvester Berlin 01.webm",
+   "from": 7.5,
+   "len": 5,
+   "fps": 30
+  },
+  {
+   "id": "berlin",
+   "video": "File:Berlin Karow lub 2025-01-10 Snowfall.webm",
+   "from": 2,
+   "len": 6,
+   "fps": 30
   },
   {
    "id": "sat",
    "video": "File:Strong Winter Storm and Blizzard Batters the East Coast (CIRA 2026-02-23 - nolabels portrait).webm",
-   "from": 0,
-   "len": 29,
-   "fps": 1
+   "from": 17,
+   "len": 8,
+   "fps": 30
   }
  ]
 }

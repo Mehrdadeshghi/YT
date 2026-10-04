@@ -17,6 +17,18 @@ if LANG == 'de':                     # German: Piper "Thorsten" (high quality in
     except ImportError: SynthesisConfig = None
     PV = next(p for p in [f'{TTS}/de_DE-thorsten-high.onnx', f'{TTS}/de-thorsten-low.onnx'] if os.path.exists(p))
     pv = PiperVoice.load(PV); print('german voice', PV)
+    import unicodedata
+    _ph = pv.phonemize                # espeak gives "ç" decomposed (c + U+0327), which the voice's id map lacks: "ich" would sound like "ik"
+    def _fix(text):
+        out = []
+        for sent in _ph(text):
+            new = []
+            for p in sent:
+                if unicodedata.combining(p) and new and unicodedata.normalize('NFC', new[-1] + p) in pv.config.phoneme_id_map: new[-1] = unicodedata.normalize('NFC', new[-1] + p)
+                else: new.append(p)
+            out.append(new)
+        return out
+    pv.phonemize = _fix
     class _K:
         def create(self, text, voice=None, speed=1.0, lang=None):
             buf = io.BytesIO()
