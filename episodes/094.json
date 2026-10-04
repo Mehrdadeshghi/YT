@@ -1,0 +1,148 @@
+{
+ "ep": 94,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "prog": 0,
+ "title": "Hot coffee lawsuit",
+ "mood": "clock",
+ "hook": [
+  "$2.7 MILLION",
+  "FOR COFFEE?"
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Everyone laughed at the hot coffee lawsuit. Until they heard the facts.",
+   "es": "Todos se rieron de la demanda del café caliente. Hasta que conocieron los hechos.",
+   "de": "Alle lachten über die Heißer-Kaffee-Klage. Bis sie die Fakten hörten."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In nineteen ninety-two, seventy-nine-year-old Stella Liebeck spilled McDonald's coffee in her lap.",
+     "cap": "*1992:* coffee in her *lap.*",
+     "es": "En 1992, Stella Liebeck, de setenta y nueve años, se derramó café de McDonald's en el regazo.",
+     "de": "Neunzehnhundertzweiundneunzig verschüttete die neunundsiebzigjährige Stella Liebeck McDonald's-Kaffee auf ihren Schoß."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "She got third-degree burns, needed skin grafts, and spent eight days in hospital.",
+     "cap": "*3rd-degree burns.* *8 days* in hospital.",
+     "es": "Sufrió quemaduras de tercer grado, necesitó injertos de piel y pasó ocho días en el hospital.",
+     "de": "Sie erlitt Verbrennungen dritten Grades, brauchte Hauttransplantationen und lag acht Tage im Krankenhaus."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The coffee was served at up to eighty-eight degrees Celsius.",
+     "cap": "Served at up to *88 °C.*",
+     "es": "El café se servía hasta a ochenta y ocho grados.",
+     "de": "Der Kaffee wurde mit bis zu achtundachtzig Grad serviert."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "She asked for twenty thousand dollars for her bills. McDonald's offered eight hundred.",
+     "cap": "Asked *$20,000.* Offered *$800.*",
+     "es": "Pidió veinte mil dólares para sus gastos. McDonald's ofreció ochocientos.",
+     "de": "Sie verlangte zwanzigtausend Dollar für ihre Rechnungen. McDonald's bot achthundert."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In court, it came out there had been over seven hundred burn reports before.",
+     "cap": "*700+* earlier burn reports.",
+     "es": "En el juicio se supo que había habido más de setecientas denuncias por quemaduras.",
+     "de": "Vor Gericht kam heraus: Es gab schon über siebenhundert Verbrennungs-Meldungen."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The jury awarded two point seven million dollars in punitive damages.",
+     "cap": "Jury: *$2.7 million.*",
+     "es": "El jurado otorgó dos coma siete millones de dólares en daños punitivos.",
+     "de": "Die Jury sprach zwei Komma sieben Millionen Dollar Strafschadenersatz zu."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The judge cut it to four hundred eighty thousand, and they later settled in secret.",
+     "cap": "Cut to *$480,000.* Then a *secret* deal.",
+     "es": "El juez lo redujo a cuatrocientos ochenta mil, y luego llegaron a un acuerdo secreto.",
+     "de": "Der Richter senkte das auf vierhundertachtzigtausend, später einigte man sich geheim."
+    },
+    {
+     "at": "0.15",
+     "text": "Fair or ridiculous? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Justo o ridículo? Comenta y suscríbete.",
+     "de": "Gerecht oder lächerlich? Kommentier und abonnier!"
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Fair or ridiculous?",
+  "a": "FAIR",
+  "b": "RIDICULOUS"
+ },
+ "source": "https://en.wikipedia.org/wiki/Liebeck_v._McDonald%27s_Restaurants",
+ "photos": [
+  {
+   "id": "abq",
+   "file": "File:DowntownAlbuquerqueSkyline.JPG"
+  },
+  {
+   "id": "coffee",
+   "file": "File:Koffie verkeerd cafe MP Amsterdam.jpg"
+  },
+  {
+   "id": "abq2",
+   "file": "File:ABQ downtown skyline.JPG"
+  }
+ ]
+}

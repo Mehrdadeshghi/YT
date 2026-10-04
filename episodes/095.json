@@ -1,0 +1,156 @@
+{
+ "ep": 95,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "prog": 0,
+ "title": "Tulip mania",
+ "mood": "clock",
+ "hook": [
+  "10 YEARS' PAY",
+  "FOR A FLOWER?"
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "In the sixteen-thirties, one flower bulb cost more than ten years of a worker's pay.",
+   "es": "En el siglo diecisiete, un bulbo costaba más que diez años de sueldo de un artesano.",
+   "de": "Im siebzehnten Jahrhundert kostete eine Blumenzwiebel mehr als zehn Jahreslöhne eines Handwerkers."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Tulip mania hit the Dutch Republic from sixteen thirty-four to sixteen thirty-seven.",
+     "cap": "*1634–1637*, the Netherlands.",
+     "es": "La tulipomanía golpeó a la República Neerlandesa de 1634 a 1637.",
+     "de": "Die Tulpenmanie erfasste die Niederlande von sechzehnhundertvierunddreißig bis siebenunddreißig."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The rarest bulb, Semper Augustus, sold for ten thousand guilders.",
+     "cap": "*10,000* guilders.",
+     "es": "El bulbo más raro, Semper Augustus, se vendió por diez mil florines.",
+     "de": "Die seltenste Zwiebel, Semper Augustus, ging für zehntausend Gulden weg."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "That's about a hundred thirty thousand euros today.",
+     "cap": "≈ *€130,000* today.",
+     "es": "Eso son unos ciento treinta mil euros de hoy.",
+     "de": "Das sind heute etwa hundertdreißigtausend Euro."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And those famous stripes? Caused by a virus.",
+     "cap": "The stripes? A *virus.*",
+     "es": "¿Y sus famosas rayas? Las causaba un virus.",
+     "de": "Und die berühmten Streifen? Verursacht durch ein Virus."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In February sixteen thirty-seven, buyers vanished and prices collapsed.",
+     "cap": "*Feb 1637:* crash.",
+     "es": "En febrero de 1637, los compradores desaparecieron y los precios se hundieron.",
+     "de": "Im Februar sechzehnhundertsiebenunddreißig verschwanden die Käufer, und die Preise stürzten ab."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But a modern historian found only a small group was involved.",
+     "cap": "Only a *small group* involved.",
+     "es": "Pero una historiadora moderna descubrió que solo participó un grupo pequeño.",
+     "de": "Aber eine moderne Historikerin fand heraus: Nur eine kleine Gruppe war beteiligt."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "She found fewer than six people who got into financial trouble.",
+     "cap": "Fewer than *6* went broke.",
+     "es": "Encontró a menos de seis personas con problemas financieros.",
+     "de": "Sie fand weniger als sechs Leute, die in Geldnot gerieten."
+    },
+    {
+     "at": "0.15",
+     "text": "Real bubble, or a myth? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Burbuja real o mito? Comenta y suscríbete.",
+     "de": "Echte Blase oder Mythos? Kommentier und abonnier!"
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Real bubble or myth?",
+  "a": "REAL",
+  "b": "MYTH"
+ },
+ "source": "https://en.wikipedia.org/wiki/Tulip_mania",
+ "photos": [
+  {
+   "id": "satire",
+   "file": "File:Jan Brueghel the Younger, Satire on Tulip Mania, c. 1640.jpg"
+  },
+  {
+   "id": "semper",
+   "file": "File:Semper Augustus - Six Collection (no book).jpg"
+  },
+  {
+   "id": "fields",
+   "file": "File:Dutch Tulips (209942087).jpeg"
+  },
+  {
+   "id": "gerome",
+   "file": "File:Jean-Léon Gérôme - The Tulip Folly - Walters 372612.jpg"
+  },
+  {
+   "id": "wagon",
+   "file": "File:Flora's Wagon of Fools (Flora's Mallewagen) tulipomania, Hendrik Gerritsz Pot c1637.jpg"
+  }
+ ]
+}

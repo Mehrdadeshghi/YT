@@ -1,0 +1,160 @@
+{
+ "ep": 97,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "prog": 0,
+ "title": "Koh-i-Noor",
+ "mood": "clock",
+ "hook": [
+  "4 COUNTRIES",
+  "WANT IT BACK."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Four countries want this diamond. Britain keeps it.",
+   "es": "Cuatro países quieren este diamante. Gran Bretaña se lo queda.",
+   "de": "Vier Länder wollen diesen Diamanten. Großbritannien behält ihn."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In eighteen forty-nine, after a war, Britain took it from the Sikh Empire by treaty.",
+     "cap": "*1849:* taken by *treaty.*",
+     "es": "En 1849, tras una guerra, Gran Bretaña se lo quitó al Imperio sij mediante un tratado.",
+     "de": "Achtzehnhundertneunundvierzig nahm Großbritannien ihn nach einem Krieg per Vertrag vom Sikh-Reich."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The ruler who had to hand it over was a child king.",
+     "cap": "Handed over by a *child king.*",
+     "es": "El gobernante que tuvo que entregarlo era un niño rey.",
+     "de": "Der Herrscher, der ihn abgeben musste, war ein Kinderkönig."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In eighteen fifty-two, Prince Albert had it recut to make it sparkle more.",
+     "cap": "*1852:* recut.",
+     "es": "En 1852, el príncipe Alberto lo mandó tallar de nuevo para que brillara más.",
+     "de": "Achtzehnhundertzweiundfünfzig ließ Prinz Albert ihn neu schleifen, damit er mehr funkelt."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It lost about forty-five percent of its weight.",
+     "cap": "Lost *~45%* of its weight.",
+     "es": "Perdió cerca del cuarenta y cinco por ciento de su peso.",
+     "de": "Er verlor etwa fünfundvierzig Prozent seines Gewichts."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Legend says it brings bad luck to men, so only royal women have worn it.",
+     "cap": "Only *women* wear it.",
+     "es": "La leyenda dice que trae mala suerte a los hombres, así que solo lo han llevado mujeres de la realeza.",
+     "de": "Die Legende sagt, er bringt Männern Unglück, also tragen ihn nur royale Frauen."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Today it sits in a crown in the Tower of London.",
+     "cap": "*Tower of London.*",
+     "es": "Hoy está en una corona en la Torre de Londres.",
+     "de": "Heute sitzt er in einer Krone im Tower of London."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "India, Pakistan, Afghanistan and Iran have all claimed it.",
+     "cap": "*4 countries* claim it.",
+     "es": "India, Pakistán, Afganistán e Irán lo han reclamado.",
+     "de": "Indien, Pakistan, Afghanistan und Iran haben ihn alle beansprucht."
+    },
+    {
+     "at": "0.15",
+     "text": "Should Britain give it back? Yes or no? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Debe Gran Bretaña devolverlo? ¿Sí o no? Comenta y suscríbete.",
+     "de": "Soll Großbritannien ihn zurückgeben? Ja oder nein? Kommentier und abonnier!"
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Should Britain give it back?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Koh-i-Noor",
+ "photos": [
+  {
+   "id": "replica",
+   "file": "File:Replica of the Koh-i-Noor (cropped).jpg"
+  },
+  {
+   "id": "old",
+   "file": "File:Kohinoor.jpg"
+  },
+  {
+   "id": "crown",
+   "file": "File:Crown of the Queen Mother replica at Royal Coster Diamonds exhibition.jpg"
+  },
+  {
+   "id": "jewel",
+   "file": "File:Jewel House vault, Tower of London.jpg"
+  },
+  {
+   "id": "ranjit",
+   "file": "File:RanjitSingh by ManuSaluja.jpg"
+  },
+  {
+   "id": "victoria",
+   "file": "File:Franz Xaver Winterhalter Queen Victoria (cropped).jpg"
+  }
+ ]
+}

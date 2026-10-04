@@ -1,0 +1,156 @@
+{
+ "ep": 89,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "prog": 0,
+ "title": "Pluto",
+ "mood": "clock",
+ "hook": [
+  "PLUTO",
+  "GOT FIRED."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Pluto was a planet for seventy-six years. Then it got fired.",
+   "es": "Plutón fue planeta durante setenta y seis años. Luego lo despidieron.",
+   "de": "Pluto war sechsundsiebzig Jahre lang ein Planet. Dann wurde er gefeuert."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In nineteen thirty, Clyde Tombaugh discovered it.",
+     "cap": "*1930:* discovered.",
+     "es": "En 1930, Clyde Tombaugh lo descubrió.",
+     "de": "Neunzehnhundertdreißig entdeckte ihn Clyde Tombaugh."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its name came from an eleven-year-old girl in England.",
+     "cap": "Named by an *11-year-old.*",
+     "es": "Su nombre lo propuso una niña inglesa de once años.",
+     "de": "Den Namen schlug ein elfjähriges Mädchen aus England vor."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In two thousand six, astronomers voted to demote it.",
+     "cap": "*2006:* demoted.",
+     "es": "En 2006, los astrónomos votaron para degradarlo.",
+     "de": "Zweitausendsechs stimmten Astronomen für seine Degradierung."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But only four hundred twenty-four of about nine thousand members voted.",
+     "cap": "Only *424* of *~9,000* voted.",
+     "es": "Pero solo votaron cuatrocientos veinticuatro de unos nueve mil miembros.",
+     "de": "Aber nur vierhundertvierundzwanzig von etwa neuntausend Mitgliedern stimmten ab."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The reason: it hasn't cleared its orbit of other objects.",
+     "cap": "It didn't *clear its orbit.*",
+     "es": "La razón: no ha limpiado su órbita de otros objetos.",
+     "de": "Der Grund: Er hat seine Umlaufbahn nicht freigeräumt."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's smaller than our Moon.",
+     "cap": "Smaller than *our Moon.*",
+     "es": "Es más pequeño que nuestra Luna.",
+     "de": "Er ist kleiner als unser Mond."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And since its discovery, it hasn't finished even one lap around the Sun.",
+     "cap": "Not even *1 orbit* since 1930.",
+     "es": "Y desde su descubrimiento, no ha completado ni una vuelta al Sol.",
+     "de": "Und seit seiner Entdeckung hat er noch keine einzige Runde um die Sonne geschafft."
+    },
+    {
+     "at": "0.15",
+     "text": "Should Pluto be a planet again? Yes or no? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Debería Plutón volver a ser planeta? ¿Sí o no? Comenta y suscríbete.",
+     "de": "Soll Pluto wieder ein Planet sein? Ja oder nein? Kommentier und abonnier!"
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Planet again?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Pluto",
+ "photos": [
+  {
+   "id": "pluto",
+   "file": "File:Pluto in True Color - High-Res.jpg"
+  },
+  {
+   "id": "tomb",
+   "file": "File:Clyde W. Tombaugh.jpeg"
+  },
+  {
+   "id": "vote",
+   "file": "File:IAU-GA-2006-Pluto-Vote.jpg"
+  },
+  {
+   "id": "size",
+   "file": "File:Pluto, Earth & Moon size comparison.jpg"
+  },
+  {
+   "id": "lowell",
+   "file": "File:Lowell Observatory (6882626678).jpg"
+  }
+ ]
+}

@@ -1,0 +1,160 @@
+{
+ "ep": 93,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "prog": 0,
+ "title": "Mona Lisa theft",
+ "mood": "clock",
+ "hook": [
+  "STOLEN",
+  "BY A WORKER."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "The Mona Lisa wasn't that famous. Until someone stole it.",
+   "es": "La Mona Lisa no era tan famosa. Hasta que alguien la robó.",
+   "de": "Die Mona Lisa war gar nicht so berühmt. Bis jemand sie stahl."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "On August twenty-first, nineteen eleven, Vincenzo Peruggia walked into the Louvre.",
+     "cap": "*August 21, 1911.*",
+     "es": "El 21 de agosto de 1911, Vincenzo Peruggia entró en el Louvre.",
+     "de": "Am einundzwanzigsten August neunzehnhundertelf ging Vincenzo Peruggia in den Louvre."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He wore a white worker's smock, so nobody stopped him.",
+     "cap": "Disguised in a *white smock.*",
+     "es": "Llevaba una bata blanca de trabajador, así que nadie lo detuvo.",
+     "de": "Er trug einen weißen Arbeitskittel, also hielt ihn niemand auf."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He took the painting off the wall and walked out with it.",
+     "cap": "Off the wall. *Out the door.*",
+     "es": "Descolgó el cuadro y salió con él.",
+     "de": "Er nahm das Bild von der Wand und ging einfach raus."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Police even arrested the poet Apollinaire and questioned Pablo Picasso.",
+     "cap": "Suspect: *Picasso!*",
+     "es": "La policía detuvo al poeta Apollinaire e interrogó a Pablo Picasso.",
+     "de": "Die Polizei verhaftete den Dichter Apollinaire und verhörte Pablo Picasso."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Crowds came to stare at the empty wall.",
+     "cap": "Crowds came to see *nothing.*",
+     "es": "Las multitudes venían a mirar la pared vacía.",
+     "de": "Menschenmassen kamen, um die leere Wand anzustarren."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Two years later, he tried to sell it in Florence, and got caught.",
+     "cap": "*1913:* caught in *Florence.*",
+     "es": "Dos años después intentó venderla en Florencia y lo atraparon.",
+     "de": "Zwei Jahre später wollte er sie in Florenz verkaufen und wurde geschnappt."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He said it belonged to Italy. He served just seven months.",
+     "cap": "Served only *7 months.*",
+     "es": "Dijo que pertenecía a Italia. Solo cumplió siete meses.",
+     "de": "Er sagte, sie gehöre nach Italien. Er saß nur sieben Monate."
+    },
+    {
+     "at": "0.15",
+     "text": "Hero or thief? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Héroe o ladrón? Comenta y suscríbete.",
+     "de": "Held oder Dieb? Kommentier und abonnier!"
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Peruggia: hero or thief?",
+  "a": "HERO",
+  "b": "THIEF"
+ },
+ "source": "https://en.wikipedia.org/wiki/Vincenzo_Peruggia",
+ "photos": [
+  {
+   "id": "mona",
+   "file": "File:Mona Lisa.jpg"
+  },
+  {
+   "id": "empty",
+   "file": "File:Mona Lisa stolen-1911.jpg"
+  },
+  {
+   "id": "peru",
+   "file": "File:Vincenzo peruggia.jpg"
+  },
+  {
+   "id": "uffizi",
+   "file": "File:Monalisa uffizi 1913.jpg"
+  },
+  {
+   "id": "crowd",
+   "file": "File:Mona Lisa crowd.jpg"
+  },
+  {
+   "id": "salon",
+   "file": "File:Louvre salon Carré circa 1860.jpg"
+  }
+ ]
+}

@@ -1,0 +1,156 @@
+{
+ "ep": 96,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "prog": 0,
+ "title": "A Diamond Is Forever",
+ "mood": "clock",
+ "hook": [
+  "DIAMONDS ARE",
+  "A SALES TRICK?"
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "The diamond engagement ring? That idea was sold to you.",
+   "es": "¿El anillo de compromiso con diamante? Esa idea te la vendieron.",
+   "de": "Der Verlobungsring mit Diamant? Diese Idee wurde dir verkauft."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In nineteen forty-seven, copywriter Frances Gerety wrote four words for De Beers.",
+     "cap": "*1947:* four words.",
+     "es": "En 1947, la redactora Frances Gerety escribió cuatro palabras para De Beers.",
+     "de": "Neunzehnhundertsiebenundvierzig schrieb die Texterin Frances Gerety vier Wörter für De Beers."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "'A diamond is forever.'",
+     "cap": "*A diamond is forever.*",
+     "es": "Un diamante es para siempre.",
+     "de": "Ein Diamant ist unvergänglich."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In two thousand, Advertising Age called it the best slogan of the twentieth century.",
+     "cap": "Best slogan of the *20th century.*",
+     "es": "En el año 2000, Advertising Age lo llamó el mejor eslogan del siglo veinte.",
+     "de": "Im Jahr zweitausend kürte Advertising Age ihn zum besten Slogan des zwanzigsten Jahrhunderts."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "At its peak, De Beers controlled about ninety percent of the world's diamond production.",
+     "cap": "*~90%* of all diamonds.",
+     "es": "En su apogeo, De Beers controlaba cerca del noventa por ciento de la producción mundial.",
+     "de": "Auf dem Höhepunkt kontrollierte De Beers etwa neunzig Prozent der Diamantenproduktion."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It bought up and stockpiled diamonds to keep them scarce.",
+     "cap": "*Stockpiled* to stay scarce.",
+     "es": "Compraba y almacenaba diamantes para mantenerlos escasos.",
+     "de": "Es kaufte Diamanten auf und hortete sie, damit sie knapp blieben."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Today, lab-grown diamonds cost about ninety percent less.",
+     "cap": "Lab-grown: *~90% cheaper.*",
+     "es": "Hoy, los diamantes de laboratorio cuestan cerca de un noventa por ciento menos.",
+     "de": "Heute kosten Labordiamanten etwa neunzig Prozent weniger."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In twenty twenty-five, De Beers even shut down its own lab-grown brand.",
+     "cap": "*2025:* De Beers *quits* lab-grown.",
+     "es": "En 2025, De Beers cerró incluso su propia marca de diamantes de laboratorio.",
+     "de": "Zweitausendfünfundzwanzig stellte De Beers sogar seine eigene Labordiamant-Marke ein."
+    },
+    {
+     "at": "0.15",
+     "text": "Would you pick a real diamond or a lab-grown one? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Elegirías un diamante real o uno de laboratorio? Comenta y suscríbete.",
+     "de": "Echter Diamant oder Labordiamant? Kommentier und abonnier!"
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Which ring would you pick?",
+  "a": "REAL",
+  "b": "LAB-GROWN"
+ },
+ "source": "https://en.wikipedia.org/wiki/De_Beers",
+ "photos": [
+  {
+   "id": "ring",
+   "file": "File:Diamond engagement ring on woman hand 6313.jpg"
+  },
+  {
+   "id": "hole",
+   "file": "File:Big Hole Kimberley.jpg"
+  },
+  {
+   "id": "store",
+   "file": "File:DeBeersBevHills.jpg"
+  },
+  {
+   "id": "lab",
+   "file": "File:Diamond cuboctahedron.jpg"
+  },
+  {
+   "id": "rhodes",
+   "file": "File:CecilRhodes.jpg"
+  }
+ ]
+}

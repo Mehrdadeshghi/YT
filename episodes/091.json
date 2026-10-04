@@ -1,0 +1,152 @@
+{
+ "ep": 91,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "prog": 0,
+ "title": "The Landlord's Game",
+ "mood": "clock",
+ "hook": [
+  "MONOPOLY",
+  "WAS STOLEN?"
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Monopoly was invented by a woman. A man got rich from it.",
+   "es": "El Monopoly lo inventó una mujer. Un hombre se hizo rico con él.",
+   "de": "Monopoly hat eine Frau erfunden. Reich wurde ein Mann."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In nineteen-oh-four, Lizzie Magie patented 'The Landlord's Game.'",
+     "cap": "*1904:* Lizzie Magie's *patent.*",
+     "es": "En 1904, Lizzie Magie patentó 'The Landlord's Game'.",
+     "de": "Neunzehnhundertvier ließ Lizzie Magie 'The Landlord's Game' patentieren."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its goal: show how landlords get rich while tenants get poor.",
+     "cap": "Landlords *win.* Tenants *lose.*",
+     "es": "Su objetivo: mostrar cómo los caseros se enriquecen y los inquilinos se empobrecen.",
+     "de": "Ihr Ziel: zeigen, wie Vermieter reich und Mieter arm werden."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It even had a second set of rules where everyone wins.",
+     "cap": "A version where *everyone wins.*",
+     "es": "Incluso tenía otras reglas en las que todos ganan.",
+     "de": "Es gab sogar zweite Regeln, bei denen alle gewinnen."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Charles Darrow learned a copy of the game, and in nineteen thirty-five sold 'Monopoly' as his own.",
+     "cap": "*1935:* sold as *his own.*",
+     "es": "Charles Darrow aprendió una copia del juego y en 1935 vendió 'Monopoly' como suyo.",
+     "de": "Charles Darrow lernte eine Kopie kennen und verkaufte Monopoly neunzehnhundertfünfunddreißig als seine Erfindung."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He became the first millionaire game designer in history.",
+     "cap": "First *millionaire* game designer.",
+     "es": "Se convirtió en el primer diseñador de juegos millonario de la historia.",
+     "de": "Er wurde der erste Spieleerfinder, der Millionär wurde."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Parker Brothers bought Magie's patent for just five hundred dollars.",
+     "cap": "Magie got *$500.*",
+     "es": "Parker Brothers compró la patente de Magie por solo quinientos dólares.",
+     "de": "Parker Brothers kaufte Magies Patent für nur fünfhundert Dollar."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Within a year, they were making twenty thousand sets every week.",
+     "cap": "*20,000* sets *a week.*",
+     "es": "En un año, fabricaban veinte mil juegos por semana.",
+     "de": "Nach einem Jahr wurden zwanzigtausend Spiele pro Woche hergestellt."
+    },
+    {
+     "at": "0.15",
+     "text": "Who deserves the credit, Magie or Darrow? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Quién merece el mérito, Magie o Darrow? Comenta y suscríbete.",
+     "de": "Wer verdient die Ehre, Magie oder Darrow? Kommentier und abonnier!"
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Who deserves the credit?",
+  "a": "MAGIE",
+  "b": "DARROW"
+ },
+ "source": "https://en.wikipedia.org/wiki/The_Landlord%27s_Game",
+ "photos": [
+  {
+   "id": "patent",
+   "file": "File:BoardGamePatentMagie.png"
+  },
+  {
+   "id": "board",
+   "file": "File:Landlords Game board based on 1924 patent.png"
+  },
+  {
+   "id": "magie",
+   "file": "File:Lizzie Magie - My Betrothed, and Other Poems.jpg"
+  },
+  {
+   "id": "game1906",
+   "file": "File:Landlords Game 1906 image courtesy of T Forsyth owner of the registered trademark 20151119.jpg"
+  }
+ ]
+}

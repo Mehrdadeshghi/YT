@@ -1,0 +1,161 @@
+{
+ "ep": 88,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "prog": 0,
+ "title": "Hawaiian pizza",
+ "mood": "clock",
+ "hook": [
+  "PINEAPPLE",
+  "ON PIZZA?"
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Pineapple on pizza wasn't invented in Hawaii. Or in Italy.",
+   "es": "La pizza con piña no se inventó en Hawái. Ni en Italia.",
+   "de": "Pizza mit Ananas wurde nicht auf Hawaii erfunden. Und nicht in Italien."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It was invented in Canada, in nineteen sixty-two.",
+     "cap": "*Canada, 1962.*",
+     "es": "Se inventó en Canadá, en 1962.",
+     "de": "Sie wurde in Kanada erfunden, neunzehnhundertzweiundsechzig."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "By Sam Panopoulos, a Greek-born cook running a restaurant in Ontario.",
+     "cap": "*Sam Panopoulos*, born in *Greece.*",
+     "es": "Por Sam Panopoulos, un cocinero nacido en Grecia con un restaurante en Ontario.",
+     "de": "Von Sam Panopoulos, einem Koch aus Griechenland mit einem Restaurant in Ontario."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Inspired by sweet and sour Chinese dishes, he tried pineapple.",
+     "cap": "Inspired by *sweet and sour.*",
+     "es": "Inspirado por los platos chinos agridulces, probó con piña.",
+     "de": "Inspiriert von süßsauren chinesischen Gerichten probierte er Ananas."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The name? It came from the brand of canned pineapple.",
+     "cap": "Named after a *can.*",
+     "es": "¿El nombre? Viene de la marca de piña en lata.",
+     "de": "Der Name? Kam von der Marke der Dosenananas."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "At first, customers didn't like it.",
+     "cap": "At first: *not popular.*",
+     "es": "Al principio, a los clientes no les gustó.",
+     "de": "Am Anfang mochten die Gäste sie nicht."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "By nineteen ninety-nine, it was Australia's most popular pizza.",
+     "cap": "*1999:* Australia's *No. 1.*",
+     "es": "En 1999 ya era la pizza más popular de Australia.",
+     "de": "Neunzehnhundertneunundneunzig war sie Australiens beliebteste Pizza."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In twenty seventeen, Iceland's president joked he would ban it.",
+     "cap": "Iceland's president: *ban it!*",
+     "es": "En 2017, el presidente de Islandia bromeó con prohibirla.",
+     "de": "Zweitausendsiebzehn scherzte Islands Präsident, er würde sie verbieten."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 7,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Today, twelve percent of American pizza eaters love it, and twenty-four percent hate it.",
+     "cap": "*12%* love it. *24%* hate it.",
+     "es": "Hoy, al doce por ciento de los estadounidenses le encanta, y el veinticuatro por ciento la odia.",
+     "de": "Heute lieben sie zwölf Prozent der Amerikaner, und vierundzwanzig Prozent hassen sie."
+    },
+    {
+     "at": "0.15",
+     "text": "Pineapple on pizza: yes or no? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Piña en la pizza: sí o no? Comenta y suscríbete.",
+     "de": "Ananas auf Pizza: ja oder nein? Kommentier und abonnier!"
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Pineapple on pizza?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Hawaiian_pizza",
+ "photos": [
+  {
+   "id": "pizza",
+   "file": "File:Pizza with pineapple.jpg"
+  },
+  {
+   "id": "farm",
+   "file": "File:Farm, Chatham-Kent Highway 3, Chatham-Kent, Ontario (21586548120).jpg"
+  },
+  {
+   "id": "wind",
+   "file": "File:Wind Farm, Chatham-Kent Highway 3, Chatham-Kent, Ontario (21153583253).jpg"
+  }
+ ]
+}

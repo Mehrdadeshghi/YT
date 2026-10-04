@@ -1,0 +1,148 @@
+{
+ "ep": 90,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "prog": 0,
+ "title": "Victor Lustig",
+ "mood": "clock",
+ "hook": [
+  "HE SOLD THE",
+  "EIFFEL TOWER."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This man sold the Eiffel Tower. He didn't own it.",
+   "es": "Este hombre vendió la Torre Eiffel. Y no era suya.",
+   "de": "Dieser Mann verkaufte den Eiffelturm. Er gehörte ihm nicht."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In nineteen twenty-five, Victor Lustig posed as a French government official.",
+     "cap": "*1925:* a fake *official.*",
+     "es": "En 1925, Victor Lustig se hizo pasar por un funcionario francés.",
+     "de": "Neunzehnhundertfünfundzwanzig gab sich Victor Lustig als französischer Beamter aus."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He told scrap metal dealers the tower would be sold for scrap.",
+     "cap": "The tower? *For scrap.*",
+     "es": "Les dijo a chatarreros que la torre se vendería como chatarra.",
+     "de": "Er erzählte Schrotthändlern, der Turm werde verschrottet."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "One dealer, André Poisson, paid him.",
+     "cap": "*André Poisson* paid.",
+     "es": "Un chatarrero, André Poisson, le pagó.",
+     "de": "Ein Händler, André Poisson, bezahlte ihn."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Poisson was too embarrassed to go to the police.",
+     "cap": "Too *embarrassed* to report it.",
+     "es": "Poisson estaba demasiado avergonzado para ir a la policía.",
+     "de": "Poisson schämte sich zu sehr, um zur Polizei zu gehen."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So Lustig came back and tried to sell it again.",
+     "cap": "Then he tried *again.*",
+     "es": "Así que Lustig volvió e intentó venderla otra vez.",
+     "de": "Also kam Lustig zurück und versuchte es noch einmal."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He also sold a 'money printing box' that printed nothing.",
+     "cap": "A fake *money machine.*",
+     "es": "También vendía una caja que supuestamente imprimía dinero.",
+     "de": "Er verkaufte auch eine Gelddruck-Kiste, die nichts druckte."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He even got money out of Al Capone.",
+     "cap": "He even conned *Al Capone.*",
+     "es": "Incluso le sacó dinero a Al Capone.",
+     "de": "Er holte sogar Geld aus Al Capone heraus."
+    },
+    {
+     "at": "0.15",
+     "text": "Genius or just a criminal? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Genio o simple criminal? Comenta y suscríbete.",
+     "de": "Genie oder einfach Krimineller? Kommentier und abonnier!"
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Genius or criminal?",
+  "a": "GENIUS",
+  "b": "CRIMINAL"
+ },
+ "source": "https://en.wikipedia.org/wiki/Victor_Lustig",
+ "photos": [
+  {
+   "id": "eiffel",
+   "file": "File:Tour Eiffel Citroen.jpg"
+  },
+  {
+   "id": "eiffel2",
+   "file": "File:Tour Eiffel publicité Citroën 1925.jpg"
+  },
+  {
+   "id": "alcatraz",
+   "file": "File:Alcatraz Island as seen from the East.jpg"
+  }
+ ]
+}

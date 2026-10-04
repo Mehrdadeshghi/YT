@@ -1,0 +1,156 @@
+{
+ "ep": 92,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "prog": 0,
+ "title": "Nefertiti Bust",
+ "mood": "clock",
+ "hook": [
+  "SHOULD BERLIN",
+  "GIVE HER BACK?"
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "She's over three thousand years old, and Egypt wants her back.",
+   "es": "Tiene más de tres mil años, y Egipto la quiere de vuelta.",
+   "de": "Sie ist über dreitausend Jahre alt, und Ägypten will sie zurück."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In nineteen twelve, German archaeologists found this bust in Amarna, Egypt.",
+     "cap": "*1912:* found in *Egypt.*",
+     "es": "En 1912, arqueólogos alemanes encontraron este busto en Amarna, Egipto.",
+     "de": "Neunzehnhundertzwölf fanden deutsche Archäologen diese Büste in Amarna, Ägypten."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In nineteen thirteen, the finds were split, and the bust went to Germany.",
+     "cap": "*1913:* it goes to *Germany.*",
+     "es": "En 1913 se repartieron los hallazgos, y el busto fue a Alemania.",
+     "de": "Neunzehnhundertdreizehn wurden die Funde geteilt, und die Büste ging nach Deutschland."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Egypt says the team hid how valuable it was.",
+     "cap": "Egypt: its value was *hidden.*",
+     "es": "Egipto dice que el equipo ocultó su valor.",
+     "de": "Ägypten sagt: Das Team hat ihren Wert verschleiert."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It was kept out of sight until nineteen twenty-four.",
+     "cap": "Hidden until *1924.*",
+     "es": "Estuvo escondido hasta 1924.",
+     "de": "Bis neunzehnhundertvierundzwanzig wurde sie nicht gezeigt."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Egypt has demanded it back ever since.",
+     "cap": "Egypt asks *since 1924.*",
+     "es": "Egipto la reclama desde entonces.",
+     "de": "Seitdem fordert Ägypten sie zurück."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Even Hitler refused, saying he would never give up the head of the Queen.",
+     "cap": "Hitler: *never.*",
+     "es": "Incluso Hitler se negó: dijo que nunca entregaría la cabeza de la reina.",
+     "de": "Sogar Hitler lehnte ab: Er werde den Kopf der Königin nie hergeben."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Today, about half a million people a year see her in Berlin.",
+     "cap": "*500,000* visitors a year.",
+     "es": "Hoy, medio millón de personas al año la ven en Berlín.",
+     "de": "Heute sehen sie etwa eine halbe Million Menschen pro Jahr in Berlin."
+    },
+    {
+     "at": "0.15",
+     "text": "Should Berlin give her back? Yes or no? Comment, and subscribe.",
+     "cta": true,
+     "es": "¿Debe Berlín devolverla? ¿Sí o no? Comenta y suscríbete.",
+     "de": "Soll Berlin sie zurückgeben? Ja oder nein? Kommentier und abonnier!"
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Should Berlin give her back?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Nefertiti_Bust",
+ "photos": [
+  {
+   "id": "bust",
+   "file": "File:Nofretete Neues Museum.jpg"
+  },
+  {
+   "id": "room",
+   "file": "File:Nofretete Neues Museum Place.jpg"
+  },
+  {
+   "id": "museum",
+   "file": "File:Neues Museum Berlin EP1.JPG"
+  },
+  {
+   "id": "altar",
+   "file": "File:Akhenaten, Nefertiti and their children.jpg"
+  },
+  {
+   "id": "bust2",
+   "file": "File:Nefertiti (Nofretete in Berlin).jpg"
+  }
+ ]
+}
