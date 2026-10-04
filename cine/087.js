@@ -12,7 +12,7 @@ const SURV = { shirt: '#2E7D32', pants: '#3A3A3A', hat: 'cap', hatCol: '#F2B705'
 const JUDGE = { shirt: '#1E1E1E', pants: '#1E1E1E', hat: 'hair', hair: '#BDBDBD', seed: 9 };
 const OFFICIAL = { shirt: '#3B4A6B', pants: '#2B2B2B', hat: 'hair', hair: '#5A3A20', tie: '#C8102E', seed: 10 };
 const figS = (t, tIn, x, y, sc, o) => fig(t, tIn, x, y - 30, sc * 1.22, o);
-const A = (base, more) => Object.assign({}, base, more);
+// (A defined in figures.js)
 // bright photo background with a soft blur + bottom fade for captions
 function bg(t, id, a, b, badge) { const P = shot(t, id, { a, b: b || a, dur: 6, anchor: [540, 900] }); if (!P) noPhoto(t);
   const gr = g.createLinearGradient(0, 1050, 0, H); gr.addColorStop(0, 'rgba(8,8,10,0)'); gr.addColorStop(1, 'rgba(8,8,10,0.55)'); g.fillStyle = gr; g.fillRect(0, 1050, W, H - 1050);

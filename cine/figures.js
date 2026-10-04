@@ -20,7 +20,7 @@ const ell = (x, y, rx, ry, rot = 0) => { const p = new Path2D(); p.ellipse(x, y,
 const rr = (x, y, w, h, r) => { const p = new Path2D(); p.roundRect(x, y, w, h, r); return p; };
 const darker = (hex, k = 0.75) => { const n = parseInt(hex.slice(1), 16); const f = (v) => Math.round(v * k); return `rgb(${f(n >> 16)},${f((n >> 8) & 255)},${f(n & 255)})`; };
 
-const ARM = { down: [92, -150], up: [100, -470], out: [190, -300], point: [215, -330], hold: [70, -215], wave: [125, -455], hips: [70, -190], fist: [120, -420] };
+const ARM = { down: [92, -150], up: [100, -470], out: [190, -300], point: [215, -330], hold: [125, -205], wave: [125, -455], hips: [70, -190], fist: [120, -420] };
 function handPos(kind, side, t) {
   let [hx, hy] = ARM[kind] || ARM.down; hx *= side;
   if (kind === 'wave') { const a = Math.sin(t * 9) * 0.5; hx = side * (70 + 80 * Math.cos(a)); hy = -300 - 150 * Math.cos(a * 0.4) - 20; }
@@ -61,8 +61,8 @@ function item(kind, hx, hy, t, side = 1) {
   else if (kind === 'box') { sh(rr(-70, -110, 140, 110, 10), '#7A4E22'); if (!SK) { g.fillStyle = '#C9A34E'; for (const x of [-40, 0, 40]) { g.beginPath(); g.arc(x, -70, 9, 0, 6.283); g.fill(); } g.fillStyle = '#2E9E4A'; g.fillRect(-50, -40, 100, 10 + 6 * Math.abs(Math.sin(t * 5))); } }
   else if (kind === 'board') { g.rotate(-0.1 * side); sh(rr(-90, -190, 180, 180, 10), '#DDEBD5'); if (!SK) { const c = ['#8B4FA3', '#5AA9FF', '#E0344B', '#F2B705', '#2E9E4A']; for (let k = 0; k < 8; k++) { g.fillStyle = c[k % 5]; g.fillRect(-90 + k * 22, -190, 20, 18); g.fillRect(-90 + k * 22, -28, 20, 18); } g.fillStyle = INK; g.font = F.ui(22); g.textAlign = 'center'; g.fillText('LAND', 0, -95); g.textAlign = 'left'; } }
   else if (kind === 'planet') { sh(circ(0, -60, 60), '#D9B48F'); if (!SK) { g.fillStyle = '#F4E6D2'; g.beginPath(); g.moveTo(-10, -70); g.bezierCurveTo(-40, -100, -50, -50, -10, -30); g.bezierCurveTo(30, -50, 20, -100, -10, -70); g.fill(); } }
-  else if (kind.startsWith('sign:')) { const s2 = kind.slice(5); limb(0, 40, 0, -170, '#8B6A43', 12); g.font = F.ui(44); const w = Math.max(160, g.measureText(s2).width + 50);
-    sh(rr(-w / 2, -300, w, 110, 14), '#FFFFFF'); if (!SK) text(s2, 0, -228, 'ui', 44, INK, { align: 'center' }); }
+  else if (kind.startsWith('sign:')) { const s2 = kind.slice(5); limb(0, 40, 0, -120, '#8B6A43', 12); const fs = fit(s2, 'ui', 44, 260); g.font = F.ui(fs); const w = Math.max(160, g.measureText(s2).width + 50);
+    sh(rr(-w / 2, -230, w, 110, 14), '#FFFFFF'); if (!SK) text(s2, 0, -175 + fs * 0.36, 'ui', fs, INK, { align: 'center' }); }
   g.restore();
 }
 function face(o, t, tl) {
@@ -200,3 +200,22 @@ function fscene(i, n, sp) {
       if (sp.hook) hook(t, EP.hook, sp.hookY || 400);
       if (sp.x) sp.x(t); }; };
 }
+// shared cast presets
+const A = (base, more) => Object.assign({}, base, more);
+const CAST = {
+  man: { shirt: '#3D7BD9', pants: '#2E3A59', hat: 'hair', hair: '#4A3020' },
+  woman: { shirt: '#E0567A', pants: '#2E3A59', hat: 'bun', hair: '#8A5A2B' },
+  chef: { shirt: '#FFFFFF', pants: '#2B2B2B', hat: 'chef', beard: '#3A2A1E' },
+  sci: { shirt: '#F4F4F4', pants: '#4A4A4A', hat: 'lab' },
+  official: { shirt: '#3B4A6B', pants: '#2B2B2B', hat: 'hair', hair: '#5A3A20', tie: '#C8102E' },
+  conman: { shirt: '#2B2B2B', pants: '#1E1E1E', hat: 'top', hatCol: '#8B1E1E', tie: '#E8C04A', beard: '#2A1A10' },
+  police: { shirt: '#1F2A44', pants: '#1F2A44', hat: 'police' },
+  judge: { shirt: '#1E1E1E', pants: '#1E1E1E', hat: 'grey' },
+  grandma: { shirt: '#8E6BB8', pants: '#5A4A6B', hat: 'grey', glasses: true },
+  worker: { shirt: '#F28C28', pants: '#2E3A59', hat: 'hardhat' },
+  king: { shirt: '#8B1E1E', pants: '#2B2B2B', hat: 'crown', beard: '#5A3A20' },
+  queen: { shirt: '#5B2A86', pants: '#3A2A50', hat: 'crown', hair: '#8A5A2B' },
+  kid: { shirt: '#F2B705', pants: '#2E3A59', hat: 'bun', hair: '#C98A3B' },
+  rich: { shirt: '#1E1E1E', pants: '#1E1E1E', hat: 'top', hatCol: '#1E1E1E', tie: '#C8102E', glasses: false },
+  pharaoh: { shirt: '#E8C04A', pants: '#F4F4F4', hat: 'nemes', skin: '#C9905A' },
+};

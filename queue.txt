@@ -1,3 +1,11 @@
 # Episodes to render (push triggers the Render workflow)
-087
-# figures: fast shadow
+088
+089
+090
+091
+092
+093
+094
+095
+096
+097
