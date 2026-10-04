@@ -23,6 +23,7 @@ const W = WIDE ? 1920 : 1080, H = WIDE ? 1080 : 1920, BEAT = 0.5, PRE = 0.5, FQ 
 const c = document.getElementById('c'), g = c.getContext('2d'); c.width = W; c.height = H;
 const BG = '#0C0B0A', TXT = '#F4EEE3', DIM = '#8C857A', GOLD = '#FFC23D', RED = '#FF3B30',
       PANEL = '#141311', EDGE = '#2C2925', PAPER = '#EDE6D8', PINK = '#1A1714';
+let UI = { sub: 'SUBSCRIBE', subbed: 'SUBSCRIBED', photo: 'REAL PHOTO', foot: 'REAL FOOTAGE', full: 'FULL VIDEO · LINKED BELOW' };
 let DUR = 44, SCENES = [], WORLD = [], EP = null, CTA = null, SCN = null, RT = null;   // RT: real (unwarped) scene time, for video clips
 
 // ---------- math ----------
@@ -210,6 +211,7 @@ function voPlace(segs = [], durs = []) {
 const ceilHalf = (x) => Math.ceil(x * 2) / 2;
 function build(ep, voice) {
   if (ep.tight == null && !WIDE) ep.tight = true;            // house standard for Shorts: no dead air (set "tight": false to opt out)
+  if (ep.lang === 'de') Object.assign(UI, { sub: 'ABONNIEREN', subbed: 'ABONNIERT', photo: 'ECHTES FOTO', foot: 'ECHTE AUFNAHMEN', full: 'GANZES VIDEO · LINK UNTEN' }, ep.ui || {});
   EP = ep; const V = voice || { open: [], scenes: [] };
   const openVO = voPlace(ep.vo_open, V.open);
   const ceilQ = (x) => Math.ceil(x * 4) / 4;                 // ep.tight: no dead air — scenes end 0.2 s after the voice, animations are time-compressed to fit
@@ -281,7 +283,7 @@ function subPill(ls, Y, life) {                              // ---- subscribe n
   if (ls > 0 && ls < life) { const s = spring(ls, 260, 18), out = clamp((ls - life + 0.4) / 0.4), y = Y + (1 - s) * (H - Y + 60) + out * 420, on = ls > 0.75;
     g.save(); g.globalAlpha = 1 - out; g.translate(WIDE ? W - 300 : 540, y); const w = on ? 470 : 430;
     g.shadowColor = 'rgba(0,0,0,0.5)'; g.shadowBlur = 30; rrect(-w / 2, -46, w, 92, 46); g.fillStyle = on ? '#2B2A28' : '#FF0033'; g.fill(); g.shadowBlur = 0;
-    text(on ? 'SUBSCRIBED' : 'SUBSCRIBE', on ? -40 : 0, 16, 'ui', 44, TXT, { align: 'center' });
+    text(on ? UI.subbed : UI.sub, on ? -40 : 0, 16, 'ui', fit(on ? UI.subbed : UI.sub, 'ui', 44, on ? 300 : 380), TXT, { align: 'center' });
     if (on) { bell(170, -4, 0.9, Math.sin((ls - 0.75) * 30) * 0.4 * Math.exp(-(ls - 0.75) * 3)); }
     const cx = lerp(380, 60, ease(ls / 0.6)), cy = lerp(260, 10, ease(ls / 0.6)), pr = ls > 0.65 && ls < 0.9 ? 1 : 0; if (ls < 1.6) cursorHand(cx, cy, pr);
     g.restore(); }
@@ -307,7 +309,7 @@ function engage(t) {
     if (PHOTOS[CTA.related.photo]) { g.save(); rrect(92, y + 18, 200, 114, 16); g.clip(); const im = PHOTOS[CTA.related.photo], sc = Math.max(200 / im.width, 114 / im.height) * 1.2;
       g.drawImage(im, 192 - im.width * sc * (CTA.related.fx ?? 0.5), y + 75 - im.height * sc * (CTA.related.fy ?? 0.5), im.width * sc, im.height * sc); g.restore(); }
     g.fillStyle = '#FF0033'; rrect(170, y + 54, 46, 34, 9); g.fill(); g.fillStyle = TXT; g.beginPath(); g.moveTo(186, y + 62); g.lineTo(186, y + 80); g.lineTo(202, y + 71); g.fill();
-    text(CTA.related.kicker || 'FULL VIDEO · LINKED BELOW', 318, y + 58, 'mono', 26, GOLD, { ls: 2 }); text(CTA.related.title, 318, y + 112, 'ui', fit(CTA.related.title, 'ui', 46, 560), TXT);
+    text(CTA.related.kicker || UI.full, 318, y + 58, 'mono', 26, GOLD, { ls: 2 }); text(CTA.related.title, 318, y + 112, 'ui', fit(CTA.related.title, 'ui', 46, 560), TXT);
     g.fillStyle = GOLD; g.beginPath(); const ax = 955, ay = y + 60 + bob; g.moveTo(ax - 22, ay); g.lineTo(ax + 22, ay); g.lineTo(ax, ay + 30); g.fill(); g.fillRect(ax - 7, ay - 30, 14, 32);
     g.restore(); }
 }

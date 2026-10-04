@@ -1,0 +1,237 @@
+{
+ "ep": 85,
+ "look": "cine",
+ "lang": "de",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.25,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "prog": 0,
+ "title": "Hundertjähriger Kalender",
+ "mood": "clock",
+ "hook": [
+  "SCHNEE AM",
+  "1. DEZEMBER?"
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Ein über dreihundertsiebzig Jahre alter Kalender sagt: Am ersten Dezember kommt der erste Schnee.",
+   "en": "A calendar more than three hundred seventy years old says: the first snow falls on December first.",
+   "es": "Un calendario de más de trescientos setenta años dice: la primera nieve cae el uno de diciembre."
+  }
+ ],
+ "vo_outro": [
+  {
+   "text": "Abonnier für mehr."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Schon ab dem sechzehnten November soll es frieren.",
+     "cap": "Ab *16. November:* Frost.",
+     "en": "From November sixteenth, it's supposed to freeze.",
+     "es": "Desde el dieciséis de noviembre, debería helar."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Am fünften Dezember dann noch mal Schnee.",
+     "cap": "*5. Dezember:* wieder *Schnee.*",
+     "en": "Then more snow on December fifth.",
+     "es": "Y el cinco de diciembre, otra vez nieve."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Aber weiße Weihnachten? Eher nicht. Vom zwanzigsten bis achtundzwanzigsten Dezember: meistens Regen.",
+     "cap": "*20. bis 28. Dezember:* meist *Regen.*",
+     "en": "But a white Christmas? Probably not. December twentieth to twenty-eighth: mostly rain.",
+     "es": "¿Navidad blanca? Mejor no. Del veinte al veintiocho de diciembre: casi siempre lluvia."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Ab dem neunundzwanzigsten: starker Schnee und eisige Kälte, bis Silvester.",
+     "cap": "Bis *Silvester:* Schnee und *eisige Kälte.*",
+     "en": "From the twenty-ninth: heavy snow and icy cold, right up to New Year's Eve.",
+     "es": "Desde el veintinueve: mucha nieve y frío helado, hasta Nochevieja."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Und der Januar? Fast den ganzen Monat: große Kälte.",
+     "cap": "Januar: *große Kälte.*",
+     "en": "And January? Almost the whole month: bitter cold.",
+     "es": "¿Y enero? Casi todo el mes: un frío intenso."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Das alles stammt von Abt Mauritius Knauer. Im Kloster Langheim in Franken schrieb er ab sechzehnhundertzweiundfünfzig sieben Jahre lang das Wetter auf.",
+     "cap": "Abt *Mauritius Knauer* · Kloster Langheim · *ab 1652*",
+     "en": "It all goes back to Abbot Mauritius Knauer. At Langheim Abbey in Franconia, he wrote down the weather for seven years, starting in sixteen fifty-two.",
+     "es": "Todo viene del abad Mauritius Knauer. En el monasterio de Langheim, en Franconia, anotó el tiempo durante siete años desde mil seiscientos cincuenta y dos."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Seine Idee: Sieben Planeten regieren je ein Jahr. Zweitausendsechsundzwanzig ist ein Merkurjahr: eher kalt als warm.",
+     "cap": "*7 Planeten*, je *1 Jahr.* 2026: *Merkur.*",
+     "en": "His idea: seven planets each rule one year. Twenty twenty-six is a Mercury year: more cold than warm.",
+     "es": "Su idea: siete planetas gobiernan un año cada uno. Dos mil veintiséis es un año de Mercurio: más frío que cálido."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 7,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Aber: Meteorologen sagen, die Vorhersagen sind nicht haltbar. Treffer? Reiner Zufall.",
+     "cap": "Meteorologen: *nicht haltbar.* Treffer: *Zufall.*",
+     "en": "But meteorologists say the forecasts don't hold up. Any hits? Pure chance.",
+     "es": "Pero los meteorólogos dicen que estas predicciones no se sostienen. ¿Aciertos? Pura casualidad."
+    },
+    {
+     "at": "0.15",
+     "text": "Glaubst du trotzdem dran? Ja oder nein? Schreib's in die Kommentare, und abonnier!",
+     "cta": true,
+     "en": "Do you still believe it? Yes or no? Comment, and subscribe.",
+     "es": "¿Aún te lo crees? ¿Sí o no? Comenta y suscríbete."
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Glaubst du dran?",
+  "a": "JA",
+  "b": "NEIN"
+ },
+ "source": "https://de.wikipedia.org/wiki/Hundertj%C3%A4hriger_Kalender",
+ "photos": [
+  {
+   "id": "knauer",
+   "file": "File:Mauritius Knauer.jpg"
+  },
+  {
+   "id": "langheim",
+   "file": "File:Alanus Bittermann Ansicht Kloster Langheim 1800.jpg"
+  },
+  {
+   "id": "kloster",
+   "file": "File:Klosterlangheim-Konventbau-02.jpg"
+  },
+  {
+   "id": "kal",
+   "file": "File:Kalender 1924.JPG"
+  },
+  {
+   "id": "rhoen",
+   "file": "File:Raureif in der Hessischen Rhön.jpg"
+  },
+  {
+   "id": "snow",
+   "video": "File:Schneefall in Hohndorf MVI 0924.webm",
+   "from": 0,
+   "len": 41,
+   "fps": 1
+  },
+  {
+   "id": "berlin",
+   "video": "File:Berlin Karow lub 2025-01-10 Snowfall.webm",
+   "from": 0,
+   "len": 11,
+   "fps": 1
+  },
+  {
+   "id": "styria",
+   "video": "File:Schneefall Styria 01.ogg",
+   "from": 0,
+   "len": 18,
+   "fps": 1
+  },
+  {
+   "id": "frost",
+   "video": "File:Haircap moss with sparkly frost in Tuntorp, Brastad.webm",
+   "from": 0,
+   "len": 33,
+   "fps": 1
+  },
+  {
+   "id": "rain",
+   "video": "File:Regen an der Eppenreuther Straße 20250608 C1418.webm",
+   "from": 0,
+   "len": 5,
+   "fps": 2
+  },
+  {
+   "id": "rain2",
+   "video": "File:Rain in Sonoma - December 2025 - Sarah Stierch.webm",
+   "from": 0,
+   "len": 19,
+   "fps": 1
+  },
+  {
+   "id": "fire",
+   "video": "File:2022-2023 Silvester Berlin 01.webm",
+   "from": 0,
+   "len": 20,
+   "fps": 1
+  },
+  {
+   "id": "bliz",
+   "video": "File:Laurel Street during December 2022 Buffalo, New York blizzard - 20221223 - 02.webm",
+   "from": 0,
+   "len": 16,
+   "fps": 1
+  },
+  {
+   "id": "sat",
+   "video": "File:Strong Winter Storm and Blizzard Batters the East Coast (CIRA 2026-02-23 - nolabels portrait).webm",
+   "from": 0,
+   "len": 29,
+   "fps": 1
+  }
+ ]
+}

@@ -12,7 +12,7 @@ for e in "$@"; do
   node render.mjs --page "cine.html?ep=$e$WIDE" --name "ep$e" --fps 60 --sub "$SUB" --crf 16
   ./finish.sh "$e"
   cp "out/ep$e/wiki_roulette_$e.mp4" dist/
-  python3 dub_es.py "$e" || echo "spanish dub failed for $e"
+  python3 dub.py "$e" || echo "dub failed for $e"
   python3 - "$e" <<'PY'
 import json, os, sys
 e = sys.argv[1]

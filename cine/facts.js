@@ -76,7 +76,7 @@ function fact(t, tIn, big, small, o = {}) {
 // a light "data card": framed rounded panel for drawn comparisons
 function panel(x, y, w, h, a = 0.72) { g.save(); rrect(x, y, w, h, 30); g.fillStyle = `rgba(12,11,10,${a})`; g.fill(); g.lineWidth = 2; g.strokeStyle = 'rgba(255,255,255,0.12)'; g.stroke(); g.restore(); }
 // "REAL PHOTO" badge: tells the viewer this is not an illustration
-function realBadge(t, tIn, str = 'REAL PHOTO', y = WIDE ? 150 : 360) { chip('● ' + str, 80, y, t, tIn, { size: 24, align: 'left', bg: 'rgba(255,59,48,0.92)', fg: TXT }); }
+function realBadge(t, tIn, str = UI.photo, y = WIDE ? 150 : 360) { chip('● ' + str, 80, y, t, tIn, { size: 24, align: 'left', bg: 'rgba(255,59,48,0.92)', fg: TXT }); }
 // fallback when a photo is missing
 function noPhoto(t) { atmosphere(t, { x: W / 2, y: H * 0.47, r: 900, c: 'rgba(40,90,120,0.35)' }); }
 // two stacked big lines (white, then gold) and an optional mono line
@@ -89,7 +89,7 @@ function fact2(t, tIn, l1, l2, small, o = {}) {
 // real video footage: plays the clip's frames (30 fps) inside shot(); holds the last frame when the clip ends
 function frameAt(id, lt, rate = 1) { const fr = CLIPS[id]; if (!fr || !fr.length) return null; return fr[Math.max(0, Math.min(fr.length - 1, Math.floor(lt * 30 * rate)))]; }
 function clip(t, id, o = {}) { const im = frameAt(id, RT != null ? RT - PRE : t - (o.t0 ?? 0), o.rate || 1); return shot(t, id, Object.assign({ a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.06] }, o, im ? { img: im } : {})); }
-function footBadge(t, tIn, str = 'REAL FOOTAGE', y) { const yy = y ?? (WIDE ? 150 : 360), s = spring(t - tIn, 300, 20); if (s <= 0) return;
+function footBadge(t, tIn, str = UI.foot, y) { const yy = y ?? (WIDE ? 150 : 360), s = spring(t - tIn, 300, 20); if (s <= 0) return;
   chip('▶ ' + str, 80, yy, t, tIn, { size: 24, align: 'left', bg: 'rgba(255,59,48,0.92)', fg: TXT });
   if (Math.sin(t * 6) > 0) { g.fillStyle = RED; g.beginPath(); g.arc(W - 90, yy, 12, 0, 6.283); g.fill(); text('REC', W - 160, yy + 9, 'mono', 24, TXT); } }
 // generic Shorts scene from a spec: { ph | clip, a, b, o, side, ring:[u,v,du,tIn,col], co:[[u,v,lx,ly,str,tIn]], f:[big,small,tIn], f2:[l1,l2,small,tIn,o],
@@ -98,7 +98,7 @@ function vscene(i, n, s) {
   return (K) => { K(0.5, 'whoosh', 0.5); (s.k || [[1.0, 'hit', 1]]).forEach(([a, b, c, d]) => K(a, b, c, d));
     return (t) => { atmosphere(t); const id = s.clip || s.ph, opt = Object.assign({ a: s.a || [0.5, 0.5, 1.0], b: s.b || s.a || [0.5, 0.5, 1.1], dur: s.dur || 5, anchor: [540, 900] }, s.o || {});
       const P = s.clip ? clip(t, id, opt) : shot(t, id, opt); if (!P) noPhoto(t); if (s.pre) s.pre(t, P);
-      tag(t, i, n); if (s.clip) footBadge(t, 0.3, s.foot || 'REAL FOOTAGE'); else if (s.badge !== false) realBadge(t, 0.4, s.badge || 'REAL PHOTO');
+      tag(t, i, n); if (s.clip) footBadge(t, 0.3, s.foot || UI.foot); else if (s.badge !== false) realBadge(t, 0.4, s.badge || UI.photo);
       if (P && s.ring) { const [u, v, du, tIn, col] = s.ring, [x, y] = P(u, v); ring(t, tIn ?? 1.0, x, y, Math.abs(P(u + du, v)[0] - x), { color: col, spot: !(s.o && s.o.box) }); }
       if (P && s.co) s.co.forEach(([u, v, lx, ly, str, tIn]) => callout(t, tIn ?? 1.8, P(u, v), lx, ly, str));
       if (s.f) fact(t, s.f[2] ?? 0.8, s.f[0], s.f[1], s.fo || {});
@@ -109,5 +109,5 @@ function vopen(s) {     // hook frame: clip or photo under the stacked hook
   return (K) => { K(0.15, 'hit', 1.3); K(0.2, 'mute', 1, 0.4); K(1.8, 'thump', 0.8);
     return (t) => { atmosphere(t); const opt = Object.assign({ a: s.a || [0.5, 0.5, 1.0], b: s.b || s.a || [0.5, 0.5, 1.1], dur: 2.5, anchor: [540, 1100] }, s.o || {});
       const P = s.clip ? clip(t, s.clip, opt) : shot(t, s.ph, opt); if (!P) noPhoto(t); tag(t); hook(t, EP.hook, 480);
-      if (s.clip) footBadge(t, 0.2, s.foot || 'REAL FOOTAGE', 1500); if (s.x) s.x(t, P); }; };
+      if (s.clip) footBadge(t, 0.2, s.foot || UI.foot, 1500); if (s.x) s.x(t, P); }; };
 }
