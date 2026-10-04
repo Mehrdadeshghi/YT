@@ -1,0 +1,7 @@
+# line 1: reference recording; following lines: text to speak in that voice
+assets/voice/ref_placeholder.wav
+Pineapple on pizza wasn't invented in Hawaii. Or in Italy.
+It was invented in Canada, in nineteen sixty-two.
+By Sam Panopoulos, a Greek-born cook running a restaurant in Ontario.
+Today, twelve percent of American pizza eaters love it, and twenty-four percent hate it.
+Pineapple on pizza: yes or no? Comment below, and subscribe for a wild story every day.

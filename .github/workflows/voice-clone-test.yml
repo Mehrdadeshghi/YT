@@ -1,0 +1,34 @@
+name: Voice clone test
+on:
+  push:
+    branches: [main]
+    paths: [voicetest.txt]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  clone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: HF cache
+        uses: actions/cache@v4
+        with: { path: ~/.cache/huggingface, key: chatterbox-v1 }
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q chatterbox-tts soundfile 2>&1 | tail -3
+      - name: Clone
+        run: |
+          REF=$(grep -v '^#' voicetest.txt | head -1)
+          mapfile -t LINES < <(grep -v '^#' voicetest.txt | tail -n +2)
+          python3 clone_voice.py test "$REF" "${LINES[@]}" 2>&1 | tee clone.log
+      - name: Publish
+        if: always()
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          cp clone.log dist/clone/ 2>/dev/null || true
+          gh release create "voicetest-${{ github.run_number }}" dist/clone/* --title "Voice clone test ${{ github.run_number }}" --notes "Chatterbox voice clone test"
