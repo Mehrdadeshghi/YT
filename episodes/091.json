@@ -117,10 +117,10 @@
     },
     {
      "at": "0.15",
-     "text": "Who deserves the credit, Magie or Darrow? Comment, and subscribe.",
+     "text": "Who deserves the credit, Magie or Darrow? Comment below, and subscribe for a wild story every day.",
      "cta": true,
-     "es": "¿Quién merece el mérito, Magie o Darrow? Comenta y suscríbete.",
-     "de": "Wer verdient die Ehre, Magie oder Darrow? Kommentier und abonnier!"
+     "es": "¿Quién merece el mérito, Magie o Darrow? Comenta y suscríbete para una historia loca cada día.",
+     "de": "Wer verdient die Ehre, Magie oder Darrow? Kommentier und abonnier für jeden Tag eine verrückte Geschichte."
     }
    ]
   }
@@ -148,5 +148,8 @@
    "id": "game1906",
    "file": "File:Landlords Game 1906 image courtesy of T Forsyth owner of the registered trademark 20151119.jpg"
   }
- ]
+ ],
+ "series": "MONEY MYTHS · PART 3",
+ "loop": true,
+ "recap": false
 }

@@ -117,10 +117,10 @@
     },
     {
      "at": "0.15",
-     "text": "Hero or thief? Comment, and subscribe.",
+     "text": "Hero or thief? Comment below, and subscribe for a wild story every day.",
      "cta": true,
-     "es": "¿Héroe o ladrón? Comenta y suscríbete.",
-     "de": "Held oder Dieb? Kommentier und abonnier!"
+     "es": "¿Héroe o ladrón? Comenta y suscríbete para una historia loca cada día.",
+     "de": "Held oder Dieb? Kommentier und abonnier für jeden Tag eine verrückte Geschichte."
     }
    ]
   }
@@ -156,5 +156,8 @@
    "id": "salon",
    "file": "File:Louvre salon Carré circa 1860.jpg"
   }
- ]
+ ],
+ "series": "STOLEN TREASURES · PART 3",
+ "loop": true,
+ "recap": false
 }

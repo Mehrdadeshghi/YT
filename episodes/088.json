@@ -80,19 +80,6 @@
   },
   {
    "dur": 4,
-   "vis": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "At first, customers didn't like it.",
-     "cap": "At first: *not popular.*",
-     "es": "Al principio, a los clientes no les gustó.",
-     "de": "Am Anfang mochten die Gäste sie nicht."
-    }
-   ]
-  },
-  {
-   "dur": 4,
    "vis": 5,
    "vo": [
     {
@@ -130,10 +117,10 @@
     },
     {
      "at": "0.15",
-     "text": "Pineapple on pizza: yes or no? Comment, and subscribe.",
+     "text": "Pineapple on pizza: yes or no? Comment below, and subscribe for a wild story every day.",
      "cta": true,
-     "es": "¿Piña en la pizza: sí o no? Comenta y suscríbete.",
-     "de": "Ananas auf Pizza: ja oder nein? Kommentier und abonnier!"
+     "es": "¿Piña en la pizza: sí o no? Comenta y suscríbete para una historia loca cada día.",
+     "de": "Ananas auf Pizza: ja oder nein? Kommentier und abonnier für jeden Tag eine verrückte Geschichte."
     }
    ]
   }
@@ -153,5 +140,8 @@
    "id": "wind",
    "file": "File:Wind Farm, Chatham-Kent Highway 3, Chatham-Kent, Ontario (21153583253).jpg"
   }
- ]
+ ],
+ "series": "CRAZY BUT TRUE · PART 1",
+ "loop": true,
+ "recap": false
 }

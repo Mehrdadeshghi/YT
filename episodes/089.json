@@ -117,10 +117,10 @@
     },
     {
      "at": "0.15",
-     "text": "Should Pluto be a planet again? Yes or no? Comment, and subscribe.",
+     "text": "Should Pluto be a planet again? Yes or no? Comment below, and subscribe for a wild story every day.",
      "cta": true,
-     "es": "¿Debería Plutón volver a ser planeta? ¿Sí o no? Comenta y suscríbete.",
-     "de": "Soll Pluto wieder ein Planet sein? Ja oder nein? Kommentier und abonnier!"
+     "es": "¿Debería Plutón volver a ser planeta? ¿Sí o no? Comenta y suscríbete para una historia loca cada día.",
+     "de": "Soll Pluto wieder ein Planet sein? Ja oder nein? Kommentier und abonnier für jeden Tag eine verrückte Geschichte."
     }
    ]
   }
@@ -152,5 +152,8 @@
    "id": "lowell",
    "file": "File:Lowell Observatory (6882626678).jpg"
   }
- ]
+ ],
+ "series": "CRAZY BUT TRUE · PART 2",
+ "loop": true,
+ "recap": false
 }

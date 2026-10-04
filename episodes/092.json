@@ -117,10 +117,10 @@
     },
     {
      "at": "0.15",
-     "text": "Should Berlin give her back? Yes or no? Comment, and subscribe.",
+     "text": "Should Berlin give her back? Yes or no? Comment below, and subscribe for a wild story every day.",
      "cta": true,
-     "es": "¿Debe Berlín devolverla? ¿Sí o no? Comenta y suscríbete.",
-     "de": "Soll Berlin sie zurückgeben? Ja oder nein? Kommentier und abonnier!"
+     "es": "¿Debe Berlín devolverla? ¿Sí o no? Comenta y suscríbete para una historia loca cada día.",
+     "de": "Soll Berlin sie zurückgeben? Ja oder nein? Kommentier und abonnier für jeden Tag eine verrückte Geschichte."
     }
    ]
   }
@@ -152,5 +152,8 @@
    "id": "bust2",
    "file": "File:Nefertiti (Nofretete in Berlin).jpg"
   }
- ]
+ ],
+ "series": "STOLEN TREASURES · PART 2",
+ "loop": true,
+ "recap": false
 }

@@ -1,5 +1,5 @@
 // Wiki Roulette #088 — Hawaiian pizza (figures style)
-const N = 8, SAM = A(CAST.chef, { skin: '#E8B98E', seed: 1 }), GUY = A(CAST.man, { seed: 2 }), GIRL = A(CAST.woman, { seed: 3 });
+const N = 7, SAM = A(CAST.chef, { skin: '#E8B98E', seed: 1 }), GUY = A(CAST.man, { seed: 2 }), GIRL = A(CAST.woman, { seed: 3 });
 VIS.open = fscene(null, N, { bg: 'pizza', a: [0.5, 0.5, 1.1], b: [0.5, 0.5, 1.2], hook: true, k: [[0.15, 'hit', 1.3], [0.7, 'pop', 0.8], [1.1, 'pop', 0.8]],
   figs: [[0.2, 540, 1240, 0.7, A(SAM, { face: 'smug', armR: 'hold', item: 'pizza' })], [0.5, 200, 1250, 0.62, A(GUY, { face: 'angry', armR: 'point' })], [0.6, 880, 1250, 0.62, A(GIRL, { face: 'happy', armL: 'up', flip: true })]],
   bub: [[0.7, 220, 760, 'EWW!', { tx: 200, ty: 860 }], [1.1, 860, 740, 'YUM!', { tx: 880, ty: 860 }]] });

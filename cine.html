@@ -272,8 +272,10 @@ function draw(t) {
       g.save(); g.globalAlpha = clamp(lt / 0.25); g.drawImage(im, (W - dw) / 2, (H - dh) * 0.45, dw, dh);
       const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, 'rgba(8,8,10,0.7)'); gr.addColorStop(0.3, 'rgba(8,8,10,0.1)'); gr.addColorStop(0.6, 'rgba(8,8,10,0.25)'); gr.addColorStop(1, 'rgba(8,8,10,0.85)');
       g.fillStyle = gr; g.fillRect(0, 0, W, H); g.restore(); if (ph < 0.08) flash(ph, 0, 0.2, 0.08); tag(t); } }
+  if (EP.loop && SCENES.length && t > DUR - 0.45) {          // loop: the last frames cross-fade into the first frame, so a replay feels seamless
+    g.save(); g.globalAlpha = clamp((t - (DUR - 0.45)) / 0.4); drawScene(SCENES[0], SCENES[0].from + 0.02); g.restore(); g.globalAlpha = 1; }
   g.drawImage(VIG, 0, 0);
-  if (CTA && EP.cta !== false) engage(t);
+  if (CTA && EP.cta !== false && !(EP.loop && t > DUR - 0.3)) engage(t);
   g.drawImage(GRAIN[Math.floor(t * 15) % 4], 0, 0, W, H);
 }
 function bell(x, y, s, rot) { g.save(); g.translate(x, y); g.rotate(rot); g.scale(s, s); g.fillStyle = TXT; g.beginPath(); g.moveTo(-22, 14); g.quadraticCurveTo(-20, -24, 0, -26); g.quadraticCurveTo(20, -24, 22, 14); g.lineTo(28, 20); g.lineTo(-28, 20); g.closePath(); g.fill(); g.beginPath(); g.arc(0, 26, 7, 0, 6.283); g.fill(); g.restore(); }

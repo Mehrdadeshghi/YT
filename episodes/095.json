@@ -117,10 +117,10 @@
     },
     {
      "at": "0.15",
-     "text": "Real bubble, or a myth? Comment, and subscribe.",
+     "text": "Real bubble, or a myth? Comment below, and subscribe for a wild story every day.",
      "cta": true,
-     "es": "¿Burbuja real o mito? Comenta y suscríbete.",
-     "de": "Echte Blase oder Mythos? Kommentier und abonnier!"
+     "es": "¿Burbuja real o mito? Comenta y suscríbete para una historia loca cada día.",
+     "de": "Echte Blase oder Mythos? Kommentier und abonnier für jeden Tag eine verrückte Geschichte."
     }
    ]
   }
@@ -152,5 +152,8 @@
    "id": "wagon",
    "file": "File:Flora's Wagon of Fools (Flora's Mallewagen) tulipomania, Hendrik Gerritsz Pot c1637.jpg"
   }
- ]
+ ],
+ "series": "MONEY MYTHS · PART 1",
+ "loop": true,
+ "recap": false
 }

@@ -54,19 +54,6 @@
   },
   {
    "dur": 4,
-   "vis": 2,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "In two thousand, Advertising Age called it the best slogan of the twentieth century.",
-     "cap": "Best slogan of the *20th century.*",
-     "es": "En el año 2000, Advertising Age lo llamó el mejor eslogan del siglo veinte.",
-     "de": "Im Jahr zweitausend kürte Advertising Age ihn zum besten Slogan des zwanzigsten Jahrhunderts."
-    }
-   ]
-  },
-  {
-   "dur": 4,
    "vis": 3,
    "vo": [
     {
@@ -117,10 +104,10 @@
     },
     {
      "at": "0.15",
-     "text": "Would you pick a real diamond or a lab-grown one? Comment, and subscribe.",
+     "text": "Would you pick a real diamond or a lab-grown one? Comment below, and subscribe for a wild story every day.",
      "cta": true,
-     "es": "¿Elegirías un diamante real o uno de laboratorio? Comenta y suscríbete.",
-     "de": "Echter Diamant oder Labordiamant? Kommentier und abonnier!"
+     "es": "¿Elegirías un diamante real o uno de laboratorio? Comenta y suscríbete para una historia loca cada día.",
+     "de": "Echter Diamant oder Labordiamant? Kommentier und abonnier für jeden Tag eine verrückte Geschichte."
     }
    ]
   }
@@ -152,5 +139,8 @@
    "id": "rhodes",
    "file": "File:CecilRhodes.jpg"
   }
- ]
+ ],
+ "series": "MONEY MYTHS · PART 2",
+ "loop": true,
+ "recap": false
 }

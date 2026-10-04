@@ -192,12 +192,13 @@ function fscene(i, n, sp) {
       if (i != null) tag(t, i, n); else tag(t);
       if (sp.badge) realBadge(t, 0.3, sp.badge); if (sp.chip) chip(sp.chip, 80, 360, t, 0.3, { size: 22, align: 'left', bg: 'rgba(12,11,10,0.78)', fg: GOLD });
       if (sp.pre) sp.pre(t);
-      (sp.figs || []).forEach(([tIn, x, y, s, o]) => fig(t, tIn, x, y - 30, s * FIGSCALE, typeof o === 'function' ? o(t) : o));
+      (sp.figs || []).forEach(([tIn, x, y, s, o]) => fig(t, i == null ? Math.min(tIn, -0.3) : tIn, x, y - 30, s * FIGSCALE, typeof o === 'function' ? o(t) : o));   // hook frame: cast already on screen in frame 1
       (sp.bub || []).forEach(([tIn, x, y, str, o]) => bubble(t, tIn, x, y, str, o || {}));
       (sp.bst || []).forEach(([tIn, x, y, r, str, col]) => burst(t, tIn, x, y, r, str, col));
       if (sp.f) fact(t, sp.f[2] ?? 0.6, sp.f[0], sp.f[1], sp.f[3] || {});
       if (sp.f2) fact2(t, sp.f2[3] ?? 0.6, sp.f2[0], sp.f2[1], sp.f2[2], sp.f2[4] || {});
       if (sp.hook) hook(t, EP.hook, sp.hookY || 400);
+      if (sp.hook && EP.series) chip(EP.series, 80, (sp.hookY || 400) + 230, t, -0.3, { size: 26, align: 'left', bg: GOLD, fg: BG });
       if (sp.x) sp.x(t); }; };
 }
 // shared cast presets
