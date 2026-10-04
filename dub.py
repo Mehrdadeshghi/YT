@@ -5,7 +5,7 @@
 
 Every voice-over segment in episodes/<ep>.json may carry texts in other languages ("es", "en", ...). For each
 language that is present on EVERY segment (and is not the episode's own language) the lines are synthesized with
-Kokoro (house tempo 1.3) and fitted into the original slot (until the next line starts; speed goes up to 1.7 if
+Kokoro (German: Piper Thorsten; house tempo 1.3) and fitted into the original slot (until the next line starts; speed goes up to 1.7 if
 needed). Music and sound effects are the same as the main mix. Output: dist/wiki_roulette_<ep>_<lang>.m4a, exactly
 as long as the video, ready to upload as an extra audio track in YouTube Studio.
 """
@@ -17,18 +17,20 @@ ep = sys.argv[1]
 TTS = os.environ.get('TTS_DIR', 'models')
 E = json.load(open(f'episodes/{ep}.json'))
 segs = list(E.get('vo_open', [])) + [v for sc in E['scenes'] for v in sc.get('vo', [])]
-VOICES = {'es': ('ef_dora', 'es'), 'en': ('af_heart', 'en-us')}
+VOICES = {'es': ('ef_dora', 'es'), 'en': ('af_heart', 'en-us'), 'de': ('thorsten', 'de')}
 langs = [L for L in VOICES if L != E.get('lang', 'en') and all(s.get(L) for s in segs)]
 if not langs: print(f'{ep}: no dub texts on every segment, skipping'); sys.exit(0)
 src = f'out/ep{ep}'
 M0 = json.load(open(f'{src}/cues.json'))
 vos0 = [i for i, c in enumerate(M0['cues']) if c['type'] == 'vo' and c.get('p')]
 assert len(vos0) == len(segs), (len(vos0), len(segs))
-k = Kokoro(f'{TTS}/kokoro-v1.0.onnx', f'{TTS}/voices-v1.0.bin')
+KOK = Kokoro(f'{TTS}/kokoro-v1.0.onnx', f'{TTS}/voices-v1.0.bin')
 BASE = float(E.get('speed_dub', 1.3))   # dubs always at the house tempo
 
 for L in langs:
     VOICE, KL = E.get(f'voice_{L}', VOICES[L][0]), VOICES[L][1]
+    if L == 'de': import piper_de; k = piper_de.load(TTS)       # German: Piper Thorsten
+    else: k = KOK
     dst = f'out/ep{ep}_{L}'; os.makedirs(f'{dst}/vo', exist_ok=True)
     M = json.loads(json.dumps(M0)); vos = [M['cues'][i] for i in vos0]
 

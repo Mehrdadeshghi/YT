@@ -1,33 +1,27 @@
 {
  "ep": 85,
  "look": "cine",
- "lang": "de",
  "captions": true,
  "noOutro": true,
- "speed": 1.25,
+ "speed": 1.3,
  "tight": true,
  "sub": 2,
  "transition": "whip",
  "glint": true,
  "facts": true,
  "prog": 0,
- "title": "Hundertjähriger Kalender",
+ "title": "100-year calendar",
  "mood": "clock",
  "hook": [
-  "SCHNEE AM",
-  "1. DEZEMBER?"
+  "SNOW ON",
+  "DECEMBER 1?"
  ],
  "vo_open": [
   {
    "at": 0,
-   "text": "Ein über dreihundertsiebzig Jahre alter Kalender sagt: Am ersten Dezember kommt der erste Schnee.",
-   "en": "A calendar more than three hundred seventy years old says: the first snow falls on December first.",
-   "es": "Un calendario de más de trescientos setenta años dice: la primera nieve cae el uno de diciembre."
-  }
- ],
- "vo_outro": [
-  {
-   "text": "Abonnier für mehr."
+   "text": "A German calendar from the sixteen-fifties says: the first snow falls on December first.",
+   "es": "Un calendario alemán de mil seiscientos cincuenta dice: la primera nieve cae el uno de diciembre.",
+   "de": "Ein über dreihundertsiebzig Jahre alter Kalender sagt: Am ersten Dezember fällt der erste Schnee."
   }
  ],
  "scenes": [
@@ -37,10 +31,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Schon ab dem sechzehnten November soll es frieren.",
-     "cap": "Ab *16. November:* Frost.",
-     "en": "From November sixteenth, it's supposed to freeze.",
-     "es": "Desde el dieciséis de noviembre, debería helar."
+     "text": "From November sixteenth, it's supposed to freeze.",
+     "cap": "*Frost* from *Nov 16.*",
+     "es": "Desde el dieciséis de noviembre, debería helar.",
+     "de": "Schon ab dem sechzehnten November soll es frieren."
     }
    ]
   },
@@ -50,10 +44,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Am fünften Dezember dann noch mal Schnee.",
-     "cap": "*5. Dezember:* wieder *Schnee.*",
-     "en": "Then more snow on December fifth.",
-     "es": "Y el cinco de diciembre, otra vez nieve."
+     "text": "Then more snow on December fifth.",
+     "cap": "*Dec 5:* snow *again.*",
+     "es": "Y el cinco de diciembre, otra vez nieve.",
+     "de": "Am fünften Dezember dann noch mal Schnee."
     }
    ]
   },
@@ -62,10 +56,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Aber weiße Weihnachten? Eher nicht.",
-     "cap": "Weiße Weihnachten? *Eher nicht.*",
-     "en": "But a white Christmas? Probably not.",
-     "es": "¿Navidad blanca? Mejor no."
+     "text": "But a white Christmas? Probably not.",
+     "cap": "White Christmas? *Probably not.*",
+     "es": "¿Navidad blanca? Mejor no.",
+     "de": "Aber weiße Weihnachten? Eher nicht."
     }
    ],
    "vis": 2
@@ -75,10 +69,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Vom zwanzigsten bis achtundzwanzigsten Dezember: meistens Regen.",
-     "cap": "*20. bis 28. Dezember:* meist *Regen.*",
-     "en": "December twentieth to twenty-eighth: mostly rain.",
-     "es": "Del veinte al veintiocho de diciembre: casi siempre lluvia."
+     "text": "December twentieth to twenty-eighth: mostly rain.",
+     "cap": "*Dec 20–28:* mostly *rain.*",
+     "es": "Del veinte al veintiocho de diciembre: casi siempre lluvia.",
+     "de": "Zwanzigster bis achtundzwanzigster Dezember: meist Regen."
     }
    ],
    "vis": 3
@@ -89,10 +83,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Ab dem neunundzwanzigsten: starker Schnee und eisige Kälte, bis Silvester.",
-     "cap": "Bis *Silvester:* Schnee und *eisige Kälte.*",
-     "en": "From the twenty-ninth: heavy snow and icy cold, right up to New Year's Eve.",
-     "es": "Desde el veintinueve: mucha nieve y frío helado, hasta Nochevieja."
+     "text": "From the twenty-ninth: heavy snow and icy cold, right up to New Year's Eve.",
+     "cap": "Until *New Year's Eve:* snow and *icy cold.*",
+     "es": "Desde el veintinueve: mucha nieve y frío helado, hasta Nochevieja.",
+     "de": "Ab dem neunundzwanzigsten: starker Schnee und eisige Kälte, bis Silvester."
     }
    ]
   },
@@ -102,10 +96,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Und der Januar? Fast den ganzen Monat: große Kälte.",
-     "cap": "Januar: *große Kälte.*",
-     "en": "And January? Almost the whole month: bitter cold.",
-     "es": "¿Y enero? Casi todo el mes: un frío intenso."
+     "text": "And January? Almost the whole month: bitter cold.",
+     "cap": "January: *bitter cold.*",
+     "es": "¿Y enero? Casi todo el mes: un frío intenso.",
+     "de": "Und der Januar? Fast den ganzen Monat: große Kälte."
     }
    ]
   },
@@ -114,10 +108,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Das alles stammt von Abt Mauritius Knauer.",
-     "cap": "Abt *Mauritius Knauer.*",
-     "en": "It all goes back to Abbot Mauritius Knauer.",
-     "es": "Todo viene del abad Mauritius Knauer."
+     "text": "It all goes back to Abbot Mauritius Knauer.",
+     "cap": "Abbot *Mauritius Knauer.*",
+     "es": "Todo viene del abad Mauritius Knauer.",
+     "de": "Das alles stammt von Abt Mauritius Knauer."
     }
    ],
    "vis": 6
@@ -127,10 +121,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Im Kloster Langheim in Franken schrieb er ab sechzehnhundertzweiundfünfzig sieben Jahre lang das Wetter auf.",
-     "cap": "Kloster Langheim: *7 Jahre* Wetter, *ab 1652.*",
-     "en": "At Langheim Abbey in Franconia, he wrote down the weather for seven years, starting in sixteen fifty-two.",
-     "es": "En el monasterio de Langheim, en Franconia, anotó el tiempo durante siete años desde mil seiscientos cincuenta y dos."
+     "text": "At Langheim Abbey in Franconia, he wrote down the weather for seven years, starting in sixteen fifty-two.",
+     "cap": "Langheim Abbey: *7 years* of weather, *from 1652.*",
+     "es": "En el monasterio de Langheim, en Franconia, anotó el tiempo durante siete años desde mil seiscientos cincuenta y dos.",
+     "de": "Im Kloster Langheim in Franken schrieb er ab sechzehnhundertzweiundfünfzig sieben Jahre lang das Wetter auf."
     }
    ],
    "vis": 7
@@ -140,10 +134,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Seine Idee: Sieben Planeten regieren je ein Jahr.",
-     "cap": "*7 Planeten*, je *1 Jahr.*",
-     "en": "His idea: seven planets each rule one year.",
-     "es": "Su idea: siete planetas gobiernan un año cada uno."
+     "text": "His idea: seven planets each rule one year.",
+     "cap": "*7 planets*, *1 year* each.",
+     "es": "Su idea: siete planetas gobiernan un año cada uno.",
+     "de": "Seine Idee: Sieben Planeten regieren je ein Jahr."
     }
    ],
    "vis": 8
@@ -153,10 +147,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Zweitausendsechsundzwanzig ist ein Merkurjahr: eher kalt als warm.",
-     "cap": "2026: *Merkurjahr.* Eher *kalt.*",
-     "en": "Twenty twenty-six is a Mercury year: more cold than warm.",
-     "es": "Dos mil veintiséis es un año de Mercurio: más frío que cálido."
+     "text": "Twenty twenty-six is a Mercury year: more cold than warm.",
+     "cap": "2026: a *Mercury year.* More *cold.*",
+     "es": "Dos mil veintiséis es un año de Mercurio: más frío que cálido.",
+     "de": "Zweitausendsechsundzwanzig ist ein Merkurjahr: eher kalt als warm."
     }
    ],
    "vis": 9
@@ -167,25 +161,25 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Aber: Meteorologen sagen, die Vorhersagen sind nicht haltbar. Treffer? Reiner Zufall.",
-     "cap": "Meteorologen: *nicht haltbar.* Treffer: *Zufall.*",
-     "en": "But meteorologists say the forecasts don't hold up. Any hits? Pure chance.",
-     "es": "Pero los meteorólogos dicen que estas predicciones no se sostienen. ¿Aciertos? Pura casualidad."
+     "text": "But meteorologists say the forecasts don't hold up. Any hits? Pure chance.",
+     "cap": "Meteorologists: *doesn't hold up.* Hits: *chance.*",
+     "es": "Pero los meteorólogos dicen que estas predicciones no se sostienen. ¿Aciertos? Pura casualidad.",
+     "de": "Aber Meteorologen sagen: nicht haltbar. Treffer? Reiner Zufall."
     },
     {
      "at": "0.15",
-     "text": "Glaubst du trotzdem dran? Ja oder nein? Schreib's in die Kommentare, und abonnier!",
+     "text": "Do you still believe it? Yes or no? Comment, and subscribe.",
      "cta": true,
-     "en": "Do you still believe it? Yes or no? Comment, and subscribe.",
-     "es": "¿Aún te lo crees? ¿Sí o no? Comenta y suscríbete."
+     "es": "¿Aún te lo crees? ¿Sí o no? Comenta y suscríbete.",
+     "de": "Glaubst du dran? Ja oder nein? Kommentier und abonnier!"
     }
    ]
   }
  ],
  "cta": {
-  "q": "Glaubst du dran?",
-  "a": "JA",
-  "b": "NEIN"
+  "q": "Do you believe it?",
+  "a": "YES",
+  "b": "NO"
  },
  "source": "https://de.wikipedia.org/wiki/Hundertj%C3%A4hriger_Kalender",
  "photos": [

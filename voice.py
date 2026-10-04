@@ -10,33 +10,8 @@ E = json.load(open(f'episodes/{ep}.json'))
 VOICE, SPEED = arg('voice', E.get('voice', 'af_heart')), float(arg('speed', str(E.get('speed', 1.3))))   # house standard: 1.30 (fast, no dead air)
 out = f'out/ep{ep}/vo'; os.makedirs(out, exist_ok=True)
 LANG = E.get('lang', 'en')
-if LANG == 'de':                     # German: Piper "Thorsten" (high quality in CI, low locally if that is all there is)
-    import wave, io
-    from piper import PiperVoice
-    try: from piper import SynthesisConfig
-    except ImportError: SynthesisConfig = None
-    PV = next(p for p in [f'{TTS}/de_DE-thorsten-high.onnx', f'{TTS}/de-thorsten-low.onnx'] if os.path.exists(p))
-    pv = PiperVoice.load(PV); print('german voice', PV)
-    import unicodedata
-    _ph = pv.phonemize                # espeak gives "ç" decomposed (c + U+0327), which the voice's id map lacks: "ich" would sound like "ik"
-    def _fix(text):
-        out = []
-        for sent in _ph(text):
-            new = []
-            for p in sent:
-                if unicodedata.combining(p) and new and unicodedata.normalize('NFC', new[-1] + p) in pv.config.phoneme_id_map: new[-1] = unicodedata.normalize('NFC', new[-1] + p)
-                else: new.append(p)
-            out.append(new)
-        return out
-    pv.phonemize = _fix
-    class _K:
-        def create(self, text, voice=None, speed=1.0, lang=None):
-            buf = io.BytesIO()
-            with wave.open(buf, 'wb') as w:
-                if SynthesisConfig: pv.synthesize_wav(text, w, syn_config=SynthesisConfig(length_scale=1 / speed))
-                else: pv.synthesize(text, w, length_scale=1 / speed)
-            buf.seek(0); s, sr = sf.read(buf, dtype='float32'); return s, sr
-    k = _K(); VOICE = 'thorsten'
+if LANG == 'de':                     # German: Piper "Thorsten" (see piper_de.py)
+    import piper_de; k = piper_de.load(TTS); VOICE = 'thorsten'
 else:
     k = Kokoro(f'{TTS}/kokoro-v1.0.onnx', f'{TTS}/voices-v1.0.bin')
 def synth(key, text):
