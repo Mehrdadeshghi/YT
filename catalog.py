@@ -25,9 +25,10 @@ lines = ["# Photo catalog", ""]
 for row in open("catalog.txt"):
     row = row.strip()
     if not row or row.startswith("#"): continue
-    if row.lower().startswith("video:"):          # "video: goblin shark" → free videos on Commons matching the words
-        q = row[6:].strip(); hits = api(CM, action="query", list="search", srnamespace=6, srsearch=f"{q} filetype:video", srlimit=20).get("query", {}).get("search", [])
-        lines += [f"## VIDEOS: {q}"] + [f"- {t} | {w} | {lic} | {who} | {d}" for t, w, h, mt, lic, who, d in info([h["title"] for h in hits])] + [""]
+    if row.lower().startswith(("video:", "image:")):   # "video: goblin shark" / "image: frost" → free files on Commons matching the words
+        kind, q = row[:5].upper(), row[6:].strip(); ft = "video" if kind == "VIDEO" else "bitmap"
+        hits = api(CM, action="query", list="search", srnamespace=6, srsearch=f"{q} filetype:{ft}", srlimit=20).get("query", {}).get("search", [])
+        lines += [f"## {kind}S: {q}"] + [f"- {t} | {w} | {lic} | {who} | {d}" for t, w, h, mt, lic, who, d in info([h["title"] for h in hits])] + [""]
         continue
     art, _, cat = [x.strip() for x in row.partition("|")]
     pg = api(WP, action="query", titles=art, prop="images|pageimages", piprop="name", imlimit="max", redirects=1).get("query", {}).get("pages", [{}])[0]
