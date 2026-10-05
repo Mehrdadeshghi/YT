@@ -62,9 +62,9 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "A week later, a collie named Pickles sniffed at a package under a parked car.",
+     "text": "A week later, a collie named Pickles sniffed at a package by a parked car.",
      "cap": "A dog named *Pickles.*",
-     "es": "Una semana después, un perro llamado Pickles olfateó un paquete bajo un coche aparcado.",
+     "es": "Una semana después, un perro llamado Pickles olfateó un paquete junto a un coche aparcado.",
      "de": "Eine Woche später schnüffelte ein Hund namens Pickles an einem Paket unter einem parkenden Auto."
     }
    ]
