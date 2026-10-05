@@ -3,107 +3,149 @@
  "look": "cine",
  "captions": true,
  "noOutro": true,
- "speed": 1.15,
+ "speed": 1.3,
+ "tight": true,
  "sub": 2,
  "transition": "whip",
  "glint": true,
- "mood": "deep",
  "facts": true,
+ "figures": true,
+ "loop": true,
+ "recap": false,
+ "series": "BIZARRE NATURE · PART 1",
  "prog": 0,
- "related": {
-  "title": "7 Deep-Sea Creatures That Look Fake",
-  "photo": "rel",
-  "fx": 0.62,
-  "fy": 0.5
- },
+ "title": "Turritopsis dohrnii",
+ "mood": "deep",
  "hook": [
   "THIS ANIMAL",
-  "CAN AGE",
-  "BACKWARDS."
+  "AGES BACKWARDS."
  ],
+ "voice": "native",
  "vo_open": [
   {
    "at": 0,
-   "text": "This animal can age backwards."
+   "text": "This animal can age backwards.",
+   "es": "Este animal puede rejuvenecer.",
+   "de": "Dieses Tier kann rückwärts altern."
   }
  ],
  "scenes": [
   {
    "dur": 4,
+   "vis": 0,
    "vo": [
     {
      "at": 0.45,
      "text": "It's a jellyfish, Turritopsis dohrnii. Just four and a half millimeters wide.",
-     "cap": "Just *4.5 mm* wide."
+     "cap": "Just *4.5 mm* wide.",
+     "es": "Es una medusa, Turritopsis dohrnii. Mide solo cuatro milímetros y medio.",
+     "de": "Es ist eine Qualle, Turritopsis dohrnii. Nur viereinhalb Millimeter breit."
     }
-   ],
-   "vis": 0
+   ]
   },
   {
    "dur": 4,
+   "vis": 1,
    "vo": [
     {
      "at": 0.45,
-     "text": "When it's injured, sick or old, it can turn back into a polyp, its baby stage.",
-     "cap": "It turns back into a *baby.*"
+     "text": "When it's hurt, sick, or old, it turns back into a baby polyp.",
+     "cap": "Old? It turns back into a *baby.*",
+     "es": "Cuando está herida, enferma o vieja, vuelve a ser un pólipo bebé.",
+     "de": "Wenn sie verletzt, krank oder alt ist, wird sie wieder zum Baby-Polypen."
     }
-   ],
-   "vis": 1
+   ]
   },
   {
    "dur": 4,
+   "vis": 2,
    "vo": [
     {
      "at": 0.45,
-     "text": "Then it grows up all over again. In one lab, a colony did this eleven times in two years.",
-     "cap": "*11 times* in *2 years.*"
+     "text": "Then it grows up all over again.",
+     "cap": "Then it grows up *again.*",
+     "es": "Y luego vuelve a crecer.",
+     "de": "Dann wächst sie einfach noch mal auf."
     }
-   ],
-   "vis": 2
+   ]
   },
   {
    "dur": 4,
+   "vis": 3,
    "vo": [
     {
      "at": 0.45,
-     "text": "So it's called biologically immortal. But in the wild, most still get eaten or get sick.",
-     "cap": "Biologically *immortal.* But it can still *die.*"
+     "text": "In one lab, a colony did this eleven times in two years.",
+     "cap": "*11 times* in *2 years.*",
+     "es": "En un laboratorio, una colonia lo hizo once veces en dos años.",
+     "de": "In einem Labor schaffte eine Kolonie das elfmal in zwei Jahren."
     }
-   ],
-   "vis": 3
+   ]
   },
   {
    "dur": 4,
+   "vis": 4,
    "vo": [
     {
      "at": 0.45,
-     "text": "It was named in 1883, and it has spread around the world in ships' ballast water.",
-     "cap": "Spread worldwide by *ships.*"
+     "text": "So scientists call it biologically immortal.",
+     "cap": "*Biologically immortal.*",
+     "es": "Por eso los científicos la llaman biológicamente inmortal.",
+     "de": "Deshalb nennen Forscher sie biologisch unsterblich."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But in the wild, most still get eaten, or get sick.",
+     "cap": "In the wild: still *eaten.*",
+     "es": "Pero en la naturaleza, la mayoría acaba devorada o enferma.",
+     "de": "Aber in freier Natur werden die meisten trotzdem gefressen oder krank."
     },
     {
-     "at": "0.35",
-     "text": "Would you want to live forever? Yes or no? Watch the full top seven, linked below. And subscribe.",
-     "cta": true
+     "at": "0.15",
+     "text": "Would you want to live forever? Yes or no? Comment below, and subscribe for a wild story every day.",
+     "cta": true,
+     "es": "¿Te gustaría vivir para siempre? ¿Sí o no? Comenta y suscríbete para una historia loca cada día.",
+     "de": "Würdest du ewig leben wollen? Ja oder nein? Kommentier und abonnier für jeden Tag eine verrückte Geschichte."
     }
-   ],
-   "vis": 4
+   ]
   }
  ],
  "cta": {
-  "q": "Would you want to live forever?",
+  "q": "Would you live forever?",
   "a": "YES",
   "b": "NO"
  },
  "source": "https://en.wikipedia.org/wiki/Turritopsis_dohrnii",
- "title": "Turritopsis dohrnii",
  "photos": [
   {
-   "id": "lead",
-   "file": "File:Turritopsisdohrnii.jpeg"
+   "id": "jelly",
+   "file": "File:Turritopsis nutricula Kamo.jpg"
   },
   {
-   "id": "rel",
-   "file": "File:Greenland shark profile.jpg"
+   "id": "rubra",
+   "file": "File:Turritopsis rubra 10893102.jpg"
+  },
+  {
+   "id": "cycle",
+   "file": "File:PSM V33 D765 Turritopsis.jpg"
+  },
+  {
+   "id": "polyps",
+   "file": "File:Colonie de petites tubulaires (Ectopleura larynx) fixée à un bout de mouillage (Ifremer 00754-86592 - 44580).jpg"
+  },
+  {
+   "id": "moon",
+   "file": "File:Moon Jellies (Aurelia aurita) (7153396279).jpg"
+  },
+  {
+   "id": "sea",
+   "file": "File:LemnosUnderwater.jpg"
   }
  ]
 }
