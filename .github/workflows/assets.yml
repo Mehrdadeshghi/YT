@@ -1,0 +1,45 @@
+name: Fetch motion + sound assets
+# Downloads licensed assets the render uses and publishes them as Release assets-N (zip):
+#  - Noto Emoji Animation (Google), Lottie JSON, CC BY 4.0 → assets/lottie/<codepoint>.json
+#  - Kenney sound packs, CC0 1.0 → assets/sfx/kenney/<pack>/*.wav (48 kHz mono 16-bit)
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/assets.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Noto animated emoji (Lottie)
+        run: |
+          mkdir -p out/assets/lottie
+          for cp in 1f631 1f92f 1f62e 1f632 1f633 1f929 1f525 1f4af 2764_fe0f 1f44d 1f440 1f914 1f602 1f389 2728 1f480 23f0 23f3 1f514 \
+                    1f30a 1fabc 26a1 1f4a5 1f9ec 267e_fe0f 1f447 1f4ac 1fae3 1f976 1f635_200d_1f4ab 1f64c 1f44f 1f4a1 1f30d 1f6a8 1f3c6 \
+                    1f4b0 1f4b8 26a0_fe0f 2753 2705 274c 1f422 1f988 1f419 1f40b 1f420 1f9a0 1f52c 1f9ea 1f50d 1f4dc 1f451 2694_fe0f \
+                    1f3db_fe0f 1f9e0 1f9d0 1f62d 1f621 1f60e 1f44b 1f680 1f4a3 1f9e8 1f30b 2600_fe0f 1f319 1f47b 1f47d 1f916 1f381; do
+            curl -sfL -m 30 "https://fonts.gstatic.com/s/e/notoemoji/latest/$cp/lottie.json" -o "out/assets/lottie/$cp.json" \
+              && echo "ok   $cp" || { echo "miss $cp"; rm -f "out/assets/lottie/$cp.json"; }
+          done | tee lottie.log
+      - name: Kenney sound packs (CC0)
+        run: |
+          mkdir -p dl out/assets/sfx/kenney
+          for pack in interface-sounds impact-sounds ui-audio rpg-audio sci-fi-sounds casino-audio digital-audio music-jingles; do
+            url=$(curl -sfL -m 30 "https://kenney.nl/assets/$pack" | grep -oE 'https://kenney\.nl/media/pages/assets/[^"]+\.zip' | head -1)
+            echo "$pack → $url"
+            [ -n "$url" ] || continue
+            curl -sfL -m 120 "$url" -o "dl/$pack.zip" || continue
+            mkdir -p "dl/$pack" && unzip -qo "dl/$pack.zip" -d "dl/$pack"
+            mkdir -p "out/assets/sfx/kenney/$pack"
+            cp "dl/$pack/License.txt" "out/assets/sfx/kenney/$pack/License.txt" 2>/dev/null || true
+            find "dl/$pack" -type f \( -iname '*.ogg' -o -iname '*.wav' -o -iname '*.mp3' \) | while read f; do
+              b=$(basename "${f%.*}"); ffmpeg -nostdin -loglevel error -y -i "$f" -ac 1 -ar 48000 -c:a pcm_s16le "out/assets/sfx/kenney/$pack/$b.wav"
+            done
+            echo "$pack: $(ls out/assets/sfx/kenney/$pack | wc -l) files"
+          done 2>&1 | tee kenney.log
+      - run: cd out && zip -qr ../assets.zip assets && cd .. && ls -la assets.zip
+      - env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release create "assets-${{ github.run_number }}" assets.zip lottie.log kenney.log --repo "${{ github.repository }}" --title "Assets ${{ github.run_number }}" --notes "Noto Emoji Animation (CC BY 4.0, Google) + Kenney sound packs (CC0)"
