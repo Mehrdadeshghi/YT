@@ -22,3 +22,12 @@ You can also start a render by hand: Actions → Render Shorts → Run workflow 
 - **Ending:** during the spoken call to action, quick cuts through the episode's real photos/clips (no static end frame).
 - **Facts on screen:** real photos (`"file"`) and real footage (`"video"`, Commons/NOAA, free licences only), labelled REAL PHOTO / REAL FOOTAGE / MUSEUM MODEL / ILLUSTRATION.
 - **Engagement:** hook ≤ 2 s, strongest fact first, spoken opinion question + subscribe, comment card, "full video below" card when `related` is set.
+
+## Motion stickers + real sound effects
+- `"lottie": ["mindblown", "shark", …]` in an episode loads animated Noto emoji (Google, CC BY 4.0) from `assets/lottie/`
+  (names in `cine/lottie.js`). Draw one with `lot(t, tIn, name, x, y, size, { f0, once, pop, rot, out })`.
+  With lottie on, the subscribe bell and the comment card also get animated emoji (`cta.emoji`, default `think`).
+  Credit line in the description: "Animated emoji: Noto Emoji Animation by Google, CC BY 4.0".
+- Sound cues (`pop, click, tick, coin, scratch, thump, hit, crack, land, zap` + new `stamp, paper, ding, wrong, glitch, boom`)
+  play real recorded samples from `assets/sfx/` (Kenney, CC0), layered with the synth where it adds weight. `"sfx": "synth"` turns it off.
+- `.github/workflows/assets.yml` re-downloads the full packs into a release `assets-N` if more sounds/emoji are needed.

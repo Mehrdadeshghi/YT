@@ -239,7 +239,7 @@ function build(ep, voice) {
   if (ep.cta !== false) { (WIDE ? CTA.subs : [CTA.subAt]).forEach((s) => { cue(s, 'pop', 0.6, 600); cue(s + 0.75, 'click', 0.9); }); cue(CTA.comAt, 'pop', 0.8, 800);
     if (subEnd) { cue(subEnd, 'pop', 0.6, 600); cue(subEnd + 0.75, 'click', 0.9); } }
   CUES.sort((a, b) => a.t - b.t);
-  window.DUR = DUR; window.EP = { ep: ep.ep, prog: ep.prog || 0, title: ep.title, dur: DUR, openDur, look: 'cine', mood: ep.mood || 'clock' };
+  window.DUR = DUR; window.EP = { ep: ep.ep, prog: ep.prog || 0, title: ep.title, dur: DUR, openDur, look: 'cine', mood: ep.mood || 'clock', sfx: ep.sfx || 'real' };
 }
 const CUT = 0.05;
 function drawScene(s, t, dx = 0, dy = 0) {
@@ -286,7 +286,7 @@ function subPill(ls, Y, life) {                              // ---- subscribe n
     g.save(); g.globalAlpha = 1 - out; g.translate(WIDE ? W - 300 : 540, y); const w = on ? 470 : 430;
     g.shadowColor = 'rgba(0,0,0,0.5)'; g.shadowBlur = 30; rrect(-w / 2, -46, w, 92, 46); g.fillStyle = on ? '#2B2A28' : '#FF0033'; g.fill(); g.shadowBlur = 0;
     text(on ? UI.subbed : UI.sub, on ? -40 : 0, 16, 'ui', fit(on ? UI.subbed : UI.sub, 'ui', 44, on ? 300 : 380), TXT, { align: 'center' });
-    if (on) { bell(170, -4, 0.9, Math.sin((ls - 0.75) * 30) * 0.4 * Math.exp(-(ls - 0.75) * 3)); }
+    if (on) { if (!(window.LOT && LOT.bell && lot(ls, 0.75, 'bell', 172, -6, 96))) bell(170, -4, 0.9, Math.sin((ls - 0.75) * 30) * 0.4 * Math.exp(-(ls - 0.75) * 3)); }
     const cx = lerp(380, 60, ease(ls / 0.6)), cy = lerp(260, 10, ease(ls / 0.6)), pr = ls > 0.65 && ls < 0.9 ? 1 : 0; if (ls < 1.6) cursorHand(cx, cy, pr);
     g.restore(); }
 }
@@ -303,6 +303,7 @@ function engage(t) {
     [[CTA.a, 108], [CTA.b, 108 + 40 + Math.max(200, (g.font = F.ui(36), g.measureText(CTA.a).width + 80))]].forEach(([lab, x], k) => {
       const p = 1 + 0.05 * Math.max(0, Math.sin((lc - 0.6 - k * 0.25) * 5)) * (lc > 0.6); g.font = F.ui(36); const w = Math.max(200, g.measureText(lab).width + 80);
       g.save(); g.translate(x + w / 2, 142); g.scale(p, p); rrect(-w / 2, -32, w, 64, 32); g.fillStyle = k ? '#2B2A28' : GOLD; g.fill(); text(lab, 0, 13, 'ui', 36, k ? TXT : BG, { align: 'center' }); g.restore(); });
+    if (window.LOT && !WIDE) lot(lc, 0.35, CTA.emoji || 'think', 880, 8, 150, { rot: 0.12 });
     g.restore(); }
   const lr = t - CTA.comAt - 0.5;                             // ---- "full video below" card (ep.related): sends Shorts viewers to a long video
   if (CTA.related && lr > 0 && !WIDE) { const s = spring(lr, 240, 20), y = 1075 + (1 - s) * 60, bob = Math.sin(lr * 6) * 8 * (lr > 0.6);
@@ -327,7 +328,7 @@ async function boot() {
   await Promise.all((ep.photos || []).filter((p) => p.video && cred[p.id] && cred[p.id].frames).map((p) => Promise.all(Array.from({ length: cred[p.id].frames }, (_, i) =>
     new Promise((res) => { const im = new Image(); im.onload = res; im.onerror = res; im.src = `assets/clips/${EPID}_${p.id}/${String(i + 1).padStart(4, '0')}.jpg`; (CLIPS[p.id] ||= [])[i] = im; })))));
   const load = (src) => new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = src; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
-  await load('cine/common.js'); if (ep.facts) await load('cine/facts.js'); if (ep.figures) await load('cine/figures.js'); if (ep.map) { await load('cine/map3d.js'); await loadEarth(EPID); MAP.init(topo); } await load(`cine/${EPID}.js`);
+  await load('cine/common.js'); if (ep.facts) await load('cine/facts.js'); if (ep.figures) await load('cine/figures.js'); if (ep.lottie) { await load('cine/lottie.js'); await lottieInit([...new Set([...ep.lottie, 'bell', 'think'])]); } if (ep.map) { await load('cine/map3d.js'); await loadEarth(EPID); MAP.init(topo); } await load(`cine/${EPID}.js`);
   if (0) await new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = `cine/${EPID}.js`; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
   build(ep, voice);
   if (ep.tight && !WIDE && ep.recap !== false) (ep.photos || []).forEach((p) => { if (p.id !== 'rel' && (PHOTOS[p.id] || CLIPS[p.id])) RECAP.push(p.id); });

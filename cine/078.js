@@ -47,23 +47,24 @@ function rewind(t, tIn, x, y, r) { const lt = t - tIn; if (lt < 0) return; const
   const ex = Math.cos(a) * r, ey = Math.sin(a) * r; g.fillStyle = GOLD; g.beginPath(); g.moveTo(ex - 28, ey); g.lineTo(ex + 28, ey); g.lineTo(ex, ey + 34); g.closePath(); g.fill(); g.restore(); }
 
 VIS.open = fscene(null, N, { bg: 'jelly', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.1], dim: 0.15, hook: true, k: [[0.15, 'hit', 1.3], [0.6, 'riser', 0.5, 1]],
-  pre: (t) => bubbles2(t), x: (t) => { jelly(t, -0.3, 300, 1000, 0.95, { age: 'old', face: 'tired', seed: 1 }); rewind(t, 0.5, 560, 980, 70); jelly(t, 0.9, 820, 1040, 0.95, { age: 'baby', face: 'happy', seed: 2 }); } });
-VIS[0] = fscene(0, N, { bg: 'jelly', a: [0.5, 0.45, 1.1], b: [0.5, 0.45, 1.3], badge: 'REAL PHOTO · TURRITOPSIS (SAME GENUS)', k: [[0.9, 'pop', 0.9]],
+  pre: (t) => bubbles2(t), x: (t) => { jelly(t, -0.3, 300, 1000, 0.95, { age: 'old', face: 'tired', seed: 1 }); rewind(t, 0.5, 560, 980, 70); jelly(t, 0.9, 820, 1040, 0.95, { age: 'baby', face: 'happy', seed: 2 }); lot(t, -0.3, 'mindblown', 900, 250, 210, { rot: 0.1 }); } });
+VIS[0] = fscene(0, N, { bg: 'jelly', a: [0.5, 0.45, 1.1], b: [0.5, 0.45, 1.3], badge: 'REAL PHOTO · TURRITOPSIS (SAME GENUS)', k: [[0.9, 'pop', 0.9], [1.3, 'pop', 0.7, 900]],
   pre: (t) => bubbles2(t), figs: [[0.2, 820, 1250, 0.66, A(SCI, { face: 'wow', armL: 'hold', itemL: 'magnifier', flip: true })]],
-  x: (t) => { jelly(t, 0.3, 330, 1040, 0.55, { face: 'happy' }); if (t > 0.9) { ruler(t, 0.9, 250, 1250, 160, '4.5 MM', {}); } }, f: ['TINY.', 'ABOUT 4.5 MM ACROSS'] });
-VIS[1] = fscene(1, N, { bg: 'cycle', a: [0.5, 0.5, 1.0], b: [0.5, 0.45, 1.1], dim: 0.45, badge: 'REAL DRAWING · ITS LIFE CYCLE, 1888', k: [[1.0, 'hit', 1.1], [1.05, 'swish', 0.8]],
+  x: (t) => { jelly(t, 0.3, 330, 1040, 0.55, { face: 'happy' }); if (t > 0.9) { ruler(t, 0.9, 250, 1250, 160, '4.5 MM', {}); } lot(t, 1.3, 'eyes', 560, 900, 150); }, f: ['TINY.', 'ABOUT 4.5 MM ACROSS'] });
+VIS[1] = fscene(1, N, { bg: 'cycle', a: [0.5, 0.5, 1.0], b: [0.5, 0.45, 1.1], dim: 0.45, badge: 'REAL DRAWING · ITS LIFE CYCLE, 1888', k: [[0.96, 'glitch', 1], [1.0, 'hit', 1.1], [1.05, 'swish', 0.8], [1.15, 'ding', 0.8]],
   pre: (t) => bubbles2(t), x: (t) => { if (t < 1.0) jelly(t, 0.1, 540, 1040, 0.85, { age: 'old', face: 'tired', bandage: true });
-    else { flash(t, 1.0, 0.4, 0.1); jelly(t, 1.0, 540, 1080, 0.85, { age: 'polyp', face: 'happy' }); } rewind(t, 0.8, 850, 820, 60); },
+    else { flash(t, 1.0, 0.4, 0.1); jelly(t, 1.0, 540, 1080, 0.85, { age: 'polyp', face: 'happy' }); lot(t, 1.0, 'sparkles', 700, 930, 200); } rewind(t, 0.8, 850, 820, 60); },
   bst: [[1.0, 250, 790, 100, 'RESET!']], f: ['HURT? OLD?', 'IT TURNS BACK INTO A POLYP'] });
-VIS[2] = fscene(2, N, { bg: 'polyps', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.1], dim: 0.25, badge: 'REAL PHOTO · A POLYP COLONY (RELATIVE)', k: [[0.6, 'pop', 0.8], [1.0, 'pop', 0.8]],
-  pre: (t) => bubbles2(t), x: (t) => { jelly(t, 0.1, 260, 1120, 0.7, { age: 'polyp' }); jelly(t, 0.6, 540, 1060, 0.75, { age: 'baby' }); jelly(t, 1.0, 830, 1020, 0.7, { face: 'happy' }); }, f: ['GROWS UP', 'ALL OVER AGAIN', 0.3] });
-VIS[3] = fscene(3, N, { bg: 'rubra', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.1], dim: 0.35, badge: 'REAL PHOTO · TURRITOPSIS RUBRA (RELATIVE)', k: [[0.7, 'tick', 0.8], [1.6, 'hit', 1.1]],
+VIS[2] = fscene(2, N, { bg: 'polyps', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.1], dim: 0.25, badge: 'REAL PHOTO · A POLYP COLONY (RELATIVE)', k: [[0.1, 'pop', 0.7, 500], [0.6, 'pop', 0.8, 700], [1.0, 'pop', 0.8, 950], [1.4, 'ding', 0.7]],
+  pre: (t) => bubbles2(t), x: (t) => { jelly(t, 0.1, 260, 1120, 0.7, { age: 'polyp' }); jelly(t, 0.6, 540, 1060, 0.75, { age: 'baby' }); jelly(t, 1.0, 830, 1020, 0.7, { face: 'happy' }); lot(t, 1.4, 'praise', 830, 780, 170); }, f: ['GROWS UP', 'ALL OVER AGAIN', 0.3] });
+VIS[3] = fscene(3, N, { bg: 'rubra', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.1], dim: 0.35, badge: 'REAL PHOTO · TURRITOPSIS RUBRA (RELATIVE)', k: [...Array.from({ length: 11 }, (_, n) => [0.6 + (n + 1) / 9, 'tick', 0.9]), [1.84, 'ding', 0.9], [1.9, 'hit', 1.0]],
   figs: [[0.2, 820, 1250, 0.66, A(SCI, { face: 'shock', armL: 'up', armR: 'up', flip: true })]],
-  x: (t) => { const n = Math.min(11, Math.floor(Math.max(0, t - 0.6) * 9)); if (t > 0.6) { panel(70, 700, 520, 330, 0.85); popNum(n + '×', 110, 880, 150, GOLD, t, 0.6); label('REBIRTHS IN 2 YEARS', 114, 960, t, 0.7, { size: 26 }); label('ONE LAB COLONY', 114, 1000, t, 0.9, { size: 22 }); } } ,
+  x: (t) => { const n = Math.min(11, Math.floor(Math.max(0, t - 0.6) * 9)); if (t > 0.6) { panel(70, 700, 520, 330, 0.85); popNum(n + '×', 110, 880, 150, GOLD, t, 0.6); label('REBIRTHS IN 2 YEARS', 114, 960, t, 0.7, { size: 26 }); label('ONE LAB COLONY', 114, 1000, t, 0.9, { size: 22 }); } lot(t, 1.84, 'mindblown', 690, 690, 170); } ,
   f: ['ONE LAB:', '11 RESETS IN 2 YEARS'] });
-VIS[4] = fscene(4, N, { bg: 'moon', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.1], dim: 0.3, chip: 'REAL PHOTO · MOON JELLIES (OTHER SPECIES)', k: [[0.8, 'riser', 0.4, 0.8], [1.3, 'hit', 1.2]],
-  pre: (t) => bubbles2(t), x: (t) => { jelly(t, 0.1, 540, 1060, 0.95, { face: 'happy', col: '#FFC23D' }); }, bst: [[1.3, 820, 760, 110, '∞']], f: ['"IMMORTAL"', 'BIOLOGICALLY, AT LEAST'] });
-VIS[5] = fscene(5, N, { bg: 'sea', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.1], dim: 0.2, badge: 'REAL PHOTO · UNDERWATER, LEMNOS', k: [[0.9, 'crack', 0.9], [0.92, 'hit', 1.1]],
+VIS[4] = fscene(4, N, { bg: 'moon', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.1], dim: 0.3, bst: [[1.3, 820, 760, 110, '∞']], chip: 'REAL PHOTO · MOON JELLIES (OTHER SPECIES)', k: [[0.8, 'riser', 0.4, 0.8], [1.3, 'hit', 1.2]],
+  pre: (t) => bubbles2(t), x: (t) => { jelly(t, 0.1, 540, 1060, 0.95, { face: 'happy', col: '#FFC23D' }); lot(t, 1.35, 'sparkles', 260, 800, 170); lot(t, 1.5, 'sparkles', 960, 980, 130); },  f: ['"IMMORTAL"', 'BIOLOGICALLY, AT LEAST'] });
+VIS[5] = fscene(5, N, { bg: 'sea', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.1], dim: 0.2, badge: 'REAL PHOTO · UNDERWATER, LEMNOS', k: [[0.55, 'splash', 0.6], [0.9, 'crack', 0.9], [0.92, 'hit', 1.1], [0.95, 'stamp', 0.8]],
   pre: (t) => bubbles2(t), figs: [[0.2, 820, 1250, 0.66, A(DIVER, { face: 'shock', flip: true })]],
-  x: (t) => { const eaten = t > 0.9; if (!eaten) jelly(t, 0.1, 300, 1040, 0.6, { face: 'happy' }); else { jelly(t, 0.9, 300, 1060, 0.5, { face: 'shock' }); } },
-  bst: [[0.9, 330, 790, 100, 'CHOMP!', '#FF6B4A']], f: ['IN THE WILD:', 'MOST STILL GET EATEN OR SICK'] });
+  x: (t) => { if (t < 0.95) jelly(t, 0.1, 300, 1040, 0.6, { face: t > 0.55 ? 'shock' : 'happy' });
+    lot(t, 0.5, 'shark', 320, 960, 560, { f0: 48, once: true, pop: false }); },   // Noto shark leaps out of the water: frame 60 (open jaws) lands on the chomp at 0.9
+  bst: [[0.9, 600, 700, 100, 'CHOMP!', '#FF6B4A']], f: ['IN THE WILD:', 'MOST STILL GET EATEN OR SICK'] });

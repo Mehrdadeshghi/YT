@@ -119,7 +119,8 @@
  "cta": {
   "q": "Would you live forever?",
   "a": "YES",
-  "b": "NO"
+  "b": "NO",
+  "emoji": "think"
  },
  "source": "https://en.wikipedia.org/wiki/Turritopsis_dohrnii",
  "photos": [
@@ -147,5 +148,12 @@
    "id": "sea",
    "file": "File:LemnosUnderwater.jpg"
   }
+ ],
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "sparkles",
+  "praise",
+  "shark"
  ]
 }

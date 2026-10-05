@@ -102,10 +102,31 @@ const SFX = {
   land:  (t, g) => { SFX.thump(t, 0.9 * g); [1320, 1980].forEach((f, i) =>
     add(t + 0.01, 1.0, (x) => Math.sin(2 * Math.PI * f * x) * Math.exp(-x * 5) * (i ? 0.5 : 1), 0.18 * g)); },
 };
+// ------------------------------------------------ real recorded SFX (Kenney, CC0) layered over / replacing the synth ones
+// [variant files in assets/sfx, sample gain, how much of the synth version stays]
+const REAL = { pop: [3, 0.42, 0], click: [2, 0.5, 0], tick: [2, 0.32, 0], coin: [2, 0.36, 0.3], scratch: [3, 0.36, 0.3], thump: [3, 0.75, 0.35],
+  hit: [3, 0.62, 0.75], crack: [3, 0.55, 0.6], land: [1, 0.42, 0.4], zap: [1, 0.3, 0.6],
+  stamp: [2, 0.8, 0], paper: [2, 0.45, 0], ding: [1, 0.35, 0], wrong: [1, 0.4, 0], glitch: [2, 0.45, 0], boom: [1, 0.9, 0] };
+const SDIR = new URL('./assets/sfx/', import.meta.url), SBUF = {};
+function sample(name) { if (name in SBUF) return SBUF[name];
+  try { const b = readFileSync(new URL(`${name}.wav`, SDIR)); let o = 12, data = null, sr = 48000;
+    while (o < b.length - 8) { const id = b.toString('ascii', o, o + 4), sz = b.readUInt32LE(o + 4); if (id === 'fmt ') sr = b.readUInt32LE(o + 12);
+      if (id === 'data') { data = b.subarray(o + 8, o + 8 + sz); break; } o += 8 + sz + (sz % 2); }
+    const x = new Float32Array(data.length / 2); let pk = 0; for (let i = 0; i < x.length; i++) { x[i] = data.readInt16LE(i * 2) / 32768; pk = Math.max(pk, Math.abs(x[i])); }
+    for (let i = 0; i < x.length; i++) x[i] /= pk || 1; return (SBUF[name] = { x, sr }); } catch { return (SBUF[name] = null); } }
+const USE_REAL = META.ep?.sfx !== 'synth', ROT = {};
+function playReal(type, t, g, p) { const r = REAL[type]; if (!r) return false;
+  const k = (ROT[type] = ((ROT[type] ?? Math.floor(t * 7)) + 1)) % r[0], s = sample(`${type}_${k + 1}`); if (!s) return false;
+  const rate = (s.sr / SR) * (1 + 0.04 * Math.sin(t * 91.7)) * (type === 'pop' && p ? Math.sqrt(p / 700) : 1), len = (s.x.length - 1) / rate / SR;
+  const pan = 0.25 * Math.sin(t * 13.3);
+  add(t, len, (_, i) => { const pos = i * rate, j = Math.floor(pos), f = pos - j; return s.x[j] * (1 - f) + (s.x[j + 1] || 0) * f; }, r[1] * g, pan);
+  return r[2]; }
 for (const c of META.cues.filter((c) => c.type === 'mute')) {        // pattern interrupt: the music drops out
   const s0 = Math.floor(c.t * SR), n = Math.floor((c.p || 0.8) * SR);
   for (let i = 0; i < n + 2400 && s0 + i < N; i++) { const g = i < n ? 0 : (i - n) / 2400; L[s0 + i] *= g; R[s0 + i] *= g; } }
-for (const c of META.cues) if (c.type !== 'vo' && c.type !== 'mute') SFX[c.type]?.(c.t, c.gain ?? 1, c.p);
+for (const c of META.cues) if (c.type !== 'vo' && c.type !== 'mute') {
+  const keep = USE_REAL ? playReal(c.type, c.t, c.gain ?? 1, c.p) : false;            // false = no real sample → synth only
+  if (keep === false) SFX[c.type]?.(c.t, c.gain ?? 1, c.p); else if (keep > 0) SFX[c.type]?.(c.t, (c.gain ?? 1) * keep, c.p); }
 
 // ------------------------------------------------ voice-over: clips placed by the page's cues, music ducks under it
 const VL = new Float32Array(N);
