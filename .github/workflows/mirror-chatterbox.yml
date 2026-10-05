@@ -1,0 +1,17 @@
+name: Mirror Chatterbox model
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download from Hugging Face
+        run: |
+          pip install -q huggingface_hub
+          python3 -c "from huggingface_hub import snapshot_download; p=snapshot_download('ResembleAI/chatterbox', allow_patterns=['ve.safetensors','t3_cfg.safetensors','s3gen.safetensors','tokenizer.json','conds.pt'], local_dir='cb'); print(p)"
+          ls -la cb; cd cb; for f in *; do s=$(stat -c%s "$f"); if [ "$s" -gt 1900000000 ]; then split -b 1900M -d "$f" "$f.part"; rm "$f"; fi; done; ls -la
+      - name: Release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release create model-chatterbox cb/* --title "Chatterbox model mirror (MIT, ResembleAI)" --notes "Mirror of ResembleAI/chatterbox weights for local voice-clone tests."
