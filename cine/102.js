@@ -8,7 +8,7 @@ function paper(t, tIn, x, y, w, rot) { const s = spring(t - tIn, 220, 16); if (s
   text('O MUNDO', 0, -h / 2 + 96, 'serif', w * 0.17, '#1A1714', { align: 'center' });
   g.fillStyle = '#1A1714'; g.fillRect(-w / 2 + 30, -h / 2 + 118, w - 60, 5); g.fillRect(-w / 2 + 30, -h / 2 + 130, w - 60, 2);
   text('RIO DE JANEIRO · 16 JULY 1950', 0, -h / 2 + 162, 'mono', w * 0.035, '#5A5249', { align: 'center' });
-  text('THESE ARE THE', 0, -h / 2 + 250, 'disp', w * 0.1, '#1A1714', { align: 'center' }); text('WORLD CHAMPIONS', 0, -h / 2 + 330, 'disp', w * 0.1, '#1A1714', { align: 'center' });
+  text('THESE ARE THE', 0, -h / 2 + 250, 'disp', w * 0.085, '#1A1714', { align: 'center' }); text('WORLD CHAMPIONS', 0, -h / 2 + 330, 'disp', w * 0.085, '#1A1714', { align: 'center' });
   g.fillStyle = '#9A9284'; g.fillRect(-w / 2 + 40, -h / 2 + 370, w - 80, h * 0.36);                          // photo block
   for (let i = 0; i < 7; i++) { g.fillStyle = 'rgba(26,23,20,0.35)'; g.fillRect(-w / 2 + 40, -h / 2 + 400 + h * 0.36 + i * 26, (w - 80) * (0.55 + 0.45 * ((i * 37) % 10) / 10), 9); }
   g.restore(); }
@@ -23,8 +23,9 @@ VIS.open = (K) => { K(0.1, 'hit', 1.3); K(0.25, 'paper', 1); K(0.5, 'stamp', 0.9
 VIS[0] = vscene(0, N, { ph: 'stadium50', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.12], badge: 'REAL PHOTO · MARACANÃ, 1950', k: [[0.8, 'hit', 1]],
   f: ['A DRAW', 'WAS ENOUGH FOR BRAZIL'] });
 
-VIS[1] = vscene(1, N, { ph: 'ticket', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.1], badge: 'REAL TICKET · BRAZIL V URUGUAY, 16 JULY 1950', k: [[0.8, 'coin', 1], [1.4, 'ding', 0.8]],
-  f: ['MEDALS READY.', "EVERY PLAYER'S NAME ENGRAVED"], x: (t) => lot(t, 1.4, 'trophy', 900, 980, 160) });
+VIS[1] = (K) => { K(0.5, 'whoosh', 0.5); K(0.8, 'coin', 1); K(1.4, 'ding', 0.8);
+  return (t) => { atmosphere(t); const P = framed(t, 'ticket', 70, 670, 940); if (!P) noPhoto(t); tag(t, 1, N); realBadge(t, 0.3, 'REAL TICKET · BRAZIL V URUGUAY, 16 JULY 1950');
+    fact(t, 0.6, 'MEDALS READY.', "EVERY PLAYER'S NAME ENGRAVED", {}); lot(t, 1.4, 'trophy', 940, 1230, 140); }; };
 
 VIS[2] = (K) => { K(0.5, 'whoosh', 0.5); K(1.6, 'boom', 1); K(1.62, 'hit', 1.2);
   return (t) => { atmosphere(t); if (t < 1.6) { const P = clip(t, 'fans', { a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.05] }); if (!P) noPhoto(t); tag(t, 2, N); footBadge(t, 0.3, 'REAL FOOTAGE · A FOOTBALL CROWD TODAY (TEHRAN, 2022)'); fact(t, 0.4, '173,850', 'OFFICIAL CROWD, MARACANÃ 1950', {}); }
