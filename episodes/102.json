@@ -62,5 +62,137 @@
    "from": 0,
    "len": 90
   }
+ ],
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "mood": "epic",
+ "voice": "native",
+ "series": "FOOTBALL'S CRAZIEST MOMENTS · PART 4",
+ "prog": 2,
+ "title": "Maracanazo 1950",
+ "hook": [
+  "“THESE ARE THE",
+  "WORLD CHAMPIONS.”"
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "A newspaper called them world champions. Before the game.",
+   "es": "Un periódico los llamó campeones del mundo. Antes del partido.",
+   "de": "Eine Zeitung nannte sie Weltmeister. Vor dem Spiel."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Rio, 1950. In the last match, Brazil only needed a draw against Uruguay.",
+     "cap": "Brazil only needed a *draw.*",
+     "es": "Río, 1950. En el último partido, a Brasil le bastaba un empate contra Uruguay.",
+     "de": "Rio, 1950. Im letzten Spiel reichte Brasilien ein Unentschieden gegen Uruguay."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Gold medals were already made, with every player's name on them. A victory song was ready.",
+     "cap": "Medals with their *names.*",
+     "es": "Las medallas de oro ya estaban hechas, con el nombre de cada jugador. Una canción de victoria estaba lista.",
+     "de": "Die Goldmedaillen waren schon fertig, mit dem Namen jedes Spielers. Ein Siegeslied war bereit."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Over a hundred and seventy thousand fans. And Brazil scored first.",
+     "cap": "*173,850* fans. *1–0.*",
+     "es": "Más de ciento setenta mil aficionados. Y Brasil marcó primero.",
+     "de": "Über hundertsiebzigtausend Fans. Und Brasilien traf zuerst."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then Uruguay scored. Twice. Ghiggia, seventy-ninth minute.",
+     "cap": "Ghiggia, *79'.* *1–2.*",
+     "es": "Entonces marcó Uruguay. Dos veces. Ghiggia, minuto setenta y nueve.",
+     "de": "Dann traf Uruguay. Zweimal. Ghiggia, neunundsiebzigste Minute."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The whole stadium went silent.",
+     "cap": "*Silence.*",
+     "es": "Todo el estadio se quedó en silencio.",
+     "de": "Das ganze Stadion verstummte."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Brazil even dropped its white shirts. That's why they play in yellow today.",
+     "cap": "That's why they wear *yellow.*",
+     "es": "Brasil incluso dejó sus camisetas blancas. Por eso hoy juega de amarillo.",
+     "de": "Brasilien schaffte sogar seine weißen Trikots ab. Darum spielt es heute in Gelb."
+    },
+    {
+     "at": "0.15",
+     "text": "Worst defeat in World Cup history? Yes or no? Comment below, and subscribe for more football madness.",
+     "cta": true,
+     "es": "¿La peor derrota de la historia de los Mundiales? ¿Sí o no? Comenta y suscríbete para más locuras del fútbol.",
+     "de": "Die schlimmste Niederlage der WM-Geschichte? Ja oder nein? Kommentier und abonnier für mehr Fußball-Wahnsinn."
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Worst World Cup defeat ever?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "cry"
+ },
+ "source": "https://en.wikipedia.org/wiki/Uruguay_v_Brazil_(1950_FIFA_World_Cup)",
+ "lottie": [
+  "mindblown",
+  "scream",
+  "cry",
+  "skull",
+  "eyes",
+  "warning",
+  "fire",
+  "trophy"
  ]
 }

@@ -99,5 +99,124 @@
    "from": 0,
    "len": 56
   }
+ ],
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "mood": "epic",
+ "voice": "native",
+ "series": "FOOTBALL'S CRAZIEST MOMENTS · PART 5",
+ "prog": 0,
+ "title": "1974 World Cup final",
+ "hook": [
+  "0–1. BEFORE GERMANY",
+  "TOUCHED THE BALL."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Germany were losing the World Cup final before a German even touched the ball.",
+   "es": "Alemania perdía la final del Mundial antes de que un alemán tocara el balón.",
+   "de": "Deutschland lag im WM-Finale hinten, bevor ein Deutscher den Ball berührt hatte."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Munich, 1974. Germany against Johan Cruyff and his Total Football.",
+     "cap": "Germany vs *Cruyff.*",
+     "es": "Múnich, 1974. Alemania contra Johan Cruyff y su Fútbol Total.",
+     "de": "München, 1974. Deutschland gegen Johan Cruyff und seinen totalen Fußball."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "First minute. Cruyff runs into the box, and Hoeness brings him down. Penalty.",
+     "cap": "Minute *1.* Penalty.",
+     "es": "Primer minuto. Cruyff entra en el área y Hoeness lo derriba. Penalti.",
+     "de": "Erste Minute. Cruyff läuft in den Strafraum, Hoeneß bringt ihn zu Fall. Elfmeter."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Neeskens scores. One-nil. And no German player had touched the ball.",
+     "cap": "*0–1.* No German *touch.*",
+     "es": "Neeskens marca. Uno a cero. Y ningún alemán había tocado el balón.",
+     "de": "Neeskens trifft. Null zu eins. Und kein deutscher Spieler hatte den Ball berührt."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Twenty-fifth minute: a penalty for Germany. Breitner. One-all.",
+     "cap": "Breitner. *1–1.*",
+     "es": "Minuto veinticinco: penalti para Alemania. Breitner. Uno a uno.",
+     "de": "Fünfundzwanzigste Minute: Elfmeter für Deutschland. Breitner. Eins zu eins."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Forty-third minute: Gerd Müller. Germany are world champions.",
+     "cap": "Müller. *World champions.*",
+     "es": "Minuto cuarenta y tres: Gerd Müller. Alemania es campeona del mundo.",
+     "de": "Dreiundvierzigste Minute: Gerd Müller. Deutschland ist Weltmeister."
+    },
+    {
+     "at": "0.15",
+     "text": "Were the Dutch the best team never to win it? Yes or no? Comment below, and subscribe for more football madness.",
+     "cta": true,
+     "es": "¿Fue Holanda el mejor equipo que nunca lo ganó? ¿Sí o no? Comenta y suscríbete para más locuras del fútbol.",
+     "de": "War Holland das beste Team, das nie Weltmeister wurde? Ja oder nein? Kommentier und abonnier für mehr Fußball-Wahnsinn."
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Best team never to win it?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "source": "https://en.wikipedia.org/wiki/1974_FIFA_World_Cup_final",
+ "lottie": [
+  "mindblown",
+  "scream",
+  "eyes",
+  "fire",
+  "trophy",
+  "alarm",
+  "flushed",
+  "party"
  ]
 }
