@@ -14,9 +14,10 @@ class Cloner:
         import torch
         self.ref, self.lang = ref, lang
         dev = 'cuda' if torch.cuda.is_available() else 'cpu'
+        local = os.environ.get('CHATTERBOX_DIR')          # local copy of the weights (release model-chatterbox) instead of Hugging Face
         if lang == 'en':
             from chatterbox.tts import ChatterboxTTS
-            self.m = ChatterboxTTS.from_pretrained(device=dev)
+            self.m = ChatterboxTTS.from_local(local, device=dev) if local else ChatterboxTTS.from_pretrained(device=dev)
         else:
             from chatterbox.mtl_tts import ChatterboxMultilingualTTS
             self.m = ChatterboxMultilingualTTS.from_pretrained(device=dev)
