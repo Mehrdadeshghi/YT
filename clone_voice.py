@@ -81,6 +81,23 @@ class Cloner:
         filt = CHAIN + (f',atempo={min(1.1, speed):.3f}' if abs(speed - 1) > 0.01 else '')
         return _ff(w, sr, filt)
 
+class NativeCloner:
+    """Native American-English pronunciation in Mehrdad's voice colour: Kokoro (am_michael) speaks the line at house tempo,
+    then Chatterbox voice conversion swaps only the timbre to the reference recording. Timing/accent stay native."""
+    def __init__(self, ref, source='am_michael'):
+        from kokoro_onnx import Kokoro
+        from chatterbox.vc import ChatterboxVC
+        tts = os.environ.get('TTS_DIR', 'models'); local = os.environ.get('CHATTERBOX_DIR')
+        self.k = Kokoro(f'{tts}/kokoro-v1.0.onnx', f'{tts}/voices-v1.0.bin'); self.src = source; self.ref = ref
+        self.vc = ChatterboxVC.from_local(local, device='cpu') if local else ChatterboxVC.from_pretrained(device='cpu')
+    def create(self, text, voice=None, speed=1.3, lang='en-us'):
+        s, sr = self.k.create(text, voice=self.src, speed=speed, lang='en-us')
+        with tempfile.TemporaryDirectory() as d:
+            a = f'{d}/a.wav'; sf.write(a, s, sr)
+            w = self.vc.generate(a, target_voice_path=self.ref).squeeze().cpu().numpy().astype('float32')
+        w = squeeze_pauses(w, self.vc.sr)
+        return _ff(w, self.vc.sr, CHAIN)
+
 if __name__ == '__main__' and sys.argv[1] == 'test':
     ref, lines = sys.argv[2], sys.argv[3:]
     out = os.environ.get('CLONE_OUT', 'dist/clone'); os.makedirs(out, exist_ok=True); t0 = time.time(); c = Cloner(ref); print(f'model loaded in {time.time() - t0:.0f}s', flush=True)
