@@ -1,0 +1,66 @@
+{
+ "ep": 102,
+ "photos": [
+  {
+   "id": "friaca",
+   "file": "File:Gol de Friaça na Copa do Mundo de 1950.tif"
+  },
+  {
+   "id": "ghiggia",
+   "file": "File:Gol ghiggia vs brasil.jpg"
+  },
+  {
+   "id": "schiaffino",
+   "file": "File:Uruguay gol schiaffino 1950.jpg"
+  },
+  {
+   "id": "geral",
+   "file": "File:Geral do Maracanã na copa de 1950.jpg"
+  },
+  {
+   "id": "radio",
+   "file": "File:Torcedores no Maracanã, de radinho.jpg"
+  },
+  {
+   "id": "poster",
+   "file": "File:Copa de 1950, torcedores observam o cartaz da copa.jpg"
+  },
+  {
+   "id": "ticket",
+   "file": "File:Ingresso Copa do Mundo FIFA 1950 - Brasil x Uruguai.jpg"
+  },
+  {
+   "id": "stadium50",
+   "file": "File:Jogo no Estádio do Maracanã, antes da Copa do Mundo de 1950.tif"
+  },
+  {
+   "id": "uru",
+   "file": "File:Urug1950.jpg"
+  },
+  {
+   "id": "ghiggiacup",
+   "file": "File:Ghiggia con la Copa Jules Rimet, Estadio, 1950-07-29 (376).jpg"
+  },
+  {
+   "id": "shirt",
+   "file": "File:Camiseta Brasil 1950 A74276520241123.jpg"
+  },
+  {
+   "id": "maracana",
+   "file": "File:Estádio do Maracanã from mountain.jpg"
+  },
+  {
+   "id": "fans",
+   "video": "File:Viking clapping of Esteghlal fans in the match against Shahr Khodro, 9 May 2022.webm",
+   "from": 0,
+   "len": 13
+  },
+  {
+   "id": "chelsea",
+   "video": "File:Chelsea fans chanting at Tottenham stadium.webm",
+   "fps": 1,
+   "from": 0,
+   "len": 90
+  }
+ ]
+}
