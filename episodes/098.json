@@ -1,0 +1,167 @@
+{
+ "ep": 98,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "loop": true,
+ "recap": false,
+ "series": "FOOTBALL STORIES · PART 1",
+ "prog": 1,
+ "title": "Pickles and the stolen World Cup",
+ "mood": "epic",
+ "hook": [
+  "A DOG SAVED",
+  "THE WORLD CUP."
+ ],
+ "voice": "native",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "In 1966, a dog saved the World Cup.",
+   "es": "En 1966, un perro salvó la Copa del Mundo.",
+   "de": "1966 hat ein Hund die Weltmeisterschaft gerettet."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Months before the tournament, the trophy was stolen from a stamp show in London.",
+     "cap": "The trophy: *stolen.*",
+     "es": "Meses antes del torneo, robaron el trofeo de una exposición de sellos en Londres.",
+     "de": "Monate vor dem Turnier wurde der Pokal aus einer Briefmarkenausstellung in London gestohlen."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then the thief demanded fifteen thousand pounds.",
+     "cap": "Ransom: *£15,000.*",
+     "es": "Luego el ladrón exigió quince mil libras.",
+     "de": "Dann verlangte der Dieb fünfzehntausend Pfund."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "A week later, a collie named Pickles sniffed at a package under a parked car.",
+     "cap": "A dog named *Pickles.*",
+     "es": "Una semana después, un perro llamado Pickles olfateó un paquete bajo un coche aparcado.",
+     "de": "Eine Woche später schnüffelte ein Hund namens Pickles an einem Paket unter einem parkenden Auto."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Wrapped in newspaper: the World Cup.",
+     "cap": "Inside: *the World Cup.*",
+     "es": "Envuelta en papel de periódico: la Copa del Mundo.",
+     "de": "In Zeitungspapier gewickelt: der WM-Pokal."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "England won the tournament, and Pickles was invited to the victory banquet.",
+     "cap": "Invited to the *banquet.*",
+     "es": "Inglaterra ganó el torneo, y Pickles fue invitado al banquete de la victoria.",
+     "de": "England gewann das Turnier, und Pickles wurde zum Siegesbankett eingeladen."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He even got a medal and starred in a movie.",
+     "cap": "A *medal* and a *movie.*",
+     "es": "Incluso recibió una medalla y salió en una película.",
+     "de": "Er bekam sogar eine Medaille und spielte in einem Film mit."
+    },
+    {
+     "at": "0.15",
+     "text": "Hero dog, or just lucky? Comment below, and subscribe for a wild story every day.",
+     "cta": true,
+     "es": "¿Perro héroe o solo suerte? Comenta y suscríbete para una historia loca cada día.",
+     "de": "Heldenhund oder nur Glück? Kommentier und abonnier für jeden Tag eine verrückte Geschichte."
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Hero dog or just lucky?",
+  "a": "HERO",
+  "b": "LUCKY",
+  "emoji": "think"
+ },
+ "source": "https://en.wikipedia.org/wiki/1966_theft_of_the_Jules_Rimet_Trophy",
+ "photos": [
+  {
+   "id": "cup",
+   "file": "File:La Coupe Jules Rimet (cropped).jpg"
+  },
+  {
+   "id": "replica",
+   "file": "File:Jules Rimet trophy replica.jpg"
+  },
+  {
+   "id": "wembley",
+   "file": "File:Wembley Twin Towers (retouched).jpg"
+  },
+  {
+   "id": "beulah",
+   "file": "File:Upper Norwood, 'Semis' on Beulah Hill - geograph.org.uk - 3051293.jpg"
+  },
+  {
+   "id": "plaque",
+   "file": "File:PicklesSignBeulahHill.jpg"
+  },
+  {
+   "id": "final",
+   "file": "File:England germany entering pitch.jpg"
+  },
+  {
+   "id": "collar",
+   "file": "File:Pickles -- collar and medals.jpg"
+  }
+ ],
+ "lottie": [
+  "trophy",
+  "siren",
+  "moneyfly",
+  "eyes",
+  "sparkles",
+  "starstruck",
+  "party",
+  "clap",
+  "flushed"
+ ]
+}
