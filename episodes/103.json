@@ -6,10 +6,6 @@
    "file": "File:Paul Breitner penalty 1974.jpg"
   },
   {
-   "id": "beckcruyff",
-   "file": "File:Beckenbauer cruyff alfieri.jpg"
-  },
-  {
    "id": "ba14",
    "file": "File:Bundesarchiv Bild 183-N0716-0314, Fußball-WM, BRD - Niederlande 2-1.jpg"
   },
@@ -86,18 +82,10 @@
    "file": "File:MichelsCruyffVerhoeff1974.jpg"
   },
   {
-   "id": "pen",
-   "video": "File:Tizenegyes.ogv",
-   "fps": 1,
-   "from": 0,
-   "len": 92
-  },
-  {
    "id": "goal",
    "video": "File:Hungary - Uruguay 1-2 (Szalai).ogv",
-   "fps": 1,
-   "from": 0,
-   "len": 56
+   "from": 11,
+   "len": 9
   }
  ],
  "look": "cine",
