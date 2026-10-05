@@ -51,6 +51,10 @@ jobs:
         run: |
           for e in ${{ steps.eps.outputs.list }}; do grep -q '"voice": *"clone"' episodes/$e.json && NEED=1; done
           if [ -n "$NEED" ]; then pip install -q chatterbox-tts 2>&1 | tail -2; fi
+      - name: Decrypt voice reference
+        env: { VOICE_KEY: "${{ secrets.VOICE_KEY }}" }
+        run: |
+          if [ -n "$VOICE_KEY" ] && [ -f assets/voice/mehrdad.wav.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -in assets/voice/mehrdad.wav.enc -out assets/voice/mehrdad.wav -pass env:VOICE_KEY && echo "voice reference ready"; else echo "no VOICE_KEY secret"; fi
       - name: Build
         run: scripts/build.sh ${{ steps.eps.outputs.list }}
       - name: Publish release

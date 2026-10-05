@@ -8,3 +8,5 @@ __pycache__/
 episodes/*.voice.json
 models
 assets/clips/
+assets/voice/*.wav
+!assets/voice/ref_placeholder.wav

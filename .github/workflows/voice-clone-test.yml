@@ -21,6 +21,10 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
           pip install -q chatterbox-tts soundfile 2>&1 | tail -3
+      - name: Decrypt voice reference
+        env: { VOICE_KEY: "${{ secrets.VOICE_KEY }}" }
+        run: |
+          if [ -n "$VOICE_KEY" ] && [ -f assets/voice/mehrdad.wav.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -in assets/voice/mehrdad.wav.enc -out assets/voice/mehrdad.wav -pass env:VOICE_KEY && echo "voice reference ready"; else echo "no VOICE_KEY secret"; fi
       - name: Clone
         run: |
           REF=$(grep -v '^#' voicetest.txt | head -1)
