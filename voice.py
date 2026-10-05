@@ -14,14 +14,15 @@ if LANG == 'de':                     # German: Piper "Thorsten" (see piper_de.py
     import piper_de; k = piper_de.load(TTS); VOICE = 'thorsten'
 elif VOICE == 'native':               # native US pronunciation (Kokoro) converted to Mehrdad's timbre (Chatterbox VC) at house tempo
     from clone_voice import NativeCloner
-    k = NativeCloner(E.get('voice_ref', 'assets/voice/mehrdad.wav'))
+    k = NativeCloner(E.get('voice_ref', 'assets/voice/mehrdad.wav'), E.get('voice_src', 'am_echo'), float(E.get('voice_expr', 1.85)))
+    VTAG = f"{E.get('voice_src', 'am_echo')}|{E.get('voice_expr', 1.85)}"
 elif VOICE == 'clone':                # Mehrdad's own voice, cloned (Chatterbox): timbre from assets/voice/*.wav, pronunciation from the model
     from clone_voice import Cloner
     k = Cloner(E.get('voice_ref', 'assets/voice/mehrdad.wav')); SPEED = float(arg('speed', str(E.get('speed_clone', 1.15))))
 else:
     k = Kokoro(f'{TTS}/kokoro-v1.0.onnx', f'{TTS}/voices-v1.0.bin')
 def synth(key, text):
-    h = hashlib.md5(f'{VOICE}|{SPEED}|{text}'.encode()).hexdigest()[:10]
+    h = hashlib.md5(f'{VOICE}|{SPEED}|{globals().get("VTAG", "")}|{text}'.encode()).hexdigest()[:10]
     f = f'{out}/{key}_{h}.wav'
     if not os.path.exists(f):
         s, sr = k.create(text, voice=VOICE, speed=SPEED, lang='en-us')

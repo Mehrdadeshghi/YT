@@ -31,3 +31,9 @@ You can also start a render by hand: Actions → Render Shorts → Run workflow 
 - Sound cues (`pop, click, tick, coin, scratch, thump, hit, crack, land, zap` + new `stamp, paper, ding, wrong, glitch, boom`)
   play real recorded samples from `assets/sfx/` (Kenney, CC0), layered with the synth where it adds weight. `"sfx": "synth"` turns it off.
 - `.github/workflows/assets.yml` re-downloads the full packs into a release `assets-N` if more sounds/emoji are needed.
+
+## Livelier intonation (voice "native")
+Voice conversion flattens the melody of the source voice (Kokoro ~10 → ~6 semitones). The pipeline now starts from
+`am_echo` (most melodic Kokoro male voice) and widens the pitch contour after conversion (`expand_pitch`, PSOLA via Praat):
+`"voice_src": "am_echo"`, `"voice_expr": 1.85`. Result for #078: median per-line pitch range 10.7 st, the same as the
+reference narrator video Mehrdad picked (old version: 5.9 st). Speaker similarity to his recording stays ~0.85.

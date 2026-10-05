@@ -81,20 +81,35 @@ class Cloner:
         filt = CHAIN + (f',atempo={min(1.1, speed):.3f}' if abs(speed - 1) > 0.01 else '')
         return _ff(w, sr, filt)
 
+def expand_pitch(w, sr, factor=1.85, floor=65, ceil=420):
+    """livelier intonation: every pitch point moves away from the speaker's median by `factor` (in semitones), PSOLA resynthesis.
+    Voice conversion flattens the source melody (~10 -> ~6 semitones); engaging narrators use ~14 st (5-95 % range)."""
+    import parselmouth
+    from parselmouth.praat import call
+    snd = parselmouth.Sound(np.asarray(w, dtype='float64'), sr)
+    manip = call(snd, "To Manipulation", 0.01, floor, ceil)
+    tier = call(manip, "Extract pitch tier")
+    med = call(snd.to_pitch(0.01, floor, ceil), "Get quantile", 0, 0, 0.5, "Hertz")
+    call(tier, "Formula", f"{med} * (self / {med}) ^ {factor}")
+    call([tier, manip], "Replace pitch tier")
+    return call(manip, "Get resynthesis (overlap-add)").values[0].astype('float32')
+
 class NativeCloner:
-    """Native American-English pronunciation in Mehrdad's voice colour: Kokoro (am_michael) speaks the line at house tempo,
-    then Chatterbox voice conversion swaps only the timbre to the reference recording. Timing/accent stay native."""
-    def __init__(self, ref, source='am_michael'):
+    """Native American-English pronunciation in Mehrdad's voice colour: Kokoro speaks the line at house tempo,
+    then Chatterbox voice conversion swaps only the timbre to the reference recording, then the intonation is widened
+    (expand_pitch) because conversion flattens it. Source am_echo = the most melodic Kokoro male voice (18 st raw range)."""
+    def __init__(self, ref, source='am_echo', expr=1.85):
         from kokoro_onnx import Kokoro
         from chatterbox.vc import ChatterboxVC
         tts = os.environ.get('TTS_DIR', 'models'); local = os.environ.get('CHATTERBOX_DIR')
-        self.k = Kokoro(f'{tts}/kokoro-v1.0.onnx', f'{tts}/voices-v1.0.bin'); self.src = source; self.ref = ref
+        self.k = Kokoro(f'{tts}/kokoro-v1.0.onnx', f'{tts}/voices-v1.0.bin'); self.src = source; self.ref = ref; self.expr = expr
         self.vc = ChatterboxVC.from_local(local, device='cpu') if local else ChatterboxVC.from_pretrained(device='cpu')
     def create(self, text, voice=None, speed=1.3, lang='en-us'):
         s, sr = self.k.create(text, voice=self.src, speed=speed, lang='en-us')
         with tempfile.TemporaryDirectory() as d:
             a = f'{d}/a.wav'; sf.write(a, s, sr)
             w = self.vc.generate(a, target_voice_path=self.ref).squeeze().cpu().numpy().astype('float32')
+        if self.expr and abs(self.expr - 1) > 0.01: w = expand_pitch(w, self.vc.sr, self.expr)
         w = squeeze_pauses(w, self.vc.sr)
         return _ff(w, self.vc.sr, CHAIN)
 
