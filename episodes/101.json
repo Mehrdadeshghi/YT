@@ -1,0 +1,154 @@
+{
+ "ep": 101,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "loop": true,
+ "recap": false,
+ "series": "FOOTBALL'S CRAZIEST MOMENTS · PART 3",
+ "prog": 1,
+ "title": "The Hand of God, 1986",
+ "mood": "epic",
+ "hook": [
+  "LET'S BE HONEST:",
+  "THIS WAS A HANDBALL."
+ ],
+ "voice": "native",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Let's be honest. This World Cup goal was a handball.",
+   "es": "Seamos sinceros. Este gol del Mundial fue con la mano.",
+   "de": "Mal ehrlich: Dieses WM-Tor war ein Handspiel."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Mexico City, 1986. Argentina against England, four years after the Falklands War.",
+     "cap": "Argentina vs *England.*",
+     "es": "Ciudad de México, 1986. Argentina contra Inglaterra, cuatro años después de la guerra de las Malvinas.",
+     "de": "Mexiko-Stadt, 1986. Argentinien gegen England, vier Jahre nach dem Falklandkrieg."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Fifty-first minute. Maradona jumps with England's keeper, and knocks the ball in with his left hand.",
+     "cap": "With his *left hand.*",
+     "es": "Minuto cincuenta y uno. Maradona salta con el portero inglés y mete el balón con la mano izquierda.",
+     "de": "Einundfünfzigste Minute. Maradona springt mit Englands Torwart hoch und stößt den Ball mit der linken Hand ins Tor."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The referee didn't see it. Goal.",
+     "cap": "The referee: *goal.*",
+     "es": "El árbitro no lo vio. Gol.",
+     "de": "Der Schiri hat es nicht gesehen. Tor."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Afterwards, Maradona said: a little with the head of Maradona, and a little with the hand of God.",
+     "cap": "The *Hand of God.*",
+     "es": "Después, Maradona dijo: un poco con la cabeza de Maradona y otro poco con la mano de Dios.",
+     "de": "Danach sagte Maradona: ein bisschen mit dem Kopf von Maradona und ein bisschen mit der Hand Gottes."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Four minutes later, he ran sixty yards past four English players, and scored the Goal of the Century.",
+     "cap": "The *Goal of the Century.*",
+     "es": "Cuatro minutos después, recorrió sesenta yardas dejando atrás a cuatro ingleses y marcó el Gol del Siglo.",
+     "de": "Vier Minuten später lief er sechzig Yards an vier Engländern vorbei und schoss das Tor des Jahrhunderts."
+    },
+    {
+     "at": "0.15",
+     "text": "Cheat, or genius? Comment below, and subscribe for more football madness.",
+     "cta": true,
+     "es": "¿Tramposo o genio? Comenta y suscríbete para más locuras del fútbol.",
+     "de": "Betrüger oder Genie? Kommentier und abonnier für mehr Fußball-Wahnsinn."
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Cheat or genius?",
+  "a": "CHEAT",
+  "b": "GENIUS",
+  "emoji": "monocle"
+ },
+ "source": "https://en.wikipedia.org/wiki/Argentina_v_England_(1986_FIFA_World_Cup)",
+ "photos": [
+  {
+   "id": "hand",
+   "file": "File:Maradona shilton mano dios.jpg"
+  },
+  {
+   "id": "hand2",
+   "file": "File:Maradona mano de dios.jpg"
+  },
+  {
+   "id": "azteca",
+   "file": "File:Estadio Azteca desde el aire 3.jpg"
+  },
+  {
+   "id": "century",
+   "file": "File:Maradona vs fenwick 1986.jpg"
+  },
+  {
+   "id": "scoring",
+   "file": "File:Maradona scoring england 1986.jpg"
+  },
+  {
+   "id": "celeb",
+   "file": "File:Maradona vs england.jpg"
+  },
+  {
+   "id": "cup",
+   "file": "File:Maradona cup azteca.jpg"
+  }
+ ],
+ "lottie": [
+  "eyes",
+  "monocle",
+  "warning",
+  "cross",
+  "check",
+  "fire",
+  "mindblown",
+  "starstruck",
+  "angry"
+ ]
+}
