@@ -1,0 +1,150 @@
+{
+ "ep": 100,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "loop": true,
+ "recap": false,
+ "series": "FOOTBALL'S CRAZIEST MOMENTS · PART 2",
+ "prog": 0,
+ "title": "Zidane headbutt, 2006 World Cup final",
+ "mood": "epic",
+ "hook": [
+  "WAIT…",
+  "WHAT DID HE DO?!"
+ ],
+ "voice": "native",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "World Cup final. His last game ever. And he did this.",
+   "es": "Final del Mundial. Su último partido. Y hizo esto.",
+   "de": "WM-Finale. Sein allerletztes Spiel. Und dann das."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Zinedine Zidane. He scored first, with a cheeky chip penalty.",
+     "cap": "Zidane scores *first.*",
+     "es": "Zinedine Zidane. Marcó primero, con un penalti a lo Panenka.",
+     "de": "Zinedine Zidane. Er traf zuerst, mit einem frechen Lupfer-Elfmeter."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Italy equalised. One-all, extra time. Then, in the hundred and ninth minute…",
+     "cap": "*1–1.* Minute *109…*",
+     "es": "Italia empató. Uno a uno, prórroga. Y entonces, en el minuto ciento nueve…",
+     "de": "Italien glich aus. Eins zu eins, Verlängerung. Dann, in der hundertneunten Minute…"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Materazzi tugged his shirt and insulted his sister. Zidane turned around, and headbutted him in the chest.",
+     "cap": "He *headbutted* him.",
+     "es": "Materazzi le tiró de la camiseta e insultó a su hermana. Zidane se dio la vuelta y le dio un cabezazo en el pecho.",
+     "de": "Materazzi zog an seinem Trikot und beleidigte seine Schwester. Zidane drehte sich um und rammte ihm den Kopf in die Brust."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The referee missed it. The fourth official saw it. Red card.",
+     "cap": "*Red card.*",
+     "es": "El árbitro no lo vio. El cuarto árbitro sí. Tarjeta roja.",
+     "de": "Der Schiri hat es nicht gesehen. Der vierte Offizielle schon. Rote Karte."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Italy won on penalties. And Zidane? Still voted best player of the tournament.",
+     "cap": "Still the *best player.*",
+     "es": "Italia ganó en los penaltis. ¿Y Zidane? Aun así, elegido mejor jugador del torneo.",
+     "de": "Italien gewann im Elfmeterschießen. Und Zidane? Trotzdem zum besten Spieler des Turniers gewählt."
+    },
+    {
+     "at": "0.15",
+     "text": "Who was to blame, Zidane or Materazzi? Comment below, and subscribe for more football madness.",
+     "cta": true,
+     "es": "¿Quién tuvo la culpa, Zidane o Materazzi? Comenta y suscríbete para más locuras del fútbol.",
+     "de": "Wer war schuld, Zidane oder Materazzi? Kommentier und abonnier für mehr Fußball-Wahnsinn."
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Who was to blame?",
+  "a": "ZIDANE",
+  "b": "MATERAZZI",
+  "emoji": "angry"
+ },
+ "source": "https://en.wikipedia.org/wiki/2006_FIFA_World_Cup_final",
+ "photos": [
+  {
+   "id": "berlin",
+   "file": "File:Football-stadium-berlin.jpg"
+  },
+  {
+   "id": "zz",
+   "file": "File:Zinedine zidane wcf 2006.jpg"
+  },
+  {
+   "id": "match",
+   "file": "File:Italy vs France 2006.jpg"
+  },
+  {
+   "id": "mat",
+   "file": "File:Marco Materazzi - Inter Mailand (1).jpg"
+  },
+  {
+   "id": "ball",
+   "file": "File:TG ITA-FRA.jpg"
+  },
+  {
+   "id": "rome",
+   "file": "File:Inchada en Roma.JPG"
+  }
+ ],
+ "lottie": [
+  "boom",
+  "scream",
+  "angry",
+  "flushed",
+  "warning",
+  "siren",
+  "trophy",
+  "mindblown",
+  "eyes"
+ ]
+}
