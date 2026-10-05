@@ -1,15 +1,11 @@
-video: Polygoon voetbal wereldkampioenschap 1974 finale
-video: Cruijff
-video: Nederland West-Duitsland 1974
-video: wereldkampioenschap voetbal 1978 Argentinië
-video: Copa do Mundo 1970 Brasil
-video: Pelé
-video: Maracanã 1950
-video: Garrincha
-video: football match 1930s newsreel
-video: Fußball Weltmeisterschaft 1954
-video: Puskás
-video: Ajax Europa Cup 1971
-1974 FIFA World Cup final | 1974 FIFA World Cup Final
-Uruguay v Brazil (1950 FIFA World Cup) | Maracanazo
-1970 FIFA World Cup final | 1970 FIFA World Cup Final
+1974 FIFA World Cup final | Final of the 1974 FIFA World Cup
+Uruguay v Brazil (1950 FIFA World Cup) | Brazil v Uruguay, 16 July 1950
+Maracanã Stadium | 1950 FIFA World Cup
+image: Neeskens 1974 wereldkampioenschap
+image: Gerd Müller 1974
+image: Cruijff 1974 wereldkampioenschap
+image: Maracanã 1950
+image: Ghiggia
+image: Barbosa goleiro 1950
+video: torcida estádio futebol
+video: football fans stadium chant
