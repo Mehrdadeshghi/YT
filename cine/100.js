@@ -36,10 +36,10 @@ function goldBall(t, tIn, x, y, r) { const lt = t - tIn; if (lt < 0) return; con
 const zzAt = (t, tHit, o = {}) => A(ZZ, Object.assign({ face: t > tHit - 0.2 ? 'angry' : 'talk', tilt: t > tHit - 0.12 ? 0.42 * Math.exp(-Math.max(0, t - tHit - 0.25) * 2) + 0.06 : 0, armL: 'down', armR: 'down' }, o));
 const matAt = (t, tHit, o = {}) => A(MAT, Object.assign({ face: t > tHit ? 'shock' : 'smug', flip: true, tilt: t > tHit ? Math.min(1.45, (t - tHit) * 4) : 0, armL: t > tHit ? 'up' : 'out' }, o));
 
-VIS.open = fscene(null, N, { bg: 'match', a: [0.5, 0.5, 1.15], b: [0.5, 0.5, 1.3], dim: 0.45, hook: true, k: [[0.1, 'boom', 1.2], [0.12, 'hit', 1.4], [0.5, 'thump', 1]],
+VIS.open = fscene(null, N, { bg: 'match', a: [0.5, 0.5, 1.15], b: [0.5, 0.5, 1.3], dim: 0.45, hook: true, k: [[0.02, 'boom', 1.2], [0.03, 'hit', 1.4], [0.4, 'thump', 1]],
   x: (t) => { g.save(); g.translate(shake(t, 0.1, 18), 0);
-    fig(t, -1, 420, 1420, 0.72 * FIGSCALE, zzAt(t, 0.1, { face: 'angry' })); fig(t, -1, 640, 1420, 0.72 * FIGSCALE, matAt(t, 0.1));
-    burst(t, 0.15, 820, 900, 120, 'WHAT?!', '#FF5A50'); g.restore(); flash(t, 0.1, 0.5, 0.12); lot(t, 0.4, 'scream', 230, 950, 160); } });
+    fig(t, -1, 380, 1420, 0.72 * FIGSCALE, zzAt(t, -0.12, { face: 'angry' })); fig(t, -1, 700, 1420, 0.72 * FIGSCALE, matAt(t, -0.12));
+    burst(t, -0.2, 820, 880, 120, 'WHAT?!', '#FF5A50'); g.restore(); flash(t, 0.0, 0.5, 0.12); lot(t, 0.4, 'scream', 230, 950, 160); } });
 
 VIS[0] = fscene(0, N, { bg: 'zz', a: [0.55, 0.4, 1.0], b: [0.55, 0.4, 1.12], dim: 0.45, badge: 'REAL PHOTO · ZIDANE IN THE FINAL, 9 JULY 2006', k: [[0.9, 'swish', 0.8], [1.3, 'land', 0.9], [1.55, 'hit', 1.1]],
   figs: [[0.1, 230, 1150, 0.58, (t) => A(ZZ, { face: t > 1.55 ? 'smug' : 'talk', armR: t > 1.55 ? 'fist' : 'down' })]],
@@ -65,5 +65,5 @@ VIS[3] = fscene(3, N, { bg: 'berlin', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.1], di
 
 VIS[4] = fscene(4, N, { bg: 'rome', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.1], dim: 0.35, badge: 'REAL PHOTO · ITALY FANS CELEBRATE IN ROME', k: [[0.5, 'hit', 1], [1.3, 'ding', 0.9], [1.35, 'coin', 0.7]],
   figs: [[0.1, 250, 1150, 0.58, A(MAT, { face: 'happy', armL: 'up', armR: 'up' })], [0.3, 820, 1150, 0.58, A(ZZ, { face: 'sad', flip: true })]],
-  x: (t) => { board(t, 0.1, 540, 520, { clock: 'PENALTIES', clockCol: '#2E7D32', score: ['3', '5'] }); lot(t, 0.5, 'trophy', 250, 860, 150);
-    goldBall(t, 1.3, 820, 860, 60); chip('GOLDEN BALL', 820, 960, t, 1.4, { size: 26, bg: GOLDC, fg: '#111' }); lot(t, 1.6, 'flushed', 930, 760, 110); } });
+  x: (t) => { board(t, 0.1, 540, 520, { clock: 'PENALTIES', clockCol: '#2E7D32', score: ['3', '5'] }); lot(t, 0.5, 'trophy', 430, 930, 130);
+    goldBall(t, 1.3, 600, 860, 55); chip('GOLDEN BALL', 600, 950, t, 1.4, { size: 26, bg: GOLDC, fg: '#111' }); } });
