@@ -30,6 +30,30 @@ def _score(w, sr, text):
     exp = max(0.8, len(re.sub(r'[^A-Za-z0-9]', '', text)) / 14.5)
     return abs(len(w) / sr - exp) / exp + 2.0 * max(0, longest * 0.02 - 0.45)
 
+def squeeze_pauses(w, sr, keep=0.18, thr_db=-38):
+    """house tempo: shorten every pause longer than `keep` seconds to `keep` (no dead air, rhythm stays natural)"""
+    fr = int(0.01 * sr); n = len(w) // fr
+    if n == 0: return w
+    peak = np.max(np.abs(w)) + 1e-9
+    quiet = np.array([20 * np.log10(np.sqrt(np.mean(w[i * fr:(i + 1) * fr] ** 2)) / peak + 1e-9) < thr_db for i in range(n)])
+    out, i, K = [], 0, int(keep / 0.01)
+    while i < n:
+        j = i
+        while j < n and quiet[j] == quiet[i]: j += 1
+        seg = w[i * fr:j * fr]
+        if quiet[i] and (j - i) > K: seg = np.concatenate([seg[:K // 2 * fr], seg[-(K - K // 2) * fr:]])
+        out.append(seg); i = j
+    out.append(w[n * fr:]); return np.concatenate(out)
+
+def fit_tempo(w, sr, target, max_speed=1.35):
+    """squeeze pauses, then speed up (pitch kept) so the line lasts about `target` seconds"""
+    w = squeeze_pauses(w, sr)
+    nz = np.where(np.abs(w) > 0.01)[0]
+    if len(nz): w = w[max(0, nz[0] - int(0.02 * sr)): nz[-1] + int(0.06 * sr)]
+    sp = min(max_speed, max(1.0, (len(w) / sr) / target))
+    if sp > 1.01: w, sr = _ff(w, sr, f'atempo={sp:.3f}')
+    return w, sr
+
 class Cloner:
     def __init__(self, ref, lang='en'):
         import torch
