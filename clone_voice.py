@@ -1,13 +1,34 @@
 #!/usr/bin/env python3
 """Voice cloning with Chatterbox (Resemble AI, MIT licence): speaks any text in the voice of a short reference recording.
 
-    python3 clone_voice.py test assets/voice/ref.wav "line one" "line two" ...   -> dist/clone/clone_XX.wav + timing log
-    from clone_voice import Cloner; c = Cloner(ref); samples, sr = c.create(text, speed=1.15)
-
-The reference only gives the timbre; pronunciation comes from the model, so the accent of the speaker matters little.
-speed > 1 is applied afterwards with ffmpeg atempo (keeps the pitch)."""
-import os, subprocess, sys, tempfile, time
+Quality + prosody rules (see README "Voice"):
+- reference: the cleanest ~10 s of the recording (Chatterbox conditions on the first ~10 s only), lightly denoised
+- expressive settings: exaggeration 0.55-0.8 (bigger pitch accents / F0 range), cfg_weight ~0.3 (natural pacing)
+- several takes per line, keep the one with the most plausible length and no long silences (no hallucinated tails)
+- broadcast voice chain: high-pass, de-mud, presence + air, de-esser, compressor, limiter
+- tempo only lightly adjusted (atempo <= 1.1) so the voice stays natural
+"""
+import os, re, subprocess, sys, tempfile, time
 import numpy as np, soundfile as sf
+
+CHAIN = ('highpass=f=75,equalizer=f=250:t=q:w=1.2:g=-2.5,equalizer=f=3400:t=q:w=1.0:g=3,'
+         'highshelf=f=9000:g=2,deesser=i=0.35,acompressor=threshold=-20dB:ratio=3:attack=4:release=90:makeup=2,'
+         'alimiter=limit=0.9')
+
+def _ff(w, sr, filt):
+    with tempfile.TemporaryDirectory() as d:
+        a, b = f'{d}/a.wav', f'{d}/b.wav'; sf.write(a, w, sr)
+        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', a, '-filter:a', filt, b], check=True)
+        return sf.read(b, dtype='float32')
+
+def _score(w, sr, text):
+    """lower is better: deviation from expected length (~14.5 chars/s at natural pace) + penalty for long silences"""
+    nz = np.abs(w) > 0.02; fr = int(0.02 * sr); n = len(w) // fr
+    act = np.array([nz[i * fr:(i + 1) * fr].mean() > 0.05 for i in range(n)])
+    run = longest = 0
+    for a in act: run = 0 if a else run + 1; longest = max(longest, run)
+    exp = max(0.8, len(re.sub(r'[^A-Za-z0-9]', '', text)) / 14.5)
+    return abs(len(w) / sr - exp) / exp + 2.0 * max(0, longest * 0.02 - 0.45)
 
 class Cloner:
     def __init__(self, ref, lang='en'):
@@ -21,23 +42,25 @@ class Cloner:
         else:
             from chatterbox.mtl_tts import ChatterboxMultilingualTTS
             self.m = ChatterboxMultilingualTTS.from_pretrained(device=dev)
-    def create(self, text, voice=None, speed=1.0, lang=None, exaggeration=0.55, cfg=0.45):
-        kw = dict(audio_prompt_path=self.ref, exaggeration=exaggeration, cfg_weight=cfg)
-        if self.lang != 'en': kw['language_id'] = self.lang
-        w = self.m.generate(text, **kw).squeeze().cpu().numpy().astype('float32'); sr = self.m.sr
-        if abs(speed - 1) > 0.01:
-            with tempfile.TemporaryDirectory() as d:
-                a, b = f'{d}/a.wav', f'{d}/b.wav'; sf.write(a, w, sr)
-                subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', a, '-filter:a', f'atempo={speed:.3f}', b], check=True)
-                w, sr = sf.read(b, dtype='float32')
-        return w, sr
+        self.takes = int(os.environ.get('CLONE_TAKES', '3'))
+    def create(self, text, voice=None, speed=1.0, lang=None, exaggeration=None, cfg=0.3):
+        ex = exaggeration if exaggeration is not None else (0.75 if ('?' in text or '!' in text) else 0.6)
+        best = None
+        for k in range(self.takes):
+            kw = dict(audio_prompt_path=self.ref, exaggeration=ex, cfg_weight=cfg)
+            if self.lang != 'en': kw['language_id'] = self.lang
+            w = self.m.generate(text, **kw).squeeze().cpu().numpy().astype('float32'); sr = self.m.sr
+            sc = _score(w, sr, text)
+            if best is None or sc < best[0]: best = (sc, w)
+            if sc < 0.12: break                      # good enough, skip further takes
+        w = best[1]
+        filt = CHAIN + (f',atempo={min(1.1, speed):.3f}' if abs(speed - 1) > 0.01 else '')
+        return _ff(w, sr, filt)
 
 if __name__ == '__main__' and sys.argv[1] == 'test':
     ref, lines = sys.argv[2], sys.argv[3:]
-    os.makedirs('dist/clone', exist_ok=True); t0 = time.time(); c = Cloner(ref); print(f'model loaded in {time.time() - t0:.0f}s', flush=True)
+    out = os.environ.get('CLONE_OUT', 'dist/clone'); os.makedirs(out, exist_ok=True); t0 = time.time(); c = Cloner(ref); print(f'model loaded in {time.time() - t0:.0f}s', flush=True)
     for i, ln in enumerate(lines):
-        t1 = time.time(); w, sr = c.create(ln, speed=float(os.environ.get('CLONE_SPEED', '1.15')))
-        sf.write(f'dist/clone/clone_{i:02d}.wav', w, sr, subtype='PCM_16')
+        t1 = time.time(); w, sr = c.create(ln, speed=float(os.environ.get('CLONE_SPEED', '1.05')))
+        sf.write(f'{out}/clone_{i:02d}.wav', w, sr, subtype='PCM_16')
         print(f'{i:02d} {len(w) / sr:5.2f}s audio in {time.time() - t1:5.1f}s  | {ln}', flush=True)
-    subprocess.run('ffmpeg -y -loglevel error ' + ' '.join(f'-i dist/clone/clone_{i:02d}.wav' for i in range(len(lines))) +
-                   f' -filter_complex "concat=n={len(lines)}:v=0:a=1" dist/clone/all.m4a', shell=True, check=True)
