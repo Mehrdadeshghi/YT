@@ -47,7 +47,7 @@ jobs:
           HF=https://huggingface.co/rhasspy/piper-voices/resolve/main/de/de_DE/thorsten/high
           [ -f models/de_DE-thorsten-high.onnx ] || curl -sSL -o models/de_DE-thorsten-high.onnx $HF/de_DE-thorsten-high.onnx
           [ -f models/de_DE-thorsten-high.onnx.json ] || curl -sSL -o models/de_DE-thorsten-high.onnx.json $HF/de_DE-thorsten-high.onnx.json
-      - name: Voice clone model (only if an episode uses "voice": "clone")
+      - name: Voice clone model (only if an episode uses the cloned voice)
         run: |
           for e in ${{ steps.eps.outputs.list }}; do grep -q '"voice": *"clone"' episodes/$e.json && NEED=1; done
           if [ -n "$NEED" ]; then pip install -q chatterbox-tts 2>&1 | tail -2; fi
