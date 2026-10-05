@@ -1,0 +1,153 @@
+{
+ "ep": 99,
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "figures": true,
+ "loop": true,
+ "recap": false,
+ "series": "FOOTBALL'S CRAZIEST MOMENTS · PART 1",
+ "prog": 2,
+ "title": "1999 Champions League final",
+ "mood": "epic",
+ "hook": [
+  "BAYERN HAD",
+  "ALREADY WON."
+ ],
+ "voice": "native",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Bayern had already won the Champions League.",
+   "es": "El Bayern ya había ganado la Champions League.",
+   "de": "Bayern hatte die Champions League schon gewonnen."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Final, 1999. Bayern led after six minutes, then hit the post and the crossbar.",
+     "cap": "Bayern *1–0.* Post. *Crossbar.*",
+     "es": "Final de 1999. El Bayern marcó a los seis minutos y luego estrelló un balón en el poste y otro en el larguero.",
+     "de": "Finale 1999. Bayern führte nach sechs Minuten und traf danach noch Pfosten und Latte."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "With seconds left, Europe's football boss walked down to hand over the trophy. The ribbons were already on it.",
+     "cap": "The ribbons were *already on it.*",
+     "es": "A falta de segundos, el jefe del fútbol europeo bajó a entregar el trofeo. Ya tenía las cintas puestas.",
+     "de": "Sekunden vor Schluss ging Europas Fußballboss schon runter, um den Pokal zu überreichen. Die Bänder waren schon dran."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then, injury time. Thirty-six seconds in: Sheringham. One-all.",
+     "cap": "*90+1:* Sheringham. *1–1.*",
+     "es": "Entonces, el tiempo añadido. A los treinta y seis segundos: Sheringham. Uno a uno.",
+     "de": "Dann die Nachspielzeit. Nach sechsunddreißig Sekunden: Sheringham. Eins zu eins."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Moments later: Solshair. Two-one, United!",
+     "cap": "*90+3:* Solskjær. *2–1!*",
+     "es": "Momentos después: Solskjær. ¡Dos a uno para el United!",
+     "de": "Kurz danach: Solskjær. Zwei zu eins für United!"
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Bayern's players collapsed. Europe's football boss said: the winners are crying, and the losers are dancing.",
+     "cap": "*Winners crying.* Losers *dancing.*",
+     "es": "Los jugadores del Bayern se derrumbaron. El jefe del fútbol europeo dijo: los ganadores lloran y los perdedores bailan.",
+     "de": "Bayerns Spieler brachen zusammen. Europas Fußballboss sagte: Die Sieger weinen, und die Verlierer tanzen."
+    },
+    {
+     "at": "0.15",
+     "text": "Cruellest defeat in football history? Yes or no? Comment below, and subscribe for more football madness.",
+     "cta": true,
+     "es": "¿La derrota más cruel de la historia del fútbol? ¿Sí o no? Comenta y suscríbete para más locuras del fútbol.",
+     "de": "Die grausamste Niederlage der Fußballgeschichte? Ja oder nein? Kommentier und abonnier für mehr Fußball-Wahnsinn."
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Cruellest defeat ever?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "cry"
+ },
+ "source": "https://en.wikipedia.org/wiki/1999_UEFA_Champions_League_final",
+ "photos": [
+  {
+   "id": "lineup",
+   "file": "File:1999 UEFA Champions League Final teams line up.jpg"
+  },
+  {
+   "id": "ceremony",
+   "file": "File:1999 UEFA Champions League Final opening ceremony.jpg"
+  },
+  {
+   "id": "cup",
+   "file": "File:European Cup-Champions League (612205234).jpg"
+  },
+  {
+   "id": "johan",
+   "file": "File:Lennart johansson (cropped).jpg"
+  },
+  {
+   "id": "sher",
+   "file": "File:Teddy Sheringham - 53491783932.jpg"
+  },
+  {
+   "id": "sol",
+   "file": "File:Ole G Solskjaer.jpg"
+  },
+  {
+   "id": "celeb",
+   "file": "File:1999 UEFA Champions League celebration (edited).jpg"
+  }
+ ],
+ "lottie": [
+  "hourglass",
+  "alarm",
+  "mindblown",
+  "scream",
+  "cry",
+  "boom",
+  "party",
+  "fire"
+ ]
+}
