@@ -10,3 +10,4 @@ models
 assets/clips/
 assets/voice/*.wav
 !assets/voice/ref_placeholder.wav
+assets/music/
