@@ -1,11 +1,16 @@
-1974 FIFA World Cup final | Final of the 1974 FIFA World Cup
-Uruguay v Brazil (1950 FIFA World Cup) | Brazil v Uruguay, 16 July 1950
-Maracanã Stadium | 1950 FIFA World Cup
-image: Neeskens 1974 wereldkampioenschap
-image: Gerd Müller 1974
-image: Cruijff 1974 wereldkampioenschap
-image: Maracanã 1950
-image: Ghiggia
-image: Barbosa goleiro 1950
-video: torcida estádio futebol
-video: football fans stadium chant
+2012 UEFA Champions League final | 2012 UEFA Champions League Final
+2011–12 UEFA Champions League knockout phase | 2011–12 UEFA Champions League
+image: Didier Drogba Chelsea
+image: Fernando Torres Chelsea 2012
+image: John Terry Chelsea
+image: Petr Čech Chelsea
+image: Chelsea Champions League 2012 celebration
+image: Allianz Arena Champions League final 2012
+image: Lionel Messi 2012 Barcelona
+image: Stamford Bridge stadium
+image: Arjen Robben Bayern 2012
+image: Manuel Neuer 2012
+video: Allianz Arena
+video: Stamford Bridge
+video: Camp Nou
+video: Chelsea fans
