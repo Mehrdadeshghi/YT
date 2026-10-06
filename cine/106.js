@@ -28,7 +28,7 @@ VIS[0] = S(() => { const bh = sw('bello', 0.8), br = sw('brazil', 1.6), since = 
 VIS[1] = S(() => { const ney = sw('neymar', 0.6), vert = sw('fractured', 1.2), cap = sw('captain', 2.0), sus = sw('suspended', 2.8);
   return pscene(1, N, { dim: 0.3, k: [[ney, 'crack', 1], [vert, 'thump', 1], [cap, 'whoosh', 0.6], ...drop(sus, 0.4)],
     parts: [{ from: 0, ph: 'col14', a: [0.42, 0.45, 1.3], b: [0.42, 0.45, 1.6], badge: 'REAL PHOTO · BRAZIL V COLOMBIA, 4 JULY 2014' },
-            { from: cap, ph: 'thiago', a: [0.33, 0.55, 2.0], b: [0.33, 0.55, 2.3], badge: 'REAL PHOTO · THIAGO SILVA, JULY 2014', flash: true }],
+            { from: cap, ph: 'thiago', a: [0.38, 0.3, 1.15], b: [0.38, 0.25, 1.3], badge: 'REAL PHOTO · THIAGO SILVA, JULY 2014', flash: true }],
     x: (t) => { if (t > vert && t < cap) chip('NEYMAR: FRACTURED VERTEBRA', 540, 600, t, vert, { size: 34, bg: '#E3101E', fg: '#FFF' });
       if (t > ney && t < cap) big(t, ney, 'OUT!', { size: 130, y: 900 });
       if (t > sus) { redCard(t, sus, 860, 760, 0.7); big(t, sus, 'SUSPENDED!', { size: 110, y: 960 }); } } }); });
