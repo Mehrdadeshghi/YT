@@ -72,16 +72,160 @@
   {
    "id": "munich",
    "video": "File:Nightfall timelapse from Olympiaturm.ogv",
-   "fps": 1,
-   "from": 0,
-   "len": 84
+   "from": 44,
+   "len": 6
   },
   {
    "id": "cfans21",
    "video": "File:2021-05-29 - Man City v Chelsea - Chelsea celebrating and Victory ceremony.webm",
-   "fps": 1,
    "from": 0,
-   "len": 188
+   "len": 7
   }
+ ],
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "glint": true,
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "mood": "epic",
+ "voice": "native",
+ "series": "CHELSEA 2012 · PART 2 OF 2",
+ "prog": 1,
+ "title": "Champions League final 2012",
+ "hook": [
+  "CORNERS: 20 – 1.",
+  "GUESS WHO WON."
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Corners: twenty to one. Guess who won the final.",
+   "es": "Córners: veinte a uno. Adivina quién ganó la final.",
+   "de": "Ecken: zwanzig zu eins. Rate mal, wer das Finale gewann."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 4,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Munich, 2012. The Champions League final, in Bayern's own stadium.",
+     "cap": "Final in Bayern's *own stadium.*",
+     "es": "Múnich, 2012. La final de la Champions, en el propio estadio del Bayern.",
+     "de": "München, 2012. Das Champions-League-Finale, im eigenen Stadion von Bayern."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Chelsea were missing four suspended players, including captain John Terry.",
+     "cap": "*4 players* suspended.",
+     "es": "Al Chelsea le faltaban cuatro sancionados, incluido el capitán John Terry.",
+     "de": "Chelsea fehlten vier gesperrte Spieler, darunter Kapitän John Terry."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Bayern attacked and attacked. Eighty-third minute: Müller. One-nil.",
+     "cap": "Müller, *83'.* *1–0.*",
+     "es": "El Bayern atacó sin parar. Minuto ochenta y tres: Müller. Uno a cero.",
+     "de": "Bayern stürmte und stürmte. Dreiundachtzigste Minute: Müller. Eins zu null."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Eighty-eighth minute. Chelsea's first corner of the game. Mata crosses… Drogba. One-all.",
+     "cap": "First corner. *Drogba.*",
+     "es": "Minuto ochenta y ocho. El primer córner del Chelsea en todo el partido. Centra Mata… Drogba. Uno a uno.",
+     "de": "Achtundachtzigste Minute. Chelseas erste Ecke im ganzen Spiel. Mata flankt… Drogba. Eins zu eins."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Extra time: Drogba fouls Ree-berry. Penalty. Robben… saved by Chek.",
+     "cap": "Robben… *saved.*",
+     "es": "Prórroga: Drogba derriba a Ribéry. Penalti. Robben… lo para Čech.",
+     "de": "Verlängerung: Drogba foult Ribéry. Elfmeter. Robben… Čech hält."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Penalties. Chek saves two, and the last kick is Drogba's.",
+     "cap": "Last kick: *Drogba.*",
+     "es": "Penaltis. Čech para dos, y el último lanzamiento es de Drogba.",
+     "de": "Elfmeterschießen. Čech hält zwei, und der letzte Schuss gehört Drogba."
+    }
+   ]
+  },
+  {
+   "dur": 4,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Chelsea win their first Champions League. In Bayern's stadium.",
+     "cap": "In Bayern's *stadium.*",
+     "es": "El Chelsea gana su primera Champions. En el estadio del Bayern.",
+     "de": "Chelsea gewinnt seine erste Champions League. Im Stadion von Bayern."
+    },
+    {
+     "at": "0.15",
+     "text": "Luckiest win in Champions League history? Yes or no? Comment below, and subscribe for more football madness.",
+     "cta": true,
+     "es": "¿La victoria con más suerte de la historia de la Champions? ¿Sí o no? Comenta y suscríbete para más locuras del fútbol.",
+     "de": "Der glücklichste Sieg der Champions-League-Geschichte? Ja oder nein? Kommentier und abonnier für mehr Fußball-Wahnsinn."
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Luckiest win ever?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "cry"
+ },
+ "source": "https://en.wikipedia.org/wiki/2012_UEFA_Champions_League_final",
+ "lottie": [
+  "mindblown",
+  "scream",
+  "fire",
+  "eyes",
+  "cry",
+  "trophy",
+  "party",
+  "alarm",
+  "flushed"
  ]
 }
