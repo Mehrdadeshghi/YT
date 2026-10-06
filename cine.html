@@ -109,9 +109,28 @@ function tag(t, i, n) {
 }
 
 // ---------- captions: big, centred, current word boxed in gold ----------
+// word-synced captions (ep.wordCaps + Whisper word times in voice.json): every spoken word, 1-3 per chunk, boxed when spoken;
+// words that are *starred* in "cap" (or end in "!") are gold and punch the camera
+const nw = (s) => s.toLowerCase().normalize('NFD').replace(/[^a-z0-9]/g, '');
+function wordCaps(sg, pl) {
+  const spell = EP_RAW.spell || {}, hot = new Set(((sg.cap || '').match(/\*[^*]+\*/g) || []).flatMap((m) => m.split(' ').map(nw)).filter(Boolean));
+  const show = sg.show ? sg.show.split(' ').filter(Boolean) : null, useShow = show && show.length === pl.words.length;
+  const words = pl.words.map((x, j) => { let w = useShow ? show[j] : x.w; const core = w.replace(/[^\p{L}\p{N}'-]/gu, '');
+    if (spell[core]) w = w.replace(core, spell[core]);
+    const a = hot.has(nw(x.w)) || hot.has(nw(w)) || /!$/.test(w);
+    return { w: w.replace(/\.\.\.|…/g, '…'), a, t0: pl.at + x.t0, t1: pl.at + x.t1 }; });
+  const chunks = []; let cur = [], len = 0;
+  words.forEach((x, k) => { cur.push(k); len += x.w.length + 1;
+    if (/[.?!:,…]["”]?$/.test(x.w) || cur.length >= 3 || len > 15 || (words[k + 1] && words[k + 1].t0 - x.t1 > 0.25)) { chunks.push(cur); cur = []; len = 0; } });
+  if (cur.length) chunks.push(cur);
+  words.forEach((x) => { if (x.a) PUNCH.push(x.t0); });
+  return { at: pl.at, end: pl.end, words, chunks, wc: true };
+}
 function makeCaptions(segs, placed, skip = []) {
   return (segs || []).map((sg, si) => {
-    const pl = placed[si]; if (!pl || !sg.cap || skip.includes(si)) return null;
+    const pl = placed[si]; if (!pl || skip.includes(si)) return null;
+    if (EP_RAW.wordCaps && pl.words && !sg.cta) return wordCaps(sg, pl);
+    if (!sg.cap) return null;
     const raw = sg.cap.split(' ').filter(Boolean); let acc = false;
     const words = raw.map((tok) => { let w = tok, a = acc;
       if (/^[^A-Za-z0-9]*\*/.test(w)) { a = true; acc = true; w = w.replace('*', ''); }
@@ -206,26 +225,34 @@ function voPlace(segs = [], durs = []) {
   let end = 0;
   return segs.map((sg, i) => { const d = durs[i] ? durs[i].dur : 0;
     const at = typeof sg.at === 'string' ? end + parseFloat(sg.at) : sg.at;
-    end = at + d; return { at, end, file: durs[i] && durs[i].file }; });
+    end = at + d; return { at, end, file: durs[i] && durs[i].file, words: durs[i] && durs[i].words }; });
 }
+// sw('drogba') → the moment that word is spoken, in the current scene's visual time (k-th occurrence, fallback d)
+let AT = null, PUNCH = [], EP_RAW = {};
+function sw(q, d = 1, k = 0) { return AT ? AT(q, d, k) : d; }
+function wordClock(vo, toVis) { const all = vo.flatMap((v) => (v.words || []).map((x) => ({ n: nw(x.w), t: v.at + x.t0 })));
+  return (q, d = 1, k = 0) => { const n = nw(q), hit = all.filter((x) => x.n.startsWith(n))[k]; return hit ? toVis(hit.t) : d; }; }
 const ceilHalf = (x) => Math.ceil(x * 2) / 2;
 function build(ep, voice) {
   if (ep.tight == null && !WIDE) ep.tight = true;            // house standard for Shorts: no dead air (set "tight": false to opt out)
   if (ep.lang === 'de') Object.assign(UI, { sub: 'ABONNIEREN', subbed: 'ABONNIERT', photo: 'ECHTES FOTO', foot: 'ECHTE AUFNAHMEN', full: 'GANZES VIDEO · LINK UNTEN' }, ep.ui || {});
-  EP = ep; const V = voice || { open: [], scenes: [] };
+  EP = ep; EP_RAW = ep; PUNCH = []; const V = voice || { open: [], scenes: [] };
   const openVO = voPlace(ep.vo_open, V.open);
   const ceilQ = (x) => Math.ceil(x * 4) / 4;                 // ep.tight: no dead air — scenes end 0.2 s after the voice, animations are time-compressed to fit
   const openDur = ep.tight ? Math.max(ep.openMin ?? 1.6, ceilQ(openVO.at(-1).end + 0.25)) : Math.max(ep.openMin ?? 2.5, ceilHalf(openVO.at(-1).end + 0.45));
   openVO.forEach((v) => cue(v.at, 'vo', 1, v.file));
-  SCENES = [{ from: 0, to: openDur, pre: 0, draw: VIS.open((e, ty, gn, p) => cue(e, ty, gn, p)) }];
+  const atOpen = wordClock(openVO, (x) => x); AT = atOpen; const openVis = VIS.open((e, ty, gn, p) => cue(e, ty, gn, p));
+  const openCaps = ep.wordCaps ? makeCaptions(ep.vo_open, openVO) : [];
+  SCENES = [{ from: 0, to: openDur, pre: 0, draw: (lt) => { AT = atOpen; openVis(lt); if (openCaps.length && lt > (ep.openCapAt ?? 0.9)) captions(lt, openCaps); } }];
   let t = openDur;
   ep.scenes.forEach((sc, i) => {
     const vo = voPlace(sc.vo, V.scenes[i]), slow = Math.max(sc.dur, ceilHalf(vo.at(-1).end + 0.3)), from = t;
     const dur = ep.tight ? Math.max(1.6, ceilQ(vo.at(-1).end - PRE + 0.2)) : slow, warp = ep.tight ? Math.min(1.7, Math.max(1, (slow - PRE) / dur)) : 1;
     vo.forEach((v) => cue(from + v.at - PRE, 'vo', 1, v.file));
+    const at = wordClock(vo, (x) => PRE + (x - PRE) * warp); AT = at;
     const K = (e, ty, gn, p) => cue(from + (e - PRE) / warp, ty, gn, p), vis = VIS[sc.vis ?? i](K, { vo });
-    const caps = makeCaptions(sc.vo, vo, sc.noCap || []);
-    SCENES.push({ from, to: from + dur, pre: PRE, draw: (lt) => { SCN = i; RT = lt; vis(PRE + (lt - PRE) * warp); RT = null; if (caps.length) captions(lt, caps); } });
+    const P0 = PUNCH.length, caps = makeCaptions(sc.vo, vo, sc.noCap || []); for (let q = P0; q < PUNCH.length; q++) PUNCH[q] += from - PRE;
+    SCENES.push({ from, to: from + dur, pre: PRE, draw: (lt) => { SCN = i; RT = lt; AT = at; vis(PRE + (lt - PRE) * warp); RT = null; if (caps.length) captions(lt, caps); } });
     t += dur; });
   const last = SCENES.at(-1), pad = (2 - (t % 2)) % 2; last.to += pad; t += pad;
   DUR = t; SCENES.slice(1).forEach((s) => cue(s.from - (ep.transition === 'whip' ? 0.12 : 0.2), 'whoosh', ep.transition === 'whip' ? 1 : 0.8));
@@ -246,7 +273,8 @@ function drawScene(s, t, dx = 0, dy = 0) {
   const since = t - (s.from - CUT), until = (s.to - CUT) - t;
   const punchIn = s.from > 0 && EP.transition !== 'whip' ? 1 + 0.07 * (1 - spring(since, 260, 30)) : 1;
   const punchOut = until < 0.14 && EP.transition !== 'whip' ? 1 + 0.05 * Math.pow(1 - clamp(until / 0.14), 2) : 1;
-  const k = punchIn * punchOut * (1 + 0.012 * clamp(since / 6));
+  let hit = 1; for (const p of PUNCH) { const d = t - p; if (d >= 0 && d < 0.5) hit = Math.max(hit, 1 + 0.07 * Math.exp(-d / 0.09) * (d < 0.03 ? d / 0.03 : 1)); }   // word punch: quick zoom on stressed words
+  const k = punchIn * punchOut * hit * (1 + 0.012 * clamp(since / 6));
   g.save(); g.translate(W / 2 + dx, H / 2 + dy); g.scale(k, k); g.translate(-W / 2, -H / 2);
   g.beginPath(); g.rect(0, 0, W, H); g.clip(); s.draw(t - s.from + s.pre); g.restore();
 }

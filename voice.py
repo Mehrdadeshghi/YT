@@ -16,11 +16,17 @@ elif VOICE == 'native':               # native US pronunciation (Kokoro) convert
     from clone_voice import NativeCloner
     k = NativeCloner(E.get('voice_ref', 'assets/voice/mehrdad.wav'), E.get('voice_src', 'am_echo'), float(E.get('voice_expr', 1.85)))
     VTAG = f"{E.get('voice_src', 'am_echo')}|{E.get('voice_expr', 1.85)}"
+elif VOICE == 'narrator':             # excited native narrator (Chatterbox TTS + synthetic reference), see clone_voice.Narrator
+    from clone_voice import Narrator
+    k = Narrator(E.get('voice_ref', 'assets/voice/narrator_ref.wav'), float(E.get('voice_ex', 0.9)), float(E.get('voice_cfg', 0.35)), 0.85, float(E.get('wpm', 205)))
+    VTAG = f"{E.get('voice_ex', 0.9)}|{E.get('voice_cfg', 0.35)}|{E.get('wpm', 205)}|v1"
 elif VOICE == 'clone':                # Mehrdad's own voice, cloned (Chatterbox): timbre from assets/voice/*.wav, pronunciation from the model
     from clone_voice import Cloner
     k = Cloner(E.get('voice_ref', 'assets/voice/mehrdad.wav')); SPEED = float(arg('speed', str(E.get('speed_clone', 1.15))))
 else:
     k = Kokoro(f'{TTS}/kokoro-v1.0.onnx', f'{TTS}/voices-v1.0.bin')
+import align
+ALIGN = LANG == 'en' and align.available() and E.get('align', True)
 def synth(key, text):
     h = hashlib.md5(f'{VOICE}|{SPEED}|{globals().get("VTAG", "")}|{text}'.encode()).hexdigest()[:10]
     f = f'{out}/{key}_{h}.wav'
@@ -30,7 +36,9 @@ def synth(key, text):
         if len(nz): s = s[max(0, nz[0] - int(0.02 * sr)): nz[-1] + int(0.06 * sr)]
         sf.write(f, s, sr, subtype='PCM_16')
     d = sf.info(f).duration
-    return {'file': f, 'dur': round(d, 3), 'text': text}
+    r = {'file': f, 'dur': round(d, 3), 'text': text}
+    if ALIGN: r['words'] = align.words(f, text)                  # word timestamps (Whisper) → word-synced captions, cuts and hits
+    return r
 res = {'open': [synth(f'open{i}', s['text']) for i, s in enumerate(E.get('vo_open', []))],
        'scenes': [[synth(f's{j}_{i}', s['text']) for i, s in enumerate(sc.get('vo', []))] for j, sc in enumerate(E['scenes'])],
        'outro': [synth(f'outro{i}', s['text']) for i, s in enumerate(E.get('vo_outro', [{'text': 'Subscribe for the next random article.'}]))]}

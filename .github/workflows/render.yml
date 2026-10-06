@@ -49,7 +49,7 @@ jobs:
           [ -f models/de_DE-thorsten-high.onnx.json ] || curl -sSL -o models/de_DE-thorsten-high.onnx.json $HF/de_DE-thorsten-high.onnx.json
       - name: Voice clone model (only if an episode uses the cloned voice)
         run: |
-          for e in ${{ steps.eps.outputs.list }}; do grep -qE '"voice": *"(clone|native)"' episodes/$e.json && NEED=1; done
+          for e in ${{ steps.eps.outputs.list }}; do grep -qE '"voice": *"(clone|native|narrator)"' episodes/$e.json && NEED=1; done
           if [ -n "$NEED" ]; then pip install -q chatterbox-tts praat-parselmouth 2>&1 | tail -2; fi
       - name: Decrypt voice reference
         env: { VOICE_KEY: "${{ secrets.VOICE_KEY }}" }

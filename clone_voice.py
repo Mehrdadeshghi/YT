@@ -113,6 +113,47 @@ class NativeCloner:
         w = squeeze_pauses(w, self.vc.sr)
         return _ff(w, self.vc.sr, CHAIN)
 
+def _heard(w, sr, text):
+    """0..1: how much of the script Whisper hears in this take (catches mumbled / garbled names); 1 if Whisper is not installed"""
+    try:
+        import align, difflib
+        if not align.available(): return 1.0
+        with tempfile.TemporaryDirectory() as d:
+            f = f'{d}/t.wav'; sf.write(f, w, sr); segs, _ = align.model().transcribe(f, language='en', beam_size=5)
+            got = ' '.join(x.text for x in segs)
+        n = lambda s: [align.norm(x) for x in s.replace('-', ' ').split() if align.norm(x)]
+        return difflib.SequenceMatcher(None, n(text), n(got)).ratio()
+    except Exception as e:
+        print('heard check failed', e); return 1.0
+
+class Narrator:
+    """Excited native sports-narrator voice (choice "2", Oct 2026): Chatterbox TTS conditioned on a synthetic Kokoro am_echo
+    reference read with excitement (assets/voice/narrator_ref.wav). exaggeration 0.9 / cfg 0.35 / temperature 0.85 gives a
+    ~25-30 st pitch range (engaging narrators: ~12-15 st; flat TTS: ~6 st). Not Mehrdad's voice - no conversion.
+    Chatterbox speaks slowly (~140 wpm), so pauses are squeezed and the line is sped up (pitch kept) towards house tempo."""
+    def __init__(self, ref='assets/voice/narrator_ref.wav', ex=0.9, cfg=0.35, temp=0.85, wpm=205):
+        import torch
+        from chatterbox.tts import ChatterboxTTS
+        local = os.environ.get('CHATTERBOX_DIR'); dev = 'cuda' if torch.cuda.is_available() else 'cpu'
+        self.m = ChatterboxTTS.from_local(local, device=dev) if local else ChatterboxTTS.from_pretrained(device=dev)
+        self.ref, self.ex, self.cfg, self.temp, self.wpm = ref, ex, cfg, temp, wpm
+        self.takes = int(os.environ.get('CLONE_TAKES', '2'))
+    def create(self, text, voice=None, speed=None, lang=None):
+        best = None
+        for k in range(self.takes):
+            w = self.m.generate(text, audio_prompt_path=self.ref, exaggeration=self.ex, cfg_weight=self.cfg,
+                                temperature=self.temp).squeeze().cpu().numpy().astype('float32')
+            sc = _score(w, self.m.sr, text) + 2.0 * (1 - _heard(w, self.m.sr, text))   # length + silences + did Whisper hear the script?
+            if best is None or sc < best[0]: best = (sc, w)
+            if sc < 0.3: break
+        w, sr = best[1], self.m.sr
+        w = squeeze_pauses(w, sr, keep=0.14)
+        nz = np.where(np.abs(w) > 0.01)[0]
+        if len(nz): w = w[max(0, nz[0] - int(0.02 * sr)): nz[-1] + int(0.06 * sr)]
+        words = len(re.findall(r"[A-Za-z0-9'-]+", text)); target = words / self.wpm * 60 + 0.12 * len(re.findall(r'[.!?,…;:]', text))
+        sp = min(1.32, max(1.0, (len(w) / sr) / max(0.5, target)))
+        return _ff(w, sr, CHAIN + (f',atempo={sp:.3f}' if sp > 1.01 else ''))
+
 if __name__ == '__main__' and sys.argv[1] == 'test':
     ref, lines = sys.argv[2], sys.argv[3:]
     out = os.environ.get('CLONE_OUT', 'dist/clone'); os.makedirs(out, exist_ok=True); t0 = time.time(); c = Cloner(ref); print(f'model loaded in {time.time() - t0:.0f}s', flush=True)

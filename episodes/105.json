@@ -84,8 +84,8 @@
   {
    "id": "music",
    "audio": "File:Epic Trailer by Rafael Krux.ogg",
-   "from": 0,
-   "len": 45,
+   "from": 2,
+   "len": 43,
    "gain": 0.6
   },
   {
@@ -113,7 +113,7 @@
  "loop": true,
  "recap": false,
  "mood": "epic",
- "voice": "native",
+ "voice": "narrator",
  "series": "CHELSEA 2012 · PART 2 OF 2",
  "prog": 1,
  "title": "Champions League final 2012",
@@ -124,104 +124,104 @@
  "vo_open": [
   {
    "at": 0,
-   "text": "Corners: twenty to one. Guess who won the final.",
-   "es": "Córners: veinte a uno. Adivina quién ganó la final.",
-   "de": "Ecken: zwanzig zu eins. Rate mal, wer das Finale gewann."
+   "text": "Twenty corners to one. Now guess who won the final!",
+   "es": "Veinte córners a uno. ¡Ahora adivina quién ganó la final!",
+   "de": "Zwanzig Ecken zu eins. Und jetzt rate, wer das Finale gewann!"
   }
  ],
  "scenes": [
   {
-   "dur": 4,
+   "dur": 1.6,
    "vis": 0,
    "vo": [
     {
      "at": 0.45,
-     "text": "Munich, 2012. The final, in Bayern's own stadium.",
+     "text": "Munich, 2012. Buy-urn play the final... in their own stadium!",
      "cap": "Final in Bayern's *own stadium.*",
-     "es": "Múnich, 2012. La final, en el estadio del Bayern.",
-     "de": "München, 2012. Das Finale, im Stadion von Bayern."
+     "es": "Múnich, 2012. ¡El Bayern juega la final... en su propio estadio!",
+     "de": "München, 2012. Bayern spielt das Finale... im eigenen Stadion!"
     }
    ]
   },
   {
-   "dur": 4,
+   "dur": 1.6,
    "vis": 1,
    "vo": [
     {
      "at": 0.45,
-     "text": "Chelsea had four players suspended. Even captain Terry.",
+     "text": "And Chelsea? Four players suspended. Even the captain, Terry!",
      "cap": "*4 players* suspended.",
-     "es": "El Chelsea tenía cuatro sancionados. Incluso el capitán Terry.",
-     "de": "Chelsea hatte vier gesperrte Spieler. Sogar Kapitän Terry."
+     "es": "¿Y el Chelsea? Cuatro sancionados. ¡Hasta el capitán, Terry!",
+     "de": "Und Chelsea? Vier Spieler gesperrt. Sogar Kapitän Terry!"
     }
    ]
   },
   {
-   "dur": 4,
+   "dur": 1.6,
    "vis": 2,
    "vo": [
     {
      "at": 0.45,
-     "text": "Bayern attacked and attacked. Eighty-third minute: Müller. One-nil.",
+     "text": "Buy-urn attack. And attack! And attack! Eighty-third minute: Muller! One-nil!",
      "cap": "Müller, *83'.* *1–0.*",
-     "es": "El Bayern atacó sin parar. Minuto ochenta y tres: Müller. Uno a cero.",
-     "de": "Bayern stürmte und stürmte. Dreiundachtzigste Minute: Müller. Eins zu null."
+     "es": "El Bayern ataca, y ataca, y ataca. Minuto ochenta y tres: ¡Müller! ¡Uno a cero!",
+     "de": "Bayern stürmt, und stürmt, und stürmt. Dreiundachtzigste Minute: Müller! Eins zu null!"
     }
    ]
   },
   {
-   "dur": 4,
+   "dur": 1.6,
    "vis": 3,
    "vo": [
     {
      "at": 0.45,
-     "text": "Eighty-eighth minute. Chelsea's first corner of the game. Mata crosses… Drogba. One-all.",
+     "text": "Eighty-eighth minute. Chelsea's first corner of the night. Mata crosses... Drog-bah! One-all!",
      "cap": "First corner. *Drogba.*",
-     "es": "Minuto ochenta y ocho. El primer córner del Chelsea en todo el partido. Centra Mata… Drogba. Uno a uno.",
-     "de": "Achtundachtzigste Minute. Chelseas erste Ecke im ganzen Spiel. Mata flankt… Drogba. Eins zu eins."
+     "es": "Minuto ochenta y ocho. El primer córner del Chelsea en toda la noche. Centra Mata... ¡Drogba! ¡Uno a uno!",
+     "de": "Achtundachtzigste Minute. Chelseas erste Ecke des Abends. Mata flankt... Drogba! Eins zu eins!"
     }
    ]
   },
   {
-   "dur": 4,
+   "dur": 1.6,
    "vis": 4,
    "vo": [
     {
      "at": 0.45,
-     "text": "Extra time: Drogba fouls Ree-berry. Penalty. Robben… saved by Chek.",
+     "text": "Extra time. Drogba fouls Ree-berry. Penalty! Robben steps up... saved by Chek!",
      "cap": "Robben… *saved.*",
-     "es": "Prórroga: Drogba derriba a Ribéry. Penalti. Robben… lo para Čech.",
-     "de": "Verlängerung: Drogba foult Ribéry. Elfmeter. Robben… Čech hält."
+     "es": "Prórroga. Drogba derriba a Ribéry. ¡Penalti! Robben dispara... ¡lo para Čech!",
+     "de": "Verlängerung. Drogba foult Ribéry. Elfmeter! Robben läuft an... Čech hält!"
     }
    ]
   },
   {
-   "dur": 4,
+   "dur": 1.6,
    "vis": 5,
    "vo": [
     {
      "at": 0.45,
-     "text": "Penalties. Chek saves two, and the last kick is Drogba's.",
+     "text": "It goes to penalties! Chek saves two. And the very last kick... is for Drog-bah!",
      "cap": "Last kick: *Drogba.*",
-     "es": "Penaltis. Čech para dos, y el último lanzamiento es de Drogba.",
-     "de": "Elfmeterschießen. Čech hält zwei, und der letzte Schuss gehört Drogba."
+     "es": "¡Penaltis! Čech para dos. Y el último lanzamiento... ¡es de Drogba!",
+     "de": "Elfmeterschießen! Čech hält zwei. Und der allerletzte Schuss... gehört Drogba!"
     }
    ]
   },
   {
-   "dur": 4,
+   "dur": 1.6,
    "vis": 6,
    "vo": [
     {
      "at": 0.45,
-     "text": "Chelsea win their first Champions League. In Bayern's stadium.",
+     "text": "Chelsea win their first Champions League. In Buy-urn's own stadium!",
      "cap": "In Bayern's *stadium.*",
-     "es": "El Chelsea gana su primera Champions. En el estadio del Bayern.",
-     "de": "Chelsea gewinnt seine erste Champions League. Im Stadion von Bayern."
+     "es": "El Chelsea gana su primera Champions. ¡En el estadio del Bayern!",
+     "de": "Chelsea gewinnt seine erste Champions League. Im Stadion von Bayern!"
     },
     {
      "at": "0.15",
-     "text": "Luckiest win ever? Comment yes or no, and subscribe for more.",
+     "text": "Luckiest win ever? Comment yes or no, and subscribe for more!",
      "cta": true,
      "es": "¿La victoria con más suerte de la historia? Comenta sí o no, y suscríbete.",
      "de": "Der glücklichste Sieg aller Zeiten? Kommentier ja oder nein, und abonnier."
@@ -249,5 +249,16 @@
  ],
  "scripts": [
   "football.js"
- ]
+ ],
+ "wpm": 205,
+ "wordCaps": true,
+ "spell": {
+  "Chek": "Čech",
+  "Ree-berry": "Ribéry",
+  "Muller": "Müller",
+  "Buy-urn": "Bayern",
+  "Buy-urn's": "Bayern's",
+  "Drog-bah!": "Drogba!",
+  "Drog-bah": "Drogba"
+ }
 }
