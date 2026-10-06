@@ -1,0 +1,87 @@
+{
+ "ep": 105,
+ "photos": [
+  {
+   "id": "arena",
+   "file": "File:Allianz Arena 2012 Champions League Final.jpg"
+  },
+  {
+   "id": "stimmung",
+   "file": "File:2012-05-19 Finale02 (7232998294).jpg"
+  },
+  {
+   "id": "allianz1",
+   "file": "File:Allianz Finale12 1.jpg"
+  },
+  {
+   "id": "robben",
+   "file": "File:RobbenFinale12.jpg"
+  },
+  {
+   "id": "robbenfk",
+   "file": "File:Robben free kick Champions League Final 2012.jpg"
+  },
+  {
+   "id": "lampard",
+   "file": "File:Lampard Drogba Gomez Robben.jpg"
+  },
+  {
+   "id": "didi",
+   "file": "File:DidiFinale12 (cropped).jpg"
+  },
+  {
+   "id": "extra",
+   "file": "File:Champions League Final 2012 extra time.jpg"
+  },
+  {
+   "id": "mata",
+   "file": "File:Juan Mata Manuel Neuer penalty kick Champions League Final 2012.jpg"
+  },
+  {
+   "id": "lastpen",
+   "file": "File:Didier Drogba Manuel Neuer last penalty kick Champions League Final 2012.jpg"
+  },
+  {
+   "id": "cup",
+   "file": "File:Didier Drogba Champions League Winner 2012.jpg"
+  },
+  {
+   "id": "cechcup",
+   "file": "File:Petr Cech Champions League Winner 2012.jpg"
+  },
+  {
+   "id": "celeb",
+   "file": "File:Chelsea Champions League Winners celebration 2012.jpg"
+  },
+  {
+   "id": "celeb2",
+   "file": "File:Champions League Final 2012 celebration.jpg"
+  },
+  {
+   "id": "g8",
+   "file": "File:G8 leaders watching football.jpg"
+  },
+  {
+   "id": "parade",
+   "file": "File:Chelsea Champions League trophy parade 2012.jpg"
+  },
+  {
+   "id": "illum",
+   "file": "File:Allianz Arena Illumination UEFA Champions League 2011-2012 1.jpeg"
+  },
+  {
+   "id": "munich",
+   "video": "File:Nightfall timelapse from Olympiaturm.ogv",
+   "fps": 1,
+   "from": 0,
+   "len": 84
+  },
+  {
+   "id": "cfans21",
+   "video": "File:2021-05-29 - Man City v Chelsea - Chelsea celebrating and Victory ceremony.webm",
+   "fps": 1,
+   "from": 0,
+   "len": 188
+  }
+ ]
+}

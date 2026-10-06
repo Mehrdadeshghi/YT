@@ -1,0 +1,78 @@
+{
+ "ep": 104,
+ "photos": [
+  {
+   "id": "messi",
+   "file": "File:Lionel Messi at Bernabeu.jpg"
+  },
+  {
+   "id": "nou12",
+   "file": "File:FC Barcelona - Bayer 04 Leverkusen, 7 mar 2012 (65).jpg"
+  },
+  {
+   "id": "nou12b",
+   "file": "File:FC Barcelona - Bayer 04 Leverkusen, 7 mar 2012 (62).jpg"
+  },
+  {
+   "id": "campnou",
+   "file": "File:Camp Nou - FC Barcelona - Barcelona.jpg"
+  },
+  {
+   "id": "drogba",
+   "file": "File:Drogba chelsea.jpg"
+  },
+  {
+   "id": "drogba08",
+   "file": "File:Drogba 2008.jpg"
+  },
+  {
+   "id": "terry",
+   "file": "File:John Terry clears (7100505645).jpg"
+  },
+  {
+   "id": "torres",
+   "file": "File:Fernando Torres & Laurent Koscielny 2.jpg"
+  },
+  {
+   "id": "torres2",
+   "file": "File:Fernando Torres & Laurent Koscielny.jpg"
+  },
+  {
+   "id": "cech",
+   "file": "File:Petr Cech gathers 2 (7100495675).jpg"
+  },
+  {
+   "id": "bridge",
+   "file": "File:Stamford Bridge Stadium Football Pitch, 2.22.2013.jpg"
+  },
+  {
+   "id": "trio",
+   "file": "File:Didier Drogba & Fernando Torres & Juan Mata.jpg"
+  },
+  {
+   "id": "arena",
+   "file": "File:Allianz Arena 2012 Champions League Final.jpg"
+  },
+  {
+   "id": "aroundnou",
+   "video": "File:Around Camp Nou.ogv",
+   "fps": 1,
+   "from": 0,
+   "len": 138
+  },
+  {
+   "id": "barcagoal",
+   "video": "File:Barcelona goal.ogv",
+   "fps": 1,
+   "from": 0,
+   "len": 69
+  },
+  {
+   "id": "cfans",
+   "video": "File:Chelsea fans chanting at Tottenham stadium.webm",
+   "fps": 1,
+   "from": 0,
+   "len": 119
+  }
+ ]
+}
