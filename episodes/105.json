@@ -117,10 +117,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Munich, 2012. The Champions League final, in Bayern's own stadium.",
+     "text": "Munich, 2012. The final, in Bayern's own stadium.",
      "cap": "Final in Bayern's *own stadium.*",
-     "es": "Múnich, 2012. La final de la Champions, en el propio estadio del Bayern.",
-     "de": "München, 2012. Das Champions-League-Finale, im eigenen Stadion von Bayern."
+     "es": "Múnich, 2012. La final, en el estadio del Bayern.",
+     "de": "München, 2012. Das Finale, im Stadion von Bayern."
     }
    ]
   },
@@ -130,10 +130,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Chelsea were missing four suspended players, including captain John Terry.",
+     "text": "Chelsea had four players suspended. Even captain Terry.",
      "cap": "*4 players* suspended.",
-     "es": "Al Chelsea le faltaban cuatro sancionados, incluido el capitán John Terry.",
-     "de": "Chelsea fehlten vier gesperrte Spieler, darunter Kapitän John Terry."
+     "es": "El Chelsea tenía cuatro sancionados. Incluso el capitán Terry.",
+     "de": "Chelsea hatte vier gesperrte Spieler. Sogar Kapitän Terry."
     }
    ]
   },
@@ -202,10 +202,10 @@
     },
     {
      "at": "0.15",
-     "text": "Luckiest win in Champions League history? Yes or no? Comment below, and subscribe for more football madness.",
+     "text": "Luckiest win ever? Comment yes or no, and subscribe for more.",
      "cta": true,
-     "es": "¿La victoria con más suerte de la historia de la Champions? ¿Sí o no? Comenta y suscríbete para más locuras del fútbol.",
-     "de": "Der glücklichste Sieg der Champions-League-Geschichte? Ja oder nein? Kommentier und abonnier für mehr Fußball-Wahnsinn."
+     "es": "¿La victoria con más suerte de la historia? Comenta sí o no, y suscríbete.",
+     "de": "Der glücklichste Sieg aller Zeiten? Kommentier ja oder nein, und abonnier."
     }
    ]
   }
@@ -227,5 +227,8 @@
   "party",
   "alarm",
   "flushed"
+ ],
+ "scripts": [
+  "football.js"
  ]
 }

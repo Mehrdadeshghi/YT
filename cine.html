@@ -328,7 +328,7 @@ async function boot() {
   await Promise.all((ep.photos || []).filter((p) => p.video && cred[p.id] && cred[p.id].frames).map((p) => Promise.all(Array.from({ length: cred[p.id].frames }, (_, i) =>
     new Promise((res) => { const im = new Image(); im.onload = res; im.onerror = res; im.src = `assets/clips/${EPID}_${p.id}/${String(i + 1).padStart(4, '0')}.jpg`; (CLIPS[p.id] ||= [])[i] = im; })))));
   const load = (src) => new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = src; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
-  await load('cine/common.js'); if (ep.facts) await load('cine/facts.js'); if (ep.figures) await load('cine/figures.js'); if (ep.lottie) { await load('cine/lottie.js'); await lottieInit([...new Set([...ep.lottie, 'bell', 'think'])]); } if (ep.map) { await load('cine/map3d.js'); await loadEarth(EPID); MAP.init(topo); } await load(`cine/${EPID}.js`);
+  await load('cine/common.js'); if (ep.facts) await load('cine/facts.js'); if (ep.figures) await load('cine/figures.js'); for (const sc of ep.scripts || []) await load(`cine/${sc}`); if (ep.lottie) { await load('cine/lottie.js'); await lottieInit([...new Set([...ep.lottie, 'bell', 'think'])]); } if (ep.map) { await load('cine/map3d.js'); await loadEarth(EPID); MAP.init(topo); } await load(`cine/${EPID}.js`);
   if (0) await new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = `cine/${EPID}.js`; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
   build(ep, voice);
   if (ep.tight && !WIDE && ep.recap !== false) (ep.photos || []).forEach((p) => { if (p.id !== 'rel' && (PHOTOS[p.id] || CLIPS[p.id])) RECAP.push(p.id); });

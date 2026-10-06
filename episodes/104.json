@@ -190,5 +190,8 @@
   "siren",
   "flushed",
   "party"
+ ],
+ "scripts": [
+  "football.js"
  ]
 }
