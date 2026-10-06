@@ -1,0 +1,21 @@
+name: Mirror Whisper model
+# faster-whisper (CTranslate2) weights for word timestamps (MIT, Systran / OpenAI) → Release model-whisper
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/mirror-whisper.yml]
+permissions:
+  contents: write
+jobs:
+  mirror:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Download from Hugging Face
+        run: |
+          pip install -q huggingface_hub
+          python3 -c "from huggingface_hub import snapshot_download; snapshot_download('Systran/faster-whisper-small.en', local_dir='fw')"
+          rm -rf fw/.cache; ls -la fw; tar czf whisper-small.en.tgz -C fw .
+      - name: Release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release create model-whisper whisper-small.en.tgz --repo "${{ github.repository }}" --title "faster-whisper small.en mirror (MIT)" --notes "Mirror of Systran/faster-whisper-small.en for word timestamps."
