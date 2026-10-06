@@ -34,6 +34,19 @@ const CH = PROGS[(META.ep?.prog || 0) % PROGS.length];
 const OPEN = META.ep?.openDur || 4, MOOD = META.ep?.mood || 'clock';
 const CHORDS = MOOD === 'deep' ? [[50, 53, 57], [46, 50, 53], [53, 57, 60], [48, 52, 55]]   // Dm Bb F C
                                : [[57, 60, 64], [53, 57, 60], [48, 52, 55], [52, 56, 59]];  // Am F C E
+// real music bed (ep.photos entry with "audio", fetched to assets/music/<ep>_<id>.wav) replaces the synthesized bed
+const EPN = String(META.ep?.ep || 0).padStart(3, '0');
+let MUSIC = null;
+try { const E = JSON.parse(readFileSync(new URL(`./episodes/${EPN}.json`, import.meta.url), 'utf8')), ms = (E.photos || []).find((p) => p.audio);
+  if (ms) { const b = readFileSync(new URL(`./assets/music/${EPN}_${ms.id}.wav`, import.meta.url)); let o = 12, data = null, ch = 2;
+    while (o < b.length - 8) { const id = b.toString('ascii', o, o + 4), sz = b.readUInt32LE(o + 4); if (id === 'fmt ') ch = b.readUInt16LE(o + 10);
+      if (id === 'data') { data = b.subarray(o + 8, o + 8 + sz); break; } o += 8 + sz + (sz % 2); }
+    MUSIC = { data, ch, gain: ms.gain ?? 0.55 }; } } catch (e) { MUSIC = null; }
+if (MUSIC) { const n = Math.min(N, MUSIC.data.length / (2 * MUSIC.ch)), fade = SR * 0.6;
+  for (let i = 0; i < n; i++) { const env = Math.min(1, i / (SR * 0.05), (N - i) / fade) * MUSIC.gain;
+    L[i] += MUSIC.data.readInt16LE(i * 2 * MUSIC.ch) / 32768 * env; R[i] += MUSIC.data.readInt16LE((i * MUSIC.ch + MUSIC.ch - 1) * 2) / 32768 * env; }
+  console.log('music bed', n / SR, 's'); }
+if (!MUSIC) {
 for (let bar = 0; bar < BARS; bar++) {
   const ch = CHORDS[bar % 4], t0 = bar * 2, len = 2.5, oct = MOOD === 'deep' ? -12 : 0;
   for (const m of ch) for (const det of [-0.004, 0.004]) {
@@ -63,6 +76,7 @@ if (MOOD === 'epic') {
     const hp = new Biquad('hp', t % 1 ? 2600 : 1800, 2), tock = !(t % 1);
     add(t + 0.25, 0.04, (x) => hp.p(noise()) * Math.exp(-x * 160), tock ? 0.16 : 0.11, tock ? -0.3 : 0.3);
   }
+}
 }
 // ------------------------------------------------ SFX from the page's cue list
 const SFX = {

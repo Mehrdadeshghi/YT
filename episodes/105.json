@@ -80,6 +80,25 @@
    "video": "File:2021-05-29 - Man City v Chelsea - Chelsea celebrating and Victory ceremony.webm",
    "from": 0,
    "len": 7
+  },
+  {
+   "id": "music",
+   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "from": 0,
+   "len": 45,
+   "gain": 0.6
+  },
+  {
+   "id": "music2",
+   "audio": "File:Strength Of The Titans by Kevin MacLeod.ogg",
+   "from": 0,
+   "len": 45
+  },
+  {
+   "id": "music3",
+   "audio": "File:Scott Buckley - Crusader.oga",
+   "from": 0,
+   "len": 45
   }
  ],
  "look": "cine",

@@ -91,11 +91,26 @@ def fetch_video(ep, spec, credits):
                            "credit": f"Video: {author[:40]} / {lic}"}
     print(f"   ok   {out} ({n} frames) <- {name} [{lic}] via {url[-40:]}")
 
+def fetch_audio(ep, spec, credits):
+    """{"id": "music", "audio": "File:….ogg", "from": 0, "len": 40} → assets/music/<ep>_<id>.wav (48 kHz stereo)"""
+    import subprocess, shutil, tempfile
+    name = spec["audio"] if spec["audio"].startswith("File:") else "File:" + spec["audio"]
+    q = api(action="query", titles=name, prop="imageinfo", iiprop="url|extmetadata")["query"]["pages"][0]
+    ii = (q.get("imageinfo") or [{}])[0]; meta = ii.get("extmetadata", {}); lic = clean(meta.get("LicenseShortName", {}).get("value"))
+    if not ii or not FREE.search(lic): print(f"   skip audio {name} ({lic or 'no license'})"); return
+    tmp = tempfile.mkdtemp(); src = os.path.join(tmp, "a")
+    with urllib.request.urlopen(urllib.request.Request(ii["url"], headers=UA), timeout=300) as r, open(src, "wb") as f: shutil.copyfileobj(r, f)
+    os.makedirs("assets/music", exist_ok=True); out = f"assets/music/{ep}_{spec['id']}.wav"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(spec.get("from", 0)), "-t", str(spec.get("len", 60)), "-i", src, "-ac", "2", "-ar", "48000", "-c:a", "pcm_s16le", out], check=True)
+    author = clean(re.sub(r"<[^>]+>", " ", meta.get("Artist", {}).get("value") or "")) or "unknown"
+    credits[spec["id"]] = {"file": name, "author": author[:80], "license": lic, "page": ii.get("descriptionurl"), "credit": f"Music: {author[:40]} / {lic}"}
+    print(f"   ok   {out} <- {name} [{lic}]")
+
 os.makedirs(OUT, exist_ok=True)
 for ep in sys.argv[1:]:
     E = json.load(open(f"episodes/{ep}.json")); credits = {}
     print(f"== {ep} {E.get('title')}")
     for spec in E.get("photos", []):
-        try: fetch_video(ep, spec, credits) if spec.get("video") else fetch(ep, spec, credits)
+        try: fetch_audio(ep, spec, credits) if spec.get("audio") else fetch_video(ep, spec, credits) if spec.get("video") else fetch(ep, spec, credits)
         except Exception as e: print("   error", spec, e)
     json.dump(credits, open(f"{OUT}/{ep}.credits.json", "w"), indent=1, ensure_ascii=False)
