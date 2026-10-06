@@ -1,0 +1,305 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "mood": "epic",
+ "voice": "narrator",
+ "wpm": 205,
+ "wordCaps": true,
+ "scripts": [
+  "football.js"
+ ],
+ "ep": 106,
+ "series": "FOOTBALL'S CRAZIEST MOMENTS #6",
+ "prog": 1,
+ "title": "Brazil 1–7 Germany, 2014 World Cup semi-final",
+ "hook": [
+  "BRAZIL 0–5.",
+  "AFTER 29 MINUTES."
+ ],
+ "spell": {
+  "Muller": "Müller",
+  "Shoo-rler": "Schürrle",
+  "Shoo-rler!": "Schürrle!",
+  "Kehdeera": "Khedira",
+  "Kehdeera.": "Khedira.",
+  "Kloza": "Klose",
+  "Kloza...": "Klose…",
+  "Tee-ah-go": "Thiago",
+  "Neymar": "Neymar"
+ },
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "A World Cup semi-final. Brazil, at home... losing five-nil. After twenty-nine minutes!",
+   "es": "Una semifinal del Mundial. Brasil, en casa... perdiendo cinco a cero. ¡A los veintinueve minutos!",
+   "de": "Ein WM-Halbfinale. Brasilien, zu Hause... liegt fünf zu null hinten. Nach neunundzwanzig Minuten!"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "July 2014, Belo Horizonte. Brazil hadn't lost a competitive home game since 1975!",
+     "cap": "Unbeaten at home *since 1975.*",
+     "es": "Julio de 2014, Belo Horizonte. Brasil no perdía un partido oficial en casa desde 1975.",
+     "de": "Juli 2014, Belo Horizonte. Brasilien hatte seit 1975 kein Pflichtspiel zu Hause verloren!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But Neymar was out, with a fractured vertebra. And captain Tee-ah-go Silva? Suspended!",
+     "cap": "Neymar *out.* Captain *suspended.*",
+     "es": "Pero Neymar estaba fuera, con una vértebra fracturada. ¿Y el capitán Thiago Silva? ¡Sancionado!",
+     "de": "Aber Neymar fiel aus, mit einem gebrochenen Wirbel. Und Kapitän Thiago Silva? Gesperrt!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Eleventh minute: Muller! One-nil. Twenty-third: Kloza... his sixteenth World Cup goal. A new record!",
+     "cap": "Klose: *16th* World Cup goal. *Record.*",
+     "es": "Minuto once: ¡Müller! Uno a cero. Minuto veintitrés: Klose... su gol dieciséis en Mundiales. ¡Récord!",
+     "de": "Elfte Minute: Müller! Eins zu null. Dreiundzwanzigste: Klose... sein sechzehntes WM-Tor. Rekord!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then Kroos! And Kroos again, sixty-nine seconds later! Then Kehdeera. Four goals in six minutes!",
+     "cap": "*4 goals* in *6 minutes.*",
+     "es": "¡Luego Kroos! ¡Y Kroos otra vez, sesenta y nueve segundos después! Luego Khedira. ¡Cuatro goles en seis minutos!",
+     "de": "Dann Kroos! Und nochmal Kroos, neunundsechzig Sekunden später! Dann Khedira. Vier Tore in sechs Minuten!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Half-time: five-nil. Fans in tears... and many just went home.",
+     "cap": "Half-time: *5–0.*",
+     "es": "Descanso: cinco a cero. Aficionados llorando... y muchos se fueron a casa.",
+     "de": "Halbzeit: fünf zu null. Fans in Tränen... und viele gingen einfach nach Hause."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Shoo-rler! Six. Shoo-rler again! Seven. And the Brazilian fans? They applauded Germany!",
+     "cap": "Brazil fans *applauded* Germany.",
+     "es": "¡Schürrle! Seis. ¡Schürrle otra vez! Siete. ¿Y los aficionados brasileños? ¡Aplaudieron a Alemania!",
+     "de": "Schürrle! Sechs. Nochmal Schürrle! Sieben. Und die brasilianischen Fans? Sie applaudierten Deutschland!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Seven-one. The biggest win in World Cup semi-final history!",
+     "cap": "Biggest semi-final win *ever.*",
+     "es": "Siete a uno. ¡La mayor goleada en una semifinal de la historia del Mundial!",
+     "de": "Sieben zu eins. Der höchste Sieg in einem WM-Halbfinale aller Zeiten!"
+    },
+    {
+     "at": "0.15",
+     "text": "Worst defeat ever? Comment yes or no, and subscribe for more!",
+     "cta": true,
+     "es": "¿La peor derrota de la historia? Comenta sí o no, y suscríbete.",
+     "de": "Die schlimmste Niederlage aller Zeiten? Kommentier ja oder nein, und abonnier."
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Worst defeat ever?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "cry"
+ },
+ "source": "https://en.wikipedia.org/wiki/Brazil_v_Germany_(2014_FIFA_World_Cup)",
+ "lottie": [
+  "mindblown",
+  "scream",
+  "fire",
+  "eyes",
+  "cry",
+  "trophy",
+  "party",
+  "alarm",
+  "flushed",
+  "skull"
+ ],
+ "photos": [
+  {
+   "id": "bg01",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 01.jpg"
+  },
+  {
+   "id": "bg02",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 02.jpg"
+  },
+  {
+   "id": "bg03",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 03.jpg"
+  },
+  {
+   "id": "bg04",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 04.jpg"
+  },
+  {
+   "id": "bg05",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 05.jpg"
+  },
+  {
+   "id": "bg06",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 06.jpg"
+  },
+  {
+   "id": "bg07",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 07.jpg"
+  },
+  {
+   "id": "bg08",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 08.jpg"
+  },
+  {
+   "id": "bg09",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 09.jpg"
+  },
+  {
+   "id": "bg10",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 10.jpg"
+  },
+  {
+   "id": "bg11",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 11.jpg"
+  },
+  {
+   "id": "bg12",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 12.jpg"
+  },
+  {
+   "id": "bg13",
+   "file": "File:Brazil vs Germany, in Belo Horizonte 13.jpg"
+  },
+  {
+   "id": "ozil",
+   "file": "File:Brazil vs Germany cropped Oezil Hoewedes Khedira.jpg"
+  },
+  {
+   "id": "drone1",
+   "file": "File:Stadion Belo Horizonte Halbfinale WM 2014 (22117986076).jpg"
+  },
+  {
+   "id": "drone2",
+   "file": "File:Stadion Belo Horizonte Halbfinale WM 2014 (21956047720).jpg"
+  },
+  {
+   "id": "drone3",
+   "file": "File:Stadion Belo Horizonte Halbfinale WM 2014 (21956340258).jpg"
+  },
+  {
+   "id": "drone4",
+   "file": "File:Stadion Belo Horizonte WM 2014 (22144197605).jpg"
+  },
+  {
+   "id": "fan",
+   "file": "File:Fan Deutschland WM 2014 Brasilien (21522893093).jpg"
+  },
+  {
+   "id": "top",
+   "file": "File:Mineirão (Top View).jpg"
+  },
+  {
+   "id": "col5",
+   "file": "File:Brazil and Colombia match at the FIFA World Cup 2014-07-04 (5).jpg"
+  },
+  {
+   "id": "col14",
+   "file": "File:Brazil and Colombia match at the FIFA World Cup 2014-07-04 (14).jpg"
+  },
+  {
+   "id": "col26",
+   "file": "File:Brazil and Colombia match at the FIFA World Cup 2014-07-04 (26).jpg"
+  },
+  {
+   "id": "colc",
+   "file": "File:Brazil and Colombia match at the FIFA World Cup 2014-07-04 (15) (cropped).jpg"
+  },
+  {
+   "id": "thiago",
+   "file": "File:Thiago Silva training July 2014.jpg"
+  },
+  {
+   "id": "klose",
+   "file": "File:Miroslav Klose 2014.jpg"
+  },
+  {
+   "id": "kroos",
+   "file": "File:Germany and Argentina face off in the final of the World Cup 2014 09 (cropped).jpg"
+  },
+  {
+   "id": "schurrle",
+   "file": "File:Schürrle FIFA World Cup 2014 (cropped).jpg"
+  },
+  {
+   "id": "lahm",
+   "file": "File:Philipp Lahm lifts the 2014 FIFA World Cup.jpg"
+  },
+  {
+   "id": "champs",
+   "file": "File:Germany players celebrate winning the 2014 FIFA World Cup.jpg"
+  },
+  {
+   "id": "wm",
+   "file": "File:Weltmeister Deutschland Feier WM 2014 Brasilien (21955960080).jpg"
+  },
+  {
+   "id": "mpre",
+   "video": "File:-GRITO DE PAZ! - Cruzeiro 1 x 1 Atlético - Mineirão - Belo Horizonte.webm",
+   "from": 0,
+   "len": 120,
+   "fps": 1
+  },
+  {
+   "id": "music",
+   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "from": 2,
+   "len": 43,
+   "gain": 0.6
+  }
+ ]
+}
