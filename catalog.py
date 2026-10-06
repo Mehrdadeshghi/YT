@@ -25,8 +25,8 @@ lines = ["# Photo catalog", ""]
 for row in open("catalog.txt"):
     row = row.strip()
     if not row or row.startswith("#"): continue
-    if row.lower().startswith(("video:", "image:")):   # "video: goblin shark" / "image: frost" → free files on Commons matching the words
-        kind, q = row[:5].upper(), row[6:].strip(); ft = "video" if kind == "VIDEO" else "bitmap"
+    if row.lower().startswith(("video:", "image:", "audio:")):   # "video: goblin shark" / "image: frost" → free files on Commons matching the words
+        kind, q = row[:5].upper(), row[6:].strip(); ft = {"VIDEO": "video", "AUDIO": "audio"}.get(kind, "bitmap")
         hits = api(CM, action="query", list="search", srnamespace=6, srsearch=f"{q} filetype:{ft}", srlimit=20).get("query", {}).get("search", [])
         lines += [f"## {kind}S: {q}"] + [f"- {t} | {w} | {lic} | {who} | {d}" for t, w, h, mt, lic, who, d in info([h["title"] for h in hits])] + [""]
         continue

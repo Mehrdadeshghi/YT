@@ -1,16 +1,9 @@
-2012 UEFA Champions League final | 2012 UEFA Champions League Final
-2011–12 UEFA Champions League knockout phase | 2011–12 UEFA Champions League
-image: Didier Drogba Chelsea
-image: Fernando Torres Chelsea 2012
-image: John Terry Chelsea
-image: Petr Čech Chelsea
-image: Chelsea Champions League 2012 celebration
-image: Allianz Arena Champions League final 2012
-image: Lionel Messi 2012 Barcelona
-image: Stamford Bridge stadium
-image: Arjen Robben Bayern 2012
-image: Manuel Neuer 2012
-video: Allianz Arena
-video: Stamford Bridge
-video: Camp Nou
-video: Chelsea fans
+| Music by Kevin MacLeod
+audio: Kevin MacLeod epic
+audio: Kevin MacLeod action
+audio: Kevin MacLeod tension
+audio: Kevin MacLeod rock
+audio: epic orchestral music
+audio: trailer music
+audio: sport anthem music
+audio: crowd cheering stadium
