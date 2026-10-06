@@ -1,4 +1,4 @@
-| Music by Kevin MacLeod
+audio: Kevin MacLeod
 audio: Kevin MacLeod epic
 audio: Kevin MacLeod action
 audio: Kevin MacLeod tension
