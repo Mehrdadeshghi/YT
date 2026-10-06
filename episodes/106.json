@@ -216,24 +216,12 @@
    "file": "File:Brazil vs Germany, in Belo Horizonte 13.jpg"
   },
   {
-   "id": "ozil",
-   "file": "File:Brazil vs Germany cropped Oezil Hoewedes Khedira.jpg"
-  },
-  {
    "id": "drone1",
    "file": "File:Stadion Belo Horizonte Halbfinale WM 2014 (22117986076).jpg"
   },
   {
-   "id": "drone2",
-   "file": "File:Stadion Belo Horizonte Halbfinale WM 2014 (21956047720).jpg"
-  },
-  {
    "id": "drone3",
    "file": "File:Stadion Belo Horizonte Halbfinale WM 2014 (21956340258).jpg"
-  },
-  {
-   "id": "drone4",
-   "file": "File:Stadion Belo Horizonte WM 2014 (22144197605).jpg"
   },
   {
    "id": "fan",
@@ -244,20 +232,8 @@
    "file": "File:Mineirão (Top View).jpg"
   },
   {
-   "id": "col5",
-   "file": "File:Brazil and Colombia match at the FIFA World Cup 2014-07-04 (5).jpg"
-  },
-  {
    "id": "col14",
    "file": "File:Brazil and Colombia match at the FIFA World Cup 2014-07-04 (14).jpg"
-  },
-  {
-   "id": "col26",
-   "file": "File:Brazil and Colombia match at the FIFA World Cup 2014-07-04 (26).jpg"
-  },
-  {
-   "id": "colc",
-   "file": "File:Brazil and Colombia match at the FIFA World Cup 2014-07-04 (15) (cropped).jpg"
   },
   {
    "id": "thiago",
@@ -266,10 +242,6 @@
   {
    "id": "klose",
    "file": "File:Miroslav Klose 2014.jpg"
-  },
-  {
-   "id": "kroos",
-   "file": "File:Germany and Argentina face off in the final of the World Cup 2014 09 (cropped).jpg"
   },
   {
    "id": "schurrle",
@@ -284,15 +256,16 @@
    "file": "File:Germany players celebrate winning the 2014 FIFA World Cup.jpg"
   },
   {
-   "id": "wm",
-   "file": "File:Weltmeister Deutschland Feier WM 2014 Brasilien (21955960080).jpg"
+   "id": "mstad",
+   "video": "File:-GRITO DE PAZ! - Cruzeiro 1 x 1 Atlético - Mineirão - Belo Horizonte.webm",
+   "from": 89,
+   "len": 3
   },
   {
-   "id": "mpre",
+   "id": "mcrowd",
    "video": "File:-GRITO DE PAZ! - Cruzeiro 1 x 1 Atlético - Mineirão - Belo Horizonte.webm",
-   "from": 0,
-   "len": 120,
-   "fps": 1
+   "from": 104,
+   "len": 4
   },
   {
    "id": "music",
