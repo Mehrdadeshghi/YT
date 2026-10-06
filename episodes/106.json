@@ -33,7 +33,10 @@
   "Kloza": "Klose",
   "Kloza...": "Klose…",
   "Tee-ah-go": "Thiago",
-  "Neymar": "Neymar"
+  "Neymar": "Neymar",
+  "Bello": "Belo",
+  "Horizontee.": "Horizonte.",
+  "Horizontee": "Horizonte"
  },
  "vo_open": [
   {
@@ -50,7 +53,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "July 2014, Belo Horizonte. Brazil hadn't lost a competitive home game since 1975!",
+     "text": "July 2014, Bello Horizontee. Brazil hadn't lost a competitive home game since 1975!",
      "cap": "Unbeaten at home *since 1975.*",
      "es": "Julio de 2014, Belo Horizonte. Brasil no perdía un partido oficial en casa desde 1975.",
      "de": "Juli 2014, Belo Horizonte. Brasilien hatte seit 1975 kein Pflichtspiel zu Hause verloren!"
@@ -63,7 +66,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "But Neymar was out, with a fractured vertebra. And captain Tee-ah-go Silva? Suspended!",
+     "text": "But Neymar was out, with a fractured vertebra. And captain Thiago Silva? Suspended!",
      "cap": "Neymar *out.* Captain *suspended.*",
      "es": "Pero Neymar estaba fuera, con una vértebra fracturada. ¿Y el capitán Thiago Silva? ¡Sancionado!",
      "de": "Aber Neymar fiel aus, mit einem gebrochenen Wirbel. Und Kapitän Thiago Silva? Gesperrt!"
