@@ -1,9 +1,19 @@
-audio: Kevin MacLeod
-audio: Kevin MacLeod epic
-audio: Kevin MacLeod action
-audio: Kevin MacLeod tension
-audio: Kevin MacLeod rock
-audio: epic orchestral music
-audio: trailer music
-audio: sport anthem music
-audio: crowd cheering stadium
+Brazil v Germany (2014 FIFA World Cup) | Brazil v Germany (2014 FIFA World Cup)
+2014 FIFA World Cup | 2014 FIFA World Cup semi-finals
+image: Brasil Alemanha Mineirão 2014
+image: Brazil Germany 7-1
+image: Mineirão Copa 2014
+image: Thomas Müller 2014 World Cup
+image: Miroslav Klose 2014
+image: Toni Kroos 2014 World Cup
+image: Sami Khedira 2014
+image: André Schürrle 2014
+image: Neymar 2014 World Cup
+image: Thiago Silva 2014
+image: torcedores brasileiros choram Mineirão
+image: Germany World Cup 2014 final celebration
+image: Germany team trophy Berlin 2014 fan mile
+video: Mineirão
+video: Brazil fans World Cup 2014
+video: Germany fans World Cup 2014
+video: Fanmeile Berlin 2014
