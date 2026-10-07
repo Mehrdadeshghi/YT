@@ -118,7 +118,7 @@ function wordCaps(sg, pl) {
   const words = pl.words.map((x, j) => { let w = useShow ? show[j] : x.w; const core = w.replace(/[^\p{L}\p{N}'-]/gu, '');
     if (spell[core]) w = w.replace(core, spell[core]);
     const a = hot.has(nw(x.w)) || hot.has(nw(w)) || /!$/.test(w);
-    return { w: w.replace(/\.\.\.|…/g, '…'), a, t0: pl.at + x.t0, t1: pl.at + x.t1 }; });
+    return { w: w.replace(/\.\.\.|…/g, '…'), a, t0: pl.at + x.t0, t1: pl.at + x.t1 }; }).reduce((o, x) => { if (x.w === '~' && o.length) o[o.length - 1].t1 = x.t1; else o.push(x); return o; }, []);   // show token "~": merge into the previous word ("twenty ten" → "2010")
   if (EP_RAW.capMode === 'key') {                             // kids 3-6 (pre-readers): only the starred key words, one at a time, big
     const kw = words.filter((x) => x.a && !/^(the|a|an|and|is|in|on|to|of)$/i.test(x.w.replace(/[^A-Za-z]/g, '')));
     return { at: pl.at, end: pl.end, words: kw, chunks: kw.map((_, j) => [j]), wc: true }; }

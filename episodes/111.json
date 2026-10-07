@@ -103,7 +103,8 @@
      "text": "But a sausage does! In twenty ten, in a freezing South Korean winter, people tapped their iPhones with snack sausages. Sales reportedly soared!",
      "es": "¡Pero una salchicha sí! En 2010, en un invierno helado en Corea del Sur, la gente tocaba sus iPhones con salchichas. ¡Dicen que las ventas se dispararon!",
      "de": "Aber eine Wurst schon! 2010, in einem eiskalten Winter in Südkorea, tippten Leute mit Snack-Würstchen auf ihre iPhones. Die Verkäufe sollen explodiert sein!",
-     "cap": "A *sausage!*"
+     "cap": "A *sausage!*",
+     "show": "But a sausage does! In 2010, ~ in a freezing South Korean winter, people tapped their iPhones with snack sausages. Sales reportedly soared!"
     }
    ]
   },
@@ -116,7 +117,8 @@
      "text": "And the first touchscreen? Built in England, in nineteen sixty-five... for air traffic control!",
      "es": "¿Y la primera pantalla táctil? Se construyó en Inglaterra en 1965... ¡para el control aéreo!",
      "de": "Und der erste Touchscreen? Gebaut in England, 1965... für die Flugsicherung!",
-     "cap": "Built in *1965!*"
+     "cap": "Built in *1965!*",
+     "show": "And the first touchscreen? Built in England, in 1965… ~ for air traffic control!"
     }
    ]
   },
