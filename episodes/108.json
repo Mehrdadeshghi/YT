@@ -4,7 +4,7 @@
  "noOutro": true,
  "tight": true,
  "sub": 2,
- "transition": "whip",
+ "transition": "fade",
  "loop": true,
  "recap": false,
  "wordCaps": true,
@@ -15,22 +15,27 @@
  "voice_ref": "assets/voice/family_story.wav",
  "voice_ex": 0.75,
  "voice_cfg": 0.4,
- "wpm": 175,
+ "wpm": 140,
  "capY": 1660,
  "ep": 108,
  "series": "STORY TIME",
  "prog": 1,
  "title": "The Tortoise and the Hare",
  "hook": [
-  "WHO WINS THE RACE?",
-  "TORTOISE OR HARE?"
+  "WHO WINS THE RACE?"
  ],
  "vo_open": [
   {
    "at": 0,
-   "text": "Who is faster? A super speedy hare... or a slow little tortoise? Let's find out!",
-   "es": "¿Quién es más rápido? ¿Una liebre súper veloz... o una tortuguita lenta? ¡Vamos a verlo!",
-   "de": "Wer ist schneller? Ein superschneller Hase... oder eine langsame kleine Schildkröte? Finden wir es heraus!"
+   "text": "Hello, friends! Who is faster... the hare, or the tortoise? What do you think?",
+   "es": "¡Hola, amigos! ¿Quién es más rápido... la liebre o la tortuga? ¿Tú qué crees?",
+   "de": "Hallo, Freunde! Wer ist schneller... der Hase oder die Schildkröte? Was meinst du?"
+  },
+  {
+   "at": "2.0",
+   "text": "Let's find out!",
+   "es": "¡Vamos a verlo!",
+   "de": "Finden wir es heraus!"
   }
  ],
  "scenes": [
@@ -40,10 +45,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Once upon a time, there was a hare who was very, very fast. And he loved to show off!",
+     "text": "Once upon a time, there was a hare. He was very, very fast. And he loved to show off!",
      "cap": "Very, very *fast!*",
-     "es": "Había una vez una liebre muy, muy rápida. ¡Y le encantaba presumir!",
-     "de": "Es war einmal ein Hase, der war sehr, sehr schnell. Und er gab gern damit an!"
+     "es": "Había una vez una liebre. Era muy, muy rápida. ¡Y le encantaba presumir!",
+     "de": "Es war einmal ein Hase. Er war sehr, sehr schnell. Und er gab gern damit an!"
     }
    ]
   },
@@ -53,10 +58,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "I'm the fastest animal in the whole forest! he laughed. You're so slow, Tortoise!",
+     "text": "I'm the fastest! he laughed. You're so slow, Tortoise!",
      "cap": "*So slow!*",
-     "es": "¡Soy el animal más rápido de todo el bosque!, se rió. ¡Qué lenta eres, Tortuga!",
-     "de": "Ich bin das schnellste Tier im ganzen Wald!, lachte er. Du bist so langsam, Schildkröte!"
+     "es": "¡Soy la más rápida!, se rió. ¡Qué lenta eres, Tortuga!",
+     "de": "Ich bin der Schnellste!, lachte er. Du bist so langsam, Schildkröte!"
     }
    ]
   },
@@ -66,10 +71,17 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "The tortoise smiled. Then let's have a race! The hare laughed and laughed.",
-     "cap": "*Let's have a race!*",
-     "es": "La tortuga sonrió. ¡Entonces hagamos una carrera! La liebre se rió y se rió.",
-     "de": "Die Schildkröte lächelte. Dann lass uns ein Wettrennen machen! Der Hase lachte und lachte."
+     "text": "The tortoise smiled. Then let's have a race! Who do you think will win?",
+     "cap": "*Race!*",
+     "es": "La tortuga sonrió. ¡Entonces hagamos una carrera! ¿Quién crees que ganará?",
+     "de": "Die Schildkröte lächelte. Dann lass uns ein Wettrennen machen! Wer, glaubst du, gewinnt?"
+    },
+    {
+     "at": "2.0",
+     "text": "Hmm... let's see!",
+     "cap": "",
+     "es": "Mmm... ¡vamos a ver!",
+     "de": "Hmm... schauen wir mal!"
     }
    ]
   },
@@ -79,10 +91,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Ready... steady... go! Zoom! The hare ran away like the wind.",
+     "text": "Ready... steady... go! Zoom! Away ran the hare.",
      "cap": "*Go!* *Zoom!*",
-     "es": "Preparados... listos... ¡ya! ¡Zum! La liebre salió corriendo como el viento.",
-     "de": "Auf die Plätze... fertig... los! Zisch! Der Hase rannte davon wie der Wind."
+     "es": "Preparados... listos... ¡ya! ¡Zum! Y la liebre salió corriendo.",
+     "de": "Auf die Plätze... fertig... los! Zisch! Weg rannte der Hase."
     }
    ]
   },
@@ -92,10 +104,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "The tortoise walked slowly. Step... by step... by step.",
-     "cap": "Step... by *step.*",
-     "es": "La tortuga caminaba despacio. Paso... a paso... a paso.",
-     "de": "Die Schildkröte ging langsam. Schritt... für Schritt... für Schritt."
+     "text": "And the tortoise? Step... by step... by step.",
+     "cap": "*Step* by *step!*",
+     "es": "¿Y la tortuga? Paso... a paso... a paso.",
+     "de": "Und die Schildkröte? Schritt... für Schritt... für Schritt."
     }
    ]
   },
@@ -105,10 +117,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Soon, the hare looked back. The tortoise was far, far behind. I have time for a little nap!",
-     "cap": "A little *nap!*",
-     "es": "Pronto, la liebre miró atrás. La tortuga estaba muy, muy lejos. ¡Tengo tiempo para una siestecita!",
-     "de": "Bald schaute der Hase zurück. Die Schildkröte war weit, weit hinten. Ich hab Zeit für ein kleines Nickerchen!"
+     "text": "The hare looked back. The tortoise was far, far away. I have time for a little nap, he said. Shhh...",
+     "cap": "*Nap!*",
+     "es": "La liebre miró atrás. La tortuga estaba muy, muy lejos. Tengo tiempo para una siestecita, dijo. Shhh...",
+     "de": "Der Hase schaute zurück. Die Schildkröte war weit, weit weg. Ich hab Zeit für ein kleines Nickerchen, sagte er. Pssst..."
     }
    ]
   },
@@ -118,10 +130,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "But the tortoise kept walking. Step by step. He never stopped!",
-     "cap": "He *never stopped!*",
-     "es": "Pero la tortuga siguió caminando. Paso a paso. ¡Nunca se detuvo!",
-     "de": "Aber die Schildkröte lief weiter. Schritt für Schritt. Sie hörte nie auf!"
+     "text": "And the tortoise? Step... by step... by step.",
+     "cap": "*Step* by *step!*",
+     "es": "¿Y la tortuga? Paso... a paso... a paso.",
+     "de": "Und die Schildkröte? Schritt... für Schritt... für Schritt."
     }
    ]
   },
@@ -131,10 +143,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "When the hare woke up... oh no! The tortoise was almost at the finish line!",
+     "text": "The hare woke up. Oh no! The tortoise was almost at the finish!",
      "cap": "*Oh no!*",
-     "es": "Cuando la liebre despertó... ¡oh, no! ¡La tortuga casi estaba en la meta!",
-     "de": "Als der Hase aufwachte... oh nein! Die Schildkröte war fast am Ziel!"
+     "es": "La liebre se despertó. ¡Oh, no! ¡La tortuga casi estaba en la meta!",
+     "de": "Der Hase wachte auf. Oh nein! Die Schildkröte war fast am Ziel!"
     }
    ]
   },
@@ -144,10 +156,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "The hare ran as fast as he could... but it was too late! The tortoise won!",
+     "text": "The hare ran and ran... but the tortoise won!",
      "cap": "The tortoise *won!*",
-     "es": "La liebre corrió lo más rápido que pudo... ¡pero era demasiado tarde! ¡Ganó la tortuga!",
-     "de": "Der Hase rannte so schnell er konnte... aber es war zu spät! Die Schildkröte hat gewonnen!"
+     "es": "La liebre corrió y corrió... ¡pero ganó la tortuga!",
+     "de": "Der Hase rannte und rannte... aber die Schildkröte gewann!"
     }
    ]
   },
@@ -157,17 +169,17 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Slow and steady wins the race! Never give up!",
+     "text": "Slow and steady wins the race! Just like when you learn something new: step by step. Never give up!",
      "cap": "*Never give up!*",
-     "es": "¡Despacio y con constancia se gana la carrera! ¡Nunca te rindas!",
-     "de": "Langsam und beständig gewinnt das Rennen! Gib niemals auf!"
+     "es": "¡Despacio y con constancia se gana la carrera! Como cuando aprendes algo nuevo: paso a paso. ¡Nunca te rindas!",
+     "de": "Langsam und beständig gewinnt! Wie wenn du etwas Neues lernst: Schritt für Schritt. Gib niemals auf!"
     },
     {
-     "at": "0.15",
-     "text": "Want more stories? Subscribe, and see you next time!",
+     "at": "0.6",
+     "text": "Want another story? Subscribe, and see you next time!",
      "cta": true,
-     "es": "¿Quieres más cuentos? ¡Suscríbete y hasta la próxima!",
-     "de": "Willst du mehr Geschichten? Abonnier und bis zum nächsten Mal!"
+     "es": "¿Quieres otro cuento? ¡Suscríbete y hasta la próxima!",
+     "de": "Willst du noch eine Geschichte? Abonnier und bis zum nächsten Mal!"
     }
    ]
   }
@@ -204,5 +216,10 @@
  ],
  "subY": 455,
  "subEndY": 455,
- "noCommentCard": true
+ "noCommentCard": true,
+ "kids": true,
+ "tail": 0.9,
+ "capMode": "key",
+ "capSize": 130,
+ "glint": false
 }

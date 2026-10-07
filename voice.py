@@ -18,8 +18,10 @@ elif VOICE == 'native':               # native US pronunciation (Kokoro) convert
     VTAG = f"{E.get('voice_src', 'am_echo')}|{E.get('voice_expr', 1.85)}"
 elif VOICE == 'narrator':             # excited native narrator (Chatterbox TTS + synthetic reference), see clone_voice.Narrator
     from clone_voice import Narrator
-    k = Narrator(E.get('voice_ref', 'assets/voice/narrator_ref.wav'), float(E.get('voice_ex', 0.9)), float(E.get('voice_cfg', 0.35)), 0.85, float(E.get('wpm', 205)))
-    VTAG = f"{E.get('voice_ex', 0.9)}|{E.get('voice_cfg', 0.35)}|{E.get('wpm', 205)}|v2|{hashlib.md5(open(E.get('voice_ref', 'assets/voice/narrator_ref.wav'), 'rb').read()).hexdigest()[:8]}|{k.polish}"
+    KIDS = bool(E.get('kids'))                         # kids: slower, with breathing pauses, never sped up
+    k = Narrator(E.get('voice_ref', 'assets/voice/narrator_ref.wav'), float(E.get('voice_ex', 0.9)), float(E.get('voice_cfg', 0.35)), 0.85, float(E.get('wpm', 140 if KIDS else 205)),
+                 keep=float(E.get('pause_keep', 0.4 if KIDS else 0.14)), max_speed=float(E.get('max_speed', 1.0 if KIDS else 1.32)))
+    VTAG = f"{E.get('voice_ex', 0.9)}|{E.get('voice_cfg', 0.35)}|{E.get('wpm', 205)}|v2|{E.get('kids', 0)}|{hashlib.md5(open(E.get('voice_ref', 'assets/voice/narrator_ref.wav'), 'rb').read()).hexdigest()[:8]}|{k.polish}"
 elif VOICE == 'clone':                # Mehrdad's own voice, cloned (Chatterbox): timbre from assets/voice/*.wav, pronunciation from the model
     from clone_voice import Cloner
     k = Cloner(E.get('voice_ref', 'assets/voice/mehrdad.wav')); SPEED = float(arg('speed', str(E.get('speed_clone', 1.15))))

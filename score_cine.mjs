@@ -128,7 +128,7 @@ function sample(name) { if (name in SBUF) return SBUF[name];
       if (id === 'data') { data = b.subarray(o + 8, o + 8 + sz); break; } o += 8 + sz + (sz % 2); }
     const x = new Float32Array(data.length / 2); let pk = 0; for (let i = 0; i < x.length; i++) { x[i] = data.readInt16LE(i * 2) / 32768; pk = Math.max(pk, Math.abs(x[i])); }
     for (let i = 0; i < x.length; i++) x[i] /= pk || 1; return (SBUF[name] = { x, sr }); } catch { return (SBUF[name] = null); } }
-const USE_REAL = META.ep?.sfx !== 'synth', ROT = {};
+const USE_REAL = META.ep?.sfx !== 'synth', ROT = {}, KIDS = !!META.ep?.kids, FXG = KIDS ? 0.55 : 1;   // kids: softer, fewer effects
 function playReal(type, t, g, p) { const r = REAL[type]; if (!r) return false;
   const k = (ROT[type] = ((ROT[type] ?? Math.floor(t * 7)) + 1)) % r[0], s = sample(`${type}_${k + 1}`); if (!s) return false;
   const rate = (s.sr / SR) * (1 + 0.04 * Math.sin(t * 91.7)) * (type === 'pop' && p ? Math.sqrt(p / 700) : 1), len = (s.x.length - 1) / rate / SR;
@@ -138,7 +138,8 @@ function playReal(type, t, g, p) { const r = REAL[type]; if (!r) return false;
 for (const c of META.cues.filter((c) => c.type === 'mute')) {        // pattern interrupt: the music drops out
   const s0 = Math.floor(c.t * SR), n = Math.floor((c.p || 0.8) * SR);
   for (let i = 0; i < n + 2400 && s0 + i < N; i++) { const g = i < n ? 0 : (i - n) / 2400; L[s0 + i] *= g; R[s0 + i] *= g; } }
-for (const c of META.cues) if (c.type !== 'vo' && c.type !== 'mute') {
+for (const c0 of META.cues) if (c0.type !== 'vo' && c0.type !== 'mute') {
+  const c = Object.assign({}, c0, { gain: (c0.gain ?? 1) * FXG });
   const keep = USE_REAL ? playReal(c.type, c.t, c.gain ?? 1, c.p) : false;            // false = no real sample → synth only
   if (keep === false) SFX[c.type]?.(c.t, c.gain ?? 1, c.p); else if (keep > 0) SFX[c.type]?.(c.t, (c.gain ?? 1) * keep, c.p); }
 
@@ -164,7 +165,7 @@ if (vos.length) {
   const vg = 0.95 / (vpk || 1), mg = 0.95 / (mpk || 1);
   for (let i = 0; i < N; i++) {
     const a = Math.abs(VL[i]) * vg; env = a > env ? att * env + (1 - att) * a : rel * env + (1 - rel) * a;
-    const duck = 1 - 0.62 * Math.min(1, env * 6);            // music + SFX sit ~8 dB lower while the voice talks
+    const duck = 1 - (KIDS ? 0.88 : 0.62) * Math.min(1, env * 6);   // music + SFX sit ~8 dB lower while the voice talks (kids: ~18 dB — children need a clearer voice-to-noise ratio)
     L[i] = L[i] * mg * 0.5 * duck + VL[i] * vg; R[i] = R[i] * mg * 0.5 * duck + VL[i] * vg;
   }
   console.log('voice clips', vos.length);

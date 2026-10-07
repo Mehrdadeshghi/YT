@@ -97,81 +97,87 @@ function hare(t, x, y, s, o = {}) {
   if (o.face === 'sleep') { [0, 1, 2].forEach((k) => { const lt = (t * 0.8 + k / 3) % 1; g.save(); g.globalAlpha = Math.sin(lt * Math.PI); text('Z', x + 80 + lt * 90 + k * 10, y - 260 - lt * 200, 'disp', 40 + k * 14, '#3B5BDB', { align: 'center' }); g.restore(); }); } }
 
 // ---------- scene plumbing ----------
-function kscene(i, sp) { return (K) => { K(0.45, 'whoosh', 0.45); (sp.k || []).forEach(([a, b, c, d]) => K(a, b, c, d));
+function kscene(i, sp) { return (K) => { (sp.k || []).forEach(([a, b, c, d]) => K(a, b, c, d));     // kids: no whoosh, calm transitions (crossfade)
   return (t) => { g.save(); const [z, fx, fy] = sp.cam ? sp.cam(t) : [1, 540, 1000]; cam(z, fx, fy); NOSTART = !!sp.noStart; meadow(t); NOSTART = false; if (sp.world) sp.world(t); g.restore();
     if (sp.ui) sp.ui(t); tag(t, i, N); }; }; }
 const storyChip = (t) => chip('STORY TIME · THE TORTOISE AND THE HARE', 540, 360, t, -0.3, { size: 24, bg: GOLD, fg: BG });
+// kids label: a soft rounded card that floats in gently (no shake, no flash, no stamp)
+function label(str, x, y, t, tIn, o = {}) { const lt = t - tIn; if (lt < 0) return; const s = spring(lt, 140, 22), size = o.size || 84;
+  g.save(); g.font = F.disp(size); const w = g.measureText(str).width + 90, h = size * 1.55; g.translate(x, y + (1 - s) * 40); g.globalAlpha *= clamp(lt / 0.35);
+  g.shadowColor = 'rgba(0,0,0,0.25)'; g.shadowBlur = 24; rrect(-w / 2, -h / 2, w, h, h / 2); g.fillStyle = o.bg || '#FFFFFF'; g.fill(); g.shadowBlur = 0; g.lineWidth = 6; g.strokeStyle = INKC; g.stroke();
+  text(str, 0, size * 0.36, 'disp', size, o.fg || INKC, { align: 'center' }); g.restore(); }
+// participation pause: two soft choice cards that gently bob while the child answers
+function choice(t, tIn, tOut) { if (t < tIn || t > tOut) return; const b = Math.sin((t - tIn) * 4) * 8;
+  label('TORTOISE?', 300, 1330 + b, t, tIn, { size: 52, bg: '#C9F2B5' }); label('HARE?', 790, 1330 - b, t, tIn + 0.15, { size: 52, bg: '#FFE0C7' }); }
+const stepChips = (t, steps) => steps.forEach((s, k) => { if (t > s) label(['STEP…', 'BY STEP…', 'BY STEP!'][k], 540, 1290 + k * 105, t, s, { size: 52 }); });
 
-VIS.open = (K) => { K(0.05, 'pop', 1, 700); K(0.3, 'ding', 0.9); K(sw('hare', 1.4), 'zap', 0.8); K(sw('tortoise', 2.6), 'pop', 0.9, 500); K(sw('find', 3.6), 'pop', 1, 900);
+VIS.open = (K) => { const ha = sw('hare', 1.4), to = sw('tortoise', 2.6), th = sw('think', 3.4), fi = sw('find', 6);
+  K(0.05, 'ding', 0.8); K(ha, 'pop', 0.7, 700); K(to, 'pop', 0.7, 500); K(fi, 'ding', 0.8);
   return (t) => { g.save(); cam(1, 420, 1000); meadow(t); ribbon(FINISH, null, t);
-    hare(t, 520, GROUND, 0.95, { face: 'smug', pose: t > sw('hare', 1.4) ? 'flex' : 'stand' }); tortoise(t, 220, GROUND, 0.85, { face: 'smile' }); g.restore();
-    tag(t); hook(t, EP.hook, 1440, { size: 110 }); lot(t, 0.4, 'think', 920, 560, 140); }; };
+    hare(t, 520, GROUND, 0.95, { face: 'smug', pose: t > ha && t < to ? 'flex' : 'stand' }); tortoise(t, 220, GROUND, 0.85, { face: 'smile' }); g.restore();
+    tag(t); if (t < th) hook(t, EP.hook, 1440, { size: 110 }); choice(t, th, fi); if (t > th) lot(t, th, 'think', 920, 560, 140); }; };
 
 VIS[0] = S(() => { const fa = sw('fast', 1.4), sh = sw('show', 2.6);
-  return kscene(0, { k: [[fa - 0.3, 'swish', 1], [sh, 'pop', 1, 800]],
-    cam: (t) => [1, 540, 1000],
-    world: (t) => { const run = t > fa - 0.4 && t < fa + 0.9, x = run ? lerp(-300, 1500, (t - fa + 0.4) / 1.3) : t < fa ? 540 : 600;
-      if (run) { speedLines(x, GROUND, 1, t); dust(x - 80, GROUND, fa - 0.4, t); }
-      hare(t, t > fa + 0.9 ? 600 : x, GROUND, 1, { face: run ? 'happy' : 'smug', run, pose: t > sh ? 'flex' : 'stand' }); },
-    ui: (t) => { storyChip(t); if (t > fa - 0.3 && t < fa + 1.2) lot(t, fa - 0.3, 'zap', 860, 560, 150); if (t > sh) { lot(t, sh, 'sparkles', 860, 560, 150); chip('SHOW-OFF!', 540, 1320, t, sh, { size: 44, bg: '#FFFFFF', fg: INKC }); } } }); });
+  return kscene(0, { k: [[fa - 0.3, 'swish', 0.6], [sh, 'pop', 0.7, 800]],
+    world: (t) => { const run = t > fa - 0.4 && t < fa + 1.4, x = run ? lerp(-300, 1300, (t - fa + 0.4) / 1.8) : t < fa ? 540 : 600;
+      if (run) speedLines(x, GROUND, 1, t);
+      hare(t, t > fa + 1.4 ? 600 : x, GROUND, 1, { face: run ? 'happy' : 'smug', run, pose: t > sh ? 'flex' : 'stand' }); },
+    ui: (t) => { storyChip(t); if (t > sh) label('SHOW-OFF!', 540, 1330, t, sh, { size: 70 }); } }); });
 
-VIS[1] = S(() => { const fs = sw('fastest', 0.6), la = sw('laughed', 2.0), sl = sw('slow', 3.0);
-  return kscene(1, { noStart: true, k: [[fs, 'pop', 1, 700], [la, 'pop', 0.9, 900], [sl, 'wrong', 0.9]],
-    cam: (t) => zoomTo(t, [1.0, 540, 1000], [1.2, 480, 960], 0, 0.8),
+VIS[1] = S(() => { const fs = sw('fastest', 0.6), la = sw('laughed', 1.6), sl = sw('slow', 2.6);
+  return kscene(1, { noStart: true, k: [[fs, 'pop', 0.7, 700], [la, 'pop', 0.6, 900]],
+    cam: (t) => zoomTo(t, [1.0, 540, 1000], [1.15, 480, 960], 0, 1.5),
     world: (t) => { hare(t, 640, GROUND, 1, { face: t > la ? 'laugh' : 'smug', pose: t > la ? 'clap' : 'flex', flip: true }); tortoise(t, 240, GROUND, 0.85, { face: t > sl ? 'sad' : 'smile' }); },
-    ui: (t) => { if (t > fs && t < sl) bubble(t, fs, 640, 560, "I'M THE FASTEST!", { size: 52, tx: 680, ty: 760 }); if (t > sl) bubble(t, sl, 640, 560, "YOU'RE SO SLOW!", { size: 52, tx: 680, ty: 760 }); if (t > la) lot(t, la, 'lol', 900, 760, 130); } }); });
+    ui: (t) => { if (t > fs && t < sl) bubble(t, fs, 640, 560, "I'M THE FASTEST!", { size: 52, tx: 680, ty: 760 }); if (t > sl) bubble(t, sl, 640, 560, "YOU'RE SO SLOW!", { size: 52, tx: 680, ty: 760 }); } }); });
 
-VIS[2] = S(() => { const smi = sw('smiled', 0.8), race = sw('race', 1.8), la = sw('laughed', 2.6);
-  return kscene(2, { noStart: true, k: [[smi, 'ding', 0.8], [race, 'stamp', 1], [la, 'pop', 0.9, 900]],
-    cam: (t) => zoomTo(t, [1.2, 480, 960], [1.3, 380, 960], 0, 1.0),
-    world: (t) => { hare(t, 640, GROUND, 1, { face: t > la ? 'laugh' : 'shock', pose: t > la ? 'clap' : 'stand', flip: true }); tortoise(t, 240, GROUND, 0.85, { face: 'proud' }); },
-    ui: (t) => { if (t > smi) bubble(t, Math.max(smi, race - 0.6), 360, 560, "LET'S HAVE A RACE!", { size: 50, tx: 330, ty: 820 }); if (t > la) lot(t, la, 'lol', 900, 760, 140); } }); });
+VIS[2] = S(() => { const smi = sw('smiled', 0.8), race = sw('race', 1.8), win = sw('win', 3.0), hm = sw('hmm', 5.0);
+  return kscene(2, { noStart: true, k: [[smi, 'ding', 0.6], [race, 'pop', 0.8, 600], [win + 0.3, 'ding', 0.6]],
+    cam: (t) => zoomTo(t, [1.15, 480, 960], [1.2, 420, 960], 0, 1.5),
+    world: (t) => { hare(t, 640, GROUND, 1, { face: t > race && t < win ? 'shock' : 'smug', pose: 'stand', flip: true }); tortoise(t, 240, GROUND, 0.85, { face: 'proud' }); },
+    ui: (t) => { if (t > race - 0.5 && t < win) bubble(t, race - 0.5, 360, 560, "LET'S HAVE A RACE!", { size: 50, tx: 330, ty: 820 }); choice(t, win, hm + 0.6); if (t > win) lot(t, win, 'think', 900, 560, 130); } }); });
 
 VIS[3] = S(() => { const re = sw('ready', 0.3), st2 = sw('steady', 1.0), go = sw('go', 1.6), zo = sw('zoom', 2.1);
-  return kscene(3, { k: [[re, 'beep', 1], [st2, 'beep', 1], [go, 'ding', 1.2], [zo, 'swish', 1.2], [zo + 0.02, 'zap', 0.8]],
+  return kscene(3, { k: [[re, 'beep', 0.6], [st2, 'beep', 0.6], [go, 'ding', 0.9], [zo, 'swish', 0.8]],
     cam: (t) => [1, 380, 1000],
-    world: (t) => { const hx = t < zo ? 520 : 520 + Math.pow(t - zo, 1.6) * 1800; if (t > zo) { speedLines(hx, GROUND, 1, t); dust(520, GROUND, zo, t); }
+    world: (t) => { const hx = t < zo ? 520 : 520 + Math.pow(t - zo, 1.4) * 1100; if (t > zo) speedLines(hx, GROUND, 1, t);
       hare(t, hx, GROUND, 1, { face: t > zo ? 'happy' : 'smug', run: t > zo }); tortoise(t, 230, GROUND, 0.85, { face: 'smile', walk: t > go }); },
     ui: (t) => { const w2 = t > go ? 'GO!' : t > st2 ? 'STEADY…' : t > re ? 'READY…' : null, at = t > go ? go : t > st2 ? st2 : re;
-      if (w2) stampText(w2, 540, 1320, t, at, { size: t > go ? 150 : 100, rot: -0.06 }); if (t > zo) lot(t, zo, 'zap', 860, 760, 150); } }); });
+      if (w2) label(w2, 540, 1330, t, at, { size: t > go ? 110 : 80, bg: t > go ? '#C9F2B5' : '#FFFFFF' }); } }); });
 
-VIS[4] = S(() => { const sl = sw('slowly', 1.0), s1 = sw('step', 1.6), s2 = sw('step', 2.3, 1), s3 = sw('step', 3.0, 2);
-  return kscene(4, { k: [[s1, 'tick', 1], [s2, 'tick', 1], [s3, 'tick', 1]],
-    cam: (t) => zoomTo(t, [1.25, 300, 1000], [1.25, 480, 1000], 0, 3.5),
-    world: (t) => { const x = lerp(230, 560, clamp(t / 3.6)); [s1, s2, s3].forEach((s, k) => { if (t > s) { g.fillStyle = 'rgba(120,90,50,0.35)'; g.beginPath(); g.ellipse(230 + (k + 1) * 80, GROUND + 25, 18, 9, 0, 0, 6.283); g.fill(); } });
-      tortoise(t, x, GROUND, 0.9, { face: 'smile', walk: true }); },
-    ui: (t) => { [s1, s2, s3].forEach((s, k) => { if (t > s) chip(['STEP…', 'BY STEP…', 'BY STEP!'][k], 540, 1290 + k * 70, t, s, { size: 40, bg: '#FFFFFF', fg: INKC }); }); if (t > sl) lot(t, sl, 'turtle', 880, 760, 130); } }); });
+const refrain = (i) => S(() => { const s1 = sw('step', 1.4), s2 = sw('step', 2.1, 1), s3 = sw('step', 2.8, 2), x0 = i === 4 ? 230 : TREE - 420, x1 = i === 4 ? 560 : TREE + 300;
+  return kscene(i, { k: [[s1, 'tick', 0.7], [s2, 'tick', 0.7], [s3, 'tick', 0.7]],
+    cam: (t) => i === 4 ? zoomTo(t, [1.2, 300, 1000], [1.2, 480, 1000], 0, 3.5) : zoomTo(t, [1.0, TREE - 200, 1000], [1.0, TREE + 250, 1000], 0, 3.5),
+    world: (t) => { if (i === 6) hare(t, TREE + 160, GROUND - 40, 1, { face: 'sleep', pose: 'lie' });
+      tortoise(t, lerp(x0, x1, clamp(t / 3.6)), GROUND + (i === 6 ? 40 : 0), 0.9, { face: 'smile', walk: true }); },
+    ui: (t) => stepChips(t, [s1, s2, s3]) }); });
+VIS[4] = refrain(4);
 
-VIS[5] = S(() => { const lb = sw('looked', 0.8), far = sw('far', 1.6), nap = sw('nap', 3.0);
-  return kscene(5, { k: [[lb, 'whoosh', 0.6], [far, 'pop', 0.9, 500], [nap, 'pop', 1, 1000]],
-    cam: (t) => zoomTo(t, [1.05, TREE - 100, 1000], [1.15, TREE, 980], nap - 0.3, 0.6),
+VIS[5] = S(() => { const lb = sw('looked', 0.5), far = sw('far', 1.4), nap = sw('nap', 2.8), sh = sw('shhh', 3.8);
+  return kscene(5, { k: [[lb, 'pop', 0.5, 500], [nap, 'pop', 0.6, 1000]],
+    cam: (t) => zoomTo(t, [1.05, TREE - 100, 1000], [1.15, TREE, 980], nap - 0.3, 1.0),
     world: (t) => { hare(t, TREE + 160, t > nap ? GROUND - 40 : GROUND, 1, { face: t > nap + 0.4 ? 'sleep' : t > lb ? 'smug' : 'happy', flip: t > lb && t < nap, pose: t > nap + 0.3 ? 'lie' : 'stand', look: [-0.8, 0] }); },
-    ui: (t) => { if (t > far && t < nap) chip('TORTOISE: FAR, FAR BEHIND…', 540, 1320, t, far, { size: 36, bg: '#FFFFFF', fg: INKC }); if (t > nap) bubble(t, nap, 540, 560, 'NAP TIME!', { size: 56, tx: 600, ty: 760, out: nap + 1.6 }); } }); });
+    ui: (t) => { if (t > far && t < nap) label('FAR, FAR AWAY…', 540, 1330, t, far, { size: 60 }); if (t > nap) bubble(t, nap, 540, 560, 'NAP TIME!', { size: 56, tx: 600, ty: 760 }); if (t > sh) label('SHHH…', 540, 1330, t, sh, { size: 80, bg: '#D6E4FF' }); } }); });
 
-VIS[6] = S(() => { const kw = sw('kept', 0.8), nev = sw('never', 2.5);
-  return kscene(6, { k: [[kw, 'tick', 0.8], [kw + 0.5, 'tick', 0.8], [nev, 'stamp', 1.1]],
-    cam: (t) => zoomTo(t, [1.05, TREE - 200, 1000], [1.05, TREE + 300, 1000], 0, 3.5),
-    world: (t) => { hare(t, TREE + 160, GROUND - 40, 1, { face: 'sleep', pose: 'lie' }); tortoise(t, lerp(TREE - 450, TREE + 520, clamp(t / 3.6)), GROUND + 40, 0.85, { face: 'smile', walk: true }); },
-    ui: (t) => { if (t > nev) { stampText('NEVER STOP!', 540, 1320, t, nev, { size: 96, rot: -0.06 }); lot(t, nev + 0.1, 'hundred', 880, 760, 130); } } }); });
+VIS[6] = refrain(6);
 
 VIS[7] = S(() => { const wo = sw('woke', 0.7), oh = sw('oh', 1.6), fin = sw('finish', 3.0);
-  return kscene(7, { k: [[wo, 'pop', 0.9, 600], [oh - 0.35, 'mute', 1, 0.35], [oh, 'boom', 1], [oh + 0.02, 'hit', 1]],
-    cam: (t) => t < oh ? [1.2, TREE + 100, 960] : zoomTo(t, [1.0, FINISH - 250, 1000], [1.1, FINISH - 200, 980], oh, 1.5),
-    world: (t) => { ribbon(FINISH, null, t); hare(t, TREE + 160, t < wo ? GROUND - 40 : GROUND, 1, { face: t < wo ? 'sleep' : 'shock', pose: t < wo ? 'lie' : 'stand' });
+  return kscene(7, { k: [[wo, 'pop', 0.6, 600], [oh, 'ding', 0.8]],
+    cam: (t) => t < oh ? [1.2, TREE + 100, 960] : zoomTo(t, [1.0, FINISH - 250, 1000], [1.05, FINISH - 200, 980], oh, 2.0),
+    world: (t) => { ribbon(FINISH, null, t); if (t < oh) hare(t, TREE + 160, t < wo ? GROUND - 40 : GROUND, 1, { face: t < wo ? 'sleep' : 'shock', pose: t < wo ? 'lie' : 'stand' });
       tortoise(t, lerp(FINISH - 420, FINISH - 250, clamp((t - oh) / 2.5)), GROUND, 0.9, { face: 'proud', walk: true }); },
-    ui: (t) => { if (t > wo && t < oh) lot(t, wo, 'shocked', 860, 600, 140); if (t > oh) { flash(t, oh, 0.4, 0.1); lot(t, oh, 'scream', 880, 600, 150); } if (t > fin) chip('ALMOST AT THE FINISH!', 540, 1320, t, fin, { size: 40, bg: '#FF4D6D', fg: '#FFF' }); } }); });
+    ui: (t) => { if (t > wo && t < oh) lot(t, wo, 'shocked', 860, 600, 140); if (t > fin) label('ALMOST THERE!', 540, 1330, t, fin, { size: 64, bg: '#FFE0C7' }); } }); });
 
-VIS[8] = S(() => { const ran = sw('ran', 0.5), late = sw('late', 2.6), won = sw('won', 3.4);
-  return kscene(8, { k: [[ran, 'swish', 1.1], [late, 'wrong', 1], [won - 0.4, 'mute', 1, 0.4], [won, 'boom', 1.1], [won + 0.02, 'ding', 1.2]],
+VIS[8] = S(() => { const ran = sw('ran', 0.5), but = sw('but', 1.8), won = sw('won', 2.6);
+  return kscene(8, { k: [[ran, 'swish', 0.7], [won, 'ding', 1], [won + 0.3, 'pop', 0.7, 900]],
     cam: (t) => [1.0, FINISH - 150, 1000],
     world: (t) => { const tx = lerp(FINISH - 250, FINISH + 60, clamp((t - 0.2) / Math.max(0.5, won - 0.2))); ribbon(FINISH, t > won ? won : null, t);
       const hx = lerp(FINISH - 1100, FINISH - 260, clamp((t - ran) / Math.max(0.5, won - ran + 0.3))); speedLines(hx, GROUND, 1, t);
       hare(t, hx, GROUND, 0.9, { face: t > won ? 'sad' : 'shock', run: t < won + 0.3 }); tortoise(t, tx, GROUND, 0.9, { face: t > won ? 'proud' : 'smile', walk: t < won }); },
-    ui: (t) => { if (t > late && t < won) chip('TOO LATE!', 540, 1320, t, late, { size: 52, bg: '#FF4D6D', fg: '#FFF' });
-      if (t > won) { stampText('WINNER!', 540, 1320, t, won, { size: 130, rot: -0.06 }); lot(t, won, 'party', 230, 520, 160); lot(t, won + 0.1, 'trophy', 860, 760, 150); } } }); });
+    ui: (t) => { if (t > won) { label('THE TORTOISE WON!', 540, 1330, t, won, { size: 64, bg: '#C9F2B5' }); lot(t, won, 'party', 230, 520, 150); lot(t, won + 0.2, 'trophy', 860, 560, 140); } } }); });
 
-VIS[9] = S(() => { const sl = sw('slow', 0.3), ng = sw('never', 1.8);
-  return kscene(9, { k: [[sl, 'ding', 1], [ng, 'stamp', 1.1]],
+VIS[9] = S(() => { const sl = sw('slow', 0.3), le = sw('learn', 2.0), ng = sw('never', 3.6);
+  return kscene(9, { k: [[sl, 'ding', 0.8], [ng, 'ding', 0.8]],
     cam: (t) => [1.15, FINISH, 990],
     world: (t) => { ribbon(FINISH, -1, t + 5); tortoise(t, FINISH - 40, GROUND, 0.95, { face: 'proud', medal: true }); hare(t, FINISH + 300, GROUND, 0.85, { face: 'happy', pose: 'clap', flip: true }); },
-    ui: (t) => { if (t > sl) stampText('SLOW & STEADY!', 540, 1300, t, sl, { size: 84, rot: -0.05 }); if (t > ng) chip('NEVER GIVE UP!', 540, 1430, t, ng, { size: 48, bg: GOLD, fg: BG }); lot(t, 0.3, 'clap', 900, 560, 120); } }); });
+    ui: (t) => { if (t > sl && t < le) label('SLOW & STEADY!', 540, 1330, t, sl, { size: 64 }); if (t > le && t < ng) label('STEP BY STEP', 540, 1330, t, le, { size: 64, bg: '#D6E4FF' });
+      if (t > ng) label('NEVER GIVE UP!', 540, 1330, t, ng, { size: 64, bg: GOLD }); lot(t, 0.3, 'clap', 900, 560, 120); } }); });
