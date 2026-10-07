@@ -1,0 +1,152 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "voice": "narrator",
+ "wpm": 205,
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "zap",
+  "think",
+  "check",
+  "lol",
+  "fire",
+  "warning",
+  "starstruck",
+  "cold"
+ ],
+ "ep": 114,
+ "series": "HOW IT WORKS #6",
+ "prog": 3,
+ "title": "How QR codes work (and the parking-meter scam)",
+ "hook": [
+  "RIP OFF A THIRD.",
+  "IT STILL WORKS."
+ ],
+ "cta": {
+  "q": "Ever seen a fake QR code?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "warning"
+ },
+ "source": "https://en.wikipedia.org/wiki/QR_code",
+ "scripts": [
+  "tech.js"
+ ],
+ "spell": {},
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "You can rip off almost a third of a QR code... and it still works!",
+   "de": "Du kannst fast ein Drittel eines QR-Codes abreißen... und er funktioniert trotzdem!",
+   "es": "Puedes arrancar casi un tercio de un código QR... ¡y sigue funcionando!"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "QR codes were invented in Japan in nineteen ninety-four... to label car parts!",
+     "de": "QR-Codes wurden 1994 in Japan erfunden... um Autoteile zu kennzeichnen!",
+     "es": "Los códigos QR se inventaron en Japón en 1994... ¡para etiquetar piezas de coche!",
+     "cap": "To label *car parts!*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "These three big squares tell your camera: here's the code, and this way up.",
+     "de": "Diese drei großen Quadrate sagen deiner Kamera: Hier ist der Code, und so herum ist oben.",
+     "es": "Estos tres cuadrados grandes le dicen a tu cámara: aquí está el código, y este lado va arriba.",
+     "cap": "*This way up.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "All the little squares are just ones and zeros... plus extra repair data.",
+     "de": "Die vielen kleinen Quadrate sind nur Einsen und Nullen... plus zusätzliche Reparaturdaten.",
+     "es": "Todos los cuadraditos son solo unos y ceros... más datos extra de reparación.",
+     "cap": "Extra *repair data!*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "At the strongest level, about thirty percent can be missing... and your phone rebuilds it!",
+     "de": "Auf der stärksten Stufe können etwa dreißig Prozent fehlen... und dein Handy baut es wieder auf!",
+     "es": "En el nivel más alto puede faltar un treinta por ciento... ¡y tu móvil lo reconstruye!",
+     "cap": "*30%* can be missing!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But scammers love them. They stick fake QR codes on parking meters... leading to fake payment sites.",
+     "de": "Aber Betrüger lieben sie. Sie kleben falsche QR-Codes auf Parkautomaten... die zu gefälschten Bezahlseiten führen.",
+     "es": "Pero a los estafadores les encantan. Pegan códigos QR falsos en los parquímetros... que llevan a webs de pago falsas.",
+     "cap": "*Fake* QR codes!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So before you pay, check the web address your phone shows. A sticker on top? Don't scan it!",
+     "de": "Bevor du zahlst, prüf also die Webadresse, die dein Handy anzeigt. Ein Aufkleber drüber? Nicht scannen!",
+     "es": "Así que antes de pagar, revisa la dirección web que muestra tu móvil. ¿Una pegatina encima? ¡No la escanees!",
+     "cap": "Check the *address!*"
+    },
+    {
+     "at": "0.15",
+     "text": "Have you ever seen a fake QR code? Comment yes or no, and subscribe!",
+     "cta": true,
+     "de": "Hast du schon mal einen falschen QR-Code gesehen? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Alguna vez has visto un código QR falso? Comenta sí o no, y suscríbete."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "from": 2,
+   "len": 43,
+   "gain": 0.55
+  }
+ ]
+}

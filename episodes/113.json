@@ -1,0 +1,165 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "voice": "narrator",
+ "wpm": 205,
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "zap",
+  "think",
+  "check",
+  "lol",
+  "fire",
+  "warning",
+  "starstruck",
+  "cold"
+ ],
+ "ep": 113,
+ "series": "HOW IT WORKS #5",
+ "prog": 3,
+ "title": "How Apple Pay and Google Pay hide your card number",
+ "hook": [
+  "THE SHOP NEVER SEES",
+  "YOUR CARD NUMBER."
+ ],
+ "cta": {
+  "q": "Do you pay with your phone?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "eyes"
+ },
+ "source": "https://en.wikipedia.org/wiki/Apple_Pay",
+ "scripts": [
+  "tech.js"
+ ],
+ "spell": {},
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "When you pay with your phone... the shop never sees your card number!",
+   "de": "Wenn du mit dem Handy zahlst... sieht der Laden nie deine Kartennummer!",
+   "es": "Cuando pagas con el móvil... ¡la tienda nunca ve el número de tu tarjeta!"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When you add your card, your bank creates a stand-in number just for your phone. It's called a token.",
+     "de": "Wenn du deine Karte hinzufügst, erstellt deine Bank eine Ersatznummer nur für dein Handy. Sie heißt Token.",
+     "es": "Cuando añades tu tarjeta, tu banco crea un número sustituto solo para tu móvil. Se llama token.",
+     "cap": "A *token.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "First, your phone checks it's really you: face, fingerprint, or code.",
+     "de": "Zuerst prüft dein Handy, ob du es wirklich bist: Gesicht, Fingerabdruck oder Code.",
+     "es": "Primero, tu móvil comprueba que eres tú: cara, huella o código.",
+     "cap": "Is it *really you?*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then it sends the token, plus a one-time code made just for this payment.",
+     "de": "Dann sendet es das Token, plus einen Einmal-Code nur für diese Zahlung.",
+     "es": "Luego envía el token, más un código de un solo uso creado solo para este pago.",
+     "cap": "A *one-time code.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Only your bank can turn that token back into your real card.",
+     "de": "Nur deine Bank kann das Token wieder in deine echte Karte zurückverwandeln.",
+     "es": "Solo tu banco puede convertir ese token en tu tarjeta real.",
+     "cap": "Only your *bank* knows."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So if the shop gets hacked... your real card number isn't even there to steal!",
+     "de": "Wenn der Laden also gehackt wird... ist deine echte Kartennummer gar nicht da!",
+     "es": "Así que si hackean la tienda... ¡tu número real ni siquiera está ahí para robarlo!",
+     "cap": "Nothing to *steal!*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Lost your phone? Mark it as lost, and paying with it stops. Your card keeps working.",
+     "de": "Handy verloren? Als verloren markieren, dann ist Bezahlen damit gesperrt. Deine Karte funktioniert weiter.",
+     "es": "¿Perdiste el móvil? Márcalo como perdido y se bloquean los pagos. Tu tarjeta sigue funcionando.",
+     "cap": "Mark it as *lost.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Your phone pays... without ever showing your card!",
+     "de": "Dein Handy bezahlt... ohne je deine Karte zu zeigen!",
+     "es": "Tu móvil paga... ¡sin mostrar nunca tu tarjeta!",
+     "cap": "Without your *card number!*"
+    },
+    {
+     "at": "0.15",
+     "text": "Do you pay with your phone? Comment yes or no, and subscribe!",
+     "cta": true,
+     "de": "Zahlst du mit dem Handy? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Pagas con el móvil? Comenta sí o no, y suscríbete."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "from": 2,
+   "len": 43,
+   "gain": 0.55
+  }
+ ]
+}

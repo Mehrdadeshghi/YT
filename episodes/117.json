@@ -1,0 +1,152 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "voice": "narrator",
+ "wpm": 205,
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "zap",
+  "think",
+  "check",
+  "lol",
+  "fire",
+  "warning",
+  "starstruck",
+  "cold"
+ ],
+ "ep": 117,
+ "series": "HOW IT WORKS #9",
+ "prog": 3,
+ "title": "How night mode works on your phone camera",
+ "hook": [
+  "YOUR NIGHT PHOTO",
+  "ISN'T ONE PHOTO."
+ ],
+ "cta": {
+  "q": "Do you use night mode?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "starstruck"
+ },
+ "source": "https://research.google/blog/night-sight-seeing-in-the-dark-on-pixel-phones/",
+ "scripts": [
+  "tech.js"
+ ],
+ "spell": {},
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Your night photo isn't one photo... it can be fifteen!",
+   "de": "Dein Nachtfoto ist nicht ein Foto... es können fünfzehn sein!",
+   "es": "Tu foto nocturna no es una foto... ¡pueden ser quince!"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In the dark, one quick photo is full of grainy noise.",
+     "de": "Im Dunkeln ist ein schnelles Foto voller körnigem Rauschen.",
+     "es": "En la oscuridad, una foto rápida está llena de ruido granulado.",
+     "cap": "Full of *noise.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So night mode takes a burst of photos, while you hold still for a few seconds.",
+     "de": "Also schießt der Nachtmodus eine Serie von Fotos, während du ein paar Sekunden stillhältst.",
+     "es": "Así que el modo noche toma una ráfaga de fotos mientras te quedas quieto unos segundos.",
+     "cap": "A *burst* of photos."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It lines them up, throws away the blurry parts... and merges the rest.",
+     "de": "Es richtet sie aus, wirft die verwackelten Teile weg... und verschmilzt den Rest.",
+     "es": "Las alinea, descarta las partes movidas... y fusiona el resto.",
+     "cap": "It *merges* them."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The noise is random, so it averages away. The real details stay!",
+     "de": "Das Rauschen ist zufällig, also mittelt es sich weg. Die echten Details bleiben!",
+     "es": "El ruido es aleatorio, así que se promedia y desaparece. ¡Los detalles reales se quedan!",
+     "cap": "The *details stay!*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Google's Night Sight can stack up to fifteen frames... about five seconds of light.",
+     "de": "Googles Night Sight kann bis zu fünfzehn Bilder stapeln... etwa fünf Sekunden Licht.",
+     "es": "Night Sight de Google puede apilar hasta quince fotos... unos cinco segundos de luz.",
+     "cap": "*15 frames!*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Tip: brace your phone on something. The steadier it is, the longer each shot can be!",
+     "de": "Tipp: Stütz dein Handy irgendwo ab. Je ruhiger es ist, desto länger darf jedes Bild belichten!",
+     "es": "Consejo: apoya el móvil en algo. ¡Cuanto más quieto esté, más larga puede ser cada foto!",
+     "cap": "*Brace* your phone!"
+    },
+    {
+     "at": "0.15",
+     "text": "Do you use night mode? Comment yes or no, and subscribe!",
+     "cta": true,
+     "de": "Nutzt du den Nachtmodus? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Usas el modo noche? Comenta sí o no, y suscríbete."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "from": 2,
+   "len": 43,
+   "gain": 0.55
+  }
+ ]
+}

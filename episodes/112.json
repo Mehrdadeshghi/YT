@@ -1,0 +1,152 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "voice": "narrator",
+ "wpm": 205,
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "zap",
+  "think",
+  "check",
+  "lol",
+  "fire",
+  "warning",
+  "starstruck",
+  "cold"
+ ],
+ "ep": 112,
+ "series": "HOW IT WORKS #4",
+ "prog": 3,
+ "title": "How contactless payment works (your card has no battery)",
+ "hook": [
+  "YOUR CARD HAS",
+  "NO BATTERY."
+ ],
+ "cta": {
+  "q": "Card or cash?",
+  "a": "CARD",
+  "b": "CASH",
+  "emoji": "think"
+ },
+ "source": "https://en.wikipedia.org/wiki/Near-field_communication",
+ "scripts": [
+  "tech.js"
+ ],
+ "spell": {},
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Your bank card has no battery... so how does it pay?",
+   "de": "Deine Bankkarte hat keinen Akku... wie bezahlt sie dann?",
+   "es": "Tu tarjeta no tiene batería... ¿cómo paga entonces?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Hidden inside is a coil of wire, running all around the edge of the card.",
+     "de": "Darin versteckt ist eine Drahtspule, einmal rundherum am Kartenrand.",
+     "es": "Dentro se esconde una bobina de cable que recorre todo el borde de la tarjeta.",
+     "cap": "A *hidden coil.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When you tap, the terminal makes a magnetic field. It flips over thirteen million times per second.",
+     "de": "Wenn du tippst, erzeugt das Terminal ein Magnetfeld. Es kippt über dreizehn Millionen Mal pro Sekunde.",
+     "es": "Al acercarla, el terminal crea un campo magnético que cambia más de trece millones de veces por segundo.",
+     "cap": "*13 million* times a second!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "That field creates a tiny current in the coil... and wakes up the chip!",
+     "de": "Dieses Feld erzeugt einen winzigen Strom in der Spule... und weckt den Chip auf!",
+     "es": "Ese campo crea una pequeña corriente en la bobina... ¡y despierta el chip!",
+     "cap": "It *wakes up* the chip!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But only within about four centimeters. That's why you have to tap.",
+     "de": "Aber nur auf etwa vier Zentimeter. Deshalb musst du so nah ran.",
+     "es": "Pero solo a unos cuatro centímetros. Por eso tienes que acercarla.",
+     "cap": "Only *4 cm!*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And every payment gets a brand-new one-time code. Copy it... and it's useless.",
+     "de": "Und jede Zahlung bekommt einen brandneuen Einmal-Code. Kopiert man ihn... ist er nutzlos.",
+     "es": "Y cada pago recibe un código nuevo de un solo uso. Si lo copias... no sirve para nada.",
+     "cap": "A *one-time code.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So your card never had power... the terminal lends it, for a split second!",
+     "de": "Deine Karte hatte also nie Strom... das Terminal leiht ihn ihr, für einen Sekundenbruchteil!",
+     "es": "Así que tu tarjeta nunca tuvo energía... ¡el terminal se la presta por una fracción de segundo!",
+     "cap": "The terminal *lends it!*"
+    },
+    {
+     "at": "0.15",
+     "text": "Card or cash? Comment card or cash, and subscribe!",
+     "cta": true,
+     "de": "Karte oder bar? Kommentier Karte oder bar, und abonnier!",
+     "es": "¿Tarjeta o efectivo? Comenta tarjeta o efectivo, y suscríbete."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "from": 2,
+   "len": 43,
+   "gain": 0.55
+  }
+ ]
+}
