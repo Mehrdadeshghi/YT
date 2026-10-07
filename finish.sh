@@ -5,7 +5,7 @@ node ${SCORE:-score_cine.mjs} "$D"
 ffmpeg -y -loglevel error -i "$D/score.wav" -af loudnorm=I=-14:TP=-1:LRA=11 -ar 48000 "$D/score_norm.wav"
 ffmpeg -y -loglevel error -i "$D/silent.mp4" -i "$D/score_norm.wav" -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest -movflags +faststart "$D/master.mp4"
 DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$D/silent.mp4")
-VB=$(python3 -c "d=$DUR; print(7000 if d > 70 else min(5500, int(27*8192/d - 200)))")k   # Shorts: under ~27 MB; long-form: 7 Mbit/s
+VB=$(python3 -c "d=$DUR; print(7000 if d > 180 else min(5500, int(27*8192/d - 200)))")k   # Shorts: under ~27 MB; long-form: 7 Mbit/s
 ffmpeg -y -loglevel error -i "$D/silent.mp4" -c:v libx264 -preset slow -b:v $VB -pass 1 -passlogfile "$D/x264" -an -f null /dev/null
 ffmpeg -y -loglevel error -i "$D/silent.mp4" -i "$D/score_norm.wav" -map 0:v -map 1:a -c:v libx264 -preset slow -b:v $VB -pass 2 -passlogfile "$D/x264" \
   -pix_fmt yuv420p -c:a aac -b:a 192k -shortest -movflags +faststart "$D/wiki_roulette_$1.mp4"
