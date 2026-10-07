@@ -1,14 +1,31 @@
-Touchscreen | Touchscreens
-Capacitive sensing | Capacitive touchscreens
-image: capacitive touchscreen grid electrodes
-image: touchscreen digitizer
-image: CERN touchscreen 1973
-image: Frank Beck Bent Stumpe touchscreen
-image: Royal Radar Establishment Malvern
-image: snack sausage
-image: fish sausage
-image: winter gloves smartphone
-image: finger touching smartphone screen
-image: smartphone touch screen macro
-video: touchscreen
-video: finger touch smartphone
+Contactless payment | Contactless payment
+Near-field communication | Near field communication
+image: contactless card antenna coil x-ray
+image: RFID card antenna
+image: contactless payment terminal card tap
+Apple Pay | Apple Pay
+Google Wallet | Google Pay
+image: paying with smartphone NFC terminal
+image: Apple Pay terminal
+QR code | QR codes
+image: QR code parking meter
+image: damaged QR code
+image: Denso Wave QR code
+Noise-cancelling headphones | Noise-cancelling headphones
+image: Bose QuietComfort headphones
+image: airplane cabin passengers
+image: headphones microphone noise cancelling
+Private browsing | Private browsing
+image: data center server room
+image: internet service provider network operations
+Night photography | Night photography
+Computational photography | Computational photography
+image: smartphone night photo city
+image: night sight comparison
+Qi (standard) | Qi (wireless power)
+Inductive charging | Inductive charging
+image: wireless charging pad smartphone
+image: wireless charger coil
+image: MagSafe charger
+audio: Rafael Krux
+audio: Kevin MacLeod electronic
