@@ -64,7 +64,8 @@
      "text": "QR codes were invented in Japan in nineteen ninety-four... to label car parts!",
      "de": "QR-Codes wurden 1994 in Japan erfunden... um Autoteile zu kennzeichnen!",
      "es": "Los códigos QR se inventaron en Japón en 1994... ¡para etiquetar piezas de coche!",
-     "cap": "To label *car parts!*"
+     "cap": "To label *car parts!*",
+     "show": "QR codes were invented in Japan in 1994… ~ to label car parts!"
     }
    ]
   },
@@ -103,7 +104,8 @@
      "text": "At the strongest level, about thirty percent can be missing... and your phone rebuilds it!",
      "de": "Auf der stärksten Stufe können etwa dreißig Prozent fehlen... und dein Handy baut es wieder auf!",
      "es": "En el nivel más alto puede faltar un treinta por ciento... ¡y tu móvil lo reconstruye!",
-     "cap": "*30%* can be missing!"
+     "cap": "*30%* can be missing!",
+     "show": "At the strongest level, about 30% ~ can be missing… and your phone rebuilds it!"
     }
    ]
   },

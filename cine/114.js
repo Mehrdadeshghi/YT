@@ -27,10 +27,10 @@ function meter(x, y, s) { g.save(); g.translate(x, y); g.scale(s, s); g.fillStyl
 // ---------- scenes ----------
 VIS.open = (K) => { const ri = sw('rip', 0.4), wo = sw('works', 2.6); K(0.05, 'hit', 1.3); ks(K, [[ri, 'glitch', 1], [ri + 0.05, 'whoosh', 0.9], ...drop(wo, 0.35)]); K(wo + 0.1, 'ding', 1.1);
   return (t) => { techBg(t, '#04070F', '#0D1F3A'); const lt = t - ri, cut = (x, y) => lt > 0 && x + y > QN * 1.25;
-    drawQR(540, 980, 620, t, { gone: cut });
-    if (lt > 0) { g.save(); g.translate(540 + 220 + lt * 600, 980 + 220 + lt * 900); g.rotate(lt * 3); g.globalAlpha = clamp(1 - lt / 1.2); g.fillStyle = '#FFFFFF'; g.beginPath(); g.moveTo(-60, 120); g.lineTo(120, -60); g.lineTo(140, 140); g.closePath(); g.fill();
+    drawQR(540, 900, 560, t, { gone: cut });
+    if (lt > 0) { g.save(); g.translate(540 + 200 + lt * 600, 900 + 200 + lt * 900); g.rotate(lt * 3); g.globalAlpha = clamp(1 - lt / 1.2); g.fillStyle = '#FFFFFF'; g.beginPath(); g.moveTo(-60, 120); g.lineTo(120, -60); g.lineTo(140, 140); g.closePath(); g.fill();
       g.fillStyle = '#0A0A12'; for (let k = 0; k < 14; k++) g.fillRect(-20 + (k % 5) * 30, (k / 5 | 0) * 30, 24, 24); g.restore(); }
-    if (t > wo) { scanFrame(540, 980, 620, t); chip('STILL WORKS ✓', 540, 980, t, wo, { size: 64, bg: LIME, fg: BG }); lot(t, wo + 0.1, 'mindblown', 900, 640, 120); }
+    if (t > wo) { scanFrame(540, 900, 560, t); chip('STILL WORKS ✓', 540, 900, t, wo, { size: 64, bg: LIME, fg: BG }); lot(t, wo + 0.1, 'mindblown', 900, 640, 120); }
     tag(t); hook(t, EP.hook, 400); if (EP.series) chip(EP.series, 80, 300, t, -0.3, { size: 26, align: 'left', bg: GOLD, fg: BG }); }; };
 
 VIS[0] = S(() => { const ja = sw('japan', 1.2), ni = sw('nineteen', 1.7), ca = sw('car', 3.0);
@@ -46,15 +46,15 @@ VIS[0] = S(() => { const ja = sw('japan', 1.2), ni = sw('nineteen', 1.7), ca = s
 VIS[1] = S(() => { const th = sw('three', 0.5), he = sw('here', 1.8), up = sw('up', 3.0);
   return (K) => { ks(K, [[th, 'zap', 0.8], [he, 'pop', 0.8, 700], [up, 'ding', 1]]);
     return (t) => { techBg(t); tag(t, 1, N); const rot = t < up ? 0.6 * Math.sin(t * 1.3) + 0.5 : 0.5 * (1 - qEase((t - up) / 0.5));
-      g.save(); g.translate(540, 900); g.rotate(rot); drawQR(0, 0, 640, t, { finderGlow: t > th ? clamp((t - th) / 0.3) : 0 }); g.restore();
-      if (t > he) scanFrame(540, 900, 640, t, CY);
+      g.save(); g.translate(540, 840); g.rotate(rot); drawQR(0, 0, 580, t, { finderGlow: t > th ? clamp((t - th) / 0.3) : 0 }); g.restore();
+      if (t > he) scanFrame(540, 840, 580, t, CY);
       if (t > th && t < up) rgbText('3 FINDER SQUARES', 540, 470, 90, t, th, { color: MG });
       if (t > up) { rgbText('↑ THIS WAY UP', 540, 470, 100, t, up, { color: CY }); } }; }; });
 
 VIS[2] = S(() => { const on = sw('ones', 1.0), ex = sw('extra', 2.4), re = sw('repair', 2.8);
   return (K) => { ks(K, [[on, 'type', 1], [re, 'zap', 0.9], [re + 0.02, 'ding', 0.8]]);
     return (t) => { techBg(t, '#03070F', '#0A1B33'); tag(t, 2, N); const zm = t > on ? qEase((t - on) / 0.5) : 0;
-      g.save(); g.translate(540, 900); g.scale(1 + zm * 0.15, 1 + zm * 0.15); drawQR(0, 0, 700, t, { digits: t > on, repair: t > re ? clamp((t - re) / 0.4) : 0 }); g.restore();
+      g.save(); g.translate(540, 840); g.scale(1 + zm * 0.1, 1 + zm * 0.1); drawQR(0, 0, 620, t, { digits: t > on, repair: t > re ? clamp((t - re) / 0.4) : 0 }); g.restore();
       if (t > on && t < re) rgbText('1 0 1 1 0 1', 540, 440, 110, t, on, { color: '#FFFFFF' });
       if (t > re) { rgbText('REPAIR DATA', 540, 440, 120, t, re, { color: GOLD }); chip('ERROR CORRECTION', 540, 530, t, re + 0.2, { size: 32, bg: GOLD, fg: BG }); } }; }; });
 
@@ -62,9 +62,9 @@ VIS[3] = S(() => { const th = sw('thirty', 1.4), mi = sw('missing', 2.2), re = s
   return (K) => { ks(K, [[0.3, 'glitch', 0.8], ...drop(th, 0.35), [mi, 'wrong', 0.8], [re, 'swish', 0.8], [re + 0.5, 'ding', 1.1]]);
     return (t) => { techBg(t); tag(t, 3, N); const er = clamp((t - 0.3) / Math.max(0.6, th - 0.3)) * (t > re ? 1 - qEase((t - re) / 0.6) : 1), rr = rng(7);
       const hole = Array.from({ length: QN * QN }, () => rr()); const gone = (x, y) => !isFinder(x, y) && hole[y * QN + x] < er * 0.32 + (Math.hypot(x - 15, y - 14) < 5.5 ? er : 0) * 0.9;
-      drawQR(540, 900, 640, t, { gone });
-      if (t > th) { const v = Math.round(30 * qEase((t - th) / 0.5)); rgbText(`${v}% GONE`, 540, 470, 120, t, th, { color: RED2 }); }
-      if (t > re) { scanFrame(540, 900, 640, t); chip('✓ REBUILT', 540, 560, t, re + 0.4, { size: 40, bg: LIME, fg: BG }); }
+      drawQR(540, 840, 580, t, { gone });
+      if (t > re + 0.3) rgbText('REBUILT ✓', 540, 450, 120, t, re + 0.3, { color: LIME }); else if (t > th) { const v = Math.round(30 * qEase((t - th) / 0.5)); rgbText(`${v}% GONE`, 540, 450, 120, t, th, { color: RED2 }); }
+      if (t > re) scanFrame(540, 840, 580, t);
       if (t > mi && t < re) { framed(t, 'damaged', 700, 1100, 300, { backdrop: false }); realBadge(t, mi, 'REAL PHOTO · DAMAGED QR CODE, STILL READABLE', 1070); } }; }; });
 
 VIS[4] = S(() => { const sc = sw('scammers', 0.4), st = sw('stick', 1.4), pa = sw('parking', 2.4), fa = sw('fake', 4.0, 1);

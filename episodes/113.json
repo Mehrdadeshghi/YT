@@ -100,10 +100,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Only your bank can turn that token back into your real card.",
-     "de": "Nur deine Bank kann das Token wieder in deine echte Karte zurückverwandeln.",
-     "es": "Solo tu banco puede convertir ese token en tu tarjeta real.",
-     "cap": "Only your *bank* knows."
+     "text": "Only the card network and your bank can turn that token back into your real card.",
+     "de": "Nur das Kartennetz und deine Bank können das Token wieder in deine echte Karte zurückverwandeln.",
+     "es": "Solo la red de la tarjeta y tu banco pueden convertir ese token en tu tarjeta real.",
+     "cap": "Only *network + bank.*"
     }
    ]
   },
