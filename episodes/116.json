@@ -142,10 +142,18 @@
  ],
  "photos": [
   {
+   "id": "firefox",
+   "file": "File:Private Browsing in Firefox 157.0 on Linux.png"
+  },
+  {
+   "id": "dc",
+   "file": "File:BalticServers data center.jpg"
+  },
+  {
    "id": "music",
-   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
    "from": 2,
-   "len": 43,
+   "len": 46,
    "gain": 0.55
   }
  ]

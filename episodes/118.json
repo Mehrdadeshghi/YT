@@ -142,10 +142,26 @@
  ],
  "photos": [
   {
+   "id": "thermal",
+   "file": "File:Inductive charging efficiency.jpg"
+  },
+  {
+   "id": "phonechg",
+   "file": "File:Phone wireless charge.jpg"
+  },
+  {
+   "id": "nokia",
+   "file": "File:Nokia DT-900.jpg"
+  },
+  {
+   "id": "expanded",
+   "file": "File:Wireless Mobile Phone Charger Expanded.jpg"
+  },
+  {
    "id": "music",
    "audio": "File:Epic Trailer by Rafael Krux.ogg",
    "from": 2,
-   "len": 43,
+   "len": 46,
    "gain": 0.55
   }
  ]

@@ -155,10 +155,26 @@
  ],
  "photos": [
   {
+   "id": "phonepay",
+   "file": "File:P059743-518704.jpg"
+  },
+  {
+   "id": "sechip",
+   "file": "File:PXE1.jpg"
+  },
+  {
+   "id": "applesq",
+   "file": "File:Apple-payment-square.jpg"
+  },
+  {
+   "id": "rossmann",
+   "file": "File:Google Pay and Apple Pay options above a VeriFone H5000 at the Rossmann, Bunde (2019).jpg"
+  },
+  {
    "id": "music",
-   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "audio": "File:Rafael Krux - Inspiring Teaser (cc-by) (filmmusic).mp3",
    "from": 2,
-   "len": 43,
+   "len": 46,
    "gain": 0.55
   }
  ]

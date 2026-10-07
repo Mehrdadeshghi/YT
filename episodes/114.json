@@ -142,10 +142,22 @@
  ],
  "photos": [
   {
+   "id": "damaged",
+   "file": "File:QR Code Damaged.jpg"
+  },
+  {
+   "id": "billboard",
+   "file": "File:Japan-qr-code-billboard.jpg"
+  },
+  {
+   "id": "street",
+   "file": "File:How QR codes are created.jpg"
+  },
+  {
    "id": "music",
-   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "audio": "File:Dramatic Trailer by Rafael Krux.ogg",
    "from": 2,
-   "len": 43,
+   "len": 46,
    "gain": 0.55
   }
  ]

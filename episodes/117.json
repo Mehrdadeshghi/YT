@@ -142,10 +142,22 @@
  ],
  "photos": [
   {
+   "id": "night",
+   "file": "File:Night Photography.jpg"
+  },
+  {
+   "id": "blurdog",
+   "file": "File:202504 Slow shutter shot a barking of Fierce dog at night with camera in 新北市雙溪區,臺灣.jpg"
+  },
+  {
+   "id": "nightcity",
+   "file": "File:Night City (Sonntagsspielerei) - Flickr - Ca 500000.jpg"
+  },
+  {
    "id": "music",
-   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "audio": "File:Rafael Krux - Inspiring Advertising - Upbeat Summer Corporate (cc-by) (filmmusic).mp3",
    "from": 2,
-   "len": 43,
+   "len": 46,
    "gain": 0.55
   }
  ]

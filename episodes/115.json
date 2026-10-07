@@ -142,10 +142,22 @@
  ],
  "photos": [
   {
+   "id": "bose",
+   "file": "File:Bose QuietComfort 25 Acoustic Noise Cancelling Headphones.jpg"
+  },
+  {
+   "id": "sony",
+   "file": "File:Sony-WH-1000XM3-kabellose-Bluetooth-Noise-Cancelling-Kopfhoerer.4.jpg"
+  },
+  {
+   "id": "cabin",
+   "file": "File:Airplane in-flight information.jpg"
+  },
+  {
    "id": "music",
-   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "audio": "File:Rafael Krux - The Epic 2.ogg",
    "from": 2,
-   "len": 43,
+   "len": 46,
    "gain": 0.55
   }
  ]

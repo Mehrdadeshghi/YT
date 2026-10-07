@@ -142,10 +142,26 @@
  ],
  "photos": [
   {
+   "id": "antenna",
+   "file": "File:Contactless Payment Card opened to show RF antenna.jpg"
+  },
+  {
+   "id": "tapcard",
+   "file": "File:P059743-15224.jpg"
+  },
+  {
+   "id": "terminal",
+   "file": "File:Toast Tap Payment Perminal.jpg"
+  },
+  {
+   "id": "tfl",
+   "file": "File:Tfl ad Contactless Safest Way to Pay.jpg"
+  },
+  {
    "id": "music",
-   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "audio": "File:Rafael Krux - Uplifting Blockbuster (cc-by) (filmmusic).mp3",
    "from": 2,
-   "len": 43,
+   "len": 46,
    "gain": 0.55
   }
  ]
