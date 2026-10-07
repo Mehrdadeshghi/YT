@@ -199,5 +199,8 @@
    "gain": 0.42
   }
  ],
- "capY": 1660
+ "capY": 1660,
+ "subY": 455,
+ "subEndY": 455,
+ "noCommentCard": true
 }

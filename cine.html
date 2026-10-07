@@ -321,8 +321,8 @@ function subPill(ls, Y, life) {                              // ---- subscribe n
 function engage(t) {
   g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1;
   if (WIDE) { (CTA.subs || [CTA.subAt]).forEach((s) => subPill(t - s, 150, 3.2)); if (CTA.subEnd) subPill(t - CTA.subEnd, 150, 99); }
-  else { subPill(t - CTA.subAt, 1480, 2.9); if (CTA.subEnd) subPill(t - CTA.subEnd, 1290, 99); }
-  const lc = t - CTA.comAt;                                   // ---- comment question (last scene)
+  else { subPill(t - CTA.subAt, EP_RAW.subY || 1480, 2.9); if (CTA.subEnd) subPill(t - CTA.subEnd, EP_RAW.subEndY || 1290, 99); }
+  const lc = EP_RAW.noCommentCard ? -1 : t - CTA.comAt;          // kids videos: comments are off on YouTube, so no comment card                                   // ---- comment question (last scene)
   if (lc > 0) { const s = spring(lc, 220, 18), y = (WIDE ? H - 260 : 1400) + (1 - s) * 520; g.save(); g.translate(WIDE ? (W - 860) / 2 - 70 : 0, y);
     g.shadowColor = 'rgba(0,0,0,0.55)'; g.shadowBlur = 36; rrect(70, 0, 860, 200, 34); g.fillStyle = 'rgba(244,238,227,0.96)'; g.fill(); g.shadowBlur = 0;
     g.fillStyle = GOLD; rrect(104, 28, 58, 46, 13); g.fill(); g.beginPath(); g.moveTo(118, 72); g.lineTo(112, 90); g.lineTo(138, 72); g.fill();

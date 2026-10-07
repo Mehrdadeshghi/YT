@@ -174,4 +174,4 @@ VIS[9] = S(() => { const sl = sw('slow', 0.3), ng = sw('never', 1.8);
   return kscene(9, { k: [[sl, 'ding', 1], [ng, 'stamp', 1.1]],
     cam: (t) => [1.15, FINISH, 990],
     world: (t) => { ribbon(FINISH, -1, t + 5); tortoise(t, FINISH - 40, GROUND, 0.95, { face: 'proud', medal: true }); hare(t, FINISH + 300, GROUND, 0.85, { face: 'happy', pose: 'clap', flip: true }); },
-    ui: (t) => { if (t > sl) stampText('SLOW & STEADY!', 540, 1300, t, sl, { size: 84, rot: -0.05 }); if (t > ng) chip('NEVER GIVE UP!', 540, 600, t, ng, { size: 48, bg: GOLD, fg: BG }); lot(t, 0.3, 'clap', 900, 560, 120); } }); });
+    ui: (t) => { if (t > sl) stampText('SLOW & STEADY!', 540, 1300, t, sl, { size: 84, rot: -0.05 }); if (t > ng) chip('NEVER GIVE UP!', 540, 1430, t, ng, { size: 48, bg: GOLD, fg: BG }); lot(t, 0.3, 'clap', 900, 560, 120); } }); });
