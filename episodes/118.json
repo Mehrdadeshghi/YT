@@ -74,7 +74,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "The pad's coil makes a magnetic field that flips over a hundred thousand times a second.",
+     "text": "The coil in the pad creates a magnetic field that flips over a hundred thousand times a second.",
      "de": "Die Spule im Pad erzeugt ein Magnetfeld, das über hunderttausend Mal pro Sekunde kippt.",
      "es": "La bobina de la base crea un campo magnético que cambia más de cien mil veces por segundo.",
      "cap": "*100,000* times a second!"
@@ -126,7 +126,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Tip: take off thick cases, keep cards and metal out of the way, and don't game while charging.",
+     "text": "Here's a tip: take off thick cases, keep cards and metal out of the way, and don't game while charging.",
      "de": "Tipp: Dicke Hüllen ab, Karten und Metall weg, und nicht zocken beim Laden.",
      "es": "Consejo: quita las fundas gruesas, aparta tarjetas y metal, y no juegues mientras carga.",
      "cap": "No *cards* in between!"

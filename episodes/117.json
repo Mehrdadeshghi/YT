@@ -74,9 +74,9 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "So night mode takes a burst of photos, while you hold still for a few seconds.",
-     "de": "Also schießt der Nachtmodus eine Serie von Fotos, während du ein paar Sekunden stillhältst.",
-     "es": "Así que el modo noche toma una ráfaga de fotos mientras te quedas quieto unos segundos.",
+     "text": "Night mode takes a burst of photos, while you hold still for a few seconds.",
+     "de": "Der Nachtmodus schießt eine Serie von Fotos, während du ein paar Sekunden stillhältst.",
+     "es": "El modo noche toma una ráfaga de fotos mientras te quedas quieto unos segundos.",
      "cap": "A *burst* of photos."
     }
    ]
@@ -126,7 +126,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Tip: brace your phone on something. The steadier it is, the longer each shot can be!",
+     "text": "Here's a tip: brace your phone on something. The steadier it is, the longer each shot can be!",
      "de": "Tipp: Stütz dein Handy irgendwo ab. Je ruhiger es ist, desto länger darf jedes Bild belichten!",
      "es": "Consejo: apoya el móvil en algo. ¡Cuanto más quieto esté, más larga puede ser cada foto!",
      "cap": "*Brace* your phone!"
