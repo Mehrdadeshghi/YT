@@ -126,6 +126,34 @@ def _heard(w, sr, text):
     except Exception as e:
         print('heard check failed', e); return 1.0
 
+# ---------- studio cleanup (DeepFilterNet3, local weights from release model-enhance) ----------
+def df_dir():
+    for d in (os.environ.get('DF_DIR'), 'models/DeepFilterNet3', '/home/claude/dfmodel/DeepFilterNet3'):
+        if d and os.path.exists(os.path.join(d, 'config.ini')): return d
+    return None
+_DF = None
+def denoise(w, sr):
+    """neural noise/room removal at 48 kHz; returns (w48, 48000)"""
+    global _DF
+    import torch
+    from df.enhance import enhance, init_df
+    if _DF is None: _DF = init_df(model_base_dir=df_dir(), log_level='ERROR')[:2]
+    if sr != 48000: w, sr = _ff(w, sr, 'aresample=48000')
+    out = enhance(_DF[0], _DF[1], torch.from_numpy(np.asarray(w, dtype='float32'))[None])
+    return out.squeeze(0).numpy().astype('float32'), 48000
+def polish(w, sr):
+    """clone output → remove the hiss/room the clone copied from a phone recording"""
+    return denoise(w, sr)
+def clean_ref(src, dst, start=None, end=None):
+    """phone/WhatsApp recording → clean cloning reference: denoise, de-mud, presence + air, gentle compression, loudness"""
+    with tempfile.TemporaryDirectory() as d:                     # any format (m4a/ogg/mp3 voice messages) → mono wav
+        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', src, '-ac', '1', f'{d}/s.wav'], check=True); w, sr = sf.read(f'{d}/s.wav', dtype='float32')
+    if start is not None: w = w[int(start * sr): int(end * sr) if end else None]
+    w, sr = denoise(w, sr)
+    w, sr = _ff(w, sr, 'highpass=f=90,equalizer=f=250:t=q:w=1:g=-4,equalizer=f=2500:t=o:w=1.5:g=6,highshelf=f=6000:g=6,'
+                       'acompressor=threshold=-22dB:ratio=2.5:attack=5:release=80,loudnorm=I=-18:TP=-2,aresample=24000')
+    sf.write(dst, w, sr, subtype='PCM_16'); return dst
+
 class Narrator:
     """Excited native sports-narrator voice (choice "2", Oct 2026): Chatterbox TTS conditioned on a synthetic Kokoro am_echo
     reference read with excitement (assets/voice/narrator_ref.wav). exaggeration 0.9 / cfg 0.35 / temperature 0.85 gives a
@@ -138,6 +166,7 @@ class Narrator:
         self.m = ChatterboxTTS.from_local(local, device=dev) if local else ChatterboxTTS.from_pretrained(device=dev)
         self.ref, self.ex, self.cfg, self.temp, self.wpm = ref, ex, cfg, temp, wpm
         self.takes = int(os.environ.get('CLONE_TAKES', '2'))
+        self.polish = df_dir() is not None and os.environ.get('POLISH', '1') == '1'
     def create(self, text, voice=None, speed=None, lang=None):
         best = None
         for k in range(self.takes):
@@ -152,6 +181,7 @@ class Narrator:
         if len(nz): w = w[max(0, nz[0] - int(0.02 * sr)): nz[-1] + int(0.06 * sr)]
         words = len(re.findall(r"[A-Za-z0-9'-]+", text)); target = words / self.wpm * 60 + 0.12 * len(re.findall(r'[.!?,…;:]', text))
         sp = min(1.32, max(1.0, (len(w) / sr) / max(0.5, target)))
+        if self.polish: w, sr = polish(w, sr)
         return _ff(w, sr, CHAIN + (f',atempo={sp:.3f}' if sp > 1.01 else ''))
 
 if __name__ == '__main__' and sys.argv[1] == 'test':

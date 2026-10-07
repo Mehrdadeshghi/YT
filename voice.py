@@ -19,7 +19,7 @@ elif VOICE == 'native':               # native US pronunciation (Kokoro) convert
 elif VOICE == 'narrator':             # excited native narrator (Chatterbox TTS + synthetic reference), see clone_voice.Narrator
     from clone_voice import Narrator
     k = Narrator(E.get('voice_ref', 'assets/voice/narrator_ref.wav'), float(E.get('voice_ex', 0.9)), float(E.get('voice_cfg', 0.35)), 0.85, float(E.get('wpm', 205)))
-    VTAG = f"{E.get('voice_ex', 0.9)}|{E.get('voice_cfg', 0.35)}|{E.get('wpm', 205)}|v1"
+    VTAG = f"{E.get('voice_ex', 0.9)}|{E.get('voice_cfg', 0.35)}|{E.get('wpm', 205)}|v2|{hashlib.md5(open(E.get('voice_ref', 'assets/voice/narrator_ref.wav'), 'rb').read()).hexdigest()[:8]}|{k.polish}"
 elif VOICE == 'clone':                # Mehrdad's own voice, cloned (Chatterbox): timbre from assets/voice/*.wav, pronunciation from the model
     from clone_voice import Cloner
     k = Cloner(E.get('voice_ref', 'assets/voice/mehrdad.wav')); SPEED = float(arg('speed', str(E.get('speed_clone', 1.15))))
