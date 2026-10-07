@@ -36,16 +36,17 @@ VIS.open = (K) => { K(0.05, 'hit', 1.3); K(0.3, 'wrong', 1); K(sw('einstein', 1.
 
 VIS[0] = S(() => { const tw = sw('twenty', 0.6), ci = sw('circle', 2.0), at = sw('atomic', 3.6);
   return (K) => { ks(K, [[tw, 'whoosh', 0.8], [ci, 'zap', 0.7], [at, 'ding', 1], [at + 0.02, 'tick', 0.8]]);
-    return (t) => { const c = space(t, [[0, 20, 25, 3.2, 0, 0], [0.1, 20, 25, 6.4, 18, 30]]); orbits(t, clamp((t - ci + 0.6) / 0.8)); const pts = swarm(t, 1, Math.min(6, 1 + Math.floor(clamp((t - ci + 0.6) / 1.2) * 6)), at > 0 && t > at ? 0 : -1);
+    return (t) => { if (t < tw - 0.1) { const P = shot(t, 'launch', { a: [0.5, 0.45, 1.15], b: [0.5, 0.4, 1.35], dur: 2 }); if (!P) noPhoto(t); g.fillStyle = 'rgba(2,6,14,0.25)'; g.fillRect(0, 0, W, H); tag(t, 0, N); realBadge(t, 0.1, 'REAL PHOTO · GPS III SATELLITE LAUNCH, CAPE CANAVERAL'); return; }
+      const c = space(t, [[0, 20, 25, 3.2, 0, 0], [0.1, 20, 25, 6.4, 18, 30]]); flash(t, tw - 0.1, 0.4, 0.1); orbits(t, clamp((t - ci + 0.6) / 0.8)); const pts = swarm(t, 1, Math.min(6, 1 + Math.floor(clamp((t - ci + 0.6) / 1.2) * 6)), at > 0 && t > at ? 0 : -1);
       g.fillStyle = 'rgba(2,6,14,0.15)'; g.fillRect(0, 0, W, H); tag(t, 0, N);
       if (t > tw) { const v = Math.round(20000 * ease(clamp((t - tw) / 0.8))); rgbText(`${v.toLocaleString('en-US')} KM UP`, 540, 560, 96, t, tw); }
       if (t > ci) chip('31 SATELLITES · 6 ORBITS (NOT TO SCALE)', 540, 640, t, ci, { size: 28, bg: CY, fg: BG });
       if (t > at && pts.length) { const [x, y] = pts[0]; g.save(); g.strokeStyle = GOLD; g.lineWidth = 4; g.beginPath(); g.moveTo(x, y); g.lineTo(540, 1080); g.stroke(); g.restore();
-        clockCard(540, 1100, 'ATOMIC CLOCK ON BOARD', (t - at) * 1e6 * 0.37, GOLD, t, at); } }; }; });
+        clockCard(540, 1100, 'ATOMIC CLOCK ON BOARD', (t - at) * 1e6 * 0.37, GOLD, t, at); framed(t, 'rbclock', 60, 720, 300, { b: [0.5, 0.5, 1.05], backdrop: false }); realBadge(t, at + 0.1, 'REAL PHOTO · ATOMIC CLOCK OF A NAVIGATION SATELLITE (GALILEO)'); } }; }; });
 
 VIS[1] = S(() => { const ti = sw('time', 1.6), wh = sw('where', 2.6);
   return (K) => { ks(K, [[0.3, 'tick', 0.6], [ti, 'beep', 1], [wh, 'beep', 1]]); for (let k = 0; k < 6; k++) K(0.4 + k * 0.5, 'tick', 0.4);
-    return (t) => { techBg(t, '#030812', '#071A30'); tag(t, 1, N); const sx = 540, sy = 560;
+    return (t) => { const P = shot(t, 'gps3', { a: [0.5, 0.45, 1.2], b: [0.5, 0.45, 1.35], dur: 4 }); if (!P) techBg(t, '#030812', '#071A30'); g.fillStyle = 'rgba(3,8,18,0.55)'; g.fillRect(0, 0, W, H); grid(t, 0.06); tag(t, 1, N); realBadge(t, 0.1, 'REAL PHOTO · GPS BLOCK IIIA SATELLITE'); const sx = 540, sy = 560;
       for (let k = 0; k < 7; k++) { const u = ((t * 0.9 + k / 7) % 1); g.save(); g.globalAlpha = (1 - u) * 0.9; g.strokeStyle = k % 2 ? CY : GOLD; g.lineWidth = 5; g.shadowColor = CY; g.shadowBlur = 20;
         g.beginPath(); g.arc(sx, sy, 60 + u * 900, 0.15 * Math.PI, 0.85 * Math.PI); g.stroke(); g.restore(); }
       satIcon(sx, sy, 3.2, t); const now = 12 * 3600 + 42 * 60 + (t * 1.0);
@@ -62,14 +63,14 @@ VIS[2] = S(() => { const se = sw('seven', 0.6), ph = sw('phone', 1.6), dl = sw('
         text('300,000 KM/S × 0.067 S', 0, -14, 'mono', 44, '#FFFFFF', { align: 'center' }); text(t > di ? '≈ 20,000 KM' : '= ?', 0, 56, 'disp', 54, GOLD, { align: 'center' }); g.restore(); } }; }; });
 
 VIS[3] = S(() => { const one = sw('one', 0.4), two = sw('two', 1.6), thr = sw('three', 2.7), boom = sw('boom', 3.1);
-  const Y = [560, 780], C1 = [180, 380, 560], C2 = [960, 420, 540], C3 = [600, 1500, 720];
+  const C1 = [150, 640, 533], C2 = [950, 700, 480], C3 = [620, 1620, 643];   // all three circles meet at (560, 980); circles 1+2 also meet at (606, 365)
   return (K) => { ks(K, [[one, 'swish', 0.9], [two, 'swish', 0.9], [thr, 'swish', 0.9], ...drop(boom, 0.4)]);
     return (t) => { city(t); tag(t, 3, N);
       circ3(C1[0], C1[1], C1[2], CY, (t - one) / 0.7); circ3(C2[0], C2[1], C2[2], GOLD, (t - two) / 0.7); circ3(C3[0], C3[1], C3[2], MG, (t - thr) / 0.5);
       [[C1, CY], [C2, GOLD], [C3, MG]].forEach(([c, col], k) => { const at = [one, two, thr][k]; if (t > at) { satIcon(c[0], c[1], 1.3, t); } });
-      if (t > two + 0.5 && t < boom) { const b = Math.sin(t * 10) > 0; glowDot(560, 760, 16, b ? '#FFFFFF' : GOLD); glowDot(560, 210, 16, b ? GOLD : '#FFFFFF'); }   // the two candidate points
-      if (t > boom) { pin(560, 780, t, boom); rgbText("THAT'S YOU!", 540, 1180, 100, t, boom + 0.15); }
-      if (t > boom + 0.6) chip('4TH SATELLITE CORRECTS YOUR PHONE’S CLOCK', 540, 1290, t, boom + 0.6, { size: 26, bg: CY, fg: BG }); }; }; });
+      if (t > two + 0.5 && t < boom) { const b = Math.sin(t * 10) > 0; glowDot(560, 980, 18, b ? '#FFFFFF' : GOLD); glowDot(606, 365, 18, b ? GOLD : '#FFFFFF'); }   // the two candidate points
+      if (t > boom) { pin(560, 980, t, boom); rgbText("THAT'S YOU!", 540, 560, 100, t, boom + 0.15); }
+      if (t > boom + 0.6) chip('4TH SATELLITE CORRECTS YOUR PHONE’S CLOCK', 540, 650, t, boom + 0.6, { size: 26, bg: CY, fg: BG }); }; }; });
 
 VIS[4] = S(() => { const cr = sw('crazy', 0.8), fa = sw('faster', 2.0), th = sw('thirty', 2.8);
   return (K) => { ks(K, [[cr, 'glitch', 1], ...drop(fa, 0.45), [th, 'zap', 0.9]]);
@@ -77,9 +78,9 @@ VIS[4] = S(() => { const cr = sw('crazy', 0.8), fa = sw('faster', 2.0), th = sw(
       if (warp > 0) { g.save(); g.globalAlpha = 0.4 * warp; for (let k = 0; k < 40; k++) { const a = k / 40 * 6.283 + t * 0.3, r0 = 80 + ((t * 300 + k * 37) % 700); g.strokeStyle = k % 2 ? MG : CY; g.lineWidth = 3;
         g.beginPath(); g.moveTo(540 + Math.cos(a) * r0, 860 + Math.sin(a) * r0); g.lineTo(540 + Math.cos(a) * (r0 + 120), 860 + Math.sin(a) * (r0 + 120)); g.stroke(); } g.restore(); }
       const base = t * 1e6 * 0.37, extra = t > fa ? (t - fa) * 38 * 2000 : 0;
-      clockCard(540, 680, 'ON EARTH', base, CY, t, 0.2); clockCard(540, 960, 'IN ORBIT', base + extra, MG, t, 0.4, t > fa ? 4 : 0);
-      if (t > cr && t < fa) rgbText('THE CRAZY PART…', 540, 470, 70, t, cr, { jitter: true });
-      if (t > th) { rgbText('+38 μs / DAY', 540, 1240, 110, t, th, { color: GOLD }); chip('SATELLITE CLOCKS RUN AHEAD', 540, 470, t, th, { size: 34, bg: MG, fg: '#FFF' }); } }; }; });
+      clockCard(540, 620, 'ON EARTH', base, CY, t, 0.2); clockCard(540, 880, 'IN ORBIT', base + extra, MG, t, 0.4, t > fa ? 4 : 0);
+      if (t > cr && t < fa) rgbText('THE CRAZY PART…', 540, 440, 70, t, cr, { jitter: true });
+      if (t > th) { rgbText('+38 μs / DAY', 540, 1110, 100, t, th, { color: GOLD }); chip('SATELLITE CLOCKS RUN AHEAD', 540, 440, t, th, { size: 34, bg: MG, fg: '#FFF' }); } }; }; });
 
 VIS[5] = S(() => { const ti = sw('tiny', 0.4), ei = sw('einstein', 1.2), te = sw('ten', 2.6), ev = sw('every', 3.4);
   return (K) => { ks(K, [[ti, 'pop', 0.8, 900], [ei, 'whoosh', 0.7], ...drop(te, 0.45), [ev, 'wrong', 1]]); for (let k = 0; k < 3; k++) K(ev + 0.2 + k * 0.35, 'beep', 0.9);
@@ -89,12 +90,13 @@ VIS[5] = S(() => { const ti = sw('tiny', 0.4), ei = sw('einstein', 1.2), te = sw
         g.save(); g.globalAlpha = 0.25; g.strokeStyle = RED2; g.lineWidth = 3; g.setLineDash([12, 10]); g.beginPath(); g.arc(540, 900, Math.hypot(ex - 540, ey - 900), 0, 6.283); g.stroke(); g.restore();
         if (Math.floor(t * 4) % 2) { g.fillStyle = 'rgba(255,40,60,0.12)'; g.fillRect(0, 0, W, H); } }
       if (t > ti && t < te) rgbText('ONLY 0.000038 S…', 540, 560, 76, t, ti);
-      if (t > ei && t < te) chip('WITHOUT EINSTEIN’S CORRECTION', 540, 650, t, ei, { size: 34, bg: GOLD, fg: BG });
+      if (t > ei && t < te) { framed(t, 'einstein', 730, 700, 280, { b: [0.5, 0.3, 1.05], backdrop: false }); realBadge(t, ei, 'REAL PHOTO · ALBERT EINSTEIN, 1921'); chip('WITHOUT EINSTEIN’S CORRECTION', 540, 650, t, ei, { size: 34, bg: GOLD, fg: BG }); }
       if (t > te) rgbText(`${10 * day} KM OFF`, 540, 560, 120, t, te, { color: RED2 }); if (t > ev) chip(`DAY ${day}`, 540, 660, t, ev, { size: 40, bg: RED2, fg: '#FFF' }); }; }; });
 
 VIS[6] = S(() => { const op = sw('open', 1.0), rel = sw('relativity', 2.0);
   return (K) => { ks(K, [[op, 'pop', 0.8, 700], [rel, 'boom', 1], [rel + 0.02, 'ding', 1]]);
-    return (t) => { techBg(t); tag(t, 6, N);
+    return (t) => { if (t < op) { const P = shot(t, 'navphone', { a: [0.5, 0.5, 1.2], b: [0.5, 0.5, 1.35], dur: 2 }); if (!P) noPhoto(t); g.fillStyle = 'rgba(2,6,14,0.25)'; g.fillRect(0, 0, W, H); tag(t, 6, N); realBadge(t, 0.1, 'REAL PHOTO · NAVIGATION APP'); return; }
+      techBg(t); tag(t, 6, N); flash(t, op, 0.4, 0.1);
       phoneFrame(540, 860, 1.0, () => { city(t, 1.2); const p = 1 + 0.15 * Math.sin(t * 4); g.save(); g.translate(0, 0); g.fillStyle = 'rgba(62,139,255,0.25)'; g.beginPath(); g.arc(0, 0, 70 * p, 0, 6.283); g.fill(); g.restore(); glowDot(0, 0, 22, '#3E8BFF');
         rrect(-170, -350, 340, 70, 20); g.fillStyle = 'rgba(255,255,255,0.92)'; g.fill(); text('Search here', -140, -305, 'ui', 28, '#5B6577'); });
       if (t > rel) { rgbText('E I N S T E I N', 540, 420, 64, t, rel, { color: GOLD }); chip('INSIDE YOUR POCKET', 540, 1330, t, rel + 0.2, { size: 40, bg: LIME, fg: BG }); lot(t, rel, 'mindblown', 900, 1150, 130); } }; }; });
