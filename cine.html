@@ -149,7 +149,7 @@ function makeCaptions(segs, placed, skip = []) {
     return { at: pl.at, end: pl.end, words, chunks };
   }).filter(Boolean);
 }
-function captions(t, caps, yc = WIDE ? 960 : 1300) {
+function captions(t, caps, yc = WIDE ? 960 : (EP_RAW.capY || 1300)) {
   const sg = caps.find((q) => t >= q.at - 0.05 && t <= q.end + 0.4); if (!sg) return;
   let k = 0; sg.words.forEach((x, j) => { if (t >= x.t0 - 0.02) k = j; });
   const ch = sg.chunks.find((q) => q.includes(k)); if (!ch) return;

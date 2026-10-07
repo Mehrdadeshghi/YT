@@ -7,7 +7,6 @@ const N = 9, SKY1 = '#7FD3F7', SKY2 = '#D9F4FF', SEA1 = '#2BA8D8', SEA2 = '#1170
 const BROWN = '#8B5A2B', TAN = '#F0CFA0', CROC = '#4CAF50', CROC2 = '#2F8F3A', WIFE = '#3FB58A', WIFE2 = '#25875F', APPLE = '#E8262B';
 const st = (p, col, lw = 7) => { g.lineJoin = 'round'; g.lineCap = 'round'; g.fillStyle = col; g.fill(p); g.lineWidth = lw; g.strokeStyle = INK; g.stroke(p); };
 const P2 = () => new Path2D();
-const ease = (x) => { x = clamp(x); return x * x * (3 - 2 * x); };
 const arc = (t, t0, dur, x0, y0, x1, y1, h) => { const u = ease((t - t0) / dur); return [lerp(x0, x1, u), lerp(y0, y1, u) - Math.sin(Math.PI * u) * h, u]; };
 const blinkK = (t, seed) => { const ph = (t + seed * 1.7) % 3.4; return ph < 0.12 ? Math.abs(ph - 0.06) / 0.06 : 1; };
 
@@ -18,7 +17,7 @@ function sky(t) { const gr = g.createLinearGradient(0, -400, 0, 1000); gr.addCol
   st(circ(880, 250, 95), '#FFD93D', 6);
   [[160, 230, 1], [620, 140, 0.8], [1250, 300, 0.9], [-300, 200, 1.1]].forEach(([x, y, s], k) => { const xx = ((x + t * 18 * (k % 2 ? 1 : 0.6)) % 1900 + 1900) % 1900 - 400;
     g.save(); g.translate(xx, y); g.scale(s, s); const p = P2(); [[-70, 10, 50], [-10, -15, 65], [60, 10, 50], [0, 20, 55]].forEach(([a, b, r]) => p.arc(a, b, r, 0, 6.283)); g.fillStyle = '#FFFFFF'; g.fill(p); g.restore(); }); }
-function sea(t, y0 = 1000, front = false) {
+function water(t, y0 = 1000, front = false) {
   const gr = g.createLinearGradient(0, y0, 0, y0 + 950); gr.addColorStop(0, front ? 'rgba(43,168,216,0.82)' : SEA1); gr.addColorStop(1, front ? 'rgba(17,112,158,0.9)' : SEA2);
   const p = P2(); p.moveTo(-1500, y0 + 40); for (let x = -1500; x <= 2700; x += 30) p.lineTo(x, y0 + Math.sin(x / 70 + t * 2.2) * 9 + (front ? 30 : 0)); p.lineTo(2700, y0 + 1300); p.lineTo(-1500, y0 + 1300); p.closePath();
   g.fillStyle = gr; g.fill(p); if (!front) { g.strokeStyle = 'rgba(255,255,255,0.6)'; g.lineWidth = 5;
@@ -48,7 +47,7 @@ function island(t, o = {}) { const x = o.x ?? 300, y = 1000;
   if (o.palm !== false) { const px = x + 300; const pt = P2(); pt.moveTo(px - 14, y - 10); pt.quadraticCurveTo(px + 40, y - 150, px + 20, y - 250); pt.lineTo(px + 40, y - 250); pt.quadraticCurveTo(px + 60, y - 150, px + 12, y - 10); st(pt, '#B07A45', 5);
     for (let k = 0; k < 5; k++) { const a = -2.6 + k * 0.55 + Math.sin(t * 1.5 + k) * 0.05; const lf = P2(); lf.ellipse(px + 30 + Math.cos(a) * 70, y - 255 + Math.sin(a) * 40, 80, 20, a, 0, 6.283); st(lf, LEAF, 5); } } }
 // river home of the crocodiles: reeds + lily pads
-function riverHome(t) { sky(t); sea(t, 820);
+function riverHome(t) { sky(t); water(t, 820);
   for (let k = 0; k < 9; k++) { const x = 40 + k * 130 + (k % 2) * 40, h = 220 + (k % 3) * 70, sw2 = Math.sin(t * 1.6 + k) * 10; g.strokeStyle = INK; g.lineWidth = 14; g.lineCap = 'round';
     g.beginPath(); g.moveTo(x, 860); g.quadraticCurveTo(x + sw2, 860 - h / 2, x + sw2 * 2, 860 - h); g.stroke(); g.strokeStyle = '#5DAA3A'; g.lineWidth = 8; g.stroke();
     st(ell(x + sw2 * 2, 860 - h, 13, 38), '#8A5A2E', 5); }
@@ -116,7 +115,7 @@ function croc(t, x, y, s, o = {}) {
 
 // ---------- scene plumbing ----------
 const S = (f) => (K, Sc) => f()(K, Sc);
-function cam(z, fx, fy) { g.translate(540, 900); g.scale(z, z); g.translate(-fx, -fy); }
+function cam(z, fx, fy) { g.translate(540, 1130); g.scale(z * 1.1, z * 1.1); g.translate(-fx, -fy); }   // world sits low: sky + action in the middle, captions in the water below
 const zoomTo = (t, a, b, t0, dur) => { const u = ease((t - t0) / dur); return a.map((v, k) => lerp(v, b[k], u)); };
 function kscene(i, sp) { return (K) => { K(0.45, 'whoosh', 0.45); (sp.k || []).forEach(([a, b, c, d]) => K(a, b, c, d));
   return (t) => { g.save(); const [z, fx, fy] = sp.cam ? sp.cam(t) : [1, 540, 900]; cam(z, fx, fy); sp.world(t); g.restore();
@@ -125,83 +124,83 @@ const storyChip = (t) => chip('STORY TIME · THE CLEVER MONKEY', 540, 360, t, -0
 
 // hook: the two of them face to face, question in big letters
 VIS.open = (K) => { K(0.05, 'pop', 1, 700); K(0.3, 'ding', 0.9); K(sw('trick', 1.2), 'stamp', 1); K(sw('find', 2.2), 'pop', 0.9, 900);
-  return (t) => { g.save(); cam(1, 540, 900); sky(t); sea(t); island(t); monkey(t, 470, 545, 0.85, { face: t > sw('find', 2.2) ? 'smart' : 'happy', arms: 'wave', flip: true });
-    croc(t, 860, 1060, 0.95, { face: 'hungry', open: 0.3 + 0.2 * Math.sin(t * 5) }); sea(t, 1000, true); g.restore();
-    tag(t); hook(t, EP.hook, 470, { size: 120 }); lot(t, 0.5, 'think', 930, 1180, 140); }; };
+  return (t) => { g.save(); cam(1, 540, 900); sky(t); water(t); island(t); monkey(t, 470, 545, 0.85, { face: t > sw('find', 2.2) ? 'smart' : 'happy', arms: 'wave', flip: true });
+    croc(t, 860, 1030, 0.95, { face: 'hungry', open: 0.3 + 0.2 * Math.sin(t * 5) }); water(t, 1000, true); g.restore();
+    tag(t); hook(t, EP.hook, 1440, { size: 110 }); lot(t, 0.5, 'think', 930, 560, 140); }; };
 
 VIS[0] = S(() => { const isl = sw('island', 2.5), ap = sw('apple', 1.8), mk = sw('monkey', 1.0);
   return kscene(0, { k: [[mk, 'pop', 0.9, 800], [ap, 'ding', 0.9], [isl, 'whoosh', 0.5]],
     cam: (t) => t < isl ? zoomTo(t, [1.0, 540, 900], [1.6, 380, 560], mk - 0.3, 0.8) : zoomTo(t, [1.6, 380, 560], [0.85, 540, 900], isl, 0.7),
-    world: (t) => { sky(t); sea(t); island(t, { glint: ap }); monkey(t, 470, 545, 0.85, { face: 'happy', arms: t > mk ? 'wave' : 'down', flip: true }); sea(t, 1000, true); },
+    world: (t) => { sky(t); water(t); island(t, { glint: ap }); monkey(t, 470, 545, 0.85, { face: 'happy', arms: t > mk ? 'wave' : 'down', flip: true }); water(t, 1000, true); },
     ui: (t) => { storyChip(t); if (t > ap && t < isl) lot(t, ap, 'sparkles', 850, 700, 150); } }); });
 
 VIS[1] = S(() => { const cr = sw('crocodile', 0.9), sm = sw('swam', 1.3), hu = sw('hungry', 2.4);
   return kscene(1, { k: [[sm, 'splash', 0.8], [hu, 'pop', 1, 600], [hu + 0.3, 'thump', 0.8]],
     cam: (t) => zoomTo(t, [1, 540, 900], [1.15, 640, 900], hu - 0.2, 0.5),
-    world: (t) => { sky(t); sea(t); island(t); const cx = lerp(1500, 830, ease((t - sm + 0.3) / 1.2)); monkey(t, 470, 545, 0.85, { face: t > hu ? 'shock' : 'happy', look: [1, 0.5], flip: true });
-      croc(t, cx, 1060, 1, { face: 'hungry', swim: t < sm + 0.9, open: t > hu ? 0.55 + 0.25 * Math.sin(t * 9) : 0.15 }); sea(t, 1000, true); },
+    world: (t) => { sky(t); water(t); island(t); const cx = lerp(1500, 830, ease((t - sm + 0.3) / 1.2)); monkey(t, 470, 545, 0.85, { face: t > hu ? 'shock' : 'happy', look: [1, 0.5], flip: true });
+      croc(t, cx, 1030, 1, { face: 'hungry', swim: t < sm + 0.9, open: t > hu ? 0.55 + 0.25 * Math.sin(t * 9) : 0.15 }); water(t, 1000, true); },
     ui: (t) => { if (t > hu) { bubble(t, hu, 690, 640, "I'M SO HUNGRY!", { size: 54, tx: 720, ty: 900 }); lot(t, hu + 0.1, 'flushed', 930, 470, 120); } } }); });
 
 VIS[2] = S(() => { const th = sw('threw', 0.8), c1 = sw('crunch', 2.0), c2 = sw('crunch', 2.4, 1), c3 = sw('crunch', 2.8, 2), yu = sw('yummy', 3.3);
   return kscene(2, { k: [[th, 'swish', 0.9], [c1, 'crack', 0.7], [c2, 'crack', 0.7], [c3, 'crack', 0.7], [yu, 'ding', 1]],
     cam: (t) => t < c1 - 0.1 ? [1, 540, 900] : zoomTo(t, [1, 540, 900], [1.35, 700, 960], c1 - 0.1, 0.35),
-    world: (t) => { sky(t); sea(t); island(t, { taken: (k) => k === 3 && t > th }); monkey(t, 470, 545, 0.85, { face: 'happy', arms: t > th && t < th + 0.5 ? 'throw' : t < th ? 'hold' : 'down', apple: t < th, flip: true });
-      croc(t, 830, 1060, 1, { face: t > yu ? 'smile' : 'hungry', chomp: [c1, c2, c3], open: t > th && t < c1 ? 0.9 : 0.12 });
-      if (t > th && t < c1) { const [ax, ay] = arc(t, th, c1 - th, 520, 400, 610, 1000, 260); apple(ax, ay, 30, t * 8); }
-      sea(t, 1000, true); },
+    world: (t) => { sky(t); water(t); island(t, { taken: (k) => k === 3 && t > th }); monkey(t, 470, 545, 0.85, { face: 'happy', arms: t > th && t < th + 0.5 ? 'throw' : t < th ? 'hold' : 'down', apple: t < th, flip: true });
+      croc(t, 830, 1030, 1, { face: t > yu ? 'smile' : 'hungry', chomp: [c1, c2, c3], open: t > th && t < c1 ? 0.9 : 0.12 });
+      if (t > th && t < c1) { const [ax, ay] = arc(t, th, c1 - th, 520, 400, 610, 980, 260); apple(ax, ay, 30, t * 8); }
+      water(t, 1000, true); },
     ui: (t) => { [c1, c2, c3].forEach((c, k) => { if (t > c && t < c + 0.5) burst(t, c, 360 + k * 180, 760 - k * 40, 110, 'CRUNCH!', ['#FFD23D', '#FF8C42', '#7CF27C'][k]); });
       if (t > yu) { bubble(t, yu, 700, 640, 'YUMMY!', { size: 64, tx: 680, ty: 900 }); lot(t, yu + 0.05, 'heart', 900, 470, 130); } } }); });
 
 VIS[3] = S(() => { const wf = sw('wife', 0.9), sweet = sw('sweet', 2.0), hr = sw('heart', 3.0), br = sw('bring', 4.0);
   return kscene(3, { k: [[wf, 'pop', 0.9, 900], [hr, 'ding', 1], [br - 0.4, 'mute', 1, 0.4], [br, 'boom', 1], [br + 0.02, 'thump', 1]],
-    cam: (t) => t < br ? zoomTo(t, [1, 540, 900], [1.2, 470, 900], wf, 0.6) : zoomTo(t, [1.2, 470, 900], [1.55, 380, 880], br, 0.3),
-    world: (t) => { riverHome(t); croc(t, 820, 900, 0.75, { face: 'smile', flip: false }); croc(t, 380, 930, 0.85, { wife: true, flip: true, face: t > br ? 'evil' : t > hr ? 'hungry' : 'smile', open: t > br ? 0.5 + 0.2 * Math.sin(t * 10) : 0.1 }); sea(t, 820, true); },
+    cam: (t) => t < br ? zoomTo(t, [1.3, 600, 760], [1.45, 600, 760], wf, 0.6) : zoomTo(t, [1.45, 600, 760], [1.9, 420, 720], br, 0.3),
+    world: (t) => { riverHome(t); croc(t, 960, 815, 0.8, { face: 'smile', flip: false }); croc(t, 240, 815, 0.85, { wife: true, flip: true, face: t > br ? 'evil' : t > hr ? 'hungry' : 'smile', open: t > br ? 0.5 + 0.2 * Math.sin(t * 10) : 0.1 }); water(t, 820, true); },
     ui: (t) => { if (t > sweet && t < hr) { const k = spring(t - sweet, 300, 14); g.save(); g.translate(400, 560); g.scale(k, k); apple(0, 0, 60); g.restore(); lot(t, sweet, 'sparkles', 520, 470, 120); }
       if (t > hr && t < br) { heartIcon(380, 560, 80, '#FF3B5C', t); lot(t, hr, 'sparkles', 520, 470, 140); }
       if (t > br) { g.save(); g.translate(shake(t, br, 12), 0); burst(t, br, 540, 560, 230, 'HIS HEART!', '#FF5FA2'); g.restore(); } } }); });
 
 VIS[4] = S(() => { const din = sw('dinner', 1.4), jp = sw('jump', 2.2), bk = sw('back', 2.7);
   return kscene(4, { k: [[din, 'pop', 1, 700], [jp, 'swish', 1], [bk + 0.1, 'thump', 0.9]],
-    world: (t) => { sky(t); sea(t); island(t); croc(t, 830, 1060, 1, { face: 'smile', open: 0.1 });
-      const [mx, my] = t < jp ? [470, 545] : arc(t, jp, 0.8, 470, 545, 800, 990, 200); monkey(t, mx, my, 0.85, { face: t > jp ? 'happy' : 'happy', arms: t > jp && t < jp + 0.8 ? 'up' : 'down', flip: true, still: t > jp });
-      sea(t, 1000, true); },
+    world: (t) => { sky(t); water(t); island(t); croc(t, 830, 1030, 1, { face: 'smile', open: 0.1 });
+      const [mx, my] = t < jp ? [470, 545] : arc(t, jp, 0.8, 470, 545, 800, 960, 200); monkey(t, mx, my, 0.85, { face: t > jp ? 'happy' : 'happy', arms: t > jp && t < jp + 0.8 ? 'up' : 'down', flip: true, still: t > jp });
+      water(t, 1000, true); },
     ui: (t) => { if (t > 0.3 && t < jp) bubble(t, 0.3, 700, 620, t > din - 0.4 ? 'COME FOR DINNER!' : 'HELLO, MONKEY!', { size: 52, tx: 740, ty: 900 }); if (t > jp && t < jp + 1.2) lot(t, jp, 'party', 900, 500, 130); } }); });
 
 VIS[5] = S(() => { const mid = sw('middle', 0.9), sm = sw('smiled', 1.9), wa = sw('wants', 3.0), hr = sw('heart', 3.4);
   return kscene(5, { k: [[0.3, 'splash', 0.6], [hr - 0.45, 'mute', 1, 0.45], [hr, 'boom', 1.2], [hr + 0.02, 'hit', 1.2]],
     cam: (t) => t < hr ? zoomTo(t, [0.8, 540, 900], [1.1, 620, 920], mid, 1.5) : zoomTo(t, [1.1, 620, 920], [1.6, 560, 850], hr, 0.25),
-    world: (t) => { sky(t); sea(t); island(t, { x: lerp(200, -500, ease(t / 2.5)) }); const cx = 700;
-      croc(t, cx, 1060, 1, { face: t > sm ? 'evil' : 'smile', swim: true, open: t > wa ? 0.35 : 0.1 });
-      monkey(t, cx - 10, 990, 0.85, { face: t > hr ? 'scared' : 'happy', arms: t > hr ? 'up' : 'down', flip: false, still: true }); sea(t, 1000, true); },
+    world: (t) => { sky(t); water(t); island(t, { x: lerp(200, -500, ease(t / 2.5)) }); const cx = 700;
+      croc(t, cx, 1030, 1, { face: t > sm ? 'evil' : 'smile', swim: true, open: t > wa ? 0.35 : 0.1 });
+      monkey(t, cx - 10, 960, 0.85, { face: t > hr ? 'scared' : 'happy', arms: t > hr ? 'up' : 'down', flip: false, still: true }); water(t, 1000, true); },
     ui: (t) => { if (t > wa) bubble(t, wa, 560, 520, 'MY WIFE WANTS YOUR HEART!', { size: 44, tx: 520, ty: 820 });
       if (t > hr) { flash(t, hr, 0.4, 0.1); lot(t, hr, 'scream', 900, 700, 150); } } }); });
 
 VIS[6] = S(() => { const th = sw('thought', 0.6), oh = sw('oh', 1.4), tr = sw('tree', 2.7), bk = sw('back', 3.6);
   return kscene(6, { k: [[th, 'ding', 1], [oh, 'pop', 1, 800], [tr, 'pop', 0.9, 900]],
     cam: (t) => zoomTo(t, [1.6, 560, 850], [1.3, 600, 880], 0, 0.6),
-    world: (t) => { sky(t); sea(t); croc(t, 700, 1060, 1, { face: 'evil', swim: true });
-      monkey(t, 690, 990, 0.85, { face: t < oh ? 'think' : 'smart', arms: t < oh ? 'think' : 'up', flip: false, still: true }); sea(t, 1000, true); },
+    world: (t) => { sky(t); water(t); croc(t, 700, 1030, 1, { face: 'evil', swim: true });
+      monkey(t, 690, 960, 0.85, { face: t < oh ? 'think' : 'smart', arms: t < oh ? 'think' : 'up', flip: false, still: true }); water(t, 1000, true); },
     ui: (t) => { if (t > th && t < oh) lot(t, th, 'idea', 760, 560, 160);
-      if (t > oh) bubble(t, oh, 540, 520, 'OH NO! MY HEART IS', { size: 50, tx: 560, ty: 760 });
-      if (t > tr) { g.save(); g.translate(250, 1250); g.scale(0.38, 0.38); g.translate(-300, -560); island(t, { palm: false }); heartIcon(300, 560, 70, '#FF3B5C', t); g.restore(); chip('…IN THE APPLE TREE!', 540, 640, t, tr, { size: 40, bg: '#FF5FA2', fg: '#FFF' }); } } }); });
+      if (t > oh) bubble(t, oh, 650, 470, 'OH NO! MY HEART IS', { size: 46, tx: 640, ty: 760 });
+      if (t > tr) { const tb = spring(t - tr, 300, 16); st(circ(200, 700, 150 * tb), '#FFFFFF', 7); [[260, 880, 22], [300, 940, 14]].forEach(([a, b, r]) => st(circ(a, b, r * tb), '#FFFFFF', 5)); g.save(); g.beginPath(); g.arc(200, 700, 140 * tb, 0, 6.283); g.clip(); g.translate(200, 770); g.scale(0.36 * tb, 0.36 * tb); g.translate(-300, -560); island(t, { palm: false }); heartIcon(300, 560, 70, '#FF3B5C', t); g.restore(); chip('…IN THE APPLE TREE!', 640, 640, t, tr, { size: 40, bg: '#FF5FA2', fg: '#FFF' }); } } }); });
 
 VIS[7] = S(() => { const si = sw('silly', 0.5), bk = sw('back', 1.3), jp = sw('jumped', 2.4), sf = sw('safe', 3.4);
   return kscene(7, { k: [[bk, 'splash', 0.7], [jp, 'swish', 1], [jp + 0.75, 'land', 1], [sf, 'stamp', 1.2], [sf + 0.02, 'ding', 1]],
-    world: (t) => { sky(t); sea(t); island(t); const cx = lerp(1250, 830, ease((t - 0.2) / Math.max(0.5, jp - 0.4)));
-      croc(t, cx, 1060, 1, { face: t > jp + 0.4 ? 'sad' : 'smile', swim: t < jp });
-      const [mx, my] = t < jp ? [cx - 10, 990] : arc(t, jp, 0.75, cx - 10, 990, 470, 545, 300); monkey(t, mx, my, 0.85, { face: t > jp ? 'laugh' : 'smart', arms: t > jp && t < jp + 0.75 ? 'up' : 'wave', flip: t > jp + 0.75, still: t < jp });
-      sea(t, 1000, true); },
+    world: (t) => { sky(t); water(t); island(t); const cx = lerp(1250, 830, ease((t - 0.2) / Math.max(0.5, jp - 0.4)));
+      croc(t, cx, 1030, 1, { face: t > jp + 0.4 ? 'sad' : 'smile', swim: t < jp });
+      const [mx, my] = t < jp ? [cx - 10, 960] : arc(t, jp, 0.75, cx - 10, 960, 470, 545, 300); monkey(t, mx, my, 0.85, { face: t > jp ? 'laugh' : 'smart', arms: t > jp && t < jp + 0.75 ? 'up' : 'wave', flip: t > jp + 0.75, still: t < jp });
+      water(t, 1000, true); },
     ui: (t) => { if (t > si && t < jp) chip('SILLY CROCODILE…', 540, 620, t, si, { size: 38, bg: '#FFFFFF', fg: INK }); if (t > sf) { stampText('SAFE!', 540, 700, t, sf, { size: 150, rot: -0.08 }); lot(t, sf + 0.05, 'party', 880, 520, 150); } } }); });
 
 VIS[8] = S(() => { const ha = sw('ha', 0.3), ins = sw('inside', 1.6), nv = sw('never', 2.4);
   return kscene(8, { k: [[ha, 'pop', 1, 900], [ins, 'ding', 1], [nv, 'stamp', 1]],
     cam: (t) => zoomTo(t, [1.25, 470, 700], [1.0, 540, 900], nv - 0.2, 0.6),
-    world: (t) => { sky(t); sea(t); island(t); monkey(t, 470, 545, 0.85, { face: 'laugh', arms: t > ins - 0.2 ? 'hold' : 'wave', heart: t > ins - 0.2, flip: true });
-      croc(t, 860, 1080, 0.9, { face: 'sad', open: 0.05, flip: true }); sea(t, 1000, true); },
-    ui: (t) => { if (t > ha) lot(t, ha, 'lol', 860, 470, 150); if (t > nv) chip('NEVER TRUST A HUNGRY CROCODILE!', 540, 1180, t, nv, { size: 34, bg: GOLD, fg: BG }); } }); });
+    world: (t) => { sky(t); water(t); island(t); monkey(t, 470, 545, 0.85, { face: 'laugh', arms: t > ins - 0.2 ? 'hold' : 'wave', heart: t > ins - 0.2, flip: true });
+      croc(t, 860, 1080, 0.9, { face: 'sad', open: 0.05, flip: true }); water(t, 1000, true); },
+    ui: (t) => { if (t > ha) lot(t, ha, 'lol', 860, 470, 150); if (t > nv) chip('NEVER TRUST A HUNGRY CROCODILE!', 540, 1460, t, nv, { size: 34, bg: GOLD, fg: BG }); } }); });
 
 // moral + subscribe (the CTA segment drives the end card)
 VIS[9] = S(() => { const cl = sw('clever', 0.8);
   return kscene(9, { k: [[0.3, 'ding', 1], [cl, 'pop', 1, 900]],
-    world: (t) => { sky(t); sea(t); island(t); monkey(t, 470, 545, 0.85, { face: 'happy', arms: 'wave', flip: true }); sea(t, 1000, true); },
-    ui: (t) => { if (t > cl) { stampText('BE CLEVER!', 540, 720, t, cl, { size: 130, rot: -0.06 }); lot(t, cl + 0.1, 'brain', 870, 520, 140); } } }); });
+    world: (t) => { sky(t); water(t); island(t); monkey(t, 470, 545, 0.85, { face: 'happy', arms: 'wave', flip: true }); water(t, 1000, true); },
+    ui: (t) => { if (t > cl) { stampText('BE CLEVER!', 540, 1150, t, cl, { size: 130, rot: -0.06 }); lot(t, cl + 0.1, 'brain', 900, 980, 140); } } }); });
