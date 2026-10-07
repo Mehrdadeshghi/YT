@@ -24,7 +24,8 @@
   "fire",
   "warning",
   "starstruck",
-  "cold"
+  "cold",
+  "skull"
  ],
  "ep": 115,
  "series": "HOW IT WORKS #7",
@@ -141,10 +142,6 @@
   }
  ],
  "photos": [
-  {
-   "id": "bose",
-   "file": "File:Bose QuietComfort 25 Acoustic Noise Cancelling Headphones.jpg"
-  },
   {
    "id": "sony",
    "file": "File:Sony-WH-1000XM3-kabellose-Bluetooth-Noise-Cancelling-Kopfhoerer.4.jpg"

@@ -24,7 +24,8 @@
   "fire",
   "warning",
   "starstruck",
-  "cold"
+  "cold",
+  "skull"
  ],
  "ep": 113,
  "series": "HOW IT WORKS #5",
@@ -154,14 +155,6 @@
   }
  ],
  "photos": [
-  {
-   "id": "phonepay",
-   "file": "File:P059743-518704.jpg"
-  },
-  {
-   "id": "sechip",
-   "file": "File:PXE1.jpg"
-  },
   {
    "id": "applesq",
    "file": "File:Apple-payment-square.jpg"

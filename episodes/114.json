@@ -24,7 +24,8 @@
   "fire",
   "warning",
   "starstruck",
-  "cold"
+  "cold",
+  "skull"
  ],
  "ep": 114,
  "series": "HOW IT WORKS #6",
@@ -144,14 +145,6 @@
   {
    "id": "damaged",
    "file": "File:QR Code Damaged.jpg"
-  },
-  {
-   "id": "billboard",
-   "file": "File:Japan-qr-code-billboard.jpg"
-  },
-  {
-   "id": "street",
-   "file": "File:How QR codes are created.jpg"
   },
   {
    "id": "music",

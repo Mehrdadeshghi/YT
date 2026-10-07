@@ -24,7 +24,8 @@
   "fire",
   "warning",
   "starstruck",
-  "cold"
+  "cold",
+  "skull"
  ],
  "ep": 118,
  "series": "HOW IT WORKS #10",
@@ -152,10 +153,6 @@
   {
    "id": "nokia",
    "file": "File:Nokia DT-900.jpg"
-  },
-  {
-   "id": "expanded",
-   "file": "File:Wireless Mobile Phone Charger Expanded.jpg"
   },
   {
    "id": "music",
