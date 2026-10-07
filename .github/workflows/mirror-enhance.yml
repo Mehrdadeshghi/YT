@@ -1,0 +1,18 @@
+name: Mirror speech enhancement model
+# DeepFilterNet3 (MIT/Apache-2.0, Rikorose) — denoises voice recordings before cloning → Release model-enhance
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/mirror-enhance.yml]
+permissions:
+  contents: write
+jobs:
+  mirror:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: |
+          curl -sSfL -o DeepFilterNet3.zip https://github.com/Rikorose/DeepFilterNet/raw/main/models/DeepFilterNet3.zip
+          ls -la DeepFilterNet3.zip
+      - env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release create model-enhance DeepFilterNet3.zip --repo "${{ github.repository }}" --title "DeepFilterNet3 mirror" --notes "Mirror of DeepFilterNet3 weights (github.com/Rikorose/DeepFilterNet) for local voice cleanup."
