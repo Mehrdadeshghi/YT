@@ -1,0 +1,204 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "loop": true,
+ "recap": false,
+ "wordCaps": true,
+ "figures": true,
+ "facts": true,
+ "mood": "epic",
+ "voice": "narrator",
+ "voice_ref": "assets/voice/family_story.wav",
+ "voice_ex": 0.75,
+ "voice_cfg": 0.4,
+ "wpm": 175,
+ "capY": 1660,
+ "ep": 108,
+ "series": "STORY TIME",
+ "prog": 1,
+ "title": "The Tortoise and the Hare",
+ "hook": [
+  "WHO WINS THE RACE?",
+  "TORTOISE OR HARE?"
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Who is faster? A super speedy hare... or a slow little tortoise? Let's find out!",
+   "es": "¿Quién es más rápido? ¿Una liebre súper veloz... o una tortuguita lenta? ¡Vamos a verlo!",
+   "de": "Wer ist schneller? Ein superschneller Hase... oder eine langsame kleine Schildkröte? Finden wir es heraus!"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Once upon a time, there was a hare who was very, very fast. And he loved to show off!",
+     "cap": "Very, very *fast!*",
+     "es": "Había una vez una liebre muy, muy rápida. ¡Y le encantaba presumir!",
+     "de": "Es war einmal ein Hase, der war sehr, sehr schnell. Und er gab gern damit an!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "I'm the fastest animal in the whole forest! he laughed. You're so slow, Tortoise!",
+     "cap": "*So slow!*",
+     "es": "¡Soy el animal más rápido de todo el bosque!, se rió. ¡Qué lenta eres, Tortuga!",
+     "de": "Ich bin das schnellste Tier im ganzen Wald!, lachte er. Du bist so langsam, Schildkröte!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The tortoise smiled. Then let's have a race! The hare laughed and laughed.",
+     "cap": "*Let's have a race!*",
+     "es": "La tortuga sonrió. ¡Entonces hagamos una carrera! La liebre se rió y se rió.",
+     "de": "Die Schildkröte lächelte. Dann lass uns ein Wettrennen machen! Der Hase lachte und lachte."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Ready... steady... go! Zoom! The hare ran away like the wind.",
+     "cap": "*Go!* *Zoom!*",
+     "es": "Preparados... listos... ¡ya! ¡Zum! La liebre salió corriendo como el viento.",
+     "de": "Auf die Plätze... fertig... los! Zisch! Der Hase rannte davon wie der Wind."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The tortoise walked slowly. Step... by step... by step.",
+     "cap": "Step... by *step.*",
+     "es": "La tortuga caminaba despacio. Paso... a paso... a paso.",
+     "de": "Die Schildkröte ging langsam. Schritt... für Schritt... für Schritt."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Soon, the hare looked back. The tortoise was far, far behind. I have time for a little nap!",
+     "cap": "A little *nap!*",
+     "es": "Pronto, la liebre miró atrás. La tortuga estaba muy, muy lejos. ¡Tengo tiempo para una siestecita!",
+     "de": "Bald schaute der Hase zurück. Die Schildkröte war weit, weit hinten. Ich hab Zeit für ein kleines Nickerchen!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But the tortoise kept walking. Step by step. He never stopped!",
+     "cap": "He *never stopped!*",
+     "es": "Pero la tortuga siguió caminando. Paso a paso. ¡Nunca se detuvo!",
+     "de": "Aber die Schildkröte lief weiter. Schritt für Schritt. Sie hörte nie auf!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 7,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When the hare woke up... oh no! The tortoise was almost at the finish line!",
+     "cap": "*Oh no!*",
+     "es": "Cuando la liebre despertó... ¡oh, no! ¡La tortuga casi estaba en la meta!",
+     "de": "Als der Hase aufwachte... oh nein! Die Schildkröte war fast am Ziel!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 8,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The hare ran as fast as he could... but it was too late! The tortoise won!",
+     "cap": "The tortoise *won!*",
+     "es": "La liebre corrió lo más rápido que pudo... ¡pero era demasiado tarde! ¡Ganó la tortuga!",
+     "de": "Der Hase rannte so schnell er konnte... aber es war zu spät! Die Schildkröte hat gewonnen!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 9,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Slow and steady wins the race! Never give up!",
+     "cap": "*Never give up!*",
+     "es": "¡Despacio y con constancia se gana la carrera! ¡Nunca te rindas!",
+     "de": "Langsam und beständig gewinnt das Rennen! Gib niemals auf!"
+    },
+    {
+     "at": "0.15",
+     "text": "Want more stories? Subscribe, and see you next time!",
+     "cta": true,
+     "es": "¿Quieres más cuentos? ¡Suscríbete y hasta la próxima!",
+     "de": "Willst du mehr Geschichten? Abonnier und bis zum nächsten Mal!"
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Who is your hero?",
+  "a": "TORTOISE",
+  "b": "HARE",
+  "emoji": "think"
+ },
+ "source": "https://en.wikipedia.org/wiki/The_Tortoise_and_the_Hare",
+ "lottie": [
+  "think",
+  "sparkles",
+  "lol",
+  "party",
+  "trophy",
+  "scream",
+  "zap",
+  "dizzy",
+  "clap",
+  "hundred",
+  "shocked"
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Kevin MacLeod - Fluffing a Duck.ogg",
+   "from": 0,
+   "len": 67,
+   "gain": 0.4
+  }
+ ]
+}
