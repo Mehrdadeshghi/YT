@@ -1,11 +1,9 @@
-Submarine communications cable | Submarine communications cables
-Optical fiber | Optical fibers
-image: submarine cable cross section
-image: cable laying ship
-image: optical fiber light glowing
-image: data center servers
-image: Internet exchange point
-image: router network cables
-video: optical fiber light
-video: data center
-video: submarine cable
+Global Positioning System | GPS satellites
+image: GPS Block III satellite
+image: GPS Block IIF satellite
+image: GPS satellite orbit
+image: rubidium atomic clock
+image: Albert Einstein 1921
+image: smartphone map navigation
+video: GPS satellite
+video: atomic clock
