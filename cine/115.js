@@ -68,7 +68,7 @@ VIS[4] = S(() => { const ol = sw('old', 0.4), ge = sw('german', 1.0), ni = sw('n
       text('fig. 1  (illustration)', 0, 340, 'mono', 24, '#5A4630', { align: 'center' }); g.restore();
       if (t > ni) { const y = Math.round(lerp(2026, 1936, nEase((t - ni) / 0.6))); rgbText(String(y), 540, 470, 180, t, ni, { color: GOLD }); chip('PAUL LUEG · GERMAN PHYSICIST', 540, 560, t, ni + 0.3, { size: 32, bg: GOLD, fg: BG }); } }; }; });
 
-VIS[5] = S(() => { const ti = sw('tip', 0.2), se = sw('seal', 1.6), bi = sw('bigger', 2.6);
+VIS[5] = S(() => { const ti = sw('tip', 0.2), se = sw('seal', 1.6), bi = sw('larger', 2.6);
   return (K) => { ks(K, [[ti, 'pop', 0.9, 700], [se, 'zap', 0.8], [bi, 'ding', 1]]);
     return (t) => { techBg(t); tag(t, 5, N);
       ['S', 'M', 'L'].forEach((sz, k) => { const x = 270 + k * 270, r = 70 + k * 22, act = t > bi && k === 2; g.save(); g.translate(x, 900); g.shadowColor = act ? LIME : 'rgba(0,0,0,0.5)'; g.shadowBlur = act ? 40 : 20;

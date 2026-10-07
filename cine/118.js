@@ -70,5 +70,5 @@ VIS[5] = S(() => { const ca = sw('cases', 0.8), cd = sw('cards', 1.8), ga = sw('
   return (K) => { ks(K, [[ca, 'pop', 0.9, 600], [cd, 'pop', 0.9, 750], [ga, 'pop', 0.9, 900], [cb, 'ding', 0.9]]);
     return (t) => { techBg(t); tag(t, 5, N); const items = [['THICK CASE OFF', ca], ['NO CARDS / METAL', cd], ['NO GAMING WHILE CHARGING', ga]];
       items.forEach(([s, at], k) => { if (t < at) return; const y = 680 + k * 170, p = wE((t - at) / 0.3); g.save(); g.globalAlpha = p; g.translate((1 - p) * 300, 0); rrect(120, y - 60, 840, 120, 26); g.fillStyle = 'rgba(8,16,30,0.92)'; g.fill(); g.lineWidth = 4; g.strokeStyle = LIME; g.stroke();
-        g.strokeStyle = LIME; g.lineWidth = 12; g.lineCap = 'round'; g.beginPath(); g.moveTo(175, y); g.lineTo(200, y + 25); g.lineTo(245, y - 25); g.stroke(); text(s, 290, y + 14, 'disp', 44, '#FFFFFF'); g.restore(); });
+        g.strokeStyle = LIME; g.lineWidth = 12; g.lineCap = 'round'; g.beginPath(); g.moveTo(175, y); g.lineTo(200, y + 25); g.lineTo(245, y - 25); g.stroke(); text(s, 290, y + 13, 'disp', s.length > 18 ? 34 : 44, '#FFFFFF'); g.restore(); });
       rgbText('3 TIPS', 540, 470, 140, t, 0.1, { color: GOLD }); }; }; });
