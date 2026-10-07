@@ -159,12 +159,12 @@ class Narrator:
     reference read with excitement (assets/voice/narrator_ref.wav). exaggeration 0.9 / cfg 0.35 / temperature 0.85 gives a
     ~25-30 st pitch range (engaging narrators: ~12-15 st; flat TTS: ~6 st). Not Mehrdad's voice - no conversion.
     Chatterbox speaks slowly (~140 wpm), so pauses are squeezed and the line is sped up (pitch kept) towards house tempo."""
-    def __init__(self, ref='assets/voice/narrator_ref.wav', ex=0.9, cfg=0.35, temp=0.85, wpm=205, keep=0.14, max_speed=1.32):
+    def __init__(self, ref='assets/voice/narrator_ref.wav', ex=0.9, cfg=0.35, temp=0.85, wpm=205, keep=0.14, max_speed=1.32, min_speed=1.0):
         import torch
         from chatterbox.tts import ChatterboxTTS
         local = os.environ.get('CHATTERBOX_DIR'); dev = 'cuda' if torch.cuda.is_available() else 'cpu'
         self.m = ChatterboxTTS.from_local(local, device=dev) if local else ChatterboxTTS.from_pretrained(device=dev)
-        self.ref, self.ex, self.cfg, self.temp, self.wpm, self.keep, self.maxsp = ref, ex, cfg, temp, wpm, keep, max_speed
+        self.ref, self.ex, self.cfg, self.temp, self.wpm, self.keep, self.maxsp, self.minsp = ref, ex, cfg, temp, wpm, keep, max_speed, min_speed
         self.takes = int(os.environ.get('CLONE_TAKES', '2'))
         self.polish = df_dir() is not None and os.environ.get('POLISH', '1') == '1'
     def create(self, text, voice=None, speed=None, lang=None):
@@ -180,9 +180,9 @@ class Narrator:
         nz = np.where(np.abs(w) > 0.01)[0]
         if len(nz): w = w[max(0, nz[0] - int(0.02 * sr)): nz[-1] + int(0.06 * sr)]
         words = len(re.findall(r"[A-Za-z0-9'-]+", text)); target = words / self.wpm * 60 + 0.12 * len(re.findall(r'[.!?,…;:]', text))
-        sp = min(self.maxsp, max(1.0, (len(w) / sr) / max(0.5, target)))
+        sp = min(self.maxsp, max(self.minsp, (len(w) / sr) / max(0.5, target)))
         if self.polish: w, sr = polish(w, sr)
-        return _ff(w, sr, CHAIN + (f',atempo={sp:.3f}' if sp > 1.01 else ''))
+        return _ff(w, sr, CHAIN + (f',atempo={sp:.3f}' if abs(sp - 1) > 0.01 else ''))
 
 if __name__ == '__main__' and sys.argv[1] == 'test':
     ref, lines = sys.argv[2], sys.argv[3:]

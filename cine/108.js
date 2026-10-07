@@ -108,7 +108,7 @@ function label(str, x, y, t, tIn, o = {}) { const lt = t - tIn; if (lt < 0) retu
   text(str, 0, size * 0.36, 'disp', size, o.fg || INKC, { align: 'center' }); g.restore(); }
 // participation pause: two soft choice cards that gently bob while the child answers
 function choice(t, tIn, tOut) { if (t < tIn || t > tOut) return; const b = Math.sin((t - tIn) * 4) * 8;
-  label('TORTOISE?', 300, 1330 + b, t, tIn, { size: 52, bg: '#C9F2B5' }); label('HARE?', 790, 1330 - b, t, tIn + 0.15, { size: 52, bg: '#FFE0C7' }); }
+  label('TORTOISE?', 290, 1330 + b, t, tIn, { size: 64, bg: '#C9F2B5' }); label('HARE?', 810, 1330 - b, t, tIn + 0.15, { size: 64, bg: '#FFE0C7' }); }
 const stepChips = (t, steps) => steps.forEach((s, k) => { if (t > s) label(['STEP…', 'BY STEP…', 'BY STEP!'][k], 540, 1290 + k * 105, t, s, { size: 52 }); });
 
 VIS.open = (K) => { const ha = sw('hare', 1.4), to = sw('tortoise', 2.6), th = sw('think', 3.4), fi = sw('find', 6);
