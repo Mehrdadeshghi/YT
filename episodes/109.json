@@ -91,7 +91,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Inside: hair-thin glass fibers. Your data flies through them as flashes of light. About two hundred thousand kilometers per second!",
+     "text": "And inside? Hair-thin glass fibers. Your data flies through them as flashes of light. About two hundred thousand kilometers per second!",
      "cap": "Flashes of *light.*",
      "es": "Dentro: fibras de vidrio finas como un pelo. Tus datos viajan como destellos de luz. ¡Unos doscientos mil kilómetros por segundo!",
      "de": "Darin: haarfeine Glasfasern. Deine Daten fliegen als Lichtblitze hindurch. Etwa zweihunderttausend Kilometer pro Sekunde!"
@@ -156,24 +156,8 @@
    "file": "File:Submarine Optical Cables.jpg"
   },
   {
-   "id": "museum",
-   "file": "File:Musée des Arts et Métiers - Câbles sous-marins (37545950582).jpg"
-  },
-  {
    "id": "ship",
    "file": "File:2024-10-22 01 CABLE INNOVATOR - IMO 9101132 – Victoria, BC CAN.jpg"
-  },
-  {
-   "id": "landing",
-   "file": "File:KDDI CHIKURA Cable Landing Station.jpg"
-  },
-  {
-   "id": "fiber",
-   "file": "File:Fiber optic illuminated.jpg"
-  },
-  {
-   "id": "laser",
-   "file": "File:Laser in fibre.jpg"
   },
   {
    "id": "dark",
@@ -182,32 +166,6 @@
   {
    "id": "decix",
    "file": "File:DE-CIX GERMANY - Switch Rack (6218137120).jpg"
-  },
-  {
-   "id": "amsix",
-   "file": "File:AMS-IX optical patch panel.jpg"
-  },
-  {
-   "id": "router",
-   "file": "File:Network cables plugged to router 20170903.jpg"
-  },
-  {
-   "id": "cern",
-   "file": "File:CERN data centre.jpg"
-  },
-  {
-   "id": "lay",
-   "video": "File:Undersea cable laying.ogv",
-   "from": 0,
-   "len": 23,
-   "fps": 1
-  },
-  {
-   "id": "dcp",
-   "video": "File:What's Inside This Decommissioned Data Center-.webm",
-   "from": 20,
-   "len": 120,
-   "fps": 1
   },
   {
    "id": "music",
