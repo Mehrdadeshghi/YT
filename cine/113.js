@@ -53,9 +53,9 @@ VIS[2] = S(() => { const se = sw('sends', 0.6), to = sw('token', 1.0), on = sw('
 
 VIS[3] = S(() => { const ba = sw('bank', 0.8), tu = sw('turn', 1.6), re = sw('real', 2.6);
   return (K) => { ks(K, [[0.2, 'whoosh', 0.7], [ba, 'ding', 0.9], [tu, 'type', 0.9], ...drop(re, 0.35)]);
-    return (t) => { techBg(t, '#050A06', '#0F2412'); tag(t, 3, N); bankHouse(540, 780, 0.9); lockIcon(540, 1030, 0.9, GOLD, t > re ? 1 : 0);
-      const p = pEase((t - 0.1) / 0.6); packet(lerp(-200, 540, p), 1250, 'TOKEN IN', TOKEN, GOLD, 0.95);
-      if (t > re) { packet(540, 520, 'ONLY THE BANK SEES', REAL, LIME, 0.95); shock(540, 1030, t, re, 300, LIME); } }; }; });
+    return (t) => { techBg(t, '#050A06', '#0F2412'); tag(t, 3, N); bankHouse(540, 780, 0.9); lockIcon(540, 1010, 0.8, GOLD, t > re ? 1 : 0);
+      const p = pEase((t - 0.1) / 0.6); packet(lerp(-200, 540, p), 1165, 'TOKEN IN', TOKEN, GOLD, 0.95);
+      if (t > re) { packet(540, 520, 'ONLY NETWORK + BANK SEE', REAL, LIME, 0.95); shock(540, 1010, t, re, 300, LIME); } }; }; });
 
 VIS[4] = S(() => { const sh = sw('shop', 0.4), ha = sw('hacked', 1.0), re = sw('real', 1.8), st = sw('steal', 3.0);
   return (K) => { ks(K, [[ha, 'glitch', 1], [ha + 0.02, 'wrong', 0.9], ...drop(st, 0.35)]);

@@ -61,10 +61,10 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Whoever uses your device next. Your history and cookies are wiped when you close it.",
+     "text": "Whoever uses your device next. Your history and cookies are deleted when you close it.",
      "de": "Vor dem Nächsten, der dein Gerät benutzt. Verlauf und Cookies werden beim Schließen gelöscht.",
      "es": "De quien use tu dispositivo después. El historial y las cookies se borran al cerrarlo.",
-     "cap": "*Wiped* when you close it."
+     "cap": "*Deleted* when you close it."
     }
    ]
   },
@@ -103,7 +103,8 @@
      "text": "In twenty twenty-four, Google even agreed to delete or anonymize billions of records... to settle a lawsuit over Incognito tracking.",
      "de": "2024 hat Google sogar zugestimmt, Milliarden Datensätze zu löschen oder zu anonymisieren... in einem Vergleich zu einer Klage über Inkognito-Tracking.",
      "es": "En 2024, Google incluso aceptó borrar o anonimizar miles de millones de registros... para cerrar una demanda sobre el rastreo en modo incógnito.",
-     "cap": "*Billions* of records!"
+     "cap": "*Billions* of records!",
+     "show": "In 2024, ~ Google even agreed to delete or anonymize billions of records… to settle a lawsuit over Incognito tracking."
     }
    ]
   },

@@ -25,13 +25,13 @@ VIS.open = (K) => { const hi = sw('hides', 0.6), on = sw('one', 2.0); K(0.05, 'h
     if (t > on) { rgbText('JUST 1 PERSON', 540, 650, 110, t, on, { color: GOLD }); }
     tag(t); hook(t, EP.hook, 400); if (EP.series) chip(EP.series, 80, 300, t, -0.3, { size: 26, align: 'left', bg: GOLD, fg: BG }); }; };
 
-VIS[0] = S(() => { const ne = sw('next', 0.8), hi = sw('history', 1.6), wi = sw('wiped', 3.0);
+VIS[0] = S(() => { const ne = sw('next', 0.8), hi = sw('history', 1.6), wi = sw('deleted', 3.0);
   return (K) => { ks(K, [[0.2, 'pop', 0.8, 600], [ne, 'whoosh', 0.7], [wi, 'swish', 1], [wi + 0.05, 'ding', 1]]);
     return (t) => { techBg(t, '#07040F', '#1A0E30'); tag(t, 0, N); const items = ['gift ideas for mom', 'cheap flights lisbon', 'how to tie a tie', 'birthday cake recipe', 'sneakers size 43'];
       browser(540, 850, 820, 620, t, { url: 'history', inner: () => items.forEach((s, k) => { const y = -170 + k * 90, wp = t > wi ? iEase((t - wi - k * 0.07) / 0.4) : 0;
         g.save(); g.globalAlpha = 1 - wp; g.translate(wp * 500, 0); text('◷  ' + s, -360, y, 'ui', 38, '#DDE6F7'); g.restore(); }) });
       if (t > ne) agent(880, 1200, 0.8, '#8AA4FF', clamp((t - ne) / 0.4)); if (t > ne) text('NEXT PERSON', 880, 1300, 'mono', 26, '#8AA4FF', { align: 'center' });
-      if (t > wi) { rgbText('WIPED', 540, 450, 140, t, wi, { color: LIME }); chip('HISTORY · COOKIES · SITE DATA', 540, 540, t, wi + 0.2, { size: 30, bg: LIME, fg: BG }); } else if (t > hi) rgbText('YOUR HISTORY', 540, 450, 110, t, hi, { color: '#FFFFFF' }); }; }; });
+      if (t > wi) { rgbText('DELETED', 540, 450, 140, t, wi, { color: LIME }); chip('HISTORY · COOKIES · SITE DATA', 540, 540, t, wi + 0.2, { size: 30, bg: LIME, fg: BG }); } else if (t > hi) rgbText('YOUR HISTORY', 540, 450, 110, t, hi, { color: '#FFFFFF' }); }; }; });
 
 VIS[1] = S(() => { const we = sw('websites', 0.6), se = sw('see', 1.6);
   return (K) => { ks(K, [[we, 'whoosh', 0.7], ...drop(se, 0.35)]);
@@ -46,7 +46,7 @@ VIS[2] = S(() => { const em = sw('employer', 0.4), sc = sw('school', 1.2), pr = 
       glowLine([[160, 1050], [920, 1050]], 'rgba(62,230,255,0.6)', 4, 0.6); const u = (t * 0.6) % 1; for (let k = 0; k < 6; k++) glowDot(lerp(160, 920, clamp(u - k * 0.03)), 1050, 9 - k, CY, 1 - k * 0.15);
       nodes.forEach(([x, y, kind, at, lab], k) => { if (kind === 'laptop') { g.save(); g.translate(x, y); rrect(-90, -70, 180, 110, 10); g.fillStyle = '#2A1F44'; g.fill(); g.fillStyle = '#3A4252'; g.fillRect(-110, 40, 220, 16); g.restore(); spy(x, y - 15, 0.45); return; }
         const on = t > at; building(x, y, 0.75, kind, on ? RED2 : '#3A4252'); if (on) { eye(x, y - 210, 0.6, iEase((t - at) / 0.3), RED2, t); text(lab, x, y + 130, 'mono', 26, RED2, { align: 'center' }); } });
-      if (t > ac) rgbText('THEY CAN SEE IT', 540, 450, 110, t, ac, { color: RED2 }); else if (t > em) rgbText('INCOGNITO ≠ HIDDEN', 540, 450, 96, t, em, { color: '#FFFFFF' }); }; }; });
+      if (t > ac) rgbText('THEY CAN SEE IT', 540, 450, 110, t, ac, { color: RED2 }); else if (t > em) rgbText('INCOGNITO ≠ HIDDEN', 540, 450, 78, t, em, { color: '#FFFFFF' }); }; }; });
 
 VIS[3] = S(() => { const tw = sw('twenty', 0.4), go = sw('google', 1.4), bi = sw('billions', 3.0), la = sw('lawsuit', 4.6);
   return (K) => { ks(K, [[tw, 'whoosh', 0.8], [go, 'pop', 0.8, 600], ...drop(bi, 0.4), [la, 'stamp', 1]]);
