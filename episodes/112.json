@@ -24,7 +24,8 @@
   "fire",
   "warning",
   "starstruck",
-  "cold"
+  "cold",
+  "skull"
  ],
  "ep": 112,
  "series": "HOW IT WORKS #4",
@@ -132,7 +133,7 @@
     },
     {
      "at": "0.15",
-     "text": "Card or cash? Comment card or cash, and subscribe!",
+     "text": "Card... or cash? Comment card, or cash, and subscribe!",
      "cta": true,
      "de": "Karte oder bar? Kommentier Karte oder bar, und abonnier!",
      "es": "¿Tarjeta o efectivo? Comenta tarjeta o efectivo, y suscríbete."
