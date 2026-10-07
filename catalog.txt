@@ -1,7 +1,11 @@
-audio: Monkeys Spinning Monkeys
-audio: Kevin MacLeod Carefree
-audio: Fluffing a Duck
-audio: Kevin MacLeod happy
-audio: ukulele happy music
-audio: children music cheerful
-audio: Kevin MacLeod Sneaky Snitch
+Submarine communications cable | Submarine communications cables
+Optical fiber | Optical fibers
+image: submarine cable cross section
+image: cable laying ship
+image: optical fiber light glowing
+image: data center servers
+image: Internet exchange point
+image: router network cables
+video: optical fiber light
+video: data center
+video: submarine cable
