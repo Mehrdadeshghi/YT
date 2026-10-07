@@ -152,11 +152,34 @@
  "source": "https://en.wikipedia.org/wiki/Global_Positioning_System",
  "photos": [
   {
+   "id": "gps3",
+   "file": "File:GPS Block IIIA.jpg"
+  },
+  {
+   "id": "launch",
+   "file": "File:GPS III-SV09 Launches from Cape Canaveral Space Force Station (9496877).jpg"
+  },
+  {
+   "id": "rbclock",
+   "file": "File:Rb atomic clock Galileo satellite.jpg"
+  },
+  {
+   "id": "einstein",
+   "file": "File:Albert Einstein 1921 (re-cropped).jpg"
+  },
+  {
+   "id": "navphone",
+   "file": "File:Smartphone with navigation map app.jpg"
+  },
+  {
    "id": "music",
    "audio": "File:Epic Trailer by Rafael Krux.ogg",
    "from": 2,
    "len": 43,
    "gain": 0.55
   }
+ ],
+ "scripts": [
+  "tech.js"
  ]
 }
