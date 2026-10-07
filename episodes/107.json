@@ -1,0 +1,202 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "loop": true,
+ "recap": false,
+ "wordCaps": true,
+ "ep": 107,
+ "figures": true,
+ "facts": true,
+ "mood": "epic",
+ "voice": "narrator",
+ "voice_ref": "assets/voice/family_story.wav",
+ "voice_ex": 0.75,
+ "voice_cfg": 0.4,
+ "wpm": 175,
+ "series": "STORY TIME",
+ "prog": 1,
+ "title": "The Clever Monkey (the monkey and the crocodile)",
+ "hook": [
+  "CAN A LITTLE MONKEY",
+  "TRICK A CROCODILE?"
+ ],
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Can a little monkey trick a big, hungry crocodile? Let's find out!",
+   "es": "¿Puede un monito engañar a un cocodrilo grande y hambriento? ¡Vamos a verlo!",
+   "de": "Kann ein kleiner Affe ein großes, hungriges Krokodil austricksen? Finden wir es heraus!"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Once upon a time, a clever monkey lived in an apple tree, on a beautiful island.",
+     "cap": "A *clever monkey.*",
+     "es": "Había una vez un mono listo que vivía en un manzano, en una isla preciosa.",
+     "de": "Es war einmal ein schlauer Affe, der wohnte in einem Apfelbaum auf einer wunderschönen Insel."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "One day, a crocodile swam to the island. I'm so hungry, he said!",
+     "cap": "*So hungry!*",
+     "es": "Un día, un cocodrilo nadó hasta la isla. ¡Tengo mucha hambre!, dijo.",
+     "de": "Eines Tages schwamm ein Krokodil zur Insel. Ich hab so Hunger!, sagte es."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So the kind monkey threw him a big, red apple. Crunch! Crunch! Crunch! Yummy!",
+     "cap": "*Crunch!* *Yummy!*",
+     "es": "Así que el mono amable le lanzó una manzana grande y roja. ¡Crunch! ¡Crunch! ¡Crunch! ¡Qué rica!",
+     "de": "Also warf der liebe Affe ihm einen großen, roten Apfel zu. Knack! Knack! Knack! Lecker!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But at home, the crocodile's wife said: If apples are so sweet, the monkey's heart must be even sweeter! Bring me his heart!",
+     "cap": "*Bring me his heart!*",
+     "es": "Pero en casa, la esposa del cocodrilo dijo: Si las manzanas son tan dulces, ¡el corazón del mono será aún más dulce! ¡Tráeme su corazón!",
+     "de": "Aber zu Hause sagte die Krokodilfrau: Wenn die Äpfel so süß sind, ist das Herz des Affen bestimmt noch süßer! Bring mir sein Herz!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So the crocodile said: Monkey, come to my house for dinner! Jump on my back!",
+     "cap": "*Jump on my back!*",
+     "es": "Entonces el cocodrilo dijo: ¡Mono, ven a cenar a mi casa! ¡Súbete a mi espalda!",
+     "de": "Also sagte das Krokodil: Affe, komm zum Abendessen zu mir! Spring auf meinen Rücken!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In the middle of the river, the crocodile smiled. My wife wants your heart!",
+     "cap": "*Your heart!*",
+     "es": "En medio del río, el cocodrilo sonrió. ¡Mi esposa quiere tu corazón!",
+     "de": "Mitten im Fluss grinste das Krokodil. Meine Frau will dein Herz!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The monkey thought fast. Oh no! I left my heart in the apple tree! Let's go back and get it!",
+     "cap": "*Thought fast.*",
+     "es": "El mono pensó rápido. ¡Oh, no! ¡Dejé mi corazón en el manzano! ¡Volvamos a buscarlo!",
+     "de": "Der Affe dachte schnell nach. Oh nein! Ich hab mein Herz im Apfelbaum gelassen! Lass uns zurück und es holen!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 7,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The silly crocodile swam back, and the monkey jumped up into his tree. Safe!",
+     "cap": "*Safe!*",
+     "es": "El cocodrilo tonto volvió nadando, y el mono saltó a su árbol. ¡A salvo!",
+     "de": "Das dumme Krokodil schwamm zurück, und der Affe sprang hoch in seinen Baum. Gerettet!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 8,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Ha ha! My heart is right here, inside me! Never trust a hungry crocodile!",
+     "cap": "*Never trust* a hungry crocodile!",
+     "es": "¡Ja, ja! ¡Mi corazón está aquí, dentro de mí! ¡Nunca confíes en un cocodrilo hambriento!",
+     "de": "Haha! Mein Herz ist genau hier, in mir drin! Trau nie einem hungrigen Krokodil!"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 9,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Be clever, like the monkey!",
+     "cap": "*Be clever!*",
+     "es": "¡Sé listo, como el mono!",
+     "de": "Sei schlau, wie der Affe!"
+    },
+    {
+     "at": "0.15",
+     "text": "Want more stories? Subscribe, and see you next time!",
+     "cta": true,
+     "es": "¿Quieres más cuentos? ¡Suscríbete y hasta la próxima!",
+     "de": "Willst du mehr Geschichten? Abonnier und bis zum nächsten Mal!"
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "q": "Was the monkey clever?",
+  "a": "YES!",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "source": "https://en.wikipedia.org/wiki/Panchatantra",
+ "lottie": [
+  "think",
+  "sparkles",
+  "flushed",
+  "heart",
+  "party",
+  "scream",
+  "idea",
+  "lol",
+  "brain",
+  "hi"
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Monkeys Spinning Monkeys by Kevin MacLeod.ogg",
+   "from": 0,
+   "len": 90,
+   "gain": 0.42
+  }
+ ]
+}
