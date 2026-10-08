@@ -32,6 +32,15 @@ elif VOICE == 'narrator':             # native narrator (Chatterbox TTS + synthe
     ST.update({k2: E[k1] for k1, k2 in [('voice_ref', 'ref'), ('voice_ex', 'ex'), ('voice_cfg', 'cfg'), ('wpm', 'wpm'), ('pause_keep', 'keep'), ('max_speed', 'maxsp'), ('min_speed', 'minsp')] if k1 in E})
     k = Narrator(ST['ref'], float(ST['ex']), float(ST['cfg']), 0.85, float(ST['wpm']), keep=float(ST['keep']), max_speed=float(ST['maxsp']), min_speed=float(ST['minsp']))
     VTAG = f"{ST['ex']}|{ST['cfg']}|{ST['wpm']}|v2|{E.get('kids', 0)}|{hashlib.md5(open(ST['ref'], 'rb').read()).hexdigest()[:8]}|{k.polish}" + ('' if E.get('voice_style', 'hype') == 'hype' or KIDS else f"|{ST['keep']}|{ST['maxsp']}")
+elif VOICE == 'chirp':                # Google Chirp 3 HD (human-like); audio comes from the "Chirp voices" workflow (release chirp-N → assets/chirp)
+    import chirp
+    CV, CR = chirp.voice_for(E)
+    class _Chirp:
+        def create(self, text, **kw):
+            p = chirp.path(text, CV, CR)
+            if not os.path.exists(p): sys.exit(f'missing {p}: push the episode number to chirp.txt and download the chirp-N release into assets/')
+            s, sr = sf.read(p, dtype='float32'); return (s if s.ndim == 1 else s.mean(1)), sr
+    k = _Chirp(); VTAG = f'chirp|{CV}|{CR}'; SPEED = 1.0
 elif VOICE == 'clone':                # Mehrdad's own voice, cloned (Chatterbox): timbre from assets/voice/*.wav, pronunciation from the model
     from clone_voice import Cloner
     k = Cloner(E.get('voice_ref', 'assets/voice/mehrdad.wav')); SPEED = float(arg('speed', str(E.get('speed_clone', 1.15))))

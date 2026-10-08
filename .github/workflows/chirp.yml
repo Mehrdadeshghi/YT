@@ -1,0 +1,26 @@
+name: Chirp voices
+# push chirp.txt (episode numbers, or the word "samples") → Google Cloud TTS Chirp 3: HD → Release chirp-N (zip of assets/chirp)
+# needs repository secret GOOGLE_TTS_KEY (API key restricted to the Cloud Text-to-Speech API)
+on:
+  push:
+    branches: [main]
+    paths: [chirp.txt]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  chirp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Synthesize
+        env: { GOOGLE_TTS_KEY: "${{ secrets.GOOGLE_TTS_KEY }}" }
+        run: |
+          ARGS=$(grep -v '^#' chirp.txt | tr -s ' \n' ' ')
+          if echo "$ARGS" | grep -qw samples; then python3 chirp.py samples $(echo "$ARGS" | sed 's/samples//'); else python3 chirp.py synth $ARGS; fi
+          cd assets && zip -qr ../chirp.zip chirp && cd .. && ls -la chirp.zip
+      - name: Release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release create "chirp-${{ github.run_number }}" chirp.zip --title "Chirp voices ${{ github.run_number }}" --notes "Google Cloud TTS Chirp 3 HD audio"
