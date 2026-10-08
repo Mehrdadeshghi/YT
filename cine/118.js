@@ -66,7 +66,7 @@ VIS[4] = S(() => { const he = sw('heat', 1.4), ag = sw('ages', 2.4), ba = sw('ba
       if (t > ag) { battery(300, 700, 0.9, lerp(1, 0.78, wE((t - ag) / 1.0)), RED2); text('BATTERY HEALTH (ILLUSTRATION)', 300, 800, 'mono', 22, '#FFB0A0', { align: 'center' }); rgbText('BATTERY AGES', 540, 470, 110, t, ag, { color: RED2 }); }
       else rgbText('ENERGY → HEAT', 540, 470, 110, t, 0.3, { color: '#FFB347' }); }; }; });
 
-VIS[5] = S(() => { const ca = sw('cases', 0.8), cd = sw('cards', 1.8), ga = sw('game', 3.2), cb = sw('cable', 5.0);
+VIS[5] = S(() => { const ca = sw('cases', 0.8), cd = sw('cards', 1.8), ga = sw('games', 3.2), cb = sw('cable', 5.0);
   return (K) => { ks(K, [[ca, 'pop', 0.9, 600], [cd, 'pop', 0.9, 750], [ga, 'pop', 0.9, 900], [cb, 'ding', 0.9]]);
     return (t) => { techBg(t); tag(t, 5, N); const items = [['THICK CASE OFF', ca], ['NO CARDS / METAL', cd], ['NO GAMING WHILE CHARGING', ga]];
       items.forEach(([s, at], k) => { if (t < at) return; const y = 680 + k * 170, p = wE((t - at) / 0.3); g.save(); g.globalAlpha = p; g.translate((1 - p) * 300, 0); rrect(120, y - 60, 840, 120, 26); g.fillStyle = 'rgba(8,16,30,0.92)'; g.fill(); g.lineWidth = 4; g.strokeStyle = LIME; g.stroke();
