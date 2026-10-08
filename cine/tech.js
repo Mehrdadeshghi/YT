@@ -12,7 +12,7 @@ function glowDot(x, y, r, col, a = 1) { g.save(); g.globalAlpha *= a; g.shadowCo
 function glowLine(pts, col, w = 6, a = 1) { g.save(); g.globalAlpha *= a; g.strokeStyle = col; g.lineWidth = w; g.lineCap = 'round'; g.lineJoin = 'round'; g.shadowColor = col; g.shadowBlur = 24; g.beginPath(); pts.forEach(([x, y], k) => k ? g.lineTo(x, y) : g.moveTo(x, y)); g.stroke(); g.restore(); }
 function shock(x, y, t, t0, rMax = 260, col = CY, dur = 0.8) { const u = (t - t0) / dur; if (u < 0 || u > 1) return; g.save(); g.globalAlpha = 1 - u; g.strokeStyle = col; g.lineWidth = 10 * (1 - u) + 2; g.shadowColor = col; g.shadowBlur = 30; g.beginPath(); g.arc(x, y, rMax * ease(u), 0, 6.283); g.stroke(); g.restore(); }
 // chromatic-aberration headline (RGB split that settles) — the "wow" text
-function rgbText(str, x, y, size, t, tIn, o = {}) { const lt = t - tIn; if (lt < 0) return; const s = spring(lt, 300, 16), sp = Math.max(0, 1 - lt / 0.5) * 14 + (o.jitter ? Math.sin(t * 40) * 2 : 0);
+function rgbText(str, x, y, size, t, tIn, o = {}) { const lt = t - tIn; if (lt < 0) return; size = fit(str, 'disp', size, o.maxW || 960); const s = spring(lt, 300, 16), sp = Math.max(0, 1 - lt / 0.5) * 14 + (o.jitter ? Math.sin(t * 40) * 2 : 0);
   g.save(); g.translate(x, y); g.scale(s, s); g.globalCompositeOperation = 'lighter';
   [['#FF2A6D', -sp, 0], ['#05D9E8', sp, 0], [o.color || '#FFFFFF', 0, 0]].forEach(([c, dx, dy]) => text(str, dx, dy, 'disp', size, c, { align: 'center' })); g.restore(); }
 function wrapText(str, x, y, w, size) { g.font = F.ui(size); const words = str.split(' '); let line = '', yy = y;

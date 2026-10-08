@@ -237,6 +237,7 @@ function wordClock(vo, toVis) { const all = vo.flatMap((v) => (v.words || []).ma
   return (q, d = 1, k = 0) => { const n = nw(q), hit = all.filter((x) => x.n.startsWith(n))[k]; return hit ? toVis(hit.t) : d; }; }
 const ceilHalf = (x) => Math.ceil(x * 2) / 2;
 function build(ep, voice) {
+  if (new URLSearchParams(location.search).has('slow')) { ep.tight = false; ep.openMin = 4; ep.scenes.forEach((s) => { s.dur = Math.max(s.dur || 0, 6); }); }   // preview without voice: 6 s per scene
   if (ep.tight == null && !WIDE) ep.tight = true;            // house standard for Shorts: no dead air (set "tight": false to opt out)
   if (ep.lang === 'de') Object.assign(UI, { sub: 'ABONNIEREN', subbed: 'ABONNIERT', photo: 'ECHTES FOTO', foot: 'ECHTE AUFNAHMEN', full: 'GANZES VIDEO · LINK UNTEN' }, ep.ui || {});
   EP = ep; EP_RAW = ep; PUNCH = []; const V = voice || { open: [], scenes: [] };
