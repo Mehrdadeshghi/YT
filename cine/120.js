@@ -43,7 +43,7 @@ VIS[3] = S(() => { const de = sw('demons', 0.8), pa = sw('painting', 2.2), ex = 
     return (t) => { bodyBg(t, '#0A0604', '#20140A'); const P = framed(t, 'nightmare', 40, 640, 1000, { b: [0.5, 0.5, 1.06] }); if (!P) noPhoto(t); tag(t, 3, N); realBadge(t, 0.1, 'REAL PAINTING · "THE NIGHTMARE", HENRY FUSELI, 1781');
       if (t > de && t < pa) rgbText('"DEMONS"', 540, 560, 120, t, de, { color: RED2 });
       if (t > pa) chip('PAINTED IN 1781', 540, 560, t, pa, { size: 40, bg: GOLD, fg: BG });
-      if (t > ex && P) { const [x, y] = P(0.42, 0.42); ring(t, ex, x, y, 150, { color: RED2 }); } }; }; });
+      if (t > ex && P) { const [x, y] = P(0.47, 0.3); ring(t, ex, x, y, 130, { color: RED2 }); } }; }; });
 
 VIS[4] = S(() => { const ei = sw('eight', 0.6), st = sw('students', 2.6);
   return (K) => { ks(K, [...drop(ei, 0.35), [st, 'pop', 0.9, 700]]);
