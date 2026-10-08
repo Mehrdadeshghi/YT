@@ -10,7 +10,6 @@
  "loop": true,
  "recap": false,
  "voice": "narrator",
- "wpm": 205,
  "wordCaps": true,
  "map": false,
  "mood": "epic",
@@ -87,7 +86,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "That field creates a tiny current in the coil... and wakes up the chip!",
+     "text": "That field creates a tiny current in the coil... and wakes up the chip.",
      "de": "Dieses Feld erzeugt einen winzigen Strom in der Spule... und weckt den Chip auf!",
      "es": "Ese campo crea una pequeña corriente en la bobina... ¡y despierta el chip!",
      "cap": "It *wakes up* the chip!"
@@ -126,7 +125,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "So your card never had power... the terminal lends it, for a split second!",
+     "text": "So your card never had power... the terminal lends it, for a split second.",
      "de": "Deine Karte hatte also nie Strom... das Terminal leiht ihn ihr, für einen Sekundenbruchteil!",
      "es": "Así que tu tarjeta nunca tuvo energía... ¡el terminal se la presta por una fracción de segundo!",
      "cap": "The terminal *lends it!*"
@@ -157,5 +156,6 @@
    "len": 46,
    "gain": 0.55
   }
- ]
+ ],
+ "voice_style": "explainer"
 }

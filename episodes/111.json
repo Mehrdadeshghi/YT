@@ -10,7 +10,6 @@
  "loop": true,
  "recap": false,
  "voice": "narrator",
- "wpm": 205,
  "wordCaps": true,
  "map": false,
  "mood": "epic",
@@ -61,7 +60,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Every crossing holds a tiny electric field. Your body conducts electricity... so your finger steals a bit of it!",
+     "text": "Every crossing holds a tiny electric field. Your body conducts electricity... so your finger steals a bit of it.",
      "es": "Cada cruce guarda un pequeño campo eléctrico. Tu cuerpo conduce la electricidad... ¡así que tu dedo roba un poquito!",
      "de": "Jede Kreuzung hält ein winziges elektrisches Feld. Dein Körper leitet Strom... also klaut dein Finger ein bisschen davon!",
      "cap": "Your finger *steals* it!"
@@ -100,11 +99,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "But a sausage does! In twenty ten, in a freezing South Korean winter, people tapped their iPhones with snack sausages. Sales reportedly soared!",
+     "text": "But a sausage does. In twenty ten, in a freezing South Korean winter, people tapped their iPhones with snack sausages. Sales reportedly soared.",
      "es": "¡Pero una salchicha sí! En 2010, en un invierno helado en Corea del Sur, la gente tocaba sus iPhones con salchichas. ¡Dicen que las ventas se dispararon!",
      "de": "Aber eine Wurst schon! 2010, in einem eiskalten Winter in Südkorea, tippten Leute mit Snack-Würstchen auf ihre iPhones. Die Verkäufe sollen explodiert sein!",
      "cap": "A *sausage!*",
-     "show": "But a sausage does! In 2010, ~ in a freezing South Korean winter, people tapped their iPhones with snack sausages. Sales reportedly soared!"
+     "show": "But a sausage does. In 2010, ~ in a freezing South Korean winter, people tapped their iPhones with snack sausages. Sales reportedly soared."
     }
    ]
   },
@@ -114,11 +113,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "And the first touchscreen? Built in England, in nineteen sixty-five... for air traffic control!",
+     "text": "And the first touchscreen? Built in England, in nineteen sixty-five... for air traffic control.",
      "es": "¿Y la primera pantalla táctil? Se construyó en Inglaterra en 1965... ¡para el control aéreo!",
      "de": "Und der erste Touchscreen? Gebaut in England, 1965... für die Flugsicherung!",
      "cap": "Built in *1965!*",
-     "show": "And the first touchscreen? Built in England, in 1965… ~ for air traffic control!"
+     "show": "And the first touchscreen? Built in England, in 1965… ~ for air traffic control."
     }
    ]
   },
@@ -128,7 +127,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "So your phone never feels your finger... only your electricity!",
+     "text": "So your phone never feels your finger... only your electricity.",
      "es": "Así que tu móvil nunca siente tu dedo... ¡solo tu electricidad!",
      "de": "Dein Handy spürt also nie deinen Finger... nur deinen Strom!",
      "cap": "Only your *electricity!*"
@@ -183,5 +182,6 @@
  ],
  "scripts": [
   "tech.js"
- ]
+ ],
+ "voice_style": "explainer"
 }

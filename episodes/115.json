@@ -10,7 +10,6 @@
  "loop": true,
  "recap": false,
  "voice": "narrator",
- "wpm": 205,
  "wordCaps": true,
  "map": false,
  "mood": "epic",
@@ -74,7 +73,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Then they play the exact opposite wave. Peak meets valley... and they cancel out!",
+     "text": "Then they play the exact opposite wave. Peak meets valley... and they cancel out.",
      "de": "Dann spielen sie genau die umgekehrte Welle. Berg trifft Tal... und beide löschen sich aus!",
      "es": "Luego reproducen la onda exactamente opuesta. Cresta contra valle... ¡y se anulan!",
      "cap": "They *cancel out!*"
@@ -113,7 +112,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "The idea is old: a German physicist patented it in nineteen thirty-six!",
+     "text": "The idea is old: a German physicist patented it in nineteen thirty-six.",
      "de": "Die Idee ist alt: Ein deutscher Physiker hat sie 1936 patentiert!",
      "es": "La idea es antigua: ¡un físico alemán la patentó en 1936!",
      "cap": "Patented in *1936!*"
@@ -126,7 +125,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Tip: for voices, a good seal matters more. Try larger ear tips!",
+     "text": "Tip: for voices, a good seal matters more. Try larger ear tips.",
      "de": "Tipp: Gegen Stimmen hilft vor allem gute Abdichtung. Probier größere Ohrstöpsel-Aufsätze!",
      "es": "Consejo: contra las voces, importa más un buen sellado. ¡Prueba almohadillas más grandes!",
      "cap": "A better *seal!*"
@@ -157,5 +156,6 @@
    "len": 46,
    "gain": 0.55
   }
- ]
+ ],
+ "voice_style": "explainer"
 }

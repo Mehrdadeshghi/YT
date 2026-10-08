@@ -10,7 +10,6 @@
  "loop": true,
  "recap": false,
  "voice": "narrator",
- "wpm": 205,
  "wordCaps": true,
  "map": false,
  "mood": "epic",
@@ -113,7 +112,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "So if the shop gets hacked... your real card number isn't even there to steal!",
+     "text": "So if the shop gets hacked... your real card number isn't even there to steal.",
      "de": "Wenn der Laden also gehackt wird... ist deine echte Kartennummer gar nicht da!",
      "es": "Así que si hackean la tienda... ¡tu número real ni siquiera está ahí para robarlo!",
      "cap": "Nothing to *steal!*"
@@ -139,7 +138,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Your phone pays... without ever showing your card!",
+     "text": "Your phone pays... without ever showing your card.",
      "de": "Dein Handy bezahlt... ohne je deine Karte zu zeigen!",
      "es": "Tu móvil paga... ¡sin mostrar nunca tu tarjeta!",
      "cap": "Without your *card number!*"
@@ -170,5 +169,6 @@
    "len": 46,
    "gain": 0.55
   }
- ]
+ ],
+ "voice_style": "explainer"
 }

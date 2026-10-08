@@ -10,7 +10,6 @@
  "loop": true,
  "recap": false,
  "voice": "narrator",
- "wpm": 205,
  "wordCaps": true,
  "map": false,
  "mood": "epic",
@@ -127,7 +126,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Private... but not invisible!",
+     "text": "Private... but not invisible.",
      "de": "Privat... aber nicht unsichtbar!",
      "es": "Privado... ¡pero no invisible!",
      "cap": "Not *invisible!*"
@@ -158,5 +157,6 @@
    "len": 46,
    "gain": 0.55
   }
- ]
+ ],
+ "voice_style": "explainer"
 }

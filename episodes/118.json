@@ -10,7 +10,6 @@
  "loop": true,
  "recap": false,
  "voice": "narrator",
- "wpm": 205,
  "wordCaps": true,
  "map": false,
  "mood": "epic",
@@ -87,7 +86,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "That field reaches your phone's coil and creates a current. Electricity... without touching!",
+     "text": "That field reaches your phone's coil and creates a current. Electricity... without touching.",
      "de": "Dieses Feld erreicht die Spule im Handy und erzeugt Strom. Elektrizität... ohne Berührung!",
      "es": "Ese campo llega a la bobina del móvil y crea una corriente. ¡Electricidad... sin tocarse!",
      "cap": "*Without touching!*"
@@ -161,5 +160,6 @@
    "len": 46,
    "gain": 0.55
   }
- ]
+ ],
+ "voice_style": "explainer"
 }

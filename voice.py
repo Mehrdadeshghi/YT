@@ -16,12 +16,22 @@ elif VOICE == 'native':               # native US pronunciation (Kokoro) convert
     from clone_voice import NativeCloner
     k = NativeCloner(E.get('voice_ref', 'assets/voice/mehrdad.wav'), E.get('voice_src', 'am_echo'), float(E.get('voice_expr', 1.85)))
     VTAG = f"{E.get('voice_src', 'am_echo')}|{E.get('voice_expr', 1.85)}"
-elif VOICE == 'narrator':             # excited native narrator (Chatterbox TTS + synthetic reference), see clone_voice.Narrator
+elif VOICE == 'narrator':             # native narrator (Chatterbox TTS + synthetic reference), see clone_voice.Narrator
     from clone_voice import Narrator
+    # the voice STYLE follows the topic (ep "voice_style"); any single key can still be overridden in the episode
+    #  hype      – football / crazy stories: excited announcer, fast, pauses squeezed
+    #  explainer – How It Works / science: calm, warm, conversational teacher ("let me show you"), natural pauses
+    #  story     – history / mystery: measured storyteller, a bit slower, room for suspense
+    #  kids      – Story Time: slow child-directed speech, long pauses, never sped up
+    STYLES = {'hype': dict(ref='assets/voice/narrator_ref.wav', ex=0.9, cfg=0.35, wpm=205, keep=0.14, maxsp=1.32, minsp=1.0),
+              'explainer': dict(ref='assets/voice/explainer_michael.wav', ex=0.45, cfg=0.5, wpm=185, keep=0.45, maxsp=1.1, minsp=0.95),
+              'story': dict(ref='assets/voice/explainer_george.wav', ex=0.55, cfg=0.45, wpm=170, keep=0.5, maxsp=1.08, minsp=0.92),
+              'kids': dict(ref='assets/voice/narrator_ref.wav', ex=0.9, cfg=0.35, wpm=140, keep=0.4, maxsp=1.0, minsp=0.88)}
     KIDS = bool(E.get('kids'))                         # kids: slower, with breathing pauses, never sped up
-    k = Narrator(E.get('voice_ref', 'assets/voice/narrator_ref.wav'), float(E.get('voice_ex', 0.9)), float(E.get('voice_cfg', 0.35)), 0.85, float(E.get('wpm', 140 if KIDS else 205)),
-                 keep=float(E.get('pause_keep', 0.4 if KIDS else 0.14)), max_speed=float(E.get('max_speed', 1.0 if KIDS else 1.32)), min_speed=float(E.get('min_speed', 0.88 if KIDS else 1.0)))
-    VTAG = f"{E.get('voice_ex', 0.9)}|{E.get('voice_cfg', 0.35)}|{E.get('wpm', 205)}|v2|{E.get('kids', 0)}|{hashlib.md5(open(E.get('voice_ref', 'assets/voice/narrator_ref.wav'), 'rb').read()).hexdigest()[:8]}|{k.polish}"
+    ST = dict(STYLES[E.get('voice_style', 'kids' if KIDS else 'hype')])
+    ST.update({k2: E[k1] for k1, k2 in [('voice_ref', 'ref'), ('voice_ex', 'ex'), ('voice_cfg', 'cfg'), ('wpm', 'wpm'), ('pause_keep', 'keep'), ('max_speed', 'maxsp'), ('min_speed', 'minsp')] if k1 in E})
+    k = Narrator(ST['ref'], float(ST['ex']), float(ST['cfg']), 0.85, float(ST['wpm']), keep=float(ST['keep']), max_speed=float(ST['maxsp']), min_speed=float(ST['minsp']))
+    VTAG = f"{ST['ex']}|{ST['cfg']}|{ST['wpm']}|v2|{E.get('kids', 0)}|{hashlib.md5(open(ST['ref'], 'rb').read()).hexdigest()[:8]}|{k.polish}" + ('' if E.get('voice_style', 'hype') == 'hype' or KIDS else f"|{ST['keep']}|{ST['maxsp']}")
 elif VOICE == 'clone':                # Mehrdad's own voice, cloned (Chatterbox): timbre from assets/voice/*.wav, pronunciation from the model
     from clone_voice import Cloner
     k = Cloner(E.get('voice_ref', 'assets/voice/mehrdad.wav')); SPEED = float(arg('speed', str(E.get('speed_clone', 1.15))))

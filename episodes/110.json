@@ -10,7 +10,6 @@
  "loop": true,
  "recap": false,
  "voice": "narrator",
- "wpm": 205,
  "wordCaps": true,
  "map": true,
  "lat0": 30,
@@ -89,7 +88,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "One satellite: you're somewhere on a circle. Two: just two points left. Three... boom, that's you!",
+     "text": "One satellite: you're somewhere on a circle. Two: just two points left. Three... boom, that's you.",
      "cap": "Three... *that's you!*",
      "es": "Un satélite: estás en algún punto de un círculo. Dos: solo quedan dos puntos. Tres... ¡bum, ese eres tú!",
      "de": "Ein Satellit: Du bist irgendwo auf einem Kreis. Zwei: nur noch zwei Punkte. Drei... bumm, das bist du!"
@@ -102,7 +101,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "But here's the crazy part: up there, time runs faster! About thirty-eight microseconds a day.",
+     "text": "But here's the crazy part: up there, time runs faster. About thirty-eight microseconds a day.",
      "cap": "Time runs *faster!*",
      "es": "Pero lo loco es esto: allí arriba, ¡el tiempo corre más rápido! Unos treinta y ocho microsegundos al día.",
      "de": "Aber jetzt kommt das Verrückte: Da oben läuft die Zeit schneller! Etwa achtunddreißig Mikrosekunden pro Tag."
@@ -115,7 +114,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Sounds tiny? Without Einstein's correction, your map would drift by about ten kilometers... every day!",
+     "text": "Sounds tiny? Without Einstein's correction, your map would drift by about ten kilometers... every day.",
      "cap": "*10 km* every day!",
      "es": "¿Parece poco? Sin la corrección de Einstein, tu mapa se desviaría unos diez kilómetros... ¡cada día!",
      "de": "Klingt winzig? Ohne Einsteins Korrektur würde deine Karte um etwa zehn Kilometer abdriften... jeden Tag!"
@@ -128,7 +127,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "So every time you open your map... you're using relativity!",
+     "text": "So every time you open your map... you're using relativity.",
      "cap": "You're using *relativity!*",
      "es": "Así que cada vez que abres tu mapa... ¡estás usando la relatividad!",
      "de": "Jedes Mal, wenn du deine Karte öffnest... benutzt du die Relativitätstheorie!"
@@ -181,5 +180,6 @@
  ],
  "scripts": [
   "tech.js"
- ]
+ ],
+ "voice_style": "explainer"
 }

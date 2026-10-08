@@ -10,7 +10,6 @@
  "loop": true,
  "recap": false,
  "voice": "narrator",
- "wpm": 205,
  "wordCaps": true,
  "ep": 109,
  "map": true,
@@ -52,7 +51,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Every packet gets an address label, the IP address. Just like a letter!",
+     "text": "Every packet gets an address label, the IP address. Just like a letter.",
      "cap": "An *address label.*",
      "es": "Cada paquete recibe una etiqueta con la dirección: la dirección IP. ¡Como una carta!",
      "de": "Jedes Paket bekommt ein Adress-Etikett: die IP-Adresse. Genau wie ein Brief!"
@@ -65,7 +64,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Your Wi-Fi router passes them on. Then your provider. Then... all the way down to the sea floor!",
+     "text": "Your Wi-Fi router passes them on. Then your provider. Then... all the way down to the sea floor.",
      "cap": "Down to the *sea floor!*",
      "es": "Tu router wifi los pasa. Luego tu proveedor. Y luego... ¡hasta el fondo del mar!",
      "de": "Dein WLAN-Router gibt sie weiter. Dann dein Anbieter. Dann... ganz runter auf den Meeresboden!"
@@ -78,7 +77,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Down there lies a cable as thick as a garden hose. Over ninety-nine percent of data between continents runs through cables like this!",
+     "text": "Down there lies a cable as thick as a garden hose. Over ninety-nine percent of data between continents runs through cables like this.",
      "cap": "*99%* between continents.",
      "es": "Allí hay un cable tan grueso como una manguera de jardín. ¡Más del noventa y nueve por ciento de los datos entre continentes pasa por cables así!",
      "de": "Dort liegt ein Kabel, so dick wie ein Gartenschlauch. Über neunundneunzig Prozent der Daten zwischen Kontinenten laufen durch solche Kabel!"
@@ -91,7 +90,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "And inside? Hair-thin glass fibers. Your data flies through them as flashes of light. About two hundred thousand kilometers per second!",
+     "text": "And inside? Hair-thin glass fibers. Your data flies through them as flashes of light. About two hundred thousand kilometers per second.",
      "cap": "Flashes of *light.*",
      "es": "Dentro: fibras de vidrio finas como un pelo. Tus datos viajan como destellos de luz. ¡Unos doscientos mil kilómetros por segundo!",
      "de": "Darin: haarfeine Glasfasern. Deine Daten fliegen als Lichtblitze hindurch. Etwa zweihunderttausend Kilometer pro Sekunde!"
@@ -104,7 +103,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Routers pass each packet on, hop by hop. Some packets even take different roads!",
+     "text": "Routers pass each packet on, hop by hop. Some packets even take different roads.",
      "cap": "*Hop* by *hop.*",
      "es": "Los routers pasan cada paquete, salto a salto. ¡Algunos paquetes hasta toman caminos distintos!",
      "de": "Router reichen jedes Paket weiter, Hop für Hop. Manche Pakete nehmen sogar verschiedene Wege!"
@@ -117,7 +116,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "At the other end, the pieces snap back together. In a fraction of a second!",
+     "text": "At the other end, the pieces snap back together. In a fraction of a second.",
      "cap": "A *fraction of a second!*",
      "es": "Al otro lado, las piezas se vuelven a unir. ¡En una fracción de segundo!",
      "de": "Am anderen Ende setzen sich die Stücke wieder zusammen. In einem Bruchteil einer Sekunde!"
@@ -174,5 +173,6 @@
    "len": 43,
    "gain": 0.55
   }
- ]
+ ],
+ "voice_style": "explainer"
 }

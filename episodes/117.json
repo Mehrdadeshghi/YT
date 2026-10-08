@@ -10,7 +10,6 @@
  "loop": true,
  "recap": false,
  "voice": "narrator",
- "wpm": 205,
  "wordCaps": true,
  "map": false,
  "mood": "epic",
@@ -100,7 +99,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "The noise is random, so it averages away. The real details stay!",
+     "text": "The noise is random, so it averages away. The real details stay.",
      "de": "Das Rauschen ist zufällig, also mittelt es sich weg. Die echten Details bleiben!",
      "es": "El ruido es aleatorio, así que se promedia y desaparece. ¡Los detalles reales se quedan!",
      "cap": "The *details stay!*"
@@ -126,7 +125,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Here's a tip: brace your phone on something. The steadier it is, the longer each shot can be!",
+     "text": "Here's a tip: brace your phone on something. The steadier it is, the longer each shot can be.",
      "de": "Tipp: Stütz dein Handy irgendwo ab. Je ruhiger es ist, desto länger darf jedes Bild belichten!",
      "es": "Consejo: apoya el móvil en algo. ¡Cuanto más quieto esté, más larga puede ser cada foto!",
      "cap": "*Brace* your phone!"
@@ -157,5 +156,6 @@
    "len": 46,
    "gain": 0.55
   }
- ]
+ ],
+ "voice_style": "explainer"
 }
