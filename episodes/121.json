@@ -158,5 +158,25 @@
    ]
   }
  ],
- "photos": []
+ "photos": [
+  {
+   "id": "stones",
+   "file": "File:Kidney stones, Uric acid.JPG"
+  },
+  {
+   "id": "thunder",
+   "file": "File:Big Thunder Mountain Railroad.JPG"
+  },
+  {
+   "id": "xray",
+   "file": "File:Kidney stones abdominal X-ray.jpg"
+  },
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Inspiring Advertising - Upbeat Summer Corporate (cc-by) (filmmusic).mp3",
+   "from": 2,
+   "len": 50,
+   "gain": 0.5
+  }
+ ]
 }

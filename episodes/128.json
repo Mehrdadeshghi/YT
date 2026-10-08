@@ -156,5 +156,25 @@
    ]
   }
  ],
- "photos": []
+ "photos": [
+  {
+   "id": "mi",
+   "file": "File:Blausen 0463 HeartAttack.png"
+  },
+  {
+   "id": "ecg",
+   "file": "File:ECG V2-4 ST change.jpg"
+  },
+  {
+   "id": "painback",
+   "file": "File:AMI pain back.png"
+  },
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Inspiring Teaser (cc-by) (filmmusic).mp3",
+   "from": 2,
+   "len": 50,
+   "gain": 0.5
+  }
+ ]
 }

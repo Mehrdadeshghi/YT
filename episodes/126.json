@@ -160,5 +160,25 @@
    ]
   }
  ],
- "photos": []
+ "photos": [
+  {
+   "id": "semmel",
+   "file": "File:Borsos & Doctor Semmelweis Ignác cropped.jpg"
+  },
+  {
+   "id": "mort",
+   "file": "File:Monthly mortality rates 1841-1849.png"
+  },
+  {
+   "id": "book",
+   "file": "File:Ignaz Semmelweis 1861 Etiology front page.jpg"
+  },
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Fantasy Theme (cc-by) (filmmusic).mp3",
+   "from": 2,
+   "len": 50,
+   "gain": 0.5
+  }
+ ]
 }

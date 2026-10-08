@@ -157,5 +157,25 @@
    ]
   }
  ],
- "photos": []
+ "photos": [
+  {
+   "id": "cpr",
+   "file": "File:CPR training-04.jpg"
+  },
+  {
+   "id": "iss",
+   "file": "File:ISS-56 Alexander Gerst practices cardiopulmonary resuscitation in the Destiny lab.jpg"
+  },
+  {
+   "id": "beegees",
+   "file": "File:Bee Gees 1977.JPG"
+  },
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Inspiring Teaser (cc-by) (filmmusic).mp3",
+   "from": 2,
+   "len": 50,
+   "gain": 0.5
+  }
+ ]
 }

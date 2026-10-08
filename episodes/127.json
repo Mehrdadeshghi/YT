@@ -156,5 +156,21 @@
    ]
   }
  ],
- "photos": []
+ "photos": [
+  {
+   "id": "ct",
+   "file": "File:Dens media sign mit Mediainfarkt - CCT 001.jpg"
+  },
+  {
+   "id": "blausen",
+   "file": "File:Blausen 0836 Stroke.png"
+  },
+  {
+   "id": "music",
+   "audio": "File:Dramatic Trailer by Rafael Krux.ogg",
+   "from": 2,
+   "len": 50,
+   "gain": 0.5
+  }
+ ]
 }

@@ -157,5 +157,25 @@
    ]
   }
  ],
- "photos": []
+ "photos": [
+  {
+   "id": "plate",
+   "file": "File:Staphylococcus aureus (AB Test).jpg"
+  },
+  {
+   "id": "mrsa",
+   "file": "File:Human neutrophil ingesting MRSA.jpg"
+  },
+  {
+   "id": "ecoli",
+   "file": "File:E coli at 10000x, original.jpg"
+  },
+  {
+   "id": "music",
+   "audio": "File:Dramatic Trailer by Rafael Krux.ogg",
+   "from": 2,
+   "len": 50,
+   "gain": 0.5
+  }
+ ]
 }

@@ -156,5 +156,25 @@
    ]
   }
  ],
- "photos": []
+ "photos": [
+  {
+   "id": "aura",
+   "file": "File:Fortifikation (Migräne).jpg"
+  },
+  {
+   "id": "skotom",
+   "file": "File:Positives Skotom (Brandenburger Tor Blaue Stunde) 1.jpg"
+  },
+  {
+   "id": "cruik",
+   "file": "File:Cruikshank - The Head Ache.png"
+  },
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - The Epic 2.ogg",
+   "from": 2,
+   "len": 50,
+   "gain": 0.5
+  }
+ ]
 }

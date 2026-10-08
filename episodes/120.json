@@ -158,5 +158,21 @@
    ]
   }
  ],
- "photos": []
+ "photos": [
+  {
+   "id": "nightmare",
+   "file": "File:Johann Heinrich Füssli 052.jpg"
+  },
+  {
+   "id": "abild",
+   "file": "File:Nachtmahr (Abildgaard).jpg"
+  },
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 2,
+   "len": 50,
+   "gain": 0.5
+  }
+ ]
 }

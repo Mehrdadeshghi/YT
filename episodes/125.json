@@ -156,5 +156,21 @@
    ]
   }
  ],
- "photos": []
+ "photos": [
+  {
+   "id": "otoscope",
+   "file": "File:Otoscope exam.JPG"
+  },
+  {
+   "id": "swab",
+   "file": "File:Earwax on swab.jpg"
+  },
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Uplifting Blockbuster (cc-by) (filmmusic).mp3",
+   "from": 2,
+   "len": 50,
+   "gain": 0.5
+  }
+ ]
 }

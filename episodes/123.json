@@ -156,5 +156,21 @@
    ]
   }
  ],
- "photos": []
+ "photos": [
+  {
+   "id": "winter",
+   "file": "File:Löwenstein - Stocksberg - Kuppe des Stocksberges von NW mit Schnee und Wintersonne.jpg"
+  },
+  {
+   "id": "cod",
+   "file": "File:Scott’s Emulsion of Pure Cod Liver Oil Trade Card 1994.ARC.0112.jpg"
+  },
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Inspiring Advertising - Upbeat Summer Corporate (cc-by) (filmmusic).mp3",
+   "from": 2,
+   "len": 50,
+   "gain": 0.5
+  }
+ ]
 }
