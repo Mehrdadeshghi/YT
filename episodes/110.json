@@ -39,7 +39,8 @@
    "at": 0,
    "text": "Your phone uses Einstein's theory every single day... just to find you!",
    "es": "Tu móvil usa la teoría de Einstein todos los días... ¡solo para encontrarte!",
-   "de": "Dein Handy benutzt jeden Tag Einsteins Theorie... nur um dich zu finden!"
+   "de": "Dein Handy benutzt jeden Tag Einsteins Theorie... nur um dich zu finden!",
+   "fr": "Ton téléphone utilise la théorie d'Einstein tous les jours... juste pour te trouver !"
   }
  ],
  "scenes": [
@@ -52,7 +53,8 @@
      "text": "About twenty thousand kilometers up, GPS satellites circle the Earth. Each one carries an atomic clock.",
      "cap": "An *atomic clock.*",
      "es": "A unos veinte mil kilómetros de altura, los satélites GPS rodean la Tierra. Cada uno lleva un reloj atómico.",
-     "de": "In etwa zwanzigtausend Kilometern Höhe kreisen GPS-Satelliten um die Erde. Jeder hat eine Atomuhr an Bord."
+     "de": "In etwa zwanzigtausend Kilometern Höhe kreisen GPS-Satelliten um die Erde. Jeder hat eine Atomuhr an Bord.",
+     "fr": "À environ vingt mille kilomètres d'altitude, des satellites GPS tournent autour de la Terre. Chacun transporte une horloge atomique."
     }
    ]
   },
@@ -65,7 +67,8 @@
      "text": "Non-stop, they shout two things: the exact time... and where they are.",
      "cap": "The *exact time.*",
      "es": "Sin parar, gritan dos cosas: la hora exacta... y dónde están.",
-     "de": "Ununterbrochen rufen sie zwei Dinge: die exakte Uhrzeit... und wo sie sind."
+     "de": "Ununterbrochen rufen sie zwei Dinge: die exakte Uhrzeit... und wo sie sind.",
+     "fr": "Sans arrêt, ils crient deux choses : l'heure exacte... et leur position."
     }
    ]
   },
@@ -78,7 +81,8 @@
      "text": "The signal needs about seven hundredths of a second to reach your phone. From that delay, your phone knows the distance.",
      "cap": "It knows the *distance.*",
      "es": "La señal tarda unas siete centésimas de segundo en llegar a tu móvil. Con ese retraso, tu móvil sabe la distancia.",
-     "de": "Das Signal braucht etwa sieben Hundertstelsekunden bis zu deinem Handy. Aus dieser Verzögerung kennt dein Handy die Entfernung."
+     "de": "Das Signal braucht etwa sieben Hundertstelsekunden bis zu deinem Handy. Aus dieser Verzögerung kennt dein Handy die Entfernung.",
+     "fr": "Le signal met environ sept centièmes de seconde pour atteindre ton téléphone. Grâce à ce retard, ton téléphone connaît la distance."
     }
    ]
   },
@@ -91,7 +95,8 @@
      "text": "One satellite: you're somewhere on a circle. Two: just two points left. Three... boom, that's you.",
      "cap": "Three... *that's you!*",
      "es": "Un satélite: estás en algún punto de un círculo. Dos: solo quedan dos puntos. Tres... ¡bum, ese eres tú!",
-     "de": "Ein Satellit: Du bist irgendwo auf einem Kreis. Zwei: nur noch zwei Punkte. Drei... bumm, das bist du!"
+     "de": "Ein Satellit: Du bist irgendwo auf einem Kreis. Zwei: nur noch zwei Punkte. Drei... bumm, das bist du!",
+     "fr": "Un satellite : tu es quelque part sur un cercle. Deux : il ne reste que deux points. Trois... boum, c'est toi."
     }
    ]
   },
@@ -104,7 +109,8 @@
      "text": "But here's the crazy part: up there, time runs faster. About thirty-eight microseconds a day.",
      "cap": "Time runs *faster!*",
      "es": "Pero lo loco es esto: allí arriba, ¡el tiempo corre más rápido! Unos treinta y ocho microsegundos al día.",
-     "de": "Aber jetzt kommt das Verrückte: Da oben läuft die Zeit schneller! Etwa achtunddreißig Mikrosekunden pro Tag."
+     "de": "Aber jetzt kommt das Verrückte: Da oben läuft die Zeit schneller! Etwa achtunddreißig Mikrosekunden pro Tag.",
+     "fr": "Mais voici le plus fou : là-haut, le temps passe plus vite. Environ trente-huit microsecondes par jour."
     }
    ]
   },
@@ -117,7 +123,8 @@
      "text": "Sounds tiny? Without Einstein's correction, your map would drift by about ten kilometers... every day.",
      "cap": "*10 km* every day!",
      "es": "¿Parece poco? Sin la corrección de Einstein, tu mapa se desviaría unos diez kilómetros... ¡cada día!",
-     "de": "Klingt winzig? Ohne Einsteins Korrektur würde deine Karte um etwa zehn Kilometer abdriften... jeden Tag!"
+     "de": "Klingt winzig? Ohne Einsteins Korrektur würde deine Karte um etwa zehn Kilometer abdriften... jeden Tag!",
+     "fr": "Ça paraît minuscule ? Sans la correction d'Einstein, ta carte dériverait d'environ dix kilomètres... chaque jour."
     }
    ]
   },
@@ -130,14 +137,16 @@
      "text": "So every time you open your map... you're using relativity.",
      "cap": "You're using *relativity!*",
      "es": "Así que cada vez que abres tu mapa... ¡estás usando la relatividad!",
-     "de": "Jedes Mal, wenn du deine Karte öffnest... benutzt du die Relativitätstheorie!"
+     "de": "Jedes Mal, wenn du deine Karte öffnest... benutzt du die Relativitätstheorie!",
+     "fr": "Donc chaque fois que tu ouvres ta carte... tu utilises la relativité."
     },
     {
      "at": "0.15",
      "text": "Did you know this? Comment yes or no, and subscribe for more!",
      "cta": true,
      "es": "¿Lo sabías? Comenta sí o no, y suscríbete.",
-     "de": "Wusstest du das? Kommentier ja oder nein, und abonnier!"
+     "de": "Wusstest du das? Kommentier ja oder nein, und abonnier!",
+     "fr": "Tu le savais ? Commente oui ou non, et abonne-toi pour plus !"
     }
    ]
   }
@@ -181,5 +190,11 @@
  "scripts": [
   "tech.js"
  ],
- "voice_style": "explainer"
+ "voice_style": "explainer",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ]
 }

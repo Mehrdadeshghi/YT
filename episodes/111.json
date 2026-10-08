@@ -37,7 +37,8 @@
    "at": 0,
    "text": "Your phone can't feel your finger... it feels your electricity!",
    "es": "Tu móvil no siente tu dedo... ¡siente tu electricidad!",
-   "de": "Dein Handy spürt deinen Finger nicht... es spürt deinen Strom!"
+   "de": "Dein Handy spürt deinen Finger nicht... es spürt deinen Strom!",
+   "fr": "Ton téléphone ne sent pas ton doigt... il sent ton électricité !"
   }
  ],
  "scenes": [
@@ -50,7 +51,8 @@
      "text": "Under the glass hides an invisible grid of see-through wires.",
      "es": "Bajo el cristal se esconde una rejilla invisible de cables transparentes.",
      "de": "Unter dem Glas versteckt sich ein unsichtbares Gitter aus durchsichtigen Drähten.",
-     "cap": "An *invisible grid.*"
+     "cap": "An *invisible grid.*",
+     "fr": "Sous la vitre se cache une grille invisible de fils transparents."
     }
    ]
   },
@@ -63,7 +65,8 @@
      "text": "Every crossing holds a tiny electric field. Your body conducts electricity... so your finger steals a bit of it.",
      "es": "Cada cruce guarda un pequeño campo eléctrico. Tu cuerpo conduce la electricidad... ¡así que tu dedo roba un poquito!",
      "de": "Jede Kreuzung hält ein winziges elektrisches Feld. Dein Körper leitet Strom... also klaut dein Finger ein bisschen davon!",
-     "cap": "Your finger *steals* it!"
+     "cap": "Your finger *steals* it!",
+     "fr": "Chaque croisement contient un petit champ électrique. Ton corps conduit l'électricité... alors ton doigt en vole un peu."
     }
    ]
   },
@@ -76,7 +79,8 @@
      "text": "Over a hundred times a second, a chip scans every crossing... and finds exactly where you touched.",
      "es": "Más de cien veces por segundo, un chip escanea cada cruce... y encuentra exactamente dónde tocaste.",
      "de": "Über hundertmal pro Sekunde scannt ein Chip jede Kreuzung... und findet genau, wo du getippt hast.",
-     "cap": "*100+ times* a second!"
+     "cap": "*100+ times* a second!",
+     "fr": "Plus de cent fois par seconde, une puce scanne chaque croisement... et trouve exactement où tu as touché."
     }
    ]
   },
@@ -89,7 +93,8 @@
      "text": "That's why gloves don't work. Fabric doesn't conduct.",
      "es": "Por eso los guantes no funcionan. La tela no conduce.",
      "de": "Deshalb funktionieren Handschuhe nicht. Stoff leitet nicht.",
-     "cap": "Gloves *don't work.*"
+     "cap": "Gloves *don't work.*",
+     "fr": "C'est pour ça que les gants ne marchent pas. Le tissu ne conduit pas."
     }
    ]
   },
@@ -103,7 +108,8 @@
      "es": "¡Pero una salchicha sí! En 2010, en un invierno helado en Corea del Sur, la gente tocaba sus iPhones con salchichas. ¡Dicen que las ventas se dispararon!",
      "de": "Aber eine Wurst schon! 2010, in einem eiskalten Winter in Südkorea, tippten Leute mit Snack-Würstchen auf ihre iPhones. Die Verkäufe sollen explodiert sein!",
      "cap": "A *sausage!*",
-     "show": "But a sausage does. In 2010, ~ in a freezing South Korean winter, people tapped their iPhones with snack sausages. Sales reportedly soared."
+     "show": "But a sausage does. In 2010, ~ in a freezing South Korean winter, people tapped their iPhones with snack sausages. Sales reportedly soared.",
+     "fr": "Mais une saucisse, si. En deux mille dix, pendant un hiver glacial en Corée du Sud, des gens ont utilisé des saucisses apéritif sur leur iPhone. Les ventes auraient explosé."
     }
    ]
   },
@@ -117,7 +123,8 @@
      "es": "¿Y la primera pantalla táctil? Se construyó en Inglaterra en 1965... ¡para el control aéreo!",
      "de": "Und der erste Touchscreen? Gebaut in England, 1965... für die Flugsicherung!",
      "cap": "Built in *1965!*",
-     "show": "And the first touchscreen? Built in England, in 1965… ~ for air traffic control."
+     "show": "And the first touchscreen? Built in England, in 1965… ~ for air traffic control.",
+     "fr": "Et le premier écran tactile ? Construit en Angleterre, en mille neuf cent soixante-cinq... pour le contrôle aérien."
     }
    ]
   },
@@ -130,14 +137,16 @@
      "text": "So your phone never feels your finger... only your electricity.",
      "es": "Así que tu móvil nunca siente tu dedo... ¡solo tu electricidad!",
      "de": "Dein Handy spürt also nie deinen Finger... nur deinen Strom!",
-     "cap": "Only your *electricity!*"
+     "cap": "Only your *electricity!*",
+     "fr": "Donc ton téléphone ne sent jamais ton doigt... seulement ton électricité."
     },
     {
      "at": "0.15",
      "text": "Would you tap your phone with a sausage? Comment yes or no, and subscribe!",
      "cta": true,
      "es": "¿Tocarías tu móvil con una salchicha? Comenta sí o no, y suscríbete.",
-     "de": "Würdest du mit einer Wurst tippen? Kommentier ja oder nein, und abonnier!"
+     "de": "Würdest du mit einer Wurst tippen? Kommentier ja oder nein, und abonnier!",
+     "fr": "Tu toucherais ton téléphone avec une saucisse ? Commente oui ou non, et abonne-toi !"
     }
    ]
   }
@@ -183,5 +192,11 @@
  "scripts": [
   "tech.js"
  ],
- "voice_style": "explainer"
+ "voice_style": "explainer",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ]
 }

@@ -50,7 +50,8 @@
    "at": 0,
    "text": "Your phone charges without a cable... with an invisible magnetic field!",
    "de": "Dein Handy lädt ohne Kabel... mit einem unsichtbaren Magnetfeld!",
-   "es": "Tu móvil se carga sin cable... ¡con un campo magnético invisible!"
+   "es": "Tu móvil se carga sin cable... ¡con un campo magnético invisible!",
+   "fr": "Ton téléphone se recharge sans câble... grâce à un champ magnétique invisible !"
   }
  ],
  "scenes": [
@@ -63,7 +64,8 @@
      "text": "Inside the pad is a coil of copper wire. Your phone has one too.",
      "de": "Im Ladepad steckt eine Spule aus Kupferdraht. Dein Handy hat auch eine.",
      "es": "Dentro de la base hay una bobina de cobre. Tu móvil también tiene una.",
-     "cap": "*Two coils.*"
+     "cap": "*Two coils.*",
+     "fr": "Dans le chargeur, il y a une bobine de fil de cuivre. Ton téléphone en a une aussi."
     }
    ]
   },
@@ -76,7 +78,8 @@
      "text": "The coil in the pad creates a magnetic field that flips over a hundred thousand times a second.",
      "de": "Die Spule im Pad erzeugt ein Magnetfeld, das über hunderttausend Mal pro Sekunde kippt.",
      "es": "La bobina de la base crea un campo magnético que cambia más de cien mil veces por segundo.",
-     "cap": "*100,000* times a second!"
+     "cap": "*100,000* times a second!",
+     "fr": "La bobine du chargeur crée un champ magnétique qui s'inverse plus de cent mille fois par seconde."
     }
    ]
   },
@@ -89,7 +92,8 @@
      "text": "That field reaches your phone's coil and creates a current. Electricity... without touching.",
      "de": "Dieses Feld erreicht die Spule im Handy und erzeugt Strom. Elektrizität... ohne Berührung!",
      "es": "Ese campo llega a la bobina del móvil y crea una corriente. ¡Electricidad... sin tocarse!",
-     "cap": "*Without touching!*"
+     "cap": "*Without touching!*",
+     "fr": "Ce champ atteint la bobine du téléphone et crée un courant. De l'électricité... sans contact."
     }
    ]
   },
@@ -102,7 +106,8 @@
      "text": "But the coils must line up. That's why newer chargers use magnets to snap your phone in place.",
      "de": "Aber die Spulen müssen genau übereinander liegen. Deshalb nutzen neuere Ladegeräte Magnete, die das Handy einrasten lassen.",
      "es": "Pero las bobinas deben quedar alineadas. Por eso los cargadores nuevos usan imanes que fijan el móvil en su sitio.",
-     "cap": "*Magnets* line it up."
+     "cap": "*Magnets* line it up.",
+     "fr": "Mais les bobines doivent être alignées. C'est pour ça que les chargeurs récents utilisent des aimants pour bien placer ton téléphone."
     }
    ]
   },
@@ -115,7 +120,8 @@
      "text": "Some of the energy turns into heat... and heat ages your battery.",
      "de": "Ein Teil der Energie wird zu Wärme... und Wärme lässt deinen Akku altern.",
      "es": "Parte de la energía se convierte en calor... y el calor envejece tu batería.",
-     "cap": "Heat ages your *battery.*"
+     "cap": "Heat ages your *battery.*",
+     "fr": "Une partie de l'énergie se transforme en chaleur... et la chaleur use ta batterie."
     }
    ]
   },
@@ -128,14 +134,16 @@
      "text": "Here's a tip: remove thick phone cases, keep your cards away, and don't play games while it charges.",
      "de": "Tipp: Dicke Hüllen ab, Karten und Metall weg, und nicht zocken beim Laden.",
      "es": "Consejo: quita las fundas gruesas, aparta tarjetas y metal, y no juegues mientras carga.",
-     "cap": "No *cards* in between!"
+     "cap": "No *cards* in between!",
+     "fr": "Voici une astuce : enlève les coques épaisses, éloigne tes cartes, et ne joue pas pendant la charge."
     },
     {
      "at": "0.15",
      "text": "Cable or wireless? Comment cable or wireless, and subscribe!",
      "cta": true,
      "de": "Kabel oder kabellos? Kommentier Kabel oder kabellos, und abonnier!",
-     "es": "¿Cable o inalámbrico? Comenta cable o inalámbrico, y suscríbete."
+     "es": "¿Cable o inalámbrico? Comenta cable o inalámbrico, y suscríbete.",
+     "fr": "Câble ou sans fil ? Commente câble ou sans fil, et abonne-toi !"
     }
    ]
   }
@@ -161,5 +169,11 @@
    "gain": 0.55
   }
  ],
- "voice_style": "explainer"
+ "voice_style": "explainer",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ]
 }

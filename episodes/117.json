@@ -50,7 +50,8 @@
    "at": 0,
    "text": "Your night photo isn't one photo... it can be fifteen!",
    "de": "Dein Nachtfoto ist nicht ein Foto... es können fünfzehn sein!",
-   "es": "Tu foto nocturna no es una foto... ¡pueden ser quince!"
+   "es": "Tu foto nocturna no es una foto... ¡pueden ser quince!",
+   "fr": "Ta photo de nuit n'est pas une photo... ça peut être quinze !"
   }
  ],
  "scenes": [
@@ -63,7 +64,8 @@
      "text": "In the dark, one quick photo is full of grainy noise.",
      "de": "Im Dunkeln ist ein schnelles Foto voller körnigem Rauschen.",
      "es": "En la oscuridad, una foto rápida está llena de ruido granulado.",
-     "cap": "Full of *noise.*"
+     "cap": "Full of *noise.*",
+     "fr": "Dans le noir, une photo rapide est pleine de bruit granuleux."
     }
    ]
   },
@@ -76,7 +78,8 @@
      "text": "Night mode takes a burst of photos, while you hold still for a few seconds.",
      "de": "Der Nachtmodus schießt eine Serie von Fotos, während du ein paar Sekunden stillhältst.",
      "es": "El modo noche toma una ráfaga de fotos mientras te quedas quieto unos segundos.",
-     "cap": "A *burst* of photos."
+     "cap": "A *burst* of photos.",
+     "fr": "Le mode nuit prend une rafale de photos, pendant que tu restes immobile quelques secondes."
     }
    ]
   },
@@ -89,7 +92,8 @@
      "text": "It lines them up, throws away the blurry parts... and merges the rest.",
      "de": "Es richtet sie aus, wirft die verwackelten Teile weg... und verschmilzt den Rest.",
      "es": "Las alinea, descarta las partes movidas... y fusiona el resto.",
-     "cap": "It *merges* them."
+     "cap": "It *merges* them.",
+     "fr": "Il les aligne, jette les parties floues... et fusionne le reste."
     }
    ]
   },
@@ -102,7 +106,8 @@
      "text": "The noise is random, so it averages away. The real details stay.",
      "de": "Das Rauschen ist zufällig, also mittelt es sich weg. Die echten Details bleiben!",
      "es": "El ruido es aleatorio, así que se promedia y desaparece. ¡Los detalles reales se quedan!",
-     "cap": "The *details stay!*"
+     "cap": "The *details stay!*",
+     "fr": "Le bruit est aléatoire, donc il disparaît en moyenne. Les vrais détails restent."
     }
    ]
   },
@@ -115,7 +120,8 @@
      "text": "Google's Night Sight can stack up to fifteen frames... about five seconds of light.",
      "de": "Googles Night Sight kann bis zu fünfzehn Bilder stapeln... etwa fünf Sekunden Licht.",
      "es": "Night Sight de Google puede apilar hasta quince fotos... unos cinco segundos de luz.",
-     "cap": "*15 frames!*"
+     "cap": "*15 frames!*",
+     "fr": "Night Sight de Google peut empiler jusqu'à quinze images... environ cinq secondes de lumière."
     }
    ]
   },
@@ -128,14 +134,16 @@
      "text": "Here's a tip: brace your phone on something. The steadier it is, the longer each shot can be.",
      "de": "Tipp: Stütz dein Handy irgendwo ab. Je ruhiger es ist, desto länger darf jedes Bild belichten!",
      "es": "Consejo: apoya el móvil en algo. ¡Cuanto más quieto esté, más larga puede ser cada foto!",
-     "cap": "*Brace* your phone!"
+     "cap": "*Brace* your phone!",
+     "fr": "Voici une astuce : cale ton téléphone sur quelque chose. Plus il est stable, plus chaque prise peut être longue."
     },
     {
      "at": "0.15",
      "text": "Do you use night mode? Comment yes or no, and subscribe!",
      "cta": true,
      "de": "Nutzt du den Nachtmodus? Kommentier ja oder nein, und abonnier!",
-     "es": "¿Usas el modo noche? Comenta sí o no, y suscríbete."
+     "es": "¿Usas el modo noche? Comenta sí o no, y suscríbete.",
+     "fr": "Tu utilises le mode nuit ? Commente oui ou non, et abonne-toi !"
     }
    ]
   }
@@ -157,5 +165,11 @@
    "gain": 0.55
   }
  ],
- "voice_style": "explainer"
+ "voice_style": "explainer",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ]
 }

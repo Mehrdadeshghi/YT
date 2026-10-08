@@ -50,7 +50,8 @@
    "at": 0,
    "text": "Your headphones make noise... to create silence!",
    "de": "Deine Kopfhörer machen Lärm... um Stille zu erzeugen!",
-   "es": "Tus auriculares hacen ruido... ¡para crear silencio!"
+   "es": "Tus auriculares hacen ruido... ¡para crear silencio!",
+   "fr": "Ton casque fait du bruit... pour créer le silence !"
   }
  ],
  "scenes": [
@@ -63,7 +64,8 @@
      "text": "Tiny microphones on your headphones listen to the sound around you.",
      "de": "Winzige Mikrofone an deinen Kopfhörern hören den Lärm um dich herum.",
      "es": "Unos micrófonos diminutos en tus auriculares escuchan el sonido a tu alrededor.",
-     "cap": "They *listen.*"
+     "cap": "They *listen.*",
+     "fr": "De petits micros sur ton casque écoutent les sons autour de toi."
     }
    ]
   },
@@ -76,7 +78,8 @@
      "text": "Then they play the exact opposite wave. Peak meets valley... and they cancel out.",
      "de": "Dann spielen sie genau die umgekehrte Welle. Berg trifft Tal... und beide löschen sich aus!",
      "es": "Luego reproducen la onda exactamente opuesta. Cresta contra valle... ¡y se anulan!",
-     "cap": "They *cancel out!*"
+     "cap": "They *cancel out!*",
+     "fr": "Puis ils jouent l'onde exactement opposée. Le sommet rencontre le creux... et ils s'annulent."
     }
    ]
   },
@@ -89,7 +92,8 @@
      "text": "This works best on steady, deep sounds: plane engines, trains, air conditioning.",
      "de": "Am besten klappt das bei gleichmäßigen, tiefen Geräuschen: Flugzeugmotoren, Züge, Klimaanlagen.",
      "es": "Funciona mejor con sonidos graves y constantes: motores de avión, trenes, aire acondicionado.",
-     "cap": "Best on *deep hum.*"
+     "cap": "Best on *deep hum.*",
+     "fr": "Ça marche le mieux sur les sons graves et réguliers : moteurs d'avion, trains, climatisation."
     }
    ]
   },
@@ -102,7 +106,8 @@
      "text": "Voices and sudden sounds? Their waves are shorter and change too fast to cancel well.",
      "de": "Stimmen und plötzliche Geräusche? Ihre Wellen sind kürzer und ändern sich zu schnell.",
      "es": "¿Voces y ruidos repentinos? Sus ondas son más cortas y cambian demasiado rápido.",
-     "cap": "Voices get *through.*"
+     "cap": "Voices get *through.*",
+     "fr": "Les voix et les bruits soudains ? Leurs ondes sont plus courtes et changent trop vite pour bien s'annuler."
     }
    ]
   },
@@ -115,7 +120,8 @@
      "text": "The idea is old: a German physicist patented it in nineteen thirty-six.",
      "de": "Die Idee ist alt: Ein deutscher Physiker hat sie 1936 patentiert!",
      "es": "La idea es antigua: ¡un físico alemán la patentó en 1936!",
-     "cap": "Patented in *1936!*"
+     "cap": "Patented in *1936!*",
+     "fr": "L'idée est ancienne : un physicien allemand l'a brevetée en mille neuf cent trente-six."
     }
    ]
   },
@@ -128,14 +134,16 @@
      "text": "Tip: for voices, a good seal matters more. Try larger ear tips.",
      "de": "Tipp: Gegen Stimmen hilft vor allem gute Abdichtung. Probier größere Ohrstöpsel-Aufsätze!",
      "es": "Consejo: contra las voces, importa más un buen sellado. ¡Prueba almohadillas más grandes!",
-     "cap": "A better *seal!*"
+     "cap": "A better *seal!*",
+     "fr": "Astuce : pour les voix, une bonne étanchéité compte plus. Essaie des embouts plus grands."
     },
     {
      "at": "0.15",
      "text": "Do you use noise cancelling every day? Comment yes or no, and subscribe!",
      "cta": true,
      "de": "Nutzt du jeden Tag Noise Cancelling? Kommentier ja oder nein, und abonnier!",
-     "es": "¿Usas cancelación de ruido cada día? Comenta sí o no, y suscríbete."
+     "es": "¿Usas cancelación de ruido cada día? Comenta sí o no, y suscríbete.",
+     "fr": "Tu utilises la réduction de bruit tous les jours ? Commente oui ou non, et abonne-toi !"
     }
    ]
   }
@@ -157,5 +165,11 @@
    "gain": 0.55
   }
  ],
- "voice_style": "explainer"
+ "voice_style": "explainer",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ]
 }

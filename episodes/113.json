@@ -50,7 +50,8 @@
    "at": 0,
    "text": "When you pay with your phone... the shop never sees your card number!",
    "de": "Wenn du mit dem Handy zahlst... sieht der Laden nie deine Kartennummer!",
-   "es": "Cuando pagas con el móvil... ¡la tienda nunca ve el número de tu tarjeta!"
+   "es": "Cuando pagas con el móvil... ¡la tienda nunca ve el número de tu tarjeta!",
+   "fr": "Quand tu paies avec ton téléphone... le magasin ne voit jamais ton numéro de carte !"
   }
  ],
  "scenes": [
@@ -63,7 +64,8 @@
      "text": "When you add your card, your bank creates a stand-in number just for your phone. It's called a token.",
      "de": "Wenn du deine Karte hinzufügst, erstellt deine Bank eine Ersatznummer nur für dein Handy. Sie heißt Token.",
      "es": "Cuando añades tu tarjeta, tu banco crea un número sustituto solo para tu móvil. Se llama token.",
-     "cap": "A *token.*"
+     "cap": "A *token.*",
+     "fr": "Quand tu ajoutes ta carte, ta banque crée un numéro de remplacement rien que pour ton téléphone. On l'appelle un jeton."
     }
    ]
   },
@@ -76,7 +78,8 @@
      "text": "First, your phone checks it's really you: face, fingerprint, or code.",
      "de": "Zuerst prüft dein Handy, ob du es wirklich bist: Gesicht, Fingerabdruck oder Code.",
      "es": "Primero, tu móvil comprueba que eres tú: cara, huella o código.",
-     "cap": "Is it *really you?*"
+     "cap": "Is it *really you?*",
+     "fr": "D'abord, ton téléphone vérifie que c'est bien toi : visage, empreinte ou code."
     }
    ]
   },
@@ -89,7 +92,8 @@
      "text": "Then it sends the token, plus a one-time code made just for this payment.",
      "de": "Dann sendet es das Token, plus einen Einmal-Code nur für diese Zahlung.",
      "es": "Luego envía el token, más un código de un solo uso creado solo para este pago.",
-     "cap": "A *one-time code.*"
+     "cap": "A *one-time code.*",
+     "fr": "Puis il envoie le jeton, plus un code unique créé juste pour ce paiement."
     }
    ]
   },
@@ -102,7 +106,8 @@
      "text": "Only the card network and your bank can turn that token back into your real card.",
      "de": "Nur das Kartennetz und deine Bank können das Token wieder in deine echte Karte zurückverwandeln.",
      "es": "Solo la red de la tarjeta y tu banco pueden convertir ese token en tu tarjeta real.",
-     "cap": "Only *network + bank.*"
+     "cap": "Only *network + bank.*",
+     "fr": "Seuls le réseau de cartes et ta banque peuvent retrouver ta vraie carte à partir de ce jeton."
     }
    ]
   },
@@ -115,7 +120,8 @@
      "text": "So if the shop gets hacked... your real card number isn't even there to steal.",
      "de": "Wenn der Laden also gehackt wird... ist deine echte Kartennummer gar nicht da!",
      "es": "Así que si hackean la tienda... ¡tu número real ni siquiera está ahí para robarlo!",
-     "cap": "Nothing to *steal!*"
+     "cap": "Nothing to *steal!*",
+     "fr": "Donc si le magasin est piraté... ton vrai numéro de carte n'y est même pas."
     }
    ]
   },
@@ -128,7 +134,8 @@
      "text": "Lost your phone? Mark it as lost, and paying with it stops. Your card keeps working.",
      "de": "Handy verloren? Als verloren markieren, dann ist Bezahlen damit gesperrt. Deine Karte funktioniert weiter.",
      "es": "¿Perdiste el móvil? Márcalo como perdido y se bloquean los pagos. Tu tarjeta sigue funcionando.",
-     "cap": "Mark it as *lost.*"
+     "cap": "Mark it as *lost.*",
+     "fr": "Téléphone perdu ? Déclare-le perdu, et les paiements s'arrêtent. Ta carte continue de fonctionner."
     }
    ]
   },
@@ -141,14 +148,16 @@
      "text": "Your phone pays... without ever showing your card.",
      "de": "Dein Handy bezahlt... ohne je deine Karte zu zeigen!",
      "es": "Tu móvil paga... ¡sin mostrar nunca tu tarjeta!",
-     "cap": "Without your *card number!*"
+     "cap": "Without your *card number!*",
+     "fr": "Ton téléphone paie... sans jamais montrer ta carte."
     },
     {
      "at": "0.15",
      "text": "Do you pay with your phone? Comment yes or no, and subscribe!",
      "cta": true,
      "de": "Zahlst du mit dem Handy? Kommentier ja oder nein, und abonnier!",
-     "es": "¿Pagas con el móvil? Comenta sí o no, y suscríbete."
+     "es": "¿Pagas con el móvil? Comenta sí o no, y suscríbete.",
+     "fr": "Tu paies avec ton téléphone ? Commente oui ou non, et abonne-toi !"
     }
    ]
   }
@@ -170,5 +179,11 @@
    "gain": 0.55
   }
  ],
- "voice_style": "explainer"
+ "voice_style": "explainer",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ]
 }

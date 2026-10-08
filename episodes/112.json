@@ -50,7 +50,8 @@
    "at": 0,
    "text": "Your bank card has no battery... so how does it pay?",
    "de": "Deine Bankkarte hat keinen Akku... wie bezahlt sie dann?",
-   "es": "Tu tarjeta no tiene batería... ¿cómo paga entonces?"
+   "es": "Tu tarjeta no tiene batería... ¿cómo paga entonces?",
+   "fr": "Ta carte bancaire n'a pas de batterie... alors comment elle paie ?"
   }
  ],
  "scenes": [
@@ -63,7 +64,8 @@
      "text": "Hidden inside is a coil of wire, running all around the edge of the card.",
      "de": "Darin versteckt ist eine Drahtspule, einmal rundherum am Kartenrand.",
      "es": "Dentro se esconde una bobina de cable que recorre todo el borde de la tarjeta.",
-     "cap": "A *hidden coil.*"
+     "cap": "A *hidden coil.*",
+     "fr": "À l'intérieur se cache une bobine de fil, tout autour du bord de la carte."
     }
    ]
   },
@@ -76,7 +78,8 @@
      "text": "When you tap, the terminal makes a magnetic field. It flips over thirteen million times per second.",
      "de": "Wenn du tippst, erzeugt das Terminal ein Magnetfeld. Es kippt über dreizehn Millionen Mal pro Sekunde.",
      "es": "Al acercarla, el terminal crea un campo magnético que cambia más de trece millones de veces por segundo.",
-     "cap": "*13 million* times a second!"
+     "cap": "*13 million* times a second!",
+     "fr": "Quand tu l'approches, le terminal crée un champ magnétique. Il s'inverse plus de treize millions de fois par seconde."
     }
    ]
   },
@@ -89,7 +92,8 @@
      "text": "That field creates a tiny current in the coil... and wakes up the chip.",
      "de": "Dieses Feld erzeugt einen winzigen Strom in der Spule... und weckt den Chip auf!",
      "es": "Ese campo crea una pequeña corriente en la bobina... ¡y despierta el chip!",
-     "cap": "It *wakes up* the chip!"
+     "cap": "It *wakes up* the chip!",
+     "fr": "Ce champ crée un petit courant dans la bobine... et réveille la puce."
     }
    ]
   },
@@ -102,7 +106,8 @@
      "text": "But only within about four centimeters. That's why you have to tap.",
      "de": "Aber nur auf etwa vier Zentimeter. Deshalb musst du so nah ran.",
      "es": "Pero solo a unos cuatro centímetros. Por eso tienes que acercarla.",
-     "cap": "Only *4 cm!*"
+     "cap": "Only *4 cm!*",
+     "fr": "Mais seulement à environ quatre centimètres. C'est pour ça qu'il faut l'approcher."
     }
    ]
   },
@@ -115,7 +120,8 @@
      "text": "And every payment gets a brand-new one-time code. Copy it... and it's useless.",
      "de": "Und jede Zahlung bekommt einen brandneuen Einmal-Code. Kopiert man ihn... ist er nutzlos.",
      "es": "Y cada pago recibe un código nuevo de un solo uso. Si lo copias... no sirve para nada.",
-     "cap": "A *one-time code.*"
+     "cap": "A *one-time code.*",
+     "fr": "Et chaque paiement reçoit un tout nouveau code unique. Copie-le... il ne sert à rien."
     }
    ]
   },
@@ -128,14 +134,16 @@
      "text": "So your card never had power... the terminal lends it, for a split second.",
      "de": "Deine Karte hatte also nie Strom... das Terminal leiht ihn ihr, für einen Sekundenbruchteil!",
      "es": "Así que tu tarjeta nunca tuvo energía... ¡el terminal se la presta por una fracción de segundo!",
-     "cap": "The terminal *lends it!*"
+     "cap": "The terminal *lends it!*",
+     "fr": "Ta carte n'a jamais eu d'énergie... le terminal la lui prête, une fraction de seconde."
     },
     {
      "at": "0.15",
      "text": "Card... or cash? Comment card, or cash, and subscribe!",
      "cta": true,
      "de": "Karte oder bar? Kommentier Karte oder bar, und abonnier!",
-     "es": "¿Tarjeta o efectivo? Comenta tarjeta o efectivo, y suscríbete."
+     "es": "¿Tarjeta o efectivo? Comenta tarjeta o efectivo, y suscríbete.",
+     "fr": "Carte... ou espèces ? Commente carte ou espèces, et abonne-toi !"
     }
    ]
   }
@@ -157,5 +165,11 @@
    "gain": 0.55
   }
  ],
- "voice_style": "explainer"
+ "voice_style": "explainer",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ]
 }

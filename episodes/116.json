@@ -50,7 +50,8 @@
    "at": 0,
    "text": "Incognito mode hides you... from exactly one person!",
    "de": "Der Inkognito-Modus versteckt dich... vor genau einer Person!",
-   "es": "El modo incógnito te oculta... ¡de una sola persona!"
+   "es": "El modo incógnito te oculta... ¡de una sola persona!",
+   "fr": "La navigation privée te cache... d'une seule personne !"
   }
  ],
  "scenes": [
@@ -63,7 +64,8 @@
      "text": "Whoever uses your device next. Your history and cookies are deleted when you close it.",
      "de": "Vor dem Nächsten, der dein Gerät benutzt. Verlauf und Cookies werden beim Schließen gelöscht.",
      "es": "De quien use tu dispositivo después. El historial y las cookies se borran al cerrarlo.",
-     "cap": "*Deleted* when you close it."
+     "cap": "*Deleted* when you close it.",
+     "fr": "La prochaine personne qui utilise ton appareil. Ton historique et tes cookies sont effacés à la fermeture."
     }
    ]
   },
@@ -76,7 +78,8 @@
      "text": "But the websites you visit still see you.",
      "de": "Aber die Websites, die du besuchst, sehen dich trotzdem.",
      "es": "Pero las webs que visitas te siguen viendo.",
-     "cap": "Websites still *see you.*"
+     "cap": "Websites still *see you.*",
+     "fr": "Mais les sites que tu visites te voient toujours."
     }
    ]
   },
@@ -89,7 +92,8 @@
      "text": "Your employer, your school, and your internet provider can still see your activity.",
      "de": "Dein Arbeitgeber, deine Schule und dein Internetanbieter können deine Aktivität trotzdem sehen.",
      "es": "Tu empresa, tu escuela y tu proveedor de internet pueden seguir viendo tu actividad.",
-     "cap": "Your *provider* sees it."
+     "cap": "Your *provider* sees it.",
+     "fr": "Ton employeur, ton école et ton fournisseur d'accès peuvent toujours voir ton activité."
     }
    ]
   },
@@ -103,7 +107,8 @@
      "de": "2024 hat Google sogar zugestimmt, Milliarden Datensätze zu löschen oder zu anonymisieren... in einem Vergleich zu einer Klage über Inkognito-Tracking.",
      "es": "En 2024, Google incluso aceptó borrar o anonimizar miles de millones de registros... para cerrar una demanda sobre el rastreo en modo incógnito.",
      "cap": "*Billions* of records!",
-     "show": "In 2024, ~ Google even agreed to delete or anonymize billions of records… to settle a lawsuit over Incognito tracking."
+     "show": "In 2024, ~ Google even agreed to delete or anonymize billions of records… to settle a lawsuit over Incognito tracking.",
+     "fr": "En deux mille vingt-quatre, Google a même accepté de supprimer ou d'anonymiser des milliards de données... pour régler un procès sur le suivi en navigation privée."
     }
    ]
   },
@@ -116,7 +121,8 @@
      "text": "So Incognito is perfect for surprise gifts on a shared laptop... not for hiding.",
      "de": "Inkognito ist also perfekt für Überraschungsgeschenke am gemeinsamen Laptop... aber nicht zum Verstecken.",
      "es": "Así que el modo incógnito es perfecto para regalos sorpresa en un portátil compartido... no para esconderte.",
-     "cap": "Perfect for *gifts.*"
+     "cap": "Perfect for *gifts.*",
+     "fr": "La navigation privée est parfaite pour des cadeaux surprise sur un ordinateur partagé... pas pour se cacher."
     }
    ]
   },
@@ -129,14 +135,16 @@
      "text": "Private... but not invisible.",
      "de": "Privat... aber nicht unsichtbar!",
      "es": "Privado... ¡pero no invisible!",
-     "cap": "Not *invisible!*"
+     "cap": "Not *invisible!*",
+     "fr": "Privé... mais pas invisible."
     },
     {
      "at": "0.15",
      "text": "Did you think Incognito made you invisible? Comment yes or no, and subscribe!",
      "cta": true,
      "de": "Dachtest du, Inkognito macht dich unsichtbar? Kommentier ja oder nein, und abonnier!",
-     "es": "¿Creías que el incógnito te hacía invisible? Comenta sí o no, y suscríbete."
+     "es": "¿Creías que el incógnito te hacía invisible? Comenta sí o no, y suscríbete.",
+     "fr": "Tu pensais que la navigation privée te rendait invisible ? Commente oui ou non, et abonne-toi !"
     }
    ]
   }
@@ -158,5 +166,11 @@
    "gain": 0.55
   }
  ],
- "voice_style": "explainer"
+ "voice_style": "explainer",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ]
 }

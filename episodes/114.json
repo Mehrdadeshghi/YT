@@ -50,7 +50,8 @@
    "at": 0,
    "text": "You can rip off almost a third of a QR code... and it still works!",
    "de": "Du kannst fast ein Drittel eines QR-Codes abreißen... und er funktioniert trotzdem!",
-   "es": "Puedes arrancar casi un tercio de un código QR... ¡y sigue funcionando!"
+   "es": "Puedes arrancar casi un tercio de un código QR... ¡y sigue funcionando!",
+   "fr": "Tu peux arracher presque un tiers d'un QR code... et il marche encore !"
   }
  ],
  "scenes": [
@@ -64,7 +65,8 @@
      "de": "QR-Codes wurden 1994 in Japan erfunden... um Autoteile zu kennzeichnen!",
      "es": "Los códigos QR se inventaron en Japón en 1994... ¡para etiquetar piezas de coche!",
      "cap": "To label *car parts!*",
-     "show": "QR codes were invented in Japan in 1994… ~ to label car parts."
+     "show": "QR codes were invented in Japan in 1994… ~ to label car parts.",
+     "fr": "Les QR codes ont été inventés au Japon en mille neuf cent quatre-vingt-quatorze... pour étiqueter des pièces auto."
     }
    ]
   },
@@ -77,7 +79,8 @@
      "text": "These three big squares tell your camera: here's the code, and this way up.",
      "de": "Diese drei großen Quadrate sagen deiner Kamera: Hier ist der Code, und so herum ist oben.",
      "es": "Estos tres cuadrados grandes le dicen a tu cámara: aquí está el código, y este lado va arriba.",
-     "cap": "*This way up.*"
+     "cap": "*This way up.*",
+     "fr": "Ces trois grands carrés disent à ton appareil photo : voici le code, et voici le haut."
     }
    ]
   },
@@ -90,7 +93,8 @@
      "text": "All the little squares are just ones and zeros... plus extra repair data.",
      "de": "Die vielen kleinen Quadrate sind nur Einsen und Nullen... plus zusätzliche Reparaturdaten.",
      "es": "Todos los cuadraditos son solo unos y ceros... más datos extra de reparación.",
-     "cap": "Extra *repair data!*"
+     "cap": "Extra *repair data!*",
+     "fr": "Tous les petits carrés ne sont que des uns et des zéros... plus des données de réparation."
     }
    ]
   },
@@ -104,7 +108,8 @@
      "de": "Auf der stärksten Stufe können etwa dreißig Prozent fehlen... und dein Handy baut es wieder auf!",
      "es": "En el nivel más alto puede faltar un treinta por ciento... ¡y tu móvil lo reconstruye!",
      "cap": "*30%* can be missing!",
-     "show": "At the strongest level, about 30% ~ can be missing… and your phone rebuilds it."
+     "show": "At the strongest level, about 30% ~ can be missing… and your phone rebuilds it.",
+     "fr": "Au niveau le plus fort, environ trente pour cent peuvent manquer... et ton téléphone les reconstruit."
     }
    ]
   },
@@ -117,7 +122,8 @@
      "text": "But scammers love them. They stick fake QR codes on parking meters... leading to fake payment sites.",
      "de": "Aber Betrüger lieben sie. Sie kleben falsche QR-Codes auf Parkautomaten... die zu gefälschten Bezahlseiten führen.",
      "es": "Pero a los estafadores les encantan. Pegan códigos QR falsos en los parquímetros... que llevan a webs de pago falsas.",
-     "cap": "*Fake* QR codes!"
+     "cap": "*Fake* QR codes!",
+     "fr": "Mais les arnaqueurs les adorent. Ils collent de faux QR codes sur les horodateurs... qui mènent à de faux sites de paiement."
     }
    ]
   },
@@ -130,14 +136,16 @@
      "text": "So before you pay, check the web address your phone shows. A sticker on top? Don't scan it.",
      "de": "Bevor du zahlst, prüf also die Webadresse, die dein Handy anzeigt. Ein Aufkleber drüber? Nicht scannen!",
      "es": "Así que antes de pagar, revisa la dirección web que muestra tu móvil. ¿Una pegatina encima? ¡No la escanees!",
-     "cap": "Check the *address!*"
+     "cap": "Check the *address!*",
+     "fr": "Alors avant de payer, vérifie l'adresse web affichée. Un autocollant par-dessus ? Ne le scanne pas."
     },
     {
      "at": "0.15",
      "text": "Have you ever seen a fake QR code? Comment yes or no, and subscribe!",
      "cta": true,
      "de": "Hast du schon mal einen falschen QR-Code gesehen? Kommentier ja oder nein, und abonnier!",
-     "es": "¿Alguna vez has visto un código QR falso? Comenta sí o no, y suscríbete."
+     "es": "¿Alguna vez has visto un código QR falso? Comenta sí o no, y suscríbete.",
+     "fr": "Tu as déjà vu un faux QR code ? Commente oui ou non, et abonne-toi !"
     }
    ]
   }
@@ -155,5 +163,11 @@
    "gain": 0.55
   }
  ],
- "voice_style": "explainer"
+ "voice_style": "explainer",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ]
 }
