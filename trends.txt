@@ -1,0 +1,18 @@
+# medical fact candidates (#119+): what do people search more?
+anchor: sunscreen
+CPR
+stroke symptoms
+hand washing
+cracking knuckles
+earwax
+antibiotics
+taller in the morning
+washing chicken
+placebo effect
+heart attack symptoms
+earwax removal
+kidney stones
+vitamin D
+hiccups
+sleep paralysis
+migraine

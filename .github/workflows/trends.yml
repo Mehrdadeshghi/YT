@@ -1,0 +1,21 @@
+name: Search trends
+# push trends.txt → Google Trends (web + YouTube) + autocomplete → Release trends-N (trends.md)
+on:
+  push:
+    branches: [main]
+    paths: [trends.txt]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  trends:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -q pytrends "urllib3<2"
+      - run: GEO=US python3 trends.py && mv dist/trends.md dist/trends_us.md
+      - run: python3 trends.py
+      - env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release create "trends-${{ github.run_number }}" dist/trends.md dist/trends_us.md --title "Search trends ${{ github.run_number }}" --notes "Google Trends + autocomplete"
