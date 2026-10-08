@@ -42,7 +42,8 @@
  },
  "source": "https://www.who.int/news-room/fact-sheets/detail/headache-disorders",
  "scripts": [
-  "tech.js"
+  "tech.js",
+  "med.js"
  ],
  "voice_style": "explainer",
  "spell": {},

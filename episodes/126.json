@@ -42,7 +42,8 @@
  },
  "source": "https://en.wikipedia.org/wiki/Ignaz_Semmelweis",
  "scripts": [
-  "tech.js"
+  "tech.js",
+  "med.js"
  ],
  "voice_style": "explainer",
  "spell": {},

@@ -42,7 +42,8 @@
  },
  "source": "https://www.jhunewsletter.com/2016/10/20/rollercoasters-can-help-pass-kidney-stones",
  "scripts": [
-  "tech.js"
+  "tech.js",
+  "med.js"
  ],
  "voice_style": "explainer",
  "spell": {},

@@ -42,7 +42,8 @@
  },
  "source": "https://pubmed.ncbi.nlm.nih.gov/16339467/",
  "scripts": [
-  "tech.js"
+  "tech.js",
+  "med.js"
  ],
  "voice_style": "explainer",
  "spell": {},

@@ -42,7 +42,8 @@
  },
  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3156892/",
  "scripts": [
-  "tech.js"
+  "tech.js",
+  "med.js"
  ],
  "voice_style": "explainer",
  "spell": {},

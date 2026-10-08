@@ -42,7 +42,8 @@
  },
  "source": "https://www.bfs.de/EN/topics/opt/uv/effect/acute/vitamin-d.html",
  "scripts": [
-  "tech.js"
+  "tech.js",
+  "med.js"
  ],
  "voice_style": "explainer",
  "spell": {},

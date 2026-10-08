@@ -42,7 +42,8 @@
  },
  "source": "https://antibiotic.ecdc.europa.eu/sites/default/files/documents/Factsheet-for-general-public.pdf",
  "scripts": [
-  "tech.js"
+  "tech.js",
+  "med.js"
  ],
  "voice_style": "explainer",
  "spell": {},
