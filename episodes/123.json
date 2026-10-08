@@ -1,0 +1,160 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "zap",
+  "think",
+  "check",
+  "lol",
+  "fire",
+  "warning",
+  "starstruck",
+  "cold",
+  "skull"
+ ],
+ "ep": 123,
+ "series": "BODY FACTS #5",
+ "prog": 3,
+ "title": "Your skin makes vitamin D, but not in winter",
+ "hook": [
+  "YOUR SKIN MAKES",
+  "A VITAMIN."
+ ],
+ "cta": {
+  "q": "Did you know this?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "mindblown"
+ },
+ "source": "https://www.bfs.de/EN/topics/opt/uv/effect/acute/vitamin-d.html",
+ "scripts": [
+  "tech.js"
+ ],
+ "voice_style": "explainer",
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "medical": true,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Your skin makes its own vitamin... from sunlight.",
+   "de": "Deine Haut macht ihr eigenes Vitamin... aus Sonnenlicht.",
+   "es": "Tu piel fabrica su propia vitamina... con la luz del sol.",
+   "fr": "Votre peau fabrique sa propre vitamine... grâce au soleil."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When UV-B light hits your skin, it turns a cholesterol-like molecule into vitamin D.",
+     "de": "Wenn UV-B-Licht auf deine Haut trifft, wird ein cholesterinähnliches Molekül zu Vitamin D.",
+     "es": "Cuando la luz UV-B toca tu piel, convierte una molécula parecida al colesterol en vitamina D.",
+     "fr": "Quand les UV-B touchent votre peau, ils transforment une molécule proche du cholestérol en vitamine D.",
+     "cap": "Light *becomes* a vitamin."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Your body needs it for strong bones.",
+     "de": "Dein Körper braucht es für starke Knochen.",
+     "es": "Tu cuerpo la necesita para tener huesos fuertes.",
+     "fr": "Votre corps en a besoin pour des os solides.",
+     "cap": "Strong *bones.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But here's the catch: in winter in Germany, the sun is too low. UV-B is too weak, and production comes to a halt.",
+     "de": "Aber jetzt kommt der Haken: Im Winter steht die Sonne in Deutschland zu tief. Das UV-B ist zu schwach, und die Bildung kommt zum Stillstand.",
+     "es": "Pero aquí está el truco: en invierno en Alemania el sol está demasiado bajo. El UV-B es demasiado débil y la producción se detiene.",
+     "fr": "Mais voilà le hic : en hiver en Allemagne, le soleil est trop bas. Les UV-B sont trop faibles et la production s'arrête.",
+     "cap": "Production *stops.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In summer, a little sun on your face, hands and arms, two to three times a week, fills up your stores.",
+     "de": "Im Sommer füllt ein bisschen Sonne auf Gesicht, Hände und Arme, zwei- bis dreimal pro Woche, deine Speicher.",
+     "es": "En verano, un poco de sol en la cara, las manos y los brazos, dos o tres veces por semana, llena tus reservas.",
+     "fr": "En été, un peu de soleil sur le visage, les mains et les bras, deux à trois fois par semaine, remplit vos réserves.",
+     "cap": "*2–3×* a week."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Those summer stores help carry you through winter. But skip the sunburn: more sun doesn't make more vitamin D.",
+     "de": "Diese Sommerspeicher helfen dir durch den Winter. Aber ohne Sonnenbrand: Mehr Sonne bringt nicht mehr Vitamin D.",
+     "es": "Esas reservas de verano te ayudan a pasar el invierno. Pero sin quemaduras: más sol no da más vitamina D.",
+     "fr": "Ces réserves d'été vous aident à passer l'hiver. Mais pas de coup de soleil : plus de soleil ne fait pas plus de vitamine D.",
+     "cap": "No *sunburn.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Food helps a little, like fatty fish. Thinking about supplements? Ask your doctor to check your levels first.",
+     "de": "Ernährung hilft ein wenig, zum Beispiel fetter Fisch. Du denkst an Präparate? Lass zuerst beim Arzt deine Werte prüfen.",
+     "es": "La comida ayuda un poco, como el pescado azul. ¿Piensas en suplementos? Pide primero a tu médico que revise tus niveles.",
+     "fr": "L'alimentation aide un peu, comme les poissons gras. Vous pensez aux compléments ? Demandez d'abord à votre médecin de vérifier vos taux.",
+     "cap": "Ask your *doctor.*"
+    },
+    {
+     "at": "0.15",
+     "text": "Did you know your skin makes a vitamin? Comment yes or no, and subscribe.",
+     "cta": true,
+     "de": "Wusstest du, dass deine Haut ein Vitamin macht? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Sabías que tu piel fabrica una vitamina? Comenta sí o no, y suscríbete.",
+     "fr": "Saviez-vous que votre peau fabrique une vitamine ? Commentez oui ou non, et abonnez-vous !"
+    }
+   ]
+  }
+ ],
+ "photos": []
+}

@@ -1,0 +1,161 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "zap",
+  "think",
+  "check",
+  "lol",
+  "fire",
+  "warning",
+  "starstruck",
+  "cold",
+  "skull"
+ ],
+ "ep": 124,
+ "series": "BODY FACTS #6",
+ "prog": 3,
+ "title": "Why antibiotics don't help your cold",
+ "hook": [
+  "ANTIBIOTICS DO NOTHING",
+  "AGAINST YOUR COLD."
+ ],
+ "cta": {
+  "q": "Did you think they help?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "source": "https://antibiotic.ecdc.europa.eu/sites/default/files/documents/Factsheet-for-general-public.pdf",
+ "scripts": [
+  "tech.js"
+ ],
+ "voice_style": "explainer",
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "medical": true,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Antibiotics do nothing against your cold.",
+   "de": "Antibiotika bringen nichts gegen deine Erkältung.",
+   "es": "Los antibióticos no hacen nada contra tu resfriado.",
+   "fr": "Les antibiotiques ne font rien contre votre rhume."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Most colds and flu are caused by viruses. Antibiotics only work against bacteria.",
+     "de": "Die meisten Erkältungen und die Grippe werden von Viren verursacht. Antibiotika wirken nur gegen Bakterien.",
+     "es": "La mayoría de resfriados y gripes los causan virus. Los antibióticos solo funcionan contra bacterias.",
+     "fr": "La plupart des rhumes et grippes sont causés par des virus. Les antibiotiques n'agissent que contre les bactéries.",
+     "cap": "Only *bacteria.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Bacteria are tiny living cells. Viruses aren't cells at all. They hijack yours, so antibiotics have nothing to attack.",
+     "de": "Bakterien sind winzige lebende Zellen. Viren sind gar keine Zellen. Sie kapern deine, also haben Antibiotika nichts zum Angreifen.",
+     "es": "Las bacterias son células vivas diminutas. Los virus ni siquiera son células: secuestran las tuyas, así que los antibióticos no tienen nada que atacar.",
+     "fr": "Les bactéries sont de minuscules cellules vivantes. Les virus ne sont même pas des cellules : ils détournent les vôtres, donc les antibiotiques n'ont rien à attaquer.",
+     "cap": "Nothing to *attack.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Taking antibiotics you don't need helps bacteria become resistant.",
+     "de": "Wer unnötig Antibiotika nimmt, hilft Bakterien, resistent zu werden.",
+     "es": "Tomar antibióticos que no necesitas ayuda a que las bacterias se vuelvan resistentes.",
+     "fr": "Prendre des antibiotiques inutiles aide les bactéries à devenir résistantes.",
+     "cap": "Bacteria get *resistant.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In twenty nineteen, resistant bacteria directly caused about one point two seven million deaths worldwide.",
+     "de": "2019 verursachten resistente Bakterien weltweit direkt etwa 1,27 Millionen Todesfälle.",
+     "es": "En 2019, las bacterias resistentes causaron directamente alrededor de 1,27 millones de muertes en el mundo.",
+     "fr": "En 2019, les bactéries résistantes ont directement causé environ 1,27 million de décès dans le monde.",
+     "cap": "*1.27 million* deaths.",
+     "show": "In 2019, ~ resistant bacteria directly caused about 1.27 ~ ~ ~ million deaths worldwide."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So only take antibiotics when a doctor prescribes them. Take them exactly as told, and never use leftovers.",
+     "de": "Nimm Antibiotika also nur, wenn ein Arzt sie verschreibt. Genau nach Anweisung, und nie übrig gebliebene Reste.",
+     "es": "Así que toma antibióticos solo si un médico los receta. Exactamente como te indiquen, y nunca restos sobrantes.",
+     "fr": "Ne prenez donc des antibiotiques que sur ordonnance. Exactement comme indiqué, et jamais de restes.",
+     "cap": "Never use *leftovers.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "With a cold: rest, drink plenty, and give your body time.",
+     "de": "Bei einer Erkältung: ausruhen, viel trinken und deinem Körper Zeit geben.",
+     "es": "Con un resfriado: descansa, bebe mucho y dale tiempo a tu cuerpo.",
+     "fr": "Avec un rhume : reposez-vous, buvez beaucoup et laissez du temps à votre corps.",
+     "cap": "*Rest* and *drink.*"
+    },
+    {
+     "at": "0.15",
+     "text": "Did you think antibiotics help with colds? Comment yes or no, and subscribe.",
+     "cta": true,
+     "de": "Dachtest du, Antibiotika helfen bei Erkältung? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Creías que los antibióticos ayudan con el resfriado? Comenta sí o no, y suscríbete.",
+     "fr": "Pensiez-vous que les antibiotiques aident contre le rhume ? Commentez oui ou non, et abonnez-vous !"
+    }
+   ]
+  }
+ ],
+ "photos": []
+}

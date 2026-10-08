@@ -1,31 +1,25 @@
-Contactless payment | Contactless payment
-Near-field communication | Near field communication
-image: contactless card antenna coil x-ray
-image: RFID card antenna
-image: contactless payment terminal card tap
-Apple Pay | Apple Pay
-Google Wallet | Google Pay
-image: paying with smartphone NFC terminal
-image: Apple Pay terminal
-QR code | QR codes
-image: QR code parking meter
-image: damaged QR code
-image: Denso Wave QR code
-Noise-cancelling headphones | Noise-cancelling headphones
-image: Bose QuietComfort headphones
-image: airplane cabin passengers
-image: headphones microphone noise cancelling
-Private browsing | Private browsing
-image: data center server room
-image: internet service provider network operations
-Night photography | Night photography
-Computational photography | Computational photography
-image: smartphone night photo city
-image: night sight comparison
-Qi (standard) | Qi (wireless power)
-Inductive charging | Inductive charging
-image: wireless charging pad smartphone
-image: wireless charger coil
-image: MagSafe charger
-audio: Rafael Krux
-audio: Kevin MacLeod electronic
+Cardiopulmonary resuscitation | Cardiopulmonary resuscitation
+image: CPR training manikin
+image: Bee Gees
+Sleep paralysis | Sleep paralysis
+image: The Nightmare Fuseli
+Kidney stone disease | Kidney stones
+image: Big Thunder Mountain Railroad
+Migraine | Migraine
+image: migraine aura scintillating scotoma
+Vitamin D | Vitamin D
+image: winter sun low Germany
+Antibiotic | Antibiotics
+image: MRSA bacteria electron micrograph
+image: penicillin Alexander Fleming
+Earwax | Earwax
+image: otoscope ear examination
+image: cotton swabs
+Ignaz Semmelweis | Ignaz Semmelweis
+image: Vienna General Hospital Allgemeines Krankenhaus historic
+Stroke | Stroke
+image: stroke CT scan brain
+Myocardial infarction | Myocardial infarction
+image: ambulance emergency paramedics
+audio: Kevin MacLeod calm
+audio: Rafael Krux inspiring

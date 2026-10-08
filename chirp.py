@@ -14,7 +14,7 @@ STYLE = {   # style → (EN voice, speaking rate)
     'story': ('en-GB-Chirp3-HD-Algieba', 1.0),
     'kids': ('en-US-Chirp3-HD-Aoede', 0.92),
 }
-DUB = {'de': 'de-DE-Chirp3-HD-Charon', 'es': 'es-ES-Chirp3-HD-Charon'}   # same character in the dubbed tracks
+DUB = {'de': 'de-DE-Chirp3-HD-Charon', 'es': 'es-ES-Chirp3-HD-Charon', 'fr': 'fr-FR-Chirp3-HD-Charon'}   # same character in the dubbed tracks
 OUT = 'assets/chirp'
 
 
@@ -38,7 +38,7 @@ def lines(E):
     """(text, voice, rate) for every narrated line, in English and in the DE/ES dub languages."""
     segs = list(E.get('vo_open', [])) + [v for sc in E['scenes'] for v in sc.get('vo', [])]
     out = []
-    for lang in ('en', 'de', 'es'):
+    for lang in ('en', 'de', 'es', 'fr'):
         v, r = voice_for(E, lang)
         for s in segs:
             t = s['text'] if lang == 'en' else s.get(lang)

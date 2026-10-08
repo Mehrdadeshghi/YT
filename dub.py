@@ -17,7 +17,7 @@ ep = sys.argv[1]
 TTS = os.environ.get('TTS_DIR', 'models')
 E = json.load(open(f'episodes/{ep}.json'))
 segs = list(E.get('vo_open', [])) + [v for sc in E['scenes'] for v in sc.get('vo', [])]
-VOICES = {'es': ('ef_dora', 'es'), 'en': ('af_heart', 'en-us'), 'de': ('thorsten', 'de')}
+VOICES = {'es': ('ef_dora', 'es'), 'en': ('af_heart', 'en-us'), 'de': ('thorsten', 'de'), 'fr': ('ff_siwis', 'fr-fr')}
 langs = [L for L in VOICES if L != E.get('lang', 'en') and all(s.get(L) for s in segs)]
 if not langs: print(f'{ep}: no dub texts on every segment, skipping'); sys.exit(0)
 src = f'out/ep{ep}'

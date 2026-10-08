@@ -1,0 +1,161 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "zap",
+  "think",
+  "check",
+  "lol",
+  "fire",
+  "warning",
+  "starstruck",
+  "cold",
+  "skull"
+ ],
+ "ep": 119,
+ "series": "BODY FACTS #1",
+ "prog": 3,
+ "title": "CPR: the song that can save a life",
+ "hook": [
+  "THIS SONG CAN",
+  "SAVE A LIFE."
+ ],
+ "cta": {
+  "q": "Would you know what to do?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "source": "https://cpr.heart.org/en/resources/what-is-cpr",
+ "scripts": [
+  "tech.js"
+ ],
+ "voice_style": "explainer",
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "medical": true,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "This disco song can save a life.",
+   "de": "Dieses Disco-Lied kann ein Leben retten.",
+   "es": "Esta canción disco puede salvar una vida.",
+   "fr": "Cette chanson disco peut sauver une vie."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When someone's heart suddenly stops, every minute counts. Most people who collapse outside a hospital don't survive.",
+     "de": "Wenn das Herz plötzlich stehen bleibt, zählt jede Minute. Die meisten, die außerhalb einer Klinik zusammenbrechen, überleben nicht.",
+     "es": "Cuando el corazón se para de repente, cada minuto cuenta. La mayoría de quienes se desploman fuera de un hospital no sobreviven.",
+     "fr": "Quand le cœur s'arrête soudainement, chaque minute compte. La plupart des personnes qui s'effondrent hors de l'hôpital ne survivent pas.",
+     "cap": "Every *minute* counts."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But CPR right away can double or even triple their chance of survival.",
+     "de": "Aber sofortige Herzdruckmassage kann ihre Überlebenschance verdoppeln oder sogar verdreifachen.",
+     "es": "Pero la RCP inmediata puede duplicar o incluso triplicar sus posibilidades de sobrevivir.",
+     "fr": "Mais un massage cardiaque immédiat peut doubler, voire tripler, leurs chances de survie.",
+     "cap": "*Double* or *triple.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Here's how. Call emergency services. Then put both hands in the middle of the chest.",
+     "de": "So geht's: Notruf wählen. Dann beide Hände in die Mitte der Brust legen.",
+     "es": "Así se hace: llama a emergencias. Luego pon las dos manos en el centro del pecho.",
+     "fr": "Voici comment faire : appelez les secours. Puis placez les deux mains au milieu de la poitrine.",
+     "cap": "*Middle* of the chest."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Push hard, about five centimeters deep, and fast: one hundred to one hundred twenty times a minute.",
+     "de": "Fest drücken, etwa fünf Zentimeter tief, und schnell: hundert- bis hundertzwanzigmal pro Minute.",
+     "es": "Empuja fuerte, unos cinco centímetros de profundidad, y rápido: entre cien y ciento veinte veces por minuto.",
+     "fr": "Appuyez fort, environ cinq centimètres de profondeur, et vite : cent à cent vingt fois par minute.",
+     "cap": "*100–120* per minute.",
+     "show": "Push hard, about 5 centimeters deep, and fast: 100 ~ to 120 ~ ~ times a minute."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "That's the beat of Stayin' Alive by the Bee Gees, about a hundred and four beats per minute.",
+     "de": "Das ist der Takt von Stayin' Alive von den Bee Gees, etwa hundertvier Schläge pro Minute.",
+     "es": "Es el ritmo de Stayin' Alive de los Bee Gees, unos ciento cuatro golpes por minuto.",
+     "fr": "C'est le rythme de Stayin' Alive des Bee Gees, environ cent quatre battements par minute.",
+     "cap": "*Stayin' Alive.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Keep pushing to the beat until help arrives. And if you can, take a first aid course.",
+     "de": "Drück im Takt weiter, bis Hilfe kommt. Und wenn du kannst, mach einen Erste-Hilfe-Kurs.",
+     "es": "Sigue empujando al ritmo hasta que llegue la ayuda. Y si puedes, haz un curso de primeros auxilios.",
+     "fr": "Continuez au rythme jusqu'à l'arrivée des secours. Et si vous le pouvez, suivez une formation aux premiers secours.",
+     "cap": "Take a *first aid* course."
+    },
+    {
+     "at": "0.15",
+     "text": "Would you know what to do? Comment yes or no, and subscribe.",
+     "cta": true,
+     "de": "Wüsstest du, was zu tun ist? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Sabrías qué hacer? Comenta sí o no, y suscríbete.",
+     "fr": "Sauriez-vous quoi faire ? Commentez oui ou non, et abonnez-vous !"
+    }
+   ]
+  }
+ ],
+ "photos": []
+}

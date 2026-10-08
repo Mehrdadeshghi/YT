@@ -1,0 +1,162 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "zap",
+  "think",
+  "check",
+  "lol",
+  "fire",
+  "warning",
+  "starstruck",
+  "cold",
+  "skull"
+ ],
+ "ep": 120,
+ "series": "BODY FACTS #2",
+ "prog": 3,
+ "title": "Sleep paralysis: awake, but you can't move",
+ "hook": [
+  "AWAKE. BUT YOU",
+  "CAN'T MOVE."
+ ],
+ "cta": {
+  "q": "Has this happened to you?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "eyes"
+ },
+ "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3156892/",
+ "scripts": [
+  "tech.js"
+ ],
+ "voice_style": "explainer",
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "medical": true,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "You wake up... but you can't move. Not even a finger.",
+   "de": "Du wachst auf... aber du kannst dich nicht bewegen. Nicht mal einen Finger.",
+   "es": "Te despiertas... pero no puedes moverte. Ni siquiera un dedo.",
+   "fr": "Vous vous réveillez... mais vous ne pouvez pas bouger. Pas même un doigt."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's called sleep paralysis. In dream sleep, your brain switches off your muscles, so you don't act out your dreams.",
+     "de": "Das nennt man Schlafparalyse. Im Traumschlaf schaltet dein Gehirn deine Muskeln ab, damit du deine Träume nicht auslebst.",
+     "es": "Se llama parálisis del sueño. Durante el sueño con sueños, tu cerebro apaga tus músculos para que no representes lo que sueñas.",
+     "fr": "Cela s'appelle la paralysie du sommeil. Pendant le sommeil des rêves, votre cerveau coupe vos muscles pour que vous ne viviez pas vos rêves.",
+     "cap": "Your brain *switches off* your muscles."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Sometimes you wake up before the switch turns back on.",
+     "de": "Manchmal wachst du auf, bevor der Schalter wieder umgelegt ist.",
+     "es": "A veces te despiertas antes de que el interruptor vuelva a encenderse.",
+     "fr": "Parfois, vous vous réveillez avant que l'interrupteur ne se rallume.",
+     "cap": "Before the *switch* turns back on."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And your dreaming brain can still paint things into the room: a shadow, a figure, pressure on your chest.",
+     "de": "Und dein träumendes Gehirn malt noch Dinge in den Raum: einen Schatten, eine Gestalt, Druck auf der Brust.",
+     "es": "Y tu cerebro aún soñando puede pintar cosas en la habitación: una sombra, una figura, presión en el pecho.",
+     "fr": "Et votre cerveau qui rêve encore peut peindre des choses dans la pièce : une ombre, une silhouette, une pression sur la poitrine.",
+     "cap": "A *shadow* in the room."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "For centuries, people blamed demons. Many think this famous painting from seventeen eighty-one shows exactly that.",
+     "de": "Jahrhundertelang machte man Dämonen dafür verantwortlich. Viele glauben, dieses berühmte Gemälde von 1781 zeigt genau das.",
+     "es": "Durante siglos se culpó a los demonios. Muchos creen que este famoso cuadro de 1781 muestra justo eso.",
+     "fr": "Pendant des siècles, on a accusé les démons. Beaucoup pensent que ce célèbre tableau de 1781 montre exactement cela.",
+     "cap": "Painted in *1781.*",
+     "show": "For centuries, people blamed demons. Many think this famous painting from 1781 ~ shows exactly that."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "About eight percent of people experience it at least once. Among students, almost three in ten.",
+     "de": "Etwa acht Prozent der Menschen erleben es mindestens einmal. Unter Studierenden fast drei von zehn.",
+     "es": "Alrededor del ocho por ciento de las personas lo vive al menos una vez. Entre estudiantes, casi tres de cada diez.",
+     "fr": "Environ huit pour cent des gens la vivent au moins une fois. Chez les étudiants, presque trois sur dix.",
+     "cap": "About *8%* of people.",
+     "show": "About 8% ~ of people experience it at least once. Among students, almost 3 in 10."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's scary, but harmless, and it passes within minutes. Regular sleep and less stress make it rarer.",
+     "de": "Es ist gruselig, aber harmlos, und nach wenigen Minuten vorbei. Regelmäßiger Schlaf und weniger Stress machen es seltener.",
+     "es": "Da miedo, pero es inofensivo y pasa en pocos minutos. Dormir con regularidad y menos estrés lo hacen menos frecuente.",
+     "fr": "C'est effrayant, mais sans danger, et ça passe en quelques minutes. Un sommeil régulier et moins de stress la rendent plus rare.",
+     "cap": "Scary, but *harmless.*"
+    },
+    {
+     "at": "0.15",
+     "text": "Has this ever happened to you? Comment yes or no, and subscribe.",
+     "cta": true,
+     "de": "Ist dir das schon mal passiert? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Te ha pasado alguna vez? Comenta sí o no, y suscríbete.",
+     "fr": "Cela vous est-il déjà arrivé ? Commentez oui ou non, et abonnez-vous !"
+    }
+   ]
+  }
+ ],
+ "photos": []
+}

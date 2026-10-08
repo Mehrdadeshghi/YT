@@ -1,0 +1,164 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "zap",
+  "think",
+  "check",
+  "lol",
+  "fire",
+  "warning",
+  "starstruck",
+  "cold",
+  "skull"
+ ],
+ "ep": 126,
+ "series": "BODY FACTS #8",
+ "prog": 3,
+ "title": "Semmelweis: the doctor who discovered hand washing",
+ "hook": [
+  "HE SAID: WASH YOUR HANDS.",
+  "THEY LOCKED HIM AWAY."
+ ],
+ "cta": {
+  "q": "Do you wash for 20 seconds?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "source": "https://en.wikipedia.org/wiki/Ignaz_Semmelweis",
+ "scripts": [
+  "tech.js"
+ ],
+ "voice_style": "explainer",
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "medical": true,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "He told doctors to wash their hands... and they locked him away.",
+   "de": "Er sagte Ärzten, sie sollen sich die Hände waschen... und sie sperrten ihn weg.",
+   "es": "Pidió a los médicos que se lavaran las manos... y lo encerraron.",
+   "fr": "Il a demandé aux médecins de se laver les mains... et on l'a enfermé."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Vienna, eighteen forty-seven. In one maternity ward, many young mothers were dying of childbed fever.",
+     "de": "Wien, 1847. Auf einer Geburtsstation starben viele junge Mütter am Kindbettfieber.",
+     "es": "Viena, 1847. En una sala de maternidad morían muchas madres jóvenes de fiebre puerperal.",
+     "fr": "Vienne, 1847. Dans une maternité, beaucoup de jeunes mères mouraient de la fièvre puerpérale.",
+     "cap": "*Childbed* fever.",
+     "show": "Vienna, 1847. ~ In one maternity ward, many young mothers were dying of childbed fever."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Doctor Ignaz Semmelweis noticed something: the doctors came straight from autopsies to deliver babies.",
+     "de": "Doktor Ignaz Semmelweis fiel etwas auf: Die Ärzte kamen direkt aus der Leichenhalle zur Geburt.",
+     "es": "El doctor Ignaz Semmelweis se dio cuenta de algo: los médicos venían directamente de las autopsias a atender partos.",
+     "fr": "Le docteur Ignaz Semmelweis remarqua une chose : les médecins venaient directement des autopsies pour faire accoucher.",
+     "cap": "Straight from *autopsies.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So he made them wash their hands with chlorinated lime. Deaths fell from eighteen percent in April to about one percent in July.",
+     "de": "Also ließ er sie die Hände mit Chlorkalk waschen. Die Sterblichkeit fiel von achtzehn Prozent im April auf etwa ein Prozent im Juli.",
+     "es": "Así que les hizo lavarse las manos con cal clorada. Las muertes bajaron del dieciocho por ciento en abril a cerca del uno por ciento en julio.",
+     "fr": "Il leur fit donc laver les mains au chlorure de chaux. Les décès passèrent de dix-huit pour cent en avril à environ un pour cent en juillet.",
+     "cap": "*18%* → *1%*",
+     "show": "So he made them wash their hands with chlorinated lime. Deaths fell from 18% ~ in April to about 1% ~ in July."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But many colleagues mocked him. A gentleman's hands, unclean?",
+     "de": "Aber viele Kollegen verspotteten ihn. Die Hände eines Gentlemans, unsauber?",
+     "es": "Pero muchos colegas se burlaron de él. ¿Las manos de un caballero, sucias?",
+     "fr": "Mais beaucoup de collègues se moquèrent de lui. Les mains d'un gentleman, sales ?",
+     "cap": "They *mocked* him."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "He died in an asylum in eighteen sixty-five. Only later did germ theory prove him right.",
+     "de": "Er starb 1865 in einer Anstalt. Erst später bewies die Keimtheorie, dass er recht hatte.",
+     "es": "Murió en un manicomio en 1865. Solo más tarde la teoría de los gérmenes le dio la razón.",
+     "fr": "Il mourut dans un asile en 1865. Ce n'est que plus tard que la théorie des germes lui donna raison.",
+     "cap": "Proven *right.*",
+     "show": "He died in an asylum in 1865. ~ Only later did germ theory prove him right."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Today: wash your hands with soap for twenty seconds. That's about two rounds of Happy Birthday.",
+     "de": "Heute gilt: Hände zwanzig Sekunden mit Seife waschen. Das ist etwa zweimal Happy Birthday.",
+     "es": "Hoy: lávate las manos con jabón durante veinte segundos. Son unas dos veces Cumpleaños feliz.",
+     "fr": "Aujourd'hui : lavez-vous les mains au savon pendant vingt secondes. C'est environ deux fois Joyeux anniversaire.",
+     "cap": "*20 seconds.*",
+     "show": "Today: wash your hands with soap for 20 seconds. That's about two rounds of Happy Birthday."
+    },
+    {
+     "at": "0.15",
+     "text": "Do you wash for twenty seconds? Comment yes or no, and subscribe.",
+     "cta": true,
+     "de": "Wäschst du zwanzig Sekunden lang? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Te lavas veinte segundos? Comenta sí o no, y suscríbete.",
+     "fr": "Vous lavez-vous vingt secondes ? Commentez oui ou non, et abonnez-vous !"
+    }
+   ]
+  }
+ ],
+ "photos": []
+}

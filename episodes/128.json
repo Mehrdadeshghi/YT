@@ -1,0 +1,160 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "zap",
+  "think",
+  "check",
+  "lol",
+  "fire",
+  "warning",
+  "starstruck",
+  "cold",
+  "skull"
+ ],
+ "ep": 128,
+ "series": "BODY FACTS #10",
+ "prog": 3,
+ "title": "Heart attack signs in women",
+ "hook": [
+  "HEART ATTACK SIGNS",
+  "CAN LOOK DIFFERENT."
+ ],
+ "cta": {
+  "q": "Did you know this?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "warning"
+ },
+ "source": "https://www.northfieldhospital.org/news/heart-attack-symptoms-women",
+ "scripts": [
+  "tech.js"
+ ],
+ "voice_style": "explainer",
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "medical": true,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "A heart attack doesn't always look like in the movies. Especially in women.",
+   "de": "Ein Herzinfarkt sieht nicht immer aus wie im Film. Besonders bei Frauen.",
+   "es": "Un infarto no siempre se ve como en las películas. Sobre todo en las mujeres.",
+   "fr": "Une crise cardiaque ne ressemble pas toujours à celle des films. Surtout chez les femmes."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The classic sign is chest pain or pressure. That's still the most common sign, in men and in women.",
+     "de": "Das klassische Zeichen ist Schmerz oder Druck in der Brust. Das ist bei Männern und Frauen immer noch das häufigste Zeichen.",
+     "es": "La señal clásica es dolor u opresión en el pecho. Sigue siendo la más común, en hombres y en mujeres.",
+     "fr": "Le signe classique est une douleur ou une pression dans la poitrine. C'est toujours le plus fréquent, chez les hommes comme chez les femmes.",
+     "cap": "*Chest* pain."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But women more often get other signs: shortness of breath, nausea, and pain in the back, jaw or arm.",
+     "de": "Aber Frauen haben öfter andere Zeichen: Atemnot, Übelkeit und Schmerzen in Rücken, Kiefer oder Arm.",
+     "es": "Pero las mujeres tienen más a menudo otras señales: falta de aire, náuseas y dolor en la espalda, la mandíbula o el brazo.",
+     "fr": "Mais les femmes ont plus souvent d'autres signes : essoufflement, nausées et douleur dans le dos, la mâchoire ou le bras.",
+     "cap": "*Back*, *jaw*, *arm.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Some feel unusually tired or anxious, or break out in a cold sweat.",
+     "de": "Manche fühlen sich ungewöhnlich müde oder ängstlich oder bekommen kalten Schweiß.",
+     "es": "Algunas se sienten inusualmente cansadas o ansiosas, o tienen sudor frío.",
+     "fr": "Certaines se sentent anormalement fatiguées ou anxieuses, ou ont des sueurs froides.",
+     "cap": "Cold *sweat.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "These signs are easy to brush off as stress or an upset stomach.",
+     "de": "Diese Zeichen tut man leicht als Stress oder Magenverstimmung ab.",
+     "es": "Es fácil confundir estas señales con estrés o un malestar de estómago.",
+     "fr": "On peut facilement les prendre pour du stress ou une indigestion.",
+     "cap": "Easy to *miss.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "If you notice them, don't drive yourself. Call emergency services right away.",
+     "de": "Wenn du sie bemerkst, fahr nicht selbst. Ruf sofort den Notruf.",
+     "es": "Si las notas, no conduzcas tú. Llama a emergencias enseguida.",
+     "fr": "Si vous les remarquez, ne conduisez pas vous-même. Appelez immédiatement les secours.",
+     "cap": "*Call* right away."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Share this with the women you love.",
+     "de": "Teil das mit den Frauen, die dir wichtig sind.",
+     "es": "Comparte esto con las mujeres que quieres.",
+     "fr": "Partagez ceci avec les femmes que vous aimez.",
+     "cap": "*Share* this."
+    },
+    {
+     "at": "0.15",
+     "text": "Did you know this? Comment yes or no, and subscribe.",
+     "cta": true,
+     "de": "Wusstest du das? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Lo sabías? Comenta sí o no, y suscríbete.",
+     "fr": "Le saviez-vous ? Commentez oui ou non, et abonnez-vous !"
+    }
+   ]
+  }
+ ],
+ "photos": []
+}

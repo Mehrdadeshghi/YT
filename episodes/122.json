@@ -1,0 +1,160 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "zap",
+  "think",
+  "check",
+  "lol",
+  "fire",
+  "warning",
+  "starstruck",
+  "cold",
+  "skull"
+ ],
+ "ep": 122,
+ "series": "BODY FACTS #4",
+ "prog": 3,
+ "title": "Why a migraine is not just a headache",
+ "hook": [
+  "A MIGRAINE IS NOT",
+  "JUST A HEADACHE."
+ ],
+ "cta": {
+  "q": "Do you get migraines?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "source": "https://www.who.int/news-room/fact-sheets/detail/headache-disorders",
+ "scripts": [
+  "tech.js"
+ ],
+ "voice_style": "explainer",
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "medical": true,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "A migraine is not just a bad headache.",
+   "de": "Eine Migräne ist nicht einfach starkes Kopfweh.",
+   "es": "Una migraña no es solo un dolor de cabeza fuerte.",
+   "fr": "Une migraine, ce n'est pas juste un gros mal de tête."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "About one in seven people worldwide have migraines. Women around three times more often than men.",
+     "de": "Etwa jeder siebte Mensch weltweit hat Migräne. Frauen etwa dreimal so oft wie Männer.",
+     "es": "Alrededor de una de cada siete personas en el mundo tiene migraña. Las mujeres, unas tres veces más que los hombres.",
+     "fr": "Environ une personne sur sept dans le monde souffre de migraine. Les femmes environ trois fois plus que les hommes.",
+     "cap": "*1 in 7* people."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Some see an aura first: flickering zigzag lines that slowly spread across their vision.",
+     "de": "Manche sehen zuerst eine Aura: flimmernde Zickzacklinien, die sich langsam im Sichtfeld ausbreiten.",
+     "es": "Algunas personas ven primero un aura: líneas en zigzag que parpadean y se extienden poco a poco por la vista.",
+     "fr": "Certains voient d'abord une aura : des lignes en zigzag qui scintillent et s'étendent lentement dans le champ de vision.",
+     "cap": "Flickering *zigzags.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Scientists link the aura to a slow wave of electrical activity creeping across the brain, just a few millimeters per minute.",
+     "de": "Forscher verbinden die Aura mit einer langsamen Welle elektrischer Aktivität, die über das Gehirn kriecht, nur wenige Millimeter pro Minute.",
+     "es": "Los científicos relacionan el aura con una onda lenta de actividad eléctrica que avanza por el cerebro, solo unos milímetros por minuto.",
+     "fr": "Les scientifiques relient l'aura à une onde lente d'activité électrique qui rampe sur le cerveau, à quelques millimètres par minute seulement.",
+     "cap": "A *slow wave* in the brain."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then the pain often hits one side of the head, with nausea and sensitivity to light and sound.",
+     "de": "Dann trifft der Schmerz oft eine Kopfseite, mit Übelkeit und Empfindlichkeit gegen Licht und Geräusche.",
+     "es": "Luego el dolor suele golpear un lado de la cabeza, con náuseas y sensibilidad a la luz y al sonido.",
+     "fr": "Puis la douleur frappe souvent un côté de la tête, avec des nausées et une sensibilité à la lumière et au bruit.",
+     "cap": "*Light* and *sound* hurt."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Tip: keep a migraine diary. Sleep, stress, skipped meals... it helps you find your triggers.",
+     "de": "Tipp: Führ ein Migräne-Tagebuch. Schlaf, Stress, ausgelassene Mahlzeiten... so findest du deine Auslöser.",
+     "es": "Consejo: lleva un diario de migrañas. Sueño, estrés, comidas saltadas... te ayuda a encontrar tus desencadenantes.",
+     "fr": "Astuce : tenez un journal de vos migraines. Sommeil, stress, repas sautés... cela aide à trouver vos déclencheurs.",
+     "cap": "Find your *triggers.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And if you need painkillers very often, talk to a doctor. Taking them too often can make headaches worse.",
+     "de": "Und wenn du sehr oft Schmerzmittel brauchst, sprich mit einem Arzt. Zu häufige Einnahme kann Kopfschmerzen verschlimmern.",
+     "es": "Y si necesitas analgésicos muy a menudo, habla con un médico. Tomarlos demasiado puede empeorar los dolores de cabeza.",
+     "fr": "Et si vous avez très souvent besoin d'antidouleurs, parlez-en à un médecin. En prendre trop souvent peut aggraver les maux de tête.",
+     "cap": "Talk to a *doctor.*"
+    },
+    {
+     "at": "0.15",
+     "text": "Do you get migraines? Comment yes or no, and subscribe.",
+     "cta": true,
+     "de": "Hast du Migräne? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Tienes migrañas? Comenta sí o no, y suscríbete.",
+     "fr": "Avez-vous des migraines ? Commentez oui ou non, et abonnez-vous !"
+    }
+   ]
+  }
+ ],
+ "photos": []
+}

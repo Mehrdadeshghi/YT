@@ -1,0 +1,160 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "lottie": [
+  "mindblown",
+  "eyes",
+  "zap",
+  "think",
+  "check",
+  "lol",
+  "fire",
+  "warning",
+  "starstruck",
+  "cold",
+  "skull"
+ ],
+ "ep": 125,
+ "series": "BODY FACTS #7",
+ "prog": 3,
+ "title": "Stop cleaning your ears with cotton swabs",
+ "hook": [
+  "STOP CLEANING",
+  "YOUR EARS."
+ ],
+ "cta": {
+  "q": "Do you use cotton swabs?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "eyes"
+ },
+ "source": "https://www.entnet.org/resource/aao-hnsf-updated-cpg-earwax-press-release/",
+ "scripts": [
+  "tech.js"
+ ],
+ "voice_style": "explainer",
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "medical": true,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Stop cleaning your ears with cotton swabs.",
+   "de": "Hör auf, deine Ohren mit Wattestäbchen zu putzen.",
+   "es": "Deja de limpiarte los oídos con bastoncillos.",
+   "fr": "Arrêtez de vous nettoyer les oreilles avec des cotons-tiges."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Earwax isn't dirt. It cleans, protects and oils your ear canal, and it traps dust.",
+     "de": "Ohrenschmalz ist kein Dreck. Es reinigt, schützt und pflegt deinen Gehörgang und fängt Staub ab.",
+     "es": "La cera no es suciedad. Limpia, protege y lubrica tu conducto auditivo, y atrapa el polvo.",
+     "fr": "Le cérumen n'est pas de la saleté. Il nettoie, protège et lubrifie votre conduit auditif, et piège la poussière.",
+     "cap": "It *protects* your ear."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Your ears clean themselves. When you chew and talk, your jaw slowly moves old wax outward.",
+     "de": "Deine Ohren reinigen sich selbst. Beim Kauen und Sprechen schiebt dein Kiefer altes Ohrenschmalz langsam nach außen.",
+     "es": "Tus oídos se limpian solos. Al masticar y hablar, la mandíbula empuja poco a poco la cera vieja hacia fuera.",
+     "fr": "Vos oreilles se nettoient toutes seules. Quand vous mâchez et parlez, la mâchoire pousse lentement le vieux cérumen vers l'extérieur.",
+     "cap": "Your *jaw* moves it out."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "A cotton swab often pushes the wax deeper, and it can even hurt your eardrum.",
+     "de": "Ein Wattestäbchen schiebt das Schmalz oft tiefer hinein und kann sogar dein Trommelfell verletzen.",
+     "es": "Un bastoncillo suele empujar la cera más adentro, e incluso puede dañar el tímpano.",
+     "fr": "Un coton-tige pousse souvent le cérumen plus loin, et peut même blesser le tympan.",
+     "cap": "Pushed *deeper.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Ear candles? Experts say there's no evidence they work, and they can injure your ear.",
+     "de": "Ohrkerzen? Fachleute sagen, es gibt keinen Beleg, dass sie wirken, und sie können das Ohr verletzen.",
+     "es": "¿Velas para los oídos? Los expertos dicen que no hay pruebas de que funcionen, y pueden lesionar el oído.",
+     "fr": "Les bougies d'oreille ? Les experts disent qu'aucune preuve ne montre qu'elles marchent, et elles peuvent blesser l'oreille.",
+     "cap": "No *evidence.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Just clean the outer ear with a washcloth.",
+     "de": "Mach einfach nur das äußere Ohr mit einem Waschlappen sauber.",
+     "es": "Limpia solo la parte externa de la oreja con una toalla.",
+     "fr": "Nettoyez simplement l'extérieur de l'oreille avec un gant de toilette.",
+     "cap": "Only the *outer* ear."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Hearing worse, ear pain, or a blocked feeling? See a doctor.",
+     "de": "Du hörst schlechter, hast Ohrenschmerzen oder ein Druckgefühl? Geh zum Arzt.",
+     "es": "¿Oyes peor, te duele el oído o lo notas tapado? Ve al médico.",
+     "fr": "Vous entendez moins bien, avez mal à l'oreille ou l'oreille bouchée ? Consultez un médecin.",
+     "cap": "See a *doctor.*"
+    },
+    {
+     "at": "0.15",
+     "text": "Do you use cotton swabs? Comment yes or no, and subscribe.",
+     "cta": true,
+     "de": "Benutzt du Wattestäbchen? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Usas bastoncillos? Comenta sí o no, y suscríbete.",
+     "fr": "Utilisez-vous des cotons-tiges ? Commentez oui ou non, et abonnez-vous !"
+    }
+   ]
+  }
+ ],
+ "photos": []
+}
