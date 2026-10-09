@@ -60,6 +60,12 @@ jobs:
         env: { VOICE_KEY: "${{ secrets.VOICE_KEY }}" }
         run: |
           if [ -n "$VOICE_KEY" ] && [ -f assets/voice/mehrdad.wav.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -in assets/voice/mehrdad.wav.enc -out assets/voice/mehrdad.wav -pass env:VOICE_KEY && echo "voice reference ready"; else echo "no VOICE_KEY secret"; fi
+      - name: Restore fetched media (photos-N releases listed in media.txt; avoids Wikimedia rate limits)
+        run: |
+          for t in $(grep -v '^#' media.txt); do
+            curl -sSLf -o /tmp/m.zip "https://github.com/${{ github.repository }}/releases/download/$t/photos.zip" && unzip -oq /tmp/m.zip -d . && echo "restored $t" || echo "could not restore $t"
+          done
+          ls assets/photos | wc -l
       - name: Build
         run: scripts/build.sh ${{ steps.eps.outputs.list }}
       - name: Publish release

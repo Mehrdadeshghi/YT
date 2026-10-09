@@ -108,9 +108,12 @@ def fetch_audio(ep, spec, credits):
 
 os.makedirs(OUT, exist_ok=True)
 for ep in sys.argv[1:]:
-    E = json.load(open(f"episodes/{ep}.json")); credits = {}
+    E = json.load(open(f"episodes/{ep}.json")); cf = f"{OUT}/{ep}.credits.json"
+    credits = json.load(open(cf)) if os.path.exists(cf) else {}     # media restored from earlier photos-N releases (media.txt) is kept
     print(f"== {ep} {E.get('title')}")
     for spec in E.get("photos", []):
+        have = f"assets/music/{ep}_{spec['id']}.wav" if spec.get("audio") else f"assets/clips/{ep}_{spec['id']}/0001.jpg" if spec.get("video") else f"{OUT}/{ep}_{spec['id']}.jpg"
+        if spec["id"] in credits and os.path.exists(have): print(f"   have {have}"); continue
         try: fetch_audio(ep, spec, credits) if spec.get("audio") else fetch_video(ep, spec, credits) if spec.get("video") else fetch(ep, spec, credits)
         except Exception as e: print("   error", spec, e)
     json.dump(credits, open(f"{OUT}/{ep}.credits.json", "w"), indent=1, ensure_ascii=False)

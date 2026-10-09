@@ -1,0 +1,7 @@
+# photos-N releases whose photos.zip is unpacked before rendering (oldest first, newer overrides)
+photos-32
+photos-33
+photos-35
+photos-36
+photos-37
+photos-38
