@@ -19,6 +19,7 @@ E = json.load(open(f'episodes/{ep}.json'))
 segs = list(E.get('vo_open', [])) + [v for sc in E['scenes'] for v in sc.get('vo', [])]
 VOICES = {'es': ('ef_dora', 'es'), 'en': ('af_heart', 'en-us'), 'de': ('thorsten', 'de'), 'fr': ('ff_siwis', 'fr-fr')}
 langs = [L for L in VOICES if L != E.get('lang', 'en') and all(s.get(L) for s in segs)]
+if os.environ.get('DUB_LANGS'): langs = [L for L in langs if L in os.environ['DUB_LANGS'].split(',')]   # e.g. DUB_LANGS=fr: only add one missing track
 if not langs: print(f'{ep}: no dub texts on every segment, skipping'); sys.exit(0)
 src = f'out/ep{ep}'
 M0 = json.load(open(f'{src}/cues.json'))
