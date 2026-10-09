@@ -8,10 +8,14 @@ on:
       episodes:
         description: "Episodes to render, e.g. 020 022"
         required: true
+      fps:
+        description: "Frame rate (60 = house standard, 30 = about twice as fast)"
+        required: false
+        default: "60"
 permissions:
   contents: write
 concurrency:
-  group: render
+  group: render-${{ github.event.inputs.episodes || 'queue' }}   # separate dispatches run in parallel
   cancel-in-progress: false
 jobs:
   render:
@@ -67,6 +71,7 @@ jobs:
           done
           ls assets/photos | wc -l
       - name: Build
+        env: { FPS: "${{ github.event.inputs.fps || '60' }}" }
         run: scripts/build.sh ${{ steps.eps.outputs.list }}
       - name: Publish release
         env: { GH_TOKEN: "${{ github.token }}" }
