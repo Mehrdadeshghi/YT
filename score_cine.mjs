@@ -51,7 +51,8 @@ for (const c of META.cues.filter((c) => c.type === 'clip' && c.p)) {
   try { const b = readFileSync(new URL(`./assets/music/${EPN}_${c.p}.wav`, import.meta.url)); let o = 12, data = null, ch = 2;
     while (o < b.length - 8) { const id = b.toString('ascii', o, o + 4), sz = b.readUInt32LE(o + 4); if (id === 'fmt ') ch = b.readUInt16LE(o + 10);
       if (id === 'data') { data = b.subarray(o + 8, o + 8 + sz); break; } o += 8 + sz + (sz % 2); }
-    const s0 = Math.floor(c.t * SR), n = Math.min(N - s0, data.length / (2 * ch)), g = c.gain ?? 1, fd = SR * 0.25;
+    const pe = ((JSON.parse(readFileSync(new URL(`./episodes/${EPN}.json`, import.meta.url), 'utf8')).photos) || []).find((p) => p.id === c.p) || {};
+    const s0 = Math.floor(c.t * SR), n = Math.min(N - s0, data.length / (2 * ch), pe.play ? Math.floor(pe.play * SR) : 1e12), g = c.gain ?? 1, fd = SR * 0.25;
     for (let i = -Math.floor(fd); i < n + fd; i++) { const k = s0 + i; if (k < 0 || k >= N) continue; const d = i < 0 ? -i / fd : i > n ? (i - n) / fd : 0; L[k] *= 0.15 + 0.85 * Math.min(1, d); R[k] *= 0.15 + 0.85 * Math.min(1, d); }
     for (let i = 0; i < n; i++) { const env = Math.min(1, i / (SR * 0.03), (n - i) / (SR * 0.3)) * g; L[s0 + i] += data.readInt16LE(i * 2 * ch) / 32768 * env; R[s0 + i] += data.readInt16LE((i * ch + ch - 1) * 2) / 32768 * env; }
     console.log('clip', c.p, n / SR, 's'); } catch (e) { console.log('clip missing', c.p); } }

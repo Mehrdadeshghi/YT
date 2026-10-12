@@ -265,7 +265,8 @@ function build(ep, voice) {
   let t = openDur;
   ep.scenes.forEach((sc, i) => {
     const vo = voPlace(sc.vo, V.scenes[i]), slow = Math.max(sc.dur, ceilHalf(vo.at(-1).end + 0.3)), from = t;
-    const dur = ep.tight ? Math.max(1.6, ceilQ(vo.at(-1).end - PRE + (ep.tail ?? 0.2))) : slow, warp = ep.tight ? Math.min(1.7, Math.max(1, (slow - PRE) / dur)) : 1;
+    const dur = ep.tight ? Math.max(1.6, ceilQ(vo.at(-1).end - PRE + (sc.hold ?? ep.tail ?? 0.2))) : slow,   // sc.hold: keep the scene running (e.g. to let a sound clip play)
+          warp = ep.tight ? Math.min(1.7, Math.max(1, (slow - PRE) / dur)) : 1;
     vo.forEach((v) => cue(from + v.at - PRE, 'vo', 1, v.file));
     const at = wordClock(vo, (x) => PRE + (x - PRE) * warp); AT = at;
     const K = (e, ty, gn, p) => cue(from + (e - PRE) / warp, ty, gn, p), vis = VIS[sc.vis ?? i](K, { vo });

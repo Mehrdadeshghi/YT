@@ -55,7 +55,7 @@ ep(ep=130, series='ART SECRETS #2', title="Bosch's 500-year-old butt music", tit
    photos=[('garden', 'File:El jardín de las Delicias, de El Bosco.jpg'), ('hell', 'File:Hieronymus Bosch - The Garden of Earthly Delights - Hell.jpg'),
            ('prince', 'File:Bosch the Prince of Hell with a cauldron on his head.JPG')],
    music=('File:Rafael Krux - Fantasy Theme (cc-by) (filmmusic).mp3', 0, 0.45),
-   extra_audio=[('butt', 'File:Butt Music - Hieronymus Bosch (Lute).opus', 0, 9)],
+   extra_audio=[('butt', 'File:Butt Music - Hieronymus Bosch (Lute).opus', 0, 9)], hold={4: 5.6},
    segs=[(-1, 0, "Someone painted sheet music on a man's butt. Five hundred years ago.", 'Jemand hat Noten auf den Hintern eines Mannes gemalt. Vor fünfhundert Jahren.',
           'Alguien pintó una partitura en el trasero de un hombre. Hace quinientos años.', "Quelqu'un a peint une partition sur les fesses d'un homme. Il y a cinq cents ans.", 'Sheet music on a *butt*.'),
          (0, 0, 'This is The Garden of Earthly Delights by Hieronymus Bosch, painted between 1490 and 1510. Today it hangs in the Prado in Madrid.',
@@ -356,11 +356,11 @@ ep(ep=138, series='COLOR STORIES #3', title='The blue worth as much as gold', ti
          (5, 1, 'Was it worth its weight in gold?', 'War es sein Gewicht in Gold wert?', '¿Valía su peso en oro?', 'Il valait son pesant d\'or ?', None)])
 
 for E0 in EPS:
-    E = dict(BASE); E.update({k: v for k, v in E0.items() if k not in ('photos', 'music', 'segs', 'extra_audio')})
+    E = dict(BASE); E.update({k: v for k, v in E0.items() if k not in ('photos', 'music', 'segs', 'extra_audio', 'hold')})
     E['ep'] = E0['ep']; E['cta'] = dict(E0['cta'], emoji='think')
     E['photos'] = [{'id': i, 'file': f} for i, f in E0['photos']]
     m = E0['music']; E['photos'].insert(0, {'id': 'music', 'audio': m[0], 'from': m[1], 'len': 60, 'gain': m[2]})
-    for i, f, fr, ln in E0.get('extra_audio', []): E['photos'].append({'id': i, 'audio': f, 'from': fr, 'len': ln})
+    for i, f, fr, ln in E0.get('extra_audio', []): E['photos'].append({'id': i, 'audio': f, 'from': fr, 'len': ln, 'play': 5.2})
     E['vo_open'] = []; E['scenes'] = [{'dur': 1.6, 'vo': []} for _ in range(6)]
     for sc, h, en, de, es, fr, cap in E0['segs']:
         seg = {'text': en, 'de': de, 'es': es, 'fr': fr}
@@ -380,6 +380,7 @@ for E0 in EPS:
         elif h: E['scenes'][sc]['host'] = True
         if not E['scenes'][sc]['vo']: seg['at'] = 0.45
         E['scenes'][sc]['vo'].append(seg)
+    for i, h in E0.get('hold', {}).items(): E['scenes'][i]['hold'] = h
     json.dump(E, open(f"episodes/{E0['ep']}.json", 'w'), indent=1, ensure_ascii=False)
     words = sum(len(s[2].split()) for s in E0['segs'])
     print(E0['ep'], E0['series'], '|', E0['title'], '|', words, 'words')
