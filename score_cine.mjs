@@ -42,10 +42,12 @@ try { const E = JSON.parse(readFileSync(new URL(`./episodes/${EPN}.json`, import
     while (o < b.length - 8) { const id = b.toString('ascii', o, o + 4), sz = b.readUInt32LE(o + 4); if (id === 'fmt ') ch = b.readUInt16LE(o + 10);
       if (id === 'data') { data = b.subarray(o + 8, o + 8 + sz); break; } o += 8 + sz + (sz % 2); }
     MUSIC = { data, ch, gain: ms.gain ?? 0.55 }; } } catch (e) { MUSIC = null; }
-if (MUSIC) { const n = Math.min(N, MUSIC.data.length / (2 * MUSIC.ch)), fade = SR * 0.6;
-  for (let i = 0; i < n; i++) { const env = Math.min(1, i / (SR * 0.05), (N - i) / fade) * MUSIC.gain;
-    L[i] += MUSIC.data.readInt16LE(i * 2 * MUSIC.ch) / 32768 * env; R[i] += MUSIC.data.readInt16LE((i * MUSIC.ch + MUSIC.ch - 1) * 2) / 32768 * env; }
-  console.log('music bed', n / SR, 's'); }
+if (MUSIC) { const nm = MUSIC.data.length / (2 * MUSIC.ch), fade = SR * 0.6, XF = Math.min(SR * 3, Math.floor(nm / 4)), P = nm - XF;   // longer videos: the track loops with a 3 s crossfade
+  const ms = (j, c) => MUSIC.data.readInt16LE((j * MUSIC.ch + (c ? MUSIC.ch - 1 : 0)) * 2) / 32768;
+  for (let i = 0; i < N; i++) { const env = Math.min(1, i / (SR * 0.05), (N - i) / fade) * MUSIC.gain, k = Math.floor(i / P), pos = i - k * P;
+    let l = ms(pos, 0), r = ms(pos, 1); if (k > 0 && pos < XF) { const w = pos / XF; l = l * w + ms(pos + P, 0) * (1 - w); r = r * w + ms(pos + P, 1) * (1 - w); }
+    L[i] += l * env; R[i] += r * env; }
+  console.log('music bed', nm / SR, 's', N > nm ? `(looped to ${(N / SR).toFixed(1)} s)` : ''); }
 // "clip" cues: play another fetched audio file (ep.photos {"id", "audio"}; cue p = that id) at the cue, the bed drops under it
 for (const c of META.cues.filter((c) => c.type === 'clip' && c.p)) {
   try { const b = readFileSync(new URL(`./assets/music/${EPN}_${c.p}.wav`, import.meta.url)); let o = 12, data = null, ch = 2;
