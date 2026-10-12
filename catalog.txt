@@ -1,35 +1,27 @@
-Mesopelagic zone | Mesopelagic zone
-video: Okeanos Explorer midwater
-Diel vertical migration | Diel vertical migration
-Lanternfish | Myctophidae
-video: lanternfish
-Barreleye | Macropinna microstoma
-video: barreleye fish
-Siphonophorae | Siphonophorae
-video: siphonophore
-Bioluminescence | Bioluminescence
-video: bioluminescence deep sea
-Vampire squid | Vampyroteuthis infernalis
-video: vampire squid
-Pelican eel | Eurypharynx pelecanoides
-video: gulper eel
-Marine snow | Marine snow
-Abyssal zone | Abyssal zone
-Scotoplanes | Scotoplanes
-video: sea pig Scotoplanes
-Bathypterois | Bathypterois
-video: tripod fish
-Grimpoteuthis | Grimpoteuthis
-video: dumbo octopus
-Euplectella aspergillum | Euplectella aspergillum
-video: glass sponge Okeanos
-Hadal zone | Hadal zone
-Pseudoliparis swirei | Pseudoliparis swirei
-video: snailfish hadal
-Hirondellea gigas | Hirondellea gigas
-video: amphipods deep sea
-video: Okeanos Explorer ROV Deep Discoverer
-audio: Rafael Krux
-audio: ambient underwater
-article: Deep sea
-article: Pelagic zone
+video: Okeanos Explorer dive
+video: NOAA Ocean Exploration video
+video: Deep Discoverer
+video: ROV fish deep
+video: deep sea octopus
+video: deep sea squid
+video: jellyfish deep sea NOAA
+video: sea cucumber deep
+video: deep sea coral NOAA
+video: chimaera deep sea
+video: Nautilus ROV Hercules
+video: Ex1504
+video: Ex1605
+video: Ex1708
+video: EX2306
+image: Scotoplanes NOAA
+image: dumbo octopus NOAA
+image: Grimpoteuthis Okeanos
+image: tripod fish Bathypterois NOAA
+image: Venus flower basket Okeanos
+image: snailfish hadal
+image: Hirondellea gigas amphipod
+image: vampire squid ROV
+image: Eurypharynx pelecanoides NOAA
+image: siphonophore Okeanos
+image: Praya dubia
+image: Macropinna microstoma
