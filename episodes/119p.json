@@ -62,7 +62,8 @@
      "fr": "Quand le cœur s'arrête soudainement, chaque minute compte. La plupart des personnes qui s'effondrent hors de l'hôpital ne survivent pas.",
      "cap": "Every *minute* counts."
     }
-   ]
+   ],
+   "host": true
   },
   {
    "dur": 1.6,
@@ -90,7 +91,8 @@
      "fr": "Voici comment faire : appelez les secours. Puis placez les deux mains au milieu de la poitrine.",
      "cap": "*Middle* of the chest."
     }
-   ]
+   ],
+   "host": true
   },
   {
    "dur": 1.6,
@@ -119,7 +121,8 @@
      "fr": "C'est le rythme de Stayin' Alive des Bee Gees, environ cent quatre battements par minute.",
      "cap": "*Stayin' Alive.*"
     }
-   ]
+   ],
+   "host": true
   },
   {
    "dur": 1.6,
@@ -139,7 +142,8 @@
      "cta": true,
      "de": "Wüsstest du, was zu tun ist? Kommentier ja oder nein, und abonnier!",
      "es": "¿Sabrías qué hacer? Comenta sí o no, y suscríbete.",
-     "fr": "Sauriez-vous quoi faire ? Commentez oui ou non, et abonnez-vous !"
+     "fr": "Sauriez-vous quoi faire ? Commentez oui ou non, et abonnez-vous !",
+     "host": true
     }
    ]
   }
@@ -167,5 +171,11 @@
  ],
  "style": "pro",
  "titlePro": "This disco song can *save a life*",
- "capY": 1490
+ "capY": 1490,
+ "host": true,
+ "host_img": "assets/host/host_v1.png",
+ "photos_from": "119",
+ "subY": 1720,
+ "subEndY": 1720,
+ "openCapAt": 99
 }

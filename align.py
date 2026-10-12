@@ -20,7 +20,9 @@ norm = lambda s: re.sub(r'[^a-z0-9]', '', s.lower())
 def words(f, text):
     cache = f + '.words.json'
     if os.path.exists(cache): return json.load(open(cache))
-    segs, _ = model().transcribe(f, word_timestamps=True, language='en', beam_size=5, initial_prompt=text)
+    import subprocess, numpy as np                  # decode with ffmpeg (independent of the installed PyAV version)
+    pcm = np.frombuffer(subprocess.run(['ffmpeg', '-v', 'error', '-i', f, '-ac', '1', '-ar', '16000', '-f', 's16le', '-'], capture_output=True, check=True).stdout, np.int16).astype(np.float32) / 32768
+    segs, _ = model().transcribe(pcm, word_timestamps=True, language='en', beam_size=5, initial_prompt=text)
     heard = [(w.word.strip(), w.start, w.end) for s in segs for w in s.words]
     toks = text.replace('...', '… ').replace('…', '… ').split()
     toks = [t for t in toks if norm(t) or t == '…']

@@ -7,6 +7,7 @@ mkdir -p dist
 for e in "$@"; do
   echo "::group::episode $e"
   python3 voice.py "$e"
+  if grep -q '"host": true' "episodes/$e.json"; then SADTALKER_DIR=/opt/st/SadTalker ST_PY=/opt/st/py/bin/python python3 host.py "$e"; fi   # AI presenter lines
   SUB=$(python3 -c "import json;print(json.load(open('episodes/$e.json')).get('sub',1))")
   WIDE=$(python3 -c "import json;print('&wide=1' if json.load(open('episodes/$e.json')).get('wide') else '')")
   node render.mjs --page "cine.html?ep=$e$WIDE" --name "ep$e" --fps "${FPS:-60}" --sub "$SUB" --crf 16

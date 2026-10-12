@@ -30,9 +30,10 @@ function ptext(str, x, y, size, col = PRO.txt, o = {}) { g.save(); g.font = F.ui
 // title at the top of the first frames (hook), wraps into 2 lines
 function proTitle(t, str, y = 230, size = 66, until = 99) {
   const a = clamp(t / 0.25) * (1 - clamp((t - until) / 0.3)); if (a <= 0) return;
-  g.save(); g.font = F.ui(size, 800); const words = str.split(' '), lines = ['']; words.forEach((w) => { const tr = (lines.at(-1) + ' ' + w).trim();
-    if (g.measureText(tr.replace(/\*/g, '')).width > 900 && lines.at(-1)) lines.push(w); else lines[lines.length - 1] = tr; }); g.restore();
-  let on = false; lines.forEach((l, i) => { const s = (on ? '*' : '') + l; if ((l.match(/\*/g) || []).length % 2) on = !on; rich(s, 540, y + i * size * 1.18, size, { alpha: a }); });
+  g.save(); g.font = F.ui(size, 800); const words = str.split(' '), wd = (s) => g.measureText(s.replace(/\*/g, '')).width; let best = [str], bd = 1e9;
+  if (wd(str) > 900) for (let i = 1; i < words.length; i++) { const l1 = words.slice(0, i).join(' '), l2 = words.slice(i).join(' '), d = Math.abs(wd(l1) - wd(l2)); if (d < bd && wd(l1) < 960 && wd(l2) < 960) { bd = d; best = [l1, l2]; } }
+  g.restore(); let on = false;
+  best.forEach((l, i) => { const s = (on ? '*' : '') + l + (((l.match(/\*/g) || []).length % 2 && !on) ? '*' : ''); if ((l.match(/\*/g) || []).length % 2) on = !on; rich(s, 540, y + i * size * 1.18, size, { alpha: a }); });
 }
 // a floating card: fades + rises in at t0 (and out at o.out); fn(lt) draws in card-local coords (0,0 = top-left, clipped)
 function card(t, t0, x, y, w, h, fn, o = {}) {
@@ -70,7 +71,7 @@ function photoCard(t, t0, id, x, y, w, h, o = {}) {
     g.save(); g.globalCompositeOperation = 'soft-light'; g.fillStyle = 'rgba(20,70,90,0.55)'; g.fillRect(0, 0, w, h); g.restore();
     const gr = g.createLinearGradient(0, 0, 0, h); gr.addColorStop(0, 'rgba(6,16,21,0.35)'); gr.addColorStop(0.3, 'rgba(6,16,21,0)'); gr.addColorStop(0.75, 'rgba(6,16,21,0.05)'); gr.addColorStop(1, 'rgba(6,16,21,0.6)');
     g.fillStyle = gr; g.fillRect(0, 0, w, h);
-    if (o.label) pill(o.label, 24, 44, lt, 0.25, { size: 22, bg: 'rgba(6,16,21,0.7)', color: PRO.txt }); if (o.draw) o.draw(lt, w, h); }, { r: o.r ?? 30, out: o.out });
+    if (o.label) pill(o.label, 24, 44, lt, 0.25, { size: 22, bg: 'rgba(6,16,21,0.7)', color: PRO.txt, align: 'left' }); if (o.draw) o.draw(lt, w, h); }, { r: o.r ?? 30, out: o.out });
   return true;
 }
 // ring that marks one spot (orange highlight)
@@ -79,3 +80,16 @@ function marker(x, y, r, t, t0, col = PRO.hi) { const a = inA(t, t0, 0.35); if (
   g.fillStyle = col; g.globalAlpha *= 0.9; g.beginPath(); g.arc(x, y, 10, 0, 6.283); g.fill(); g.restore(); }
 // thin progress bar
 function pbar(x, y, w, p, col = PRO.acc, bg = PRO.dim, h = 10) { rrect(x, y, w, h, h / 2); g.fillStyle = bg; g.fill(); if (p > 0) { rrect(x, y, Math.max(h, w * clamp(p)), h, h / 2); g.fillStyle = col; g.fill(); } }
+// the AI presenter, full frame: k = voice segment index (voice order), at = when that line starts in scene time (Sc.vo[j].at).
+// Uses the real (unwarped) scene time RT so the lips stay in sync. Cards float over the chest (y ≈ 1000–1400), captions above them.
+function host(t, k, at, o = {}) {
+  const lt = RT ?? t, im = hostImg(k, Math.floor((lt - at) * 30)); if (!im) { proBg(t); return; }
+  const z = 1 + (o.zoom ?? 0.03) * clamp(lt / 8), sc = Math.max(W / im.width, H / im.height) * z, dw = im.width * sc, dh = im.height * sc;
+  g.drawImage(im, (W - dw) / 2, (H - dh) * (o.fy ?? 0.3), dw, dh);
+  const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, 'rgba(6,16,21,0.25)'); gr.addColorStop(0.35, 'rgba(6,16,21,0)'); gr.addColorStop(0.62, 'rgba(6,16,21,0.05)'); gr.addColorStop(1, 'rgba(6,16,21,0.55)');
+  g.fillStyle = gr; g.fillRect(0, 0, W, H);
+}
+// two stacked hands seen from the side, pressing down (p 0..1); arms come from above
+function pressHands(x, y, s, p, col = PRO.txt) { g.save(); g.translate(x, y + p * 34 * s); g.scale(s, s);
+  g.fillStyle = 'rgba(243,247,248,0.16)'; rrect(-26, -260, 52, 210, 26); g.fill();                            // arms
+  g.fillStyle = col; rrect(-70, -60, 140, 52, 26); g.fill(); g.fillStyle = 'rgba(243,247,248,0.7)'; rrect(-60, -98, 120, 44, 22); g.fill(); g.restore(); }

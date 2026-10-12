@@ -296,7 +296,7 @@ function drawScene(s, t, dx = 0, dy = 0) {
   let hit = 1; if (!EP_RAW.kids && EP_RAW.style !== 'pro') for (const p of PUNCH) { const d = t - p; if (d >= 0 && d < 0.5) hit = Math.max(hit, 1 + 0.07 * Math.exp(-d / 0.09) * (d < 0.03 ? d / 0.03 : 1)); }   // word punch: quick zoom on stressed words
   const k = punchIn * punchOut * hit * (1 + 0.012 * clamp(since / 6));
   g.save(); g.translate(W / 2 + dx, H / 2 + dy); g.scale(k, k); g.translate(-W / 2, -H / 2);
-  g.beginPath(); g.rect(0, 0, W, H); g.clip(); s.draw(t - s.from + s.pre); g.restore();
+  g.beginPath(); g.rect(0, 0, W, H); g.clip(); CAPY = null; s.draw(t - s.from + s.pre); g.restore();
 }
 const WHIP = 0.3, FADE = 0.5; let OFF = null;   // kids: soft crossfade (calm pacing — Lillard & Peterson 2011)
 function draw(t) {
@@ -369,7 +369,16 @@ function engage(t) {
     g.fillStyle = GOLD; g.beginPath(); const ax = 955, ay = y + 60 + bob; g.moveTo(ax - 22, ay); g.lineTo(ax + 22, ay); g.lineTo(ax, ay + 30); g.fill(); g.fillRect(ax - 7, ay - 30, 14, 32);
     g.restore(); }
 }
-window.seek = (t) => { draw(t); return true; };
+// AI presenter frames (host.py → assets/clips/<ep>_host/<k>/NNNN.jpg): loaded on demand, small LRU cache; seek waits for them
+const HOSTN = {}, HCACHE = new Map(), HPEND = []; let HOSTIMG = null, HLAST = null;
+function hostImg(k, i) {
+  const n = HOSTN[k] ? HOSTN[k].frames : 0; if (!n) return HOSTIMG; i = Math.max(0, Math.min(n - 1, i));
+  for (let j = i; j < Math.min(n, i + 4); j++) { const key = k + '/' + j; if (HCACHE.has(key)) continue;
+    const im = new Image(); im.src = `assets/clips/${EPID}_host/${k}/${String(j + 1).padStart(4, '0')}.jpg`; HCACHE.set(key, im);
+    HPEND.push(im.decode().catch(() => {})); if (HCACHE.size > 160) HCACHE.delete(HCACHE.keys().next().value); }
+  const im = HCACHE.get(k + '/' + i); if (im && im.complete && im.naturalWidth) { HLAST = im; return im; } return HLAST || HOSTIMG;
+}
+window.seek = async (t) => { draw(t); if (HPEND.length) { await Promise.all(HPEND.splice(0)); draw(t); } return true; };
 async function boot() {
   const [ep, topo, voice] = await Promise.all([fetch(`episodes/${EPID}.json`).then((r) => r.json()), fetch('lib/countries-50m.json').then((r) => r.json()),
     fetch(`episodes/${EPID}.voice.json`).then((r) => r.ok ? r.json() : null).catch(() => null)]);
@@ -380,6 +389,8 @@ async function boot() {
     im.onload = () => { PHOTOS[p.id] = im; CREDITS[p.id] = cred[p.id] ? cred[p.id].credit : ''; res(); }; im.onerror = () => res(); im.src = `assets/photos/${EPID}_${p.id}.jpg`; })));
   await Promise.all((ep.photos || []).filter((p) => p.video && cred[p.id] && cred[p.id].frames).map((p) => Promise.all(Array.from({ length: cred[p.id].frames }, (_, i) =>
     new Promise((res) => { const im = new Image(); im.onload = res; im.onerror = res; im.src = `assets/clips/${EPID}_${p.id}/${String(i + 1).padStart(4, '0')}.jpg`; (CLIPS[p.id] ||= [])[i] = im; })))));
+  if (ep.host) { Object.assign(HOSTN, await fetch(`assets/clips/${EPID}_host.json`).then((r) => r.ok ? r.json() : {}).catch(() => ({})));
+    await new Promise((res) => { const im = new Image(); im.onload = () => { HOSTIMG = im; res(); }; im.onerror = res; im.src = ep.host_img || 'assets/host/host_v1.png'; }); }
   const load = (src) => new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = src; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
   await load('cine/common.js'); if (ep.facts) await load('cine/facts.js'); if (ep.figures) await load('cine/figures.js'); for (const sc of ep.scripts || []) await load(`cine/${sc}`); if (ep.lottie) { await load('cine/lottie.js'); await lottieInit([...new Set([...ep.lottie, 'bell', 'think'])]); } if (ep.map) { await load('cine/map3d.js'); await loadEarth(EPID); MAP.init(topo); } await load(`cine/${EPID}.js`);
   if (0) await new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = `cine/${EPID}.js`; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });

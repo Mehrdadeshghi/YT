@@ -109,6 +109,11 @@ def fetch_audio(ep, spec, credits):
 os.makedirs(OUT, exist_ok=True)
 for ep in sys.argv[1:]:
     E = json.load(open(f"episodes/{ep}.json")); cf = f"{OUT}/{ep}.credits.json"
+    src = E.get("photos_from")                                       # a remake reuses another episode's media (e.g. 119p ← 119)
+    if src and os.path.exists(f"{OUT}/{src}.credits.json"):
+        import glob, shutil
+        for f in glob.glob(f"{OUT}/{src}_*.jpg") + glob.glob(f"assets/music/{src}_*.wav"): shutil.copy(f, f.replace(f"/{src}_", f"/{ep}_"))
+        shutil.copy(f"{OUT}/{src}.credits.json", cf); print(f"== {ep}: media copied from {src}")
     credits = json.load(open(cf)) if os.path.exists(cf) else {}     # media restored from earlier photos-N releases (media.txt) is kept
     print(f"== {ep} {E.get('title')}")
     for spec in E.get("photos", []):
