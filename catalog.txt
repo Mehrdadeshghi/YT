@@ -1,25 +1,22 @@
-Cardiopulmonary resuscitation | Cardiopulmonary resuscitation
-image: CPR training manikin
-image: Bee Gees
-Sleep paralysis | Sleep paralysis
-image: The Nightmare Fuseli
-Kidney stone disease | Kidney stones
-image: Big Thunder Mountain Railroad
-Migraine | Migraine
-image: migraine aura scintillating scotoma
-Vitamin D | Vitamin D
-image: winter sun low Germany
-Antibiotic | Antibiotics
-image: MRSA bacteria electron micrograph
-image: penicillin Alexander Fleming
-Earwax | Earwax
-image: otoscope ear examination
-image: cotton swabs
-Ignaz Semmelweis | Ignaz Semmelweis
-image: Vienna General Hospital Allgemeines Krankenhaus historic
-Stroke | Stroke
-image: stroke CT scan brain
-Myocardial infarction | Myocardial infarction
-image: ambulance emergency paramedics
-audio: Kevin MacLeod calm
-audio: Rafael Krux inspiring
+The Last Supper (Leonardo) | The Last Supper by Leonardo da Vinci
+image: Last Supper Leonardo door refectory Santa Maria delle Grazie
+The Night Watch | The Night Watch by Rembrandt
+image: Night Watch Rembrandt Rijksmuseum gallery
+The Scream | The Scream by Edvard Munch
+image: Scream Munch inscription pencil
+Girl with a Pearl Earring | Girl with a Pearl Earring
+image: Mauritshuis Girl with a Pearl Earring detail
+The Starry Night | The Starry Night
+image: Saint-Paul-de-Mausole asylum window
+The Great Wave off Kanagawa | The Great Wave off Kanagawa
+image: Hokusai self portrait
+Sistine Chapel ceiling | Sistine Chapel ceiling
+image: Michelangelo sonnet sketch painting ceiling
+Las Meninas | Las Meninas
+image: Velazquez self portrait Las Meninas detail mirror
+Arnolfini Portrait | Arnolfini Portrait
+image: Arnolfini Portrait mirror detail
+The Garden of Earthly Delights | The Garden of Earthly Delights
+image: Garden of Earthly Delights music butt detail
+audio: classical piano public domain
+audio: Rafael Krux
