@@ -30,6 +30,7 @@ function ptext(str, x, y, size, col = PRO.txt, o = {}) { g.save(); g.font = F.ui
 // title at the top of the first frames (hook), wraps into 2 lines
 function proTitle(t, str, y = 230, size = 66, until = 99) {
   const a = clamp(t / 0.25) * (1 - clamp((t - until) / 0.3)); if (a <= 0) return;
+  g.save(); const tb = g.createLinearGradient(0, 0, 0, y + size * 2.6); tb.addColorStop(0, `rgba(6,16,21,${0.92 * a})`); tb.addColorStop(0.75, `rgba(6,16,21,${0.75 * a})`); tb.addColorStop(1, "rgba(6,16,21,0)"); g.fillStyle = tb; g.fillRect(0, 0, W, y + size * 2.6); g.restore();
   g.save(); g.font = F.ui(size, 800); const words = str.split(' '), wd = (s) => g.measureText(s.replace(/\*/g, '')).width; let best = [str], bd = 1e9;
   if (wd(str) > 900) for (let i = 1; i < words.length; i++) { const l1 = words.slice(0, i).join(' '), l2 = words.slice(i).join(' '), d = Math.abs(wd(l1) - wd(l2)); if (d < bd && wd(l1) < 960 && wd(l2) < 960) { bd = d; best = [l1, l2]; } }
   g.restore(); let on = false;
@@ -97,3 +98,35 @@ function host(t, k, at, o = {}) {
 function pressHands(x, y, s, p, col = PRO.txt) { g.save(); g.translate(x, y + p * 34 * s); g.scale(s, s);
   g.fillStyle = 'rgba(243,247,248,0.16)'; rrect(-26, -260, 52, 210, 26); g.fill();                            // arms
   g.fillStyle = col; rrect(-70, -60, 140, 52, 26); g.fill(); g.fillStyle = 'rgba(243,247,248,0.7)'; rrect(-60, -98, 120, 44, 22); g.fill(); g.restore(); }
+
+// ================================================================ ART: paintings as the stage
+// camera over a painting: keys = [[t, u, v, z], …] (u,v = point of the image at the screen centre, 0..1; z = zoom, 1 = image width fills the frame)
+// returns P(u, v) → [x, y] on screen (for markers / spotlights), or null if the image is missing
+function camAt(t, keys) { if (t <= keys[0][0]) return keys[0].slice(1); for (let i = 1; i < keys.length; i++) if (t < keys[i][0]) {
+    const a = keys[i - 1], b = keys[i], p = ease((t - a[0]) / (b[0] - a[0])); return [lerp(a[1], b[1], p), lerp(a[2], b[2], p), Math.exp(lerp(Math.log(a[3]), Math.log(b[3]), p))]; }
+  return keys.at(-1).slice(1); }
+function art(t, id, keys, o = {}) {
+  const im = PHOTOS[id]; if (!im) return null; const [u, v, z] = camAt(t, keys), cx = o.cx ?? 540, cy = o.cy ?? 900;
+  const s = (o.w ?? W) / im.width * z, dw = im.width * s, dh = im.height * s, x = cx - u * dw, y = cy - v * dh;
+  if (o.frame !== false && (dw < W + 40 || dh < H + 40)) { g.save(); g.shadowColor = 'rgba(0,0,0,0.7)'; g.shadowBlur = 60; g.shadowOffsetY = 24; g.fillStyle = '#000'; g.fillRect(x, y, dw, dh); g.restore(); }
+  g.drawImage(im, x, y, dw, dh);
+  if (o.grade !== false) { g.save(); g.globalCompositeOperation = 'soft-light'; g.fillStyle = 'rgba(30,60,70,0.25)'; g.fillRect(Math.max(0, x), Math.max(0, y), Math.min(W, dw), Math.min(H, dh)); g.restore(); }
+  return (pu, pv) => [x + pu * dw, y + pv * dh];
+}
+// darken everything except a soft circle (the detail we talk about)
+function spotlight(t, t0, x, y, r, o = {}) { const a = inA(t, t0, 0.5) * (o.out != null ? 1 - inA(t, o.out, 0.3) : 1); if (a <= 0) return;
+  g.save(); const gr = g.createRadialGradient(x, y, r * 0.75, x, y, r * 1.35); gr.addColorStop(0, 'rgba(4,10,13,0)'); gr.addColorStop(1, `rgba(4,10,13,${0.78 * a})`);
+  g.fillStyle = gr; g.fillRect(0, 0, W, H); g.restore(); marker(x, y, r, t, t0 + 0.2, o.col || PRO.hi); }
+// a label pill with a thin leader line to a point
+function callout(t, t0, px, py, lx, ly, str, o = {}) { const a = inA(t, t0, 0.35); if (a <= 0) return;
+  g.save(); g.globalAlpha *= a; g.strokeStyle = o.col || PRO.hi; g.lineWidth = 3; g.beginPath(); g.moveTo(px, py); g.lineTo(lerp(px, lx, a), lerp(py, ly, a)); g.stroke();
+  g.fillStyle = o.col || PRO.hi; g.beginPath(); g.arc(px, py, 7, 0, 6.283); g.fill(); g.restore();
+  pill(str, lx, ly, t, t0 + 0.15, { size: o.size || 30, bg: 'rgba(6,16,21,0.88)', color: PRO.txt, edge: o.col || PRO.hi, align: o.align || 'center' }); }
+// big number / phrase in the middle of a card or the screen
+function bigText(t, t0, str, x, y, size, o = {}) { const a = inA(t, t0, 0.35); if (a <= 0) return; g.save(); g.globalAlpha *= a; g.translate(x, y + (1 - a) * 20);
+  rich(str, 0, 0, fit(str.replace(/\*/g, ''), 'ui', size, o.maxW || 940), { align: o.align || 'center', color: o.color, acc: o.acc }); g.restore(); }
+// rolling counter: from → to (formatted by fmtFn)
+function counter(t, t0, dur, from, to, x, y, size, fmtFn = (n) => Math.round(n).toLocaleString('en-US'), o = {}) { if (t < t0) return; const p = eO((t - t0) / dur), v = from * Math.pow(to / from, p);
+  bigText(t, t0, (o.pre || '') + fmtFn(p >= 1 ? to : v) + (o.post || ''), x, y, size, o); }
+// a small "REAL PHOTO / PAINTING · year" source line at the bottom of a painting shot
+function artInfo(t, t0, str, y = 1415) { pill(str, 540, y, t, t0, { size: 22, bg: 'rgba(6,16,21,0.8)', color: PRO.mute }); }

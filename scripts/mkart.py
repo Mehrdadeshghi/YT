@@ -365,7 +365,7 @@ for E0 in EPS:
     for sc, h, en, de, es, fr, cap in E0['segs']:
         seg = {'text': en, 'de': de, 'es': es, 'fr': fr}
         if cap: seg['cap'] = cap
-        if sc == -1: E['vo_open'].append(seg); continue
+        if sc == -1: seg['at'] = 0; E['vo_open'].append(seg); continue
         if sc == 5 and h:                                        # spoken call to action
             q = E0['cta']; seg.update({'cta': True, 'host': True, 'at': '0.15'})
             WM = {'YES': {'en': 'yes', 'de': 'ja', 'es': 'sí', 'fr': 'oui'}, 'NO': {'en': 'no', 'de': 'nein', 'es': 'no', 'fr': 'non'},

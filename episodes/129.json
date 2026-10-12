@@ -74,7 +74,8 @@
    "de": "In diesem Gemälde ist ein Totenkopf versteckt. Siehst du ihn?",
    "es": "En este cuadro hay una calavera escondida. ¿La ves?",
    "fr": "Il y a un crâne caché dans ce tableau. Tu le vois ?",
-   "cap": "There's a *skull* hidden in this painting."
+   "cap": "There's a *skull* hidden in this painting.",
+   "at": 0
   }
  ],
  "scenes": [

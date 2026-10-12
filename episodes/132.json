@@ -74,7 +74,8 @@
    "de": "Die Nachtwache zeigt überhaupt keine Nacht.",
    "es": "La ronda de noche no muestra la noche.",
    "fr": "La Ronde de nuit n'est pas du tout une scène de nuit.",
-   "cap": "It's *not* a night scene."
+   "cap": "It's *not* a night scene.",
+   "at": 0
   }
  ],
  "scenes": [

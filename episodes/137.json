@@ -78,7 +78,8 @@
    "de": "Dieses wunderschöne Grün hat Menschen getötet.",
    "es": "Este verde precioso mató a gente.",
    "fr": "Ce vert magnifique a tué des gens.",
-   "cap": "This green *killed* people."
+   "cap": "This green *killed* people.",
+   "at": 0
   }
  ],
  "scenes": [
