@@ -1,22 +1,30 @@
-The Last Supper (Leonardo) | The Last Supper by Leonardo da Vinci
-image: Last Supper Leonardo door refectory Santa Maria delle Grazie
-The Night Watch | The Night Watch by Rembrandt
-image: Night Watch Rembrandt Rijksmuseum gallery
-The Scream | The Scream by Edvard Munch
-image: Scream Munch inscription pencil
-Girl with a Pearl Earring | Girl with a Pearl Earring
-image: Mauritshuis Girl with a Pearl Earring detail
-The Starry Night | The Starry Night
-image: Saint-Paul-de-Mausole asylum window
-The Great Wave off Kanagawa | The Great Wave off Kanagawa
-image: Hokusai self portrait
-Sistine Chapel ceiling | Sistine Chapel ceiling
-image: Michelangelo sonnet sketch painting ceiling
-Las Meninas | Las Meninas
-image: Velazquez self portrait Las Meninas detail mirror
-Arnolfini Portrait | Arnolfini Portrait
-image: Arnolfini Portrait mirror detail
+The Ambassadors (Holbein) | The Ambassadors (Holbein)
+image: Ambassadors Holbein skull anamorphic corrected
 The Garden of Earthly Delights | The Garden of Earthly Delights
-image: Garden of Earthly Delights music butt detail
-audio: classical piano public domain
+image: Garden of Earthly Delights hell music detail
+The Last Supper (Leonardo) | The Last Supper by Leonardo da Vinci
+image: Santa Maria delle Grazie refectory Last Supper wall
+The Night Watch | The Night Watch by Rembrandt
+image: Night Watch Rijksmuseum gallery visitors
+Isabella Stewart Gardner Museum theft | Isabella Stewart Gardner Museum
+image: Storm on the Sea of Galilee Rembrandt
+image: The Concert Vermeer
+image: Isabella Stewart Gardner Museum courtyard
+Han van Meegeren | Han van Meegeren
+image: Supper at Emmaus van Meegeren
+image: van Meegeren trial 1947
+Salvator Mundi (Leonardo) | Salvator Mundi (Leonardo)
+image: Christie's auction room
+Mummy brown | Mummy brown
+image: Egyptian mummy
+image: Liberty Leading the People Delacroix
+Paris green | Paris green
+image: Scheele's green wallpaper arsenic
+image: Napoleon on his deathbed
+Ultramarine | Ultramarine
+image: lapis lazuli raw
+image: Vermeer The Milkmaid
+article: Scheele's Green
+article: Lapis lazuli
 audio: Rafael Krux
+audio: classical piano
