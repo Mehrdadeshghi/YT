@@ -62,7 +62,7 @@ jobs:
         with: { python-version: "3.10" }
       - name: Ditto (LivePortrait motion space, CPU)
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg libegl1 libgles2 libgl1
           pip install -q torch torchvision --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -1
           pip install -q librosa tqdm filetype imageio opencv-python-headless scikit-image cython imageio-ffmpeg colored onnxruntime mediapipe huggingface_hub 2>&1 | tail -2
           git clone -q --depth 1 https://github.com/antgroup/ditto-talkinghead /opt/ditto && python3 scripts/ditto_cpu.py /opt/ditto
