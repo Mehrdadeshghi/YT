@@ -160,7 +160,7 @@ function proCaptions(t, caps) {                               // pro look: one c
   const S = EP_RAW.capSize || 50, y = CAPY ?? EP_RAW.capY ?? 1490, a = clamp((t - sg.words[ch[0]].t0 + 0.08) / 0.12);
   g.save(); g.font = F.ui(S, 700); g.textAlign = 'left'; const sp = g.measureText(' ').width;
   const ws = ch.map((j) => g.measureText(sg.words[j].w).width); let tot = ws.reduce((p, q) => p + q, 0) + sp * (ch.length - 1);
-  const sc = Math.min(1, 940 / tot); g.translate(W / 2, y + (1 - a) * 10); g.scale(sc, sc); let x = -tot / 2;
+  const sc = Math.min(1, 940 / tot); g.translate(EP_RAW.capX ?? W / 2, y + (1 - a) * 10); g.scale(sc, sc); let x = -tot / 2;
   g.globalAlpha = a; g.shadowColor = 'rgba(0,0,0,0.75)'; g.shadowBlur = 18; g.shadowOffsetY = 3;
   ch.forEach((j, q) => { const wd = sg.words[j]; g.fillStyle = wd.a ? (window.PRO ? PRO.acc : GOLD) : '#FFFFFF'; g.fillText(wd.w, x, 0); x += ws[q] + sp; });
   g.restore();
@@ -350,7 +350,7 @@ function engage(t) {
   if (WIDE) { (CTA.subs || [CTA.subAt]).forEach((s) => subPill(t - s, 150, 3.2)); if (CTA.subEnd) subPill(t - CTA.subEnd, 150, 99); }
   else { subPill(t - CTA.subAt, EP_RAW.subY || 1480, 2.9); if (CTA.subEnd) subPill(t - CTA.subEnd, EP_RAW.subEndY || 1290, 99); }
   const lc = EP_RAW.noCommentCard ? -1 : t - CTA.comAt;          // kids videos: comments are off on YouTube, so no comment card                                   // ---- comment question (last scene)
-  if (lc > 0) { const s = spring(lc, 220, 18), y = (WIDE ? H - 260 : 1400) + (1 - s) * 520; g.save(); g.translate(WIDE ? (W - 860) / 2 - 70 : 0, y);
+  if (lc > 0) { const s = spring(lc, 220, 18), y = (WIDE ? H - (EP_RAW.capX ? 310 : 260) : 1400) + (1 - s) * 520; g.save(); g.translate(WIDE ? (EP_RAW.capX ?? W / 2) - 430 - 70 : 0, y);
     g.shadowColor = 'rgba(0,0,0,0.55)'; g.shadowBlur = 36; const PC = EP_RAW.style === 'pro' && window.PRO, CA = PC ? PRO.acc : GOLD, CF = PC ? PRO.txt : BG;
     rrect(70, 0, 860, 200, 34); g.fillStyle = PC ? 'rgba(17,33,40,0.97)' : 'rgba(244,238,227,0.96)'; g.fill(); g.shadowBlur = 0; if (PC) { g.lineWidth = 2; g.strokeStyle = PRO.line; g.stroke(); }
     g.fillStyle = CA; rrect(104, 28, 58, 46, 13); g.fill(); g.beginPath(); g.moveTo(118, 72); g.lineTo(112, 90); g.lineTo(138, 72); g.fill();

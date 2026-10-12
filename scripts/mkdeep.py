@@ -158,7 +158,7 @@ ROWS = [
 
 E = {'ep': 139, 'title': 'A Journey to the Bottom of the Ocean', 'wide': True, 'style': 'pro', 'look': 'cine', 'captions': True, 'wordCaps': True,
      'noOutro': True, 'transition': 'fade', 'tight': True, 'tail': 0.35, 'voice': 'narrator', 'voice_style': 'story', 'speed': 1.0, 'sub': 1,
-     'lazyClips': True, 'mood': 'deep', 'langs': ['en', 'de', 'es', 'fr'], 'scripts': ['tech.js', 'pro.js'], 'capY': 985, 'capSize': 44, 'openMin': 1.6,
+     'lazyClips': True, 'mood': 'deep', 'langs': ['en', 'de', 'es', 'fr'], 'scripts': ['tech.js', 'pro.js'], 'capY': 1010, 'capX': 820, 'capSize': 44, 'openMin': 1.6,
      'cta': {'q': 'Which animal surprised you most?', 'a': 'DUMBO', 'b': 'SNAILFISH'}, 'source': 'https://en.wikipedia.org/wiki/Deep_sea',
      'photos': [], 'vo_open': [], 'scenes': [], 'chapters': []}
 for r in ROWS:
