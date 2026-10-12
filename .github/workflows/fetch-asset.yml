@@ -1,0 +1,23 @@
+name: Fetch asset
+# Downloads a file the sandbox can't reach (e.g. a generated image) and commits it to the repo.
+on:
+  workflow_dispatch:
+    inputs:
+      url: { description: "URL to download", required: true }
+      path: { description: "Repo path to save to, e.g. assets/host/host_v1.png", required: true }
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        run: |
+          mkdir -p "$(dirname '${{ github.event.inputs.path }}')"
+          curl -sSLf -o "${{ github.event.inputs.path }}" "${{ github.event.inputs.url }}"
+          file "${{ github.event.inputs.path }}"; ls -la "${{ github.event.inputs.path }}"
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${{ github.event.inputs.path }}" && git commit -m "Fetch asset ${{ github.event.inputs.path }}" && git pull --rebase && git push
