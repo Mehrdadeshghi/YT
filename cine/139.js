@@ -85,7 +85,7 @@ VIS[17] = scene(17, 'chimaera', { rate: 0.8, label: 'Real footage · rhinochimer
 VIS[18] = scene(18, 'eel', { fit: 'contain', z0: 0.98, z1: 1.08, label: 'Real photo · pelican eel specimen (Smithsonian)', over: (t, tm) => chips(t, [[tm.mo, 'Mouth far larger than its head', PRO.acc]]), at: { mo: ['mouth', 4.0] } });
 VIS[19] = scene(19, 'eelx', { fit: 'contain', z0: 0.95, z1: 1.05, label: 'X-ray · pelican eel (Smithsonian)', over: (t, tm) => chips(t, [[tm.sw, 'Can swallow prey larger than itself', PRO.acc]]), at: { sw: ['swallow', 2.6] } });
 VIS[20] = scene(20, 'abyss', { zone: ['THE ABYSS', '4,000 – 6,000 m'], label: 'Real footage · abyssal plain · Ifremer ROV Victor 6000',
-  over: (t, tm) => chips(t, [[tm.si, '≈ 60% of Earth\'s surface'], [tm.de, '2–3 °C'], [tm.pr, 'Up to ≈ 750× surface pressure', PRO.acc]]), at: { si: ['sixty', 4.6], de: ['degrees', 7.0], pr: ['pressure', 8.6] } });
+  over: (t, tm) => chips(t, [[tm.si, '≈ 60% of Earth\'s surface'], [tm.de, '2–3 °C'], [tm.pr, '≈ 400–600× surface pressure', PRO.acc]]), at: { si: ['sixty', 4.6], de: ['degrees', 7.0], pr: ['pressure', 8.6] } });
 VIS[21] = scene(21, 'casper', { label: 'Real footage · NOAA Okeanos Explorer · Hawaii, 2016', over: (t, tm) => chips(t, [[tm.fo, 'More than 4,000 m deep', PRO.acc]]), at: { fo: ['thousand', 4.0] } });
 VIS[22] = scene(22, 'seapig', { focus: [0.5, 0.5], label: 'Real photo · sea pigs (Scotoplanes) · NOAA/MBARI' });
 VIS[23] = scene(23, 'tripod', { focus: [0.5, 0.5], label: 'Real photo · tripod fish · NOAA, 1,960 m', over: (t, tm) => chips(t, [[tm.me, 'Fin rays up to ≈ 1 m'], [tm.cu, 'Faces the current', PRO.acc]]), at: { me: ['meter', 3.4], cu: ['current', 4.8] } });
