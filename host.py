@@ -27,7 +27,7 @@ for k, ((sg, sc_host), wav) in enumerate(zip(segs, files)):
     tmp = tempfile.mkdtemp()
     cmd = [PY, 'inference.py', '--driven_audio', os.path.abspath(wav), '--source_image', IMG, '--result_dir', tmp,
            '--still', '--preprocess', 'full', '--size', '256', '--expression_scale', str(E.get('host_expr', 1.0))]
-    if os.environ.get('HOST_ENHANCE', '1') == '1': cmd += ['--enhancer', 'gfpgan']
+    if os.environ.get('HOST_ENHANCE', '1' if E.get('host_enhance') else '0') == '1': cmd += ['--enhancer', 'gfpgan']   # face enhancer: sharper but ~3x slower
     print(f'{ep} host {k}: {sg["text"][:60]}…', flush=True)
     subprocess.run(cmd, cwd=ST, check=True)
     mp4 = next(os.path.join(r, f) for r, _, fs in os.walk(tmp) for f in fs if f.endswith('.mp4'))
