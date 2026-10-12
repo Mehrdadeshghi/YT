@@ -64,7 +64,7 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg libegl1 libgles2 libgl1
           pip install -q torch torchvision --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -1
-          pip install -q librosa tqdm filetype imageio opencv-python-headless scikit-image cython imageio-ffmpeg colored onnxruntime mediapipe huggingface_hub 2>&1 | tail -2
+          pip install -q librosa tqdm filetype imageio opencv-python-headless scikit-image cython imageio-ffmpeg colored onnxruntime mediapipe huggingface_hub einops 2>&1 | tail -2
           git clone -q --depth 1 https://github.com/antgroup/ditto-talkinghead /opt/ditto && python3 scripts/ditto_cpu.py /opt/ditto
           python3 -c "from huggingface_hub import snapshot_download as s; s('digital-avatar/ditto-talkinghead', local_dir='/opt/ditto/checkpoints', allow_patterns=['ditto_cfg/v0.4_hubert_cfg_pytorch.pkl', 'ditto_pytorch/*', 'ditto_pytorch/*/*'])"
           find /opt/ditto/checkpoints -type f | head -20
