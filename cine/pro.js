@@ -93,3 +93,7 @@ function host(t, k, at, o = {}) {
   const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, 'rgba(6,16,21,0.22)'); gr.addColorStop(0.35, 'rgba(6,16,21,0)'); gr.addColorStop(0.62, 'rgba(6,16,21,0.04)'); gr.addColorStop(1, 'rgba(6,16,21,0.5)');
   g.fillStyle = gr; g.fillRect(0, 0, W, H);
 }
+// two stacked hands seen from the side, pressing down (p 0..1); arms come from above
+function pressHands(x, y, s, p, col = PRO.txt) { g.save(); g.translate(x, y + p * 34 * s); g.scale(s, s);
+  g.fillStyle = 'rgba(243,247,248,0.16)'; rrect(-26, -260, 52, 210, 26); g.fill();                            // arms
+  g.fillStyle = col; rrect(-70, -60, 140, 52, 26); g.fill(); g.fillStyle = 'rgba(243,247,248,0.7)'; rrect(-60, -98, 120, 44, 22); g.fill(); g.restore(); }
