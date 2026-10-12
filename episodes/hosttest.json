@@ -1,0 +1,14 @@
+{
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "speed": 1.3,
+ "tight": true,
+ "ep": "hosttest",
+ "title": "host test",
+ "vo_open": [
+  {
+   "text": "When someone's heart suddenly stops, every minute counts. But you can help, and it's easier than you think."
+  }
+ ],
+ "scenes": []
+}
