@@ -58,7 +58,7 @@ jobs:
       - name: "AI presenter (SadTalker, only for episodes with a host)"
         run: |
           for e in ${{ steps.eps.outputs.list }}; do grep -q '"host": true' episodes/$e.json && NEED=1; done
-          if [ -n "$NEED" ]; then sudo mkdir -p /opt/st && sudo chown $USER /opt/st && scripts/setup_host.sh /opt/st; fi
+          if [ -n "$NEED" ]; then sudo apt-get install -y -qq libegl1 libgles2 libgl1; sudo mkdir -p /opt/ditto /opt/st && sudo chown $USER /opt/ditto /opt/st && scripts/setup_ditto.sh /opt/ditto; fi
       - name: Whisper word timestamps (word-synced captions and cuts)
         run: |
           pip install -q faster-whisper 2>&1 | tail -1
