@@ -1,30 +1,8 @@
-The Ambassadors (Holbein) | The Ambassadors (Holbein)
-image: Ambassadors Holbein skull anamorphic corrected
-The Garden of Earthly Delights | The Garden of Earthly Delights
-image: Garden of Earthly Delights hell music detail
-The Last Supper (Leonardo) | The Last Supper by Leonardo da Vinci
-image: Santa Maria delle Grazie refectory Last Supper wall
-The Night Watch | The Night Watch by Rembrandt
-image: Night Watch Rijksmuseum gallery visitors
-Isabella Stewart Gardner Museum theft | Isabella Stewart Gardner Museum
-image: Storm on the Sea of Galilee Rembrandt
-image: The Concert Vermeer
-image: Isabella Stewart Gardner Museum courtyard
-Han van Meegeren | Han van Meegeren
-image: Supper at Emmaus van Meegeren
-image: van Meegeren trial 1947
-Salvator Mundi (Leonardo) | Salvator Mundi (Leonardo)
-image: Christie's auction room
-Mummy brown | Mummy brown
-image: Egyptian mummy
-image: Liberty Leading the People Delacroix
-Paris green | Paris green
-image: Scheele's green wallpaper arsenic
-image: Napoleon on his deathbed
-Ultramarine | Ultramarine
-image: lapis lazuli raw
-image: Vermeer The Milkmaid
-article: Scheele's Green
-article: Lapis lazuli
-audio: Rafael Krux
-audio: classical piano
+Death of Napoleon | Death of Napoleon
+image: Steuben death of Napoleon 1821
+image: Longwood House Saint Helena
+image: arsenic green wallpaper William Morris
+image: Vermeer Milkmaid Rijksmuseum Google Art Project
+image: van Meegeren Christ and the Adulteress
+image: Last Supper Leonardo door arch bottom detail
+image: Burne-Jones self portrait
