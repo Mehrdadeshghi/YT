@@ -124,9 +124,9 @@ function wordCaps(sg, pl) {
     return { at: pl.at, end: pl.end, words: kw, chunks: kw.map((_, j) => [j]), wc: true }; }
   const chunks = []; let cur = [], len = 0;
   words.forEach((x, k) => { cur.push(k); len += x.w.length + 1;
-    if (/[.?!:,…]["”]?$/.test(x.w) || cur.length >= 3 || len > 15 || (words[k + 1] && words[k + 1].t0 - x.t1 > 0.25)) { chunks.push(cur); cur = []; len = 0; } });
+    const PROC = EP_RAW.style === 'pro'; if (/[.?!:,…]["”]?$/.test(x.w) || cur.length >= (PROC ? 6 : 3) || len > (PROC ? 30 : 15) || (words[k + 1] && words[k + 1].t0 - x.t1 > 0.25)) { chunks.push(cur); cur = []; len = 0; } });
   if (cur.length) chunks.push(cur);
-  words.forEach((x) => { if (x.a) PUNCH.push(x.t0); });
+  if (EP_RAW.style !== 'pro') words.forEach((x) => { if (x.a) PUNCH.push(x.t0); });
   return { at: pl.at, end: pl.end, words, chunks, wc: true };
 }
 function makeCaptions(segs, placed, skip = []) {
@@ -152,7 +152,21 @@ function makeCaptions(segs, placed, skip = []) {
     return { at: pl.at, end: pl.end, words, chunks };
   }).filter(Boolean);
 }
+let CAPY = null;   // pro look: a scene may move the captions (e.g. above a card)
+function proCaptions(t, caps) {                               // pro look: one calm line, whole phrase, key words in the accent colour
+  const sg = caps.find((q) => t >= q.at - 0.05 && t <= q.end + 0.25); if (!sg || !sg.words.length || t < sg.words[0].t0 - 0.05) return;
+  let k = 0; sg.words.forEach((x, j) => { if (t >= x.t0 - 0.05) k = j; });
+  const ch = sg.chunks.find((q) => q.includes(k)); if (!ch) return;
+  const S = EP_RAW.capSize || 50, y = CAPY ?? EP_RAW.capY ?? 1490, a = clamp((t - sg.words[ch[0]].t0 + 0.08) / 0.12);
+  g.save(); g.font = F.ui(S, 700); g.textAlign = 'left'; const sp = g.measureText(' ').width;
+  const ws = ch.map((j) => g.measureText(sg.words[j].w).width); let tot = ws.reduce((p, q) => p + q, 0) + sp * (ch.length - 1);
+  const sc = Math.min(1, 940 / tot); g.translate(W / 2, y + (1 - a) * 10); g.scale(sc, sc); let x = -tot / 2;
+  g.globalAlpha = a; g.shadowColor = 'rgba(0,0,0,0.75)'; g.shadowBlur = 18; g.shadowOffsetY = 3;
+  ch.forEach((j, q) => { const wd = sg.words[j]; g.fillStyle = wd.a ? (window.PRO ? PRO.acc : GOLD) : '#FFFFFF'; g.fillText(wd.w, x, 0); x += ws[q] + sp; });
+  g.restore();
+}
 function captions(t, caps, yc = WIDE ? 960 : (EP_RAW.capY || 1300)) {
+  if (EP_RAW.style === 'pro') return proCaptions(t, caps);
   const sg = caps.find((q) => t >= q.at - 0.05 && t <= q.end + 0.4); if (!sg || !sg.words.length || t < sg.words[0].t0 - 0.02) return;
   let k = 0; sg.words.forEach((x, j) => { if (t >= x.t0 - 0.02) k = j; });
   const ch = sg.chunks.find((q) => q.includes(k)); if (!ch) return;
@@ -259,7 +273,8 @@ function build(ep, voice) {
     SCENES.push({ from, to: from + dur, pre: PRE, draw: (lt) => { SCN = i; RT = lt; AT = at; vis(PRE + (lt - PRE) * warp); RT = null; if (caps.length) captions(lt, caps); } });
     t += dur; });
   const last = SCENES.at(-1), pad = (2 - (t % 2)) % 2; last.to += pad; t += pad;
-  DUR = t; if (ep.transition !== 'fade') SCENES.slice(1).forEach((s) => cue(s.from - (ep.transition === 'whip' ? 0.12 : 0.2), 'whoosh', ep.transition === 'whip' ? 1 : 0.8));
+  DUR = t; if (ep.style === 'pro') SCENES.slice(1).forEach((s) => cue(s.from - 0.08, 'swish', 0.35));   // pro: hard cuts with a soft swish
+  else if (ep.transition !== 'fade') SCENES.slice(1).forEach((s) => cue(s.from - (ep.transition === 'whip' ? 0.12 : 0.2), 'whoosh', ep.transition === 'whip' ? 1 : 0.8));
   // engagement: a subscribe nudge mid-video, a comment question on the last scene (no VO, so the loop stays seamless)
   const mid = SCENES.find((sc) => sc.from <= DUR * 0.45 && DUR * 0.45 < sc.to) || SCENES[Math.floor(SCENES.length / 2)];
   // a spoken call to action ("cta": true segment, no caption) in the last scene drives the comment card and a second subscribe tap
@@ -275,10 +290,10 @@ function build(ep, voice) {
 const CUT = 0.05;
 function drawScene(s, t, dx = 0, dy = 0) {
   const since = t - (s.from - CUT), until = (s.to - CUT) - t;
-  const calm = EP.transition === 'whip' || EP.transition === 'fade';
+  const calm = EP.transition === 'whip' || EP.transition === 'fade' || EP_RAW.style === 'pro';
   const punchIn = s.from > 0 && !calm ? 1 + 0.07 * (1 - spring(since, 260, 30)) : 1;
   const punchOut = until < 0.14 && !calm ? 1 + 0.05 * Math.pow(1 - clamp(until / 0.14), 2) : 1;
-  let hit = 1; if (!EP_RAW.kids) for (const p of PUNCH) { const d = t - p; if (d >= 0 && d < 0.5) hit = Math.max(hit, 1 + 0.07 * Math.exp(-d / 0.09) * (d < 0.03 ? d / 0.03 : 1)); }   // word punch: quick zoom on stressed words
+  let hit = 1; if (!EP_RAW.kids && EP_RAW.style !== 'pro') for (const p of PUNCH) { const d = t - p; if (d >= 0 && d < 0.5) hit = Math.max(hit, 1 + 0.07 * Math.exp(-d / 0.09) * (d < 0.03 ? d / 0.03 : 1)); }   // word punch: quick zoom on stressed words
   const k = punchIn * punchOut * hit * (1 + 0.012 * clamp(since / 6));
   g.save(); g.translate(W / 2 + dx, H / 2 + dy); g.scale(k, k); g.translate(-W / 2, -H / 2);
   g.beginPath(); g.rect(0, 0, W, H); g.clip(); s.draw(t - s.from + s.pre); g.restore();
@@ -297,7 +312,7 @@ function draw(t) {
     g.fillStyle = BG; g.fillRect(0, 0, W, H); drawScene(s, t); g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1 - ease(since / FADE); g.drawImage(OFF, 0, 0); g.globalAlpha = 1;
   } else drawScene(s, t);
   g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1;
-  if (EP.transition !== 'whip' && EP.transition !== 'fade' && s.from > 0 && since < 0.09) { g.fillStyle = '#FFF4DE'; g.globalAlpha = 0.18 * (1 - since / 0.09); g.fillRect(0, 0, W, H); g.globalAlpha = 1; }
+  if (EP.transition !== 'whip' && EP.transition !== 'fade' && EP_RAW.style !== 'pro' && s.from > 0 && since < 0.09) { g.fillStyle = '#FFF4DE'; g.globalAlpha = 0.18 * (1 - since / 0.09); g.fillRect(0, 0, W, H); g.globalAlpha = 1; }
   if (EP.glint && s.from > 0 && since > 0.15 && since < 0.75) {      // a light streak sweeps across after each cut
     const u = (since - 0.15) / 0.6, x = lerp(-600, W + 600, u); g.save(); g.globalCompositeOperation = 'lighter';
     const gr = g.createLinearGradient(x - 220, 0, x + 220, 0); gr.addColorStop(0, 'rgba(255,230,190,0)'); gr.addColorStop(0.5, 'rgba(255,230,190,0.10)'); gr.addColorStop(1, 'rgba(255,230,190,0)');
@@ -333,14 +348,15 @@ function engage(t) {
   else { subPill(t - CTA.subAt, EP_RAW.subY || 1480, 2.9); if (CTA.subEnd) subPill(t - CTA.subEnd, EP_RAW.subEndY || 1290, 99); }
   const lc = EP_RAW.noCommentCard ? -1 : t - CTA.comAt;          // kids videos: comments are off on YouTube, so no comment card                                   // ---- comment question (last scene)
   if (lc > 0) { const s = spring(lc, 220, 18), y = (WIDE ? H - 260 : 1400) + (1 - s) * 520; g.save(); g.translate(WIDE ? (W - 860) / 2 - 70 : 0, y);
-    g.shadowColor = 'rgba(0,0,0,0.55)'; g.shadowBlur = 36; rrect(70, 0, 860, 200, 34); g.fillStyle = 'rgba(244,238,227,0.96)'; g.fill(); g.shadowBlur = 0;
-    g.fillStyle = GOLD; rrect(104, 28, 58, 46, 13); g.fill(); g.beginPath(); g.moveTo(118, 72); g.lineTo(112, 90); g.lineTo(138, 72); g.fill();
+    g.shadowColor = 'rgba(0,0,0,0.55)'; g.shadowBlur = 36; const PC = EP_RAW.style === 'pro' && window.PRO, CA = PC ? PRO.acc : GOLD, CF = PC ? PRO.txt : BG;
+    rrect(70, 0, 860, 200, 34); g.fillStyle = PC ? 'rgba(17,33,40,0.97)' : 'rgba(244,238,227,0.96)'; g.fill(); g.shadowBlur = 0; if (PC) { g.lineWidth = 2; g.strokeStyle = PRO.line; g.stroke(); }
+    g.fillStyle = CA; rrect(104, 28, 58, 46, 13); g.fill(); g.beginPath(); g.moveTo(118, 72); g.lineTo(112, 90); g.lineTo(138, 72); g.fill();
     g.fillStyle = BG; [120, 133, 146].forEach((x) => { g.beginPath(); g.arc(x, 51, 4.5, 0, 6.283); g.fill(); });
-    const q = CTA.q, qs = fit(q, 'ui', 46, 720); text(q, 180, 68, 'ui', qs, BG);
+    const q = CTA.q, qs = fit(q, 'ui', 46, 720); text(q, 180, 68, 'ui', qs, CF);
     [[CTA.a, 108], [CTA.b, 108 + 40 + Math.max(200, (g.font = F.ui(36), g.measureText(CTA.a).width + 80))]].forEach(([lab, x], k) => {
       const p = 1 + 0.05 * Math.max(0, Math.sin((lc - 0.6 - k * 0.25) * 5)) * (lc > 0.6); g.font = F.ui(36); const w = Math.max(200, g.measureText(lab).width + 80);
-      g.save(); g.translate(x + w / 2, 142); g.scale(p, p); rrect(-w / 2, -32, w, 64, 32); g.fillStyle = k ? '#2B2A28' : GOLD; g.fill(); text(lab, 0, 13, 'ui', 36, k ? TXT : BG, { align: 'center' }); g.restore(); });
-    if (window.LOT && !WIDE) lot(lc, 0.35, CTA.emoji || 'think', 880, 8, 150, { rot: 0.12 });
+      g.save(); g.translate(x + w / 2, 142); g.scale(p, p); rrect(-w / 2, -32, w, 64, 32); g.fillStyle = k ? (PC ? '#22363E' : '#2B2A28') : CA; g.fill(); text(lab, 0, 13, 'ui', 36, k ? TXT : BG, { align: 'center' }); g.restore(); });
+    if (window.LOT && !WIDE && !PC) lot(lc, 0.35, CTA.emoji || 'think', 880, 8, 150, { rot: 0.12 });
     g.restore(); }
   const lr = t - CTA.comAt - 0.5;                             // ---- "full video below" card (ep.related): sends Shorts viewers to a long video
   if (CTA.related && lr > 0 && !WIDE) { const s = spring(lr, 240, 20), y = 1075 + (1 - s) * 60, bob = Math.sin(lr * 6) * 8 * (lr > 0.6);
