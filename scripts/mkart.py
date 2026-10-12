@@ -130,7 +130,7 @@ ep(ep=132, series='ART SECRETS #4', title="The Night Watch isn't at night", titl
           'Jahrhundertelang lag ein dunkler Firnis darauf, also dachten die Leute, es sei Nacht. Daher kommt der Name.',
           'Durante siglos lo cubrió un barniz oscuro, y la gente creyó que era de noche. De ahí viene el nombre.',
           "Pendant des siècles, un vernis sombre le recouvrait, alors on a cru que c'était la nuit. D'où son nom.", 'A dark *varnish*.'),
-         (2, 0, "And it's not even complete. In 1715 it was moved to Amsterdam's town hall, and trimmed on all four sides to fit.",
+         (2, 0, "And it's not even complete. In seventeen fifteen it was moved to Amsterdam's town hall, and trimmed on all four sides to fit.",
           'Und es ist nicht mal vollständig. 1715 kam es ins Amsterdamer Rathaus und wurde an allen vier Seiten beschnitten, damit es passt.',
           'Y ni siquiera está completo. En 1715 lo llevaron al ayuntamiento de Ámsterdam y lo recortaron por los cuatro lados para que cupiera.',
           "Et il n'est même pas complet. En 1715, on l'a installé à l'hôtel de ville d'Amsterdam, et on l'a coupé sur les quatre côtés.", 'Trimmed on *all four sides*.'),

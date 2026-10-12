@@ -10,7 +10,7 @@ VIS[1] = S(() => (K, Sc) => { const at = Sc.vo[0].at, va = sw('varnish', 1.6), n
     card(t, Math.max(0.15, va - 0.2), 150, 950, 780, 430, (lt, w, h) => { const im = PHOTOS.nw; if (!im) return; const s = w / im.width; g.drawImage(im, 0, h / 2 - im.height * s / 2, w, im.height * s);
       const cut = w * clamp((t - ni) / 1.6); g.fillStyle = 'rgba(28,18,4,0.72)'; g.fillRect(cut, 0, w - cut, h);           // dark varnish wiped away
       if (t > ni) { g.fillStyle = PRO.hi; g.fillRect(cut - 3, 0, 6, h); } pill(t > ni + 1.6 ? 'Cleaned' : 'Dark varnish', 24, 44, lt, 0.3, { size: 22, bg: 'rgba(6,16,21,0.8)', color: PRO.txt, align: 'left' }); }); }; });
-VIS[2] = S(() => (K, Sc) => { const y = sw('1715', 1.2), tr = sw('trimmed', 3.4), fo = sw('four', 4.2); ks(K, [[tr, 'scratch', 0.6]]);
+VIS[2] = S(() => (K, Sc) => { const y = sw('seventeen', 1.2), tr = sw('trimmed', 3.4), fo = sw('four', 4.2); ks(K, [[tr, 'scratch', 0.6]]);
   return (t) => { proBg(t); const P = art(t, 'copy', [[0, 0.5, 0.5, 1.0]], { cy: 760 });
     if (P && t > tr) { const [x0, y0] = P(0.1, 0.07), [x1, y1] = P(0.975, 1), a = clamp((t - tr) / 0.6); g.save(); g.fillStyle = `rgba(6,16,21,${0.75 * a})`; const [L, T] = P(0, 0), [R, B] = P(1, 1);
       g.fillRect(L, T, x0 - L, B - T); g.fillRect(x1, T, R - x1, B - T); g.fillRect(x0, T, x1 - x0, y0 - T); g.strokeStyle = PRO.hi; g.lineWidth = 4; g.setLineDash([16, 12]); g.strokeRect(x0, y0, x1 - x0, Math.min(y1, B) - y0); g.setLineDash([]); g.restore(); }
