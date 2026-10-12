@@ -1,0 +1,171 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "cut",
+ "loop": false,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "scripts": [
+  "tech.js",
+  "pro.js"
+ ],
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "style": "pro",
+ "capY": 1490,
+ "host": true,
+ "host_img": "assets/host/host_art.png",
+ "subY": 1720,
+ "subEndY": 1720,
+ "openCapAt": 99,
+ "voice_ref": "assets/voice/explainer_sarah.wav",
+ "ep": 132,
+ "series": "ART SECRETS #4",
+ "title": "The Night Watch isn't at night",
+ "titlePro": "The Night Watch is *not at night*",
+ "source": "https://en.wikipedia.org/wiki/The_Night_Watch",
+ "cta": {
+  "q": "Did you know it was never night?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - The Epic 2.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 0.42
+  },
+  {
+   "id": "nw",
+   "file": "File:Rembrandt - Nachtwacht - SK-C-5.jpg"
+  },
+  {
+   "id": "copy",
+   "file": "File:Nachtwacht-kopie-van-voor-1712.jpg"
+  },
+  {
+   "id": "resto",
+   "file": "File:The Night Watch undergoing restoration, on exhibit in 2024.jpg"
+  },
+  {
+   "id": "hall",
+   "file": "File:Museumbezoekers in de Nachtwachtzaal enkele dagen na de heropening, HA-0028231.jpg"
+  }
+ ],
+ "vo_open": [
+  {
+   "text": "The Night Watch isn't a night scene at all.",
+   "de": "Die Nachtwache zeigt überhaupt keine Nacht.",
+   "es": "La ronda de noche no muestra la noche.",
+   "fr": "La Ronde de nuit n'est pas du tout une scène de nuit.",
+   "cap": "It's *not* a night scene."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "Rembrandt painted it in 1642: a militia company marching out, led by its captain in black.",
+     "de": "Rembrandt malte es 1642: eine Bürgerwehr beim Ausmarsch, angeführt von ihrem Hauptmann in Schwarz.",
+     "es": "Rembrandt lo pintó en 1642: una compañía de milicia saliendo en marcha, guiada por su capitán vestido de negro.",
+     "fr": "Rembrandt l'a peint en 1642 : une compagnie de milice qui se met en marche, menée par son capitaine en noir.",
+     "cap": "*Rembrandt*, 1642.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "For centuries a dark varnish covered it, so people thought it showed the night. That is where the name comes from.",
+     "de": "Jahrhundertelang lag ein dunkler Firnis darauf, also dachten die Leute, es sei Nacht. Daher kommt der Name.",
+     "es": "Durante siglos lo cubrió un barniz oscuro, y la gente creyó que era de noche. De ahí viene el nombre.",
+     "fr": "Pendant des siècles, un vernis sombre le recouvrait, alors on a cru que c'était la nuit. D'où son nom.",
+     "cap": "A dark *varnish*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "And it's not even complete. In 1715 it was moved to Amsterdam's town hall, and trimmed on all four sides to fit.",
+     "de": "Und es ist nicht mal vollständig. 1715 kam es ins Amsterdamer Rathaus und wurde an allen vier Seiten beschnitten, damit es passt.",
+     "es": "Y ni siquiera está completo. En 1715 lo llevaron al ayuntamiento de Ámsterdam y lo recortaron por los cuatro lados para que cupiera.",
+     "fr": "Et il n'est même pas complet. En 1715, on l'a installé à l'hôtel de ville d'Amsterdam, et on l'a coupé sur les quatre côtés.",
+     "cap": "Trimmed on *all four sides*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "An old copy shows what is missing, including figures on the left. The cut pieces have never been found.",
+     "de": "Eine alte Kopie zeigt, was fehlt, auch Figuren auf der linken Seite. Die abgeschnittenen Teile wurden nie gefunden.",
+     "es": "Una copia antigua muestra lo que falta, incluidas figuras a la izquierda. Los trozos cortados nunca aparecieron.",
+     "fr": "Une ancienne copie montre ce qui manque, dont des personnages à gauche. Les morceaux coupés n'ont jamais été retrouvés.",
+     "cap": "*Never* been found.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "That thick varnish did help once. In 1911, a man attacked the painting with a knife, and the coating protected it.",
+     "de": "Einmal hat der dicke Firnis sogar geholfen. 1911 griff ein Mann das Bild mit einem Messer an, und die Schicht schützte es.",
+     "es": "Ese barniz grueso sí ayudó una vez. En 1911, un hombre atacó el cuadro con un cuchillo, y la capa lo protegió.",
+     "fr": "Ce vernis épais l'a pourtant sauvé une fois. En 1911, un homme l'a attaqué au couteau, et la couche l'a protégé.",
+     "cap": "Attacked with a *knife*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "Today it hangs in the Rijksmuseum, where it is being restored in a glass room, right in front of visitors.",
+     "de": "Heute hängt es im Rijksmuseum und wird in einem Glasraum restauriert, direkt vor den Augen der Besucher.",
+     "es": "Hoy cuelga en el Rijksmuseum, donde lo restauran en una sala de cristal, delante de los visitantes.",
+     "fr": "Aujourd'hui, il est au Rijksmuseum, restauré dans une cage de verre, devant les visiteurs.",
+     "cap": "In front of *visitors*.",
+     "at": 0.45
+    },
+    {
+     "text": "Did you know it was never night? Comment yes or no, and subscribe.",
+     "de": "Wusstest du, dass es nie Nacht war? Schreib ja oder nein in die Kommentare und abonnier.",
+     "es": "¿Sabías que nunca fue de noche? Comenta sí o no, y suscríbete.",
+     "fr": "Tu savais que ce n'était pas la nuit ? Écris oui ou non en commentaire, et abonne-toi.",
+     "cta": true,
+     "host": true,
+     "at": "0.15"
+    }
+   ]
+  }
+ ]
+}

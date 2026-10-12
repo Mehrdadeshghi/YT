@@ -1,0 +1,175 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "cut",
+ "loop": false,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "scripts": [
+  "tech.js",
+  "pro.js"
+ ],
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "style": "pro",
+ "capY": 1490,
+ "host": true,
+ "host_img": "assets/host/host_art.png",
+ "subY": 1720,
+ "subEndY": 1720,
+ "openCapAt": 99,
+ "voice_ref": "assets/voice/explainer_sarah.wav",
+ "ep": 138,
+ "series": "COLOR STORIES #3",
+ "title": "The blue worth as much as gold",
+ "titlePro": "This blue was worth *as much as gold*",
+ "source": "https://en.wikipedia.org/wiki/Ultramarine",
+ "cta": {
+  "q": "Worth its weight in gold?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Fantasy Chamber Adventure by Rafael Krux.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 0.42
+  },
+  {
+   "id": "lapis",
+   "file": "File:Lapis-lazuli hg.jpg"
+  },
+  {
+   "id": "pigment",
+   "file": "File:Natural ultramarine pigment.jpg"
+  },
+  {
+   "id": "milkmaid",
+   "file": "File:Johannes Vermeer - Het melkmeisje - Google Art Project.jpg"
+  },
+  {
+   "id": "mm_detail",
+   "file": "File:Vermeer, Johannes - The Milkmaid, detail table - c. 1658.jpg"
+  },
+  {
+   "id": "cia",
+   "file": "File:Lapis Lazuli - Flickr - The Central Intelligence Agency.jpg"
+  }
+ ],
+ "vo_open": [
+  {
+   "text": "This blue was worth as much as gold.",
+   "de": "Dieses Blau war so viel wert wie Gold.",
+   "es": "Este azul valía tanto como el oro.",
+   "fr": "Ce bleu valait autant que l'or.",
+   "cap": "As much as *gold*."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "It is called ultramarine, from the Latin for beyond the sea.",
+     "de": "Es heißt Ultramarin, vom Lateinischen für jenseits des Meeres.",
+     "es": "Se llama ultramar, del latín más allá del mar.",
+     "fr": "On l'appelle outremer, du latin au-delà de la mer.",
+     "cap": "*Beyond the sea*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "It was made from lapis lazuli, a stone mined in the mountains of Afghanistan, and brought to Europe by Italian traders.",
+     "de": "Es wurde aus Lapislazuli gemacht, einem Stein aus den Bergen Afghanistans, den italienische Händler nach Europa brachten.",
+     "es": "Se hacía con lapislázuli, una piedra de las montañas de Afganistán que los comerciantes italianos traían a Europa.",
+     "fr": "On le fabriquait avec du lapis-lazuli, une pierre des montagnes d'Afghanistan, rapportée en Europe par des marchands italiens.",
+     "cap": "Mined in *Afghanistan*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "Grinding, sifting and washing it took so long that the pigment cost about ten times more than the stone itself.",
+     "de": "Mahlen, Sieben und Waschen dauerten so lange, dass das Pigment etwa zehnmal so viel kostete wie der Stein selbst.",
+     "es": "Molerla, tamizarla y lavarla llevaba tanto tiempo que el pigmento costaba unas diez veces más que la piedra.",
+     "fr": "Le broyer, le tamiser et le laver prenait si longtemps que le pigment coûtait environ dix fois plus cher que la pierre.",
+     "cap": "About *ten times* more.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "So painters saved it for the most important thing in the picture: the robes of the Virgin Mary.",
+     "de": "Also sparten Maler es für das Wichtigste im Bild auf: den Mantel der Jungfrau Maria.",
+     "es": "Así que los pintores lo reservaban para lo más importante del cuadro: el manto de la Virgen María.",
+     "fr": "Alors les peintres le réservaient au plus important du tableau : le manteau de la Vierge Marie.",
+     "cap": "The robes of the *Virgin Mary*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "Johannes Vermeer used it lavishly, like in The Milkmaid.",
+     "de": "Johannes Vermeer setzte es großzügig ein, zum Beispiel bei Dienstmagd mit Milchkrug.",
+     "es": "Johannes Vermeer lo usaba sin medida, como en La lechera.",
+     "fr": "Johannes Vermeer en mettait sans compter, comme dans La Laitière.",
+     "cap": "*Vermeer*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "Then in 1826, chemists created a synthetic ultramarine, and the blue suddenly became cheap.",
+     "de": "Dann gelang 1826 ein künstliches Ultramarin, und das Blau wurde plötzlich billig.",
+     "es": "Luego, en 1826, se creó un ultramar sintético, y el azul de repente se volvió barato.",
+     "fr": "Puis, en 1826, on a créé un outremer synthétique, et ce bleu est soudain devenu bon marché.",
+     "cap": "Suddenly *cheap*.",
+     "at": 0.45
+    },
+    {
+     "text": "Was it worth its weight in gold? Comment yes or no, and subscribe.",
+     "de": "War es sein Gewicht in Gold wert? Schreib ja oder nein in die Kommentare und abonnier.",
+     "es": "¿Valía su peso en oro? Comenta sí o no, y suscríbete.",
+     "fr": "Il valait son pesant d'or ? Écris oui ou non en commentaire, et abonne-toi.",
+     "cta": true,
+     "host": true,
+     "at": "0.15"
+    }
+   ]
+  }
+ ]
+}

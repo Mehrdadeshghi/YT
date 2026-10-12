@@ -1,0 +1,171 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "cut",
+ "loop": false,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "scripts": [
+  "tech.js",
+  "pro.js"
+ ],
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "style": "pro",
+ "capY": 1490,
+ "host": true,
+ "host_img": "assets/host/host_art.png",
+ "subY": 1720,
+ "subEndY": 1720,
+ "openCapAt": 99,
+ "voice_ref": "assets/voice/explainer_sarah.wav",
+ "ep": 129,
+ "series": "ART SECRETS #1",
+ "title": "The skull hidden in Holbein's Ambassadors",
+ "titlePro": "There is a *skull* hidden in this painting",
+ "source": "https://en.wikipedia.org/wiki/The_Ambassadors_(Holbein)",
+ "cta": {
+  "q": "Did you spot the skull?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 4,
+   "len": 60,
+   "gain": 0.5
+  },
+  {
+   "id": "amb",
+   "file": "File:Hans Holbein the Younger - The Ambassadors - Google Art Project.jpg"
+  },
+  {
+   "id": "skull",
+   "file": "File:Holbein Skull.jpg"
+  },
+  {
+   "id": "tube",
+   "file": "File:Demonstration of Holbein's skull image viewed through a tube.jpg"
+  },
+  {
+   "id": "cross",
+   "file": "File:Square crucifix.jpg"
+  }
+ ],
+ "vo_open": [
+  {
+   "text": "There's a skull hidden in this painting. Can you see it?",
+   "de": "In diesem Gemälde ist ein Totenkopf versteckt. Siehst du ihn?",
+   "es": "En este cuadro hay una calavera escondida. ¿La ves?",
+   "fr": "Il y a un crâne caché dans ce tableau. Tu le vois ?",
+   "cap": "There's a *skull* hidden in this painting."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "This is The Ambassadors, painted by Hans Holbein in 1533. Two rich young men, surrounded by globes, books and instruments.",
+     "de": "Das sind Die Gesandten, gemalt von Hans Holbein im Jahr 1533. Zwei reiche junge Männer, umgeben von Globen, Büchern und Instrumenten.",
+     "es": "Esto es Los embajadores, pintado por Hans Holbein en 1533. Dos jóvenes ricos, rodeados de globos, libros e instrumentos.",
+     "fr": "Voici Les Ambassadeurs, peint par Hans Holbein en 1533. Deux jeunes hommes riches, entourés de globes, de livres et d'instruments.",
+     "cap": "Hans *Holbein*, 1533.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "But look at the floor between them. That strange grey smear? It's not a stain.",
+     "de": "Aber schau auf den Boden zwischen ihnen. Dieser seltsame graue Fleck? Das ist kein Schmutz.",
+     "es": "Pero mira el suelo entre ellos. ¿Esa extraña mancha gris? No es una mancha.",
+     "fr": "Mais regarde le sol entre eux. Cette étrange trace grise ? Ce n'est pas une tache.",
+     "cap": "It's *not* a stain.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "Look at it from the side, almost flat against the painting, and it turns into a perfect human skull.",
+     "de": "Schau von der Seite, fast flach am Bild entlang, und es wird zu einem perfekten menschlichen Schädel.",
+     "es": "Míralo de lado, casi pegado al cuadro, y se convierte en una calavera humana perfecta.",
+     "fr": "Regarde-le de côté, presque à plat contre le tableau, et il devient un crâne humain parfait.",
+     "cap": "A perfect human *skull*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "The trick is called anamorphosis. The painting may have hung beside a door or a staircase, so people walking past would suddenly see death looking back.",
+     "de": "Der Trick heißt Anamorphose. Vielleicht hing das Bild neben einer Tür oder Treppe, damit Vorbeigehende plötzlich den Tod sehen.",
+     "es": "El truco se llama anamorfosis. Quizá colgaba junto a una puerta o una escalera, para que quien pasara viera de pronto a la muerte.",
+     "fr": "Le procédé s'appelle l'anamorphose. Le tableau était peut-être accroché près d'une porte ou d'un escalier, pour que les passants voient soudain la mort.",
+     "cap": "It's called *anamorphosis*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "And there's a second secret: a tiny crucifix, half hidden behind the curtain in the top left corner.",
+     "de": "Und es gibt ein zweites Geheimnis: ein winziges Kruzifix, halb versteckt hinter dem Vorhang oben links.",
+     "es": "Y hay un segundo secreto: un pequeño crucifijo, medio escondido tras la cortina, arriba a la izquierda.",
+     "fr": "Et il y a un second secret : un minuscule crucifix, à moitié caché derrière le rideau en haut à gauche.",
+     "cap": "A tiny *crucifix*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "The message is memento mori. Remember, you will die. Even the richest men in the room.",
+     "de": "Die Botschaft heißt Memento mori. Denk daran, dass du sterben wirst. Selbst die reichsten Männer im Raum.",
+     "es": "El mensaje es memento mori. Recuerda que vas a morir. Incluso los hombres más ricos de la sala.",
+     "fr": "Le message, c'est memento mori. Souviens-toi que tu vas mourir. Même les hommes les plus riches.",
+     "cap": "*Memento mori.*",
+     "at": 0.45
+    },
+    {
+     "text": "Did you spot the skull before I told you? Comment yes or no, and subscribe.",
+     "de": "Hast du den Totenkopf entdeckt, bevor ich es gesagt habe? Schreib ja oder nein in die Kommentare und abonnier.",
+     "es": "¿Viste la calavera antes de que te lo dijera? Comenta sí o no, y suscríbete.",
+     "fr": "Tu avais vu le crâne avant que je le dise ? Écris oui ou non en commentaire, et abonne-toi.",
+     "cta": true,
+     "host": true,
+     "at": "0.15"
+    }
+   ]
+  }
+ ]
+}

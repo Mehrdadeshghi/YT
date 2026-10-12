@@ -1,0 +1,179 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "cut",
+ "loop": false,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "scripts": [
+  "tech.js",
+  "pro.js"
+ ],
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "style": "pro",
+ "capY": 1490,
+ "host": true,
+ "host_img": "assets/host/host_art.png",
+ "subY": 1720,
+ "subEndY": 1720,
+ "openCapAt": 99,
+ "voice_ref": "assets/voice/explainer_sarah.wav",
+ "ep": 134,
+ "series": "ART SCANDALS #2",
+ "title": "The forger who fooled Göring",
+ "titlePro": "He sold a *fake Vermeer* to the Nazis",
+ "source": "https://en.wikipedia.org/wiki/Han_van_Meegeren",
+ "cta": {
+  "q": "Hero or criminal?",
+  "a": "HERO",
+  "b": "CRIMINAL",
+  "emoji": "think"
+ },
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 30,
+   "len": 60,
+   "gain": 0.45
+  },
+  {
+   "id": "han",
+   "file": "File:Han van Meegeren 1945 (retouched).jpg"
+  },
+  {
+   "id": "emmaus",
+   "file": "File:EmmausgangersVanMeegeren1937.jpg"
+  },
+  {
+   "id": "painting",
+   "file": "File:HanVanMeegerenOct1945.jpg"
+  },
+  {
+   "id": "court",
+   "file": "File:Proces Van Meegeren, Bestanddeelnr 902-4285.jpg"
+  },
+  {
+   "id": "walk",
+   "file": "File:HanVanMeegeren1947.jpg"
+  },
+  {
+   "id": "lace",
+   "file": "File:The Lacemaker (Fake Vermeer).jpg"
+  }
+ ],
+ "vo_open": [
+  {
+   "text": "This man sold a fake Vermeer to the Nazis. Then he had to paint another one to save his life.",
+   "de": "Dieser Mann verkaufte den Nazis einen falschen Vermeer. Dann musste er noch einen malen, um sein Leben zu retten.",
+   "es": "Este hombre vendió un Vermeer falso a los nazis. Y luego tuvo que pintar otro para salvar su vida.",
+   "fr": "Cet homme a vendu un faux Vermeer aux nazis. Puis il a dû en peindre un autre pour sauver sa vie.",
+   "cap": "A *fake Vermeer* to the Nazis."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "Han van Meegeren was a Dutch painter the critics ignored. So he started forging Johannes Vermeer.",
+     "de": "Han van Meegeren war ein niederländischer Maler, den die Kritiker ignorierten. Also fing er an, Vermeer zu fälschen.",
+     "es": "Han van Meegeren era un pintor neerlandés al que la crítica ignoraba. Así que empezó a falsificar a Vermeer.",
+     "fr": "Han van Meegeren était un peintre néerlandais ignoré par les critiques. Alors il s'est mis à imiter Vermeer.",
+     "cap": "He started *forging*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "His fakes were so good that experts celebrated them as lost masterpieces. He made millions.",
+     "de": "Seine Fälschungen waren so gut, dass Experten sie als verschollene Meisterwerke feierten. Er verdiente Millionen.",
+     "es": "Sus falsificaciones eran tan buenas que los expertos las celebraron como obras maestras perdidas. Ganó millones.",
+     "fr": "Ses faux étaient si bons que les experts les ont célébrés comme des chefs-d'œuvre perdus. Il a gagné des millions.",
+     "cap": "He made *millions*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "During the war, one of his Vermeers reached Hermann Göring, who traded a hundred and thirty-seven looted paintings for it.",
+     "de": "Im Krieg landete einer seiner Vermeers bei Hermann Göring, der dafür hundertsiebenunddreißig geraubte Gemälde eintauschte.",
+     "es": "Durante la guerra, uno de sus Vermeer llegó a Hermann Göring, que dio a cambio ciento treinta y siete cuadros robados.",
+     "fr": "Pendant la guerre, un de ses Vermeer est arrivé chez Hermann Göring, qui l'a échangé contre cent trente-sept tableaux pillés.",
+     "cap": "*137* looted paintings.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "After the war, the painting was found in a salt mine and traced back to him. Selling a national treasure to the enemy could mean death.",
+     "de": "Nach dem Krieg fand man das Bild in einem Salzbergwerk und kam auf ihn. Einen Nationalschatz an den Feind zu verkaufen, konnte die Todesstrafe bedeuten.",
+     "es": "Tras la guerra, encontraron el cuadro en una mina de sal y llegaron hasta él. Vender un tesoro nacional al enemigo podía costarle la vida.",
+     "fr": "Après la guerre, on a retrouvé le tableau dans une mine de sel et remonté jusqu'à lui. Vendre un trésor national à l'ennemi pouvait valoir la mort.",
+     "cap": "That could mean *death*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "So he confessed: it is a fake, I painted it. To prove it, he painted a new Vermeer in front of witnesses.",
+     "de": "Also gestand er: Das ist eine Fälschung, die habe ich gemalt. Als Beweis malte er vor Zeugen einen neuen Vermeer.",
+     "es": "Así que confesó: es falso, lo pinté yo. Para demostrarlo, pintó un nuevo Vermeer delante de testigos.",
+     "fr": "Alors il a avoué : c'est un faux, c'est moi qui l'ai peint. Pour le prouver, il a peint un nouveau Vermeer devant témoins.",
+     "cap": "In front of *witnesses*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "He got one year in prison for fraud, but died before serving it. To many Dutch people, he was the man who fooled Göring.",
+     "de": "Er bekam ein Jahr Gefängnis wegen Betrugs, starb aber vorher. Für viele Niederländer war er der Mann, der Göring reingelegt hat.",
+     "es": "Le cayó un año de cárcel por fraude, pero murió antes de cumplirlo. Para muchos neerlandeses, fue el hombre que engañó a Göring.",
+     "fr": "Il a pris un an de prison pour fraude, mais il est mort avant. Pour beaucoup de Néerlandais, c'était l'homme qui avait roulé Göring.",
+     "cap": "The man who *fooled Göring*.",
+     "at": 0.45
+    },
+    {
+     "text": "Hero or criminal? Comment hero or criminal, and subscribe.",
+     "de": "Held oder Verbrecher? Schreib Held oder Verbrecher in die Kommentare und abonnier.",
+     "es": "¿Héroe o criminal? Comenta héroe o criminal, y suscríbete.",
+     "fr": "Héros ou criminel ? Écris héros ou criminel en commentaire, et abonne-toi.",
+     "cta": true,
+     "host": true,
+     "at": "0.15"
+    }
+   ]
+  }
+ ]
+}

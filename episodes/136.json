@@ -1,0 +1,179 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "cut",
+ "loop": false,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "scripts": [
+  "tech.js",
+  "pro.js"
+ ],
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "style": "pro",
+ "capY": 1490,
+ "host": true,
+ "host_img": "assets/host/host_art.png",
+ "subY": 1720,
+ "subEndY": 1720,
+ "openCapAt": 99,
+ "voice_ref": "assets/voice/explainer_sarah.wav",
+ "ep": 136,
+ "series": "COLOR STORIES #1",
+ "title": "The paint made from real mummies",
+ "titlePro": "This paint was made from *real mummies*",
+ "source": "https://en.wikipedia.org/wiki/Mummy_brown",
+ "cta": {
+  "q": "Would you paint with it?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 60,
+   "len": 60,
+   "gain": 0.45
+  },
+  {
+   "id": "tube",
+   "file": "File:Tube of mummy brown in a coffin.JPG"
+  },
+  {
+   "id": "mummy",
+   "file": "File:Ancient Egypt. Mummy of woman from Thebes. 1070-945 BC. Vatican Museums.jpg"
+  },
+  {
+   "id": "dealer",
+   "file": "File:Félix Bonfils - Mumienhändler.png"
+  },
+  {
+   "id": "liberty",
+   "file": "File:La Liberté guidant le peuple - Eugène Delacroix - Musée du Louvre Peintures RF 129 - après restauration 2024.jpg"
+  },
+  {
+   "id": "bj",
+   "file": "File:Burne-Jones Last Sleep of Arthur in Avalon v2.jpg"
+  },
+  {
+   "id": "cat",
+   "file": "File:Mummy of a cat (RC 390) Rosicrucian Egyptian Museum.jpg"
+  }
+ ],
+ "vo_open": [
+  {
+   "text": "Painters used to paint with real Egyptian mummies.",
+   "de": "Maler haben früher mit echten ägyptischen Mumien gemalt.",
+   "es": "Los pintores pintaban con momias egipcias de verdad.",
+   "fr": "Des peintres peignaient avec de vraies momies égyptiennes.",
+   "cap": "Real Egyptian *mummies*."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "The color was called mummy brown. And the name was meant literally.",
+     "de": "Die Farbe hieß Mumienbraun. Und der Name war wörtlich gemeint.",
+     "es": "El color se llamaba marrón momia. Y el nombre era literal.",
+     "fr": "La couleur s'appelait brun momie. Et le nom était à prendre au pied de la lettre.",
+     "cap": "*Mummy brown*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "It was made from ground-up mummies, mixed with white pitch and myrrh. Some were even mummified cats.",
+     "de": "Sie wurde aus gemahlenen Mumien gemacht, gemischt mit weißem Pech und Myrrhe. Manche waren sogar mumifizierte Katzen.",
+     "es": "Se hacía con momias molidas, mezcladas con pez blanca y mirra. Algunas eran incluso gatos momificados.",
+     "fr": "On la fabriquait avec des momies broyées, mélangées à de la poix blanche et de la myrrhe. Certaines étaient même des chats momifiés.",
+     "cap": "Ground-up *mummies*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "From the 1700s to the 1800s it was hugely popular. Painters like Eugène Delacroix are thought to have used it.",
+     "de": "Vom 18. bis ins 19. Jahrhundert war sie sehr beliebt. Maler wie Eugène Delacroix sollen sie benutzt haben.",
+     "es": "Entre los siglos dieciocho y diecinueve fue muy popular. Se cree que pintores como Eugène Delacroix la usaron.",
+     "fr": "Du dix-huitième au dix-neuvième siècle, elle était très populaire. Des peintres comme Eugène Delacroix l'auraient utilisée.",
+     "cap": "Hugely *popular*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "When the painter Edward Burne-Jones found out what it really was, he gave his tube a proper burial in his garden.",
+     "de": "Als der Maler Edward Burne-Jones erfuhr, was darin war, beerdigte er seine Tube feierlich im Garten.",
+     "es": "Cuando el pintor Edward Burne-Jones descubrió lo que era, enterró su tubo con ceremonia en el jardín.",
+     "fr": "Quand le peintre Edward Burne-Jones a découvert ce que c'était, il a enterré son tube dans son jardin.",
+     "cap": "He *buried* his tube.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "In 1964, the last London color maker selling it said it had run out of mummies a few years earlier.",
+     "de": "1964 sagte der letzte Londoner Farbenhersteller, der sie verkaufte, ihm seien schon vor ein paar Jahren die Mumien ausgegangen.",
+     "es": "En 1964, el último fabricante londinense que la vendía dijo que se le habían acabado las momias unos años antes.",
+     "fr": "En 1964, le dernier fabricant londonien qui la vendait a dit qu'il était à court de momies depuis quelques années.",
+     "cap": "It ran out of *mummies*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "And before it was paint, people even swallowed mummy powder as medicine.",
+     "de": "Und bevor es Farbe war, schluckten Menschen Mumienpulver sogar als Medizin.",
+     "es": "Y antes de ser pintura, la gente incluso tomaba polvo de momia como medicina.",
+     "fr": "Et avant d'être de la peinture, on avalait même de la poudre de momie comme médicament.",
+     "cap": "Mummy powder as *medicine*.",
+     "at": 0.45
+    },
+    {
+     "text": "Would you paint with it? Comment yes or no, and subscribe.",
+     "de": "Würdest du damit malen? Schreib ja oder nein in die Kommentare und abonnier.",
+     "es": "¿Pintarías con ella? Comenta sí o no, y suscríbete.",
+     "fr": "Tu peindrais avec ? Écris oui ou non en commentaire, et abonne-toi.",
+     "cta": true,
+     "host": true,
+     "at": "0.15"
+    }
+   ]
+  }
+ ]
+}

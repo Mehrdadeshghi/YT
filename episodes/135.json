@@ -1,0 +1,171 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "cut",
+ "loop": false,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "scripts": [
+  "tech.js",
+  "pro.js"
+ ],
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "style": "pro",
+ "capY": 1490,
+ "host": true,
+ "host_img": "assets/host/host_art.png",
+ "subY": 1720,
+ "subEndY": 1720,
+ "openCapAt": 99,
+ "voice_ref": "assets/voice/explainer_sarah.wav",
+ "ep": 135,
+ "series": "ART SCANDALS #3",
+ "title": "From 45 pounds to 450 million dollars",
+ "titlePro": "Bought for *$1,175*. Sold for *$450 million*.",
+ "source": "https://en.wikipedia.org/wiki/Salvator_Mundi_(Leonardo)",
+ "cta": {
+  "q": "Would you pay $450 million?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Uplifting Blockbuster (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 60,
+   "gain": 0.42
+  },
+  {
+   "id": "sm",
+   "file": "File:Leonardo da Vinci, Salvator Mundi, c.1500, oil on walnut, 45.4 × 65.6 cm.jpg"
+  },
+  {
+   "id": "before",
+   "file": "File:Leonardo da Vinci, Salvator Mundi before restoration (black and white), Cook Collection.jpg"
+  },
+  {
+   "id": "orb",
+   "file": "File:Leonardo da Vinci, Salvator Mundi, detail of the left hand and transparent orb.jpg"
+  },
+  {
+   "id": "auction",
+   "file": "File:Microcosm of London Plate 006 - Auction Room, Christie's (colour).jpg"
+  }
+ ],
+ "vo_open": [
+  {
+   "text": "Bought for one thousand one hundred seventy-five dollars. Sold for four hundred fifty million.",
+   "de": "Gekauft für tausendeinhundertfünfundsiebzig Dollar. Verkauft für vierhundertfünfzig Millionen.",
+   "es": "Comprado por mil ciento setenta y cinco dólares. Vendido por cuatrocientos cincuenta millones.",
+   "fr": "Acheté mille cent soixante-quinze dollars. Vendu quatre cent cinquante millions.",
+   "cap": "Sold for *450 million*."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "In 1958 this painting sold at auction for just forty-five pounds, as the work of one of Leonardo's students.",
+     "de": "1958 wurde dieses Bild für nur fünfundvierzig Pfund versteigert, als Werk eines Leonardo-Schülers.",
+     "es": "En 1958 este cuadro se subastó por solo cuarenta y cinco libras, como obra de un alumno de Leonardo.",
+     "fr": "En 1958, ce tableau a été vendu aux enchères pour seulement quarante-cinq livres, comme l'œuvre d'un élève de Léonard.",
+     "cap": "Just *45 pounds*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "In 2005, two art dealers bought it for one thousand one hundred seventy-five dollars, and had it restored.",
+     "de": "2005 kauften zwei Kunsthändler es für tausendeinhundertfünfundsiebzig Dollar und ließen es restaurieren.",
+     "es": "En 2005, dos marchantes lo compraron por mil ciento setenta y cinco dólares y lo mandaron restaurar.",
+     "fr": "En 2005, deux marchands d'art l'ont acheté mille cent soixante-quinze dollars, et l'ont fait restaurer.",
+     "cap": "*$1,175*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "Experts then attributed it to Leonardo da Vinci himself. It is called Salvator Mundi, Savior of the World.",
+     "de": "Danach schrieben Experten es Leonardo da Vinci selbst zu. Es heißt Salvator Mundi, Retter der Welt.",
+     "es": "Después, los expertos lo atribuyeron al propio Leonardo da Vinci. Se llama Salvator Mundi, Salvador del Mundo.",
+     "fr": "Puis des experts l'ont attribué à Léonard de Vinci lui-même. Il s'appelle Salvator Mundi, le Sauveur du monde.",
+     "cap": "*Leonardo* himself.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "In 2017 it sold at Christie's in New York for four hundred fifty million dollars, the most expensive painting ever sold.",
+     "de": "2017 wurde es bei Christie's in New York für vierhundertfünfzig Millionen Dollar verkauft, das teuerste Gemälde aller Zeiten.",
+     "es": "En 2017 se vendió en Christie's de Nueva York por cuatrocientos cincuenta millones de dólares, el cuadro más caro de la historia.",
+     "fr": "En 2017, il s'est vendu chez Christie's à New York pour quatre cent cinquante millions de dollars, le tableau le plus cher de l'histoire.",
+     "cap": "The most *expensive* painting ever.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "The buyer was reportedly acting for Saudi Arabia's crown prince. Since then it has not been shown in public, reportedly kept in storage.",
+     "de": "Der Käufer handelte angeblich für den saudischen Kronprinzen. Seitdem wurde es nie mehr öffentlich gezeigt und lagert angeblich im Depot.",
+     "es": "Según se informó, el comprador actuaba para el príncipe heredero saudí. Desde entonces no se ha mostrado en público y estaría almacenado.",
+     "fr": "L'acheteur agissait, dit-on, pour le prince héritier saoudien. Depuis, il n'a plus été montré en public et serait dans une réserve.",
+     "cap": "Not shown in *public*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "And some experts still doubt that Leonardo painted most of it.",
+     "de": "Und manche Experten zweifeln bis heute, dass Leonardo das meiste davon selbst gemalt hat.",
+     "es": "Y algunos expertos aún dudan de que Leonardo pintara la mayor parte.",
+     "fr": "Et certains experts doutent encore que Léonard en ait peint l'essentiel.",
+     "cap": "Some experts still *doubt* it.",
+     "at": 0.45
+    },
+    {
+     "text": "Would you pay four hundred fifty million for it? Comment yes or no, and subscribe.",
+     "de": "Würdest du vierhundertfünfzig Millionen dafür zahlen? Schreib ja oder nein in die Kommentare und abonnier.",
+     "es": "¿Pagarías cuatrocientos cincuenta millones por él? Comenta sí o no, y suscríbete.",
+     "fr": "Tu paierais quatre cent cinquante millions pour ça ? Écris oui ou non en commentaire, et abonne-toi.",
+     "cta": true,
+     "host": true,
+     "at": "0.15"
+    }
+   ]
+  }
+ ]
+}

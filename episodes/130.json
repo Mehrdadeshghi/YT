@@ -1,0 +1,172 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "cut",
+ "loop": false,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "scripts": [
+  "tech.js",
+  "pro.js"
+ ],
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "style": "pro",
+ "capY": 1490,
+ "host": true,
+ "host_img": "assets/host/host_art.png",
+ "subY": 1720,
+ "subEndY": 1720,
+ "openCapAt": 99,
+ "voice_ref": "assets/voice/explainer_sarah.wav",
+ "ep": 130,
+ "series": "ART SECRETS #2",
+ "title": "Bosch's 500-year-old butt music",
+ "titlePro": "Someone painted *music on a butt*",
+ "source": "https://en.wikipedia.org/wiki/The_Garden_of_Earthly_Delights",
+ "cta": {
+  "q": "Would you hang this at home?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Fantasy Theme (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 60,
+   "gain": 0.45
+  },
+  {
+   "id": "garden",
+   "file": "File:El jardín de las Delicias, de El Bosco.jpg"
+  },
+  {
+   "id": "hell",
+   "file": "File:Hieronymus Bosch - The Garden of Earthly Delights - Hell.jpg"
+  },
+  {
+   "id": "prince",
+   "file": "File:Bosch the Prince of Hell with a cauldron on his head.JPG"
+  },
+  {
+   "id": "butt",
+   "audio": "File:Butt Music - Hieronymus Bosch (Lute).opus",
+   "from": 0,
+   "len": 9
+  }
+ ],
+ "vo_open": [
+  {
+   "text": "Someone painted sheet music on a man's butt. Five hundred years ago.",
+   "de": "Jemand hat Noten auf den Hintern eines Mannes gemalt. Vor fünfhundert Jahren.",
+   "es": "Alguien pintó una partitura en el trasero de un hombre. Hace quinientos años.",
+   "fr": "Quelqu'un a peint une partition sur les fesses d'un homme. Il y a cinq cents ans.",
+   "cap": "Sheet music on a *butt*."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "This is The Garden of Earthly Delights by Hieronymus Bosch, painted between 1490 and 1510. Today it hangs in the Prado in Madrid.",
+     "de": "Das ist Der Garten der Lüste von Hieronymus Bosch, gemalt zwischen 1490 und 1510. Heute hängt er im Prado in Madrid.",
+     "es": "Esto es El jardín de las delicias, de El Bosco, pintado entre 1490 y 1510. Hoy cuelga en el Prado de Madrid.",
+     "fr": "Voici Le Jardin des délices de Jérôme Bosch, peint entre 1490 et 1510. Aujourd'hui, il est au Prado, à Madrid.",
+     "cap": "Hieronymus *Bosch*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "The right panel shows hell. And in a corner known as the Musicians' Hell, sinners are tortured by giant instruments.",
+     "de": "Die rechte Tafel zeigt die Hölle. Und in einer Ecke, der Musikerhölle, werden Sünder von riesigen Instrumenten gequält.",
+     "es": "El panel derecho muestra el infierno. Y en un rincón, el infierno de los músicos, los pecadores son torturados con instrumentos gigantes.",
+     "fr": "Le panneau de droite montre l'enfer. Et dans un coin, l'enfer des musiciens, des pécheurs sont torturés par des instruments géants.",
+     "cap": "The *Musicians' Hell*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "One man lies trapped under a lute. And printed on his bare backside is a line of music, while a choir sings from it.",
+     "de": "Ein Mann liegt unter einer Laute gefangen. Und auf seinem nackten Hintern steht eine Notenzeile, aus der ein Chor singt.",
+     "es": "Un hombre yace atrapado bajo un laúd. Y en su trasero desnudo hay una línea de música, que un coro está cantando.",
+     "fr": "Un homme est coincé sous un luth. Et sur ses fesses nues est peinte une ligne de musique, qu'un chœur chante.",
+     "cap": "A line of *music*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "In 2014, a student wrote those notes down and played them. The internet called it the five-hundred-year-old butt song from hell.",
+     "de": "2014 hat eine Studentin diese Noten aufgeschrieben und gespielt. Das Internet nannte es den fünfhundert Jahre alten Hintern-Song aus der Hölle.",
+     "es": "En 2014, una estudiante transcribió esas notas y las tocó. Internet lo llamó la canción del trasero del infierno, de quinientos años.",
+     "fr": "En 2014, une étudiante a retranscrit ces notes et les a jouées. Internet l'a appelée la chanson des fesses de l'enfer, vieille de cinq cents ans.",
+     "cap": "The *butt song* from hell.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "And this is what it sounds like.",
+     "de": "Und so klingt das.",
+     "es": "Y así es como suena.",
+     "fr": "Et voilà à quoi ça ressemble.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "Bosch packed this painting with so many strange details that experts still argue about what it all means.",
+     "de": "Bosch hat so viele seltsame Details in dieses Bild gepackt, dass Experten bis heute streiten, was sie bedeuten.",
+     "es": "El Bosco llenó este cuadro de tantos detalles extraños que los expertos aún discuten qué significa todo.",
+     "fr": "Bosch a mis tant de détails étranges dans ce tableau que les experts se disputent encore sur leur sens.",
+     "cap": "Experts still *argue*.",
+     "at": 0.45
+    },
+    {
+     "text": "Would you hang this painting in your living room? Comment yes or no, and subscribe.",
+     "de": "Würdest du dieses Bild in dein Wohnzimmer hängen? Schreib ja oder nein in die Kommentare und abonnier.",
+     "es": "¿Colgarías este cuadro en tu salón? Comenta sí o no, y suscríbete.",
+     "fr": "Tu accrocherais ce tableau dans ton salon ? Écris oui ou non en commentaire, et abonne-toi.",
+     "cta": true,
+     "host": true,
+     "at": "0.15"
+    }
+   ]
+  }
+ ]
+}

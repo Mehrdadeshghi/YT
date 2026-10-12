@@ -1,0 +1,179 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "cut",
+ "loop": false,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "scripts": [
+  "tech.js",
+  "pro.js"
+ ],
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "style": "pro",
+ "capY": 1490,
+ "host": true,
+ "host_img": "assets/host/host_art.png",
+ "subY": 1720,
+ "subEndY": 1720,
+ "openCapAt": 99,
+ "voice_ref": "assets/voice/explainer_sarah.wav",
+ "ep": 133,
+ "series": "ART SCANDALS #1",
+ "title": "The biggest art heist in history",
+ "titlePro": "13 artworks. *Half a billion dollars.* Still missing.",
+ "source": "https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft",
+ "cta": {
+  "q": "Will they ever be found?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Horror Suspense.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 0.45
+  },
+  {
+   "id": "frames",
+   "file": "File:Empty Frames at Isabella Stewart Gardner Museum.jpg"
+  },
+  {
+   "id": "rframes",
+   "file": "File:The stolen Rembrandt frames.jpg"
+  },
+  {
+   "id": "storm",
+   "file": "File:Rembrandt Christ in the Storm on the Lake of Galilee.jpg"
+  },
+  {
+   "id": "concert",
+   "file": "File:Vermeer The concert.JPG"
+  },
+  {
+   "id": "court",
+   "file": "File:2012 GardnerMuseum Boston USA 6.jpg"
+  },
+  {
+   "id": "sketch",
+   "file": "File:Sketches of Suspects Isabella Stewart Gardner Museum Theft.jpg"
+  }
+ ],
+ "vo_open": [
+  {
+   "text": "Thirteen artworks. Half a billion dollars. Still missing.",
+   "de": "Dreizehn Kunstwerke. Eine halbe Milliarde Dollar. Bis heute verschwunden.",
+   "es": "Trece obras de arte. Medio billón de dólares. Siguen desaparecidas.",
+   "fr": "Treize œuvres. Un demi-milliard de dollars. Toujours introuvables.",
+   "cap": "*Still missing.*"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "March 18, 1990, Boston. In the middle of the night, two men dressed as police officers ring at the Isabella Stewart Gardner Museum.",
+     "de": "18. März 1990, Boston. Mitten in der Nacht klingeln zwei Männer in Polizeiuniform am Isabella Stewart Gardner Museum.",
+     "es": "18 de marzo de 1990, Boston. En plena noche, dos hombres vestidos de policía llaman al museo Isabella Stewart Gardner.",
+     "fr": "18 mars 1990, Boston. En pleine nuit, deux hommes déguisés en policiers sonnent au musée Isabella Stewart Gardner.",
+     "cap": "Dressed as *police*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "The guards let them in. Minutes later, both guards were tied up in the basement, their heads wrapped in duct tape.",
+     "de": "Die Wachleute ließen sie rein. Minuten später lagen beide gefesselt im Keller, die Köpfe mit Klebeband umwickelt.",
+     "es": "Los guardias les abrieron. Minutos después, los dos estaban atados en el sótano, con la cabeza envuelta en cinta.",
+     "fr": "Les gardiens les ont laissés entrer. Quelques minutes plus tard, ils étaient ligotés au sous-sol, la tête entourée de ruban adhésif.",
+     "cap": "Tied up in the *basement*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "The thieves took thirteen works, including a stormy Rembrandt and The Concert by Vermeer, the most valuable unrecovered painting in the world.",
+     "de": "Die Diebe nahmen dreizehn Werke mit, darunter einen Rembrandt im Sturm und Das Konzert von Vermeer, das wertvollste verschwundene Gemälde der Welt.",
+     "es": "Se llevaron trece obras, entre ellas un Rembrandt con tormenta y El concierto de Vermeer, el cuadro desaparecido más valioso del mundo.",
+     "fr": "Ils ont pris treize œuvres, dont un Rembrandt dans la tempête et Le Concert de Vermeer, le tableau disparu le plus précieux au monde.",
+     "cap": "The most valuable *missing* painting.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "By 2000, the FBI valued the theft at five hundred million dollars. It is the biggest museum robbery in history.",
+     "de": "Bis 2000 schätzte das FBI den Wert auf fünfhundert Millionen Dollar. Es ist der größte Museumsraub der Geschichte.",
+     "es": "En 2000, el FBI lo valoró en quinientos millones de dólares. Es el mayor robo a un museo de la historia.",
+     "fr": "En 2000, le FBI estimait le vol à cinq cents millions de dollars. C'est le plus grand vol de musée de l'histoire.",
+     "cap": "*Five hundred million* dollars.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "And because the founder's will said nothing in the museum may ever change, the empty frames still hang on the walls today.",
+     "de": "Und weil das Testament der Gründerin verbietet, im Museum etwas zu verändern, hängen die leeren Rahmen bis heute an der Wand.",
+     "es": "Y como el testamento de la fundadora prohíbe cambiar nada en el museo, los marcos vacíos siguen colgados hoy.",
+     "fr": "Et comme le testament de la fondatrice interdit de rien changer au musée, les cadres vides sont toujours accrochés aux murs.",
+     "cap": "The *empty frames* still hang.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "The museum still offers a ten million dollar reward. Nobody has ever been charged.",
+     "de": "Das Museum bietet bis heute zehn Millionen Dollar Belohnung. Angeklagt wurde nie jemand.",
+     "es": "El museo sigue ofreciendo diez millones de dólares de recompensa. Nunca se ha acusado a nadie.",
+     "fr": "Le musée offre toujours dix millions de dollars de récompense. Personne n'a jamais été inculpé.",
+     "cap": "A *ten million* dollar reward.",
+     "at": 0.45
+    },
+    {
+     "text": "Do you think the paintings will ever come back? Comment yes or no, and subscribe.",
+     "de": "Glaubst du, die Bilder tauchen jemals wieder auf? Schreib ja oder nein in die Kommentare und abonnier.",
+     "es": "¿Crees que los cuadros volverán algún día? Comenta sí o no, y suscríbete.",
+     "fr": "Tu crois que les tableaux reviendront un jour ? Écris oui ou non en commentaire, et abonne-toi.",
+     "cta": true,
+     "host": true,
+     "at": "0.15"
+    }
+   ]
+  }
+ ]
+}

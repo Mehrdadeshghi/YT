@@ -1,0 +1,175 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "cut",
+ "loop": false,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "scripts": [
+  "tech.js",
+  "pro.js"
+ ],
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "style": "pro",
+ "capY": 1490,
+ "host": true,
+ "host_img": "assets/host/host_art.png",
+ "subY": 1720,
+ "subEndY": 1720,
+ "openCapAt": 99,
+ "voice_ref": "assets/voice/explainer_sarah.wav",
+ "ep": 137,
+ "series": "COLOR STORIES #2",
+ "title": "The green that killed people",
+ "titlePro": "This beautiful green *killed people*",
+ "source": "https://en.wikipedia.org/wiki/Scheele%27s_green",
+ "cta": {
+  "q": "What killed Napoleon?",
+  "a": "ARSENIC",
+  "b": "CANCER",
+  "emoji": "think"
+ },
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Horror Suspense.ogg",
+   "from": 40,
+   "len": 60,
+   "gain": 0.45
+  },
+  {
+   "id": "pg",
+   "file": "File:Paris Green (Schweinfurter Grün).JPG"
+  },
+  {
+   "id": "dust",
+   "file": "File:\"Dust Paris green on swamps and ponds\" - NARA - 515024 (restored).jpg"
+  },
+  {
+   "id": "mix",
+   "file": "File:3298054073 103cba6cc2 oMélangeVertParis (restored and cropped).jpg"
+  },
+  {
+   "id": "nap",
+   "file": "File:Napoleon death-Charles von Steuben-IMG 1512.JPG"
+  },
+  {
+   "id": "longwood",
+   "file": "File:Longwood House 2 (26186905447).jpg"
+  }
+ ],
+ "vo_open": [
+  {
+   "text": "This beautiful green killed people.",
+   "de": "Dieses wunderschöne Grün hat Menschen getötet.",
+   "es": "Este verde precioso mató a gente.",
+   "fr": "Ce vert magnifique a tué des gens.",
+   "cap": "This green *killed* people."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "In 1775, the chemist Carl Wilhelm Scheele invented a brilliant new green. The key ingredient was arsenic.",
+     "de": "1775 erfand der Chemiker Carl Wilhelm Scheele ein leuchtendes neues Grün. Die wichtigste Zutat war Arsen.",
+     "es": "En 1775, el químico Carl Wilhelm Scheele inventó un verde brillante. El ingrediente clave era el arsénico.",
+     "fr": "En 1775, le chimiste Carl Wilhelm Scheele a inventé un vert éclatant. L'ingrédient clé, c'était l'arsenic.",
+     "cap": "The key ingredient: *arsenic*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "It became a sensation. Wallpaper, dresses, candles, even children's toys were colored with it.",
+     "de": "Es wurde zur Sensation. Tapeten, Kleider, Kerzen und sogar Kinderspielzeug wurden damit gefärbt.",
+     "es": "Fue una sensación. Papel pintado, vestidos, velas y hasta juguetes infantiles se teñían con él.",
+     "fr": "C'est devenu une sensation. Papiers peints, robes, bougies et même jouets d'enfants en étaient colorés.",
+     "cap": "Even children's *toys*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "In damp rooms, mold growing on the wallpaper could turn the arsenic into a poisonous gas.",
+     "de": "In feuchten Räumen konnte Schimmel auf der Tapete das Arsen in ein giftiges Gas verwandeln.",
+     "es": "En habitaciones húmedas, el moho del papel pintado podía convertir el arsénico en un gas venenoso.",
+     "fr": "Dans les pièces humides, la moisissure du papier peint pouvait transformer l'arsenic en gaz toxique.",
+     "cap": "A poisonous *gas*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "Its successor, Paris green, was so toxic that it became the first chemical insecticide in the world.",
+     "de": "Sein Nachfolger, das Schweinfurter Grün, war so giftig, dass es das erste chemische Insektizid der Welt wurde.",
+     "es": "Su sucesor, el verde de París, era tan tóxico que se convirtió en el primer insecticida químico del mundo.",
+     "fr": "Son successeur, le vert de Paris, était si toxique qu'il est devenu le premier insecticide chimique au monde.",
+     "cap": "The first chemical *insecticide*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "One theory even links it to Napoleon's death. His wallpaper on Saint Helena was green. But most historians blame stomach cancer.",
+     "de": "Eine Theorie bringt es sogar mit Napoleons Tod in Verbindung. Seine Tapete auf Sankt Helena war grün. Die meisten Historiker sagen aber: Magenkrebs.",
+     "es": "Una teoría incluso lo relaciona con la muerte de Napoleón. Su papel pintado en Santa Elena era verde. Pero la mayoría de historiadores culpa al cáncer de estómago.",
+     "fr": "Une théorie le relie même à la mort de Napoléon. Son papier peint à Sainte-Hélène était vert. Mais la plupart des historiens accusent un cancer de l'estomac.",
+     "cap": "*Napoleon's* death.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "By the 1890s, the last wallpaper with Scheele's green stopped being made.",
+     "de": "In den 1890ern wurde die letzte Tapete mit Scheeles Grün eingestellt.",
+     "es": "En la década de 1890 se dejó de fabricar el último papel pintado con verde de Scheele.",
+     "fr": "Dans les années 1890, le dernier papier peint au vert de Scheele a cessé d'être fabriqué.",
+     "cap": "The *1890s*.",
+     "at": 0.45
+    },
+    {
+     "text": "So what killed Napoleon, arsenic or cancer? Comment arsenic or cancer, and subscribe.",
+     "de": "Was hat Napoleon getötet, Arsen oder Krebs? Schreib Arsen oder Krebs in die Kommentare und abonnier.",
+     "es": "¿Qué mató a Napoleón, arsénico o cáncer? Comenta arsénico o cáncer, y suscríbete.",
+     "fr": "Qu'est-ce qui a tué Napoléon, l'arsenic ou le cancer ? Écris arsenic ou cancer en commentaire, et abonne-toi.",
+     "cta": true,
+     "host": true,
+     "at": "0.15"
+    }
+   ]
+  }
+ ]
+}

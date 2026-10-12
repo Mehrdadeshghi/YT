@@ -33,6 +33,16 @@ def api(**p):
             print("   retry", e); time.sleep(2 + attempt * 3)
     raise RuntimeError("api failed")
 
+def get(url, tries=6):
+    """download with patience: Wikimedia answers bursts with HTTP 429"""
+    for k in range(tries):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120) as r: data = r.read()
+            time.sleep(1.5); return data
+        except Exception as e:
+            print("   wait", e); time.sleep(15 * (k + 1))
+    raise RuntimeError("download failed " + url)
+
 def clean(html): return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", html or "")).strip()
 
 def candidates(article, match, file=None):
@@ -57,7 +67,7 @@ def fetch(ep, spec, credits):
         if not FREE.search(lic) or max(ii.get("width", 0), ii.get("thumbwidth", 0)) < (360 if spec.get("file") else 480):
             print(f"   skip {name} ({lic or 'no license'}, {ii.get('width')} px)"); continue
         url = ii.get("thumburl") or ii["url"]; dst = f"{OUT}/{ep}_{spec['id']}.jpg"
-        with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r: data = r.read()
+        data = get(url)
         if not data.startswith(b"\xff\xd8"):   # png/svg thumbnails → convert to jpg on a paper-white background
             from PIL import Image; import io
             im = Image.open(io.BytesIO(data)).convert("RGBA"); bg = Image.new("RGB", im.size, (242, 238, 230)); bg.paste(im, mask=im.split()[3])
@@ -81,7 +91,7 @@ def fetch_video(ep, spec, credits):
                   key=lambda d: -d["height"])
     url = ders[0]["src"] if ders else vi["url"]
     tmp = tempfile.mkdtemp(); src = os.path.join(tmp, "v")
-    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=300) as r, open(src, "wb") as f: shutil.copyfileobj(r, f)
+    open(src, "wb").write(get(url))
     out = f"assets/clips/{ep}_{spec['id']}"; shutil.rmtree(out, ignore_errors=True); os.makedirs(out)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(spec.get("from", 0)), "-t", str(spec.get("len", 5)), "-i", src,
                     "-vf", f"fps={spec.get('fps', 30)},scale=1080:-2", "-q:v", "3", f"{out}/%04d.jpg"], check=True)
@@ -99,7 +109,7 @@ def fetch_audio(ep, spec, credits):
     ii = (q.get("imageinfo") or [{}])[0]; meta = ii.get("extmetadata", {}); lic = clean(meta.get("LicenseShortName", {}).get("value"))
     if not ii or not FREE.search(lic): print(f"   skip audio {name} ({lic or 'no license'})"); return
     tmp = tempfile.mkdtemp(); src = os.path.join(tmp, "a")
-    with urllib.request.urlopen(urllib.request.Request(ii["url"], headers=UA), timeout=300) as r, open(src, "wb") as f: shutil.copyfileobj(r, f)
+    open(src, "wb").write(get(ii["url"]))
     os.makedirs("assets/music", exist_ok=True); out = f"assets/music/{ep}_{spec['id']}.wav"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(spec.get("from", 0)), "-t", str(spec.get("len", 60)), "-i", src, "-ac", "2", "-ar", "48000", "-c:a", "pcm_s16le", out], check=True)
     author = clean(re.sub(r"<[^>]+>", " ", meta.get("Artist", {}).get("value") or "")) or "unknown"

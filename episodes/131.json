@@ -1,0 +1,167 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "cut",
+ "loop": false,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "map": false,
+ "mood": "epic",
+ "scripts": [
+  "tech.js",
+  "pro.js"
+ ],
+ "spell": {},
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "style": "pro",
+ "capY": 1490,
+ "host": true,
+ "host_img": "assets/host/host_art.png",
+ "subY": 1720,
+ "subEndY": 1720,
+ "openCapAt": 99,
+ "voice_ref": "assets/voice/explainer_sarah.wav",
+ "ep": 131,
+ "series": "ART SECRETS #3",
+ "title": "The door cut through Leonardo's Last Supper",
+ "titlePro": "Someone cut a *door* through Jesus' feet",
+ "source": "https://en.wikipedia.org/wiki/The_Last_Supper_(Leonardo)",
+ "cta": {
+  "q": "Did you know about the door?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "think"
+ },
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Fantasy Theme (cc-by) (filmmusic).mp3",
+   "from": 30,
+   "len": 60,
+   "gain": 0.45
+  },
+  {
+   "id": "supper",
+   "file": "File:The Last Supper - Leonardo Da Vinci - High Resolution 32x16.jpg"
+  },
+  {
+   "id": "room",
+   "file": "File:Santa Maria delle Grazie with Leonardo's The Last Supper.jpg"
+  },
+  {
+   "id": "detail",
+   "file": "File:Cenacolo Vinciano, Santuario di Santa Maria delle Grazie, Milano (30787690786).jpg"
+  }
+ ],
+ "vo_open": [
+  {
+   "text": "Someone cut a door through Jesus' feet. In one of the most famous paintings ever.",
+   "de": "Jemand hat eine Tür durch die Füße von Jesus gebrochen. In einem der berühmtesten Bilder überhaupt.",
+   "es": "Alguien abrió una puerta a través de los pies de Jesús. En uno de los cuadros más famosos de la historia.",
+   "fr": "Quelqu'un a percé une porte à travers les pieds de Jésus. Dans l'un des tableaux les plus célèbres.",
+   "cap": "A *door* through his feet."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "Leonardo da Vinci painted The Last Supper on the wall of a dining hall in Milan, and finished it in 1498.",
+     "de": "Leonardo da Vinci malte Das Abendmahl an die Wand eines Speisesaals in Mailand und wurde 1498 fertig.",
+     "es": "Leonardo da Vinci pintó La Última Cena en la pared de un comedor en Milán, y la terminó en 1498.",
+     "fr": "Léonard de Vinci a peint La Cène sur le mur d'un réfectoire à Milan, et l'a terminée en 1498.",
+     "cap": "*Leonardo*, 1498.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "But instead of a real fresco, he experimented with tempera on a dry wall. Soon after he finished, the paint began to flake.",
+     "de": "Aber statt eines echten Freskos experimentierte er mit Tempera auf trockener Wand. Kurz danach begann die Farbe abzublättern.",
+     "es": "Pero en lugar de un fresco auténtico, experimentó con témpera sobre una pared seca. Poco después, la pintura empezó a desprenderse.",
+     "fr": "Mais au lieu d'une vraie fresque, il a expérimenté la tempera sur un mur sec. Peu après, la peinture a commencé à s'écailler.",
+     "cap": "The paint began to *flake*.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "By 1556, less than sixty years later, a writer described it as a muddle of blots.",
+     "de": "Schon 1556, keine sechzig Jahre später, beschrieb ein Autor es als Gewirr von Flecken.",
+     "es": "En 1556, menos de sesenta años después, un escritor lo describió como un revoltijo de manchas.",
+     "fr": "En 1556, moins de soixante ans plus tard, un auteur le décrivait comme un fouillis de taches.",
+     "cap": "A *muddle of blots*.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "So in 1652, when the painting was barely recognizable, someone cut a doorway right through the bottom of it.",
+     "de": "Und 1652, als das Bild kaum noch zu erkennen war, brach jemand einfach eine Tür durch den unteren Teil.",
+     "es": "Así que en 1652, cuando el cuadro apenas se reconocía, alguien abrió una puerta justo en su parte de abajo.",
+     "fr": "Alors en 1652, quand le tableau était à peine reconnaissable, quelqu'un a percé une porte dans sa partie basse.",
+     "cap": "In *1652*, a doorway.",
+     "at": 0.45
+    }
+   ],
+   "host": true
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "You can still see the arch today, right where Jesus' feet used to be.",
+     "de": "Den Bogen sieht man bis heute, genau dort, wo die Füße von Jesus waren.",
+     "es": "Todavía hoy se ve el arco, justo donde estaban los pies de Jesús.",
+     "fr": "On voit encore l'arc aujourd'hui, juste là où se trouvaient les pieds de Jésus.",
+     "cap": "Right where his *feet* were.",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vo": [
+    {
+     "text": "In 1943 a bomb hit the building. Sandbags saved the wall. And a restoration that took twenty-one years finally ended in 1999.",
+     "de": "1943 traf eine Bombe das Gebäude. Sandsäcke retteten die Wand. Und eine Restaurierung von einundzwanzig Jahren endete erst 1999.",
+     "es": "En 1943 una bomba cayó sobre el edificio. Los sacos de arena salvaron el muro. Y una restauración de veintiún años terminó en 1999.",
+     "fr": "En 1943, une bombe a frappé le bâtiment. Des sacs de sable ont sauvé le mur. Et une restauration de vingt et un ans s'est achevée en 1999.",
+     "cap": "Saved by *sandbags*.",
+     "at": 0.45
+    },
+    {
+     "text": "Did you know about the door? Comment yes or no, and subscribe.",
+     "de": "Wusstest du das mit der Tür? Schreib ja oder nein in die Kommentare und abonnier.",
+     "es": "¿Sabías lo de la puerta? Comenta sí o no, y suscríbete.",
+     "fr": "Tu connaissais l'histoire de la porte ? Écris oui ou non en commentaire, et abonne-toi.",
+     "cta": true,
+     "host": true,
+     "at": "0.15"
+    }
+   ]
+  }
+ ]
+}
