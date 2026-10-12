@@ -50,8 +50,31 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: "host_${{ matrix.variant }}", path: "host_${{ matrix.variant }}.*" }
+  ditto:
+    needs: voice
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: line }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.10" }
+      - name: Ditto (LivePortrait motion space, CPU)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q torch torchvision --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -1
+          pip install -q librosa tqdm filetype imageio opencv-python-headless scikit-image cython imageio-ffmpeg colored onnxruntime mediapipe huggingface_hub 2>&1 | tail -2
+          git clone -q --depth 1 https://github.com/antgroup/ditto-talkinghead /opt/ditto && python3 scripts/ditto_cpu.py /opt/ditto
+          python3 -c "from huggingface_hub import snapshot_download as s; s('digital-avatar/ditto-talkinghead', local_dir='/opt/ditto/checkpoints', allow_patterns=['ditto_cfg/v0.4_hubert_cfg_pytorch.pkl', 'ditto_pytorch/*', 'ditto_pytorch/*/*'])"
+          find /opt/ditto/checkpoints -type f | head -20
+          cd /opt/ditto && set -o pipefail && (time python inference.py --data_root ./checkpoints/ditto_pytorch --cfg_pkl ./checkpoints/ditto_cfg/v0.4_hubert_cfg_pytorch.pkl \
+            --audio_path $GITHUB_WORKSPACE/line.wav --source_path $GITHUB_WORKSPACE/assets/host/host_v1.png --output_path /tmp/ditto.mp4) 2>&1 | tail -60 > $GITHUB_WORKSPACE/host_ditto.log
+          ffmpeg -v error -y -i /tmp/ditto.mp4 -vf "scale=720:-2,fps=30" -c:v libx264 -crf 18 -pix_fmt yuv420p -c:a aac -b:a 160k $GITHUB_WORKSPACE/host_ditto.mp4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: host_ditto, path: "host_ditto.*" }
   publish:
-    needs: host
+    needs: [host, ditto]
     if: always()
     runs-on: ubuntu-latest
     steps:
