@@ -1,0 +1,738 @@
+{
+ "ep": 139,
+ "title": "A Journey to the Bottom of the Ocean",
+ "wide": true,
+ "style": "pro",
+ "look": "cine",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "transition": "fade",
+ "tight": true,
+ "tail": 0.35,
+ "voice": "narrator",
+ "voice_style": "story",
+ "speed": 1.0,
+ "sub": 1,
+ "lazyClips": true,
+ "mood": "deep",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "scripts": [
+  "tech.js",
+  "pro.js"
+ ],
+ "capY": 985,
+ "capSize": 44,
+ "openMin": 1.6,
+ "cta": {
+  "q": "Which animal surprised you most?",
+  "a": "DUMBO",
+  "b": "SNAILFISH"
+ },
+ "source": "https://en.wikipedia.org/wiki/Deep_sea",
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 132,
+   "gain": 0.4
+  },
+  {
+   "id": "surface",
+   "file": "File:Waves in pacifica 1.jpg"
+  },
+  {
+   "id": "lantern",
+   "file": "File:Myctophum punctatum2.jpg"
+  },
+  {
+   "id": "photo",
+   "file": "File:Electrona risso photophores.jpg"
+  },
+  {
+   "id": "hatchet",
+   "file": "File:Hatchetfish bioluminescence.jpg"
+  },
+  {
+   "id": "barrel",
+   "file": "File:Barreleye-fish GoK.jpg"
+  },
+  {
+   "id": "barrelill",
+   "file": "File:Macropinna microstoma illustration.png"
+  },
+  {
+   "id": "siph",
+   "file": "File:Physonect siphonophore Puerto Rico April 2015.png"
+  },
+  {
+   "id": "praya",
+   "file": "File:Praya dubia (Giant siphonophore).jpg"
+  },
+  {
+   "id": "luminous",
+   "file": "File:Luminous Fish of the Deep Sea.jpg"
+  },
+  {
+   "id": "vamp",
+   "file": "File:Vampyroteuthis infernalis dorsal view.jpg"
+  },
+  {
+   "id": "vamp2",
+   "file": "File:Vampyroteuthis1.jpg"
+  },
+  {
+   "id": "eel",
+   "file": "File:Eurypharynx pelecanoides SI.jpg"
+  },
+  {
+   "id": "eelx",
+   "file": "File:Eurypharynx pelecanoides X-ray (cropped).jpg"
+  },
+  {
+   "id": "seapig",
+   "file": "File:Scotoplanes globosa and crab.jpg"
+  },
+  {
+   "id": "tripod",
+   "file": "File:Tripod fish.jpg"
+  },
+  {
+   "id": "dumbo",
+   "file": "File:Dumbo-hires.jpg"
+  },
+  {
+   "id": "dumbo2",
+   "file": "File:Mar22-1-hires.jpg"
+  },
+  {
+   "id": "sponge",
+   "file": "File:Euplectella aspergillum Okeanos.jpg"
+  },
+  {
+   "id": "shrimp",
+   "file": "File:Expl5581 (9734255289).jpg"
+  },
+  {
+   "id": "snail",
+   "file": "File:Pseudoliparis swirei.png"
+  },
+  {
+   "id": "snail2",
+   "file": "File:Pseudoliparis swirei (10.11646-zootaxa.4358.1.7) Figure 4.jpg"
+  },
+  {
+   "id": "amphi",
+   "file": "File:Hirondellea gigas.jpg"
+  },
+  {
+   "id": "alicella",
+   "file": "File:Alicella gigantea Japan Trench 2022.jpg"
+  },
+  {
+   "id": "jelly",
+   "video": "File:Jellyfish - Deepwater Exploration of the Marianas expedition - April 24, 2016.webm",
+   "from": 13,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "medusa",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 39,
+   "len": 9,
+   "fps": 30
+  },
+  {
+   "id": "medusa2",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 12,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "snow",
+   "video": "File:Marine snow.webm",
+   "from": 4,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "chimaera",
+   "video": "File:Rhinochimera.webm",
+   "from": 30,
+   "len": 15,
+   "fps": 30
+  },
+  {
+   "id": "abyss",
+   "video": "File:Poisson et fonds abyssaux (Ifremer 00701-81286).webm",
+   "from": 0,
+   "len": 12,
+   "fps": 30
+  },
+  {
+   "id": "casper",
+   "video": "File:Very Deep, Ghostlike Incirrate Octopod - NOAA Office of Ocean Exploration and Research, Hohonu Moana 2016.webm",
+   "from": 2,
+   "len": 12,
+   "fps": 30
+  },
+  {
+   "id": "casper2",
+   "video": "File:Very Deep, Ghostlike Incirrate Octopod - NOAA Office of Ocean Exploration and Research, Hohonu Moana 2016.webm",
+   "from": 31,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "duo",
+   "video": "File:First footage of Duobrachium Sparksae.webm",
+   "from": 0,
+   "len": 14,
+   "fps": 30
+  },
+  {
+   "id": "coral",
+   "video": "File:Dive 7- March 10, 2016- 2016 Hohonu Moana.webm",
+   "from": 12,
+   "len": 10,
+   "fps": 30
+  }
+ ],
+ "vo_open": [
+  {
+   "text": "Eleven kilometers. That's how deep the ocean goes. Today we dive all the way down, and meet the animals that live where sunlight never reaches.",
+   "de": "Elf Kilometer. So tief ist der Ozean. Heute tauchen wir ganz nach unten und treffen die Tiere, die dort leben, wo nie Sonnenlicht ankommt.",
+   "es": "Once kilómetros. Esa es la profundidad del océano. Hoy bajamos hasta el fondo y conocemos a los animales que viven donde nunca llega la luz del sol.",
+   "fr": "Onze kilomètres. C'est la profondeur de l'océan. Aujourd'hui, on plonge jusqu'au fond, à la rencontre des animaux qui vivent là où la lumière du soleil n'arrive jamais.",
+   "at": 0,
+   "cap": "*Eleven kilometers.*"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "depth": 60,
+   "vo": [
+    {
+     "text": "At the surface, the ocean is full of light. But light fades fast. By two hundred meters, only about one percent of the sunlight is left.",
+     "de": "An der Oberfläche ist das Meer voller Licht. Doch das Licht verschwindet schnell. Bei zweihundert Metern ist nur noch etwa ein Prozent übrig.",
+     "es": "En la superficie, el océano está lleno de luz. Pero la luz se apaga rápido. A doscientos metros solo queda un uno por ciento.",
+     "fr": "En surface, l'océan est plein de lumière. Mais elle disparaît vite. À deux cents mètres, il n'en reste qu'environ un pour cent.",
+     "at": 0.45,
+     "cap": "Only *one percent* is left."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 200,
+   "vo": [
+    {
+     "text": "This is where the twilight zone begins. From two hundred to one thousand meters, it is too dark for plants to grow. Everything here has to find food another way.",
+     "de": "Hier beginnt die Dämmerungszone. Zwischen zweihundert und tausend Metern ist es zu dunkel für Pflanzen. Alles hier muss anders an Nahrung kommen.",
+     "es": "Aquí empieza la zona crepuscular. Entre doscientos y mil metros hay demasiado poca luz para las plantas. Todo aquí debe conseguir comida de otra forma.",
+     "fr": "C'est ici que commence la zone crépusculaire. De deux cents à mille mètres, il fait trop sombre pour les plantes. Tout ici doit se nourrir autrement.",
+     "at": 0.45,
+     "cap": "The *twilight zone*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 350,
+   "vo": [
+    {
+     "text": "Every night, countless animals swim up from these depths to feed near the surface, and sink back down before sunrise.",
+     "de": "Jede Nacht schwimmen unzählige Tiere aus dieser Tiefe nach oben, um nahe der Oberfläche zu fressen, und sinken vor Sonnenaufgang wieder hinab.",
+     "es": "Cada noche, innumerables animales suben desde estas profundidades para comer cerca de la superficie, y vuelven a bajar antes del amanecer.",
+     "fr": "Chaque nuit, d'innombrables animaux remontent de ces profondeurs pour se nourrir près de la surface, puis redescendent avant l'aube.",
+     "at": 0.45,
+     "cap": "Every *night*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 400,
+   "vo": [
+    {
+     "text": "Measured by weight, it is the largest migration on Earth. And it happens every single day.",
+     "de": "Nach Gewicht gemessen ist es die größte Wanderung der Erde. Und sie passiert jeden einzelnen Tag.",
+     "es": "Medida en peso, es la mayor migración de la Tierra. Y ocurre todos los días.",
+     "fr": "En poids, c'est la plus grande migration sur Terre. Et elle a lieu tous les jours.",
+     "at": 0.45,
+     "cap": "The *largest migration* on Earth."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 450,
+   "vo": [
+    {
+     "text": "Many of them are lanternfish, small fish covered in light organs. They may make up as much as sixty-five percent of all deep-sea fish by weight.",
+     "de": "Viele davon sind Laternenfische, kleine Fische voller Leuchtorgane. Sie machen womöglich bis zu fünfundsechzig Prozent der Tiefseefische nach Gewicht aus.",
+     "es": "Muchos son peces linterna, pequeños peces cubiertos de órganos de luz. Podrían ser hasta el sesenta y cinco por ciento del peso de todos los peces de las profundidades.",
+     "fr": "Beaucoup sont des poissons-lanternes, de petits poissons couverts d'organes lumineux. Ils pourraient représenter jusqu'à soixante-cinq pour cent du poids des poissons des grands fonds.",
+     "at": 0.45,
+     "cap": "*Lanternfish*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 500,
+   "vo": [
+    {
+     "text": "Each species has its own pattern of lights, which may help them recognize each other in the dark.",
+     "de": "Jede Art hat ihr eigenes Lichtmuster, mit dem sie sich im Dunkeln vielleicht gegenseitig erkennen.",
+     "es": "Cada especie tiene su propio patrón de luces, que quizá les ayuda a reconocerse en la oscuridad.",
+     "fr": "Chaque espèce a son propre motif de lumières, qui les aide peut-être à se reconnaître dans le noir.",
+     "at": 0.45,
+     "cap": "Its own *pattern* of lights."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 550,
+   "vo": [
+    {
+     "text": "Others use light to hide. This hatchetfish glows from its belly, so from below, it blends into the faint light coming from above.",
+     "de": "Andere nutzen Licht, um sich zu verstecken. Dieser Beilbauchfisch leuchtet am Bauch, so verschwimmt er von unten mit dem schwachen Licht von oben.",
+     "es": "Otros usan la luz para esconderse. Este pez hacha brilla por el vientre, y desde abajo se confunde con la débil luz que llega de arriba.",
+     "fr": "D'autres utilisent la lumière pour se cacher. Ce poisson-hachette brille par le ventre, et vu d'en dessous, il se fond dans la faible lumière venue d'en haut.",
+     "at": 0.45,
+     "cap": "Light to *hide*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 650,
+   "vo": [
+    {
+     "text": "And then there's the barreleye. Its head is a transparent dome, and the tube-shaped eyes inside look straight up, searching for the silhouettes of prey.",
+     "de": "Und dann ist da noch der Gespensterfisch. Sein Kopf ist eine durchsichtige Kuppel, und die röhrenförmigen Augen darin schauen nach oben, auf der Suche nach Beute.",
+     "es": "Y luego está el pez de ojos tubulares. Su cabeza es una cúpula transparente, y los ojos de dentro miran hacia arriba buscando siluetas de presas.",
+     "fr": "Et puis il y a le poisson-baril. Sa tête est un dôme transparent, et ses yeux en tube regardent vers le haut, à la recherche de silhouettes de proies.",
+     "at": 0.45,
+     "cap": "A *transparent* head."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 700,
+   "vo": [
+    {
+     "text": "Its eyes can also turn forward. And the clear shield may protect them from the stinging cells of siphonophores, whose food it is thought to steal.",
+     "de": "Seine Augen können auch nach vorne schwenken. Und der klare Schild schützt sie vielleicht vor den Nesselzellen der Staatsquallen, denen er wohl die Beute stiehlt.",
+     "es": "Sus ojos también pueden girar hacia delante. Y el escudo transparente quizá los protege de las células urticantes de los sifonóforos, a los que se cree que roba la comida.",
+     "fr": "Ses yeux peuvent aussi pivoter vers l'avant. Et ce bouclier transparent les protège peut-être des cellules urticantes des siphonophores, dont il volerait la nourriture.",
+     "at": 0.45,
+     "cap": "It steals their *food*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 800,
+   "vo": [
+    {
+     "text": "Siphonophores look like one animal. But each one is a colony of many specialized parts, all grown from a single egg. Some swim, some sting, some digest.",
+     "de": "Staatsquallen sehen aus wie ein Tier. Doch jede ist eine Kolonie aus vielen spezialisierten Teilen, alle aus einem einzigen Ei. Manche schwimmen, manche nesseln, manche verdauen.",
+     "es": "Los sifonóforos parecen un solo animal. Pero cada uno es una colonia de muchas partes especializadas, nacidas de un único huevo. Unas nadan, otras pican, otras digieren.",
+     "fr": "Les siphonophores ressemblent à un seul animal. Mais chacun est une colonie de nombreuses parties spécialisées, issues d'un seul œuf. Certaines nagent, d'autres piquent, d'autres digèrent.",
+     "at": 0.45,
+     "cap": "A *colony*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 900,
+   "vo": [
+    {
+     "text": "In 2020, scientists filmed one off Australia with a ring about forty-seven meters long. That may be the longest animal ever recorded, longer than a blue whale.",
+     "de": "2020 filmten Forscher vor Australien eine mit einem Ring von etwa siebenundvierzig Metern. Vielleicht das längste je gesehene Tier, länger als ein Blauwal.",
+     "es": "En 2020, unos científicos filmaron uno frente a Australia con un anillo de unos cuarenta y siete metros. Quizá el animal más largo jamás visto, más que una ballena azul.",
+     "fr": "En 2020, des scientifiques en ont filmé un au large de l'Australie, avec un anneau d'environ quarante-sept mètres. Peut-être l'animal le plus long jamais observé, plus long qu'une baleine bleue.",
+     "at": 0.45,
+     "cap": "*Forty-seven meters*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 1000,
+   "vo": [
+    {
+     "text": "Below one thousand meters, the midnight zone begins. Here, there is no sunlight at all. The only light is made by animals.",
+     "de": "Unter tausend Metern beginnt die Mitternachtszone. Hier gibt es überhaupt kein Sonnenlicht mehr. Das einzige Licht machen Tiere.",
+     "es": "Por debajo de mil metros empieza la zona de medianoche. Aquí no hay nada de luz solar. La única luz la producen los animales.",
+     "fr": "Sous mille mètres commence la zone de minuit. Ici, il n'y a plus du tout de lumière du soleil. La seule lumière vient des animaux.",
+     "at": 0.45,
+     "cap": "The *midnight zone*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 1300,
+   "vo": [
+    {
+     "text": "In the deep waters of the eastern Pacific, about three quarters of the main animal groups can make their own light.",
+     "de": "In der Tiefe des östlichen Pazifiks können etwa drei Viertel der wichtigsten Tiergruppen selbst leuchten.",
+     "es": "En las aguas profundas del Pacífico oriental, unas tres cuartas partes de los principales grupos de animales producen su propia luz.",
+     "fr": "Dans les eaux profondes du Pacifique Est, environ les trois quarts des principaux groupes d'animaux produisent leur propre lumière.",
+     "at": 0.45,
+     "cap": "*Three quarters*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 1500,
+   "vo": [
+    {
+     "text": "Meet the vampire squid. Despite the name, it doesn't drink blood. It eats marine snow.",
+     "de": "Das ist der Vampirtintenfisch. Trotz seines Namens trinkt er kein Blut. Er frisst Meeresschnee.",
+     "es": "Este es el calamar vampiro. A pesar del nombre, no bebe sangre. Come nieve marina.",
+     "fr": "Voici le calmar vampire. Malgré son nom, il ne boit pas de sang. Il mange de la neige marine.",
+     "at": 0.45,
+     "cap": "The *vampire squid*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 1600,
+   "vo": [
+    {
+     "text": "It lives where there is almost no oxygen. And compared to its body, its eyes are the largest of any animal.",
+     "de": "Er lebt dort, wo es kaum Sauerstoff gibt. Und im Verhältnis zum Körper hat er die größten Augen aller Tiere.",
+     "es": "Vive donde casi no hay oxígeno. Y en proporción a su cuerpo, tiene los ojos más grandes de todos los animales.",
+     "fr": "Il vit là où il n'y a presque pas d'oxygène. Et par rapport à son corps, il a les plus grands yeux du règne animal.",
+     "at": 0.45,
+     "cap": "The largest *eyes*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 1700,
+   "vo": [
+    {
+     "text": "When it feels threatened, it can release a sticky cloud of glowing mucus, full of tiny blue lights.",
+     "de": "Wenn er sich bedroht fühlt, stößt er eine klebrige Wolke aus leuchtendem Schleim aus, voller winziger blauer Lichter.",
+     "es": "Cuando se siente amenazado, puede soltar una nube pegajosa de moco brillante, llena de pequeñas luces azules.",
+     "fr": "Quand il se sent menacé, il peut libérer un nuage collant de mucus lumineux, plein de minuscules lumières bleues.",
+     "at": 0.45,
+     "cap": "Tiny *blue lights*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 1900,
+   "vo": [
+    {
+     "text": "Marine snow is a steady shower of tiny flakes: bits of dead plankton, animals and droppings, sinking from above. Some flakes fall for weeks.",
+     "de": "Meeresschnee ist ein ständiger Regen aus winzigen Flocken: Reste von totem Plankton, Tieren und Kot, die von oben herabsinken. Manche Flocken fallen wochenlang.",
+     "es": "La nieve marina es una lluvia constante de copos diminutos: restos de plancton muerto, animales y excrementos que caen desde arriba. Algunos tardan semanas en caer.",
+     "fr": "La neige marine est une pluie continue de minuscules flocons : restes de plancton mort, d'animaux et d'excréments qui tombent d'en haut. Certains flocons tombent pendant des semaines.",
+     "at": 0.45,
+     "cap": "*Marine snow*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 2100,
+   "vo": [
+    {
+     "text": "For much of the life down here, this falling snow is food.",
+     "de": "Für einen Großteil des Lebens hier unten ist dieser fallende Schnee Nahrung.",
+     "es": "Para gran parte de la vida aquí abajo, esta nieve que cae es comida.",
+     "fr": "Pour une grande partie de la vie ici, cette neige qui tombe, c'est de la nourriture.",
+     "at": 0.45,
+     "cap": "This snow is *food*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 2400,
+   "vo": [
+    {
+     "text": "Where meals are rare, some animals are built to eat whatever they find. The pelican eel's mouth is far larger than the rest of its head.",
+     "de": "Wo Mahlzeiten selten sind, sind manche Tiere gebaut, um alles zu fressen. Das Maul des Pelikanaals ist viel größer als der Rest seines Kopfes.",
+     "es": "Donde la comida escasea, algunos animales están hechos para comer lo que encuentren. La boca de la anguila pelícano es mucho más grande que el resto de su cabeza.",
+     "fr": "Là où les repas sont rares, certains animaux sont faits pour manger tout ce qu'ils trouvent. La bouche de l'anguille pélican est bien plus grande que le reste de sa tête.",
+     "at": 0.45,
+     "cap": "The *pelican eel*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 2700,
+   "vo": [
+    {
+     "text": "Its loosely hinged jaw opens wide enough to swallow a fish much larger than the eel itself.",
+     "de": "Sein lose eingehängter Kiefer öffnet sich so weit, dass er einen Fisch verschlingen kann, der viel größer ist als er selbst.",
+     "es": "Su mandíbula, muy suelta, se abre tanto que puede tragar un pez mucho más grande que ella misma.",
+     "fr": "Sa mâchoire, très lâche, s'ouvre assez pour avaler un poisson bien plus grand que lui.",
+     "at": 0.45,
+     "cap": "*Much larger* than itself."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 4000,
+   "vo": [
+    {
+     "text": "At four thousand meters, we reach the abyss. It covers about sixty percent of Earth's surface. The water is just two to three degrees, and the pressure can be hundreds of times higher than at the surface.",
+     "de": "Bei viertausend Metern erreichen wir die Tiefsee-Ebene. Sie bedeckt etwa sechzig Prozent der Erdoberfläche. Das Wasser hat nur zwei bis drei Grad, und der Druck ist hunderte Male höher als oben.",
+     "es": "A cuatro mil metros llegamos al abismo. Cubre cerca del sesenta por ciento de la superficie de la Tierra. El agua está a solo dos o tres grados, y la presión es cientos de veces mayor que arriba.",
+     "fr": "À quatre mille mètres, on atteint les abysses. Ils couvrent environ soixante pour cent de la surface de la Terre. L'eau est à deux ou trois degrés, et la pression est des centaines de fois plus forte qu'en surface.",
+     "at": 0.45,
+     "cap": "The *abyss*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 4290,
+   "vo": [
+    {
+     "text": "In 2016, a robot exploring near Hawaii found this ghost-white octopus, more than four thousand meters down. Nobody had ever seen one like it.",
+     "de": "2016 fand ein Tauchroboter bei Hawaii diesen geisterhaft weißen Oktopus, mehr als viertausend Meter tief. So einen hatte noch nie jemand gesehen.",
+     "es": "En 2016, un robot que exploraba cerca de Hawái encontró este pulpo blanco como un fantasma, a más de cuatro mil metros. Nadie había visto uno igual.",
+     "fr": "En 2016, un robot qui explorait près d'Hawaï a trouvé ce poulpe blanc comme un fantôme, à plus de quatre mille mètres. Personne n'en avait jamais vu de pareil.",
+     "at": 0.45,
+     "cap": "A *ghost-white* octopus."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 4500,
+   "vo": [
+    {
+     "text": "On the muddy floor walk sea pigs, sea cucumbers on stubby tube feet. They feed on the organic matter that settles on the bottom.",
+     "de": "Über den schlammigen Boden laufen Seeschweine, Seegurken auf stummeligen Füßchen. Sie fressen, was sich am Boden absetzt.",
+     "es": "Por el fondo fangoso caminan los cerdos marinos, pepinos de mar con patitas cortas. Comen la materia orgánica que se posa en el fondo.",
+     "fr": "Sur le fond boueux marchent les cochons de mer, des concombres de mer sur de petits pieds. Ils mangent la matière organique qui se dépose au fond.",
+     "at": 0.45,
+     "cap": "*Sea pigs*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 4600,
+   "vo": [
+    {
+     "text": "The tripod fish hardly swims at all. It stands on three long fin rays, up to a meter tall, facing the current and waiting for food to drift by.",
+     "de": "Der Dreibeinfisch schwimmt kaum. Er steht auf drei langen Flossenstrahlen, bis zu einem Meter hoch, mit dem Gesicht zur Strömung, und wartet auf Futter.",
+     "es": "El pez trípode apenas nada. Se apoya en tres largos radios de sus aletas, de hasta un metro, mirando a la corriente y esperando a que pase la comida.",
+     "fr": "Le poisson-trépied nage à peine. Il se tient sur trois longs rayons de nageoires, jusqu'à un mètre de haut, face au courant, en attendant que la nourriture passe.",
+     "at": 0.45,
+     "cap": "The *tripod fish*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 4800,
+   "vo": [
+    {
+     "text": "And this is the dumbo octopus, named after the Disney elephant. It flaps its ear-like fins to glide just above the bottom.",
+     "de": "Und das ist der Dumbo-Oktopus, benannt nach dem Disney-Elefanten. Er schlägt mit seinen ohrenartigen Flossen und gleitet knapp über den Boden.",
+     "es": "Y este es el pulpo dumbo, llamado así por el elefante de Disney. Mueve sus aletas con forma de orejas para planear justo encima del fondo.",
+     "fr": "Et voici le poulpe dumbo, nommé d'après l'éléphant de Disney. Il bat de ses nageoires en forme d'oreilles pour glisser juste au-dessus du fond.",
+     "at": 0.45,
+     "cap": "The *dumbo octopus*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 5000,
+   "vo": [
+    {
+     "text": "Some dumbo octopuses live as deep as seven thousand meters.",
+     "de": "Manche Dumbo-Oktopusse leben bis in siebentausend Meter Tiefe.",
+     "es": "Algunos pulpos dumbo viven hasta a siete mil metros.",
+     "fr": "Certains poulpes dumbo vivent jusqu'à sept mille mètres de profondeur.",
+     "at": 0.45,
+     "cap": "*Seven thousand* meters."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 5200,
+   "vo": [
+    {
+     "text": "Venus' flower basket is a sponge with a skeleton made of glass. Its lattice is so light and strong that engineers study it.",
+     "de": "Der Gießkannenschwamm ist ein Schwamm mit einem Skelett aus Glas. Sein Gitter ist so leicht und stabil, dass Ingenieure es erforschen.",
+     "es": "La regadera de Filipinas es una esponja con un esqueleto de vidrio. Su entramado es tan ligero y resistente que los ingenieros lo estudian.",
+     "fr": "La corbeille de Vénus est une éponge au squelette de verre. Son treillis est si léger et si solide que des ingénieurs l'étudient.",
+     "at": 0.45,
+     "cap": "A skeleton made of *glass*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 5400,
+   "vo": [
+    {
+     "text": "Often, a pair of small shrimp lives inside. They get in while they're young, and grow too big to ever leave. In Japan, the sponge became a symbol of a couple staying together for life.",
+     "de": "Oft lebt darin ein Garnelenpärchen. Sie schlüpfen jung hinein und werden zu groß, um je wieder herauszukommen. In Japan wurde der Schwamm zum Symbol für ein Paar, das ein Leben lang zusammenbleibt.",
+     "es": "A menudo vive dentro una pareja de gambas. Entran de jóvenes y crecen demasiado para salir. En Japón, la esponja se convirtió en símbolo de una pareja unida para toda la vida.",
+     "fr": "Souvent, un couple de petites crevettes vit à l'intérieur. Elles y entrent jeunes et deviennent trop grandes pour en sortir. Au Japon, l'éponge est devenue le symbole d'un couple uni pour la vie.",
+     "at": 0.45,
+     "cap": "Together for *life*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 6000,
+   "vo": [
+    {
+     "text": "Past six thousand meters, the seafloor drops into the trenches of the hadal zone. Trenches are less than a quarter of one percent of the seafloor, but over forty percent of the ocean's depth range.",
+     "de": "Ab sechstausend Metern fällt der Meeresboden in die Gräben der Hadalzone ab. Sie machen weniger als ein Viertelprozent des Meeresbodens aus, aber über vierzig Prozent der Tiefenspanne des Ozeans.",
+     "es": "Más allá de seis mil metros, el fondo cae a las fosas de la zona hadal. Son menos de un cuarto del uno por ciento del fondo marino, pero más del cuarenta por ciento del rango de profundidad del océano.",
+     "fr": "Au-delà de six mille mètres, le fond plonge dans les fosses de la zone hadale. Elles représentent moins d'un quart de pour cent du fond marin, mais plus de quarante pour cent de l'éventail de profondeur de l'océan.",
+     "at": 0.45,
+     "cap": "The *hadal zone*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 7000,
+   "vo": [
+    {
+     "text": "At the very bottom, the pressure is more than a thousand times what we feel at the surface.",
+     "de": "Ganz unten ist der Druck mehr als tausendmal so hoch wie an der Oberfläche.",
+     "es": "En lo más hondo, la presión es más de mil veces la que sentimos en la superficie.",
+     "fr": "Tout au fond, la pression est plus de mille fois celle que l'on ressent en surface.",
+     "at": 0.45,
+     "cap": "*A thousand times*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 7900,
+   "vo": [
+    {
+     "text": "And yet, there are fish. The Mariana snailfish has been caught almost eight thousand meters down. Small, soft and pale, it is a top predator there.",
+     "de": "Und trotzdem gibt es Fische. Der Marianen-Scheibenbauch wurde in fast achttausend Metern Tiefe gefangen. Klein, weich und blass ist er dort ein Spitzenräuber.",
+     "es": "Y aun así hay peces. El pez caracol de las Marianas se ha capturado a casi ocho mil metros. Pequeño, blando y pálido, allí es un gran depredador.",
+     "fr": "Et pourtant, il y a des poissons. La limace de mer des Mariannes a été capturée à près de huit mille mètres. Petite, molle et pâle, c'est là-bas un grand prédateur.",
+     "at": 0.45,
+     "cap": "The *Mariana snailfish*."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 8336,
+   "vo": [
+    {
+     "text": "In 2022, scientists filmed a snailfish eight thousand three hundred thirty-six meters down, off Japan. It is the deepest fish ever seen alive.",
+     "de": "2022 filmten Forscher vor Japan einen Scheibenbauch in achttausenddreihundertsechsunddreißig Metern Tiefe. Der tiefste Fisch, der je lebend gesehen wurde.",
+     "es": "En 2022, unos científicos filmaron un pez caracol a ocho mil trescientos treinta y seis metros, frente a Japón. Es el pez más profundo visto con vida.",
+     "fr": "En 2022, des scientifiques ont filmé une limace de mer à huit mille trois cent trente-six mètres, au large du Japon. Le poisson le plus profond jamais vu vivant.",
+     "at": 0.45,
+     "cap": "The *deepest fish* ever seen."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 10900,
+   "vo": [
+    {
+     "text": "And at the bottom of the Challenger Deep, almost eleven kilometers down, there are amphipods: small crustaceans that can even digest sunken wood.",
+     "de": "Und am Grund des Challengertiefs, fast elf Kilometer tief, leben Flohkrebse: kleine Krebstiere, die sogar versunkenes Holz verdauen können.",
+     "es": "Y en el fondo de la fosa Challenger, a casi once kilómetros, hay anfípodos: pequeños crustáceos que incluso pueden digerir madera hundida.",
+     "fr": "Et au fond de la fosse Challenger, à près de onze kilomètres, vivent des amphipodes : de petits crustacés capables de digérer du bois coulé.",
+     "at": 0.45,
+     "cap": "Almost *eleven kilometers* down."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 10900,
+   "vo": [
+    {
+     "text": "From the twilight zone to the trenches, the deep sea is the least explored part of our planet. And every dive still finds animals no one has seen before.",
+     "de": "Von der Dämmerungszone bis zu den Gräben ist die Tiefsee der am wenigsten erforschte Teil unseres Planeten. Und jeder Tauchgang findet noch Tiere, die nie jemand gesehen hat.",
+     "es": "Desde la zona crepuscular hasta las fosas, el mar profundo es la parte menos explorada de nuestro planeta. Y cada inmersión sigue encontrando animales que nadie había visto.",
+     "fr": "De la zone crépusculaire aux fosses, les grands fonds sont la partie la moins explorée de notre planète. Et chaque plongée trouve encore des animaux que personne n'avait vus.",
+     "at": 0.45,
+     "cap": "Animals no one has *seen* before."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 10900,
+   "vo": [
+    {
+     "text": "Which animal surprised you the most? Tell me in the comments, and subscribe to dive deeper with us.",
+     "de": "Welches Tier hat dich am meisten überrascht? Schreib es in die Kommentare und abonniere, um mit uns tiefer zu tauchen.",
+     "es": "¿Qué animal te sorprendió más? Dímelo en los comentarios y suscríbete para bucear más hondo con nosotros.",
+     "fr": "Quel animal t'a le plus surpris ? Dis-le en commentaire, et abonne-toi pour plonger encore plus loin avec nous.",
+     "at": 0.45,
+     "cta": true
+    }
+   ]
+  }
+ ],
+ "chapters": [
+  [
+   "Intro",
+   -1
+  ],
+  [
+   "The twilight zone",
+   1
+  ],
+  [
+   "The midnight zone",
+   11
+  ],
+  [
+   "The abyss",
+   20
+  ],
+  [
+   "The hadal zone",
+   28
+  ],
+  [
+   "Still unexplored",
+   33
+  ]
+ ],
+ "depth_open": 0
+}

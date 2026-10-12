@@ -381,6 +381,15 @@ function hostImg(k, i) {
     HPEND.push(im.decode().catch(() => {})); if (HCACHE.size > 160) HCACHE.delete(HCACHE.keys().next().value); }
   const im = HCACHE.get(k + '/' + i); if (im && im.complete && im.naturalWidth) { HLAST = im; return im; } return HLAST || HOSTIMG;
 }
+// long videos ("lazyClips": true): real footage frames are loaded on demand too (same cache as the presenter)
+const CLIPN = {}; const VLAST = {};
+function vidImg(id, i) {
+  const n = CLIPN[id] || 0; if (!n) return null; i = Math.max(0, Math.min(n - 1, i));
+  for (let j = i; j < Math.min(n, i + 4); j++) { const key = 'v:' + id + '/' + j; if (HCACHE.has(key)) continue;
+    const im = new Image(); im.src = `assets/clips/${EPID}_${id}/${String(j + 1).padStart(4, '0')}.jpg`; HCACHE.set(key, im);
+    HPEND.push(im.decode().catch(() => {})); if (HCACHE.size > 160) HCACHE.delete(HCACHE.keys().next().value); }
+  const im = HCACHE.get('v:' + id + '/' + i); if (im && im.complete && im.naturalWidth) { VLAST[id] = im; return im; } return VLAST[id] || null;
+}
 window.seek = async (t) => { draw(t); if (HPEND.length) { await Promise.all(HPEND.splice(0)); draw(t); } return true; };
 async function boot() {
   const [ep, topo, voice] = await Promise.all([fetch(`episodes/${EPID}.json`).then((r) => r.json()), fetch('lib/countries-50m.json').then((r) => r.json()),
@@ -390,7 +399,8 @@ async function boot() {
   const cred = await fetch(`assets/photos/${EPID}.credits.json`).then((r) => r.ok ? r.json() : {}).catch(() => ({}));
   await Promise.all((ep.photos || []).map((p) => new Promise((res) => { const im = new Image();
     im.onload = () => { PHOTOS[p.id] = im; CREDITS[p.id] = cred[p.id] ? cred[p.id].credit : ''; res(); }; im.onerror = () => res(); im.src = `assets/photos/${EPID}_${p.id}.jpg`; })));
-  await Promise.all((ep.photos || []).filter((p) => p.video && cred[p.id] && cred[p.id].frames).map((p) => Promise.all(Array.from({ length: cred[p.id].frames }, (_, i) =>
+  (ep.photos || []).forEach((p) => { if (p.video && cred[p.id] && cred[p.id].frames) CLIPN[p.id] = cred[p.id].frames; });
+  if (!ep.lazyClips) await Promise.all((ep.photos || []).filter((p) => p.video && cred[p.id] && cred[p.id].frames).map((p) => Promise.all(Array.from({ length: cred[p.id].frames }, (_, i) =>
     new Promise((res) => { const im = new Image(); im.onload = res; im.onerror = res; im.src = `assets/clips/${EPID}_${p.id}/${String(i + 1).padStart(4, '0')}.jpg`; (CLIPS[p.id] ||= [])[i] = im; })))));
   if (ep.host) { Object.assign(HOSTN, await fetch(`assets/clips/${EPID}_host.json`).then((r) => r.ok ? r.json() : {}).catch(() => ({})));
     await new Promise((res) => { const im = new Image(); im.onload = () => { HOSTIMG = im; res(); }; im.onerror = res; im.src = ep.host_img || 'assets/host/host_v1.png'; }); }
