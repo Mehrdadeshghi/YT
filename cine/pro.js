@@ -81,15 +81,15 @@ function marker(x, y, r, t, t0, col = PRO.hi) { const a = inA(t, t0, 0.35); if (
 // thin progress bar
 function pbar(x, y, w, p, col = PRO.acc, bg = PRO.dim, h = 10) { rrect(x, y, w, h, h / 2); g.fillStyle = bg; g.fill(); if (p > 0) { rrect(x, y, Math.max(h, w * clamp(p)), h, h / 2); g.fillStyle = col; g.fill(); } }
 // the AI presenter, full frame: k = voice segment index (voice order), at = when that line starts in scene time (Sc.vo[j].at).
-// Uses the real (unwarped) scene time RT so the lips stay in sync. Cards float over the chest (y ≈ 1000–1400), captions above them.
+// Uses the real (unwarped) scene time RT so the lips stay in sync. Realism: jump cuts between a medium and a close framing
+// every ~3.5 s (like real creators), slow breathing and a little handheld drift. Cards float over the chest, captions above them.
 function host(t, k, at, o = {}) {
   const lt = RT ?? t, im = hostImg(k, Math.floor((lt - at) * 30)); if (!im) { proBg(t); return; }
-  const z = 1 + (o.zoom ?? 0.03) * clamp(lt / 8), sc = Math.max(W / im.width, H / im.height) * z, dw = im.width * sc, dh = im.height * sc;
-  g.drawImage(im, (W - dw) / 2, (H - dh) * (o.fy ?? 0.3), dw, dh);
-  const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, 'rgba(6,16,21,0.25)'); gr.addColorStop(0.35, 'rgba(6,16,21,0)'); gr.addColorStop(0.62, 'rgba(6,16,21,0.05)'); gr.addColorStop(1, 'rgba(6,16,21,0.55)');
+  const shot = (k + Math.floor(Math.max(0, lt - at) / (o.cutEvery ?? 3.5))) % 2, close = o.close ?? 1.16, z0 = shot ? close : 1.03;
+  const T = (TNOW ?? lt), br = 1 + 0.005 * Math.sin(T * 6.283 / 4.2), dx = 7 * Math.sin(T * 0.37), dy = 5 * Math.sin(T * 0.29 + 1);
+  const sc = Math.max(W / im.width, H / im.height) * z0 * br, dw = im.width * sc, dh = im.height * sc, fx = o.fx ?? 0.5, fy = o.fy ?? 0.27;
+  const x = clamp(540 - fx * dw + dx, W - dw, 0), y = clamp((shot ? 600 : 520) - fy * dh + dy, H - dh, 0);
+  g.drawImage(im, x, y, dw, dh);
+  const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, 'rgba(6,16,21,0.22)'); gr.addColorStop(0.35, 'rgba(6,16,21,0)'); gr.addColorStop(0.62, 'rgba(6,16,21,0.04)'); gr.addColorStop(1, 'rgba(6,16,21,0.5)');
   g.fillStyle = gr; g.fillRect(0, 0, W, H);
 }
-// two stacked hands seen from the side, pressing down (p 0..1); arms come from above
-function pressHands(x, y, s, p, col = PRO.txt) { g.save(); g.translate(x, y + p * 34 * s); g.scale(s, s);
-  g.fillStyle = 'rgba(243,247,248,0.16)'; rrect(-26, -260, 52, 210, 26); g.fill();                            // arms
-  g.fillStyle = col; rrect(-70, -60, 140, 52, 26); g.fill(); g.fillStyle = 'rgba(243,247,248,0.7)'; rrect(-60, -98, 120, 44, 22); g.fill(); g.restore(); }

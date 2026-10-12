@@ -299,7 +299,9 @@ function drawScene(s, t, dx = 0, dy = 0) {
   g.beginPath(); g.rect(0, 0, W, H); g.clip(); CAPY = null; s.draw(t - s.from + s.pre); g.restore();
 }
 const WHIP = 0.3, FADE = 0.5; let OFF = null;   // kids: soft crossfade (calm pacing — Lillard & Peterson 2011)
+let TNOW = null;   // absolute time of the frame being drawn (for continuous motion across cuts)
 function draw(t) {
+  TNOW = t;
   g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.fillStyle = BG; g.fillRect(0, 0, W, H);
   const i = SCENES.findIndex((s) => t < s.to - CUT), si = i < 0 ? SCENES.length - 1 : i, s = SCENES[si];
   const since = t - (s.from - CUT);
