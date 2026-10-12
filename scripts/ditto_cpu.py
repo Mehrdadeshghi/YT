@@ -11,5 +11,5 @@ for dp, _, fs in os.walk(root):
         s = s.replace('dtype=torch.float16, enabled=True', 'dtype=torch.bfloat16, enabled=False')   # no fp16 autocast on CPU
         s = s.replace('torch.cuda.manual_seed(seed)', 'pass').replace('torch.cuda.manual_seed_all(seed)', 'pass')
         if '        return pickle.load(f)' in s:                                         # config pickles may name cuda devices too
-            s = s.replace('        return pickle.load(f)', '        d = pickle.load(f)\n    def fix(x):\n        if isinstance(x, dict): return {k: fix(v) for k, v in x.items()}\n        if isinstance(x, list): return [fix(v) for v in x]\n        return "cpu" if x == "cuda" else x\n    return fix(d)')
+            s = s.replace('        return pickle.load(f)', '        d = pickle.load(f)\n    def fix(x):\n        if isinstance(x, dict): return {k: fix(v) for k, v in x.items()}\n        if isinstance(x, list): return [fix(v) for v in x]\n        return "cpu" if isinstance(x, str) and x == "cuda" else x\n    return fix(d)')
         if s != o: open(p, 'w').write(s); print('patched', p)
