@@ -76,13 +76,17 @@ jobs:
           ls assets/photos | wc -l
       - name: Build
         env: { FPS: "${{ github.event.inputs.fps || '60' }}" }
-        run: scripts/build.sh ${{ steps.eps.outputs.list }}
+        run: set -o pipefail; scripts/build.sh ${{ steps.eps.outputs.list }} 2>&1 | tee build.log
       - name: Publish release
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
           TAG="shorts-${{ github.run_number }}"
           { echo "Wiki Roulette: ${{ steps.eps.outputs.list }}"; echo; for f in dist/*.md; do cat "$f"; echo; echo "---"; done; } > notes.md
           gh release create "$TAG" dist/*.mp4 dist/*.md $(ls dist/*.m4a 2>/dev/null) --title "Shorts ${{ steps.eps.outputs.list }}" --notes-file notes.md
+      - name: Publish log on failure
+        if: failure()
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: tail -c 200000 build.log > build_tail.log; gh release create "debug-${{ github.run_number }}" build_tail.log --title "Render log ${{ github.run_number }}" --notes "failed render" --prerelease
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: shorts, path: dist/, retention-days: 30 }
