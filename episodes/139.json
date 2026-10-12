@@ -391,10 +391,10 @@
    "depth": 1300,
    "vo": [
     {
-     "text": "In the deep waters of the eastern Pacific, about three quarters of the main animal groups can make their own light.",
-     "de": "In der Tiefe des östlichen Pazifiks können etwa drei Viertel der wichtigsten Tiergruppen selbst leuchten.",
-     "es": "En las aguas profundas del Pacífico oriental, unas tres cuartas partes de los principales grupos de animales producen su propia luz.",
-     "fr": "Dans les eaux profondes du Pacifique Est, environ les trois quarts des principaux groupes d'animaux produisent leur propre lumière.",
+     "text": "In one survey off California, about three quarters of all the animals scientists saw in deep water could make their own light.",
+     "de": "Bei einer Zählung vor Kalifornien konnten etwa drei Viertel aller Tiere, die Forscher in der Tiefe sahen, selbst leuchten.",
+     "es": "En un estudio frente a California, unas tres cuartas partes de todos los animales observados en aguas profundas producían su propia luz.",
+     "fr": "Lors d'une étude au large de la Californie, environ les trois quarts des animaux observés en profondeur produisaient leur propre lumière.",
      "at": 0.45,
      "cap": "*Three quarters*."
     }
