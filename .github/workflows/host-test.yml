@@ -3,7 +3,7 @@ name: Host test
 on:
   workflow_dispatch:
     inputs:
-      variants: { description: "space-separated variants", required: false, default: "s256_still s256_pose s512_still_enh s512_pose_enh" }
+      only_ditto: { description: "skip the SadTalker variants", required: false, default: "false" }
 permissions:
   contents: write
 jobs:
@@ -28,6 +28,7 @@ jobs:
         with: { name: line, path: "*.wav\n*.log" }
   host:
     needs: voice
+    if: github.event.inputs.only_ditto != 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
