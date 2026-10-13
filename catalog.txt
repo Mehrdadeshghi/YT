@@ -1,20 +1,3 @@
-Bryan Robson | Bryan Robson
-Old Trafford | Old Trafford
-Uli Hoeneß | Uli Hoeneß
-Sepp Maier | Sepp Maier
-image: Gerd Müller 1974
-image: Uli Hoeneß 1974 Bayern
-image: Beckenbauer 1974 Bayern
-image: Heysel stadium 1970s
-image: Old Trafford 1990s
-image: Galatasaray ultrAslan
-image: Ali Sami Yen Stadyumu
-image: Bayern München Champions League 2020
-image: Lewandowski Bayern 2020
-image: Gnabry Bayern
-image: Atlético de Madrid 2016 Milan
-image: Juanfran
-image: Godín Atlético
-video: Old Trafford
-video: Ali Sami Yen
-video: Metropolitano Atlético
+audio: Dvorak Symphony 9 Largo
+audio: Dvorak New World Symphony
+audio: Symphony No. 9 From the New World
