@@ -31,7 +31,7 @@ sc[-1]['vo'].append({'at': '0.1', 'text': "Subscribe so you don't miss it!", 'ct
 E = {'ep': 143, 'title': "Predict tonight's Champions League (13 Oct 2026)", 'series': 'MATCHDAY · PREDICT IT',
      'look': 'cine', 'style': 'pro', 'captions': True, 'wordCaps': True, 'noOutro': True, 'tight': True, 'tail': 0.25, 'sub': 2,
      'voice': 'narrator', 'speed': 1.3, 'wpm': 205, 'mood': 'epic', 'scripts': ['tech.js', 'pro.js'], 'capY': 1700, 'capSize': 52, 'openMin': 1.6,
-     'noCommentCard': True, 'recap': False, 'subY': 1530, 'subEndY': 1530,
+     'noCommentCard': True, 'recap': False, 'subY': 235, 'subEndY': 1530,
      'cta': {'q': 'Your 3 scores?', 'a': 'ATM–MUN', 'b': 'GAL–BAR'},
      'source': 'https://www.uefa.com/uefachampionsleague/fixtures-results/',
      'vo_open': [{'at': 0, 'text': "Three huge Champions League games tonight. Can you predict all three?",
