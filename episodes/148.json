@@ -1,0 +1,273 @@
+{
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 132,
+   "gain": 0.4
+  },
+  {
+   "id": "surface",
+   "file": "File:Waves in pacifica 1.jpg"
+  },
+  {
+   "id": "lantern",
+   "file": "File:Myctophum punctatum2.jpg"
+  },
+  {
+   "id": "photo",
+   "file": "File:Electrona risso photophores.jpg"
+  },
+  {
+   "id": "hatchet",
+   "file": "File:Hatchetfish bioluminescence.jpg"
+  },
+  {
+   "id": "barrel",
+   "file": "File:Barreleye-fish GoK.jpg"
+  },
+  {
+   "id": "barrelill",
+   "file": "File:Macropinna microstoma illustration.png"
+  },
+  {
+   "id": "siph",
+   "file": "File:Physonect siphonophore Puerto Rico April 2015.png"
+  },
+  {
+   "id": "praya",
+   "file": "File:Praya dubia (Giant siphonophore).jpg"
+  },
+  {
+   "id": "luminous",
+   "file": "File:Luminous Fish of the Deep Sea.jpg"
+  },
+  {
+   "id": "vamp",
+   "file": "File:Vampyroteuthis infernalis dorsal view.jpg"
+  },
+  {
+   "id": "vamp2",
+   "file": "File:Vampyroteuthis1.jpg"
+  },
+  {
+   "id": "eel",
+   "file": "File:Eurypharynx pelecanoides SI.jpg"
+  },
+  {
+   "id": "eelx",
+   "file": "File:Eurypharynx pelecanoides X-ray (cropped).jpg"
+  },
+  {
+   "id": "seapig",
+   "file": "File:Scotoplanes globosa and crab.jpg"
+  },
+  {
+   "id": "tripod",
+   "file": "File:Tripod fish.jpg"
+  },
+  {
+   "id": "dumbo",
+   "file": "File:Dumbo-hires.jpg"
+  },
+  {
+   "id": "dumbo2",
+   "file": "File:Mar22-1-hires.jpg"
+  },
+  {
+   "id": "sponge",
+   "file": "File:Euplectella aspergillum Okeanos.jpg"
+  },
+  {
+   "id": "shrimp",
+   "file": "File:Expl5581 (9734255289).jpg"
+  },
+  {
+   "id": "snail",
+   "file": "File:Pseudoliparis swirei.png"
+  },
+  {
+   "id": "snail2",
+   "file": "File:Pseudoliparis swirei (10.11646-zootaxa.4358.1.7) Figure 4.jpg"
+  },
+  {
+   "id": "amphi",
+   "file": "File:Hirondellea gigas.jpg"
+  },
+  {
+   "id": "alicella",
+   "file": "File:Alicella gigantea Japan Trench 2022.jpg"
+  },
+  {
+   "id": "jelly",
+   "video": "File:Jellyfish - Deepwater Exploration of the Marianas expedition - April 24, 2016.webm",
+   "from": 13,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "medusa",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 39,
+   "len": 9,
+   "fps": 30
+  },
+  {
+   "id": "medusa2",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 12,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "snow",
+   "video": "File:Marine snow.webm",
+   "from": 4,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "chimaera",
+   "video": "File:Rhinochimera.webm",
+   "from": 30,
+   "len": 15,
+   "fps": 30
+  },
+  {
+   "id": "abyss",
+   "video": "File:Poisson et fonds abyssaux (Ifremer 00701-81286).webm",
+   "from": 0,
+   "len": 12,
+   "fps": 30
+  },
+  {
+   "id": "casper",
+   "video": "File:Very Deep, Ghostlike Incirrate Octopod - NOAA Office of Ocean Exploration and Research, Hohonu Moana 2016.webm",
+   "from": 2,
+   "len": 12,
+   "fps": 30
+  },
+  {
+   "id": "casper2",
+   "video": "File:Very Deep, Ghostlike Incirrate Octopod - NOAA Office of Ocean Exploration and Research, Hohonu Moana 2016.webm",
+   "from": 31,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "duo",
+   "video": "File:First footage of Duobrachium Sparksae.webm",
+   "from": 0,
+   "len": 14,
+   "fps": 30
+  },
+  {
+   "id": "coral",
+   "video": "File:Dive 7- March 10, 2016- 2016 Hohonu Moana.webm",
+   "from": 12,
+   "len": 10,
+   "fps": 30
+  }
+ ],
+ "lazyClips": true,
+ "scripts": [
+  "tech.js",
+  "pro.js",
+  "139.js"
+ ],
+ "voice": "narrator",
+ "voice_style": "story",
+ "mood": "deep",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "ep": 148,
+ "title": "Two shrimp locked in a glass house forever",
+ "series": "DEEP SEA",
+ "look": "cine",
+ "style": "pro",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "tight": true,
+ "recap": false,
+ "tail": 0.2,
+ "transition": "fade",
+ "sub": 2,
+ "speed": 1.1,
+ "capY": 1700,
+ "capSize": 54,
+ "subY": 1565,
+ "subEndY": 1565,
+ "openMin": 1.6,
+ "photos_from": "139",
+ "depth_open": 5000,
+ "hook": [
+  "Two shrimp,",
+  "locked in *glass*. Forever."
+ ],
+ "hookOpen": {
+  "m": "sponge",
+  "label": "Real photo · Venus' flower basket · NOAA, Gulf of Mexico"
+ },
+ "cta": {
+  "q": "Romantic or terrifying?",
+  "a": "ROMANTIC",
+  "b": "TERRIFYING"
+ },
+ "source": "https://en.wikipedia.org/wiki/Deep_sea",
+ "from_long": 139,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Two shrimp, locked inside a house of glass... forever.",
+   "de": "Zwei Garnelen, eingesperrt in einem Haus aus Glas... für immer.",
+   "es": "Dos gambas, encerradas en una casa de cristal... para siempre.",
+   "fr": "Deux crevettes, enfermées dans une maison de verre... pour toujours."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "depth": 5200,
+   "vo": [
+    {
+     "text": "Venus' flower basket is a sponge with a skeleton made of glass. Its lattice is so light and strong that engineers study it.",
+     "de": "Der Gießkannenschwamm ist ein Schwamm mit einem Skelett aus Glas. Sein Gitter ist so leicht und stabil, dass Ingenieure es erforschen.",
+     "es": "La regadera de Filipinas es una esponja con un esqueleto de vidrio. Su entramado es tan ligero y resistente que los ingenieros lo estudian.",
+     "fr": "La corbeille de Vénus est une éponge au squelette de verre. Son treillis est si léger et si solide que des ingénieurs l'étudient.",
+     "at": 0.45,
+     "cap": "A skeleton made of *glass*."
+    }
+   ],
+   "vis": 26
+  },
+  {
+   "dur": 1.6,
+   "depth": 5400,
+   "vo": [
+    {
+     "text": "Often, a pair of small shrimp lives inside. They get in while they're young, and grow too big to ever leave. In Japan, the sponge became a symbol of a couple staying together for life.",
+     "de": "Oft lebt darin ein Garnelenpärchen. Sie schlüpfen jung hinein und werden zu groß, um je wieder herauszukommen. In Japan wurde der Schwamm zum Symbol für ein Paar, das ein Leben lang zusammenbleibt.",
+     "es": "A menudo vive dentro una pareja de gambas. Entran de jóvenes y crecen demasiado para salir. En Japón, la esponja se convirtió en símbolo de una pareja unida para toda la vida.",
+     "fr": "Souvent, un couple de petites crevettes vit à l'intérieur. Elles y entrent jeunes et deviennent trop grandes pour en sortir. Au Japon, l'éponge est devenue le symbole d'un couple uni pour la vie.",
+     "at": 0.45,
+     "cap": "Together for *life*."
+    },
+    {
+     "at": "0.15",
+     "text": "Romantic or terrifying? Comment, and subscribe!",
+     "cta": true,
+     "de": "Romantisch oder schrecklich? Kommentier, und abonnier!",
+     "es": "¿Romántico o aterrador? Comenta y suscríbete.",
+     "fr": "Romantique ou terrifiant ? Commente, et abonne-toi !"
+    }
+   ],
+   "vis": 27
+  }
+ ]
+}

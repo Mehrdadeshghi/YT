@@ -1,0 +1,273 @@
+{
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 132,
+   "gain": 0.4
+  },
+  {
+   "id": "surface",
+   "file": "File:Waves in pacifica 1.jpg"
+  },
+  {
+   "id": "lantern",
+   "file": "File:Myctophum punctatum2.jpg"
+  },
+  {
+   "id": "photo",
+   "file": "File:Electrona risso photophores.jpg"
+  },
+  {
+   "id": "hatchet",
+   "file": "File:Hatchetfish bioluminescence.jpg"
+  },
+  {
+   "id": "barrel",
+   "file": "File:Barreleye-fish GoK.jpg"
+  },
+  {
+   "id": "barrelill",
+   "file": "File:Macropinna microstoma illustration.png"
+  },
+  {
+   "id": "siph",
+   "file": "File:Physonect siphonophore Puerto Rico April 2015.png"
+  },
+  {
+   "id": "praya",
+   "file": "File:Praya dubia (Giant siphonophore).jpg"
+  },
+  {
+   "id": "luminous",
+   "file": "File:Luminous Fish of the Deep Sea.jpg"
+  },
+  {
+   "id": "vamp",
+   "file": "File:Vampyroteuthis infernalis dorsal view.jpg"
+  },
+  {
+   "id": "vamp2",
+   "file": "File:Vampyroteuthis1.jpg"
+  },
+  {
+   "id": "eel",
+   "file": "File:Eurypharynx pelecanoides SI.jpg"
+  },
+  {
+   "id": "eelx",
+   "file": "File:Eurypharynx pelecanoides X-ray (cropped).jpg"
+  },
+  {
+   "id": "seapig",
+   "file": "File:Scotoplanes globosa and crab.jpg"
+  },
+  {
+   "id": "tripod",
+   "file": "File:Tripod fish.jpg"
+  },
+  {
+   "id": "dumbo",
+   "file": "File:Dumbo-hires.jpg"
+  },
+  {
+   "id": "dumbo2",
+   "file": "File:Mar22-1-hires.jpg"
+  },
+  {
+   "id": "sponge",
+   "file": "File:Euplectella aspergillum Okeanos.jpg"
+  },
+  {
+   "id": "shrimp",
+   "file": "File:Expl5581 (9734255289).jpg"
+  },
+  {
+   "id": "snail",
+   "file": "File:Pseudoliparis swirei.png"
+  },
+  {
+   "id": "snail2",
+   "file": "File:Pseudoliparis swirei (10.11646-zootaxa.4358.1.7) Figure 4.jpg"
+  },
+  {
+   "id": "amphi",
+   "file": "File:Hirondellea gigas.jpg"
+  },
+  {
+   "id": "alicella",
+   "file": "File:Alicella gigantea Japan Trench 2022.jpg"
+  },
+  {
+   "id": "jelly",
+   "video": "File:Jellyfish - Deepwater Exploration of the Marianas expedition - April 24, 2016.webm",
+   "from": 13,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "medusa",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 39,
+   "len": 9,
+   "fps": 30
+  },
+  {
+   "id": "medusa2",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 12,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "snow",
+   "video": "File:Marine snow.webm",
+   "from": 4,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "chimaera",
+   "video": "File:Rhinochimera.webm",
+   "from": 30,
+   "len": 15,
+   "fps": 30
+  },
+  {
+   "id": "abyss",
+   "video": "File:Poisson et fonds abyssaux (Ifremer 00701-81286).webm",
+   "from": 0,
+   "len": 12,
+   "fps": 30
+  },
+  {
+   "id": "casper",
+   "video": "File:Very Deep, Ghostlike Incirrate Octopod - NOAA Office of Ocean Exploration and Research, Hohonu Moana 2016.webm",
+   "from": 2,
+   "len": 12,
+   "fps": 30
+  },
+  {
+   "id": "casper2",
+   "video": "File:Very Deep, Ghostlike Incirrate Octopod - NOAA Office of Ocean Exploration and Research, Hohonu Moana 2016.webm",
+   "from": 31,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "duo",
+   "video": "File:First footage of Duobrachium Sparksae.webm",
+   "from": 0,
+   "len": 14,
+   "fps": 30
+  },
+  {
+   "id": "coral",
+   "video": "File:Dive 7- March 10, 2016- 2016 Hohonu Moana.webm",
+   "from": 12,
+   "len": 10,
+   "fps": 30
+  }
+ ],
+ "lazyClips": true,
+ "scripts": [
+  "tech.js",
+  "pro.js",
+  "139.js"
+ ],
+ "voice": "narrator",
+ "voice_style": "story",
+ "mood": "deep",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "ep": 150,
+ "title": "Longer than a blue whale, and not one animal",
+ "series": "DEEP SEA",
+ "look": "cine",
+ "style": "pro",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "tight": true,
+ "recap": false,
+ "tail": 0.2,
+ "transition": "fade",
+ "sub": 2,
+ "speed": 1.1,
+ "capY": 1700,
+ "capSize": 54,
+ "subY": 1565,
+ "subEndY": 1565,
+ "openMin": 1.6,
+ "photos_from": "139",
+ "depth_open": 700,
+ "hook": [
+  "Longer than a *blue whale*",
+  "... and not one animal"
+ ],
+ "hookOpen": {
+  "m": "praya",
+  "label": "Real photo · giant siphonophore (Praya dubia)"
+ },
+ "cta": {
+  "q": "One animal or many?",
+  "a": "ONE",
+  "b": "MANY"
+ },
+ "source": "https://en.wikipedia.org/wiki/Deep_sea",
+ "from_long": 139,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "It's longer than a blue whale. And it's not even one animal.",
+   "de": "Es ist länger als ein Blauwal. Und es ist nicht mal ein einzelnes Tier.",
+   "es": "Es más largo que una ballena azul. Y ni siquiera es un solo animal.",
+   "fr": "C'est plus long qu'une baleine bleue. Et ce n'est même pas un seul animal."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "depth": 800,
+   "vo": [
+    {
+     "text": "Siphonophores look like one animal. But each one is a colony of many specialized parts, all grown from a single egg. Some swim, some sting, some digest.",
+     "de": "Staatsquallen sehen aus wie ein Tier. Doch jede ist eine Kolonie aus vielen spezialisierten Teilen, alle aus einem einzigen Ei. Manche schwimmen, manche nesseln, manche verdauen.",
+     "es": "Los sifonóforos parecen un solo animal. Pero cada uno es una colonia de muchas partes especializadas, nacidas de un único huevo. Unas nadan, otras pican, otras digieren.",
+     "fr": "Les siphonophores ressemblent à un seul animal. Mais chacun est une colonie de nombreuses parties spécialisées, issues d'un seul œuf. Certaines nagent, d'autres piquent, d'autres digèrent.",
+     "at": 0.45,
+     "cap": "A *colony*."
+    }
+   ],
+   "vis": 9
+  },
+  {
+   "dur": 1.6,
+   "depth": 900,
+   "vo": [
+    {
+     "text": "In 2020, scientists filmed one off Australia with a ring about forty-seven meters long. That may be the longest animal ever recorded, longer than a blue whale.",
+     "de": "2020 filmten Forscher vor Australien eine mit einem Ring von etwa siebenundvierzig Metern. Vielleicht das längste je gesehene Tier, länger als ein Blauwal.",
+     "es": "En 2020, unos científicos filmaron uno frente a Australia con un anillo de unos cuarenta y siete metros. Quizá el animal más largo jamás visto, más que una ballena azul.",
+     "fr": "En 2020, des scientifiques en ont filmé un au large de l'Australie, avec un anneau d'environ quarante-sept mètres. Peut-être l'animal le plus long jamais observé, plus long qu'une baleine bleue.",
+     "at": 0.45,
+     "cap": "*Forty-seven meters*."
+    },
+    {
+     "at": "0.15",
+     "text": "One animal or many? Comment, and subscribe for more deep sea!",
+     "cta": true,
+     "de": "Ein Tier oder viele? Kommentier, und abonnier für mehr Tiefsee!",
+     "es": "¿Un animal o muchos? Comenta y suscríbete para más mar profundo.",
+     "fr": "Un animal ou plusieurs ? Commente, et abonne-toi pour plus d'abysses !"
+    }
+   ],
+   "vis": 10
+  }
+ ]
+}

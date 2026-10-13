@@ -123,6 +123,8 @@ for ep in sys.argv[1:]:
     if src and os.path.exists(f"{OUT}/{src}.credits.json"):
         import glob, shutil
         for f in glob.glob(f"{OUT}/{src}_*.jpg") + glob.glob(f"assets/music/{src}_*.wav"): shutil.copy(f, f.replace(f"/{src}_", f"/{ep}_"))
+        for dd in glob.glob(f"assets/clips/{src}_*"):                  # real footage frames too
+            if os.path.isdir(dd): shutil.copytree(dd, dd.replace(f"/{src}_", f"/{ep}_"), dirs_exist_ok=True)
         shutil.copy(f"{OUT}/{src}.credits.json", cf); print(f"== {ep}: media copied from {src}")
     credits = json.load(open(cf)) if os.path.exists(cf) else {}     # media restored from earlier photos-N releases (media.txt) is kept
     print(f"== {ep} {E.get('title')}")

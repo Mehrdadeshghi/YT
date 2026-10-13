@@ -1,0 +1,291 @@
+{
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 132,
+   "gain": 0.4
+  },
+  {
+   "id": "surface",
+   "file": "File:Waves in pacifica 1.jpg"
+  },
+  {
+   "id": "lantern",
+   "file": "File:Myctophum punctatum2.jpg"
+  },
+  {
+   "id": "photo",
+   "file": "File:Electrona risso photophores.jpg"
+  },
+  {
+   "id": "hatchet",
+   "file": "File:Hatchetfish bioluminescence.jpg"
+  },
+  {
+   "id": "barrel",
+   "file": "File:Barreleye-fish GoK.jpg"
+  },
+  {
+   "id": "barrelill",
+   "file": "File:Macropinna microstoma illustration.png"
+  },
+  {
+   "id": "siph",
+   "file": "File:Physonect siphonophore Puerto Rico April 2015.png"
+  },
+  {
+   "id": "praya",
+   "file": "File:Praya dubia (Giant siphonophore).jpg"
+  },
+  {
+   "id": "luminous",
+   "file": "File:Luminous Fish of the Deep Sea.jpg"
+  },
+  {
+   "id": "vamp",
+   "file": "File:Vampyroteuthis infernalis dorsal view.jpg"
+  },
+  {
+   "id": "vamp2",
+   "file": "File:Vampyroteuthis1.jpg"
+  },
+  {
+   "id": "eel",
+   "file": "File:Eurypharynx pelecanoides SI.jpg"
+  },
+  {
+   "id": "eelx",
+   "file": "File:Eurypharynx pelecanoides X-ray (cropped).jpg"
+  },
+  {
+   "id": "seapig",
+   "file": "File:Scotoplanes globosa and crab.jpg"
+  },
+  {
+   "id": "tripod",
+   "file": "File:Tripod fish.jpg"
+  },
+  {
+   "id": "dumbo",
+   "file": "File:Dumbo-hires.jpg"
+  },
+  {
+   "id": "dumbo2",
+   "file": "File:Mar22-1-hires.jpg"
+  },
+  {
+   "id": "sponge",
+   "file": "File:Euplectella aspergillum Okeanos.jpg"
+  },
+  {
+   "id": "shrimp",
+   "file": "File:Expl5581 (9734255289).jpg"
+  },
+  {
+   "id": "snail",
+   "file": "File:Pseudoliparis swirei.png"
+  },
+  {
+   "id": "snail2",
+   "file": "File:Pseudoliparis swirei (10.11646-zootaxa.4358.1.7) Figure 4.jpg"
+  },
+  {
+   "id": "amphi",
+   "file": "File:Hirondellea gigas.jpg"
+  },
+  {
+   "id": "alicella",
+   "file": "File:Alicella gigantea Japan Trench 2022.jpg"
+  },
+  {
+   "id": "jelly",
+   "video": "File:Jellyfish - Deepwater Exploration of the Marianas expedition - April 24, 2016.webm",
+   "from": 13,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "medusa",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 39,
+   "len": 9,
+   "fps": 30
+  },
+  {
+   "id": "medusa2",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 12,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "snow",
+   "video": "File:Marine snow.webm",
+   "from": 4,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "chimaera",
+   "video": "File:Rhinochimera.webm",
+   "from": 30,
+   "len": 15,
+   "fps": 30
+  },
+  {
+   "id": "abyss",
+   "video": "File:Poisson et fonds abyssaux (Ifremer 00701-81286).webm",
+   "from": 0,
+   "len": 12,
+   "fps": 30
+  },
+  {
+   "id": "casper",
+   "video": "File:Very Deep, Ghostlike Incirrate Octopod - NOAA Office of Ocean Exploration and Research, Hohonu Moana 2016.webm",
+   "from": 2,
+   "len": 12,
+   "fps": 30
+  },
+  {
+   "id": "casper2",
+   "video": "File:Very Deep, Ghostlike Incirrate Octopod - NOAA Office of Ocean Exploration and Research, Hohonu Moana 2016.webm",
+   "from": 31,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "duo",
+   "video": "File:First footage of Duobrachium Sparksae.webm",
+   "from": 0,
+   "len": 14,
+   "fps": 30
+  },
+  {
+   "id": "coral",
+   "video": "File:Dive 7- March 10, 2016- 2016 Hohonu Moana.webm",
+   "from": 12,
+   "len": 10,
+   "fps": 30
+  }
+ ],
+ "lazyClips": true,
+ "scripts": [
+  "tech.js",
+  "pro.js",
+  "139.js"
+ ],
+ "voice": "narrator",
+ "voice_style": "story",
+ "mood": "deep",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "ep": 147,
+ "title": "The vampire squid from hell",
+ "series": "DEEP SEA",
+ "look": "cine",
+ "style": "pro",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "tight": true,
+ "recap": false,
+ "tail": 0.2,
+ "transition": "fade",
+ "sub": 2,
+ "speed": 1.1,
+ "capY": 1700,
+ "capSize": 54,
+ "subY": 1565,
+ "subEndY": 1565,
+ "openMin": 1.6,
+ "photos_from": "139",
+ "depth_open": 1300,
+ "hook": [
+  "The *vampire squid*",
+  "from hell"
+ ],
+ "hookOpen": {
+  "m": "vamp",
+  "fit": "contain",
+  "z0": 0.92,
+  "z1": 1.0,
+  "label": "Illustration · Vampyroteuthis infernalis (Carl Chun, 1911)"
+ },
+ "cta": {
+  "q": "Scary or harmless?",
+  "a": "SCARY",
+  "b": "HARMLESS"
+ },
+ "source": "https://en.wikipedia.org/wiki/Deep_sea",
+ "from_long": 139,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Its scientific name means: vampire squid from hell.",
+   "de": "Sein wissenschaftlicher Name bedeutet: Vampirtintenfisch aus der Hölle.",
+   "es": "Su nombre científico significa: calamar vampiro del infierno.",
+   "fr": "Son nom scientifique signifie : calmar vampire de l'enfer."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "depth": 1500,
+   "vo": [
+    {
+     "text": "Meet the vampire squid. Despite the name, it doesn't drink blood. It eats marine snow.",
+     "de": "Das ist der Vampirtintenfisch. Trotz seines Namens trinkt er kein Blut. Er frisst Meeresschnee.",
+     "es": "Este es el calamar vampiro. A pesar del nombre, no bebe sangre. Come nieve marina.",
+     "fr": "Voici le calmar vampire. Malgré son nom, il ne boit pas de sang. Il mange de la neige marine.",
+     "at": 0.45,
+     "cap": "The *vampire squid*."
+    }
+   ],
+   "vis": 13
+  },
+  {
+   "dur": 1.6,
+   "depth": 1600,
+   "vo": [
+    {
+     "text": "It lives where there is almost no oxygen. And compared to its body, its eyes are the largest of any animal.",
+     "de": "Er lebt dort, wo es kaum Sauerstoff gibt. Und im Verhältnis zum Körper hat er die größten Augen aller Tiere.",
+     "es": "Vive donde casi no hay oxígeno. Y en proporción a su cuerpo, tiene los ojos más grandes de todos los animales.",
+     "fr": "Il vit là où il n'y a presque pas d'oxygène. Et par rapport à son corps, il a les plus grands yeux du règne animal.",
+     "at": 0.45,
+     "cap": "The largest *eyes*."
+    }
+   ],
+   "vis": 14
+  },
+  {
+   "dur": 1.6,
+   "depth": 1700,
+   "vo": [
+    {
+     "text": "When it feels threatened, it can release a sticky cloud of glowing mucus, full of tiny blue lights.",
+     "de": "Wenn er sich bedroht fühlt, stößt er eine klebrige Wolke aus leuchtendem Schleim aus, voller winziger blauer Lichter.",
+     "es": "Cuando se siente amenazado, puede soltar una nube pegajosa de moco brillante, llena de pequeñas luces azules.",
+     "fr": "Quand il se sent menacé, il peut libérer un nuage collant de mucus lumineux, plein de minuscules lumières bleues.",
+     "at": 0.45,
+     "cap": "Tiny *blue lights*."
+    },
+    {
+     "at": "0.15",
+     "text": "Scary or harmless? Comment, and subscribe for more deep sea!",
+     "cta": true,
+     "de": "Gruselig oder harmlos? Kommentier, und abonnier für mehr Tiefsee!",
+     "es": "¿Aterrador o inofensivo? Comenta y suscríbete para más mar profundo.",
+     "fr": "Effrayant ou inoffensif ? Commente, et abonne-toi pour plus d'abysses !"
+    }
+   ],
+   "vis": 15
+  }
+ ]
+}

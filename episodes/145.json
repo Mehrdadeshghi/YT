@@ -1,0 +1,288 @@
+{
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 132,
+   "gain": 0.4
+  },
+  {
+   "id": "surface",
+   "file": "File:Waves in pacifica 1.jpg"
+  },
+  {
+   "id": "lantern",
+   "file": "File:Myctophum punctatum2.jpg"
+  },
+  {
+   "id": "photo",
+   "file": "File:Electrona risso photophores.jpg"
+  },
+  {
+   "id": "hatchet",
+   "file": "File:Hatchetfish bioluminescence.jpg"
+  },
+  {
+   "id": "barrel",
+   "file": "File:Barreleye-fish GoK.jpg"
+  },
+  {
+   "id": "barrelill",
+   "file": "File:Macropinna microstoma illustration.png"
+  },
+  {
+   "id": "siph",
+   "file": "File:Physonect siphonophore Puerto Rico April 2015.png"
+  },
+  {
+   "id": "praya",
+   "file": "File:Praya dubia (Giant siphonophore).jpg"
+  },
+  {
+   "id": "luminous",
+   "file": "File:Luminous Fish of the Deep Sea.jpg"
+  },
+  {
+   "id": "vamp",
+   "file": "File:Vampyroteuthis infernalis dorsal view.jpg"
+  },
+  {
+   "id": "vamp2",
+   "file": "File:Vampyroteuthis1.jpg"
+  },
+  {
+   "id": "eel",
+   "file": "File:Eurypharynx pelecanoides SI.jpg"
+  },
+  {
+   "id": "eelx",
+   "file": "File:Eurypharynx pelecanoides X-ray (cropped).jpg"
+  },
+  {
+   "id": "seapig",
+   "file": "File:Scotoplanes globosa and crab.jpg"
+  },
+  {
+   "id": "tripod",
+   "file": "File:Tripod fish.jpg"
+  },
+  {
+   "id": "dumbo",
+   "file": "File:Dumbo-hires.jpg"
+  },
+  {
+   "id": "dumbo2",
+   "file": "File:Mar22-1-hires.jpg"
+  },
+  {
+   "id": "sponge",
+   "file": "File:Euplectella aspergillum Okeanos.jpg"
+  },
+  {
+   "id": "shrimp",
+   "file": "File:Expl5581 (9734255289).jpg"
+  },
+  {
+   "id": "snail",
+   "file": "File:Pseudoliparis swirei.png"
+  },
+  {
+   "id": "snail2",
+   "file": "File:Pseudoliparis swirei (10.11646-zootaxa.4358.1.7) Figure 4.jpg"
+  },
+  {
+   "id": "amphi",
+   "file": "File:Hirondellea gigas.jpg"
+  },
+  {
+   "id": "alicella",
+   "file": "File:Alicella gigantea Japan Trench 2022.jpg"
+  },
+  {
+   "id": "jelly",
+   "video": "File:Jellyfish - Deepwater Exploration of the Marianas expedition - April 24, 2016.webm",
+   "from": 13,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "medusa",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 39,
+   "len": 9,
+   "fps": 30
+  },
+  {
+   "id": "medusa2",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 12,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "snow",
+   "video": "File:Marine snow.webm",
+   "from": 4,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "chimaera",
+   "video": "File:Rhinochimera.webm",
+   "from": 30,
+   "len": 15,
+   "fps": 30
+  },
+  {
+   "id": "abyss",
+   "video": "File:Poisson et fonds abyssaux (Ifremer 00701-81286).webm",
+   "from": 0,
+   "len": 12,
+   "fps": 30
+  },
+  {
+   "id": "casper",
+   "video": "File:Very Deep, Ghostlike Incirrate Octopod - NOAA Office of Ocean Exploration and Research, Hohonu Moana 2016.webm",
+   "from": 2,
+   "len": 12,
+   "fps": 30
+  },
+  {
+   "id": "casper2",
+   "video": "File:Very Deep, Ghostlike Incirrate Octopod - NOAA Office of Ocean Exploration and Research, Hohonu Moana 2016.webm",
+   "from": 31,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "duo",
+   "video": "File:First footage of Duobrachium Sparksae.webm",
+   "from": 0,
+   "len": 14,
+   "fps": 30
+  },
+  {
+   "id": "coral",
+   "video": "File:Dive 7- March 10, 2016- 2016 Hohonu Moana.webm",
+   "from": 12,
+   "len": 10,
+   "fps": 30
+  }
+ ],
+ "lazyClips": true,
+ "scripts": [
+  "tech.js",
+  "pro.js",
+  "139.js"
+ ],
+ "voice": "narrator",
+ "voice_style": "story",
+ "mood": "deep",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "ep": 145,
+ "title": "The ghost octopus nobody had seen before 2016",
+ "series": "DEEP SEA",
+ "look": "cine",
+ "style": "pro",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "tight": true,
+ "recap": false,
+ "tail": 0.2,
+ "transition": "fade",
+ "sub": 2,
+ "speed": 1.1,
+ "capY": 1700,
+ "capSize": 54,
+ "subY": 1565,
+ "subEndY": 1565,
+ "openMin": 1.6,
+ "photos_from": "139",
+ "depth_open": 4000,
+ "hook": [
+  "Nobody had seen",
+  "this *before 2016*"
+ ],
+ "hookOpen": {
+  "m": "casper",
+  "label": "Real footage · NOAA Okeanos Explorer · Hawaii, 2016"
+ },
+ "cta": {
+  "q": "Cute or creepy?",
+  "a": "CUTE",
+  "b": "CREEPY"
+ },
+ "source": "https://en.wikipedia.org/wiki/Deep_sea",
+ "from_long": 139,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Nobody had ever seen this animal before 2016.",
+   "de": "Vor 2016 hatte niemand dieses Tier je gesehen.",
+   "es": "Nadie había visto este animal antes de 2016.",
+   "fr": "Personne n'avait jamais vu cet animal avant 2016."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "depth": 4290,
+   "vo": [
+    {
+     "text": "In 2016, a robot exploring near Hawaii found this ghost-white octopus, more than four thousand meters down. Nobody had ever seen one like it.",
+     "de": "2016 fand ein Tauchroboter bei Hawaii diesen geisterhaft weißen Oktopus, mehr als viertausend Meter tief. So einen hatte noch nie jemand gesehen.",
+     "es": "En 2016, un robot que exploraba cerca de Hawái encontró este pulpo blanco como un fantasma, a más de cuatro mil metros. Nadie había visto uno igual.",
+     "fr": "En 2016, un robot qui explorait près d'Hawaï a trouvé ce poulpe blanc comme un fantôme, à plus de quatre mille mètres. Personne n'en avait jamais vu de pareil.",
+     "at": 0.45,
+     "cap": "A *ghost-white* octopus."
+    }
+   ],
+   "vis": 21
+  },
+  {
+   "dur": 1.6,
+   "depth": 4800,
+   "vo": [
+    {
+     "text": "And this is the dumbo octopus, named after the Disney elephant. It flaps its ear-like fins to glide just above the bottom.",
+     "de": "Und das ist der Dumbo-Oktopus, benannt nach dem Disney-Elefanten. Er schlägt mit seinen ohrenartigen Flossen und gleitet knapp über den Boden.",
+     "es": "Y este es el pulpo dumbo, llamado así por el elefante de Disney. Mueve sus aletas con forma de orejas para planear justo encima del fondo.",
+     "fr": "Et voici le poulpe dumbo, nommé d'après l'éléphant de Disney. Il bat de ses nageoires en forme d'oreilles pour glisser juste au-dessus du fond.",
+     "at": 0.45,
+     "cap": "The *dumbo octopus*."
+    }
+   ],
+   "vis": 24
+  },
+  {
+   "dur": 1.6,
+   "depth": 5000,
+   "vo": [
+    {
+     "text": "Some dumbo octopuses live as deep as seven thousand meters.",
+     "de": "Manche Dumbo-Oktopusse leben bis in siebentausend Meter Tiefe.",
+     "es": "Algunos pulpos dumbo viven hasta a siete mil metros.",
+     "fr": "Certains poulpes dumbo vivent jusqu'à sept mille mètres de profondeur.",
+     "at": 0.45,
+     "cap": "*Seven thousand* meters."
+    },
+    {
+     "at": "0.15",
+     "text": "Cute or creepy? Comment, and subscribe for more deep sea!",
+     "cta": true,
+     "de": "Süß oder gruselig? Kommentier, und abonnier für mehr Tiefsee!",
+     "es": "¿Mono o escalofriante? Comenta y suscríbete para más mar profundo.",
+     "fr": "Mignon ou flippant ? Commente, et abonne-toi pour plus d'abysses !"
+    }
+   ],
+   "vis": 25
+  }
+ ]
+}

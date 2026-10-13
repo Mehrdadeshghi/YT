@@ -1,0 +1,294 @@
+{
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 132,
+   "gain": 0.4
+  },
+  {
+   "id": "surface",
+   "file": "File:Waves in pacifica 1.jpg"
+  },
+  {
+   "id": "lantern",
+   "file": "File:Myctophum punctatum2.jpg"
+  },
+  {
+   "id": "photo",
+   "file": "File:Electrona risso photophores.jpg"
+  },
+  {
+   "id": "hatchet",
+   "file": "File:Hatchetfish bioluminescence.jpg"
+  },
+  {
+   "id": "barrel",
+   "file": "File:Barreleye-fish GoK.jpg"
+  },
+  {
+   "id": "barrelill",
+   "file": "File:Macropinna microstoma illustration.png"
+  },
+  {
+   "id": "siph",
+   "file": "File:Physonect siphonophore Puerto Rico April 2015.png"
+  },
+  {
+   "id": "praya",
+   "file": "File:Praya dubia (Giant siphonophore).jpg"
+  },
+  {
+   "id": "luminous",
+   "file": "File:Luminous Fish of the Deep Sea.jpg"
+  },
+  {
+   "id": "vamp",
+   "file": "File:Vampyroteuthis infernalis dorsal view.jpg"
+  },
+  {
+   "id": "vamp2",
+   "file": "File:Vampyroteuthis1.jpg"
+  },
+  {
+   "id": "eel",
+   "file": "File:Eurypharynx pelecanoides SI.jpg"
+  },
+  {
+   "id": "eelx",
+   "file": "File:Eurypharynx pelecanoides X-ray (cropped).jpg"
+  },
+  {
+   "id": "seapig",
+   "file": "File:Scotoplanes globosa and crab.jpg"
+  },
+  {
+   "id": "tripod",
+   "file": "File:Tripod fish.jpg"
+  },
+  {
+   "id": "dumbo",
+   "file": "File:Dumbo-hires.jpg"
+  },
+  {
+   "id": "dumbo2",
+   "file": "File:Mar22-1-hires.jpg"
+  },
+  {
+   "id": "sponge",
+   "file": "File:Euplectella aspergillum Okeanos.jpg"
+  },
+  {
+   "id": "shrimp",
+   "file": "File:Expl5581 (9734255289).jpg"
+  },
+  {
+   "id": "snail",
+   "file": "File:Pseudoliparis swirei.png"
+  },
+  {
+   "id": "snail2",
+   "file": "File:Pseudoliparis swirei (10.11646-zootaxa.4358.1.7) Figure 4.jpg"
+  },
+  {
+   "id": "amphi",
+   "file": "File:Hirondellea gigas.jpg"
+  },
+  {
+   "id": "alicella",
+   "file": "File:Alicella gigantea Japan Trench 2022.jpg"
+  },
+  {
+   "id": "jelly",
+   "video": "File:Jellyfish - Deepwater Exploration of the Marianas expedition - April 24, 2016.webm",
+   "from": 13,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "medusa",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 39,
+   "len": 9,
+   "fps": 30
+  },
+  {
+   "id": "medusa2",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 12,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "snow",
+   "video": "File:Marine snow.webm",
+   "from": 4,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "chimaera",
+   "video": "File:Rhinochimera.webm",
+   "from": 30,
+   "len": 15,
+   "fps": 30
+  },
+  {
+   "id": "abyss",
+   "video": "File:Poisson et fonds abyssaux (Ifremer 00701-81286).webm",
+   "from": 0,
+   "len": 12,
+   "fps": 30
+  },
+  {
+   "id": "casper",
+   "video": "File:Very Deep, Ghostlike Incirrate Octopod - NOAA Office of Ocean Exploration and Research, Hohonu Moana 2016.webm",
+   "from": 2,
+   "len": 12,
+   "fps": 30
+  },
+  {
+   "id": "casper2",
+   "video": "File:Very Deep, Ghostlike Incirrate Octopod - NOAA Office of Ocean Exploration and Research, Hohonu Moana 2016.webm",
+   "from": 31,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "duo",
+   "video": "File:First footage of Duobrachium Sparksae.webm",
+   "from": 0,
+   "len": 14,
+   "fps": 30
+  },
+  {
+   "id": "coral",
+   "video": "File:Dive 7- March 10, 2016- 2016 Hohonu Moana.webm",
+   "from": 12,
+   "len": 10,
+   "fps": 30
+  }
+ ],
+ "lazyClips": true,
+ "scripts": [
+  "tech.js",
+  "pro.js",
+  "139.js"
+ ],
+ "voice": "narrator",
+ "voice_style": "story",
+ "mood": "deep",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "ep": 149,
+ "title": "The deepest fish ever filmed (8,336 m)",
+ "series": "DEEP SEA",
+ "look": "cine",
+ "style": "pro",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "tight": true,
+ "recap": false,
+ "tail": 0.2,
+ "transition": "fade",
+ "sub": 2,
+ "speed": 1.1,
+ "capY": 1700,
+ "capSize": 54,
+ "subY": 1565,
+ "subEndY": 1565,
+ "openMin": 1.6,
+ "photos_from": "139",
+ "depth_open": 6000,
+ "hook": [
+  "*1,000×* the pressure.",
+  "And yet: a fish."
+ ],
+ "hookOpen": {
+  "m": "snail",
+  "crop": [
+   0.07,
+   0.31,
+   0.99,
+   0.735
+  ],
+  "label": "Real photo · hadal snailfish, Mariana Trench (Gerringer et al., 2017)"
+ },
+ "cta": {
+  "q": "Would you go down there?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Deep_sea",
+ "from_long": 139,
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "At the bottom of the ocean, the pressure is crushing. And yet, a fish lives there.",
+   "de": "Am Grund des Ozeans ist der Druck erdrückend. Und trotzdem lebt dort ein Fisch.",
+   "es": "En el fondo del océano, la presión es aplastante. Y aun así, allí vive un pez.",
+   "fr": "Au fond de l'océan, la pression est écrasante. Et pourtant, un poisson y vit."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "depth": 7000,
+   "vo": [
+    {
+     "text": "At the very bottom, the pressure is more than a thousand times what we feel at the surface.",
+     "de": "Ganz unten ist der Druck mehr als tausendmal so hoch wie an der Oberfläche.",
+     "es": "En lo más hondo, la presión es más de mil veces la que sentimos en la superficie.",
+     "fr": "Tout au fond, la pression est plus de mille fois celle que l'on ressent en surface.",
+     "at": 0.45,
+     "cap": "*A thousand times*."
+    }
+   ],
+   "vis": 29
+  },
+  {
+   "dur": 1.6,
+   "depth": 7900,
+   "vo": [
+    {
+     "text": "And yet, there are fish. The Mariana snailfish has been caught almost eight thousand meters down. Small, soft and pale, it is a top predator there.",
+     "de": "Und trotzdem gibt es Fische. Der Marianen-Scheibenbauch wurde in fast achttausend Metern Tiefe gefangen. Klein, weich und blass ist er dort ein Spitzenräuber.",
+     "es": "Y aun así hay peces. El pez caracol de las Marianas se ha capturado a casi ocho mil metros. Pequeño, blando y pálido, allí es un gran depredador.",
+     "fr": "Et pourtant, il y a des poissons. La limace de mer des Mariannes a été capturée à près de huit mille mètres. Petite, molle et pâle, c'est là-bas un grand prédateur.",
+     "at": 0.45,
+     "cap": "The *Mariana snailfish*."
+    }
+   ],
+   "vis": 30
+  },
+  {
+   "dur": 1.6,
+   "depth": 8336,
+   "vo": [
+    {
+     "text": "In 2022, scientists filmed a snailfish eight thousand three hundred thirty-six meters down, off Japan. It is the deepest fish ever seen alive.",
+     "de": "2022 filmten Forscher vor Japan einen Scheibenbauch in achttausenddreihundertsechsunddreißig Metern Tiefe. Der tiefste Fisch, der je lebend gesehen wurde.",
+     "es": "En 2022, unos científicos filmaron un pez caracol a ocho mil trescientos treinta y seis metros, frente a Japón. Es el pez más profundo visto con vida.",
+     "fr": "En 2022, des scientifiques ont filmé une limace de mer à huit mille trois cent trente-six mètres, au large du Japon. Le poisson le plus profond jamais vu vivant.",
+     "at": 0.45,
+     "cap": "The *deepest fish* ever seen."
+    },
+    {
+     "at": "0.15",
+     "text": "Would you go down there? Comment yes or no, and subscribe!",
+     "cta": true,
+     "de": "Würdest du da runter? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Bajarías hasta allí? Comenta sí o no, y suscríbete.",
+     "fr": "Tu descendrais là-bas ? Commente oui ou non, et abonne-toi !"
+    }
+   ],
+   "vis": 31
+  }
+ ]
+}

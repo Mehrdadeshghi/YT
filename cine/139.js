@@ -1,10 +1,10 @@
 // #139 "A Journey to the Bottom of the Ocean" — 16:9 long-form, no presenter. Real NOAA/Commons footage and photos,
 // a depth meter on the right that follows the dive, the water getting darker with depth, marine snow drifting through.
-const MAXD = 11000, FR = { x: 60, y: 60, w: 1520, h: 880 };
+const MAXD = 11000, FR = WIDE ? { x: 60, y: 60, w: 1520, h: 880 } : { x: 40, y: 300, w: 1000, h: 1040 };   // 9:16 shorts cut from this episode use the tall frame
 const ZONES = [[0, 200, 'SUNLIGHT', '#2E8FB8'], [200, 1000, 'TWILIGHT', '#1D5E86'], [1000, 4000, 'MIDNIGHT', '#123A5A'], [4000, 6000, 'ABYSS', '#0C2638'], [6000, 11000, 'HADAL', '#08161F']];
 const dY = (d) => 120 + 800 * Math.sqrt(Math.max(0, d) / MAXD);
-const DEP = () => EP_RAW.scenes.map((s) => s.depth);
-function depthNow(i, lt) { const D = DEP(), to = D[i], from = i > 0 ? D[i - 1] : 0; return lerp(from, to, eO((lt - 0.2) / 1.8)); }
+function depthNow(i, lt) { const S0 = EP_RAW.scenes, k = Math.max(0, S0.findIndex((s, j) => (s.vis ?? j) === i)), to = S0[k].depth, from = k > 0 ? S0[k - 1].depth : (EP_RAW.depth_open ?? 0);
+  return lerp(from, to, eO((lt - 0.2) / 1.8)); }
 function zoneOf(d) { return ZONES.find((z) => d < z[1]) || ZONES.at(-1); }
 const fmtM = (d) => Math.round(d).toLocaleString('en-US') + ' m';
 
@@ -18,18 +18,25 @@ function snow(t, a = 1) { g.save(); for (const [x0, y0, z, ph] of SNOWP) { const
 function glowDots(t, d, a = 1) { if (d < 900) return; const r = rng(5); g.save(); g.globalCompositeOperation = 'lighter';
   for (let i = 0; i < 40; i++) { const x = r() * W, y = r() * H, f = Math.max(0, Math.sin(t * (0.6 + r()) + r() * 20)); if (f < 0.6) continue; const c = r() > 0.5 ? '90,200,255' : '80,255,180';
     const gr = g.createRadialGradient(x, y, 0, x, y, 18); gr.addColorStop(0, `rgba(${c},${0.5 * a * (f - 0.6) / 0.4})`); gr.addColorStop(1, `rgba(${c},0)`); g.fillStyle = gr; g.fillRect(x - 18, y - 18, 36, 36); } g.restore(); }
-function meter(t, d) { const x = 1732, y = dY(d); g.save();
+function meter(t, d) { if (!WIDE) return meterTall(t, d); const x = 1732, y = dY(d); g.save();
   ZONES.forEach(([a, b, n, c]) => { g.fillStyle = c; g.fillRect(x - 6, dY(a), 12, dY(b) - dY(a)); ptext(n, x + 22, (dY(a) + dY(b)) / 2 + 6, 16, d >= a && d < b ? PRO.txt : 'rgba(243,247,248,0.35)', { ls: 2, w: 400 }); });
   [0, 1000, 4000, 6000, 11000].forEach((m) => { g.fillStyle = 'rgba(243,247,248,0.4)'; g.fillRect(x - 16, dY(m) - 1, 10, 2); if (Math.abs(dY(m) - y) > 34) ptext(m ? (m / 1000) + ' km' : '0', x - 24, dY(m) + 6, 16, 'rgba(243,247,248,0.5)', { align: 'right' }); });
   g.fillStyle = PRO.acc; g.shadowColor = PRO.acc; g.shadowBlur = 14; g.beginPath(); g.moveTo(x - 10, y); g.lineTo(x - 26, y - 10); g.lineTo(x - 26, y + 10); g.fill(); g.shadowBlur = 0;
   ptext(fmtM(d), x - 34, y + 10, 28, PRO.txt, { align: 'right', w: 800 }); g.restore(); }
+// 9:16: depth readout above the frame, a horizontal depth bar (zones, sqrt scale) below it
+function meterTall(t, d) { const x0 = 90, x1 = 990, y = 1440, X = (m) => x0 + (x1 - x0) * Math.sqrt(Math.max(0, m) / MAXD), z = zoneOf(d); g.save();
+  ptext('DEPTH', FR.x + 6, 168, 26, 'rgba(243,247,248,0.6)', { ls: 6 }); ptext(fmtM(d), FR.x, 262, 92, PRO.txt, { w: 700 });
+  ptext(z[2] + ' ZONE', FR.x + FR.w - 6, 262, 34, PRO.acc, { align: 'right', ls: 4, w: 600 });
+  ZONES.forEach(([a, b, n, c]) => { g.fillStyle = c; g.fillRect(X(a), y - 7, X(b) - X(a), 14); });
+  [0, 1000, 4000, 6000, 11000].forEach((m) => { g.fillStyle = 'rgba(243,247,248,0.45)'; g.fillRect(X(m) - 1, y + 10, 2, 12); ptext(m ? (m / 1000) + ' km' : '0', X(m), y + 48, 20, 'rgba(243,247,248,0.55)', { align: 'center' }); });
+  const xm = X(d); g.fillStyle = PRO.acc; g.shadowColor = PRO.acc; g.shadowBlur = 14; g.beginPath(); g.moveTo(xm, y - 10); g.lineTo(xm - 12, y - 30); g.lineTo(xm + 12, y - 30); g.fill(); g.restore(); }
 // media in the main frame: photo (cover/contain) or real footage (lazy frames); label pill top-left
 function media(t, id, o = {}) { const lt = RT ?? t, isClip = !!CLIPN[id];
   const im = isClip ? vidImg(id, Math.floor(Math.max(0, lt - 0.5) * 30 * (o.rate ?? 1))) : PHOTOS[id];
   g.save(); rrect(FR.x, FR.y, FR.w, FR.h, 22); g.fillStyle = '#03080B'; g.fill(); g.clip();
   if (im) { const z = lerp(o.z0 ?? 1.03, o.z1 ?? 1.1, clamp(lt / (o.dur || 9))), fit = o.fit === 'contain' ? Math.min : Math.max;
     const c = o.crop || [0, 0, 1, 1], sx = c[0] * im.width, sy = c[1] * im.height, iw = (c[2] - c[0]) * im.width, ih = (c[3] - c[1]) * im.height;
-    const s = fit(FR.w / iw, FR.h / ih) * z, dw = iw * s, dh = ih * s, f = o.focus || [0.5, 0.5];
+    const s = fit(FR.w / iw, FR.h / ih) * z, dw = iw * s, dh = ih * s, f = (!WIDE && o.tfocus) || o.focus || [0.5, 0.5];
     const x = o.fit === 'contain' ? FR.x + (FR.w - dw) / 2 : clamp(FR.x + FR.w / 2 - dw * f[0], FR.x + FR.w - dw, FR.x), y = o.fit === 'contain' ? FR.y + (FR.h - dh) / 2 : clamp(FR.y + FR.h / 2 - dh * f[1], FR.y + FR.h - dh, FR.y);
     g.drawImage(im, sx, sy, iw, ih, x, y, dw, dh); }
   const gr = g.createLinearGradient(0, FR.y, 0, FR.y + FR.h); gr.addColorStop(0, 'rgba(3,8,11,0.35)'); gr.addColorStop(0.2, 'rgba(3,8,11,0)'); gr.addColorStop(0.8, 'rgba(3,8,11,0)'); gr.addColorStop(1, 'rgba(3,8,11,0.45)'); g.fillStyle = gr; g.fillRect(FR.x, FR.y, FR.w, FR.h);
@@ -43,7 +50,10 @@ function chips(t, list, y0 = FR.y + FR.h - 60) { list.forEach(([at, s, col], i) 
 function scene(i, m, o = {}) { return S(() => (K, Sc) => { const tm = o.at ? Object.fromEntries(Object.entries(o.at).map(([k, [w, f]]) => [k, sw(w, f)])) : {}; if (o.sfx) o.sfx(K, tm);
   return (t) => { const lt = RT ?? t, d = depthNow(i, lt); seaBg(t, d); glowDots(t, d, 0.8); snow(t, 0.7);
     media(t, m, Object.assign({}, o, { draw: o.draw ? (l) => o.draw(t, l, tm) : null })); if (o.over) o.over(t, tm); if (o.zone) zoneTitle(lt, o.zone[0], o.zone[1]); meter(t, d); }; }); }
-VIS.open = (K) => { K(0.05, 'swish', 0.4);
+VIS.open = (K) => { K(0.05, 'swish', 0.4); const ho = EP_RAW.hookOpen;
+  if (ho) { K(0.3, 'boom', 0.8); return (t) => { const d = EP_RAW.depth_open ?? 0; seaBg(t, d); glowDots(t, d, 0.8); snow(t, 0.7);
+      media(t, ho.m, Object.assign({ z0: 1.05, z1: 1.2, dur: 4 }, ho, { draw: () => { g.fillStyle = 'rgba(3,8,11,0.35)'; g.fillRect(FR.x, FR.y, FR.w, FR.h); } }));
+      const a = inA(t, 0.1, 0.3); g.save(); g.globalAlpha = a; (EP.hook || []).forEach((ln, i) => rich(ln, 540, FR.y + 170 + i * 104, 88, { align: 'center' })); g.restore(); meter(t, d); }; }
   return (t) => { seaBg(t, 0); snow(t, 0.5); media(t, 'surface', { focus: [0.5, 0.45], z0: 1.0, z1: 1.08, dur: 5, draw: () => { g.fillStyle = 'rgba(3,8,11,0.45)'; g.fillRect(FR.x, FR.y, FR.w, FR.h); } });
     const a = inA(t, 0.2, 0.6); g.save(); g.globalAlpha = a; ptext('A JOURNEY TO THE', FR.x + FR.w / 2, 430, 46, 'rgba(243,247,248,0.9)', { align: 'center', ls: 8 }); rich('Bottom of the *Ocean*', FR.x + FR.w / 2, 540, 110, { align: 'center' }); g.restore();
     if (t > 1.2) bigText(t, 1.2, '0 → *11,000 m*', FR.x + FR.w / 2, 660, 60); meter(t, Math.min(11000, Math.max(0, (t - 1.2) * 4000)) * (t < 4 ? 1 : 0)); }; };
@@ -66,8 +76,8 @@ VIS[6] = scene(6, 'hatchet', { focus: [0.5, 0.5], label: 'Real photo · hatchetf
 VIS[7] = scene(7, 'barrel', { focus: [0.45, 0.5], z0: 1.0, z1: 1.2, label: 'Real photo · barreleye specimen (trawl catch)', over: (t, tm) => chips(t, [[tm.tr, 'Transparent dome over the head'], [tm.ey, 'Tube-shaped eyes look up', PRO.acc]]), at: { tr: ['transparent', 1.4], ey: ['eyes', 3.0] } });
 VIS[8] = scene(8, 'barrelill', { fit: 'contain', z0: 0.95, z1: 1.0, label: 'Illustration · Macropinna microstoma', draw: (t, lt) => { const a = 0.5 + 0.5 * Math.sin(lt * 1.5); g.save(); g.strokeStyle = PRO.acc; g.lineWidth = 4; g.setLineDash([12, 10]);
   const cx = FR.x + FR.w * 0.28, cy = FR.y + FR.h * 0.42; g.beginPath(); g.arc(cx, cy, 120, -Math.PI / 2 - 0.2 - a * 1.2, -Math.PI / 2 + 0.2 - a * 1.2); g.stroke(); g.restore(); } });
-VIS[9] = scene(9, 'siph', { focus: [0.5, 0.5], label: 'Real footage still · physonect siphonophore · NOAA, Puerto Rico 2015', over: (t, tm) => chips(t, [[tm.sw, 'Some parts swim'], [tm.st, 'some sting'], [tm.di, 'some digest', PRO.acc]]), at: { sw: ['swim', 5.0], st: ['sting', 5.6], di: ['digest', 6.2] } });
-VIS[10] = scene(10, 'praya', { focus: [0.5, 0.5], label: 'Real photo · giant siphonophore (Praya dubia)', draw: (t, lt, tm) => { if (lt < tm.fs) return; const p = eO((lt - tm.fs) / 1.5), x0 = FR.x + 80, y = FR.y + FR.h - 200, sc = 26;
+VIS[9] = scene(9, 'siph', { focus: [0.5, 0.5], tfocus: [0.88, 0.5], label: 'Real footage still · physonect siphonophore · NOAA, Puerto Rico 2015', over: (t, tm) => chips(t, [[tm.sw, 'Some parts swim'], [tm.st, 'some sting'], [tm.di, 'some digest', PRO.acc]]), at: { sw: ['swim', 5.0], st: ['sting', 5.6], di: ['digest', 6.2] } });
+VIS[10] = scene(10, 'praya', { focus: [0.5, 0.5], label: 'Real photo · giant siphonophore (Praya dubia)', draw: (t, lt, tm) => { if (lt < tm.fs) return; const p = eO((lt - tm.fs) / 1.5), x0 = FR.x + 80, y = FR.y + FR.h - 200, sc = Math.min(26, (FR.w - 160) / 47);
   g.fillStyle = 'rgba(3,8,11,0.7)'; g.fillRect(FR.x, y - 100, FR.w, 230); g.fillStyle = PRO.acc; rrect(x0, y - 40, 47 * sc * p, 34, 17); g.fill(); ptext('Siphonophore ring · ≈ 47 m', x0, y - 56, 28, PRO.txt, { w: 800 });
   g.fillStyle = '#5B7CFF'; rrect(x0, y + 50, 30 * sc * p, 34, 17); g.fill(); ptext('Blue whale · ≈ 30 m', x0, y + 120, 28, PRO.txt, { w: 800 }); }, at: { fs: ['forty', 3.6] } });
 VIS[11] = scene(11, 'medusa', { zone: ['THE MIDNIGHT ZONE', '1,000 – 4,000 m'], label: 'Real footage · NOAA Ocean Exploration · Puerto Rico' });
@@ -89,7 +99,7 @@ VIS[20] = scene(20, 'abyss', { zone: ['THE ABYSS', '4,000 – 6,000 m'], label: 
 VIS[21] = scene(21, 'casper', { label: 'Real footage · NOAA Okeanos Explorer · Hawaii, 2016', over: (t, tm) => chips(t, [[tm.fo, 'More than 4,000 m deep', PRO.acc]]), at: { fo: ['thousand', 4.0] } });
 VIS[22] = scene(22, 'seapig', { focus: [0.5, 0.5], label: 'Real photo · sea pigs (Scotoplanes) · NOAA/MBARI' });
 VIS[23] = scene(23, 'tripod', { focus: [0.5, 0.5], label: 'Real photo · tripod fish · NOAA, 1,960 m', over: (t, tm) => chips(t, [[tm.me, 'Fin rays up to ≈ 1 m'], [tm.cu, 'Faces the current', PRO.acc]]), at: { me: ['meter', 3.4], cu: ['current', 4.8] } });
-VIS[24] = scene(24, 'dumbo', { focus: [0.5, 0.45], z0: 1.0, z1: 1.18, label: 'Real photo · dumbo octopus · NOAA Okeanos Explorer' });
+VIS[24] = scene(24, 'dumbo', { focus: [0.5, 0.45], tfocus: [0.72, 0.5], z0: 1.0, z1: 1.18, label: 'Real photo · dumbo octopus · NOAA Okeanos Explorer' });
 VIS[25] = scene(25, 'dumbo2', { focus: [0.5, 0.5], label: 'Real photo · dumbo octopus · NOAA', over: (t, tm) => { if (t > tm.se) bigText(t, tm.se, 'down to *7,000 m*', FR.x + FR.w / 2, FR.y + FR.h - 90, 70); }, at: { se: ['seven', 1.0] } });
 VIS[26] = scene(26, 'sponge', { focus: [0.5, 0.5], label: "Real photo · Venus' flower basket · NOAA, Gulf of Mexico", over: (t, tm) => chips(t, [[tm.gl, 'Skeleton made of glass (silica)', PRO.acc]]), at: { gl: ['glass', 2.6] } });
 VIS[27] = scene(27, 'shrimp', { focus: [0.5, 0.5], z0: 1.0, z1: 1.25, label: 'Real photo · a shrimp trapped inside the sponge · NOAA', over: (t, tm) => chips(t, [[tm.jp, 'Japan: a symbol of a couple for life', PRO.acc]]), at: { jp: ['japan', 6.0] } });
