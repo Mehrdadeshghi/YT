@@ -45,7 +45,7 @@ if __name__ == '__main__':
         st.append({'n': n, 'mi': round(miss(z, ap) * 0.621371)})
     coef = [[int(k[i]), round(c[i].real, 3), round(c[i].imag, 3)] for i in order[:STAGES[-1] + 1]]
     simp = z[::8]; box = [float(z.real.min()), float(z.imag.min()), float(z.real.max()), float(z.imag.max())]
-    LBL = [('Florida', -81.5, 27.5), ('Texas', -99, 31), ('California', -119.5, 37), ('Maine', -69.3, 45.3), ('Great Lakes', -84.5, 45.5),
+    LBL = [('Florida', -81.5, 27.5), ('Texas', -99, 31), ('California', -119.5, 37), ('Maine', -69.3, 45.3), ('Michigan', -84.8, 43.6),
            ('Cape Cod', -70.2, 41.8), ('Puget Sound', -122.5, 47.6), ('Chesapeake Bay', -76.2, 38.2), ('Louisiana', -91.5, 30.5)]
     labels = []
     for nm, lo, la in LBL:

@@ -13,7 +13,9 @@
  "speed": 1.15,
  "wpm": 180,
  "mood": "calm",
- "scripts": [],
+ "scripts": [
+  "144_fou.js"
+ ],
  "capY": 1720,
  "openMin": 3.0,
  "subY": 330,
@@ -52,9 +54,9 @@
   {
    "id": "music",
    "audio": "File:Antonin Dvorak - symphony no. 9 in e minor 'from the new world', op. 95 - ii. largo.ogg",
-   "from": 0,
-   "len": 120,
-   "gain": 0.9
+   "from": 23.5,
+   "len": 45,
+   "gain": 6
   }
  ]
 }
