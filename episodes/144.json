@@ -18,7 +18,7 @@
  ],
  "capY": 1720,
  "openMin": 3.0,
- "subY": 330,
+ "subY": 1720,
  "cta": {
   "q": "Which state next?",
   "a": "TEXAS",
@@ -58,5 +58,6 @@
    "len": 45,
    "gain": 6
   }
- ]
+ ],
+ "subEndY": 1760
 }
