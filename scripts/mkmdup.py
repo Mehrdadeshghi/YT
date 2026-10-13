@@ -2,7 +2,7 @@
 """Upload text for #143 (matchday preview) → uploads/143.md."""
 import json, re
 E = json.load(open('episodes/143.json')); cr = json.load(open('assets/photos/143.credits.json'))
-js = open('cine/143.js').read(); used = [k for k in cr if k == 'music' or re.search(rf"['\"]{re.escape(k)}['\"]", js)]
+js = open('cine/143.js').read(); used = [k for k in cr if k == 'music' or re.search(rf"['\"]{re.escape(k)}['\"]|PHOTOS\.{re.escape(k)}\b", js)]
 cred = [f"- {'Music' if k == 'music' else 'Image'}: {cr[k]['file'].replace('File:', '')} — {re.sub(r'\s*\(\s*\d+\s*\)', '', cr[k]['author'])}, {cr[k]['license']}, via Wikimedia Commons ({cr[k]['page']})" for k in used]
 T = {'en': 'Predict tonight\'s Champions League 🔮 (only 1% get all 3)', 'de': 'Tippe die Champions League heute Abend 🔮 Schaffst du alle 3?',
      'es': 'Predice la Champions de esta noche 🔮 ¿Aciertas las 3?', 'fr': 'Prédis la Ligue des champions ce soir 🔮 Tu trouves les 3 ?'}
