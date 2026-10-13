@@ -10,16 +10,19 @@
  "tight": true,
  "tail": 0.25,
  "sub": 2,
- "voice": "chirp",
- "voice_style": "hype",
+ "voice": "narrator",
+ "speed": 1.3,
+ "wpm": 205,
  "mood": "epic",
  "scripts": [
+  "tech.js",
   "pro.js"
  ],
  "capY": 1700,
  "capSize": 52,
  "openMin": 1.6,
  "noCommentCard": true,
+ "recap": false,
  "subY": 1530,
  "subEndY": 1530,
  "cta": {
