@@ -20,7 +20,7 @@ U = {
 }
 for ep, (ids, en, de, es, fr, hook, tags) in U.items():
     E = json.load(open(f'episodes/{ep}.json')); q = E['cta']['q']
-    cred = [f"- {'Music' if k == 'music' else ('Video' if cr[k].get('frames') else 'Image')}: {cr[k]['file'].replace('File:', '')} — {re.sub(r'\s*\(\s*\d+\s*\)', '', cr[k]['author'] or 'Ifremer')}, {cr[k]['license']}, via Wikimedia Commons ({cr[k]['page']})" for k in ids + ['music']]
+    cred = [f"- {'Music' if k == 'music' else ('Video' if cr[k].get('frames') else 'Image')}: {cr[k]['file'].replace('File:', '')} — {re.sub(r'\s*\(\s*\d+\s*\)', '', cr[k]['author'] if cr[k]['author'] not in (None, 'null', '') else 'Ifremer')}, {cr[k]['license']}, via Wikimedia Commons ({cr[k]['page']})" for k in ids + ['music']]
     md = [f"# #{ep} DEEP SEA (short from #139) — {E['title']}", '', f"**Title:** {en}", '', '**Description:**', hook, '',
           f"{q} Comment below 👇 Full journey to the bottom of the ocean on the channel.", '', f"Source: {E['source']}", '',
           'Real photos and footage (credits below). Voice: AI narrator.', '', 'Credits:', *cred, '', tags + ' #shorts', '',
