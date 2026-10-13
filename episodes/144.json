@@ -1,0 +1,60 @@
+{
+ "ep": 144,
+ "title": "How many circles does it take to draw the USA?",
+ "series": "CIRCLES #1",
+ "look": "cine",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "tight": false,
+ "sub": 2,
+ "transition": "fade",
+ "voice": "narrator",
+ "speed": 1.15,
+ "wpm": 180,
+ "mood": "calm",
+ "scripts": [],
+ "capY": 1720,
+ "openMin": 3.0,
+ "subY": 330,
+ "cta": {
+  "q": "Which state next?",
+  "a": "TEXAS",
+  "b": "FLORIDA"
+ },
+ "source": "https://www.naturalearthdata.com/",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "How many spinning circles does it take to draw the USA?",
+   "de": "Wie viele sich drehende Kreise braucht man, um die USA zu zeichnen?",
+   "es": "¿Cuántos círculos giratorios hacen falta para dibujar Estados Unidos?",
+   "fr": "Combien de cercles qui tournent faut-il pour dessiner les États-Unis ?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 34,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 30.2,
+     "text": "Which state should I draw next? Comment below, and subscribe!",
+     "cta": true,
+     "de": "Welchen Bundesstaat soll ich als Nächstes zeichnen? Schreib es in die Kommentare und abonnier!",
+     "es": "¿Qué estado dibujo ahora? Escríbelo en los comentarios y suscríbete.",
+     "fr": "Quel État je dessine ensuite ? Dis-le en commentaire, et abonne-toi !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Antonin Dvorak - symphony no. 9 in e minor 'from the new world', op. 95 - ii. largo.ogg",
+   "from": 0,
+   "len": 120,
+   "gain": 0.9
+  }
+ ]
+}
