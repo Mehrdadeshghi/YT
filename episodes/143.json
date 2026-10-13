@@ -1,0 +1,131 @@
+{
+ "ep": 143,
+ "title": "Predict tonight's Champions League (13 Oct 2026)",
+ "series": "MATCHDAY · PREDICT IT",
+ "look": "cine",
+ "style": "pro",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "tight": true,
+ "tail": 0.25,
+ "sub": 2,
+ "voice": "chirp",
+ "voice_style": "hype",
+ "mood": "epic",
+ "scripts": [
+  "pro.js"
+ ],
+ "capY": 1700,
+ "capSize": 52,
+ "openMin": 1.6,
+ "noCommentCard": true,
+ "subY": 1530,
+ "subEndY": 1530,
+ "cta": {
+  "q": "Your 3 scores?",
+  "a": "ATM–MUN",
+  "b": "GAL–BAR"
+ },
+ "source": "https://www.uefa.com/uefachampionsleague/fixtures-results/",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Three huge Champions League games tonight. Can you predict all three?",
+   "de": "Drei riesige Champions-League-Spiele heute Abend. Kannst du alle drei vorhersagen?",
+   "es": "Tres partidazos de Champions esta noche. ¿Puedes acertar los tres?",
+   "fr": "Trois énormes matchs de Ligue des champions ce soir. Tu peux prédire les trois ?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Atlético against Manchester United, in Madrid. Atlético lost their opener at Liverpool. United beat Sabah four-nil. The data gives Atlético forty-nine percent.",
+     "cap": "Atlético *49%*",
+     "de": "Atlético gegen Manchester United, in Madrid. Atlético hat das erste Spiel in Liverpool verloren. United schlug Sabah vier zu null. Die Daten geben Atlético neunundvierzig Prozent.",
+     "es": "Atlético contra Manchester United, en Madrid. El Atlético perdió su primer partido en Liverpool. El United goleó cuatro a cero al Sabah. Los datos dan al Atlético un cuarenta y nueve por ciento.",
+     "fr": "L'Atlético contre Manchester United, à Madrid. L'Atlético a perdu son premier match à Liverpool. United a battu Sabah quatre à zéro. Les données donnent quarante-neuf pour cent à l'Atlético."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Galatasaray against Barcelona, in Istanbul. Barça put five past Feyenoord. But in Istanbul, anything can happen. Barcelona: seventy-five percent.",
+     "cap": "Barcelona *75%*",
+     "de": "Galatasaray gegen Barcelona, in Istanbul. Barça hat Feyenoord fünf Tore eingeschenkt. Aber in Istanbul kann alles passieren. Barcelona: fünfundsiebzig Prozent.",
+     "es": "Galatasaray contra Barcelona, en Estambul. El Barça le metió cinco al Feyenoord. Pero en Estambul puede pasar de todo. Barcelona: setenta y cinco por ciento.",
+     "fr": "Galatasaray contre Barcelone, à Istanbul. Le Barça en a mis cinq à Feyenoord. Mais à Istanbul, tout peut arriver. Barcelone : soixante-quinze pour cent."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Viking from Norway against Bayern. Bayern won their opener five-nil. Viking's chance? Four percent. Upset of the year?",
+     "cap": "Viking *4%*",
+     "de": "Viking aus Norwegen gegen Bayern. Bayern gewann das erste Spiel fünf zu null. Vikings Chance? Vier Prozent. Die Sensation des Jahres?",
+     "es": "El Viking noruego contra el Bayern. El Bayern ganó su primer partido cinco a cero. ¿La opción del Viking? Un cuatro por ciento. ¿La sorpresa del año?",
+     "fr": "Viking, de Norvège, contre le Bayern. Le Bayern a gagné son premier match cinq à zéro. La chance de Viking ? Quatre pour cent. La surprise de l'année ?"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Comment your three scores now. Tomorrow I'll show who got them right!",
+     "cap": "Your *3 scores* 👇",
+     "de": "Schreib jetzt deine drei Tipps in die Kommentare. Morgen zeige ich, wer richtig lag!",
+     "es": "Escribe ahora tus tres resultados en los comentarios. ¡Mañana te enseño quién acertó!",
+     "fr": "Écris tes trois scores en commentaire. Demain, je te montre qui avait raison !"
+    },
+    {
+     "at": "0.1",
+     "text": "Subscribe so you don't miss it!",
+     "cta": true,
+     "de": "Abonnier, damit du es nicht verpasst!",
+     "es": "¡Suscríbete para no perdértelo!",
+     "fr": "Abonne-toi pour ne pas le rater !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "metro",
+   "file": "File:Estadio Wanda Metropolitano (2018).jpg"
+  },
+  {
+   "id": "rams",
+   "file": "File:Galatasaray Nef Stadium before match 2022.jpg"
+  },
+  {
+   "id": "ultras",
+   "file": "File:Saracoglunuyakinsampiyonlukdahayakin.JPG"
+  },
+  {
+   "id": "luz12",
+   "file": "File:Estadio da Luz 2012.jpg"
+  },
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Uplifting Blockbuster (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 45,
+   "gain": 0.5
+  }
+ ]
+}
