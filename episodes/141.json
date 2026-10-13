@@ -1,0 +1,221 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "mood": "epic",
+ "voice": "narrator",
+ "wpm": 205,
+ "wordCaps": true,
+ "scripts": [
+  "football.js"
+ ],
+ "lottie": [
+  "mindblown",
+  "scream",
+  "fire",
+  "eyes",
+  "cry",
+  "trophy",
+  "party",
+  "alarm",
+  "flushed",
+  "skull"
+ ],
+ "ep": 141,
+ "series": "UCL TONIGHT · GALATASARAY v BARÇA",
+ "prog": 1,
+ "title": "\"Welcome to Hell\" — Galatasaray v Manchester United, 1993",
+ "hook": [
+  "\"WELCOME",
+  "TO HELL.\""
+ ],
+ "spell": {},
+ "cta": {
+  "q": "Would you survive this?",
+  "a": "YES",
+  "b": "NO",
+  "emoji": "scream"
+ },
+ "source": "https://en.wikipedia.org/wiki/Galatasaray_S.K._(football)",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Manchester United landed in Istanbul... and fans were waiting with a banner: Welcome to Hell!",
+   "de": "Manchester United landete in Istanbul... und Fans warteten mit einem Banner: Welcome to Hell!",
+   "es": "El Manchester United aterrizó en Estambul... y los aficionados esperaban con una pancarta: ¡Bienvenidos al infierno!",
+   "fr": "Manchester United atterrit à Istanbul... et des supporters l'attendaient avec une banderole : Bienvenue en enfer !"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "1993, Champions League. English champions Manchester United against Galatasaray.",
+     "cap": "*Man United* v Galatasaray.",
+     "de": "1993, Champions League. Englands Meister Manchester United gegen Galatasaray.",
+     "es": "1993, Champions League. El campeón inglés, el Manchester United, contra el Galatasaray.",
+     "fr": "1993, Ligue des champions. Le champion d'Angleterre, Manchester United, contre Galatasaray."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "First leg, Old Trafford. United lead two-nil... then Galatasaray score three! Cantona saves a three-three draw.",
+     "cap": "2–0 up... then *3–3.*",
+     "de": "Hinspiel, Old Trafford. United führt zwei zu null... dann trifft Galatasaray dreimal! Cantona rettet ein Drei zu drei.",
+     "es": "Ida, Old Trafford. El United gana dos a cero... ¡y el Galatasaray marca tres! Cantona salva un empate a tres.",
+     "fr": "Match aller, Old Trafford. United mène deux à zéro... puis Galatasaray en marque trois ! Cantona arrache un trois partout."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then Istanbul. Hundreds of fans at the airport. And that banner: Welcome to Hell.",
+     "cap": "*Welcome to Hell.*",
+     "de": "Dann Istanbul. Hunderte Fans am Flughafen. Und dieses Banner: Welcome to Hell.",
+     "es": "Luego Estambul. Cientos de aficionados en el aeropuerto. Y esa pancarta: Bienvenidos al infierno.",
+     "fr": "Puis Istanbul. Des centaines de supporters à l'aéroport. Et cette banderole : Bienvenue en enfer."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The stadium: torches, drums, smoke. The press called it Hell.",
+     "cap": "They called it *Hell.*",
+     "de": "Das Stadion: Fackeln, Trommeln, Rauch. Die Presse nannte es die Hölle.",
+     "es": "El estadio: bengalas, tambores, humo. La prensa lo llamó el Infierno.",
+     "fr": "Le stade : torches, tambours, fumée. La presse l'appelait l'Enfer."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Nil-nil. Galatasaray go through on away goals! United are out!",
+     "cap": "United are *out.*",
+     "de": "Null zu null. Galatasaray kommt durch die Auswärtstore weiter! United ist raus!",
+     "es": "Cero a cero. ¡El Galatasaray pasa por los goles fuera de casa! ¡El United, eliminado!",
+     "fr": "Zéro à zéro. Galatasaray se qualifie grâce aux buts à l'extérieur ! United est éliminé !"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "At the final whistle, Cantona is sent off. And in the chaos, captain Bryan Robson is hit by a police shield!",
+     "cap": "Cantona: *red card.*",
+     "de": "Beim Schlusspfiff fliegt Cantona vom Platz. Und im Chaos wird Kapitän Bryan Robson von einem Polizeischild getroffen!",
+     "es": "Al pitido final, Cantona es expulsado. ¡Y en el caos, el capitán Bryan Robson recibe el golpe de un escudo policial!",
+     "fr": "Au coup de sifflet final, Cantona est expulsé. Et dans le chaos, le capitaine Bryan Robson est frappé par un bouclier de police !"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Tonight, Barcelona play in Istanbul.",
+     "cap": "Tonight: *Barça* in Istanbul.",
+     "de": "Heute Abend spielt Barcelona in Istanbul.",
+     "es": "Esta noche, el Barcelona juega en Estambul.",
+     "fr": "Ce soir, Barcelone joue à Istanbul."
+    },
+    {
+     "at": "0.15",
+     "text": "Would you survive this atmosphere? Comment yes or no, and subscribe!",
+     "cta": true,
+     "de": "Würdest du diese Atmosphäre überleben? Kommentier ja oder nein, und abonnier!",
+     "es": "¿Sobrevivirías a este ambiente? Comenta sí o no, y suscríbete.",
+     "fr": "Tu survivrais à cette ambiance ? Commente oui ou non, et abonne-toi !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "strend",
+   "file": "File:Stretford end 1992.JPG"
+  },
+  {
+   "id": "ot92",
+   "file": "File:Old Trafford 1992 (outside).JPG"
+  },
+  {
+   "id": "tunnel",
+   "file": "File:Garderobeinngang (old trafford) 1992.JPG"
+  },
+  {
+   "id": "robson",
+   "file": "File:Bryan Robson at the cliff -march 92.JPG"
+  },
+  {
+   "id": "cantona",
+   "file": "File:CantonaCosmosAugust52011.jpg"
+  },
+  {
+   "id": "hell",
+   "file": "File:Galatasaray Türkiye'dir.jpg"
+  },
+  {
+   "id": "ultras",
+   "file": "File:Saracoglunuyakinsampiyonlukdahayakin.JPG"
+  },
+  {
+   "id": "gsfans",
+   "file": "File:Galatasaray fans before the match against Fenerbahçe in 27 February 2008.jpg"
+  },
+  {
+   "id": "asy06",
+   "file": "File:Galatasaray Boleslav CL 2006.jpg"
+  },
+  {
+   "id": "gsfb",
+   "file": "File:GS-FB 3-1 Panorama.jpg"
+  },
+  {
+   "id": "rams",
+   "file": "File:Galatasaray Nef Stadium before match 2022.jpg"
+  },
+  {
+   "id": "sahne",
+   "file": "File:Sahne1.jpg"
+  },
+  {
+   "id": "music",
+   "audio": "File:Justice And Fame by Rafael Krux.ogg",
+   "from": 0,
+   "len": 45,
+   "gain": 0.6
+  }
+ ]
+}

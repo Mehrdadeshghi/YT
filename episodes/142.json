@@ -1,0 +1,219 @@
+{
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "loop": true,
+ "recap": false,
+ "mood": "epic",
+ "voice": "narrator",
+ "wpm": 205,
+ "wordCaps": true,
+ "scripts": [
+  "football.js"
+ ],
+ "lottie": [
+  "mindblown",
+  "scream",
+  "fire",
+  "eyes",
+  "cry",
+  "trophy",
+  "party",
+  "alarm",
+  "flushed",
+  "skull"
+ ],
+ "ep": 142,
+ "series": "UCL TONIGHT · BAYERN & BARÇA",
+ "prog": 1,
+ "title": "Barcelona 2–8 Bayern Munich, 2020",
+ "hook": [
+  "BARCELONA 2–8.",
+  "NOT A TYPO."
+ ],
+ "spell": {
+  "Muller.": "Müller.",
+  "Muller": "Müller",
+  "Perisich,": "Perišić,",
+  "Leh-van-dov-ski.": "Lewandowski.",
+  "Buy-urn": "Bayern"
+ },
+ "cta": {
+  "q": "Who is stronger today?",
+  "a": "BAYERN",
+  "b": "BARÇA",
+  "emoji": "eyes"
+ },
+ "source": "https://en.wikipedia.org/wiki/2019%E2%80%9320_UEFA_Champions_League_knockout_phase",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Barcelona. With Messi. Lost eight-two... in the Champions League!",
+   "de": "Barcelona. Mit Messi. Verliert acht zu zwei... in der Champions League!",
+   "es": "El Barcelona. Con Messi. Perdió ocho a dos... ¡en la Champions League!",
+   "fr": "Barcelone. Avec Messi. A perdu huit à deux... en Ligue des champions !"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "August 2020, Lisbon. Quarter-final. One game only, in an empty stadium.",
+     "cap": "One game. *Empty stadium.*",
+     "de": "August 2020, Lissabon. Viertelfinale. Nur ein Spiel, in einem leeren Stadion.",
+     "es": "Agosto de 2020, Lisboa. Cuartos de final. Un solo partido, en un estadio vacío.",
+     "fr": "Août 2020, Lisbonne. Quart de finale. Un seul match, dans un stade vide."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Fourth minute: Muller. Then Perisich, Gnabry, Muller again. Half-time: one-four!",
+     "cap": "Half-time: *1–4.*",
+     "de": "Vierte Minute: Müller. Dann Perišić, Gnabry, wieder Müller. Halbzeit: eins zu vier!",
+     "es": "Minuto cuatro: Müller. Luego Perišić, Gnabry y otra vez Müller. ¡Descanso: uno a cuatro!",
+     "fr": "Quatrième minute : Müller. Puis Perišić, Gnabry, encore Müller. Mi-temps : un à quatre !"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Second half: Kimmich. Leh-van-dov-ski. Six!",
+     "cap": "*2–6.*",
+     "de": "Zweite Halbzeit: Kimmich. Lewandowski. Sechs!",
+     "es": "Segunda parte: Kimmich. Lewandowski. ¡Seis!",
+     "fr": "Deuxième mi-temps : Kimmich. Lewandowski. Six !"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then Coutinho. Twice! A player on loan... from Barcelona!",
+     "cap": "On loan *from Barcelona.*",
+     "de": "Dann Coutinho. Zweimal! Ein Spieler, ausgeliehen... von Barcelona!",
+     "es": "Luego Coutinho. ¡Dos veces! Un jugador cedido... ¡por el Barcelona!",
+     "fr": "Puis Coutinho. Deux fois ! Un joueur prêté... par Barcelone !"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Eight-two. The first time in seventy-four years Barcelona conceded eight in a game!",
+     "cap": "*74 years.*",
+     "de": "Acht zu zwei. Zum ersten Mal seit vierundsiebzig Jahren kassierte Barcelona acht Tore in einem Spiel!",
+     "es": "Ocho a dos. ¡Por primera vez en setenta y cuatro años el Barcelona encajó ocho goles en un partido!",
+     "fr": "Huit à deux. Pour la première fois en soixante-quatorze ans, Barcelone encaissait huit buts en un match !"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Three days later, Barcelona's coach was sacked. And Buy-urn went on to win the trophy.",
+     "cap": "Coach *sacked.*",
+     "de": "Drei Tage später wurde Barcelonas Trainer entlassen. Und Bayern holte am Ende den Pokal.",
+     "es": "Tres días después, el entrenador del Barcelona fue despedido. Y el Bayern acabó ganando el trofeo.",
+     "fr": "Trois jours plus tard, l'entraîneur de Barcelone était limogé. Et le Bayern a fini par gagner le trophée."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 6,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Tonight, both play again. Buy-urn in Norway, Barcelona in Istanbul.",
+     "cap": "Tonight: *both play.*",
+     "de": "Heute Abend spielen beide wieder. Bayern in Norwegen, Barcelona in Istanbul.",
+     "es": "Esta noche juegan los dos. El Bayern en Noruega, el Barcelona en Estambul.",
+     "fr": "Ce soir, les deux jouent. Le Bayern en Norvège, Barcelone à Istanbul."
+    },
+    {
+     "at": "0.15",
+     "text": "Who's stronger today? Comment Bayern or Barça, and subscribe!",
+     "cta": true,
+     "de": "Wer ist heute stärker? Kommentier Bayern oder Barça, und abonnier!",
+     "es": "¿Quién es más fuerte hoy? Comenta Bayern o Barça, y suscríbete.",
+     "fr": "Qui est le plus fort aujourd'hui ? Commente Bayern ou Barça, et abonne-toi !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "luz",
+   "file": "File:Sunset in Estádio da Luz (6ago2020) (51626070924).jpg"
+  },
+  {
+   "id": "luz12",
+   "file": "File:Estadio da Luz 2012.jpg"
+  },
+  {
+   "id": "muller",
+   "file": "File:Thomas Müller 2022 (cropped).jpg"
+  },
+  {
+   "id": "muller2",
+   "file": "File:Thomas Muller pelo Bayen.jpg"
+  },
+  {
+   "id": "lewa",
+   "file": "File:20190428 DFL 1. Bundesliga FCN - FCB 850 0565.jpg"
+  },
+  {
+   "id": "baypl",
+   "file": "File:Bayern Munchen players.jpg"
+  },
+  {
+   "id": "cou1",
+   "file": "File:Real Valladolid - FC Barcelona, 2018-08-25 (107).jpg"
+  },
+  {
+   "id": "cou2",
+   "file": "File:Real Valladolid - FC Barcelona, 2018-08-25 (111).jpg"
+  },
+  {
+   "id": "coutb",
+   "file": "File:Coutinho vs Valladolid.jpg"
+  },
+  {
+   "id": "rams",
+   "file": "File:Galatasaray Nef Stadium before match 2022.jpg"
+  },
+  {
+   "id": "music",
+   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "from": 2,
+   "len": 43,
+   "gain": 0.6
+  }
+ ]
+}
