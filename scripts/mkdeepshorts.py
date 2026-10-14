@@ -46,6 +46,8 @@ for ep, idx, hook, op, ho, cta, card, title in SHORTS:
     sc = []
     for i in idx:
         s = json.loads(json.dumps(L['scenes'][i])); s['vis'] = i; s['dur'] = 1.6; sc.append(s)
+    for s in sc:                                                          # years as words: the narrator must not swallow "2016" (heard as "2006")
+        for v in s['vo']: v['text'] = v['text'].replace('In 2016,', 'In twenty sixteen,')
     sc[-1]['vo'].append({'at': '0.15', 'text': cta[0], 'cta': True, 'de': cta[1], 'es': cta[2], 'fr': cta[3]})
     first = L['scenes'][idx[0]]['depth']; prev = L['scenes'][idx[0] - 1]['depth'] if idx[0] else 0
     E = {k: L[k] for k in KEEP if k in L}
