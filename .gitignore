@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 out/
 dist/
 models/
@@ -11,3 +11,4 @@ assets/clips/
 assets/voice/*.wav
 !assets/voice/ref_placeholder.wav
 assets/music/
+.venv/
