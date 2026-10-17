@@ -1,18 +1,19 @@
-# medical fact candidates (#119+): what do people search more?
-anchor: sunscreen
-CPR
-stroke symptoms
-hand washing
-cracking knuckles
-earwax
-antibiotics
-taller in the morning
-washing chicken
-placebo effect
-heart attack symptoms
-earwax removal
-kidney stones
-vitamin D
-hiccups
-sleep paralysis
-migraine
+# next long-form + Shorts candidates (US audience, not in docs/topics.md), 18 Oct 2026
+anchor: Titanic
+Area 51
+D. B. Cooper
+Bermuda Triangle
+Yellowstone supervolcano
+Roanoke Colony
+Apollo 11
+black hole
+how credit cards work
+credit score
+how banks create money
+how airplanes fly
+Hoover Dam
+Alcatraz
+Texas
+Florida
+California
+Alaska
