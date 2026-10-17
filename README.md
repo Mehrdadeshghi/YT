@@ -1,5 +1,7 @@
 # Wiki Roulette · YouTube Shorts pipeline
 
+> Working with Claude Code: start `claude` in this folder. Everything it needs is in `CLAUDE.md`, `docs/topics.md` and `.claude/skills/new-short/`.
+
 English Shorts about random Wikipedia articles: voice-over, word-by-word captions, animated graphics, real freely-licensed photos from Wikimedia Commons, seamless loop.
 
 ## How it runs (no manual steps)
