@@ -12,7 +12,7 @@ cfg = json.load(open(sys.argv[1])); app = cfg.get('installed') or cfg.get('web')
 if 'installed' not in cfg: sys.exit('This is not a "Desktop app" client. Create an OAuth client of type "Desktop app" (step 2).')
 flow = InstalledAppFlow.from_client_config(cfg, SCOPES)
 print('Open the link below in your browser, sign in, pick the Wiki Roulette channel and allow access.')
-cred = flow.run_local_server(port=8765, open_browser=False, prompt='consent', access_type='offline',
+cred = flow.run_local_server(port=0, open_browser=False, prompt='consent', access_type='offline',
                              authorization_prompt_message='\n{url}\n', success_message='Done. You can close this tab and go back to the terminal.')
 if not cred.refresh_token: sys.exit('Google returned no refresh token. Remove the app at myaccount.google.com/permissions and run this again.')
 for name, value in (('YT_CLIENT_ID', app['client_id']), ('YT_CLIENT_SECRET', app['client_secret']), ('YT_REFRESH_TOKEN', cred.refresh_token)):
