@@ -1,0 +1,182 @@
+{
+ "ep": 153,
+ "title": "How does a missile find its target?",
+ "series": "HOW IT WORKS #11",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "mood": "epic",
+ "prog": 3,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "NO PILOT.",
+  "NO EYES.",
+  "ON TARGET."
+ ],
+ "cta": {
+  "q": "Smarter than you thought?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Missile_guidance",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "No pilot. No eyes. And it still finds the target. Here's how.",
+   "de": "Kein Pilot. Keine Augen. Und trotzdem findet sie ihr Ziel. So funktioniert es.",
+   "es": "Sin piloto. Sin ojos. Y aun así encuentra su objetivo. Así funciona.",
+   "fr": "Pas de pilote. Pas d'yeux. Et il trouve quand même sa cible. Voici comment."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Inside are gyroscopes and accelerometers. They feel every turn and every push, and a computer adds it all up. No signal needed.",
+     "cap": "*Gyros* + *accelerometers.* No signal.",
+     "de": "Im Inneren sitzen Gyroskope und Beschleunigungssensoren. Sie spüren jede Drehung und jeden Schub, und ein Computer rechnet alles zusammen. Ganz ohne Signal.",
+     "es": "Dentro hay giroscopios y acelerómetros. Sienten cada giro y cada empuje, y un ordenador lo suma todo. Sin ninguna señal.",
+     "fr": "À l'intérieur, des gyroscopes et des accéléromètres. Ils sentent chaque virage et chaque poussée, et un ordinateur additionne tout. Aucun signal nécessaire."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The catch? Tiny errors grow. Even the best sensors drift about a hundred and sixty feet in seventeen minutes.",
+     "cap": "*164 ft* off in *17 minutes.*",
+     "de": "Der Haken? Winzige Fehler wachsen. Selbst die besten Sensoren driften in siebzehn Minuten um rund fünfzig Meter ab.",
+     "es": "¿El problema? Los pequeños errores crecen. Incluso los mejores sensores se desvían unos cincuenta metros en diecisiete minutos.",
+     "fr": "Le problème ? Les petites erreurs grandissent. Même les meilleurs capteurs dérivent d'environ cinquante mètres en dix-sept minutes."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So it checks GPS. But that signal travels over twelve thousand miles and arrives so weak, it can be jammed.",
+     "cap": "GPS: *12,000+ miles.* *Jammable.*",
+     "de": "Also prüft sie per GPS nach. Aber das Signal reist über zwanzigtausend Kilometer und kommt so schwach an, dass man es stören kann.",
+     "es": "Así que consulta el GPS. Pero esa señal viaja más de veinte mil kilómetros y llega tan débil que se puede bloquear.",
+     "fr": "Alors il vérifie avec le GPS. Mais ce signal parcourt plus de vingt mille kilomètres et arrive si faible qu'on peut le brouiller."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Plan B: a radar measures the hills below and matches them to a map stored on board.",
+     "cap": "Radar matches the *hills* to a *map.*",
+     "de": "Plan B: Ein Radar misst die Hügel darunter und vergleicht sie mit einer gespeicherten Karte an Bord.",
+     "es": "Plan B: un radar mide las colinas de abajo y las compara con un mapa guardado a bordo.",
+     "fr": "Plan B : un radar mesure les collines en dessous et les compare à une carte enregistrée à bord."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Near the target, a camera compares the ground with satellite photos, and corrects the course.",
+     "cap": "Camera vs. *satellite photos.*",
+     "de": "Kurz vor dem Ziel vergleicht eine Kamera den Boden mit Satellitenfotos und korrigiert den Kurs.",
+     "es": "Cerca del objetivo, una cámara compara el suelo con fotos de satélite y corrige el rumbo.",
+     "fr": "Près de la cible, une caméra compare le sol avec des photos satellite, et corrige la trajectoire."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So does it ever miss? Yes. For GPS-guided bombs, thirty-three feet is the circle where only half of them land.",
+     "cap": "*33 ft:* only *half* land inside.",
+     "de": "Verfehlt sie also nie? Doch. Bei GPS-gelenkten Bomben ist zehn Meter der Kreis, in dem nur die Hälfte landet.",
+     "es": "¿Entonces nunca falla? Sí falla. En las bombas guiadas por GPS, diez metros es el círculo donde solo cae la mitad.",
+     "fr": "Alors, il ne rate jamais ? Si. Pour les bombes guidées par GPS, dix mètres, c'est le cercle où seule la moitié tombe."
+    },
+    {
+     "at": "0.15",
+     "text": "Smarter than you thought? Yes or no? Comment, and subscribe!",
+     "cta": true,
+     "de": "Klüger als gedacht? Ja oder nein? Schreib es in die Kommentare und abonnier!",
+     "es": "¿Más lista de lo que pensabas? ¿Sí o no? Comenta y suscríbete.",
+     "fr": "Plus malin que tu pensais ? Oui ou non ? Commente, et abonne-toi !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 1
+  },
+  {
+   "id": "launch",
+   "video": "File:DOD Conducts Ground-launched Cruise Missile Test (190818-O-PZ834-724).webm",
+   "from": 0,
+   "len": 41,
+   "fps": 1
+  },
+  {
+   "id": "ins",
+   "file": "File:Inertial guidance system for Thor missile.jpg"
+  },
+  {
+   "id": "flight",
+   "file": "File:Tomahawk Block IV cruise missile.jpg"
+  },
+  {
+   "id": "jdam",
+   "file": "File:Navy conducts JDAM-LR tests 02.jpg"
+  },
+  {
+   "id": "tlaunch",
+   "file": "File:US Navy 020823-N-9999X-001 Tactical Tomahawk launches during contractor testing.jpg"
+  },
+  {
+   "id": "plant",
+   "file": "File:A U.S. Navy Tomahawk cruise missile flies by an isolated industrial complex during a flight test - DPLA - 1a6a16602c21ee7d921844583b149b55.jpeg"
+  },
+  {
+   "id": "hit",
+   "file": "File:UGM-109 hits RA-5C on San Clemente Island 1986.JPEG"
+  }
+ ]
+}
