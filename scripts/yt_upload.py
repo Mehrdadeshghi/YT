@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """YouTube upload (runs in the "Upload to YouTube" workflow): python3 scripts/yt_upload.py 152 154 [--slots 21:00,23:00] [--privacy private] [--dry-run] [--force]
+Autopilot (daily cron, no local computer needed): python3 scripts/yt_upload.py --queue → takes the next episodes from upload_queue.txt that are
+rendered and not uploaded yet, and fills the free slots of the next 36 hours (at most MAX_PER_RUN per run, one video per slot).
 For each episode: newest release asset wiki_roulette_<ep>.mp4 → videos.insert with everything from uploads/<ep>.md
 (title, description, tags from the hashtags, category, made for kids, altered/synthetic content, DE/ES/FR titles as localizations),
 scheduled into the next free slot (Europe/Berlin), added to the playlist named in the md (created if missing).
@@ -13,6 +15,8 @@ REPO = os.environ.get('GITHUB_REPOSITORY', 'Mehrdadeshghi/YT')
 BERLIN = ZoneInfo('Europe/Berlin')
 CATEGORIES = {'film & animation': '1', 'sports': '17', 'people & blogs': '22', 'entertainment': '24', 'education': '27', 'science & technology': '28'}
 LEDGER = 'uploads/youtube.json'
+QUEUE = 'upload_queue.txt'
+MAX_PER_RUN = 4                     # hard safety cap: never more than 4 uploads per run, whatever the input says
 args = sys.argv[1:]
 opt = lambda k, d: args[args.index('--' + k) + 1] if '--' + k in args else d
 flag = lambda k: '--' + k in args
@@ -44,6 +48,11 @@ def parse(ep):
     if '#shorts' not in desc.lower() and '#shorts' not in title.lower(): desc += '\n\n#shorts'
     return dict(title=title[:100], description=desc[:5000], tags=tags[:30], playlist=pl.group(1) if pl else None,
                 category=CATEGORIES.get((cat.group(1) if cat else 'education').strip().lower(), '27'), kids=kids, synthetic=synthetic, localizations=loc)
+
+
+def has_asset(ep):
+    try: find_asset(ep); return True
+    except SystemExit: return False
 
 
 def find_asset(ep):
@@ -92,12 +101,27 @@ def playlist_id(yt, name, cache={}):
 
 
 def main():
-    if not EPS: sys.exit(__doc__)
     led = json.load(open(LEDGER)) if os.path.exists(LEDGER) else {}
-    todo = [e for e in EPS if flag('force') or str(int(e)) not in led]
-    for e in EPS:
-        if e not in todo: print(f'#{e}: already uploaded → {led[str(int(e))]["url"]} (use --force to upload again)')
-    when = next_slots(len(todo), {v.get('publishAt') for v in led.values()}) if PRIVACY == 'scheduled' else [None] * len(todo)
+    taken = {v.get('publishAt') for v in led.values()}
+    if flag('queue'):                                   # autopilot: free slots in the next 36 h, queue order, only rendered episodes
+        horizon = (dt.datetime.now(dt.timezone.utc) + dt.timedelta(hours=36)).strftime('%Y-%m-%dT%H:%M:%SZ')
+        free = [s for s in next_slots(MAX_PER_RUN, taken) if s <= horizon]
+        queue = [l.split('#')[0].strip().zfill(3) for l in open(QUEUE) if l.split('#')[0].strip()] if os.path.exists(QUEUE) else []
+        todo = []
+        for e in queue:
+            if len(todo) == len(free): break
+            if str(int(e)) in led: continue
+            if has_asset(e): todo.append(e)
+            else: print(f'#{e}: in the queue but not rendered yet — skipped for now')
+        if not todo: print(f'nothing to upload (free slots in the next 36 h: {len(free)}, waiting in the queue: {len([e for e in queue if str(int(e)) not in led])})'); return
+        when = free[:len(todo)]
+    else:
+        if not EPS: sys.exit(__doc__)
+        todo = [e for e in EPS if flag('force') or str(int(e)) not in led]
+        for e in EPS:
+            if e not in todo: print(f'#{e}: already uploaded → {led[str(int(e))]["url"]} (use --force to upload again)')
+        if len(todo) > MAX_PER_RUN: print(f'safety cap: only the first {MAX_PER_RUN} of {len(todo)} are uploaded in this run'); todo = todo[:MAX_PER_RUN]
+        when = next_slots(len(todo), taken) if PRIVACY == 'scheduled' else [None] * len(todo)
     yt = None if flag('dry-run') else youtube()
     for e, at in zip(todo, when):
         M = parse(e); url, name = find_asset(e)
@@ -114,7 +138,10 @@ def main():
         req = yt.videos().insert(part='snippet,status,localizations', body=body, media_body=MediaFileUpload(name, mimetype='video/mp4', chunksize=8 << 20, resumable=True))
         resp = None
         while resp is None: _, resp = req.next_chunk()
-        vid = resp['id']; print(f'  uploaded → https://youtube.com/shorts/{vid} (upload status: {resp["status"].get("uploadStatus")}, privacy: {resp["status"].get("privacyStatus")})')
+        vid = resp['id']; print(f'  uploaded → https://youtube.com/shorts/{vid}')
+        chk = yt.videos().list(part='status,snippet,localizations', id=vid).execute().get('items', [{}])[0]; st = chk.get('status', {})
+        print(f'  YouTube has: privacy {st.get("privacyStatus")} · publishAt {st.get("publishAt")} · upload {st.get("uploadStatus")} · madeForKids {st.get("selfDeclaredMadeForKids")} · '
+              f'synthetic {st.get("containsSyntheticMedia")} · titles {"/".join(chk.get("localizations", {})) or "-"}')
         if M['playlist']:
             try: yt.playlistItems().insert(part='snippet', body={'snippet': {'playlistId': playlist_id(yt, M['playlist']), 'resourceId': {'kind': 'youtube#video', 'videoId': vid}}}).execute()
             except Exception as ex: print(f'  playlist failed: {ex}')

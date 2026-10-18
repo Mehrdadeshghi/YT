@@ -1,7 +1,12 @@
 name: Upload to YouTube
 # Actions → "Upload to YouTube" → Run workflow: episodes "152 153", publish times (German time), privacy.
 # Needs the secrets YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (docs/youtube-upload.md). Writes uploads/youtube.json.
+# Autopilot: every day at 05:30 UTC the next rendered episodes from upload_queue.txt go into the free slots of the next 36 h.
+#   Runs only when the repo variable AUTOPILOT is "on" (Settings → Secrets and variables → Actions → Variables).
+#   Slots: repo variable UPLOAD_SLOTS (German time), default "15:00,18:00,21:00,23:00". Runs in GitHub, no local computer needed.
 on:
+  schedule:
+    - cron: "30 5 * * *"
   workflow_dispatch:
     inputs:
       episodes:
@@ -31,6 +36,7 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    if: github.event_name == 'workflow_dispatch' || vars.AUTOPILOT == 'on'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -42,11 +48,16 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
-        run: python3 scripts/yt_upload.py ${{ inputs.episodes }} --slots "${{ inputs.slots }}" --privacy ${{ inputs.privacy }} ${{ inputs.force && '--force' || '' }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            python3 scripts/yt_upload.py --queue --slots "${{ vars.UPLOAD_SLOTS || '15:00,18:00,21:00,23:00' }}"
+          else
+            python3 scripts/yt_upload.py ${{ inputs.episodes }} --slots "${{ inputs.slots }}" --privacy ${{ inputs.privacy }} ${{ inputs.force && '--force' || '' }}
+          fi
       - name: Save ledger
         if: always()
         run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add uploads/youtube.json 2>/dev/null || exit 0
           git diff --cached --quiet && exit 0
-          git commit -m "YouTube uploads: ${{ inputs.episodes }}" && git pull --rebase -q && git push
+          git commit -m "YouTube uploads: ${{ inputs.episodes || 'autopilot' }}" && git pull --rebase -q && git push
