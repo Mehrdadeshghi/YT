@@ -1,0 +1,52 @@
+name: Upload to YouTube
+# Actions → "Upload to YouTube" → Run workflow: episodes "152 153", publish times (German time), privacy.
+# Needs the secrets YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (docs/youtube-upload.md). Writes uploads/youtube.json.
+on:
+  workflow_dispatch:
+    inputs:
+      episodes:
+        description: "Episodes, e.g. 152 153 154 155"
+        required: true
+      slots:
+        description: "Daily publish times (German time), next free ones are used"
+        required: false
+        default: "21:00"
+      privacy:
+        description: "scheduled = private until the slot, then public"
+        required: false
+        default: "scheduled"
+        type: choice
+        options: [scheduled, private, unlisted, public]
+      force:
+        description: "Upload again even if already in uploads/youtube.json"
+        required: false
+        default: false
+        type: boolean
+permissions:
+  contents: write
+concurrency:
+  group: youtube-upload          # one at a time: the ledger decides the next free slots
+  cancel-in-progress: false
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -q google-api-python-client google-auth
+      - name: Upload
+        env:
+          GH_TOKEN: ${{ github.token }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python3 scripts/yt_upload.py ${{ inputs.episodes }} --slots "${{ inputs.slots }}" --privacy ${{ inputs.privacy }} ${{ inputs.force && '--force' || '' }}
+      - name: Save ledger
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add uploads/youtube.json 2>/dev/null || exit 0
+          git diff --cached --quiet && exit 0
+          git commit -m "YouTube uploads: ${{ inputs.episodes }}" && git pull --rebase -q && git push

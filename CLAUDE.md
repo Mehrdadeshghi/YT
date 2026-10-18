@@ -59,7 +59,8 @@ Covered topics: `docs/topics.md` (never repeat one). Step-by-step production: `.
    (one dispatch per episode = parallel). Result: release `shorts-N` with mp4, `_de/_es/_fr.m4a`, md. Failures publish `debug-N`.
    Download: `curl -sSLf -O https://github.com/Mehrdadeshghi/YT/releases/download/shorts-N/<file>`.
    Typical time: Short ~20–30 min, 5-min 16:9 ~2 h, AI presenter ~1 h.
-4. Other workflows: `fetch-asset.yml` (download a URL into the repo), `chirp.yml`, `host-test.yml`, `trends.yml`.
+4. Upload: workflow **Upload to YouTube** (`upload.yml`, `scripts/yt_upload.py`): episodes + daily slots (German time) → scheduled upload with md metadata, playlist, DE/ES/FR titles; ledger `uploads/youtube.json`. Secrets `YT_CLIENT_ID/YT_CLIENT_SECRET/YT_REFRESH_TOKEN` (setup: `docs/youtube-upload.md`, `scripts/yt_auth.py`). Audio tracks + pinned comment stay manual in Studio.
+5. Other workflows: `fetch-asset.yml` (download a URL into the repo), `chirp.yml`, `host-test.yml`, `trends.yml`.
 
 ## Local preview (fast iteration before CI)
 - `python3 voice.py <ep> --voice am_michael --speed 1.3` (Kokoro preview voice + Whisper timings → `episodes/<ep>.voice.json`)
