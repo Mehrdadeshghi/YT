@@ -14,7 +14,8 @@
  "wpm": 180,
  "mood": "calm",
  "scripts": [
-  "144_fou.js"
+  "144_fou.js",
+  "circles.js"
  ],
  "capY": 1720,
  "openMin": 3.0,

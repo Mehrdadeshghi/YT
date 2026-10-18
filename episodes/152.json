@@ -1,0 +1,64 @@
+{
+ "ep": 152,
+ "title": "How many circles does it take to draw Texas?",
+ "series": "CIRCLES #2",
+ "look": "cine",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "tight": false,
+ "sub": 2,
+ "transition": "fade",
+ "voice": "narrator",
+ "speed": 1.15,
+ "wpm": 180,
+ "mood": "calm",
+ "scripts": [
+  "152_fou.js",
+  "circles.js"
+ ],
+ "capY": 1720,
+ "openMin": 3.0,
+ "subY": 1720,
+ "cta": {
+  "q": "Which state next?",
+  "a": "FLORIDA",
+  "b": "CALIFORNIA"
+ },
+ "source": "https://www.naturalearthdata.com/",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Texas. How many spinning circles does it take to draw it?",
+   "de": "Texas. Wie viele sich drehende Kreise braucht man, um es zu zeichnen?",
+   "es": "Texas. ¿Cuántos círculos giratorios hacen falta para dibujarlo?",
+   "fr": "Le Texas. Combien de cercles qui tournent faut-il pour le dessiner ?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 34,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 30.2,
+     "text": "Florida or California next? Comment below, and subscribe!",
+     "cta": true,
+     "de": "Als Nächstes Florida oder Kalifornien? Schreib es in die Kommentare und abonnier!",
+     "es": "¿Florida o California? Escríbelo en los comentarios y suscríbete.",
+     "fr": "Floride ou Californie ensuite ? Dis-le en commentaire, et abonne-toi !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Antonin Dvorak - symphony no. 9 in e minor 'from the new world', op. 95 - ii. largo.ogg",
+   "from": 23.5,
+   "len": 45,
+   "gain": 6
+  }
+ ],
+ "subEndY": 1760
+}

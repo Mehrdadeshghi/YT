@@ -75,7 +75,7 @@ Covered topics: `docs/topics.md` (never repeat one). Step-by-step production: `.
   real NOAA footage) and its 9:16 cut-downs #145–#151 (`cine/139.js` has a tall layout; `scripts/mkdeepshorts.py`).
 - ✅ **Circles** (#144): "How many circles does it take to draw X?" — Fourier epicycles of a map outline (`scripts/fourier.py`,
   Natural Earth data from raw.githubusercontent.com/nvkelso/natural-earth-vector), miles, Dvořák "New World" Largo.
-  Next: US states (Texas, Florida, California, Michigan…) — ask the comments.
+  Engine: `scripts/fourier.py <region> <ep>` (add the region to REGIONS) + `"scripts": ["<ep>_fou.js", "circles.js"]`. #152 Texas; next Florida/California — ask the comments.
 - ✅ **Matchday preview** (#143) on Champions League days: split club-colour cards, win-probability bar, "predict all 3" grid.
   It promised a "who was right" follow-up. Get fixtures, results and win probabilities from the web (UEFA, Sportradar-based sites) on the day.
 - ❌ History-recap football Shorts (#140–#142): "gar nicht attraktiv" (topic, look and voice).
