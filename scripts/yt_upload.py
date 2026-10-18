@@ -100,7 +100,17 @@ def playlist_id(yt, name, cache={}):
     print(f'  new playlist "{name}"'); cache[name] = p['id']; return p['id']
 
 
+def check():
+    """read-only: which channel the token belongs to (no upload, 1 quota unit)"""
+    ch = youtube().channels().list(part='snippet,statistics,status', mine=True).execute().get('items', [])
+    if not ch: sys.exit('the token has no YouTube channel')
+    for c in ch:
+        print(f'channel: {c["snippet"]["title"]} · id {c["id"]} · {c["statistics"].get("subscriberCount")} subscribers · {c["statistics"].get("videoCount")} videos · '
+              f'long uploads {c.get("status", {}).get("longUploadsStatus")}')
+
+
 def main():
+    if 'check' in args: return check()
     led = json.load(open(LEDGER)) if os.path.exists(LEDGER) else {}
     taken = {v.get('publishAt') for v in led.values()}
     if flag('queue'):                                   # autopilot: free slots in the next 36 h, queue order, only rendered episodes
