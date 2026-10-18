@@ -1,0 +1,64 @@
+{
+ "ep": 155,
+ "title": "How many circles does it take to draw California?",
+ "series": "CIRCLES #4",
+ "look": "cine",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "tight": false,
+ "sub": 2,
+ "transition": "fade",
+ "voice": "narrator",
+ "speed": 1.15,
+ "wpm": 180,
+ "mood": "calm",
+ "scripts": [
+  "155_fou.js",
+  "circles.js"
+ ],
+ "capY": 1720,
+ "openMin": 3.0,
+ "subY": 1720,
+ "cta": {
+  "q": "Which state next?",
+  "a": "MICHIGAN",
+  "b": "ALASKA"
+ },
+ "source": "https://www.naturalearthdata.com/",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "California. How many spinning circles does it take to draw it?",
+   "de": "Kalifornien. Wie viele sich drehende Kreise braucht man, um es zu zeichnen?",
+   "es": "California. ¿Cuántos círculos giratorios hacen falta para dibujarlo?",
+   "fr": "La Californie. Combien de cercles qui tournent faut-il pour la dessiner ?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 34,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 30.2,
+     "text": "Michigan or Alaska next? Comment below, and subscribe!",
+     "cta": true,
+     "de": "Als Nächstes Michigan oder Alaska? Schreib es in die Kommentare und abonnier!",
+     "es": "¿Míchigan o Alaska? Escríbelo en los comentarios y suscríbete.",
+     "fr": "Le Michigan ou l'Alaska ensuite ? Dis-le en commentaire, et abonne-toi !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Antonin Dvorak - symphony no. 9 in e minor 'from the new world', op. 95 - ii. largo.ogg",
+   "from": 23.5,
+   "len": 45,
+   "gain": 6
+  }
+ ],
+ "subEndY": 1760
+}

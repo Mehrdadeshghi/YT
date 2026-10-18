@@ -13,6 +13,10 @@ REGIONS = {
                ('Cape Cod', -70.2, 41.8), ('Puget Sound', -122.5, 47.6), ('Chesapeake Bay', -76.2, 38.2), ('Louisiana', -91.5, 30.5)]),
     'tx': dict(name='TEXAS', lon0=-99.5, lat0=31.2, labels=[('Panhandle', -101.5, 36.5), ('Red River', -96.5, 33.8), ('El Paso', -106.5, 31.8), ('Big Bend', -103.2, 29.0),
                ('Rio Grande', -100.6, 29.0), ('Brownsville', -97.5, 25.9), ('Corpus Christi', -97.4, 27.8), ('Galveston', -94.8, 29.3), ('Sabine River', -93.7, 31.0)]),
+    'fl': dict(name='FLORIDA', lon0=-83.5, lat0=28.0, labels=[('Pensacola', -87.2, 30.35), ('Apalachicola', -85.4, 29.7), ('Big Bend', -83.2, 29.45), ('Tampa Bay', -82.75, 27.65),
+               ('Cape Sable', -81.1, 25.15), ('Miami', -80.15, 25.8), ('Cape Canaveral', -80.6, 28.45), ('Jacksonville', -81.4, 30.35)]),
+    'ca': dict(name='CALIFORNIA', lon0=-119.5, lat0=37.0, labels=[('Oregon line', -122.0, 42.0), ('Lake Tahoe', -120.0, 39.0), ('Colorado River', -114.6, 33.5), ('San Diego', -117.2, 32.7),
+               ('Los Angeles', -118.15, 33.75), ('Point Conception', -120.47, 34.45), ('Big Sur', -121.8, 36.2), ('San Francisco', -122.5, 37.75), ('Cape Mendocino', -124.4, 40.44)]),
 }
 
 def albers(lon, lat, lon0=-96, lat0=37.5, p1=29.5, p2=45.5, R=6371.0):
