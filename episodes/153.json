@@ -16,6 +16,9 @@
  "wordCaps": true,
  "mood": "epic",
  "prog": 3,
+ "capY": 1700,
+ "subY": 1700,
+ "subEndY": 1760,
  "scripts": [
   "tech.js"
  ],
@@ -150,9 +153,8 @@
   {
    "id": "launch",
    "video": "File:DOD Conducts Ground-launched Cruise Missile Test (190818-O-PZ834-724).webm",
-   "from": 0,
-   "len": 41,
-   "fps": 1
+   "from": 18,
+   "len": 5
   },
   {
    "id": "ins",

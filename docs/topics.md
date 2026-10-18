@@ -22,7 +22,7 @@ Prepared, not rendered: #076 Goblin shark · #077 Giant oarfish
 #107 The Clever Monkey · #108 The Tortoise and the Hare
 
 ## How It Works (tech)
-#109 Internet / submarine cables · #110 GPS + Einstein · #111 Touchscreen / sausage stylus · #112 Contactless payment · #113 Apple Pay / Google Pay tokens · #114 QR codes + parking-meter scam · #115 Noise-cancelling headphones · #116 Incognito mode · #117 Phone night mode · #118 Wireless charging
+#109 Internet / submarine cables · #110 GPS + Einstein · #111 Touchscreen / sausage stylus · #112 Contactless payment · #113 Apple Pay / Google Pay tokens · #114 QR codes + parking-meter scam · #115 Noise-cancelling headphones · #116 Incognito mode · #117 Phone night mode · #118 Wireless charging · #153 Missile guidance (INS, GPS jamming, TERCOM, DSMAC, CEP)
 
 ## Body Facts / medicine (AI presenter)
 #119 CPR (song that saves a life) · #120 Sleep paralysis · #121 Roller coaster vs. kidney stones · #122 Migraine · #123 Vitamin D in winter · #124 Antibiotics vs. colds · #125 Cotton swabs · #126 Semmelweis / hand washing · #127 Stroke FAST · #128 Heart attack signs in women

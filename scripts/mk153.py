@@ -9,7 +9,7 @@ S = lambda vis, text, cap, de, es, fr, **kw: {'dur': 1.6, 'vis': vis, 'vo': [dic
 E = {
  'ep': 153, 'title': 'How does a missile find its target?', 'series': 'HOW IT WORKS #11',
  'look': 'cine', 'captions': True, 'noOutro': True, 'speed': 1.3, 'tight': True, 'sub': 2, 'transition': 'whip', 'facts': True,
- 'recap': False, 'voice': 'narrator', 'voice_style': 'explainer', 'wordCaps': True, 'mood': 'epic', 'prog': 3,
+ 'recap': False, 'voice': 'narrator', 'voice_style': 'explainer', 'wordCaps': True, 'mood': 'epic', 'prog': 3, 'capY': 1700, 'subY': 1700, 'subEndY': 1760,
  'scripts': ['tech.js'], 'langs': ['en', 'de', 'es', 'fr'],
  'hook': ['NO PILOT.', 'NO EYES.', 'ON TARGET.'],
  'cta': {'q': 'Smarter than you thought?', 'a': 'YES', 'b': 'NO'},
@@ -57,7 +57,7 @@ E = {
  ],
  'photos': [
   {'id': 'music', 'audio': 'File:Epic Trailer by Rafael Krux.ogg', 'from': 0, 'len': 60, 'gain': 1},
-  {'id': 'launch', 'video': 'File:DOD Conducts Ground-launched Cruise Missile Test (190818-O-PZ834-724).webm', 'from': 0, 'len': 41, 'fps': 1},
+  {'id': 'launch', 'video': 'File:DOD Conducts Ground-launched Cruise Missile Test (190818-O-PZ834-724).webm', 'from': 18, 'len': 5},
   {'id': 'ins', 'file': 'File:Inertial guidance system for Thor missile.jpg'},
   {'id': 'flight', 'file': 'File:Tomahawk Block IV cruise missile.jpg'},
   {'id': 'jdam', 'file': 'File:Navy conducts JDAM-LR tests 02.jpg'},
