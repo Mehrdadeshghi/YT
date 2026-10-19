@@ -1,5 +1,4 @@
 # Upload order for the autopilot (one episode per line). The daily job uploads the next rendered ones into the free slots.
+# On hold (Circles test first, see wr-analytics/reports): 154 Florida, 155 California
 152
-153
-154
-155
+156
