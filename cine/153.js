@@ -1,8 +1,9 @@
 // Wiki Roulette #153 — HOW IT WORKS #11: how a guided missile finds its target. Real U.S. Navy / DoD test media (vscene kit) + drawn overlays.
+// v2 (~30 s): hook → drift → GPS jammable → radar map + camera match (one scene) → CEP payoff. v1 retention plan:
 // Retention: frame-1 paradox (no pilot, no eyes, on target) → INS (feels every push) → twist: drift (error circle grows) →
 // GPS fix, but weak and jammable (static) → plan B: terrain matching (radar profile slides onto the stored map) →
 // camera vs satellite photo (scan + lock) → honest payoff: it does miss, CEP target with exactly half the hits inside → binary question.
-const N153 = 6, C153G = '#3EE6FF', C153R = '#FF3B30', C153OK = '#7FE3A0';
+const N153 = 4, C153G = '#3EE6FF', C153R = '#FF3B30', C153OK = '#7FE3A0';
 
 // scene 1: planned track (dashed) vs the drifting INS track, error circle grows with time
 function driftOverlay(t, t0) { const p = clamp((t - 0.3) / 2.6), x0 = 140, y0 = 1380, x1 = 820, y1 = 1020;
@@ -47,15 +48,13 @@ function cepOverlay(t, tc) { const cx = 540, cy = 1010, R = 160; panel(90, 720, 
 
 // ---------- scenes ----------
 VIS.open = vopen({ clip: 'launch', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.12], foot: 'REAL FOOTAGE · U.S. DOD CRUISE MISSILE TEST · 2019' });
-VIS[0] = vscene(0, N153, { ph: 'ins', o: { box: [40, 720, 1000, 665] }, badge: 'REAL PHOTO · INERTIAL GUIDANCE (THOR MISSILE)',
-  f2: ['GYROS +', 'ACCELEROMETERS', 'NO SIGNAL NEEDED', 0.8], k: [[0.8, 'hit', 1], [sw('signal', 3.6), 'ding', 0.8]] });
-VIS[1] = S(() => { const hu = sw('hundred', 1.6); return vscene(1, N153, { ph: 'flight', o: { box: [40, 720, 1000, 750] }, badge: 'REAL PHOTO · TOMAHAWK FLIGHT TEST · 2002',
+VIS[0] = S(() => { const hu = sw('hundred', 1.4); return vscene(0, N153, { ph: 'flight', o: { box: [40, 720, 1000, 750] }, badge: 'REAL PHOTO · TOMAHAWK FLIGHT TEST · 2002',
   f2: ['164 FT OFF', 'IN 17 MINUTES', 'EVEN THE BEST SENSORS DRIFT', hu], k: [[0.3, 'riser', 0.5], [hu, 'hit', 1.1]], x: (t) => driftOverlay(t, hu) }); });
-VIS[2] = S(() => { const jm = sw('jammed', 3.4), mi = sw('twelve', 1.6); return vscene(2, N153, { ph: 'jdam', o: { box: [40, 720, 1000, 666] }, a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.08], badge: 'REAL PHOTO · GPS-GUIDED BOMB TEST (U.S. NAVY)',
-  f2: ['GPS SIGNAL:', '12,000+ MILES', 'ARRIVES VERY WEAK', mi], k: [[0.4, 'beep', 0.7], [mi, 'whoosh', 0.8], [jm, 'crack', 1.1], [jm + 0.02, 'hit', 1]], x: (t) => gpsOverlay(t, jm) }); });
-VIS[3] = S(() => { const mt = sw('map', 3.0); return vscene(3, N153, { ph: 'tlaunch', a: [0.5, 0.35, 1.0], b: [0.5, 0.3, 1.1], badge: 'REAL PHOTO · TOMAHAWK TEST LAUNCH · 2002',
-  f2: ['RADAR READS', 'THE HILLS', null, 0.6], k: [[0.6, 'hit', 1], [mt, 'ding', 1]], x: (t) => tercomOverlay(t, mt) }); });
-VIS[4] = S(() => { const ph = sw('photos', 2.2); return vscene(4, N153, { ph: 'plant', a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.12], badge: 'REAL PHOTO · TOMAHAWK FLIGHT TEST',
-  f2: ['CAMERA VS.', 'SATELLITE PHOTO', null, 0.6], k: [[0.2, 'sonar', 0.7], [ph, 'ding', 1]], x: (t) => sceneMatch(t, ph) }); });
-VIS[5] = S(() => { const ye = sw('yes', 1.2), th = sw('thirty', 2.0); return vscene(5, N153, { ph: 'hit', a: [0.5, 0.4, 1.0], b: [0.5, 0.4, 1.08], badge: 'REAL PHOTO · TOMAHAWK TEST HIT · 1986',
-  f2: ['DOES IT', 'EVER MISS?', null, 0.4], k: [[ye, 'wrong', 1], ...drop(th)], x: (t) => cepOverlay(t, th) }); });
+VIS[1] = S(() => { const jm = sw('jammed', 1.8), mi = sw('gps', 0.5); return vscene(1, N153, { ph: 'jdam', o: { box: [40, 720, 1000, 666] }, a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.08], badge: 'REAL PHOTO · GPS-GUIDED BOMB TEST (U.S. NAVY)',
+  f2: ['GPS FIX.', 'BUT JAMMABLE.', 'THE SIGNAL ARRIVES VERY WEAK', mi], k: [[0.4, 'beep', 0.7], [mi, 'whoosh', 0.8], [jm, 'crack', 1.1], [jm + 0.02, 'hit', 1]], x: (t) => gpsOverlay(t, jm) }); });
+VIS[2] = S(() => { const mt = sw('map', 1.8), ph = sw('photos', 4.2); return vscene(2, N153, { ph: 'tlaunch', a: [0.5, 0.35, 1.0], b: [0.5, 0.3, 1.1], badge: 'REAL PHOTO · TOMAHAWK TEST LAUNCH · 2002',
+  f2: ['RADAR READS', 'THE HILLS', null, 0.4], k: [[0.4, 'hit', 1], [mt, 'ding', 1], [ph, 'ding', 0.9]],
+  x: (t) => { if (t < ph - 0.15) tercomOverlay(t, mt); else { const P = shot(t, 'plant', { a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.08], t0: ph }); flash(t, ph - 0.15, 0.3, 0.1); tag(t, 2, N153);
+    realBadge(t, ph, 'REAL PHOTO · TOMAHAWK FLIGHT TEST'); fact2(t, ph, 'CAMERA VS.', 'SATELLITE PHOTO', null); sceneMatch(t - ph + 0.2, 1.0); } } }); });
+VIS[3] = S(() => { const ye = sw('wrong', 1.0), th = sw('thirty', 2.0); return vscene(3, N153, { ph: 'hit', a: [0.5, 0.4, 1.0], b: [0.5, 0.4, 1.08], badge: 'REAL PHOTO · TOMAHAWK TEST HIT · 1986',
+  f2: ['NEVER', 'MISSES?', null, 0.3], k: [[ye, 'wrong', 1], ...drop(th)], x: (t) => cepOverlay(t, th) }); });
