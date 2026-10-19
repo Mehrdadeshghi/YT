@@ -133,8 +133,26 @@ def fix_playlists():
     json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False)
 
 
+def stats():
+    """read-only: public numbers of every upload (views, likes, comments, length) → stats.tsv + log, sorted by views"""
+    import re as _re
+    yt = youtube(); ch = yt.channels().list(part='contentDetails,statistics', mine=True).execute()['items'][0]
+    up = ch['contentDetails']['relatedPlaylists']['uploads']; ids = []; req = yt.playlistItems().list(part='contentDetails', playlistId=up, maxResults=50)
+    while req: r = req.execute(); ids += [i['contentDetails']['videoId'] for i in r['items']]; req = yt.playlistItems().list_next(req, r)
+    rows = []
+    for i in range(0, len(ids), 50):
+        for v in yt.videos().list(part='snippet,statistics,contentDetails,status', id=','.join(ids[i:i + 50])).execute()['items']:
+            d = v['contentDetails']['duration']; m = _re.match(r'PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?', d); sec = int(m[1] or 0) * 3600 + int(m[2] or 0) * 60 + int(m[3] or 0)
+            st = v['statistics']; rows.append([v['snippet']['publishedAt'][:10], int(st.get('viewCount', 0)), int(st.get('likeCount', 0)), int(st.get('commentCount', 0)), sec, v['status']['privacyStatus'], v['snippet']['title'][:80], v['id']])
+    rows.sort(key=lambda r: -r[1])
+    with open('stats.tsv', 'w') as f:
+        f.write('published\tviews\tlikes\tcomments\tseconds\tprivacy\ttitle\tid\n'); [f.write('\t'.join(map(str, r)) + '\n') for r in rows]
+    print(f'channel: {ch["statistics"]}  videos listed: {len(rows)}'); [print('\t'.join(map(str, r))) for r in rows]
+
+
 def main():
     if 'check' in args: return check()
+    if 'stats' in args: return stats()
     if 'fix-playlists' in args: return fix_playlists()
     led = json.load(open(LEDGER)) if os.path.exists(LEDGER) else {}
     taken = {v.get('publishAt') for v in led.values()}
