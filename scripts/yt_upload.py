@@ -150,8 +150,53 @@ def stats():
     print(f'channel: {ch["statistics"]}  videos listed: {len(rows)}'); [print('\t'.join(map(str, r))) for r in rows]
 
 
+def schedule_existing(yt, vid, at):
+    """give an already uploaded, never published private video a publish time (videos.update keeps all other status fields)"""
+    st = yt.videos().list(part='status', id=vid).execute()['items'][0]['status']
+    if st.get('privacyStatus') != 'private' or st.get('publishAt'): print(f'  {vid}: not private/unscheduled ({st.get("privacyStatus")}, {st.get("publishAt")}) — left alone'); return False
+    body = {k: st[k] for k in ('privacyStatus', 'selfDeclaredMadeForKids', 'containsSyntheticMedia', 'embeddable', 'license', 'publicStatsViewable') if k in st}
+    body['publishAt'] = at
+    r = yt.videos().update(part='status', body={'id': vid, 'status': body}).execute()['status']
+    print(f'  scheduled {vid}: privacy {r.get("privacyStatus")} · publishAt {r.get("publishAt")}'); return r.get('publishAt') is not None
+
+
+FOOTBALL = re.compile(r'football|soccer|world cup|champions|goal|corner|brazil|bayern|barcelona|chelsea|zidane|maracan|match|⚽', re.I)
+JUNK = {'#banknifty', '#automobile', '#cryptocurrency'}
+
+
+def retag():
+    """remove misleading hashtags from old uploads (#football on non-football videos, unrelated finance/car tags, '##'); backup first"""
+    yt = youtube()                                       # --dry-run still reads (needs the API), it only skips the updates
+    ch = yt.channels().list(part='contentDetails', mine=True).execute()['items'][0]; up = ch['contentDetails']['relatedPlaylists']['uploads']
+    ids = []; req = yt.playlistItems().list(part='contentDetails', playlistId=up, maxResults=50)
+    while req: r = req.execute(); ids += [i['contentDetails']['videoId'] for i in r['items']]; req = yt.playlistItems().list_next(req, r)
+    backup = json.load(open('uploads/retag_backup.json')) if os.path.exists('uploads/retag_backup.json') else {}
+    changed = 0
+    for i in range(0, len(ids), 50):
+        for v in yt.videos().list(part='snippet', id=','.join(dict.fromkeys(ids[i:i + 50]))).execute()['items']:
+            sn = v['snippet']; ctx = sn['title'] + ' ' + sn.get('description', '').split('#')[0]
+            bad = set(JUNK) | (set() if FOOTBALL.search(ctx) else {'#football'})
+            def clean(text):
+                if not (re.search(r'#{2,}', text) or any(re.search(rf'(?<!\w){re.escape(b)}(?!\w)', text, re.I) for b in bad)): return text
+                text = re.sub(r'#{2,}(?=\w)', '#', text)
+                for b in bad: text = re.sub(rf'(?<!\w){re.escape(b)}(?!\w)', '', text, flags=re.I)
+                return re.sub(r'[ \t]{2,}', ' ', text).strip()
+            nt, nd = clean(sn['title']), clean(sn.get('description', ''))
+            tags = [t for t in sn.get('tags', []) if '#' + t.lower() not in bad]
+            if (nt, nd, tags) == (sn['title'], sn.get('description', ''), sn.get('tags', [])): continue
+            changed += 1; print(f'{v["id"]}: "{sn["title"][:60]}" → "{nt[:60]}"' + (' (description)' if nd != sn.get('description', '') else '') + (f' tags -{len(sn.get("tags", [])) - len(tags)}' if tags != sn.get('tags', []) else ''))
+            if flag('dry-run'): continue
+            backup.setdefault(v['id'], {k: sn.get(k) for k in ('title', 'description', 'tags', 'categoryId')})
+            json.dump(backup, open('uploads/retag_backup.json', 'w'), indent=1, ensure_ascii=False)
+            body = {'id': v['id'], 'snippet': {k: sn[k] for k in ('categoryId', 'defaultLanguage', 'defaultAudioLanguage') if k in sn}}
+            body['snippet'].update(title=nt[:100], description=nd[:5000], tags=tags)
+            yt.videos().update(part='snippet', body=body).execute()
+    print(f'{changed} videos {"would change" if flag("dry-run") else "changed"} (backup: uploads/retag_backup.json)')
+
+
 def main():
     if 'check' in args: return check()
+    if 'retag' in args: return retag()
     if 'stats' in args: return stats()
     if 'fix-playlists' in args: return fix_playlists()
     led = json.load(open(LEDGER)) if os.path.exists(LEDGER) else {}
@@ -161,6 +206,13 @@ def main():
         free = [s for s in next_slots(MAX_PER_RUN, taken) if s <= horizon]
         queue = [l.split('#')[0].strip().zfill(3) for l in open(QUEUE) if l.split('#')[0].strip()] if os.path.exists(QUEUE) else []
         todo = []
+        pending = [e for e in queue if str(int(e)) in led and not led[str(int(e))].get('publishAt')]   # uploaded private (test) but never scheduled
+        if pending and free and not flag('dry-run'):
+            yt0 = youtube()
+            for e in pending:
+                if not free: break
+                at = free.pop(0); print(f'#{e}: already uploaded privately → schedule')
+                if schedule_existing(yt0, led[str(int(e))]['id'], at): led[str(int(e))]['publishAt'] = at; json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False)
         for e in queue:
             if len(todo) == len(free): break
             if str(int(e)) in led: continue
