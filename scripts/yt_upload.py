@@ -109,8 +109,33 @@ def check():
               f'long uploads {c.get("status", {}).get("longUploadsStatus")}')
 
 
+def add_to_playlist(yt, vid, name):
+    """playlistItems.insert; retries only on Google's transient 409/5xx (SERVICE_UNAVAILABLE right after an upload), never re-uploads"""
+    import time
+    from googleapiclient.errors import HttpError
+    for wait in (0, 20, 60, 180):
+        time.sleep(wait)
+        try:
+            yt.playlistItems().insert(part='snippet', body={'snippet': {'playlistId': playlist_id(yt, name), 'resourceId': {'kind': 'youtube#video', 'videoId': vid}}}).execute()
+            print(f'  added to playlist "{name}"'); return True
+        except HttpError as ex:
+            if ex.resp.status not in (409, 500, 502, 503): print(f'  playlist failed: {ex}'); return False
+            print(f'  playlist: Google busy ({ex.resp.status}), retry in {(20, 60, 180, 0)[(0, 20, 60, 180).index(wait)]} s' if wait != 180 else '  playlist: still busy, will be retried by --fix-playlists')
+    return False
+
+
+def fix_playlists():
+    """add ledger videos whose playlist step failed (no upload)"""
+    led = json.load(open(LEDGER)); yt = youtube()
+    for ep, v in led.items():
+        if v.get('playlist') and not v.get('in_playlist'):
+            print(f'#{ep}: {v["url"]}'); v['in_playlist'] = add_to_playlist(yt, v['id'], v['playlist'])
+    json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False)
+
+
 def main():
     if 'check' in args: return check()
+    if 'fix-playlists' in args: return fix_playlists()
     led = json.load(open(LEDGER)) if os.path.exists(LEDGER) else {}
     taken = {v.get('publishAt') for v in led.values()}
     if flag('queue'):                                   # autopilot: free slots in the next 36 h, queue order, only rendered episodes
@@ -152,10 +177,9 @@ def main():
         chk = yt.videos().list(part='status,snippet,localizations', id=vid).execute().get('items', [{}])[0]; st = chk.get('status', {})
         print(f'  YouTube has: privacy {st.get("privacyStatus")} · publishAt {st.get("publishAt")} · upload {st.get("uploadStatus")} · madeForKids {st.get("selfDeclaredMadeForKids")} · '
               f'synthetic {st.get("containsSyntheticMedia")} · titles {"/".join(chk.get("localizations", {})) or "-"}')
-        if M['playlist']:
-            try: yt.playlistItems().insert(part='snippet', body={'snippet': {'playlistId': playlist_id(yt, M['playlist']), 'resourceId': {'kind': 'youtube#video', 'videoId': vid}}}).execute()
-            except Exception as ex: print(f'  playlist failed: {ex}')
-        led[str(int(e))] = {'id': vid, 'url': f'https://youtube.com/shorts/{vid}', 'publishAt': at, 'title': M['title']}
+        led[str(int(e))] = {'id': vid, 'url': f'https://youtube.com/shorts/{vid}', 'publishAt': at, 'title': M['title'], 'playlist': M['playlist'], 'in_playlist': False}
+        json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False)          # write the ledger at once: an upload is never repeated
+        if M['playlist']: led[str(int(e))]['in_playlist'] = add_to_playlist(yt, vid, M['playlist'])
         json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False); os.remove(name)
     print('\nBy hand in YouTube Studio for each video: Languages → add DE/ES/FR audio tracks (release *_de/_es/_fr.m4a), pin the comment from the md.')
 
