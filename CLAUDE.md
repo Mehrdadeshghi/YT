@@ -1,6 +1,7 @@
 # CLAUDE.md — Wiki Roulette YouTube channel (Mehrdad)
 
-Read this first in every session. It is the handover of everything learned while building the channel (Oct 2026).
+Read this first in every session. **Then read the strategy (north star, milestones, weekly plan, experiments) in the PRIVATE repo
+`Mehrdadeshghi/wr-analytics` → `STRATEGY.md` and the newest `reports/<date>.md`** (`gh repo clone Mehrdadeshghi/wr-analytics ../wr-analytics`). Never copy analytics data into this public repo. It is the handover of everything learned while building the channel (Oct 2026).
 Covered topics: `docs/topics.md` (never repeat one). Step-by-step production: `.claude/skills/new-short/SKILL.md`.
 
 ## The person and the goal
