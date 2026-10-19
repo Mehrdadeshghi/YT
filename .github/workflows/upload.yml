@@ -58,6 +58,6 @@ jobs:
         if: always()
         run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add uploads/youtube.json 2>/dev/null || exit 0
+          git add uploads/youtube.json uploads/retag_backup.json 2>/dev/null || git add uploads/youtube.json 2>/dev/null || exit 0
           git diff --cached --quiet && exit 0
           git commit -m "YouTube uploads: ${{ inputs.episodes || 'autopilot' }}" && git pull --rebase -q && git push
