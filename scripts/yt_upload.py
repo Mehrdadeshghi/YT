@@ -161,7 +161,7 @@ def schedule_existing(yt, vid, at):
 
 
 FOOTBALL = re.compile(r'football|soccer|world cup|champions|goal|corner|brazil|bayern|barcelona|chelsea|zidane|maracan|match|⚽', re.I)
-JUNK = {'#banknifty', '#automobile', '#cryptocurrency'}
+JUNK = {'#banknifty', '#automobile', '#cryptocurrency', '#crypto'}
 
 
 def retag():
@@ -174,7 +174,7 @@ def retag():
     changed = 0
     for i in range(0, len(ids), 50):
         for v in yt.videos().list(part='snippet', id=','.join(dict.fromkeys(ids[i:i + 50]))).execute()['items']:
-            sn = v['snippet']; ctx = sn['title'] + ' ' + sn.get('description', '').split('#')[0]
+            sn = v['snippet']; ctx = re.sub(r'#+\w+', ' ', sn['title'] + ' ' + sn.get('description', ''))   # topic words only, hashtags don't count
             bad = set(JUNK) | (set() if FOOTBALL.search(ctx) else {'#football'})
             def clean(text):
                 if not (re.search(r'#{2,}', text) or any(re.search(rf'(?<!\w){re.escape(b)}(?!\w)', text, re.I) for b in bad)): return text
