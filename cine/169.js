@@ -101,7 +101,7 @@ VIS.sink = scene169('sink', 'stower', { focus: [0.5, 0.45], z0: 1.0, z1: 1.15, l
   over: (t, tm) => { if (t > tm.tw) chips169(t, [[tm.tw, '2 h 40 min', PRO.hi]]); }, at: { tw: ['forty', 2.0] } });
 VIS.cold = scene169('cold', 'nyt', { fit: 'contain', z0: 0.98, z1: 1.06, bg: '#E9E4D8', label: 'Real newspaper · The New York Times, April 15, 1912',
   over: (t, tm) => chips169(t, [[tm.tf, 'Water: 28 °F'], [tm.fi, '≈ 1,500 died', PRO.red]]), at: { tf: ['twenty', 0.8], fi: ['fifteen', 3.2] } });
-VIS.carp = scene169('carp', 'carp', { label: 'Real footage · rescue ship Carpathia, 1912 newsreel', over: (t, tm) => chips169(t, [[tm.fo, 'Arrives around 4 AM'], [tm.se, '≈ 705–710 survivors', PRO.acc]]), at: { fo: ['four', 0.8], se: ['seven', 4.8] } });
+VIS.carp = scene169('carp', 'carp', { label: 'Real footage · the Carpathia nears New York with the survivors, April 1912 (newsreel)', over: (t, tm) => chips169(t, [[tm.fo, 'Arrives around 4 AM'], [tm.se, '≈ 705–710 survivors', PRO.acc]]), at: { fo: ['four', 0.8], se: ['seven', 4.8] } });
 VIS.surv = scene169('surv', 'surv', { focus: [0.5, 0.45], z0: 1.0, z1: 1.12, dark: 0.1, label: 'Real photo · survivors aboard the Carpathia, 1912',
   over: (t, tm) => { if (t > tm.on) bigText(t, tm.on, 'It did not sink in *one piece.*', CX169, FR169.y + FR169.h - 90, 70); }, at: { on: ['one', 4.0] } });
 // chapter 2 — the fall
