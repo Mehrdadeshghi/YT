@@ -1,125 +1,138 @@
 {
  "ep": 76,
+ "title": "Goblin shark: jaws 9.5x farther",
+ "series": "DEEP SEA",
+ "experiment": "E3 hook = number (vs #077 question hook)",
  "look": "cine",
  "captions": true,
  "noOutro": true,
- "speed": 1.15,
+ "speed": 1.3,
+ "tight": true,
  "sub": 2,
  "transition": "whip",
- "glint": true,
- "mood": "deep",
  "facts": true,
- "prog": 0,
- "related": {
-  "title": "7 Deep-Sea Creatures That Look Fake",
-  "photo": "rel",
-  "fx": 0.62,
-  "fy": 0.5
- },
- "hook": [
-  "THIS SHARK'S",
-  "JAWS SHOOT OUT",
-  "OF ITS FACE."
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
  ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "ITS JAWS SHOOT OUT",
+  "9.5× FARTHER"
+ ],
+ "cta": {
+  "q": "Scarier than a great white?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Goblin_shark",
  "vo_open": [
   {
-   "at": 0,
-   "text": "This shark's jaws shoot out of its face."
+   "at": 0.3,
+   "text": "This shark's jaws shoot out up to nine and a half times farther than other sharks'.",
+   "cap": "Jaws shoot out *9.5× farther* than other sharks'.",
+   "de": "Die Kiefer dieses Hais schießen bis zu neuneinhalbmal weiter heraus als bei anderen Haien.",
+   "es": "Las mandíbulas de este tiburón salen disparadas hasta nueve veces y media más lejos que las de otros tiburones.",
+   "fr": "Les mâchoires de ce requin jaillissent jusqu'à neuf fois et demie plus loin que celles des autres requins."
   }
  ],
  "scenes": [
   {
-   "dur": 4,
+   "dur": 1.6,
+   "vis": 0,
    "vo": [
     {
      "at": 0.45,
-     "text": "When the goblin shark bites, its jaws fly forward, almost to the tip of its snout.",
-     "cap": "Its jaws fly forward, *almost to the snout.*"
+     "text": "Two stretched ligaments work like a slingshot. When it bites, they catapult the jaws almost to the tip of its snout.",
+     "cap": "Ligaments *catapult* the jaws *forward.*",
+     "de": "Zwei gespannte Bänder wirken wie eine Steinschleuder. Beim Biss katapultieren sie die Kiefer fast bis zur Schnauzenspitze.",
+     "es": "Dos ligamentos tensos funcionan como un tirachinas. Al morder, catapultan las mandíbulas casi hasta la punta del hocico.",
+     "fr": "Deux ligaments tendus agissent comme un lance-pierre. Quand il mord, ils catapultent les mâchoires presque jusqu'au bout du museau."
     }
-   ],
-   "vis": 0
+   ]
   },
   {
-   "dur": 4,
+   "dur": 1.6,
+   "vis": 1,
    "vo": [
     {
      "at": 0.45,
-     "text": "Up to three point one four meters per second.",
-     "cap": "*3.14 m/s.*"
+     "text": "Then it does something no other shark does: it opens and snaps shut a second time.",
+     "cap": "*Snaps twice.* No other shark does that.",
+     "de": "Dann macht er etwas, das kein anderer Hai macht: Er öffnet das Maul und schnappt ein zweites Mal zu.",
+     "es": "Luego hace algo que ningún otro tiburón hace: abre y vuelve a cerrar la boca una segunda vez.",
+     "fr": "Puis il fait ce qu'aucun autre requin ne fait : il rouvre la gueule et la referme une deuxième fois."
     }
-   ],
-   "vis": 1
+   ]
   },
   {
-   "dur": 4,
+   "dur": 1.6,
+   "vis": 2,
    "vo": [
     {
      "at": 0.45,
-     "text": "It's pink, because you can see the blood vessels under its skin.",
-     "cap": "Pink, from *blood vessels* under the skin."
+     "text": "This pink living fossil comes from a lineage about one hundred twenty-five million years old.",
+     "cap": "A *125-million-year-old* lineage.",
+     "de": "Dieses rosa lebende Fossil stammt aus einer Linie, die rund hundertfünfundzwanzig Millionen Jahre alt ist.",
+     "es": "Este fósil viviente rosado pertenece a un linaje de unos ciento veinticinco millones de años.",
+     "fr": "Ce fossile vivant rose appartient à une lignée vieille d'environ cent vingt-cinq millions d'années."
     }
-   ],
-   "vis": 2
+   ]
   },
   {
-   "dur": 4,
+   "dur": 1.6,
+   "vis": 3,
    "vo": [
     {
      "at": 0.45,
-     "text": "Its lineage is about a hundred twenty-five million years old. A living fossil.",
-     "cap": "A *125-million-year-old* lineage."
-    }
-   ],
-   "vis": 3
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "In 2023, a pregnant female caught off Taiwan was four point seven meters long, and eight hundred kilos.",
-     "cap": "*4.7 m.* *800 kg.* Taiwan, *2023.*"
+     "text": "A few were kept in aquariums. The longest lasted one week.",
+     "cap": "In an aquarium: *one week.* Max.",
+     "de": "Ein paar kamen in Aquarien. Der längste überlebte eine Woche.",
+     "es": "Algunos fueron llevados a acuarios. El que más duró vivió una semana.",
+     "fr": "Quelques-uns ont été mis en aquarium. Le plus résistant a tenu une semaine."
     },
     {
-     "at": "0.35",
-     "text": "Would you swim with one? Yes or no? Comment below. Watch the full top seven, linked below. And subscribe.",
-     "cta": true
+     "at": "0.15",
+     "text": "Scarier than a great white? Yes or no? Comment!",
+     "cta": true,
+     "de": "Gruseliger als ein Weißer Hai? Ja oder nein? Schreib es in die Kommentare!",
+     "es": "¿Más aterrador que un tiburón blanco? ¿Sí o no? ¡Comenta!",
+     "fr": "Plus effrayant qu'un grand requin blanc ? Oui ou non ? Commente !"
     }
-   ],
-   "vis": 4
+   ]
   }
  ],
- "cta": {
-  "q": "Would you swim with one?",
-  "a": "YES",
-  "b": "NO WAY"
- },
- "source": "https://en.wikipedia.org/wiki/Goblin_shark",
- "title": "Goblin shark",
  "photos": [
   {
-   "id": "lead",
-   "file": "File:Goblin shark (Mitsukurina owstoni).jpg"
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 60,
+   "gain": 0.5
   },
   {
    "id": "jaws",
    "file": "File:Mistukurina owstoni museum victoria - head detail.jpg"
   },
   {
-   "id": "snout",
+   "id": "live",
+   "file": "File:Goblin shark (Mitsukurina owstoni).jpg"
+  },
+  {
+   "id": "front",
    "file": "File:Goblin shark snout.jpg"
-  },
-  {
-   "id": "head",
-   "file": "File:Hal - Mitsukurina owstoni - 1.jpg"
-  },
-  {
-   "id": "size",
-   "file": "File:Goblin shark size.svg"
-  },
-  {
-   "id": "rel",
-   "file": "File:Greenland shark profile.jpg"
   }
  ]
 }
