@@ -16,7 +16,7 @@ Prepared, not rendered: #076 Goblin shark
 #086 Elgin Marbles · #087 Ötzi (first with cartoon figures) · #088 Hawaiian pizza · #090 Victor Lustig · #091 The Landlord's Game / Monopoly · #092 Nefertiti Bust · #093 Mona Lisa theft · #094 Liebeck v. McDonald's · #095 Tulip mania · #096 De Beers "A Diamond Is Forever" · #097 Koh-i-Noor
 
 ## Football
-#098 Pickles / stolen 1966 World Cup trophy · #099 1999 CL final Bayern–Man Utd · #100 Zidane headbutt 2006 · #101 Hand of God 1986 · #102 Maracanazo 1950 · #103 1974 World Cup final · #104 Chelsea at Camp Nou 2012 · #105 Chelsea win 2012 final · #106 Brazil 1–7 Germany 2014 · #140 Atlético's lost finals (1974/2014/2016) · #141 "Welcome to Hell" Galatasaray v Man Utd 1993 · #142 Barcelona 2–8 Bayern 2020 · #143 matchday preview 13 Oct 2026 "Predict all 3"
+#098 Pickles / stolen 1966 World Cup trophy · #099 1999 CL final Bayern–Man Utd · #100 Zidane headbutt 2006 · #101 Hand of God 1986 · #102 Maracanazo 1950 · #103 1974 World Cup final · #104 Chelsea at Camp Nou 2012 · #105 Chelsea win 2012 final · #106 Brazil 1–7 Germany 2014 · #140 Atlético's lost finals (1974/2014/2016) · #141 "Welcome to Hell" Galatasaray v Man Utd 1993 · #142 Barcelona 2–8 Bayern 2020 · #143 matchday preview 13 Oct 2026 "Predict all 3" · #158 Istanbul 2005 (Liverpool 0–3 → 3–3, penalties; scoreboard/shoot-out graphics over real photos)
 
 ## Kids — "Story Time" (separate track)
 #107 The Clever Monkey · #108 The Tortoise and the Hare
