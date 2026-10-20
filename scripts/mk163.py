@@ -19,7 +19,7 @@ E = {
  'recap': False, 'voice': 'narrator', 'voice_style': 'explainer', 'wordCaps': True, 'mood': 'epic', 'prog': 3, 'capY': 1700, 'subY': 1520, 'subEndY': 1760,
  'scripts': ['tech.js'], 'langs': ['en', 'de', 'es', 'fr'],
  'hook': ['40 %.', 'THEN IT', 'DIED.'],
- 'cta': {'q': 'Ever died on you in the cold?', 'a': 'YES', 'b': 'NO'},
+ 'cta': {'q': 'Phone died in the cold?', 'a': 'YES', 'b': 'NO'},
  'source': 'https://support.apple.com/en-us/101575',
  'vo_open': [{'at': 0, 'text': 'Your phone said forty percent. Then it died.',
    'de': 'Dein Handy zeigte vierzig Prozent. Dann war es aus.',
