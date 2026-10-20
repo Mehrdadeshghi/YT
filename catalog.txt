@@ -1,15 +1,13 @@
-Box jellyfish | Cubozoa
-Chironex fleckeri | Chironex fleckeri
-Tripedalia cystophora | Tripedalia cystophora
-Carybdea | Carybdea
-article: Box jellyfish
-article: Jellyfish
-image: box jellyfish
-image: Chironex fleckeri
-image: rhopalium eye jellyfish
-image: box jellyfish warning sign vinegar
-image: Carybdea
-image: Alatina alata
-video: box jellyfish
-video: Cubozoa
-audio: Rafael Krux ambient
+Sailing stones | Sailing stones
+Racetrack Playa | Racetrack Playa
+article: Sailing stones
+article: Racetrack Playa
+image: Racetrack Playa
+image: sailing stones
+image: sliding rocks Death Valley
+image: Racetrack Playa rock trail
+image: Death Valley National Park
+image: Racetrack Playa ice
+video: Racetrack Playa
+video: sliding rocks Racetrack
+audio: Rafael Krux
