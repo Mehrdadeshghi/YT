@@ -31,6 +31,7 @@ Check this list before proposing a topic. Add every new episode here in the same
 
 ## Long-form + its Shorts
 #139 16:9 "A Journey to the Bottom of the Ocean" → Shorts #145 ghost octopus + dumbo · #146 barreleye · #147 vampire squid · #148 Venus' flower basket shrimp · #149 snailfish / hadal pressure · #150 giant siphonophore · #151 pelican eel
+#169 16:9 "A Journey Down to the Titanic" (sinking 1912, the fall of bow and stern, lost 73 years, 1985 discovery, wreck today, rusticles / Halomonas titanicae, will it disappear) → cut-down Shorts to come
 
 ## Circles (Fourier epicycles, US audience)
 #144 USA · #152 Texas · #154 Florida · #155 California
