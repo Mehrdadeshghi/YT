@@ -1,0 +1,152 @@
+{
+ "ep": 160,
+ "title": "One punch, two hits (mantis shrimp)",
+ "series": "OCEAN",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "epic",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "ONE PUNCH.",
+  "TWO HITS."
+ ],
+ "cta": {
+  "q": "Would you keep one in your tank?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Mantis_shrimp",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "This shrimp punches so fast, every punch hits twice.",
+   "de": "Diese Garnele schlägt so schnell zu, dass jeder Schlag zweimal trifft.",
+   "es": "Este camarón golpea tan rápido que cada golpe pega dos veces.",
+   "fr": "Cette crevette frappe si vite que chaque coup touche deux fois."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its club shoots out at fifty-one miles an hour, from a standing start.",
+     "cap": "Its club: *51 mph* from a *standing start.*",
+     "de": "Ihre Keule schießt mit dreiundachtzig Kilometern pro Stunde nach vorn, aus dem Stand.",
+     "es": "Su maza sale disparada a ochenta y tres kilómetros por hora, desde parado.",
+     "fr": "Sa massue part à quatre-vingt-trois kilomètres à l'heure, à partir de l'arrêt."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So fast, it creates vapor bubbles in the water. When they collapse, they hit the prey a second time.",
+     "cap": "Vapor bubbles *collapse* and hit it *a second time.*",
+     "de": "So schnell, dass im Wasser Dampfblasen entstehen. Wenn sie zusammenfallen, treffen sie die Beute ein zweites Mal.",
+     "es": "Tan rápido que crea burbujas de vapor en el agua. Al colapsar, golpean a la presa por segunda vez.",
+     "fr": "Si vite qu'elle crée des bulles de vapeur dans l'eau. En éclatant, elles frappent la proie une deuxième fois."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Even if it misses, the shock wave can stun or kill. And the bubbles flash with light.",
+     "cap": "A *miss* can still *stun or kill.*",
+     "de": "Selbst wenn sie danebenschlägt, kann die Schockwelle betäuben oder töten. Und die Blasen blitzen sogar auf.",
+     "es": "Aunque falle, la onda de choque puede aturdir o matar. Y las burbujas hasta destellan.",
+     "fr": "Même si elle rate, l'onde de choc peut assommer ou tuer. Et les bulles émettent même de la lumière."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And its eyes have up to sixteen types of light receptors. You have four.",
+     "cap": "Up to *16* light receptor types. You: *4.*",
+     "de": "Und ihre Augen haben bis zu sechzehn Arten von Lichtrezeptoren. Du hast vier.",
+     "es": "Y sus ojos tienen hasta dieciséis tipos de receptores de luz. Tú tienes cuatro.",
+     "fr": "Et ses yeux ont jusqu'à seize types de récepteurs de lumière. Toi, tu en as quatre."
+    },
+    {
+     "at": "0.15",
+     "text": "Would you keep one in your tank? Yes or no?",
+     "cta": true,
+     "de": "Würdest du eine im Aquarium halten? Ja oder nein?",
+     "es": "¿Tendrías uno en tu acuario? ¿Sí o no?",
+     "fr": "Tu en mettrais une dans ton aquarium ? Oui ou non ?"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Dramatic Trailer by Rafael Krux.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 1
+  },
+  {
+   "id": "swim",
+   "video": "File:Peacock mantis shrimp (Odontodactylus scyllarus).webm",
+   "from": 0,
+   "len": 11
+  },
+  {
+   "id": "reef",
+   "video": "File:Mantis shrimp in the Philippines.webm",
+   "from": 0,
+   "len": 14
+  },
+  {
+   "id": "club",
+   "file": "File:Camarón mantis (Odontodactylus scyllarus), Anilao, Filipinas, 2023-08-24, DD 167.jpg"
+  },
+  {
+   "id": "club2",
+   "file": "File:Camarón mantis (Odontodactylus scyllarus), Anilao, Filipinas, 2023-08-24, DD 164.jpg"
+  },
+  {
+   "id": "eyes",
+   "file": "File:Mantis shrimp.png"
+  },
+  {
+   "id": "eyes2",
+   "file": "File:Odontodactylus scyllarus eyes.jpg"
+  }
+ ]
+}
