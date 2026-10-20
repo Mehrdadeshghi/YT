@@ -40,13 +40,13 @@ VIS[0] = S(() => { const to = sw('tooth', 0.8), ba = sw('barbed', 1.6), ve = sw(
       if (t > ba) chip('HOLLOW · BARBED', 830, 1560, t, ba, { size: 34, bg: RED, fg: '#FFF' });
       text('DIAGRAM · CIRCA24, CC BY-SA 3.0', 1000, 1490, 'mono', 20, 'rgba(255,255,255,0.55)', { ls: 2, align: 'right' }); }; }; });
 
-VIS[1] = S(() => { const fi = sw('fifty', 0.3), fa = sw('fastest', 2.4);
+VIS[1] = S(() => { const fi = sw('fifty', 1.2), fa = sw('fastest', 3.0);
   return vscene(1, N171, { ph: 'live', o: { box: [40, 720, 1000, 720] }, a: [0.5, 0.45, 1.1], b: [0.52, 0.45, 1.35], dur: 4, badge: 'REAL PHOTO · GEOGRAPHY CONE, SOLOMON ISLANDS',
     f2: ['UP TO', '56 MPH', null, fi, { y: 520, size: 110 }], k: [[fi, 'boom', 1], [fa, 'hit', 1]],
     x: (t, P) => { if (t > fi) dial171(800, 1200, 140, (t - fi) / 0.9);
       if (t > fa) chip('⚡ ONE OF THE FASTEST ANIMAL MOVES', 540, 1500, t, fa, { size: 36, bg: GOLD, fg: BG }); } }); });
 
-VIS[2] = S(() => { const hu = sw('humans', 0.3), th = sw('thirty', 1.6), we = sw('wetsuit', 3.8);
+VIS[2] = S(() => { const hu = sw('killed', 0.9), th = sw('thirty', 1.4), we = sw('wetsuit', 3.0);
   return vscene(2, N171, { ph: 'textile', o: { box: [40, 720, 1000, 720] }, a: [0.55, 0.6, 1.0], b: [0.55, 0.6, 1.15], dur: 4, badge: 'REAL PHOTO · TEXTILE CONE',
     f2: ['ABOUT 30 PEOPLE', 'KILLED', null, th, { y: 520, size: 104 }], k: [[hu, 'thump', 0.9], [th, 'boom', 1], [we, 'crack', 1]],
     x: (t, P) => { if (t > we) chip('⚠ STINGS THROUGH A WETSUIT', 540, 1480, t, we, { size: 38, bg: RED, fg: '#FFF' }); } }); });

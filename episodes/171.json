@@ -53,11 +53,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Cone snails turned a tooth into a hollow, barbed harpoon, loaded with venom and fired from a long tube.",
+     "text": "Its tooth became a hollow, barbed harpoon, loaded with venom and fired from a long tube.",
      "cap": "A tooth turned into a *barbed harpoon.*",
-     "de": "Kegelschnecken haben einen Zahn zu einer hohlen Harpune mit Widerhaken gemacht, gefüllt mit Gift und aus einem langen Rüssel abgefeuert.",
-     "es": "Los caracoles cono convirtieron un diente en un arpón hueco con púas, cargado de veneno y disparado desde un tubo largo.",
-     "fr": "Les cônes ont transformé une dent en harpon creux et barbelé, rempli de venin et tiré depuis un long tube."
+     "de": "Ihr Zahn wurde zu einer hohlen Harpune mit Widerhaken, gefüllt mit Gift und aus einem langen Rüssel abgefeuert.",
+     "es": "Su diente se volvió un arpón hueco con púas, cargado de veneno y disparado desde un tubo largo.",
+     "fr": "Sa dent est devenue un harpon creux et barbelé, rempli de venin et tiré depuis un long tube."
     }
    ]
   },
@@ -67,7 +67,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Fifty-six miles per hour. That harpoon is one of the fastest moves ever measured in an animal.",
+     "text": "That harpoon strikes at up to fifty six miles per hour. One of the fastest moves ever measured in an animal.",
      "cap": "Up to *56 mph.*",
      "de": "Neunzig Kilometer pro Stunde. Diese Harpune ist eine der schnellsten Bewegungen, die je bei einem Tier gemessen wurden.",
      "es": "Noventa kilómetros por hora. Ese arpón es uno de los movimientos más rápidos jamás medidos en un animal.",
@@ -81,11 +81,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Humans are not safe either. About thirty people have been killed, and the harpoon can go through a wetsuit.",
+     "text": "Cone snails have killed about thirty people. Their harpoon can even pierce a wetsuit.",
      "cap": "About *30 people* killed.",
-     "de": "Auch Menschen sind nicht sicher. Etwa dreißig Todesfälle sind bekannt, und die Harpune geht sogar durch einen Neoprenanzug.",
-     "es": "Los humanos tampoco están a salvo. Se conocen unas treinta muertes, y el arpón atraviesa un traje de neopreno.",
-     "fr": "Les humains non plus ne sont pas à l'abri. On connaît une trentaine de morts, et le harpon traverse une combinaison de plongée."
+     "de": "Kegelschnecken haben etwa dreißig Menschen getötet. Ihre Harpune geht sogar durch einen Neoprenanzug.",
+     "es": "Los caracoles cono han matado a unas treinta personas. Su arpón atraviesa incluso un traje de neopreno.",
+     "fr": "Les cônes ont tué une trentaine de personnes. Leur harpon traverse même une combinaison de plongée."
     }
    ]
   },
@@ -117,7 +117,7 @@
     },
     {
      "at": "0.15",
-     "text": "Pick one up on the beach? Yes or no? Comment!",
+     "text": "Pick one up on the beach? Yes or no? Tell me in the comments!",
      "cta": true,
      "de": "Würdest du eine am Strand aufheben? Ja oder nein? Schreib es in die Kommentare!",
      "es": "¿Recogerías uno en la playa? ¿Sí o no? ¡Comenta!",
