@@ -1,14 +1,11 @@
-Cone snail | Conus
-Conus geographus | Conus geographus
-Conus textile | Conus textile
-Conus magus | Conus magus
-Conus striatus | Conus striatus
-image: cone snail proboscis
-image: Conus geographus
-image: Conus textile live
-image: cone snail radula tooth
-image: Conus magus
-image: cone snail hunting
-video: cone snail
-video: Conus
-audio: Rafael Krux
+Lion's mane jellyfish | Cyanea capillata
+article: Lion's mane jellyfish
+article: Blue whale
+image: lion's mane jellyfish
+image: Cyanea capillata
+image: Cyanea capillata beach
+image: blue whale
+video: lion's mane jellyfish
+video: Cyanea capillata
+video: jellyfish
+audio: Rafael Krux ambient
