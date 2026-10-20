@@ -1,0 +1,150 @@
+{
+ "ep": 158,
+ "title": "3-0 down at half-time. They still won. (Istanbul 2005)",
+ "series": "FOOTBALL · GREATEST NIGHTS",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "epic",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js",
+  "football.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "3–0 DOWN",
+  "AT HALF-TIME.",
+  "THEY WON."
+ ],
+ "cta": {
+  "q": "Greatest comeback ever?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "spell": {
+  "Jerrard": "Gerrard",
+  "Shmeetser": "Šmicer",
+  "Smeetser": "Šmicer",
+  "Doodek": "Dudek",
+  "Dudeck": "Dudek"
+ },
+ "source": "https://en.wikipedia.org/wiki/2005_UEFA_Champions_League_final",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "Three-nil down at half-time, in a final. They still won.",
+   "cap": "*3–0 down* at half-time.",
+   "de": "Drei zu null hinten zur Halbzeit, in einem Finale. Und sie haben trotzdem gewonnen.",
+   "es": "Perdiendo tres a cero al descanso, en una final. Y aun así ganaron.",
+   "fr": "Menés trois à zéro à la mi-temps, en finale. Et ils ont quand même gagné."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Istanbul, two thousand five. Milan scored in the first minute, then twice more before the break.",
+     "cap": "Milan: *first minute*… then *twice more.*",
+     "de": "Istanbul, zweitausendfünf. Milan traf in der ersten Minute, dann noch zweimal vor der Pause.",
+     "es": "Estambul, dos mil cinco. El Milan marcó en el primer minuto y luego dos veces más antes del descanso.",
+     "fr": "Istanbul, deux mille cinq. Milan marque dès la première minute, puis encore deux fois avant la pause."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then Liverpool scored three goals in six minutes. Jerrard. Shmeetser. Alonso. Three all!",
+     "cap": "*Three goals* in *six minutes!*",
+     "de": "Dann schoss Liverpool drei Tore in sechs Minuten. Gerrard. Šmicer. Alonso. Drei zu drei!",
+     "es": "Entonces el Liverpool marcó tres goles en seis minutos. Gerrard. Šmicer. Alonso. ¡Tres a tres!",
+     "fr": "Puis Liverpool marque trois buts en six minutes. Gerrard. Šmicer. Alonso. Trois partout !"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Extra time. Shevchenko shoots from under three yards. Doodek saves. Twice.",
+     "cap": "Under *3 yards*… *saved. Twice.*",
+     "de": "Verlängerung. Schewtschenko schießt aus weniger als drei Metern. Dudek hält. Zweimal.",
+     "es": "Prórroga. Shevchenko dispara a menos de tres metros. Dudek para. Dos veces.",
+     "fr": "Prolongation. Shevchenko frappe à moins de trois mètres. Dudek arrête. Deux fois."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Penalties. Doodek wobbles his legs, saves from Pirlo and Shevchenko, and Liverpool lift the cup.",
+     "cap": "Saves from *Pirlo* and *Shevchenko!*",
+     "de": "Elfmeterschießen. Dudek wackelt mit den Beinen, hält gegen Pirlo und Schewtschenko, und Liverpool holt den Pokal.",
+     "es": "Penaltis. Dudek baila sobre la línea, para a Pirlo y a Shevchenko, y el Liverpool levanta la copa.",
+     "fr": "Tirs au but. Dudek gigote sur sa ligne, arrête Pirlo et Shevchenko, et Liverpool soulève la coupe."
+    },
+    {
+     "at": "0.15",
+     "text": "Greatest comeback ever? Yes or no. Comment!",
+     "cta": true,
+     "de": "Größtes Comeback aller Zeiten? Ja oder nein. Schreib es in die Kommentare!",
+     "es": "¿La mayor remontada de la historia? Sí o no. ¡Comenta!",
+     "fr": "Le plus grand retour de l'histoire ? Oui ou non. Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Dramatic Trailer by Rafael Krux.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 1
+  },
+  {
+   "id": "stad",
+   "file": "File:Atatürk Olimpiyat.jpg"
+  },
+  {
+   "id": "ger",
+   "file": "File:Steven Gerrard faces.jpg"
+  },
+  {
+   "id": "dud",
+   "file": "File:Jerzy Dudek (483145329).jpg"
+  },
+  {
+   "id": "cup",
+   "file": "File:Liverpool European Cup.jpg"
+  }
+ ]
+}
