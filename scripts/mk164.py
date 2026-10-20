@@ -41,9 +41,7 @@ E = {
  'photos': [
   {'id': 'music', 'audio': 'File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3', 'from': 20, 'len': 60, 'gain': 0.5},
   {'id': 'wild', 'file': 'File:Chlamydoselachus anguineus NOOA.jpg'},
-  {'id': 'head', 'file': 'File:Frilled shark head.jpg'},
   {'id': 'mouth', 'file': 'File:Chlamydoselachus anguineus mouth.jpg'},
-  {'id': 'teeth', 'file': 'File:Chlamydoselachus anguineus teeth - tokyosealifepark-2019-1-8.jpg'},
   {'id': 'garman', 'file': 'File:Chlamydoselachus anguineus by garman.png'},
   {'id': 'side', 'file': 'File:Chlamydoselachus anguineus1.jpg'},
  ],
