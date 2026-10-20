@@ -1,9 +1,15 @@
-Frilled shark | Chlamydoselachus anguineus
-Chlamydoselachus | Chlamydoselachidae
-article: Frilled shark
-image: frilled shark
-image: Chlamydoselachus anguineus teeth
-image: frilled shark head gills
-image: Chlamydoselachus anguineus jaw
-video: frilled shark
-audio: Rafael Krux suspense
+Box jellyfish | Cubozoa
+Chironex fleckeri | Chironex fleckeri
+Tripedalia cystophora | Tripedalia cystophora
+Carybdea | Carybdea
+article: Box jellyfish
+article: Jellyfish
+image: box jellyfish
+image: Chironex fleckeri
+image: rhopalium eye jellyfish
+image: box jellyfish warning sign vinegar
+image: Carybdea
+image: Alatina alata
+video: box jellyfish
+video: Cubozoa
+audio: Rafael Krux ambient
