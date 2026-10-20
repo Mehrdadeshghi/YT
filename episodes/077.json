@@ -1,129 +1,137 @@
 {
  "ep": 77,
+ "title": "The doomsday fish (giant oarfish)",
+ "series": "DEEP SEA",
+ "experiment": "E3 question hook (vs #076 number hook)",
  "look": "cine",
  "captions": true,
  "noOutro": true,
- "speed": 1.15,
+ "speed": 1.3,
+ "tight": true,
  "sub": 2,
  "transition": "whip",
- "glint": true,
- "mood": "deep",
  "facts": true,
- "prog": 0,
- "related": {
-  "title": "7 Deep-Sea Creatures That Look Fake",
-  "photo": "rel",
-  "fx": 0.62,
-  "fy": 0.5
- },
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1560,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
  "hook": [
-  "DOES THIS FISH",
-  "PREDICT",
-  "EARTHQUAKES?"
- ],
- "vo_open": [
-  {
-   "at": 0,
-   "text": "Does this fish predict earthquakes?"
-  }
- ],
- "scenes": [
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "It's the giant oarfish. The longest bony fish alive: seven to eight meters.",
-     "cap": "The longest bony fish: *7–8 m.*"
-    }
-   ],
-   "vis": 0
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "Healthy ones are almost never seen. Most are found dying, or washed up on a beach.",
-     "cap": "Healthy ones are *almost never seen.*"
-    }
-   ],
-   "vis": 1
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "In Japan it's called the earthquake fish. Many washed up before the 2011 earthquake.",
-     "cap": "Japan's *earthquake fish.*"
-    }
-   ],
-   "vis": 2
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "But a 2019 study looked at the data, and called the link an illusion.",
-     "cap": "A *2019 study:* *no real link.*"
-    }
-   ],
-   "vis": 3
-  },
-  {
-   "dur": 4,
-   "vo": [
-    {
-     "at": 0.45,
-     "text": "Sailors once called it a sea serpent. This one washed up in Bermuda in 1860.",
-     "cap": "*Bermuda, 1860:* a *sea serpent?*"
-    },
-    {
-     "at": "0.35",
-     "text": "Do you believe animals can sense earthquakes? Yes or no? Watch the full top seven, linked below. And subscribe.",
-     "cta": true
-    }
-   ],
-   "vis": 4
-  }
+  "WHY IS THIS THE",
+  "“DOOMSDAY FISH”?"
  ],
  "cta": {
-  "q": "Can animals sense earthquakes?",
+  "q": "Swim next to one?",
   "a": "YES",
   "b": "NO"
  },
  "source": "https://en.wikipedia.org/wiki/Giant_oarfish",
- "title": "Giant oarfish",
- "photos": [
+ "vo_open": [
   {
-   "id": "lead",
-   "file": "File:Regalecus glesne 297924803.jpg"
+   "at": 0.3,
+   "text": "Why do people call this the doomsday fish?",
+   "de": "Warum nennen die Leute ihn den Weltuntergangsfisch?",
+   "es": "¿Por qué lo llaman el pez del fin del mundo?",
+   "fr": "Pourquoi l'appelle-t-on le poisson de l'apocalypse ?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's a giant oarfish, the longest bony fish on Earth. This one, near San Diego, was twenty-three feet.",
+     "cap": "The *longest bony fish* on Earth: *23 feet.*",
+     "de": "Es ist ein Riemenfisch, der längste Knochenfisch der Welt. Dieser hier, bei San Diego, war sieben Meter lang.",
+     "es": "Es un pez remo gigante, el pez óseo más largo del planeta. Este, cerca de San Diego, medía siete metros.",
+     "fr": "C'est un régalec, le plus long poisson osseux du monde. Celui-ci, près de San Diego, mesurait sept mètres."
+    }
+   ]
   },
   {
-   "id": "men",
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Healthy ones are rarely seen. But many washed up in Japan before the twenty eleven earthquake and tsunami.",
+     "cap": "Many washed up before *Japan’s 2011 quake.*",
+     "de": "Gesunde sieht man fast nie. Aber vor dem Erdbeben und Tsunami in Japan zweitausendelf wurden viele angespült.",
+     "es": "Casi nunca se ven sanos. Pero muchos aparecieron en las playas de Japón antes del terremoto y tsunami de dos mil once.",
+     "fr": "On en voit rarement en bonne santé. Mais beaucoup se sont échoués au Japon avant le séisme et le tsunami de deux mille onze."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So can it predict earthquakes? The data says no. There is no real link.",
+     "cap": "Predict quakes? *No real link.*",
+     "de": "Kann er also Erdbeben vorhersagen? Die Daten sagen nein. Es gibt keinen echten Zusammenhang.",
+     "es": "¿Entonces puede predecir terremotos? Los datos dicen que no. No hay ninguna relación real.",
+     "fr": "Alors, peut-il prédire les séismes ? Les données disent non. Il n’y a aucun vrai lien."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The real weird part: it cuts off its own tail, again and again. Its organs sit near the head, so it survives.",
+     "cap": "It *cuts off its own tail.* Again and again.",
+     "de": "Das wirklich Seltsame: Er trennt seinen eigenen Schwanz ab, immer wieder. Seine Organe liegen nah am Kopf, also überlebt er.",
+     "es": "Lo realmente raro: se corta su propia cola, una y otra vez. Sus órganos están cerca de la cabeza, así que sobrevive.",
+     "fr": "Le plus étrange : il se coupe la queue, encore et encore. Ses organes sont près de la tête, alors il survit."
+    },
+    {
+     "at": "0.15",
+     "text": "Would you swim next to one? Yes or no? Comment!",
+     "cta": true,
+     "de": "Würdest du neben einem schwimmen? Ja oder nein? Schreib es in die Kommentare!",
+     "es": "¿Nadarías junto a uno? ¿Sí o no? ¡Comenta!",
+     "fr": "Tu nagerais à côté de lui ? Oui ou non ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 60,
+   "gain": 0.5
+  },
+  {
+   "id": "navy",
    "file": "File:Giant Oarfish.jpg"
   },
   {
-   "id": "bermuda",
-   "file": "File:Giant oarfish bermuda beach 1860.jpg"
-  },
-  {
-   "id": "nz",
-   "file": "File:Regalecus glesne NZ.jpg"
-  },
-  {
    "id": "beach",
-   "file": "File:Ecomare - Haringkoning riemvis (haringkoning-riemvis-bert-sdw 04).jpg"
+   "file": "File:Regalecus glesne 297924803.jpg"
   },
   {
-   "id": "wien",
-   "file": "File:Regalecus glesne, Naturhistorisches Museum Wien.jpg"
-  },
-  {
-   "id": "rel",
-   "file": "File:Greenland shark profile.jpg"
+   "id": "head",
+   "file": "File:Regalecus glesne NZ.jpg"
   }
  ]
 }
