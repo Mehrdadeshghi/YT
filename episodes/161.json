@@ -1,0 +1,136 @@
+{
+ "ep": 161,
+ "title": "This is NOT what a blobfish looks like",
+ "series": "DEEP SEA",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "THIS IS NOT",
+  "ITS REAL FACE."
+ ],
+ "cta": {
+  "q": "Still ugly?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Mr_Blobby_(fish)",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "This is not what a blobfish looks like.",
+   "de": "So sieht ein Blobfisch gar nicht aus.",
+   "es": "Así no es como se ve un pez borrón.",
+   "fr": "Ce n'est pas à ça que ressemble un blobfish."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In twenty thirteen, this face was voted the ugliest animal in the world.",
+     "cap": "Voted *ugliest animal* in the world.",
+     "de": "Zweitausenddreizehn wurde dieses Gesicht zum hässlichsten Tier der Welt gewählt.",
+     "es": "En dos mil trece, esta cara fue votada como el animal más feo del mundo.",
+     "fr": "En deux mille treize, ce visage a été élu animal le plus laid du monde."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But it was pulled up from over three thousand feet. The fast pressure drop ruptured its cells.",
+     "cap": "Pulled up from *3,000+ ft.* The pressure drop *ruptured its cells.*",
+     "de": "Aber er wurde aus über tausend Metern Tiefe hochgezogen. Der schnelle Druckabfall ließ seine Zellen platzen.",
+     "es": "Pero lo subieron desde más de mil metros. La caída rápida de presión le reventó las células.",
+     "fr": "Mais il a été remonté de plus de mille mètres. La chute de pression a fait éclater ses cellules."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Down there, the water presses up to a hundred and twenty times harder, and a blobfish looks like this.",
+     "cap": "Up to *120×* the pressure. *This* is a blobfish.",
+     "de": "Da unten drückt das Wasser bis zu hundertzwanzigmal stärker, und ein Blobfisch sieht so aus.",
+     "es": "Allá abajo, el agua aprieta hasta ciento veinte veces más, y un pez borrón se ve así.",
+     "fr": "Là-dessous, l'eau appuie jusqu'à cent vingt fois plus fort, et un blobfish ressemble à ça."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its jelly body floats, so it hovers without swimming and lets food drift into its mouth.",
+     "cap": "A *jelly body* that floats. Food *drifts in.*",
+     "de": "Sein Körper aus Gallerte schwebt, also treibt er ohne zu schwimmen und lässt sich das Futter ins Maul treiben.",
+     "es": "Su cuerpo gelatinoso flota, así que se queda quieto sin nadar y deja que la comida le llegue a la boca.",
+     "fr": "Son corps gélatineux flotte : il plane sans nager et laisse la nourriture dériver jusqu'à sa bouche."
+    },
+    {
+     "at": "0.15",
+     "text": "Still ugly? Yes or no? Comment!",
+     "cta": true,
+     "de": "Immer noch hässlich? Ja oder nein? Ab in die Kommentare!",
+     "es": "¿Sigue siendo feo? ¿Sí o no? ¡Comenta!",
+     "fr": "Toujours moche ? Oui ou non ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 50,
+   "len": 60,
+   "gain": 0.5
+  },
+  {
+   "id": "deck",
+   "file": "File:Psyphrcomp.jpg"
+  },
+  {
+   "id": "live",
+   "file": "File:Psychrolutes phrictus 1.jpg"
+  },
+  {
+   "id": "live2",
+   "file": "File:CBNMS Blob Sculpin (49050198258).jpg"
+  }
+ ]
+}
