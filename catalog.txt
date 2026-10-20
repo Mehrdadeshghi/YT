@@ -1,12 +1,15 @@
-Scotoplanes | Scotoplanes
-Elpidiidae | Elpidiidae
-article: Scotoplanes
-article: Sea cucumber
-article: Elpidiidae
-image: Scotoplanes
-image: sea pig
-image: Elpidiidae NOAA
-video: Scotoplanes
-video: sea cucumber deep sea NOAA
-video: sea pig
-audio: Rafael Krux
+2005 UEFA Champions League final | 2005 UEFA Champions League Final
+Atatürk Olympic Stadium | Atatürk Olympic Stadium
+article: 2005 UEFA Champions League final
+article: Jerzy Dudek
+article: Steven Gerrard
+image: 2005 Champions League final Istanbul
+image: Liverpool 2005 Champions League parade
+image: Atatürk Olympic Stadium
+image: Jerzy Dudek
+image: Steven Gerrard Liverpool
+image: European Champion Clubs' Cup trophy
+image: Liverpool fans Istanbul
+video: Liverpool Champions League 2005
+video: football penalty save
+audio: Rafael Krux epic
