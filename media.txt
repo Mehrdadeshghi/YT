@@ -24,3 +24,4 @@ photos-60
 photos-62
 photos-63
 photos-61
+photos-66

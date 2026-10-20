@@ -81,7 +81,7 @@ VIS.eat = scene169('eat', 'rust', { focus: [0.5, 0.5], z0: 1.0, z1: 1.2, dark: 0
 VIS.soton = scene169('soton', 'soton', { focus: [0.5, 0.5], z0: 1.0, z1: 1.12, ch: [1, 'The last night'], label: 'Real photo · Titanic leaves Southampton, April 10, 1912',
   over: (t, tm) => chips169(t, [[tm.la, 'Largest ship afloat'], [tm.ei, '882 ft long', PRO.acc]]), at: { la: ['largest', 5.6], ei: ['eight', 7.0] } });
 VIS.dock = scene169('dock', 'dock', { label: 'Real footage · 1911–12 newsreel (British Pathé / Gaumont)', over: (t, tm) => chips169(t, [[tm.tw, '2,208 people on board', PRO.acc]]), at: { tw: ['two', 1.4] } });
-VIS.ice = scene169('ice', 'ice', { label: 'Real footage · ice field, 1912 newsreel', sfx: (K, tm) => K(tm.ic, 'hit', 0.5),
+VIS.ice = scene169('ice', 'ice', { label: 'Real footage · ice field and icebergs, 1912 newsreel', sfx: (K, tm) => K(tm.ic, 'hit', 0.5),
   over: (t, tm) => { if (t > tm.ic) bigText(t, tm.ic, '*11:40 PM* · April 14', CX169, FR169.y + FR169.h - 90, 76); }, at: { ic: ['iceberg', 3.0] } });
 VIS.comp = scene169('comp', null, { label: 'Graphic · the 16 watertight compartments', draw: (t, lt, tm) => { dark169(); const p = lt > tm.si ? 0.5 + 0.5 * Math.sin(lt * 3) : 0;
     hull169(FR169.x + 150, CY169 - 20, 1220, { compartments: lt > tm.si ? Math.min(6, Math.floor((lt - tm.si) * 6) + 1) : 0, pulse: p, noFunnels: false });
