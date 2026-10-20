@@ -1,0 +1,153 @@
+{
+ "ep": 159,
+ "title": "The heads that fooled Alcatraz (1962 escape)",
+ "series": "CURIOSITY",
+ "experiment": "E6 curiosity done fairly, real FBI photos",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1560,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "THESE HEADS FOOLED",
+  "THE GUARDS ALL NIGHT."
+ ],
+ "cta": {
+  "q": "Did they make it?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/June_1962_Alcatraz_escape_attempt",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "These heads fooled the guards all night.",
+   "de": "Diese Köpfe haben die Wärter eine ganze Nacht lang getäuscht.",
+   "es": "Estas cabezas engañaron a los guardias toda la noche.",
+   "fr": "Ces têtes ont trompé les gardiens toute la nuit."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In nineteen sixty-two, three Alcatraz inmates made them from soap, toilet paper and hair from the barbershop floor.",
+     "cap": "Made of *soap, toilet paper* and *real hair.*",
+     "de": "Neunzehnhundertzweiundsechzig bauten drei Häftlinge auf Alcatraz sie aus Seife, Klopapier und Haaren vom Boden des Friseurs.",
+     "es": "En mil novecientos sesenta y dos, tres presos de Alcatraz las hicieron con jabón, papel higiénico y pelo del suelo de la barbería.",
+     "fr": "En mille neuf cent soixante-deux, trois détenus d'Alcatraz les ont faites avec du savon, du papier toilette et des cheveux ramassés chez le coiffeur."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "For six months, they dug through the vents under their sinks with spoons and a drill made from a vacuum cleaner.",
+     "cap": "*Six months* of digging, with *spoons.*",
+     "de": "Sechs Monate lang gruben sie sich durch die Lüftungsschächte unter ihren Waschbecken, mit Löffeln und einem Bohrer aus einem Staubsauger.",
+     "es": "Durante seis meses cavaron por las rejillas bajo sus lavabos, con cucharas y un taladro hecho con una aspiradora.",
+     "fr": "Pendant six mois, ils ont creusé les grilles d'aération sous leurs lavabos, avec des cuillères et une perceuse faite d'un aspirateur."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then they slipped into the freezing bay on a homemade raft, fourteen feet long.",
+     "cap": "A *homemade raft* into the *freezing bay.*",
+     "de": "Dann glitten sie auf einem selbst gebauten Floß, gut vier Meter lang, in die eiskalte Bucht.",
+     "es": "Luego se metieron en la bahía helada en una balsa casera de cuatro metros.",
+     "fr": "Puis ils se sont glissés dans la baie glacée sur un radeau fait maison de quatre mètres."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "At seven a.m., a guard tried to wake one of them, and the head fell on the floor. No bodies were ever found.",
+     "cap": "The head *fell on the floor.* No bodies *ever found.*",
+     "de": "Um sieben Uhr morgens wollte ein Wärter einen von ihnen wecken, und der Kopf fiel auf den Boden. Leichen wurden nie gefunden.",
+     "es": "A las siete de la mañana, un guardia intentó despertar a uno, y la cabeza cayó al suelo. Nunca se encontraron los cuerpos.",
+     "fr": "À sept heures du matin, un gardien a voulu en réveiller un, et la tête est tombée par terre. On n'a jamais retrouvé les corps."
+    },
+    {
+     "at": "0.15",
+     "text": "Did they make it? Yes or no? Comment!",
+     "cta": true,
+     "de": "Haben sie es geschafft? Ja oder nein? Schreib es in die Kommentare!",
+     "es": "¿Lo lograron? ¿Sí o no? ¡Comenta!",
+     "fr": "Ils s'en sont sortis ? Oui ou non ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 40,
+   "len": 60,
+   "gain": 0.5
+  },
+  {
+   "id": "head",
+   "file": "File:Dummy head made by Frank Morris to facilitate his escape from Alcatraz in 1962.jpg"
+  },
+  {
+   "id": "heads",
+   "file": "File:Dummy heads.jpg"
+  },
+  {
+   "id": "vent",
+   "file": "File:Alcatraz cell vent.JPG"
+  },
+  {
+   "id": "isle",
+   "file": "File:Alcatraz Island March 1962.jpg"
+  },
+  {
+   "id": "morris",
+   "file": "File:Frank Morris.jpg"
+  },
+  {
+   "id": "john",
+   "file": "File:John Anglin.jpg"
+  },
+  {
+   "id": "clar",
+   "file": "File:Clarence Anglin.jpg"
+  }
+ ]
+}
