@@ -1,14 +1,12 @@
-June 1962 Alcatraz escape attempt | June 1962 Alcatraz escape
-Alcatraz Federal Penitentiary | Alcatraz Federal Penitentiary
-Frank Morris (criminal) | Frank Morris (criminal)
-article: June 1962 Alcatraz escape attempt
-image: Alcatraz escape dummy head
-image: Alcatraz Frank Morris cell
-image: Alcatraz escape vent hole
-image: Alcatraz escape raft
-image: Anglin brothers mugshot
-image: Frank Morris mugshot
-image: Alcatraz Island aerial
-image: Alcatraz cell block
-video: Alcatraz Island
+Synanceia verrucosa | Synanceia verrucosa
+Synanceia | Synanceia
+Synanceia horrida | Synanceia horrida
+article: Synanceia
+article: Synanceia verrucosa
+image: stonefish camouflage
+image: stonefish reef
+image: stonefish spines
+image: stonefish sashimi
+image: Synanceia verrucosa
+video: stonefish
 audio: Rafael Krux suspense
