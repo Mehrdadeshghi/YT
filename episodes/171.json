@@ -1,0 +1,162 @@
+{
+ "ep": 171,
+ "title": "This snail hunts fish with a harpoon (cone snail)",
+ "series": "OCEAN",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "THIS SNAIL",
+  "HUNTS FISH."
+ ],
+ "cta": {
+  "q": "Pick one up on the beach?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Cone_snail",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "This snail hunts fish. With a harpoon.",
+   "de": "Diese Schnecke jagt Fische. Mit einer Harpune.",
+   "es": "Este caracol caza peces. Con un arpón.",
+   "fr": "Cet escargot chasse des poissons. Au harpon."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Cone snails turned a tooth into a hollow, barbed harpoon, loaded with venom and fired from a long tube.",
+     "cap": "A tooth turned into a *barbed harpoon.*",
+     "de": "Kegelschnecken haben einen Zahn zu einer hohlen Harpune mit Widerhaken gemacht, gefüllt mit Gift und aus einem langen Rüssel abgefeuert.",
+     "es": "Los caracoles cono convirtieron un diente en un arpón hueco con púas, cargado de veneno y disparado desde un tubo largo.",
+     "fr": "Les cônes ont transformé une dent en harpon creux et barbelé, rempli de venin et tiré depuis un long tube."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Fifty-six miles per hour. That harpoon is one of the fastest moves ever measured in an animal.",
+     "cap": "Up to *56 mph.*",
+     "de": "Neunzig Kilometer pro Stunde. Diese Harpune ist eine der schnellsten Bewegungen, die je bei einem Tier gemessen wurden.",
+     "es": "Noventa kilómetros por hora. Ese arpón es uno de los movimientos más rápidos jamás medidos en un animal.",
+     "fr": "Quatre-vingt-dix kilomètres à l'heure. Ce harpon est l'un des mouvements les plus rapides jamais mesurés chez un animal."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Humans are not safe either. About thirty people have been killed, and the harpoon can go through a wetsuit.",
+     "cap": "About *30 people* killed.",
+     "de": "Auch Menschen sind nicht sicher. Etwa dreißig Todesfälle sind bekannt, und die Harpune geht sogar durch einen Neoprenanzug.",
+     "es": "Los humanos tampoco están a salvo. Se conocen unas treinta muertes, y el arpón atraviesa un traje de neopreno.",
+     "fr": "Les humains non plus ne sont pas à l'abri. On connaît une trentaine de morts, et le harpon traverse une combinaison de plongée."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Insulin is its secret weapon. The geography cone releases it, and nearby fish go into shock.",
+     "cap": "*Insulin* as a weapon.",
+     "de": "Insulin ist seine Geheimwaffe. Die Landkarten-Kegelschnecke gibt es ab, und Fische in der Nähe fallen in einen Schock.",
+     "es": "La insulina es su arma secreta. El cono geógrafo la libera, y los peces cercanos entran en shock.",
+     "fr": "L'insuline est son arme secrète. Le cône géographe la libère, et les poissons autour tombent en état de choc."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Doctors even turned cone snail venom into a painkiller, approved in the US in two thousand four.",
+     "cap": "Its venom became a *painkiller.*",
+     "de": "Ärzte haben aus dem Gift sogar ein Schmerzmittel gemacht, in den USA zugelassen seit zweitausendvier.",
+     "es": "Incluso convirtieron su veneno en un analgésico, aprobado en Estados Unidos en dos mil cuatro.",
+     "fr": "On a même fait de son venin un antidouleur, autorisé aux États-Unis en deux mille quatre."
+    },
+    {
+     "at": "0.15",
+     "text": "Pick one up on the beach? Yes or no? Comment!",
+     "cta": true,
+     "de": "Würdest du eine am Strand aufheben? Ja oder nein? Schreib es in die Kommentare!",
+     "es": "¿Recogerías uno en la playa? ¿Sí o no? ¡Comenta!",
+     "fr": "Tu en ramasserais un sur la plage ? Oui ou non ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 60,
+   "gain": 1
+  },
+  {
+   "id": "eat",
+   "file": "File:Conus eating a fish.jpg"
+  },
+  {
+   "id": "appar",
+   "file": "File:Cone shell venom apparatus.jpg"
+  },
+  {
+   "id": "live",
+   "file": "File:Conus geographus 59839864.jpg"
+  },
+  {
+   "id": "textile",
+   "file": "File:Textile cone.JPG"
+  },
+  {
+   "id": "redsea",
+   "file": "File:Caracol de mar (Conus geographus), mar Rojo, Egipto, 2023-04-16, DD 51.jpg"
+  },
+  {
+   "id": "magus",
+   "file": "File:Conus magus 002.jpg"
+  }
+ ]
+}
