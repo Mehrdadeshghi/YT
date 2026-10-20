@@ -1,0 +1,130 @@
+{
+ "ep": 163,
+ "title": "Why your phone dies in the cold",
+ "series": "HOW IT WORKS #12",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "mood": "epic",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "40 %.",
+  "THEN IT",
+  "DIED."
+ ],
+ "cta": {
+  "q": "Ever died on you in the cold?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://support.apple.com/en-us/101575",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Your phone said forty percent. Then it died.",
+   "de": "Dein Handy zeigte vierzig Prozent. Dann war es aus.",
+   "es": "Tu móvil decía cuarenta por ciento. Y se apagó.",
+   "fr": "Ton téléphone affichait quarante pour cent. Puis il s'est éteint."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's not broken. It's the cold. In the cold, the battery's resistance goes up.",
+     "cap": "Cold = *resistance* goes up.",
+     "de": "Es ist nicht kaputt. Es ist die Kälte. In der Kälte steigt der Widerstand im Akku.",
+     "es": "No está roto. Es el frío. Con frío, la resistencia de la batería sube.",
+     "fr": "Il n'est pas cassé. C'est le froid. Dans le froid, la résistance de la batterie augmente."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Open an app, the voltage drops too far, and the phone shuts down to protect itself.",
+     "cap": "Voltage drops → *shutdown.*",
+     "de": "Öffnest du eine App, fällt die Spannung zu tief, und das Handy schaltet sich zum Schutz ab.",
+     "es": "Abres una app, el voltaje cae demasiado y el móvil se apaga para protegerse.",
+     "fr": "Tu ouvres une appli, la tension chute trop, et le téléphone s'éteint pour se protéger."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Good news: it's temporary. Warm it up, and the battery comes back.",
+     "cap": "It's *temporary.* Warm it up.",
+     "de": "Die gute Nachricht: Das ist nur vorübergehend. Wärm es auf, und der Akku ist wieder da.",
+     "es": "La buena noticia: es temporal. Caliéntalo y la batería vuelve.",
+     "fr": "La bonne nouvelle : c'est temporaire. Réchauffe-le, et la batterie revient."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But many batteries can't charge safely below freezing. Metal lithium plates inside and can short it.",
+     "cap": "Don't charge below *32 °F.*",
+     "de": "Aber viele Akkus darf man unter null Grad nicht sicher laden. Metallisches Lithium lagert sich ab und kann einen Kurzschluss machen.",
+     "es": "Pero muchas baterías no se pueden cargar con seguridad bajo cero grados. El litio metálico se deposita dentro y puede causar un cortocircuito.",
+     "fr": "Mais beaucoup de batteries ne se rechargent pas sans risque sous zéro degré. Du lithium métal se dépose et peut créer un court-circuit."
+    },
+    {
+     "at": "0.15",
+     "text": "Has your phone ever died in the cold? Comment yes or no!",
+     "cta": true,
+     "de": "Ist dir dein Handy schon mal in der Kälte ausgegangen? Schreib ja oder nein!",
+     "es": "¿Alguna vez se te apagó el móvil con frío? ¡Comenta sí o no!",
+     "fr": "Ton téléphone s'est déjà éteint dans le froid ? Commente oui ou non !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 1
+  },
+  {
+   "id": "snow",
+   "file": "File:S60 in Snow.jpg"
+  }
+ ]
+}
