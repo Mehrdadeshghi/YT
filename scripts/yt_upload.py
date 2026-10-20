@@ -16,7 +16,7 @@ BERLIN = ZoneInfo('Europe/Berlin')
 CATEGORIES = {'film & animation': '1', 'sports': '17', 'people & blogs': '22', 'entertainment': '24', 'education': '27', 'science & technology': '28'}
 LEDGER = 'uploads/youtube.json'
 QUEUE = 'upload_queue.txt'
-MAX_PER_RUN = 4                     # hard safety cap: never more than 4 uploads per run, whatever the input says
+MAX_PER_RUN = 5                     # hard safety cap: never more than 5 uploads per run (= one day of slots), whatever the input says
 args = sys.argv[1:]
 opt = lambda k, d: args[args.index('--' + k) + 1] if '--' + k in args else d
 flag = lambda k: '--' + k in args
