@@ -22,7 +22,7 @@ E = {
  'vo_open': [{'at': 0.3, 'text': 'Twenty-four eyes. No brain.',
    'de': 'Vierundzwanzig Augen. Kein Gehirn.', 'es': 'Veinticuatro ojos. Sin cerebro.', 'fr': 'Vingt-quatre yeux. Pas de cerveau.'}],
  'scenes': [
-  S(0, 'A box jellyfish has six eyes on each of its four sides. Two in each cluster even have a lens and a retina, like yours.',
+  S(0, 'Every box jellyfish has six eyes on each of its four sides. Two in each cluster even have a lens and a retina, like yours.',
     '*6 eyes* on each of its *4 sides.* Some have a *lens* and a *retina.*',
     'Eine Würfelqualle hat sechs Augen an jeder ihrer vier Seiten. Zwei davon haben sogar eine Linse und eine Netzhaut, wie deine.',
     'Una medusa de caja tiene seis ojos en cada uno de sus cuatro lados. Dos de ellos tienen incluso lente y retina, como los tuyos.',
