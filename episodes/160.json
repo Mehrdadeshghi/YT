@@ -32,7 +32,7 @@
   "TWO HITS."
  ],
  "cta": {
-  "q": "Would you keep one in your tank?",
+  "q": "Keep one in your fish tank?",
   "a": "YES",
   "b": "NO"
  },
@@ -81,7 +81,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Even if it misses, the shock wave can stun or kill. And the bubbles flash with light.",
+     "text": "Even a miss can stun or kill, thanks to the shock wave. And the bubbles flash with light.",
      "cap": "A *miss* can still *stun or kill.*",
      "de": "Selbst wenn sie danebenschlägt, kann die Schockwelle betäuben oder töten. Und die Blasen blitzen sogar auf.",
      "es": "Aunque falle, la onda de choque puede aturdir o matar. Y las burbujas hasta destellan.",
@@ -103,7 +103,7 @@
     },
     {
      "at": "0.15",
-     "text": "Would you keep one in your tank? Yes or no?",
+     "text": "Keep one in your fish tank? Yes or no?",
      "cta": true,
      "de": "Würdest du eine im Aquarium halten? Ja oder nein?",
      "es": "¿Tendrías uno en tu acuario? ¿Sí o no?",

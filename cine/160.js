@@ -63,7 +63,7 @@ VIS[1] = S(() => { const fa = sw('fast', 0.5), bu = sw('bubbles', 1.6), co = sw(
       if (t > co) stampText('HIT 2', 760, 820, t, co, { size: 70, rot: 0.1, color: RED });
       flash(t, co, 0.35, 0.1); ill160(t); }; }; });
 
-VIS[2] = S(() => { const mi = sw('misses', 0.7), sh = sw('shock', 1.3), ki = sw('kill', 2.0), fl = sw('flash', 3.4);
+VIS[2] = S(() => { const mi = sw('miss', 0.6), sh = sw('stun', 1.0), ki = sw('kill', 1.3), sk = sw('shock', 2.2), fl = sw('flash', 3.6);
   return (K) => { ks(K, [[mi - 0.05, 'whoosh', 1], [sh, 'boom', 1.1], [ki, 'thump', 0.9], [fl, 'ding', 1.1], [fl + 0.02, 'pop', 0.8]]);
     return (t) => { sea160(t); const fx = 820, fy = 960, bx = 640, by = 1010;
       const sw1 = easeOut(clamp((t - mi + 0.1) / 0.15)), stun = easeOut(clamp((t - sh - 0.1) / 0.5));
@@ -74,7 +74,7 @@ VIS[2] = S(() => { const mi = sw('misses', 0.7), sh = sw('shock', 1.3), ki = sw(
       g.restore();
       tag(t, 2, N160); fact2(t, 0.2, 'IT MISSED.', 'STILL STUNNED.', null, { y: 470 });
       if (t > mi && t < sh + 0.1) chip('MISS', 700, 820, t, mi, { size: 44, bg: TXT, fg: BG });
-      if (t > sh) chip('SHOCK WAVE', 540, 1240, t, sh, { size: 40, bg: BUB160, fg: BG });
+      if (t > sk && t < fl) chip('SHOCK WAVE', 540, 1240, t, sk, { size: 40, bg: BUB160, fg: BG });
       if (t > fl) { flash(t, fl, 0.5, 0.15, '#FFF7C2'); chip('⚡ THE BUBBLES GIVE OFF LIGHT', 540, 1240, t, fl, { size: 38, bg: GOLD, fg: BG }); }
       ill160(t); }; }; });
 
