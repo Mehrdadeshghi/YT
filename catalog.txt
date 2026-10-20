@@ -1,16 +1,9 @@
-166
-Kiwa hirsuta | Kiwa hirsuta
-Kiwa (crustacean) | Kiwa
-Kiwa puravida | Kiwa puravida
-Kiwa tyleri | Kiwa tyleri
-Hydrothermal vent | Hydrothermal vents
-article: Kiwa hirsuta
-article: Kiwa (crustacean)
-image: yeti crab
-image: Kiwa hirsuta
-image: Kiwa tyleri
-image: Kiwa puravida
-image: hydrothermal vent black smoker
-video: hydrothermal vent
-video: yeti crab
-audio: Rafael Krux ambient
+Frilled shark | Chlamydoselachus anguineus
+Chlamydoselachus | Chlamydoselachidae
+article: Frilled shark
+image: frilled shark
+image: Chlamydoselachus anguineus teeth
+image: frilled shark head gills
+image: Chlamydoselachus anguineus jaw
+video: frilled shark
+audio: Rafael Krux suspense
