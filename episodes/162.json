@@ -1,0 +1,138 @@
+{
+ "ep": 162,
+ "title": "This crab is 12 feet wide (Japanese spider crab)",
+ "series": "DEEP SEA",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "THIS CRAB IS",
+  "12 FEET WIDE."
+ ],
+ "cta": {
+  "q": "Would you pet one?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Japanese_spider_crab",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "This crab is twelve feet wide.",
+   "de": "Diese Krabbe ist dreieinhalb Meter breit.",
+   "es": "Este cangrejo mide tres metros y medio de ancho.",
+   "fr": "Ce crabe mesure trois mètres et demi de large."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The Japanese spider crab has the biggest leg span of any arthropod on Earth, claw to claw.",
+     "cap": "The *biggest leg span* of any arthropod.",
+     "de": "Die Japanische Riesenkrabbe hat die größte Beinspannweite aller Gliederfüßer der Erde, von Schere zu Schere.",
+     "es": "El cangrejo araña japonés tiene la mayor envergadura de patas de todos los artrópodos, de pinza a pinza.",
+     "fr": "Le crabe-araignée géant du Japon a la plus grande envergure de pattes de tous les arthropodes, d'une pince à l'autre."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "One museum specimen measures twelve and a half feet across.",
+     "cap": "One specimen: *12.5 feet* across.",
+     "de": "Ein Exemplar im Museum misst drei Meter achtzig.",
+     "es": "Un ejemplar de museo mide tres metros ochenta.",
+     "fr": "Un spécimen de musée mesure trois mètres quatre-vingts."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It weighs up to forty-two pounds, and it glues sponges and living animals onto its shell as a disguise.",
+     "cap": "Up to *42 pounds.* It wears *sponges as a disguise.*",
+     "de": "Sie wiegt bis zu neunzehn Kilo und klebt sich Schwämme und lebende Tiere als Tarnung auf den Panzer.",
+     "es": "Pesa hasta diecinueve kilos y se pega esponjas y animales vivos en el caparazón para camuflarse.",
+     "fr": "Il pèse jusqu'à dix-neuf kilos et se colle des éponges et des animaux vivants sur la carapace pour se camoufler."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "To grow, it climbs out of its own shell. That takes about a hundred minutes, and the legs come out last.",
+     "cap": "It climbs out of its *own shell.* Legs come out *last.*",
+     "de": "Um zu wachsen, klettert sie aus ihrem eigenen Panzer. Das dauert etwa hundert Minuten, und die Beine kommen zuletzt.",
+     "es": "Para crecer, sale de su propio caparazón. Tarda unos cien minutos, y las patas salen al final.",
+     "fr": "Pour grandir, il sort de sa propre carapace. Cela prend environ cent minutes, et les pattes sortent en dernier."
+    },
+    {
+     "at": "0.15",
+     "text": "Would you pet one? Yes or no? Comment!",
+     "cta": true,
+     "de": "Würdest du eine streicheln? Ja oder nein? Schreib es in die Kommentare!",
+     "es": "¿Acariciarías uno? ¿Sí o no? ¡Comenta!",
+     "fr": "Tu en caresserais un ? Oui ou non ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Dramatic Trailer by Rafael Krux.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 1
+  },
+  {
+   "id": "swim",
+   "video": "File:Giant Japanese Spider Crab, Shedd Aquarium, Chicago.webmhd.webm",
+   "from": 0,
+   "len": 8
+  },
+  {
+   "id": "amnh",
+   "file": "File:Japanese spider crab.jpg"
+  },
+  {
+   "id": "sapporo",
+   "file": "File:タカアシガニ (Macrocheira kaempferi) (15257827710).jpg"
+  }
+ ]
+}
