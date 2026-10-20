@@ -1,13 +1,14 @@
-Sailing stones | Sailing stones
-Racetrack Playa | Racetrack Playa
-article: Sailing stones
-article: Racetrack Playa
-image: Racetrack Playa
-image: sailing stones
-image: sliding rocks Death Valley
-image: Racetrack Playa rock trail
-image: Death Valley National Park
-image: Racetrack Playa ice
-video: Racetrack Playa
-video: sliding rocks Racetrack
+Cone snail | Conus
+Conus geographus | Conus geographus
+Conus textile | Conus textile
+Conus magus | Conus magus
+Conus striatus | Conus striatus
+image: cone snail proboscis
+image: Conus geographus
+image: Conus textile live
+image: cone snail radula tooth
+image: Conus magus
+image: cone snail hunting
+video: cone snail
+video: Conus
 audio: Rafael Krux
