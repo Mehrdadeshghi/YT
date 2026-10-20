@@ -21,7 +21,7 @@ E = {
  'vo_open': [{'at': 0.3, 'text': 'This jellyfish is longer than a blue whale.',
    'de': 'Diese Qualle ist länger als ein Blauwal.', 'es': 'Esta medusa es más larga que una ballena azul.', 'fr': "Cette méduse est plus longue qu'une baleine bleue."}],
  'scenes': [
-  S(0, 'Biggest one ever measured: off Massachusetts, in eighteen sixty-five. Its tentacles: about a hundred and twenty feet.',
+  S(0, 'Massachusetts, eighteen sixty-five: the biggest one ever measured. Its tentacles: about a hundred and twenty feet.',
     'Record: *1865.* Tentacles: about *120 feet.*',
     'Die größte je vermessene: vor Massachusetts, im Jahr achtzehnhundertfünfundsechzig. Ihre Tentakel: etwa sechsunddreißig Meter.',
     'La más grande jamás medida: frente a Massachusetts, en mil ochocientos sesenta y cinco. Sus tentáculos: unos treinta y seis metros.',
