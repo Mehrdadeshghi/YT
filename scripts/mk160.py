@@ -44,10 +44,7 @@ E = {
  'photos': [
   {'id': 'music', 'audio': 'File:Dramatic Trailer by Rafael Krux.ogg', 'from': 0, 'len': 60, 'gain': 1},
   {'id': 'swim', 'video': 'File:Peacock mantis shrimp (Odontodactylus scyllarus).webm', 'from': 0, 'len': 11},
-  {'id': 'reef', 'video': 'File:Mantis shrimp in the Philippines.webm', 'from': 0, 'len': 14},
   {'id': 'club', 'file': 'File:Camarón mantis (Odontodactylus scyllarus), Anilao, Filipinas, 2023-08-24, DD 167.jpg'},
-  {'id': 'club2', 'file': 'File:Camarón mantis (Odontodactylus scyllarus), Anilao, Filipinas, 2023-08-24, DD 164.jpg'},
-  {'id': 'eyes', 'file': 'File:Mantis shrimp.png'},
   {'id': 'eyes2', 'file': 'File:Odontodactylus scyllarus eyes.jpg'},
  ],
 }
