@@ -1,0 +1,148 @@
+{
+ "ep": 173,
+ "title": "Nobody pushed these rocks",
+ "series": "MYSTERY",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "NOBODY PUSHED",
+  "THESE ROCKS."
+ ],
+ "cta": {
+  "q": "Did you guess ice?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Sailing_stones",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "Nobody pushed these rocks.",
+   "de": "Niemand hat diese Steine geschoben.",
+   "es": "Nadie empujó estas rocas.",
+   "fr": "Personne n'a poussé ces pierres."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Stones as heavy as a person slide across a dry lake in Death Valley, leaving trails up to three hundred thirty feet long.",
+     "cap": "Stones *as heavy as a person.* Trails up to *330 ft.*",
+     "de": "Steine, so schwer wie ein Mensch, rutschen im Death Valley über einen ausgetrockneten See und hinterlassen bis zu hundert Meter lange Spuren.",
+     "es": "Piedras tan pesadas como una persona se deslizan por un lago seco en el Valle de la Muerte y dejan huellas de hasta cien metros.",
+     "fr": "Des pierres aussi lourdes qu'un humain glissent sur un lac asséché de la Vallée de la Mort et laissent des traces jusqu'à cent mètres."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "For nearly a century, nobody ever saw one move.",
+     "cap": "Nearly *100 years.* Nobody *saw one move.*",
+     "de": "Fast hundert Jahre lang hat niemand je einen davon wandern sehen.",
+     "es": "Durante casi un siglo, nadie vio moverse ni una.",
+     "fr": "Pendant près d'un siècle, personne n'en a jamais vu bouger une."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Scientists hid GPS trackers inside the rocks. Then, on December twentieth, twenty thirteen, more than sixty rocks moved at once.",
+     "cap": "*GPS* inside the rocks. Then *60+ rocks* moved at once.",
+     "de": "Forscher versteckten GPS-Sender in den Steinen. Dann, am zwanzigsten Dezember zweitausenddreizehn, bewegten sich über sechzig Steine gleichzeitig.",
+     "es": "Los científicos escondieron GPS dentro de las rocas. Y el veinte de diciembre de dos mil trece, más de sesenta rocas se movieron a la vez.",
+     "fr": "Des chercheurs ont caché des GPS dans les pierres. Puis, le vingt décembre deux mille treize, plus de soixante pierres ont bougé d'un coup."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Ice. Sheets just a few millimeters thin, pushed by light wind, shoving the rocks about sixteen feet a minute.",
+     "cap": "*Ice,* a few mm thin. Wind pushes. *16 ft a minute.*",
+     "de": "Eis. Platten, nur ein paar Millimeter dünn, von leichtem Wind getrieben, schieben die Steine rund fünf Meter pro Minute.",
+     "es": "Hielo. Placas de pocos milímetros, empujadas por un viento suave, arrastran las rocas unos cinco metros por minuto.",
+     "fr": "De la glace. Des plaques de quelques millimètres, poussées par un vent léger, déplacent les pierres d'environ cinq mètres par minute."
+    },
+    {
+     "at": "0.15",
+     "text": "Did you guess ice? Yes or no? Comment!",
+     "cta": true,
+     "de": "Hättest du auf Eis getippt? Ja oder nein? Ab in die Kommentare!",
+     "es": "¿Adivinaste que era hielo? ¿Sí o no? ¡Comenta!",
+     "fr": "Tu avais deviné la glace ? Oui ou non ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 50,
+   "len": 60,
+   "gain": 0.5
+  },
+  {
+   "id": "trail",
+   "file": "File:Racetrack, Death Valley National Park.jpg"
+  },
+  {
+   "id": "visitor",
+   "file": "File:Death Valley Scenic Byway - Visitor to Racetrack Playa - NARA - 7717976.jpg"
+  },
+  {
+   "id": "lone",
+   "file": "File:A lone rock with its trail on the Racetrack playa. (bafbecc6-178c-43d7-aa49-d4501fa5ca8a).jpg"
+  },
+  {
+   "id": "gps",
+   "file": "File:Sliding-Rocks-on-Racetrack-Playa-Death-Valley-National-Park-First-Observation-of-Rocks-in-Motion-pone.0105948.g004.jpg"
+  },
+  {
+   "id": "dec20",
+   "file": "File:Racetrack playa 2013-12-20.jpg"
+  },
+  {
+   "id": "ice",
+   "file": "File:Sliding-Rocks-on-Racetrack-Playa-Death-Valley-National-Park-First-Observation-of-Rocks-in-Motion-pone.0105948.g008.jpg"
+  }
+ ]
+}
