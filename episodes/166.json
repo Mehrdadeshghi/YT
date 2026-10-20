@@ -1,0 +1,150 @@
+{
+ "ep": 166,
+ "title": "This crab grows its own food (yeti crab)",
+ "series": "DEEP SEA",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "IT GROWS ITS FOOD",
+  "ON ITS ARMS."
+ ],
+ "cta": {
+  "q": "Cool or gross?",
+  "a": "COOL",
+  "b": "GROSS"
+ },
+ "source": "https://en.wikipedia.org/wiki/Kiwa_hirsuta",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "This crab grows its own food. On its arms.",
+   "de": "Diese Krabbe züchtet ihr eigenes Essen. Auf ihren Armen.",
+   "es": "Este cangrejo cultiva su propia comida. En sus brazos.",
+   "fr": "Ce crabe cultive sa propre nourriture. Sur ses bras."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Meet the yeti crab. Found in two thousand five, seventy-two hundred feet down, on hot vents in the South Pacific.",
+     "cap": "The *yeti crab.* Found in 2005, *7,200 ft* down.",
+     "de": "Das ist die Yeti-Krabbe. Entdeckt zweitausendfünf, zweitausendzweihundert Meter tief, an heißen Quellen im Südpazifik.",
+     "es": "Este es el cangrejo yeti. Descubierto en dos mil cinco, a dos mil doscientos metros, junto a fuentes calientes del Pacífico Sur.",
+     "fr": "Voici le crabe yéti. Découvert en deux mille cinq, à deux mille deux cents mètres, près de sources chaudes du Pacifique Sud."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Those hairy arms are covered in bacteria. And the bacteria are its main food.",
+     "cap": "Hairy arms full of *bacteria* = its *main food.*",
+     "de": "Diese haarigen Arme sind voller Bakterien. Und die Bakterien sind ihr Hauptessen.",
+     "es": "Esos brazos peludos están cubiertos de bacterias. Y esas bacterias son su comida principal.",
+     "fr": "Ces bras poilus sont couverts de bactéries. Et ces bactéries sont sa nourriture principale."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Some yeti crabs even dance. They wave their claws to bring chemicals to the bacteria.",
+     "cap": "Some even *dance* to feed their *farm.*",
+     "de": "Manche Yeti-Krabben tanzen sogar. Sie wedeln mit den Scheren, damit die Bakterien Chemikalien bekommen.",
+     "es": "Algunos cangrejos yeti hasta bailan. Mueven las pinzas para llevar sustancias químicas a las bacterias.",
+     "fr": "Certains crabes yéti dansent même. Ils agitent leurs pinces pour apporter des substances chimiques aux bactéries."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Oh, and it's probably blind.",
+     "cap": "And it's probably *blind.*",
+     "de": "Ach ja, und sie ist wahrscheinlich blind.",
+     "es": "Ah, y probablemente es ciego.",
+     "fr": "Ah, et il est sans doute aveugle."
+    },
+    {
+     "at": "0.15",
+     "text": "Food growing on your arms. Cool or gross? Comment!",
+     "cta": true,
+     "de": "Essen, das auf deinen Armen wächst. Cool oder eklig? Schreib es in die Kommentare!",
+     "es": "Comida que crece en tus brazos. ¿Genial o asqueroso? ¡Comenta!",
+     "fr": "De la nourriture qui pousse sur tes bras. Cool ou dégoûtant ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 50,
+   "len": 60,
+   "gain": 0.5
+  },
+  {
+   "id": "yeti",
+   "file": "File:Galathée yéti, un habitant des profondeurs abyssales (Ifremer 00569-68091 - 34595).jpg"
+  },
+  {
+   "id": "yeti2",
+   "file": "File:Galathée yéti, un habitant des profondeurs abyssales (Ifremer 00569-68091 - 25272).jpg"
+  },
+  {
+   "id": "yeti3",
+   "file": "File:Galathée yéti, un habitant des profondeurs abyssales (Ifremer 00569-68091 - 34593).jpg"
+  },
+  {
+   "id": "yeti4",
+   "file": "File:Galathée yéti, un habitant des profondeurs abyssales (Ifremer 00569-68091 - 34594).jpg"
+  },
+  {
+   "id": "smoker",
+   "file": "File:Blacksmoker in Atlantic Ocean.jpg"
+  },
+  {
+   "id": "dance",
+   "video": "File:Dancing-for-Food-in-the-Deep-Sea-Bacterial-Farming-by-a-New-Species-of-Yeti-Crab-pone.0026243.s001.ogv",
+   "from": 0,
+   "len": 11
+  }
+ ]
+}
