@@ -225,6 +225,59 @@ ROWS = [
   "Alors, qu'en penses-tu ? Faut-il encore autoriser les visites de l'épave ? Dis-le en commentaire, et abonne-toi pour plonger encore plus loin avec nous.", None),
 ]
 
+# rows added for length (8+ min): inserted after the row whose EN text starts with the key; each value = (visual key, row)
+NEW = {
+ "The ship can't turn fast enough": ('andrews', (0, "The ship's designer, Thomas Andrews, checked the damage. He predicted she could stay afloat for roughly two hours. He was right.",
+  'Der Konstrukteur des Schiffs, Thomas Andrews, prüfte den Schaden. Er sagte voraus, dass sie sich etwa zwei Stunden halten würde. Er behielt recht.',
+  'El diseñador del barco, Thomas Andrews, revisó los daños. Predijo que aguantaría a flote unas dos horas. Tenía razón.',
+  "Le concepteur du navire, Thomas Andrews, a examiné les dégâts. Il a prédit qu'il resterait à flot environ deux heures. Il avait raison.", 'Roughly *two hours.*')),
+ 'Two hours and forty minutes after': ('smith', (0, 'Captain Edward Smith went down with his ship.',
+  'Kapitän Edward Smith ging mit seinem Schiff unter.', 'El capitán Edward Smith se hundió con su barco.', "Le capitaine Edward Smith a sombré avec son navire.", 'Captain *Edward Smith.*')),
+ 'Past three thousand three hundred feet': ('snow', (4500, 'All the way down falls marine snow: tiny flakes of dead plankton and waste, sinking from the waters above. Some take weeks to reach the bottom.',
+  'Auf dem ganzen Weg fällt Meeresschnee: winzige Flocken aus totem Plankton und Abfall, die von oben herabsinken. Manche brauchen Wochen bis zum Grund.',
+  'Durante todo el descenso cae nieve marina: copos diminutos de plancton muerto y desechos que bajan desde arriba. Algunos tardan semanas en llegar al fondo.',
+  "Tout au long de la descente tombe la neige marine : de minuscules flocons de plancton mort et de déchets venus d'en haut. Certains mettent des semaines à atteindre le fond.", '*Marine snow.*')),
+ 'Searches in the early nineteen eighties': ('missed', (12500, 'In nineteen eighty-three, one of those sonars passed right over the Titanic, and never noticed it.',
+  'Neunzehnhundertdreiundachtzig fuhr eines dieser Sonare direkt über die Titanic hinweg und bemerkte sie nicht.',
+  'En mil novecientos ochenta y tres, uno de esos sonares pasó justo por encima del Titanic y no lo detectó.',
+  "En mille neuf cent quatre-vingt-trois, l'un de ces sonars est passé juste au-dessus du Titanic, sans le remarquer.", 'Right *over* it.')),
+ 'Around them lies a field of debris': ('bigpiece', (12500, 'In nineteen ninety-six, a company tried to lift a twenty-ton piece of the hull. It rose to within two hundred feet of the surface. Then the ropes snapped, and it fell twelve thousand feet back to the bottom. Two years later, they tried again, and it worked.',
+  'Neunzehnhundertsechsundneunzig versuchte eine Firma, ein zwanzig Tonnen schweres Stück des Rumpfes zu heben. Es kam bis auf sechzig Meter an die Oberfläche. Dann rissen die Seile, und es fiel dreitausendsiebenhundert Meter zurück. Zwei Jahre später klappte es.',
+  'En mil novecientos noventa y seis, una empresa intentó subir un trozo del casco de veinte toneladas. Llegó a sesenta metros de la superficie. Entonces se rompieron las cuerdas y cayó tres mil setecientos metros de vuelta al fondo. Dos años después, lo lograron.',
+  "En mille neuf cent quatre-vingt-seize, une entreprise a tenté de remonter un morceau de coque de vingt tonnes. Il est arrivé à soixante mètres de la surface. Puis les câbles ont cédé, et il est retombé de trois mille sept cents mètres. Deux ans plus tard, ça a marché.", 'The ropes *snapped.*')),
+ 'In nineteen eighty-six, a small robot': ('baths', (12500, 'Some rooms survived surprisingly well. In two thousand five, the Turkish baths were found in excellent condition, with their blue-green tiles and carved teak.',
+  'Manche Räume haben erstaunlich gut überdauert. Zweitausendfünf fand man das türkische Bad in hervorragendem Zustand, mit blaugrünen Fliesen und geschnitztem Teakholz.',
+  'Algunas salas sobrevivieron sorprendentemente bien. En dos mil cinco, los baños turcos aparecieron en excelente estado, con sus azulejos verdeazulados y su teca tallada.',
+  "Certaines pièces ont étonnamment bien résisté. En deux mille cinq, les bains turcs ont été retrouvés en excellent état, avec leurs carreaux bleu-vert et leur teck sculpté.", 'The *Turkish baths.*')),
+ 'In nineteen ninety-one, scientists counted': ('growth', (12500, 'And the life keeps growing. In nineteen ninety-six, explorers counted seventy-five percent more brittle stars and sea cucumbers than in nineteen eighty-five.',
+  'Und das Leben wächst weiter. Neunzehnhundertsechsundneunzig zählten Forscher fünfundsiebzig Prozent mehr Schlangensterne und Seegurken als neunzehnhundertfünfundachtzig.',
+  'Y la vida sigue creciendo. En mil novecientos noventa y seis, los exploradores contaron un setenta y cinco por ciento más de ofiuras y pepinos de mar que en mil novecientos ochenta y cinco.',
+  "Et la vie continue de croître. En mille neuf cent quatre-vingt-seize, on a compté soixante-quinze pour cent d'ophiures et de concombres de mer de plus qu'en mille neuf cent quatre-vingt-cinq.", '*75 percent* more.')),
+ 'And the life keeps growing': ('wood', (12500, 'Wood-boring creatures ate the decks, the paneling and the furniture. When the wood ran out, they died, and left only their empty tubes.',
+  'Holzbohrende Tiere fraßen die Decks, die Vertäfelung und die Möbel. Als das Holz aufgebraucht war, starben sie und hinterließen nur ihre leeren Röhren.',
+  'Animales perforadores se comieron las cubiertas, los paneles y los muebles. Cuando se acabó la madera, murieron, y solo dejaron sus tubos vacíos.',
+  "Des animaux mangeurs de bois ont dévoré les ponts, les boiseries et les meubles. Quand le bois a manqué, ils sont morts, en ne laissant que leurs tubes vides.", 'They ate the *wood.*')),
+ 'Together, these bacteria are estimated': ('tons650', (12500, 'One microbiologist estimates that the bow alone now carries some six hundred fifty tons of rusticles.',
+  'Ein Mikrobiologe schätzt, dass allein am Bug inzwischen rund sechshundertfünfzig Tonnen Rostikel hängen.',
+  'Un microbiólogo calcula que solo la proa sostiene ya unas seiscientas cincuenta toneladas de rustículas.',
+  "Un microbiologiste estime que la proue à elle seule porte désormais quelque six cent cinquante tonnes de rusticles.", '*650 tons* of rusticles.')),
+}
+KEYS = ['eat', 'soton', 'dock', 'ice', 'comp', 'andrews', 'boats', 'sink', 'smith', 'cold', 'carp', 'surv', 'plan', 'bow45', 'light', 'funnels', 'midnight', 'snow',
+        'stern', 'explode', 'spiral', 'impact', 'pancake', 'years73', 'pingpong', 'nitrogen', 'psi', 'monkey', 'missed', 'ballard', 'sonar', 'argo', 'boiler', 'found',
+        'map', 'pieces', 'debris', 'bigpiece', 'stair', 'baths', 'shoes', 'freeze', 'species', 'growth', 'wood', 'bacteria', 'rusticles', 'halomonas', 'lbs', 'tons650',
+        'tub', 'damage', 'timeline', 'stain', 'grave', 'cta']
+
+def _expand(rows):
+    out = []
+    for r in rows:
+        out.append(r)
+        while not isinstance(out[-1][0], str):
+            hit = next((v for k, v in NEW.items() if out[-1][1].startswith(k)), None)
+            if not hit: break
+            out.append(hit[1])
+    return out
+ROWS = _expand(ROWS)
+
 E = {'ep': 169, 'title': 'A Journey Down to the Titanic', 'wide': True, 'style': 'pro', 'look': 'cine', 'captions': True, 'wordCaps': True,
      'noOutro': True, 'transition': 'fade', 'tight': True, 'tail': 0.35, 'voice': 'narrator', 'voice_style': 'story', 'speed': 1.0, 'sub': 1,
      'lazyClips': True, 'mood': 'deep', 'langs': ['en', 'de', 'es', 'fr'], 'scripts': ['tech.js', 'pro.js'], 'capY': 1010, 'capX': 820, 'capSize': 44, 'openMin': 1.6,
@@ -239,17 +292,19 @@ for r in ROWS:
     E['scenes'].append({'dur': 1.6, 'depth': d, 'vo': [seg]})
 first = E['scenes'].pop(0); first['vo'][0]['at'] = 0.3; E['vo_open'] = first['vo']; E['depth_open'] = 12500
 E['chapters'] = [[n, max(-1, i - 1)] for n, i in E['chapters']]
+assert len(E['scenes']) == len(KEYS), (len(E['scenes']), len(KEYS))
+for sc, k in zip(E['scenes'], KEYS): sc['vis'] = k            # cine/169.js: VIS.<key>
 PH = [('music', None, 'File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3'),
  ('bow', 'img', 'File:Titanic wreck bow.jpg'), ('rust', 'img', 'File:Detached rusticles hires.jpg'), ('tub', 'img', "File:Captain Smith's bathroom.jpg"),
- ('coal', 'img', 'File:Coal from the Titanic.jpg'), ('model', 'img', 'File:Titanic wreck model.jpg'),
- ('soton', 'img', 'File:RMS Titanic 3.jpg'), ('gym', 'img', "File:Titanic's first class gymnasium.jpg"), ('berg', 'img', 'File:Titanic iceberg.jpg'),
+ ('coal', 'img', 'File:Coal from the Titanic.jpg'),
+ ('soton', 'img', 'File:RMS Titanic 3.jpg'), ('berg', 'img', 'File:Titanic iceberg.jpg'),
  ('nyt', 'img', 'File:19120415 New Liner Titanic Hits an Iceberg - The New York Times.png'), ('boat', 'img', 'File:Titanic lifeboat.jpg'),
  ('stower', 'img', 'File:Stöwer Titanic.jpg'), ('surv', 'img', 'File:Survivors of TITANIC aboard CARPATHIA LCCN2001704332.jpg'),
- ('pier', 'img', 'File:Crowd at Pier 54 awaiting Carpathia arrival 1912.jpg'), ('plan', 'img', 'File:Titanic side plan annotated English.png'),
- ('stair', 'img', 'File:Olympic First Class Staircase.jpg'), ('smith', 'img', 'File:EJ Smith.jpg'), ('rattail', 'img', 'File:Expl9749 (14318998877).jpg'),
+ ('plan', 'img', 'File:Titanic side plan annotated English.png'),
+ ('stair', 'img', 'File:Olympic First Class Staircase.jpg'), ('gym', 'img', "File:Titanic's first class gymnasium.jpg"), ('rattail', 'img', 'File:Expl9749 (14318998877).jpg'),
  ('alvin', 'img', 'File:Alvin (DSV-2) raised by Atlantis II.jpg'),
  ('dock', (12, 14), 'File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm'),
- ('captain', (66, 10), 'File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm'),
+ ('captain', (69, 9), 'File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm'),
  ('ice', (96, 20), 'File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm'),
  ('carp', (130, 16), 'File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm'),
  ('crowd', (288, 16), 'File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm'),

@@ -61,16 +61,8 @@
    "file": "File:Coal from the Titanic.jpg"
   },
   {
-   "id": "model",
-   "file": "File:Titanic wreck model.jpg"
-  },
-  {
    "id": "soton",
    "file": "File:RMS Titanic 3.jpg"
-  },
-  {
-   "id": "gym",
-   "file": "File:Titanic's first class gymnasium.jpg"
   },
   {
    "id": "berg",
@@ -93,10 +85,6 @@
    "file": "File:Survivors of TITANIC aboard CARPATHIA LCCN2001704332.jpg"
   },
   {
-   "id": "pier",
-   "file": "File:Crowd at Pier 54 awaiting Carpathia arrival 1912.jpg"
-  },
-  {
    "id": "plan",
    "file": "File:Titanic side plan annotated English.png"
   },
@@ -105,8 +93,8 @@
    "file": "File:Olympic First Class Staircase.jpg"
   },
   {
-   "id": "smith",
-   "file": "File:EJ Smith.jpg"
+   "id": "gym",
+   "file": "File:Titanic's first class gymnasium.jpg"
   },
   {
    "id": "rattail",
@@ -126,8 +114,8 @@
   {
    "id": "captain",
    "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
-   "from": 66,
-   "len": 10,
+   "from": 69,
+   "len": 9,
    "fps": 30
   },
   {
@@ -210,7 +198,8 @@
      "at": 0.45,
      "cap": "What is *eating* it?"
     }
-   ]
+   ],
+   "vis": "eat"
   },
   {
    "dur": 1.6,
@@ -224,7 +213,8 @@
      "at": 0.45,
      "cap": "The *largest ship* afloat."
     }
-   ]
+   ],
+   "vis": "soton"
   },
   {
    "dur": 1.6,
@@ -238,7 +228,8 @@
      "at": 0.45,
      "cap": "Over *2,200* people."
     }
-   ]
+   ],
+   "vis": "dock"
   },
   {
    "dur": 1.6,
@@ -252,7 +243,8 @@
      "at": 0.45,
      "cap": "*11:40 pm.* An iceberg."
     }
-   ]
+   ],
+   "vis": "ice"
   },
   {
    "dur": 1.6,
@@ -266,7 +258,23 @@
      "at": 0.45,
      "cap": "*Six* of *sixteen* compartments."
     }
-   ]
+   ],
+   "vis": "comp"
+  },
+  {
+   "dur": 1.6,
+   "depth": 0,
+   "vo": [
+    {
+     "text": "The ship's designer, Thomas Andrews, checked the damage. He predicted she could stay afloat for roughly two hours. He was right.",
+     "de": "Der Konstrukteur des Schiffs, Thomas Andrews, prüfte den Schaden. Er sagte voraus, dass sie sich etwa zwei Stunden halten würde. Er behielt recht.",
+     "es": "El diseñador del barco, Thomas Andrews, revisó los daños. Predijo que aguantaría a flote unas dos horas. Tenía razón.",
+     "fr": "Le concepteur du navire, Thomas Andrews, a examiné les dégâts. Il a prédit qu'il resterait à flot environ deux heures. Il avait raison.",
+     "at": 0.45,
+     "cap": "Roughly *two hours.*"
+    }
+   ],
+   "vis": "andrews"
   },
   {
    "dur": 1.6,
@@ -280,7 +288,8 @@
      "at": 0.45,
      "cap": "Room for *1,178.*"
     }
-   ]
+   ],
+   "vis": "boats"
   },
   {
    "dur": 1.6,
@@ -294,7 +303,23 @@
      "at": 0.45,
      "cap": "*2:20 am.*"
     }
-   ]
+   ],
+   "vis": "sink"
+  },
+  {
+   "dur": 1.6,
+   "depth": 0,
+   "vo": [
+    {
+     "text": "Captain Edward Smith went down with his ship.",
+     "de": "Kapitän Edward Smith ging mit seinem Schiff unter.",
+     "es": "El capitán Edward Smith se hundió con su barco.",
+     "fr": "Le capitaine Edward Smith a sombré avec son navire.",
+     "at": 0.45,
+     "cap": "Captain *Edward Smith.*"
+    }
+   ],
+   "vis": "smith"
   },
   {
    "dur": 1.6,
@@ -308,7 +333,8 @@
      "at": 0.45,
      "cap": "About *1,500* people die."
     }
-   ]
+   ],
+   "vis": "cold"
   },
   {
    "dur": 1.6,
@@ -322,7 +348,8 @@
      "at": 0.45,
      "cap": "Just over *700* survivors."
     }
-   ]
+   ],
+   "vis": "carp"
   },
   {
    "dur": 1.6,
@@ -336,7 +363,8 @@
      "at": 0.45,
      "cap": "Not in *one piece.*"
     }
-   ]
+   ],
+   "vis": "surv"
   },
   {
    "dur": 1.6,
@@ -350,7 +378,8 @@
      "at": 0.45,
      "cap": "Torn *in two.*"
     }
-   ]
+   ],
+   "vis": "plan"
   },
   {
    "dur": 1.6,
@@ -364,7 +393,8 @@
      "at": 0.45,
      "cap": "About *45 degrees.*"
     }
-   ]
+   ],
+   "vis": "bow45"
   },
   {
    "dur": 1.6,
@@ -378,7 +408,8 @@
      "at": 0.45,
      "cap": "Only *1%* of the light."
     }
-   ]
+   ],
+   "vis": "light"
   },
   {
    "dur": 1.6,
@@ -392,7 +423,8 @@
      "at": 0.45,
      "cap": "The *funnels* were swept away."
     }
-   ]
+   ],
+   "vis": "funnels"
   },
   {
    "dur": 1.6,
@@ -406,7 +438,23 @@
      "at": 0.45,
      "cap": "The *midnight zone.*"
     }
-   ]
+   ],
+   "vis": "midnight"
+  },
+  {
+   "dur": 1.6,
+   "depth": 4500,
+   "vo": [
+    {
+     "text": "All the way down falls marine snow: tiny flakes of dead plankton and waste, sinking from the waters above. Some take weeks to reach the bottom.",
+     "de": "Auf dem ganzen Weg fällt Meeresschnee: winzige Flocken aus totem Plankton und Abfall, die von oben herabsinken. Manche brauchen Wochen bis zum Grund.",
+     "es": "Durante todo el descenso cae nieve marina: copos diminutos de plancton muerto y desechos que bajan desde arriba. Algunos tardan semanas en llegar al fondo.",
+     "fr": "Tout au long de la descente tombe la neige marine : de minuscules flocons de plancton mort et de déchets venus d'en haut. Certains mettent des semaines à atteindre le fond.",
+     "at": 0.45,
+     "cap": "*Marine snow.*"
+    }
+   ],
+   "vis": "snow"
   },
   {
    "dur": 1.6,
@@ -420,7 +468,8 @@
      "at": 0.45,
      "cap": "Air pockets *imploded.*"
     }
-   ]
+   ],
+   "vis": "stern"
   },
   {
    "dur": 1.6,
@@ -434,7 +483,8 @@
      "at": 0.45,
      "cap": "*Ten seconds* later."
     }
-   ]
+   ],
+   "vis": "explode"
   },
   {
    "dur": 1.6,
@@ -448,7 +498,8 @@
      "at": 0.45,
      "cap": "Like a *helicopter blade.*"
     }
-   ]
+   ],
+   "vis": "spiral"
   },
   {
    "dur": 1.6,
@@ -462,7 +513,8 @@
      "at": 0.45,
      "cap": "*23 mph* into the mud."
     }
-   ]
+   ],
+   "vis": "impact"
   },
   {
    "dur": 1.6,
@@ -476,7 +528,8 @@
      "at": 0.45,
      "cap": "No deck over *1 foot* high."
     }
-   ]
+   ],
+   "vis": "pancake"
   },
   {
    "dur": 1.6,
@@ -490,7 +543,8 @@
      "at": 0.45,
      "cap": "*73 years.*"
     }
-   ]
+   ],
+   "vis": "years73"
   },
   {
    "dur": 1.6,
@@ -504,7 +558,8 @@
      "at": 0.45,
      "cap": "*Ping-pong balls.*"
     }
-   ]
+   ],
+   "vis": "pingpong"
   },
   {
    "dur": 1.6,
@@ -518,7 +573,8 @@
      "at": 0.45,
      "cap": "*Half a million tons* of liquid nitrogen."
     }
-   ]
+   ],
+   "vis": "nitrogen"
   },
   {
    "dur": 1.6,
@@ -532,7 +588,8 @@
      "at": 0.45,
      "cap": "*6,000 psi.*"
     }
-   ]
+   ],
+   "vis": "psi"
   },
   {
    "dur": 1.6,
@@ -546,7 +603,23 @@
      "at": 0.45,
      "cap": "*It's us or the monkey.*"
     }
-   ]
+   ],
+   "vis": "monkey"
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vo": [
+    {
+     "text": "In nineteen eighty-three, one of those sonars passed right over the Titanic, and never noticed it.",
+     "de": "Neunzehnhundertdreiundachtzig fuhr eines dieser Sonare direkt über die Titanic hinweg und bemerkte sie nicht.",
+     "es": "En mil novecientos ochenta y tres, uno de esos sonares pasó justo por encima del Titanic y no lo detectó.",
+     "fr": "En mille neuf cent quatre-vingt-trois, l'un de ces sonars est passé juste au-dessus du Titanic, sans le remarquer.",
+     "at": 0.45,
+     "cap": "Right *over* it."
+    }
+   ],
+   "vis": "missed"
   },
   {
    "dur": 1.6,
@@ -560,7 +633,8 @@
      "at": 0.45,
      "cap": "Follow the *debris trail.*"
     }
-   ]
+   ],
+   "vis": "ballard"
   },
   {
    "dur": 1.6,
@@ -574,7 +648,8 @@
      "at": 0.45,
      "cap": "Missed by *a few hundred yards.*"
     }
-   ]
+   ],
+   "vis": "sonar"
   },
   {
    "dur": 1.6,
@@ -588,7 +663,8 @@
      "at": 0.45,
      "cap": "Searching with *cameras.*"
     }
-   ]
+   ],
+   "vis": "argo"
   },
   {
    "dur": 1.6,
@@ -602,7 +678,8 @@
      "at": 0.45,
      "cap": "*A boiler.*"
     }
-   ]
+   ],
+   "vis": "boiler"
   },
   {
    "dur": 1.6,
@@ -616,7 +693,8 @@
      "at": 0.45,
      "cap": "The *first pictures* in 73 years."
     }
-   ]
+   ],
+   "vis": "found"
   },
   {
    "dur": 1.6,
@@ -630,7 +708,8 @@
      "at": 0.45,
      "cap": "*2,000 feet* apart."
     }
-   ]
+   ],
+   "vis": "map"
   },
   {
    "dur": 1.6,
@@ -644,7 +723,8 @@
      "at": 0.45,
      "cap": "Bow *470 ft.* Stern *350 ft.*"
     }
-   ]
+   ],
+   "vis": "pieces"
   },
   {
    "dur": 1.6,
@@ -658,7 +738,23 @@
      "at": 0.45,
      "cap": "Wine bottles, *still corked.*"
     }
-   ]
+   ],
+   "vis": "debris"
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vo": [
+    {
+     "text": "In nineteen ninety-six, a company tried to lift a twenty-ton piece of the hull. It rose to within two hundred feet of the surface. Then the ropes snapped, and it fell twelve thousand feet back to the bottom. Two years later, they tried again, and it worked.",
+     "de": "Neunzehnhundertsechsundneunzig versuchte eine Firma, ein zwanzig Tonnen schweres Stück des Rumpfes zu heben. Es kam bis auf sechzig Meter an die Oberfläche. Dann rissen die Seile, und es fiel dreitausendsiebenhundert Meter zurück. Zwei Jahre später klappte es.",
+     "es": "En mil novecientos noventa y seis, una empresa intentó subir un trozo del casco de veinte toneladas. Llegó a sesenta metros de la superficie. Entonces se rompieron las cuerdas y cayó tres mil setecientos metros de vuelta al fondo. Dos años después, lo lograron.",
+     "fr": "En mille neuf cent quatre-vingt-seize, une entreprise a tenté de remonter un morceau de coque de vingt tonnes. Il est arrivé à soixante mètres de la surface. Puis les câbles ont cédé, et il est retombé de trois mille sept cents mètres. Deux ans plus tard, ça a marché.",
+     "at": 0.45,
+     "cap": "The ropes *snapped.*"
+    }
+   ],
+   "vis": "bigpiece"
   },
   {
    "dur": 1.6,
@@ -672,7 +768,23 @@
      "at": 0.45,
      "cap": "Chandeliers *still hanging.*"
     }
-   ]
+   ],
+   "vis": "stair"
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vo": [
+    {
+     "text": "Some rooms survived surprisingly well. In two thousand five, the Turkish baths were found in excellent condition, with their blue-green tiles and carved teak.",
+     "de": "Manche Räume haben erstaunlich gut überdauert. Zweitausendfünf fand man das türkische Bad in hervorragendem Zustand, mit blaugrünen Fliesen und geschnitztem Teakholz.",
+     "es": "Algunas salas sobrevivieron sorprendentemente bien. En dos mil cinco, los baños turcos aparecieron en excelente estado, con sus azulejos verdeazulados y su teca tallada.",
+     "fr": "Certaines pièces ont étonnamment bien résisté. En deux mille cinq, les bains turcs ont été retrouvés en excellent état, avec leurs carreaux bleu-vert et leur teck sculpté.",
+     "at": 0.45,
+     "cap": "The *Turkish baths.*"
+    }
+   ],
+   "vis": "baths"
   },
   {
    "dur": 1.6,
@@ -686,7 +798,8 @@
      "at": 0.45,
      "cap": "Pairs of *shoes.*"
     }
-   ]
+   ],
+   "vis": "shoes"
   },
   {
    "dur": 1.6,
@@ -700,7 +813,8 @@
      "at": 0.45,
      "cap": "They were *wrong.*"
     }
-   ]
+   ],
+   "vis": "freeze"
   },
   {
    "dur": 1.6,
@@ -714,7 +828,38 @@
      "at": 0.45,
      "cap": "*28 species.*"
     }
-   ]
+   ],
+   "vis": "species"
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vo": [
+    {
+     "text": "And the life keeps growing. In nineteen ninety-six, explorers counted seventy-five percent more brittle stars and sea cucumbers than in nineteen eighty-five.",
+     "de": "Und das Leben wächst weiter. Neunzehnhundertsechsundneunzig zählten Forscher fünfundsiebzig Prozent mehr Schlangensterne und Seegurken als neunzehnhundertfünfundachtzig.",
+     "es": "Y la vida sigue creciendo. En mil novecientos noventa y seis, los exploradores contaron un setenta y cinco por ciento más de ofiuras y pepinos de mar que en mil novecientos ochenta y cinco.",
+     "fr": "Et la vie continue de croître. En mille neuf cent quatre-vingt-seize, on a compté soixante-quinze pour cent d'ophiures et de concombres de mer de plus qu'en mille neuf cent quatre-vingt-cinq.",
+     "at": 0.45,
+     "cap": "*75 percent* more."
+    }
+   ],
+   "vis": "growth"
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vo": [
+    {
+     "text": "Wood-boring creatures ate the decks, the paneling and the furniture. When the wood ran out, they died, and left only their empty tubes.",
+     "de": "Holzbohrende Tiere fraßen die Decks, die Vertäfelung und die Möbel. Als das Holz aufgebraucht war, starben sie und hinterließen nur ihre leeren Röhren.",
+     "es": "Animales perforadores se comieron las cubiertas, los paneles y los muebles. Cuando se acabó la madera, murieron, y solo dejaron sus tubos vacíos.",
+     "fr": "Des animaux mangeurs de bois ont dévoré les ponts, les boiseries et les meubles. Quand le bois a manqué, ils sont morts, en ne laissant que leurs tubes vides.",
+     "at": 0.45,
+     "cap": "They ate the *wood.*"
+    }
+   ],
+   "vis": "wood"
   },
   {
    "dur": 1.6,
@@ -728,7 +873,8 @@
      "at": 0.45,
      "cap": "*Bacteria.*"
     }
-   ]
+   ],
+   "vis": "bacteria"
   },
   {
    "dur": 1.6,
@@ -742,7 +888,8 @@
      "at": 0.45,
      "cap": "*Rusticles.*"
     }
-   ]
+   ],
+   "vis": "rusticles"
   },
   {
    "dur": 1.6,
@@ -756,7 +903,8 @@
      "at": 0.45,
      "cap": "Named after *the ship.*"
     }
-   ]
+   ],
+   "vis": "halomonas"
   },
   {
    "dur": 1.6,
@@ -770,7 +918,23 @@
      "at": 0.45,
      "cap": "*400 pounds* a day."
     }
-   ]
+   ],
+   "vis": "lbs"
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vo": [
+    {
+     "text": "One microbiologist estimates that the bow alone now carries some six hundred fifty tons of rusticles.",
+     "de": "Ein Mikrobiologe schätzt, dass allein am Bug inzwischen rund sechshundertfünfzig Tonnen Rostikel hängen.",
+     "es": "Un microbiólogo calcula que solo la proa sostiene ya unas seiscientas cincuenta toneladas de rustículas.",
+     "fr": "Un microbiologiste estime que la proue à elle seule porte désormais quelque six cent cinquante tonnes de rusticles.",
+     "at": 0.45,
+     "cap": "*650 tons* of rusticles."
+    }
+   ],
+   "vis": "tons650"
   },
   {
    "dur": 1.6,
@@ -784,7 +948,8 @@
      "at": 0.45,
      "cap": "Captain Smith's *bathtub.*"
     }
-   ]
+   ],
+   "vis": "tub"
   },
   {
    "dur": 1.6,
@@ -798,7 +963,8 @@
      "at": 0.45,
      "cap": "Part of the bow railing: *gone.*"
     }
-   ]
+   ],
+   "vis": "damage"
   },
   {
    "dur": 1.6,
@@ -812,7 +978,8 @@
      "at": 0.45,
      "cap": "As soon as *2030*?"
     }
-   ]
+   ],
+   "vis": "timeline"
   },
   {
    "dur": 1.6,
@@ -826,7 +993,8 @@
      "at": 0.45,
      "cap": "A *rust stain.*"
     }
-   ]
+   ],
+   "vis": "stain"
   },
   {
    "dur": 1.6,
@@ -840,7 +1008,8 @@
      "at": 0.45,
      "cap": "A *grave.*"
     }
-   ]
+   ],
+   "vis": "grave"
   },
   {
    "dur": 1.6,
@@ -854,7 +1023,8 @@
      "at": 0.45,
      "cta": true
     }
-   ]
+   ],
+   "vis": "cta"
   }
  ],
  "chapters": [
@@ -868,23 +1038,23 @@
   ],
   [
    "The fall",
-   10
+   12
   ],
   [
    "Lost for 73 years",
-   21
+   24
   ],
   [
    "The wreck today",
-   30
+   34
   ],
   [
    "The wreck is alive",
-   36
+   42
   ],
   [
    "Will it disappear?",
-   42
+   51
   ]
  ],
  "depth_open": 12500
