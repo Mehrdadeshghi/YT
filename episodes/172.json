@@ -1,0 +1,144 @@
+{
+ "ep": 172,
+ "title": "The fish with the giant mouth (sarcastic fringehead)",
+ "series": "OCEAN",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "ITS MOUTH OPENS",
+  "4× BIGGER."
+ ],
+ "cta": {
+  "q": "Scary or adorable?",
+  "a": "SCARY",
+  "b": "ADORABLE"
+ },
+ "source": "https://en.wikipedia.org/wiki/Sarcastic_fringehead",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "This fish's mouth opens four times bigger.",
+   "de": "Das Maul dieses Fisches öffnet sich auf das Vierfache.",
+   "es": "La boca de este pez se abre cuatro veces más grande.",
+   "fr": "La bouche de ce poisson s'ouvre quatre fois plus grand."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Meet the sarcastic fringehead, off the coast of California. It moves into shells, bottles, even soda cans.",
+     "cap": "It lives in *bottles* and *soda cans.*",
+     "de": "Das ist der Sarkastische Fransenkopf, vor der Küste Kaliforniens. Er zieht in Muscheln, Flaschen, sogar Getränkedosen.",
+     "es": "Te presento al cabeza de fleco sarcástico, frente a la costa de California. Vive en conchas, botellas, hasta latas de refresco.",
+     "fr": "Voici la blennie sarcastique, au large de la Californie. Elle s'installe dans des coquillages, des bouteilles, même des canettes."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Only six to ten inches long. But get close, and it flares a giant, brightly colored mouth.",
+     "cap": "Get close, and it *flares its mouth.*",
+     "de": "Nur fünfzehn bis fünfundzwanzig Zentimeter lang. Aber komm ihm zu nah, und er reißt ein riesiges, knallbuntes Maul auf.",
+     "es": "Solo mide de quince a veinticinco centímetros. Pero acércate, y abre una boca enorme y de colores brillantes.",
+     "fr": "Seulement quinze à vingt-cinq centimètres. Mais approche-toi, et elle déploie une bouche géante aux couleurs vives."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Two males fight by pressing their open mouths together, until one bites the other. The loser loses its home.",
+     "cap": "They fight *mouth to mouth.*",
+     "de": "Zwei Männchen kämpfen, indem sie ihre offenen Mäuler aneinanderdrücken, bis einer zubeißt. Der Verlierer verliert sein Zuhause.",
+     "es": "Dos machos pelean apretando sus bocas abiertas, hasta que uno muerde al otro. El perdedor se queda sin casa.",
+     "fr": "Deux mâles se battent en pressant leurs bouches ouvertes, jusqu'à ce que l'un morde l'autre. Le perdant perd sa maison."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Divers say it can even damage their wetsuits.",
+     "cap": "It can damage *divers' wetsuits.*",
+     "de": "Taucher berichten, dass er sogar ihre Neoprenanzüge beschädigen kann.",
+     "es": "Los buzos cuentan que hasta puede dañar sus trajes de neopreno.",
+     "fr": "Les plongeurs racontent qu'elle peut même abîmer leurs combinaisons."
+    },
+    {
+     "at": "0.15",
+     "text": "Scary or adorable? Comment!",
+     "cta": true,
+     "de": "Gruselig oder süß? Schreib es in die Kommentare!",
+     "es": "¿Da miedo o es adorable? ¡Comenta!",
+     "fr": "Effrayante ou adorable ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Horror Suspense.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 1
+  },
+  {
+   "id": "gape",
+   "file": "File:Fringehead.jpg"
+  },
+  {
+   "id": "tube",
+   "file": "File:Sarcastic fringehead in plastic tube.JPG"
+  },
+  {
+   "id": "hand",
+   "file": "File:Neoclinus blanchardi 141837334.jpg"
+  },
+  {
+   "id": "face",
+   "file": "File:Sarcastic Fringehead (Neoclinus blanchardi) at the Monterey Bay Aquarium.jpg"
+  },
+  {
+   "id": "rock",
+   "file": "File:Sarcastic fringehead.jpg"
+  }
+ ]
+}
