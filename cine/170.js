@@ -43,7 +43,7 @@ VIS[0] = S(() => { const rec = sw('massachusetts', 1.4), se = sw('bell', 2.6), h
       if (t > hu + 0.9) ruler(t, hu + 0.9, x0, 1330, 120 * px, 'TENTACLES: ~120 FT', { size: 34 });
       tag(t, 0, N170);
       if (t > rec) { chip('RECORD · 1865 · MASSACHUSETTS', 540, 470, t, rec, { size: 38, bg: GOLD, fg: BG }); }
-      if (t > hu + 1.2) text('SOME SCIENTISTS DOUBT THIS RECORD', 80, 1450, 'mono', 22, 'rgba(255,255,255,0.6)', { ls: 2 });
+      if (t > hu + 1.2) text('SOME SCIENTISTS DOUBT THIS RECORD', 80, 1410, 'mono', 22, 'rgba(255,255,255,0.6)', { ls: 2 });
       text('DRAWN TO SCALE · ILLUSTRATION', 1000, 1490, 'mono', 22, 'rgba(255,255,255,0.55)', { ls: 3, align: 'right' }); }; }; });
 
 VIS[1] = S(() => { const tw = sw('tentacles', 1.6), ot = sw('other', 3.6);
@@ -65,7 +65,7 @@ VIS[2] = S(() => { const tw = sw('days', 2.6);
       const d = Math.round(25 * easeOut(clamp((t - 0.6) / Math.max(0.5, tw - 0.6))));
       if (t > 0.6) { panel(560, 1250, 420, 170); text(`DAY ${d}`, 770, 1362, 'disp', 84, d >= 25 ? GOLD : TXT, { align: 'center' }); } } }); });
 
-VIS[3] = S(() => { const fi = sw('stung', 2.4), si = sw('single', 4.6);
+VIS[3] = S(() => { const fi = sw('stung', 2.4), si = sw('single', 4.2);
   return (K) => { ks(K, [[0.1, 'whoosh', 0.8], [fi, 'hit', 1.1], [si, 'thump', 1]]);
     return (t) => { atmosphere(t); tag(t, 3, N170);
       const P = shot(t, 'beach', { box: [40, 690, 1000, 760], a: [0.5, 0.62, 1.05], b: [0.5, 0.66, 1.3], dur: 6 }); if (!P) noPhoto(t);
