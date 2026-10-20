@@ -47,7 +47,6 @@ E = {
   {'id': 'music', 'audio': 'File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3', 'from': 50, 'len': 60, 'gain': 0.5},
   {'id': 'deck', 'file': 'File:Psyphrcomp.jpg'},
   {'id': 'live', 'file': 'File:Psychrolutes phrictus 1.jpg'},
-  {'id': 'live2', 'file': 'File:CBNMS Blob Sculpin (49050198258).jpg'},
  ],
 }
 open('episodes/161.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))
