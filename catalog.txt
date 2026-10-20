@@ -1,12 +1,16 @@
-Synanceia verrucosa | Synanceia verrucosa
-Synanceia | Synanceia
-Synanceia horrida | Synanceia horrida
-article: Synanceia
-article: Synanceia verrucosa
-image: stonefish camouflage
-image: stonefish reef
-image: stonefish spines
-image: stonefish sashimi
-image: Synanceia verrucosa
-video: stonefish
-audio: Rafael Krux suspense
+2022 FIFA World Cup final | 2022 FIFA World Cup final
+Lusail Stadium | Lusail Stadium
+Kylian Mbappé | Kylian Mbappé
+Lionel Messi | Lionel Messi
+Emiliano Martínez | Emiliano Martínez
+article: 2022 FIFA World Cup final
+image: Lusail Stadium
+image: Lusail Stadium night
+image: Messi World Cup trophy 2022
+image: Messi Argentina 2022
+image: Mbappé France 2022
+image: Kylian Mbappé World Cup
+image: Emiliano Martínez Argentina
+image: Argentina celebration Buenos Aires 2022
+image: FIFA World Cup Trophy
+audio: Rafael Krux epic
