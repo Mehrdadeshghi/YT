@@ -53,7 +53,7 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "The Japanese spider crab has the biggest leg span of any arthropod on Earth, claw to claw.",
+     "text": "Meet the Japanese spider crab: the biggest leg span of any arthropod on Earth, claw to claw.",
      "cap": "The *biggest leg span* of any arthropod.",
      "de": "Die Japanische Riesenkrabbe hat die größte Beinspannweite aller Gliederfüßer der Erde, von Schere zu Schere.",
      "es": "El cangrejo araña japonés tiene la mayor envergadura de patas de todos los artrópodos, de pinza a pinza.",
@@ -103,7 +103,7 @@
     },
     {
      "at": "0.15",
-     "text": "Would you pet one? Yes or no? Comment!",
+     "text": "Would you ever pet one? Yes or no? Comment!",
      "cta": true,
      "de": "Würdest du eine streicheln? Ja oder nein? Schreib es in die Kommentare!",
      "es": "¿Acariciarías uno? ¿Sí o no? ¡Comenta!",

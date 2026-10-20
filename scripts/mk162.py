@@ -17,7 +17,7 @@ E = {
  'vo_open': [{'at': 0.3, 'text': 'This crab is twelve feet wide.',
    'de': 'Diese Krabbe ist dreieinhalb Meter breit.', 'es': 'Este cangrejo mide tres metros y medio de ancho.', 'fr': 'Ce crabe mesure trois mètres et demi de large.'}],
  'scenes': [
-  S(0, 'The Japanese spider crab has the biggest leg span of any arthropod on Earth, claw to claw.',
+  S(0, 'Meet the Japanese spider crab: the biggest leg span of any arthropod on Earth, claw to claw.',
     'The *biggest leg span* of any arthropod.',
     'Die Japanische Riesenkrabbe hat die größte Beinspannweite aller Gliederfüßer der Erde, von Schere zu Schere.',
     'El cangrejo araña japonés tiene la mayor envergadura de patas de todos los artrópodos, de pinza a pinza.',
@@ -36,7 +36,7 @@ E = {
          de='Um zu wachsen, klettert sie aus ihrem eigenen Panzer. Das dauert etwa hundert Minuten, und die Beine kommen zuletzt.',
          es='Para crecer, sale de su propio caparazón. Tarda unos cien minutos, y las patas salen al final.',
          fr='Pour grandir, il sort de sa propre carapace. Cela prend environ cent minutes, et les pattes sortent en dernier.'),
-    dict(at='0.15', text='Would you pet one? Yes or no? Comment!', cta=True,
+    dict(at='0.15', text='Would you ever pet one? Yes or no? Comment!', cta=True,
          de='Würdest du eine streicheln? Ja oder nein? Schreib es in die Kommentare!', es='¿Acariciarías uno? ¿Sí o no? ¡Comenta!',
          fr='Tu en caresserais un ? Oui ou non ? Commente !')]},
  ],
