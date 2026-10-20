@@ -51,7 +51,7 @@ E = {
   {'id': 'face', 'file': 'File:Pez piedra de arrecife (Synanceia verrucosa), Mauricio, 2025-09-23, DD 36.jpg'},
   {'id': 'sun', 'file': 'File:Stonefish chilling in the sun in Egypt.jpg'},
   {'id': 'market', 'file': 'File:HK KTD 觀塘 Kwun Tong 瑞和街 Shui Wo Street 街市 market July 2022 Px3 150.jpg'},
-  {'id': 'swim', 'video': 'File:Echter Steinfisch - 6207.ogg', 'from': 0, 'len': 35, 'fps': 2},
+  {'id': 'swim', 'video': 'File:Echter Steinfisch - 6207.ogg', 'from': 19, 'len': 7},
  ],
 }
 open('episodes/167.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))
