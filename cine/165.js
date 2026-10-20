@@ -64,7 +64,7 @@ VIS[3] = S(() => { const se = sw('seventy', 1.4), vi = sw('vinegar', 3.6);
     return (t) => { atmosphere(t); tag(t, 3, N165);
       if (t < vi) { const P = shot(t, 'avispa', { box: [40, 690, 1000, 760], a: [0.5, 0.52, 1.0], b: [0.5, 0.56, 1.12], dur: 4 }); if (!P) noPhoto(t);
         realBadge(t, 0.3, 'REAL PHOTO · BOX JELLYFISH (CHIRONEX), AQUARIUM');
-        if (t > se) fact2(t, se, '170+', 'TOXIC PROTEINS', null, { y: 470, size: 120 }); }
+        if (t > se) fact2(t, se, '170+', 'TOXIC PROTEINS', null, { y: 470, size: 84, maxW: 800 }); }
       else { const P = shot(t, 'vinegar', { box: [40, 470, 1000, 1000], a: [0.6, 0.62, 1.05], b: [0.7, 0.68, 1.2], dur: 2.5, t0: vi }); if (!P) noPhoto(t);
         realBadge(t, vi, 'REAL PHOTO · STINGER SIGNS, AUSTRALIA', 410);
         if (P) { const [x, y] = P(0.89, 0.865); ring(t, vi + 0.2, x, y, 110, { spot: false }); callout(t, vi + 0.4, [x - 90, y - 60], 300, 1000, 'VINEGAR FOR FIRST AID', { bg: GOLD }); } } }; }; });
