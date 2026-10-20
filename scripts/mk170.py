@@ -52,7 +52,6 @@ E = {
   {'id': 'fjord', 'file': "File:Lion's mane jellyfish in Gullmarn fjord at Sämstad 3.jpg"},
   {'id': 'under', 'file': "File:Lion's mane jellyfish open showing underside.jpg"},
   {'id': 'moon', 'file': "File:Three moon jellyfishes captured by a lion's mane jellyfish 1.jpg"},
-  {'id': 'torn', 'file': "File:Lion's Mane Jellyfish (Cyanea capillata), Troon, South Ayrshire - detail.jpg"},
   {'id': 'beach', 'file': 'File:Amager East, Copenhagen, Denmark - panoramio (11).jpg'},
  ],
 }
