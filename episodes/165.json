@@ -123,28 +123,18 @@
   {
    "id": "swim",
    "video": "File:Carybdea Civitavecchia (2013).webm",
-   "from": 0,
-   "len": 123,
-   "fps": 1
+   "from": 52,
+   "len": 5
   },
   {
-   "id": "rhop",
-   "video": "File:Fixational-Eye-Movements-in-the-Earliest-Stage-of-Metazoan-Evolution-pone.0066442.s001.ogv",
-   "from": 0,
-   "len": 17,
-   "fps": 1
+   "id": "swim2",
+   "video": "File:Carybdea Civitavecchia (2013).webm",
+   "from": 99,
+   "len": 6
   },
   {
    "id": "trip",
    "file": "File:Tripedalia-cystophora-Bielecki.jpg"
-  },
-  {
-   "id": "sea1",
-   "file": "File:Mittelmeer Seewespe Carybdea marsupialis 1.jpg"
-  },
-  {
-   "id": "sea2",
-   "file": "File:Mittelmeer Seewespe Carybdea marsupialis 2.jpg"
   },
   {
    "id": "avispa",
@@ -153,10 +143,6 @@
   {
    "id": "vinegar",
    "file": "File:Australia - Marine Stingers (Vinegar depot).jpg"
-  },
-  {
-   "id": "eye",
-   "file": "File:Auge Carybdea marsupialis.jpg"
   }
  ]
 }

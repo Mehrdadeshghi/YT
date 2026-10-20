@@ -49,14 +49,11 @@ E = {
  ],
  'photos': [
   {'id': 'music', 'audio': 'File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3', 'from': 20, 'len': 60, 'gain': 0.5},
-  {'id': 'swim', **clip('File:Carybdea Civitavecchia (2013).webm', 0, 5, 123)},
-  {'id': 'rhop', **clip('File:Fixational-Eye-Movements-in-the-Earliest-Stage-of-Metazoan-Evolution-pone.0066442.s001.ogv', 0, 5, 17)},
+  {'id': 'swim', **clip('File:Carybdea Civitavecchia (2013).webm', 52, 5, 123)},
+  {'id': 'swim2', **clip('File:Carybdea Civitavecchia (2013).webm', 99, 6, 2)},
   {'id': 'trip', 'file': 'File:Tripedalia-cystophora-Bielecki.jpg'},
-  {'id': 'sea1', 'file': 'File:Mittelmeer Seewespe Carybdea marsupialis 1.jpg'},
-  {'id': 'sea2', 'file': 'File:Mittelmeer Seewespe Carybdea marsupialis 2.jpg'},
   {'id': 'avispa', 'file': 'File:Avispa marina.jpg'},
   {'id': 'vinegar', 'file': 'File:Australia - Marine Stingers (Vinegar depot).jpg'},
-  {'id': 'eye', 'file': 'File:Auge Carybdea marsupialis.jpg'},
  ],
 }
 open('episodes/165.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))
