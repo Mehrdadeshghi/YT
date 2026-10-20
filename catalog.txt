@@ -1,11 +1,12 @@
-Barreleye | Macropinna microstoma
-Opisthoproctidae | Opisthoproctidae
-article: Barreleye
-article: Macropinna microstoma
-article: Opisthoproctidae
-image: Macropinna microstoma
-image: barreleye fish
-video: barreleye
-video: Macropinna
-video: deep sea fish NOAA Okeanos
-video: deep sea fish transparent head
+Scotoplanes | Scotoplanes
+Elpidiidae | Elpidiidae
+article: Scotoplanes
+article: Sea cucumber
+article: Elpidiidae
+image: Scotoplanes
+image: sea pig
+image: Elpidiidae NOAA
+video: Scotoplanes
+video: sea cucumber deep sea NOAA
+video: sea pig
+audio: Rafael Krux
