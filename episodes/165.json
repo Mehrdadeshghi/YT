@@ -1,0 +1,162 @@
+{
+ "ep": 165,
+ "title": "24 eyes. No brain.",
+ "series": "OCEAN",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "24 EYES.",
+  "NO BRAIN."
+ ],
+ "cta": {
+  "q": "Still going in the water?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Box_jellyfish",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "Twenty-four eyes. No brain.",
+   "de": "Vierundzwanzig Augen. Kein Gehirn.",
+   "es": "Veinticuatro ojos. Sin cerebro.",
+   "fr": "Vingt-quatre yeux. Pas de cerveau."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "A box jellyfish has six eyes on each of its four sides. Two in each cluster even have a lens and a retina, like yours.",
+     "cap": "*6 eyes* on each of its *4 sides.* Some have a *lens* and a *retina.*",
+     "de": "Eine Würfelqualle hat sechs Augen an jeder ihrer vier Seiten. Zwei davon haben sogar eine Linse und eine Netzhaut, wie deine.",
+     "es": "Una medusa de caja tiene seis ojos en cada uno de sus cuatro lados. Dos de ellos tienen incluso lente y retina, como los tuyos.",
+     "fr": "Une méduse-boîte a six yeux sur chacun de ses quatre côtés. Deux d'entre eux ont même un cristallin et une rétine, comme les tiens."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "One eye looks straight up, out of the water, so it can steer by the trees above.",
+     "cap": "One eye looks *up, out of the water,* to steer by the *trees.*",
+     "de": "Ein Auge schaut senkrecht nach oben, aus dem Wasser heraus, damit sie sich an den Bäumen orientieren kann.",
+     "es": "Un ojo mira hacia arriba, fuera del agua, para guiarse por los árboles.",
+     "fr": "Un œil regarde droit vers le haut, hors de l'eau, pour se repérer grâce aux arbres."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "And it doesn't just drift. It hunts fish, at up to four point six miles an hour.",
+     "cap": "It doesn't drift. It *hunts,* at up to *4.6 mph.*",
+     "de": "Und sie treibt nicht einfach. Sie jagt Fische, mit bis zu sieben Kilometern pro Stunde.",
+     "es": "Y no solo flota a la deriva. Caza peces, a hasta siete kilómetros por hora.",
+     "fr": "Et elle ne fait pas que dériver. Elle chasse des poissons, jusqu'à sept kilomètres à l'heure."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its venom holds over a hundred and seventy toxic proteins. That is why Australian beaches keep vinegar ready for first aid.",
+     "cap": "*170+ toxic proteins.* Beaches keep *vinegar* for first aid.",
+     "de": "Ihr Gift enthält über hundertsiebzig giftige Proteine. Deshalb steht an australischen Stränden Essig für die Erste Hilfe bereit.",
+     "es": "Su veneno tiene más de ciento setenta proteínas tóxicas. Por eso las playas australianas tienen vinagre listo para los primeros auxilios.",
+     "fr": "Son venin contient plus de cent soixante-dix protéines toxiques. C'est pour ça que les plages australiennes gardent du vinaigre pour les premiers secours."
+    },
+    {
+     "at": "0.15",
+     "text": "Still going in the water? Yes or no? Comment!",
+     "cta": true,
+     "de": "Gehst du trotzdem ins Wasser? Ja oder nein? Ab in die Kommentare!",
+     "es": "¿Todavía te metes al agua? ¿Sí o no? ¡Comenta!",
+     "fr": "Tu vas quand même dans l'eau ? Oui ou non ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 20,
+   "len": 60,
+   "gain": 0.5
+  },
+  {
+   "id": "swim",
+   "video": "File:Carybdea Civitavecchia (2013).webm",
+   "from": 0,
+   "len": 123,
+   "fps": 1
+  },
+  {
+   "id": "rhop",
+   "video": "File:Fixational-Eye-Movements-in-the-Earliest-Stage-of-Metazoan-Evolution-pone.0066442.s001.ogv",
+   "from": 0,
+   "len": 17,
+   "fps": 1
+  },
+  {
+   "id": "trip",
+   "file": "File:Tripedalia-cystophora-Bielecki.jpg"
+  },
+  {
+   "id": "sea1",
+   "file": "File:Mittelmeer Seewespe Carybdea marsupialis 1.jpg"
+  },
+  {
+   "id": "sea2",
+   "file": "File:Mittelmeer Seewespe Carybdea marsupialis 2.jpg"
+  },
+  {
+   "id": "avispa",
+   "file": "File:Avispa marina.jpg"
+  },
+  {
+   "id": "vinegar",
+   "file": "File:Australia - Marine Stingers (Vinegar depot).jpg"
+  },
+  {
+   "id": "eye",
+   "file": "File:Auge Carybdea marsupialis.jpg"
+  }
+ ]
+}
