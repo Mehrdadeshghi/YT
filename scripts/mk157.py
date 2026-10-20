@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """#157 DEEP SEA — sea pig (Scotoplanes), 20 Oct 2026. Ocean track; 25–28 s; frame-1 surprise ("breathes through its butt").
-Facts: English Wikipedia "Scotoplanes" (Oct 2026): sea cucumbers (Elpidiidae), 4–6 in long; gas exchange through the anus;
+Facts: English Wikipedia "Scotoplanes" (Oct 2026): olfaction locates whale falls; sea cucumbers (Elpidiidae), 4–6 in long; gas exchange through the anus;
 leg-like tube feet inflated/deflated with water (hydraulic); shelter juvenile crabs (Neolithodes diomedeae), reducing their predation risk;
 groups of 300–600 recorded; 1,200–5,000 m (3,900–16,400 ft); brought too close to the surface they disintegrate."""
 import json
 S = lambda vis, text, cap, de, es, fr, **kw: {'dur': 1.6, 'vis': vis, 'vo': [dict(at=0.45, text=text, cap=cap, de=de, es=es, fr=fr, **kw)]}
 E = {
  'ep': 157, 'title': 'It breathes through its butt (sea pig)', 'series': 'DEEP SEA',
- 'look': 'cine', 'captions': True, 'noOutro': True, 'speed': 1.3, 'tight': True, 'sub': 2, 'transition': 'whip', 'facts': True,
+ 'look': 'cine', 'captions': True, 'noOutro': True, 'speed': 1.2, 'tight': True, 'sub': 2, 'transition': 'whip', 'facts': True,
  'recap': False, 'voice': 'narrator', 'wordCaps': True, 'mood': 'calm', 'prog': 3, 'capY': 1700, 'subY': 1520, 'subEndY': 1760,
  'scripts': ['tech.js'], 'langs': ['en', 'de', 'es', 'fr'],
  'hook': ['IT BREATHES', 'THROUGH ITS BUTT.'],
@@ -24,7 +24,10 @@ E = {
   S(1, 'Baby crabs hide underneath it, to stay safe from predators.', 'Baby crabs *hide underneath it.*',
     'Baby-Krabben verstecken sich darunter, um vor Räubern sicher zu sein.', 'Los cangrejos bebé se esconden debajo, a salvo de los depredadores.',
     "Des bébés crabes se cachent dessous, à l'abri des prédateurs."),
-  {'dur': 1.6, 'vis': 2, 'vo': [
+  S(2, 'It finds its favorite meal by smell: a dead whale on the seafloor.', 'Its favorite meal: a *dead whale.*',
+    'Sein Lieblingsessen findet es am Geruch: einen toten Wal auf dem Meeresboden.', 'Encuentra su comida favorita por el olor: una ballena muerta en el fondo del mar.',
+    "Il trouve son plat préféré à l'odeur : une baleine morte au fond de la mer."),
+  {'dur': 1.6, 'vis': 3, 'vo': [
     dict(at=0.45, text='Herds of up to six hundred live as deep as sixteen thousand four hundred feet. Bring one up to the surface, and it falls apart.',
          cap='Up to *16,400 ft* deep. At the surface it *falls apart.*',
          de='Herden von bis zu sechshundert Tieren leben bis zu fünftausend Meter tief. Holt man eins an die Oberfläche, zerfällt es.',
@@ -37,8 +40,6 @@ E = {
   {'id': 'pig', 'file': 'File:Scotoplanes globosa.jpg'},
   {'id': 'pig1', 'file': 'File:Scotoplanes globosa1.jpg'},
   {'id': 'crab', 'file': 'File:Scotoplanes globosa and crab (cropped).jpg'},
-  {'id': 'feet', 'file': 'File:Scotoplanes Tube Feet.jpg'},
-  {'id': 'elp', 'file': 'File:Unidentified Elasipodida.jpg'},
  ],
 }
 open('episodes/157.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))

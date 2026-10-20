@@ -5,7 +5,7 @@
  "look": "cine",
  "captions": true,
  "noOutro": true,
- "speed": 1.3,
+ "speed": 1.2,
  "tight": true,
  "sub": 2,
  "transition": "whip",
@@ -81,6 +81,20 @@
    "vo": [
     {
      "at": 0.45,
+     "text": "It finds its favorite meal by smell: a dead whale on the seafloor.",
+     "cap": "Its favorite meal: a *dead whale.*",
+     "de": "Sein Lieblingsessen findet es am Geruch: einen toten Wal auf dem Meeresboden.",
+     "es": "Encuentra su comida favorita por el olor: una ballena muerta en el fondo del mar.",
+     "fr": "Il trouve son plat préféré à l'odeur : une baleine morte au fond de la mer."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
      "text": "Herds of up to six hundred live as deep as sixteen thousand four hundred feet. Bring one up to the surface, and it falls apart.",
      "cap": "Up to *16,400 ft* deep. At the surface it *falls apart.*",
      "de": "Herden von bis zu sechshundert Tieren leben bis zu fünftausend Meter tief. Holt man eins an die Oberfläche, zerfällt es.",
@@ -117,14 +131,6 @@
   {
    "id": "crab",
    "file": "File:Scotoplanes globosa and crab (cropped).jpg"
-  },
-  {
-   "id": "feet",
-   "file": "File:Scotoplanes Tube Feet.jpg"
-  },
-  {
-   "id": "elp",
-   "file": "File:Unidentified Elasipodida.jpg"
   }
  ]
 }
