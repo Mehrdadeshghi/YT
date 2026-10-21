@@ -1,13 +1,18 @@
-Hagfish | Myxinidae
-Hagfish | Myxine glutinosa
-Hagfish | Eptatretus stoutii
-image: hagfish
-image: hagfish slime
-image: hagfish knot
-image: Pacific hagfish
-image: hagfish skin
-image: eel skin wallet
-image: Eptatretus
-video: hagfish
-video: hagfish slime
-video: Myxine
+Leicester City 2015-16 | Leicester City F.C. 2015–16 season
+Leicester City players | Leicester City F.C. players
+Leicester title parade | Leicester City F.C. Premier League title celebrations 2016
+King Power Stadium | King Power Stadium
+article: 2015–16 Leicester City F.C. season
+article: 2014–15 Leicester City F.C. season
+image: Leicester City 2016 champions
+image: Leicester City parade 2016
+image: Leicester City Premier League trophy
+image: Jamie Vardy Leicester City 2015
+image: Jamie Vardy 2016
+image: Riyad Mahrez Leicester
+image: Claudio Ranieri Leicester
+image: King Power Stadium 2016
+image: Leicester City fans celebrate
+image: Leicester Clock Tower celebration
+video: Leicester City
+audio: Rafael Krux
