@@ -1,0 +1,158 @@
+{
+ "ep": 185,
+ "title": "Not a jellyfish",
+ "series": "OCEAN",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "NOT A JELLYFISH.",
+  "NOT ONE ANIMAL."
+ ],
+ "cta": {
+  "q": "Ever seen one on a beach?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Portuguese_man_o%27_war",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "This is not a jellyfish. It's not even one animal.",
+   "de": "Das ist keine Qualle. Es ist nicht mal ein einzelnes Tier.",
+   "es": "Esto no es una medusa. Ni siquiera es un solo animal.",
+   "fr": "Ce n'est pas une méduse. Ce n'est même pas un seul animal."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "A colony of tiny clones, all from one single egg. Some only hunt, some only eat, some only breed.",
+     "cap": "A *colony* of clones, from *one egg.* Some *hunt*, some *eat*, some *breed.*",
+     "de": "Eine Kolonie aus winzigen Klonen, alle aus einem einzigen Ei. Manche jagen nur, manche fressen nur, manche pflanzen sich nur fort.",
+     "es": "Una colonia de diminutos clones, todos de un solo huevo. Unos solo cazan, otros solo comen, otros solo se reproducen.",
+     "fr": "Une colonie de minuscules clones, tous issus d'un seul œuf. Certains ne font que chasser, d'autres que manger, d'autres que se reproduire."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The float on top is also its sail. Up to thirteen percent of the gas inside is carbon monoxide.",
+     "cap": "The float is a *sail.* Up to *13%* of its gas: *carbon monoxide.*",
+     "de": "Die Blase oben ist gleichzeitig sein Segel. Bis zu dreizehn Prozent des Gases darin sind Kohlenmonoxid.",
+     "es": "El flotador de arriba también es su vela. Hasta el trece por ciento del gas de dentro es monóxido de carbono.",
+     "fr": "Le flotteur du dessus est aussi sa voile. Jusqu'à treize pour cent du gaz à l'intérieur, c'est du monoxyde de carbone."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Tentacles below: usually thirty feet long. Some reach over a hundred.",
+     "cap": "Tentacles: usually *30 feet.* Some over *100 feet.*",
+     "de": "Die Tentakel darunter: meist rund zehn Meter lang. Manche über dreißig Meter.",
+     "es": "Los tentáculos de abajo: normalmente unos diez metros. Algunos, más de treinta.",
+     "fr": "Les tentacules en dessous : en général une dizaine de mètres. Certains, plus de trente."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Some floats lean left, some lean right. So the wind can blow at most half of them ashore.",
+     "cap": "Some lean *left*, some lean *right.* The wind blows at most *half* ashore.",
+     "de": "Manche Segel neigen sich nach links, manche nach rechts. So kann der Wind höchstens die Hälfte an Land treiben.",
+     "es": "Unas velas se inclinan a la izquierda, otras a la derecha. Así el viento solo puede llevar a la orilla a la mitad, como mucho.",
+     "fr": "Certaines voiles penchent à gauche, d'autres à droite. Le vent ne peut donc pousser au plus que la moitié vers la côte."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Washed up and dead, it can still sting. For hours, even days.",
+     "cap": "Dead on the beach, it can *still sting.* For *hours*, even *days.*",
+     "de": "Angespült und tot kann es immer noch nesseln. Stundenlang, sogar tagelang.",
+     "es": "Varado y muerto, todavía puede picar. Durante horas, incluso días.",
+     "fr": "Échoué et mort, il peut encore piquer. Pendant des heures, voire des jours."
+    },
+    {
+     "at": "0.15",
+     "text": "Ever seen one on a beach? Yes or no? Comment!",
+     "cta": true,
+     "de": "Schon mal eins am Strand gesehen? Ja oder nein? Ab in die Kommentare!",
+     "es": "¿Alguna vez has visto una en la playa? ¿Sí o no? ¡Comenta!",
+     "fr": "Tu en as déjà vu une sur la plage ? Oui ou non ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 70,
+   "len": 60,
+   "gain": 0.5
+  },
+  {
+   "id": "float",
+   "file": "File:Portuguese Man-O-War (Physalia physalis).jpg"
+  },
+  {
+   "id": "close",
+   "file": "File:Physalia physalis close up.jpg"
+  },
+  {
+   "id": "side",
+   "file": "File:Portuguese man-o-war Physalia sp.png"
+  },
+  {
+   "id": "canary",
+   "file": "File:Physalia physalis EM1B0679 (40827501481).jpg"
+  },
+  {
+   "id": "beach",
+   "file": "File:Physalia physalis Boca Raton FL.JPG"
+  }
+ ]
+}
