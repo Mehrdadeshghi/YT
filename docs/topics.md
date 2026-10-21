@@ -21,7 +21,7 @@ Check this list before proposing a topic. Add every new episode here in the same
 #107 The Clever Monkey · #108 The Tortoise and the Hare
 
 ## How It Works (tech)
-#109 Internet / submarine cables · #110 GPS + Einstein · #111 Touchscreen / sausage stylus · #112 Contactless payment · #113 Apple Pay / Google Pay tokens · #114 QR codes + parking-meter scam · #115 Noise-cancelling headphones · #116 Incognito mode · #117 Phone night mode · #118 Wireless charging · #153 Missile guidance (INS, GPS jamming, TERCOM, DSMAC, CEP) · #163 Phone battery in the cold (impedance, shutdown, lithium plating)
+#109 Internet / submarine cables · #110 GPS + Einstein · #111 Touchscreen / sausage stylus · #112 Contactless payment · #113 Apple Pay / Google Pay tokens · #114 QR codes + parking-meter scam · #115 Noise-cancelling headphones · #116 Incognito mode · #117 Phone night mode · #118 Wireless charging · #153 Missile guidance (INS, GPS jamming, TERCOM, DSMAC, CEP) · #163 Phone battery in the cold (impedance, shutdown, lithium plating) · #184 Why airplane windows are round (Comet 1954 "square window" myth, rivet-hole fatigue crack, 3,057-cycle tank test, stress at sharp corners)
 
 ## Body Facts / medicine (AI presenter)
 #119 CPR (song that saves a life) · #120 Sleep paralysis · #121 Roller coaster vs. kidney stones · #122 Migraine · #123 Vitamin D in winter · #124 Antibiotics vs. colds · #125 Cotton swabs · #126 Semmelweis / hand washing · #127 Stroke FAST · #128 Heart attack signs in women

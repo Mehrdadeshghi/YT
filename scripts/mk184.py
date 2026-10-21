@@ -60,7 +60,6 @@ E = {
   {'id': 'win', 'file': 'File:Comet 1 windows.png'},
   {'id': 'adf', 'file': 'File:Comet G-ALYP ADF windows.png'},
   {'id': 'hatch', 'file': 'File:Comet G-ALYU escape hatch failure.png'},
-  {'id': 'modern', 'file': 'File:Window seat view of Finnair flight - 01.jpg'},
   {'id': 'modern2', 'file': 'File:Looking out the cabin window (294744333).jpg'},
  ],
 }
