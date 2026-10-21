@@ -1,10 +1,17 @@
-Portuguese man o' war | Physalia physalis
-article: Portuguese man o' war
-article: Siphonophorae
-image: Physalia physalis
-image: Portuguese man o war beach
-image: Physalia washed ashore
-image: Physalia tentacles
-video: Physalia physalis
-video: Portuguese man o' war
+de Havilland Comet | De Havilland DH.106 Comet 1
+Comet G-ALYP | G-ALYP (aircraft)
+Comet wreckage | BOAC Flight 781
+Aircraft windows | Aircraft windows
+article: de Havilland Comet
+article: BOAC Flight 781
+article: South African Airways Flight 201
+article: Fatigue (material)
+article: Stress concentration
+image: de Havilland Comet 1
+image: Comet G-ALYP wreckage Science Museum
+image: Comet 1 window
+image: airplane window
+image: aircraft cabin window
+image: Comet water tank test Farnborough
+video: de Havilland Comet
 audio: Rafael Krux
