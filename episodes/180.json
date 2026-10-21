@@ -1,0 +1,156 @@
+{
+ "ep": 180,
+ "title": "The shark that bit Navy submarines (cookiecutter shark)",
+ "series": "OCEAN",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "IT ATTACKED",
+  "U.S. NAVY SUBS."
+ ],
+ "cta": {
+  "q": "Would you swim there at night?",
+  "a": "YES",
+  "b": "NO WAY"
+ },
+ "source": "https://en.wikipedia.org/wiki/Cookiecutter_shark",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "The U.S. Navy feared a secret enemy weapon. It was this shark. Under two feet long.",
+   "de": "Die US-Marine fürchtete eine geheime feindliche Waffe. Es war dieser Hai. Keine sechzig Zentimeter lang.",
+   "es": "La Marina de Estados Unidos temía un arma enemiga secreta. Era este tiburón. De menos de sesenta centímetros.",
+   "fr": "La marine américaine craignait une arme ennemie secrète. C'était ce requin. Moins de soixante centimètres."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Nineteen seventies: it bit holes in the sonar domes of Navy submarines. Oil leaked out, and the subs had to go back to base.",
+     "cap": "It bit *Navy submarines.*",
+     "de": "In den Siebzigern biss er Löcher in die Sonarkuppeln von Marine-U-Booten. Öl lief aus, und die U-Boote mussten zurück zur Basis.",
+     "es": "En los años setenta mordió las cúpulas de sonar de submarinos de la Marina. Se salió el aceite, y los submarinos tuvieron que volver a la base.",
+     "fr": "Dans les années soixante-dix, il a troué les dômes sonar de sous-marins de la Marine. L'huile a fui, et les sous-marins ont dû rentrer à la base."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its bite: suction lips grab on, saw teeth slice in, then it twists, and cuts out a round plug, two inches wide.",
+     "cap": "It cuts out a *round plug.*",
+     "de": "Sein Biss: Saug-Lippen halten fest, Sägezähne schneiden, dann dreht er sich und schneidet ein rundes Stück heraus, fünf Zentimeter breit.",
+     "es": "Su mordida: labios de ventosa se pegan, dientes de sierra cortan, luego gira y arranca un trozo redondo de cinco centímetros.",
+     "fr": "Sa morsure : des lèvres ventouses s'accrochent, des dents en scie tranchent, puis il tourne et découpe un morceau rond de cinq centimètres."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its belly glows green. Except one dark collar, that looks like a small fish from below. Hunters come for the fish, and lose a bite.",
+     "cap": "The dark collar *looks like a small fish.*",
+     "de": "Sein Bauch leuchtet grün. Bis auf einen dunklen Kragen, der von unten wie ein kleiner Fisch aussieht. Jäger kommen wegen des Fisches und verlieren ein Stück.",
+     "es": "Su vientre brilla en verde. Salvo un collar oscuro, que desde abajo parece un pez pequeño. Los cazadores vienen por el pez y pierden un bocado.",
+     "fr": "Son ventre brille en vert. Sauf un collier sombre qui, vu d'en bas, ressemble à un petit poisson. Les chasseurs viennent pour le poisson et perdent un morceau."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Whales, seals, even great whites carry its round scars. Off Hawaii, nearly every adult spinner dolphin has them.",
+     "cap": "Off Hawaii: *nearly every spinner dolphin.*",
+     "de": "Wale, Robben, sogar Weiße Haie tragen seine runden Narben. Vor Hawaii hat fast jeder erwachsene Spinnerdelfin welche.",
+     "es": "Ballenas, focas, incluso tiburones blancos llevan sus cicatrices redondas. En Hawái, casi todos los delfines tornillo adultos las tienen.",
+     "fr": "Baleines, phoques, même des grands requins blancs portent ses cicatrices rondes. À Hawaï, presque tous les dauphins à long bec adultes en ont."
+    },
+    {
+     "at": "0.15",
+     "text": "Swim there at night? Yes or no? Comment!",
+     "cta": true,
+     "de": "Würdest du dort nachts schwimmen? Ja oder nein? Schreib es in die Kommentare!",
+     "es": "¿Nadarías ahí de noche? ¿Sí o no? ¡Comenta!",
+     "fr": "Tu nagerais là-bas la nuit ? Oui ou non ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Horror Suspense.ogg",
+   "from": 60,
+   "len": 60,
+   "gain": 1
+  },
+  {
+   "id": "shark",
+   "file": "File:Cookiecutter shark.jpg"
+  },
+  {
+   "id": "front",
+   "file": "File:Isistius brasiliensis front view.jpg"
+  },
+  {
+   "id": "noaa",
+   "file": "File:Cookiecutter shark noaa.jpg"
+  },
+  {
+   "id": "sub",
+   "file": "File:US Navy 061207-N-6536T-045 The Fast attack submarine USS Los Angeles (SSN 688) pulls into the Port of Los Angeles for a namesake city visit.jpg"
+  },
+  {
+   "id": "jaws",
+   "file": "File:Isistius brasiliensis jaws.jpg"
+  },
+  {
+   "id": "bites",
+   "file": "File:Cookie cutter shark bites2.jpg"
+  },
+  {
+   "id": "belly",
+   "file": "File:Isistius brasiliensis belly.jpg"
+  },
+  {
+   "id": "seal",
+   "file": "File:Elephant seal cookiecutter shark bites.jpg"
+  }
+ ]
+}
