@@ -1,0 +1,211 @@
+{
+ "ep": 182,
+ "title": "One octopus, 18 disguises (mimic octopus)",
+ "series": "OCEAN",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "ONE OCTOPUS.",
+  "18 DISGUISES."
+ ],
+ "cta": {
+  "q": "Which disguise is best?",
+  "a": "LIONFISH",
+  "b": "SNAKE"
+ },
+ "source": "https://en.wikipedia.org/wiki/Mimic_octopus",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "One octopus. Up to eighteen different animals.",
+   "de": "Ein Oktopus. Bis zu achtzehn verschiedene Tiere.",
+   "es": "Un pulpo. Hasta dieciocho animales distintos.",
+   "fr": "Une pieuvre. Jusqu'à dix-huit animaux différents."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Mimic octopus. Nobody even knew it existed until nineteen ninety-eight, off Sulawesi, Indonesia.",
+     "cap": "The *mimic octopus.* Discovered in *1998.*",
+     "de": "Der Mimik-Oktopus. Bis neunzehnhundertachtundneunzig wusste niemand, dass es ihn gibt, vor Sulawesi in Indonesien.",
+     "es": "El pulpo mimo. Nadie sabía que existía hasta mil novecientos noventa y ocho, frente a Sulawesi, Indonesia.",
+     "fr": "La pieuvre mimétique. Personne ne savait qu'elle existait avant mille neuf cent quatre-vingt-dix-huit, au large de Sulawesi, en Indonésie."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Lionfish. It spreads its arms out wide, like the spines of a lionfish.",
+     "cap": "Arms out = *lionfish spines.*",
+     "de": "Feuerfisch. Er spreizt seine Arme weit ab, wie die Stacheln eines Feuerfischs.",
+     "es": "Pez león. Abre los brazos como las espinas de un pez león.",
+     "fr": "Poisson-lion. Elle écarte ses bras comme les épines d'un poisson-lion."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Sea snake. It hides six arms and stretches out two. When damselfish attacked one, it turned into their predator: a banded sea snake.",
+     "cap": "Damselfish attack? It becomes a *sea snake.*",
+     "de": "Seeschlange. Er versteckt sechs Arme und streckt zwei aus. Als Riffbarsche einen angriffen, wurde er zu ihrem Feind: einer gebänderten Seeschlange.",
+     "es": "Serpiente marina. Esconde seis brazos y estira dos. Cuando unos peces damisela atacaron a uno, se convirtió en su depredador: una serpiente marina rayada.",
+     "fr": "Serpent de mer. Elle cache six bras et en tend deux. Quand des demoiselles l'ont attaquée, elle est devenue leur prédateur : un serpent de mer rayé."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Flatfish is its favorite. One octopus did it nearly five hundred times in five days.",
+     "cap": "Nearly *500 times* in *5 days.*",
+     "de": "Plattfisch ist sein Favorit. Ein einziger Oktopus machte das fast fünfhundert Mal in fünf Tagen.",
+     "es": "El pez plano es su favorito. Un solo pulpo lo hizo casi quinientas veces en cinco días.",
+     "fr": "Le poisson plat est son préféré. Une seule pieuvre l'a fait près de cinq cents fois en cinq jours."
+    },
+    {
+     "at": "0.15",
+     "text": "Which disguise is best? Lionfish or snake? Comment!",
+     "cta": true,
+     "de": "Welche Verkleidung ist die beste? Feuerfisch oder Schlange? Schreib es in die Kommentare!",
+     "es": "¿Qué disfraz es el mejor? ¿Pez león o serpiente? ¡Comenta!",
+     "fr": "Quel déguisement est le meilleur ? Poisson-lion ou serpent ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 60,
+   "gain": 1
+  },
+  {
+   "id": "m1",
+   "file": "File:Mimic Octopus.jpg"
+  },
+  {
+   "id": "m2",
+   "file": "File:Mimic Octopus2.jpg"
+  },
+  {
+   "id": "m3",
+   "file": "File:Mimic Octopus3.jpg"
+  },
+  {
+   "id": "m4",
+   "file": "File:Mimic Octopus 3.jpg"
+  },
+  {
+   "id": "m5",
+   "file": "File:Mimic Octopus 4.jpg"
+  },
+  {
+   "id": "m6",
+   "file": "File:Mimic Octopus 7.jpg"
+  },
+  {
+   "id": "m7",
+   "file": "File:Mimic octopus 1.jpg"
+  },
+  {
+   "id": "m8",
+   "file": "File:Mimic octopus 2.jpg"
+  },
+  {
+   "id": "m9",
+   "file": "File:Mimic Octopus (14280650118).jpg"
+  },
+  {
+   "id": "m10",
+   "file": "File:Mimic Octopus (14487382603).jpg"
+  },
+  {
+   "id": "m11",
+   "file": "File:Mimic Octopus (14280646758).jpg"
+  },
+  {
+   "id": "m12",
+   "file": "File:Mimic octopus (Thaumoctopus mimicus) (16059533407).jpg"
+  },
+  {
+   "id": "m13",
+   "file": "File:Mimic octopus (Thaumoctopus mimicus) (14217664448).jpg"
+  },
+  {
+   "id": "m14",
+   "file": "File:Mimic octopus (Thaumoctopus mimicus) (41607220955).jpg"
+  },
+  {
+   "id": "m15",
+   "file": "File:Mimic Octopus 1.jpg"
+  },
+  {
+   "id": "m16",
+   "file": "File:Mimic Octopus 6.jpg"
+  },
+  {
+   "id": "lion",
+   "file": "File:Pterois volitans Cologne Zoo 31122014 3.jpg"
+  },
+  {
+   "id": "lion2",
+   "file": "File:Lionfish with Spread Pectoral Fins.jpg"
+  },
+  {
+   "id": "krait",
+   "file": "File:Laticauda colubrina 59741742.jpg"
+  },
+  {
+   "id": "krait2",
+   "file": "File:Laticauda colubrina 59741734.jpg"
+  },
+  {
+   "id": "vid",
+   "video": "File:Mimic Octopus video.webm",
+   "from": 0,
+   "len": 42,
+   "fps": 1
+  }
+ ]
+}
