@@ -1,0 +1,142 @@
+{
+ "ep": 178,
+ "title": "This is not seaweed (leafy seadragon)",
+ "series": "OCEAN",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "THIS IS NOT",
+  "SEAWEED."
+ ],
+ "cta": {
+  "q": "Could you have spotted it?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Leafy_seadragon",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "This is not seaweed. Look again.",
+   "de": "Das ist kein Seetang. Schau noch mal hin.",
+   "es": "Esto no son algas. Mira otra vez.",
+   "fr": "Ce ne sont pas des algues. Regarde encore."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Fish. A leafy seadragon, cousin of the seahorse. Those leaves are skin, grown only for camouflage.",
+     "cap": "A *leafy seadragon.* The leaves? *Skin.*",
+     "de": "Ein Fisch. Ein Großer Fetzenfisch, ein Verwandter des Seepferdchens. Die Blätter sind Haut, nur zur Tarnung.",
+     "es": "Un pez. Un dragón de mar foliáceo, primo del caballito de mar. Esas hojas son piel, solo para camuflarse.",
+     "fr": "Un poisson. Un dragon de mer feuillu, cousin de l'hippocampe. Ces feuilles sont de la peau, juste pour se camoufler."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Tiny fins, almost completely see-through, push it along. So it drifts just like floating seaweed.",
+     "cap": "Fins *almost invisible.* It *drifts* like seaweed.",
+     "de": "Winzige, fast durchsichtige Flossen schieben ihn an. So treibt er wie ein Stück Seetang.",
+     "es": "Unas aletas diminutas, casi transparentes, lo empujan. Así flota igual que un alga.",
+     "fr": "De minuscules nageoires presque transparentes le poussent. Il dérive comme une algue."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Dads carry the eggs. Mom lays up to two hundred fifty bright pink eggs right onto his tail.",
+     "cap": "Up to *250 pink eggs.* On *dad's tail.*",
+     "de": "Die Väter tragen die Eier. Das Weibchen legt bis zu zweihundertfünfzig leuchtend rosa Eier direkt auf seinen Schwanz.",
+     "es": "Los padres llevan los huevos. La hembra pone hasta doscientos cincuenta huevos rosa brillante sobre su cola.",
+     "fr": "Ce sont les pères qui portent les œufs. La femelle pond jusqu'à deux cent cinquante œufs rose vif sur sa queue."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Nine weeks later, they hatch. Only about five percent of the eggs survive.",
+     "cap": "Only about *5 %* survive.",
+     "de": "Neun Wochen später schlüpfen sie. Nur etwa fünf Prozent der Eier überleben.",
+     "es": "Nueve semanas después, eclosionan. Solo sobrevive un cinco por ciento de los huevos.",
+     "fr": "Neuf semaines plus tard, ils éclosent. Seuls cinq pour cent des œufs survivent."
+    },
+    {
+     "at": "0.15",
+     "text": "Could you have spotted it? Yes or no? Comment!",
+     "cta": true,
+     "de": "Hättest du ihn entdeckt? Ja oder nein? Schreib es in die Kommentare!",
+     "es": "¿Lo habrías visto? ¿Sí o no? ¡Comenta!",
+     "fr": "Tu l'aurais repéré ? Oui ou non ? Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 60,
+   "gain": 1
+  },
+  {
+   "id": "hide",
+   "file": "File:Phycodurus eques P2023146 (cropped).JPG"
+  },
+  {
+   "id": "leafy",
+   "file": "File:Leafy Seadragon on Kangaroo Island.jpg"
+  },
+  {
+   "id": "reef",
+   "file": "File:Phycodurus eques P2023150.JPG"
+  },
+  {
+   "id": "swim",
+   "video": "File:Leafy seadragon (Phycodurus eques) eating.webm",
+   "from": 59,
+   "len": 7
+  }
+ ]
+}
