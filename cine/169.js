@@ -43,7 +43,7 @@ function zoneTitle169(t, name, range) { const a = inA(t, 0.3, 0.6) * (1 - inA(t,
   ptext(name, FR169.x + FR169.w / 2, FR169.y + FR169.h / 2 + 10, 110, PRO.txt, { align: 'center', w: 800, ls: 6 }); if (range) ptext(range, FR169.x + FR169.w / 2, FR169.y + FR169.h / 2 + 80, 40, PRO.acc, { align: 'center', ls: 4 }); g.restore(); }
 function chips169(t, list, y0 = FR169.y + FR169.h - 60) { list.forEach(([at, s, col], i) => { if (t > at) pill(s, FR169.x + 30, y0 - (list.length - 1 - i) * 66, t, at, { size: 30, bg: 'rgba(3,8,11,0.85)', color: col || PRO.txt, align: 'left' }); }); }
 // chapter card: dark fade with the chapter name for the first seconds of a chapter's first scene
-function chapter169(t, n, name) { const a = inA(t, 0.15, 0.5) * (1 - inA(t, 3.0, 0.6)); if (a <= 0) return; g.save(); g.globalAlpha = a; g.fillStyle = 'rgba(3,8,11,0.72)'; g.fillRect(FR169.x, FR169.y, FR169.w, FR169.h);
+function chapter169(t, n, name) { if (EP_RAW.from_long) return; const a = inA(t, 0.15, 0.5) * (1 - inA(t, 3.0, 0.6)); if (a <= 0) return; g.save(); g.globalAlpha = a; g.fillStyle = 'rgba(3,8,11,0.72)'; g.fillRect(FR169.x, FR169.y, FR169.w, FR169.h);
   ptext('CHAPTER ' + n, FR169.x + FR169.w / 2, FR169.y + FR169.h / 2 - 50, 30, PRO.acc, { align: 'center', ls: 8 }); ptext(name.toUpperCase(), FR169.x + FR169.w / 2, FR169.y + FR169.h / 2 + 40, 92, PRO.txt, { align: 'center', w: 800, ls: 4 }); g.restore(); }
 function scene169(i, m, o = {}) { return S(() => (K, Sc) => { const tm = o.at ? Object.fromEntries(Object.entries(o.at).map(([k, [w, f]]) => [k, sw(w, f)])) : {}; if (o.sfx) o.sfx(K, tm);
   return (t) => { const lt = RT ?? t, d = depth169(i, lt); sea169(t, d); snow169(t, 0.6);
