@@ -45,8 +45,9 @@ def parse(ep):
         if t: loc[lang] = {'title': t[:100], 'description': desc[:5000]}
     kids = bool(re.search(r'Made for kids:\s*Yes', settings, re.I))
     synthetic = bool(re.search(r'Altered or synthetic content:\s*Yes', settings, re.I))
-    if '#shorts' not in desc.lower() and '#shorts' not in title.lower(): desc += '\n\n#shorts'
-    return dict(title=title[:100], description=desc[:5000], tags=tags[:30], playlist=pl.group(1) if pl else None,
+    wide = os.path.exists(f'episodes/{ep}.json') and json.load(open(f'episodes/{ep}.json')).get('wide', False)   # long 16:9 video
+    if not wide and '#shorts' not in desc.lower() and '#shorts' not in title.lower(): desc += '\n\n#shorts'
+    return dict(wide=wide, title=title[:100], description=desc[:5000], tags=tags[:30], playlist=pl.group(1) if pl else None,
                 category=CATEGORIES.get((cat.group(1) if cat else 'education').strip().lower(), '27'), kids=kids, synthetic=synthetic, localizations=loc)
 
 
@@ -65,11 +66,29 @@ def find_asset(ep):
     sys.exit(f'#{ep}: no release asset {name} (render it first)')
 
 
+def set_thumbnail(yt, vid, ep):
+    """custom thumbnail from the release asset thumbnail_<ep>.jpg (long videos); needs a verified channel, otherwise only a note"""
+    name = f'thumbnail_{int(ep)}.jpg'                       # 1280×720 JPEG, YouTube limit 2 MB
+    url = subprocess.run(['gh', 'api', f'repos/{REPO}/releases?per_page=100', '--jq', f'[.[] | .assets[] | select(.name == "{name}") | .browser_download_url][0]'],
+                         capture_output=True, text=True).stdout.strip()
+    if not url or url == 'null': print(f'  no {name} in the releases → set the thumbnail by hand'); return
+    from googleapiclient.http import MediaFileUpload
+    from googleapiclient.errors import HttpError
+    subprocess.run(['curl', '-sSLf', '-o', name, url], check=True)
+    try: yt.thumbnails().set(videoId=vid, media_body=MediaFileUpload(name, mimetype='image/jpeg')).execute(); print(f'  thumbnail set ({name})')
+    except HttpError as ex: print(f'  thumbnail not set ({ex.resp.status}) → set it by hand in Studio')
+    os.remove(name)
+
+
 def next_slots(n, taken):
     """the next n free publish times (Europe/Berlin daily SLOTS, at least 20 min from now), as UTC ISO strings"""
     now = dt.datetime.now(BERLIN) + dt.timedelta(minutes=20); out = []; day = now.date()
     while len(out) < n:
         for s in SLOTS:
+            if ' ' in s:                                 # fixed date "2026-10-24 18:00" (e.g. the weekly long video)
+                t = dt.datetime.strptime(s, '%Y-%m-%d %H:%M').replace(tzinfo=BERLIN); iso = t.astimezone(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+                if t <= now or iso in taken: sys.exit(f'fixed slot {s} is in the past or taken')
+                out.append(iso); return out[:n]
             h, m = map(int, s.split(':')); t = dt.datetime(day.year, day.month, day.day, h, m, tzinfo=BERLIN)
             iso = t.astimezone(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
             if t > now and iso not in taken and iso not in out: out.append(iso)
@@ -243,13 +262,14 @@ def main():
         req = yt.videos().insert(part='snippet,status,localizations', body=body, media_body=MediaFileUpload(name, mimetype='video/mp4', chunksize=8 << 20, resumable=True))
         resp = None
         while resp is None: _, resp = req.next_chunk()
-        vid = resp['id']; print(f'  uploaded → https://youtube.com/shorts/{vid}')
+        vid = resp['id']; link = f'https://youtube.com/{"watch?v=" if M["wide"] else "shorts/"}{vid}'; print(f'  uploaded → {link}')
         chk = yt.videos().list(part='status,snippet,localizations', id=vid).execute().get('items', [{}])[0]; st = chk.get('status', {})
         print(f'  YouTube has: privacy {st.get("privacyStatus")} · publishAt {st.get("publishAt")} · upload {st.get("uploadStatus")} · madeForKids {st.get("selfDeclaredMadeForKids")} · '
               f'synthetic {st.get("containsSyntheticMedia")} · titles {"/".join(chk.get("localizations", {})) or "-"}')
-        led[str(int(e))] = {'id': vid, 'url': f'https://youtube.com/shorts/{vid}', 'publishAt': at, 'title': M['title'], 'playlist': M['playlist'], 'in_playlist': False}
+        led[str(int(e))] = {'id': vid, 'url': link, 'publishAt': at, 'title': M['title'], 'playlist': M['playlist'], 'in_playlist': False}
         json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False)          # write the ledger at once: an upload is never repeated
         if M['playlist']: led[str(int(e))]['in_playlist'] = add_to_playlist(yt, vid, M['playlist'])
+        if M['wide']: set_thumbnail(yt, vid, e)
         json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False); os.remove(name)
     print('\nBy hand in YouTube Studio for each video: Languages → add DE/ES/FR audio tracks (release *_de/_es/_fr.m4a), pin the comment from the md.')
 
