@@ -48,14 +48,9 @@ E = {
  'photos': [
   {'id': 'music', 'audio': 'File:Rafael Krux - Horror Suspense.ogg', 'from': 0, 'len': 60, 'gain': 1},
   {'id': 'sea', 'file': 'File:Purple hagfish on seafloor (OOI 237).jpg'},
-  {'id': 'hole', 'file': 'File:Eptatretus stoutii.jpg'},
-  {'id': 'feed', 'file': 'File:Pacific hagfish feeding 01.jpg'},
   {'id': 'det', 'file': 'File:Hagfish Slime Predator Deterrence.jpg'},
   {'id': 'held', 'file': 'File:Black hagfish, Eptatretus deani 01.jpg'},
-  {'id': 'v1', 'video': f'File:{SRC}s1.ogv', 'from': 0, 'len': 20, 'fps': 1},
-  {'id': 'v2', 'video': f'File:{SRC}s2.ogv', 'from': 0, 'len': 27, 'fps': 1},
-  {'id': 'v3', 'video': f'File:{SRC}s3.ogv', 'from': 0, 'len': 64, 'fps': 1},
-  {'id': 'v4', 'video': f'File:{SRC}s4.ogv', 'from': 0, 'len': 15, 'fps': 1},
+  {'id': 'knot', 'video': f'File:{SRC}s1.ogv', 'from': 10, 'len': 9},
  ],
 }
 open('episodes/177.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))
