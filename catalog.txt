@@ -1,17 +1,17 @@
-de Havilland Comet | De Havilland DH.106 Comet 1
-Comet G-ALYP | G-ALYP (aircraft)
-Comet wreckage | BOAC Flight 781
-Aircraft windows | Aircraft windows
-article: de Havilland Comet
-article: BOAC Flight 781
-article: South African Airways Flight 201
-article: Fatigue (material)
-article: Stress concentration
-image: de Havilland Comet 1
-image: Comet G-ALYP wreckage Science Museum
-image: Comet 1 window
-image: airplane window
-image: aircraft cabin window
-image: Comet water tank test Farnborough
-video: de Havilland Comet
+Coelacanth | Latimeria chalumnae
+Indonesian coelacanth | Latimeria menadoensis
+Coelacanthiformes fossils | Coelacanthiformes
+Marjorie Courtenay-Latimer | Marjorie Courtenay-Latimer
+article: Coelacanth
+article: West Indian Ocean coelacanth
+article: Indonesian coelacanth
+article: Marjorie Courtenay-Latimer
+image: coelacanth
+image: Latimeria chalumnae
+image: coelacanth fossil
+image: coelacanth 1938
+image: coelacanth lobe fins
+image: coelacanth museum specimen
+video: coelacanth
+video: Latimeria
 audio: Rafael Krux
