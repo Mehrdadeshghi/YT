@@ -1,26 +1,13 @@
-Titanic expedition 2003 | RMS Titanic Expedition 2003
-Titanic expedition 2004 | Images from the 2004 Titanic expedition
-Titanic wreck photos | Photographs of the wreck of the RMS Titanic
-article: Mesopelagic zone
-article: Marine snow
-article: Grenadiers (fish)
-image: RMS Titanic Expedition 2003
-image: Titanic 2004 Hercules
-image: Titanic wreck stern
-image: Titanic debris field
-image: Titanic wreck railing
-image: Titanic wreck NOAA Lori Johnston
-image: Titanic wreck porthole
-image: Titanic boilers wreck
-image: grenadier rattail fish deep sea
-image: Titanic location map
-image: Titanic sinking break up
-image: Titanic survivors Carpathia
-image: Titanic 1912 deck
-video: Titanic expedition
-video: Hercules ROV
-video: marine snow
-video: deep sea Atlantic NOAA
-audio: Nearer, My God, to Thee
-audio: Rafael Krux
-audio: requiem
+Hagfish | Myxinidae
+Hagfish | Myxine glutinosa
+Hagfish | Eptatretus stoutii
+image: hagfish
+image: hagfish slime
+image: hagfish knot
+image: Pacific hagfish
+image: hagfish skin
+image: eel skin wallet
+image: Eptatretus
+video: hagfish
+video: hagfish slime
+video: Myxine
