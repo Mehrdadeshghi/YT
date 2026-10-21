@@ -50,7 +50,7 @@ E = {
   {'id': 'sea', 'file': 'File:Purple hagfish on seafloor (OOI 237).jpg'},
   {'id': 'det', 'file': 'File:Hagfish Slime Predator Deterrence.jpg'},
   {'id': 'held', 'file': 'File:Black hagfish, Eptatretus deani 01.jpg'},
-  {'id': 'knot', 'video': f'File:{SRC}s1.ogv', 'from': 10, 'len': 9},
+  {'id': 'knot', 'video': f'File:{SRC}s1.ogv', 'from': 12, 'len': 7},
  ],
 }
 open('episodes/177.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))
