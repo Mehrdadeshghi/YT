@@ -34,7 +34,7 @@ def parse(ep):
     md = open(f'uploads/{int(ep)}.md' if os.path.exists(f'uploads/{int(ep)}.md') else f'uploads/{ep}.md').read()
     title = field(md, 'Title')
     m = re.search(r'^\*\*Description:\*\*\s*\n(.*?)(?=^\*\*[^*\n]+:\*\*)', md, re.S | re.M)
-    desc = m.group(1).strip() if m else ''
+    desc = (m.group(1).strip() if m else '').replace('<', '‹').replace('>', '›')     # YouTube rejects < and > in descriptions (invalidDescription)
     settings = field(md, 'Settings').replace('**', '')
     tags = [t.lstrip('#') for t in re.findall(r'(?<!\w)#[A-Za-z][\w]*', desc) if t.lower() != '#shorts']
     pl = re.search(r'Playlist\s+"([^"]+)"', settings)
