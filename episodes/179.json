@@ -1,0 +1,149 @@
+{
+ "ep": 179,
+ "title": "5000 to 1. They won the league.",
+ "series": "FOOTBALL · GREATEST NIGHTS",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "epic",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js",
+  "football.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "5000 TO 1.",
+  "THEY WON."
+ ],
+ "cta": {
+  "q": "Greatest upset ever?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "spell": {
+  "Lester": "Leicester"
+ },
+ "source": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Leicester_City_F.C._season",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "Five thousand to one. They still won the league.",
+   "cap": "*5000 to 1.* They still *won the league.*",
+   "de": "Fünftausend zu eins. Und trotzdem wurden sie Meister.",
+   "es": "Cinco mil a uno. Y aun así ganaron la liga.",
+   "fr": "Cinq mille contre un. Et ils ont quand même gagné le championnat."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Lester City spent four and a half months at the bottom of the Premier League the season before.",
+     "cap": "*Bottom* of the league for *4½ months.*",
+     "de": "Leicester City stand in der Saison davor viereinhalb Monate auf dem letzten Platz der Premier League.",
+     "es": "El Leicester City pasó cuatro meses y medio en el último puesto de la Premier League la temporada anterior.",
+     "fr": "Leicester City a passé quatre mois et demi à la dernière place de la Premier League la saison précédente."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Bookmakers gave them five thousand to one. Then Vardy scored in eleven games in a row. A Premier League record.",
+     "cap": "Vardy: *11 games in a row.*",
+     "de": "Die Buchmacher gaben ihnen fünftausend zu eins. Dann traf Vardy in elf Spielen hintereinander. Ein Premier-League-Rekord.",
+     "es": "Las casas de apuestas les daban cinco mil a uno. Luego Vardy marcó en once partidos seguidos. Un récord de la Premier League.",
+     "fr": "Les bookmakers les donnaient à cinq mille contre un. Puis Vardy a marqué lors de onze matchs d'affilée. Un record de Premier League."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Twenty-three wins. Only three defeats all season.",
+     "cap": "*23 wins.* Only *3 defeats.*",
+     "de": "Dreiundzwanzig Siege. Nur drei Niederlagen in der ganzen Saison.",
+     "es": "Veintitrés victorias. Solo tres derrotas en toda la temporada.",
+     "fr": "Vingt-trois victoires. Seulement trois défaites de toute la saison."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "May second, twenty sixteen. Tottenham drew at Chelsea, and Lester were champions of England.",
+     "cap": "*Champions of England.*",
+     "de": "Zweiter Mai, zweitausendsechzehn. Tottenham spielte bei Chelsea nur unentschieden, und Leicester war englischer Meister.",
+     "es": "Dos de mayo de dos mil dieciséis. El Tottenham empató en Chelsea, y el Leicester fue campeón de Inglaterra.",
+     "fr": "Deux mai deux mille seize. Tottenham fait match nul à Chelsea, et Leicester est champion d'Angleterre."
+    },
+    {
+     "at": "0.15",
+     "text": "Greatest upset ever? Yes or no. Comment!",
+     "cta": true,
+     "de": "Die größte Sensation aller Zeiten? Ja oder nein. Schreib es in die Kommentare!",
+     "es": "¿La mayor sorpresa de la historia? Sí o no. ¡Comenta!",
+     "fr": "La plus grande surprise de l'histoire ? Oui ou non. Commente !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Uplifting Blockbuster (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 60,
+   "gain": 1
+  },
+  {
+   "id": "troph",
+   "file": "File:LCFC lift the Premier League Trophy (26943755296) (cropped).jpg"
+  },
+  {
+   "id": "vardy",
+   "file": "File:Jamie Vardy 08 sierpnia 2015 (cropped).jpg"
+  },
+  {
+   "id": "celeb",
+   "file": "File:LCFC players celebrate after victory vs Everton (27859481336).jpg"
+  },
+  {
+   "id": "stad",
+   "file": "File:Leicester City FC - Southampton FC 03-Apr-2016, King Power Stadium 02.jpg"
+  },
+  {
+   "id": "whu",
+   "file": "File:Leicester City v West Ham United April 2016.jpeg"
+  }
+ ]
+}
