@@ -58,7 +58,6 @@ E = {
   {'id': 'float', 'file': 'File:Portuguese Man-O-War (Physalia physalis).jpg'},
   {'id': 'close', 'file': 'File:Physalia physalis close up.jpg'},
   {'id': 'side', 'file': 'File:Portuguese man-o-war Physalia sp.png'},
-  {'id': 'canary', 'file': 'File:Physalia physalis EM1B0679 (40827501481).jpg'},
   {'id': 'beach', 'file': 'File:Physalia physalis Boca Raton FL.JPG'},
  ],
 }
