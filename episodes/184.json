@@ -1,0 +1,154 @@
+{
+ "ep": 184,
+ "title": "Why airplane windows are round",
+ "series": "HOW IT WORKS #13",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.3,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "voice_style": "explainer",
+ "wordCaps": true,
+ "mood": "epic",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "SQUARE",
+  "WINDOWS?",
+  "A MYTH."
+ ],
+ "cta": {
+  "q": "Believed the square-window story?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/De_Havilland_Comet",
+ "vo_open": [
+  {
+   "at": 0,
+   "text": "Square windows tore the first jetliner apart. That's a myth.",
+   "de": "Eckige Fenster haben das erste Düsenverkehrsflugzeug zerrissen. Das ist ein Mythos.",
+   "es": "Las ventanas cuadradas destrozaron el primer avión a reacción. Es un mito.",
+   "fr": "Des hublots carrés ont déchiré le premier avion de ligne à réaction. C'est un mythe."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Nineteen fifty-four. Two Comet jets broke apart over the Mediterranean. Fifty-six people died.",
+     "cap": "1954: two Comets, *56 lives.*",
+     "de": "Neunzehnhundertvierundfünfzig. Zwei Comet-Jets brachen über dem Mittelmeer auseinander. Sechsundfünfzig Menschen starben.",
+     "es": "Mil novecientos cincuenta y cuatro. Dos aviones Comet se partieron sobre el Mediterráneo. Murieron cincuenta y seis personas.",
+     "fr": "Mille neuf cent cinquante-quatre. Deux Comet se sont brisés au-dessus de la Méditerranée. Cinquante-six personnes sont mortes."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Rounded corners already. The real crack started at a tiny rivet hole, by a cut-out in the roof.",
+     "cap": "Crack from a *rivet hole.*",
+     "de": "Die Fenster hatten schon runde Ecken. Der echte Riss begann an einem winzigen Nietloch, an einem Ausschnitt im Dach.",
+     "es": "Las ventanas ya tenían esquinas redondeadas. La grieta real empezó en un diminuto agujero de remache, junto a un recorte en el techo.",
+     "fr": "Les hublots avaient déjà des coins arrondis. La vraie fissure est partie d'un minuscule trou de rivet, près d'une découpe dans le toit."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Every flight pumps the cabin up like a balloon. In a water tank, a test Comet burst after three thousand fifty-seven flights.",
+     "cap": "*3,057* pressure cycles → burst.",
+     "de": "Jeder Flug pumpt die Kabine auf wie einen Ballon. In einem Wassertank platzte ein Test-Comet nach dreitausendsiebenundfünfzig Flügen.",
+     "es": "Cada vuelo infla la cabina como un globo. En un tanque de agua, un Comet de prueba reventó tras tres mil cincuenta y siete vuelos.",
+     "fr": "Chaque vol gonfle la cabine comme un ballon. Dans un bassin d'eau, un Comet d'essai a éclaté après trois mille cinquante-sept vols."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Stress piles up where a corner is sharpest. That's why today's windows get big, round corners.",
+     "cap": "Sharp corner = *stress.*",
+     "de": "Spannung staut sich dort, wo eine Ecke am schärfsten ist. Darum haben Fenster heute große, runde Ecken.",
+     "es": "La tensión se acumula donde la esquina es más aguda. Por eso las ventanas de hoy tienen esquinas grandes y redondas.",
+     "fr": "Les contraintes s'accumulent là où l'angle est le plus vif. C'est pour ça que les hublots d'aujourd'hui ont de grands coins arrondis."
+    },
+    {
+     "at": "0.15",
+     "text": "Did you believe the square-window story? Comment yes or no!",
+     "cta": true,
+     "de": "Hast du die Geschichte mit den eckigen Fenstern geglaubt? Schreib ja oder nein!",
+     "es": "¿Te creías la historia de las ventanas cuadradas? ¡Comenta sí o no!",
+     "fr": "Tu croyais à l'histoire des hublots carrés ? Commente oui ou non !"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Dramatic Trailer by Rafael Krux.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 0.8
+  },
+  {
+   "id": "comet",
+   "file": "File:BOAC Comet 1952 Entebbe.jpg"
+  },
+  {
+   "id": "wreck",
+   "file": "File:Fuselage of de Havilland Comet Airliner G-ALYP.JPG"
+  },
+  {
+   "id": "win",
+   "file": "File:Comet 1 windows.png"
+  },
+  {
+   "id": "adf",
+   "file": "File:Comet G-ALYP ADF windows.png"
+  },
+  {
+   "id": "hatch",
+   "file": "File:Comet G-ALYU escape hatch failure.png"
+  },
+  {
+   "id": "modern",
+   "file": "File:Window seat view of Finnair flight - 01.jpg"
+  },
+  {
+   "id": "modern2",
+   "file": "File:Looking out the cabin window (294744333).jpg"
+  }
+ ]
+}
