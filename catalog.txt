@@ -1,13 +1,10 @@
-Mimic octopus | Thaumoctopus mimicus
-Banded sea krait | Laticauda colubrina
-Pterois | Pterois volitans
-article: Mimic octopus
-article: Laticauda colubrina
-article: Mimicry
-image: Thaumoctopus mimicus
-image: mimic octopus
-image: Thaumoctopus
-video: mimic octopus
-video: Thaumoctopus
-video: octopus camouflage
+Portuguese man o' war | Physalia physalis
+article: Portuguese man o' war
+article: Siphonophorae
+image: Physalia physalis
+image: Portuguese man o war beach
+image: Physalia washed ashore
+image: Physalia tentacles
+video: Physalia physalis
+video: Portuguese man o' war
 audio: Rafael Krux
