@@ -1,12 +1,12 @@
 name: Upload to YouTube
 # Actions → "Upload to YouTube" → Run workflow: episodes "152 153", publish times (German time), privacy.
 # Needs the secrets YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (docs/youtube-upload.md). Writes uploads/youtube.json.
-# Autopilot: every day at 05:30 UTC the next rendered episodes from upload_queue.txt go into the free slots of the next 36 h.
+# Autopilot: every day at 03:00 UTC (GitHub often starts it hours late) the next rendered episodes from upload_queue.txt go into the free slots of the next 36 h.
 #   Runs only when the repo variable AUTOPILOT is "on" (Settings → Secrets and variables → Actions → Variables).
 #   Slots: repo variable UPLOAD_SLOTS (German time), default "14:00,17:00,19:30,21:30,23:00". Runs in GitHub, no local computer needed.
 on:
   schedule:
-    - cron: "30 5 * * *"
+    - cron: "0 3 * * *"
   workflow_dispatch:
     inputs:
       episodes:

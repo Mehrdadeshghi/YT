@@ -1,4 +1,5 @@
 # Upload order for the autopilot (one episode per line). The daily job uploads the next rendered ones into the free slots.
+# Titanic long video #169 is scheduled separately (Sat 24.10. 18:00); its cut-downs 174-176 come after it.
 152
 156
 153
@@ -21,7 +22,10 @@
 173
 171
 172
+174
 170
 178
 179
+175
 177
+176
