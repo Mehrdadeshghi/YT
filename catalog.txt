@@ -1,17 +1,15 @@
-Coelacanth | Latimeria chalumnae
-Indonesian coelacanth | Latimeria menadoensis
-Coelacanthiformes fossils | Coelacanthiformes
-Marjorie Courtenay-Latimer | Marjorie Courtenay-Latimer
-article: Coelacanth
-article: West Indian Ocean coelacanth
-article: Indonesian coelacanth
-article: Marjorie Courtenay-Latimer
-image: coelacanth
-image: Latimeria chalumnae
-image: coelacanth fossil
-image: coelacanth 1938
-image: coelacanth lobe fins
-image: coelacanth museum specimen
-video: coelacanth
-video: Latimeria
+Cookiecutter shark | Isistius brasiliensis
+Isistius | Isistius
+Cookiecutter shark bites | Cookiecutter shark bite marks
+article: Cookiecutter shark
+article: Isistius
+image: cookiecutter shark
+image: Isistius brasiliensis
+image: cookiecutter shark bite
+image: cookiecutter bite wound whale
+image: dolphin cookiecutter scars
+image: sonar dome submarine
+image: Los Angeles class submarine
+image: bioluminescence shark
+video: cookiecutter shark
 audio: Rafael Krux
