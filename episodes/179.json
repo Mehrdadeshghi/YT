@@ -86,11 +86,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Twenty-three wins. Only three defeats all season.",
-     "cap": "*23 wins.* Only *3 defeats.*",
-     "de": "Dreiundzwanzig Siege. Nur drei Niederlagen in der ganzen Saison.",
-     "es": "Veintitrés victorias. Solo tres derrotas en toda la temporada.",
-     "fr": "Vingt-trois victoires. Seulement trois défaites de toute la saison."
+     "text": "Twenty-three wins. Only three defeats all season. Eighty-one points.",
+     "cap": "*23 wins.* Only *3 defeats.* *81 points.*",
+     "de": "Dreiundzwanzig Siege. Nur drei Niederlagen in der ganzen Saison. Einundachtzig Punkte.",
+     "es": "Veintitrés victorias. Solo tres derrotas en toda la temporada. Ochenta y un puntos.",
+     "fr": "Vingt-trois victoires. Seulement trois défaites de toute la saison. Quatre-vingt-un points."
     }
    ]
   },
