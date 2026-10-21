@@ -1,0 +1,275 @@
+{
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 132,
+   "gain": 0.4
+  },
+  {
+   "id": "bow",
+   "file": "File:Titanic wreck bow.jpg"
+  },
+  {
+   "id": "rust",
+   "file": "File:Detached rusticles hires.jpg"
+  },
+  {
+   "id": "tub",
+   "file": "File:Captain Smith's bathroom.jpg"
+  },
+  {
+   "id": "coal",
+   "file": "File:Coal from the Titanic.jpg"
+  },
+  {
+   "id": "soton",
+   "file": "File:RMS Titanic 3.jpg"
+  },
+  {
+   "id": "berg",
+   "file": "File:Titanic iceberg.jpg"
+  },
+  {
+   "id": "nyt",
+   "file": "File:19120415 New Liner Titanic Hits an Iceberg - The New York Times.png"
+  },
+  {
+   "id": "boat",
+   "file": "File:Titanic lifeboat.jpg"
+  },
+  {
+   "id": "stower",
+   "file": "File:Stöwer Titanic.jpg"
+  },
+  {
+   "id": "surv",
+   "file": "File:Survivors of TITANIC aboard CARPATHIA LCCN2001704332.jpg"
+  },
+  {
+   "id": "plan",
+   "file": "File:Titanic side plan annotated English.png"
+  },
+  {
+   "id": "stair",
+   "file": "File:Olympic First Class Staircase.jpg"
+  },
+  {
+   "id": "gym",
+   "file": "File:Titanic's first class gymnasium.jpg"
+  },
+  {
+   "id": "rattail",
+   "file": "File:Expl9749 (14318998877).jpg"
+  },
+  {
+   "id": "alvin",
+   "file": "File:Alvin (DSV-2) raised by Atlantis II.jpg"
+  },
+  {
+   "id": "dock",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 12,
+   "len": 14,
+   "fps": 30
+  },
+  {
+   "id": "captain",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 72,
+   "len": 5,
+   "fps": 30
+  },
+  {
+   "id": "ice",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 105,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "carp",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 133,
+   "len": 14,
+   "fps": 30
+  },
+  {
+   "id": "crowd",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 288,
+   "len": 16,
+   "fps": 30
+  },
+  {
+   "id": "jelly",
+   "video": "File:Jellyfish - Deepwater Exploration of the Marianas expedition - April 24, 2016.webm",
+   "from": 13,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "medusa",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 39,
+   "len": 9,
+   "fps": 30
+  },
+  {
+   "id": "snow",
+   "video": "File:Marine snow.webm",
+   "from": 4,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "chimaera",
+   "video": "File:Rhinochimera.webm",
+   "from": 30,
+   "len": 15,
+   "fps": 30
+  },
+  {
+   "id": "abyss",
+   "video": "File:Poisson et fonds abyssaux (Ifremer 00701-81286).webm",
+   "from": 0,
+   "len": 12,
+   "fps": 30
+  }
+ ],
+ "lazyClips": true,
+ "voice": "narrator",
+ "voice_style": "story",
+ "mood": "deep",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "ep": 176,
+ "title": "Something is eating the Titanic",
+ "series": "TITANIC",
+ "look": "cine",
+ "style": "pro",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "tight": true,
+ "recap": false,
+ "tail": 0.2,
+ "transition": "fade",
+ "sub": 2,
+ "speed": 1.1,
+ "capY": 1700,
+ "capSize": 54,
+ "subY": 1565,
+ "subEndY": 1565,
+ "openMin": 1.6,
+ "photos_from": "169",
+ "depth_open": 12500,
+ "hook": [
+  "Something is",
+  "*eating* the Titanic"
+ ],
+ "hookOpen": {
+  "m": "rust",
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "label": "Real photo · rusticles on the Titanic, 2003 · NOAA"
+ },
+ "cta": {
+  "q": "Save the Titanic?",
+  "a": "SAVE IT",
+  "b": "LET IT GO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Wreck_of_the_Titanic",
+ "from_long": 169,
+ "scripts": [
+  "tech.js",
+  "pro.js",
+  "169.js"
+ ],
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "Something is eating the Titanic. Right now.",
+   "de": "Etwas frisst die Titanic auf. Genau jetzt.",
+   "es": "Algo se está comiendo el Titanic. Ahora mismo.",
+   "fr": "Quelque chose dévore le Titanic. En ce moment."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vis": "bacteria",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Bacteria. They feed on the iron of the hull, and leave rust behind.",
+     "de": "Bakterien. Sie fressen das Eisen des Rumpfs und hinterlassen Rost.",
+     "es": "Bacterias. Se alimentan del hierro del casco y dejan óxido.",
+     "fr": "Des bactéries. Elles se nourrissent du fer de la coque et laissent de la rouille.",
+     "cap": "They eat the *iron.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vis": "rusticles",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "That rust hangs down like icicles. Ballard called them rusticles. Touch one, and it falls apart.",
+     "de": "Der Rost hängt herab wie Eiszapfen. Ballard nannte sie Rostzapfen. Berührt man einen, zerfällt er.",
+     "es": "Ese óxido cuelga como carámbanos. Ballard los llamó rustículos. Si tocas uno, se deshace.",
+     "fr": "Cette rouille pend comme des stalactites. Ballard les a appelées rusticles. Touchez-en une, elle se désagrège.",
+     "cap": "*Rusticles.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vis": "lbs",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Estimates say they eat about four hundred pounds of the hull, every single day.",
+     "de": "Schätzungen zufolge fressen sie jeden Tag rund hundertachtzig Kilo des Rumpfs.",
+     "es": "Se calcula que se comen unos ciento ochenta kilos del casco cada día.",
+     "fr": "On estime qu'elles dévorent environ cent quatre-vingts kilos de coque, chaque jour.",
+     "cap": "*400 lb* a day."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vis": "halomonas",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "One species was even named after the ship. Its discoverer says the wreck could collapse as soon as twenty thirty.",
+     "de": "Eine Art wurde sogar nach dem Schiff benannt. Ihre Entdeckerin sagt, das Wrack könnte schon zweitausenddreißig zusammenbrechen.",
+     "es": "Una especie incluso lleva el nombre del barco. Su descubridora dice que el pecio podría colapsar ya en dos mil treinta.",
+     "fr": "Une espèce porte même le nom du navire. Sa découvreuse pense que l'épave pourrait s'effondrer dès deux mille trente.",
+     "cap": "Collapse by *2030?*"
+    },
+    {
+     "at": "0.15",
+     "text": "Save it, or let it go? Comment!",
+     "cta": true,
+     "de": "Retten oder loslassen? Kommentier!",
+     "es": "¿Salvarlo o dejarlo ir? ¡Comenta!",
+     "fr": "Le sauver ou le laisser partir ? Commente !"
+    }
+   ]
+  }
+ ]
+}

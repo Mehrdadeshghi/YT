@@ -1,0 +1,275 @@
+{
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 132,
+   "gain": 0.4
+  },
+  {
+   "id": "bow",
+   "file": "File:Titanic wreck bow.jpg"
+  },
+  {
+   "id": "rust",
+   "file": "File:Detached rusticles hires.jpg"
+  },
+  {
+   "id": "tub",
+   "file": "File:Captain Smith's bathroom.jpg"
+  },
+  {
+   "id": "coal",
+   "file": "File:Coal from the Titanic.jpg"
+  },
+  {
+   "id": "soton",
+   "file": "File:RMS Titanic 3.jpg"
+  },
+  {
+   "id": "berg",
+   "file": "File:Titanic iceberg.jpg"
+  },
+  {
+   "id": "nyt",
+   "file": "File:19120415 New Liner Titanic Hits an Iceberg - The New York Times.png"
+  },
+  {
+   "id": "boat",
+   "file": "File:Titanic lifeboat.jpg"
+  },
+  {
+   "id": "stower",
+   "file": "File:Stöwer Titanic.jpg"
+  },
+  {
+   "id": "surv",
+   "file": "File:Survivors of TITANIC aboard CARPATHIA LCCN2001704332.jpg"
+  },
+  {
+   "id": "plan",
+   "file": "File:Titanic side plan annotated English.png"
+  },
+  {
+   "id": "stair",
+   "file": "File:Olympic First Class Staircase.jpg"
+  },
+  {
+   "id": "gym",
+   "file": "File:Titanic's first class gymnasium.jpg"
+  },
+  {
+   "id": "rattail",
+   "file": "File:Expl9749 (14318998877).jpg"
+  },
+  {
+   "id": "alvin",
+   "file": "File:Alvin (DSV-2) raised by Atlantis II.jpg"
+  },
+  {
+   "id": "dock",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 12,
+   "len": 14,
+   "fps": 30
+  },
+  {
+   "id": "captain",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 72,
+   "len": 5,
+   "fps": 30
+  },
+  {
+   "id": "ice",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 105,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "carp",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 133,
+   "len": 14,
+   "fps": 30
+  },
+  {
+   "id": "crowd",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 288,
+   "len": 16,
+   "fps": 30
+  },
+  {
+   "id": "jelly",
+   "video": "File:Jellyfish - Deepwater Exploration of the Marianas expedition - April 24, 2016.webm",
+   "from": 13,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "medusa",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 39,
+   "len": 9,
+   "fps": 30
+  },
+  {
+   "id": "snow",
+   "video": "File:Marine snow.webm",
+   "from": 4,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "chimaera",
+   "video": "File:Rhinochimera.webm",
+   "from": 30,
+   "len": 15,
+   "fps": 30
+  },
+  {
+   "id": "abyss",
+   "video": "File:Poisson et fonds abyssaux (Ifremer 00701-81286).webm",
+   "from": 0,
+   "len": 12,
+   "fps": 30
+  }
+ ],
+ "lazyClips": true,
+ "voice": "narrator",
+ "voice_style": "story",
+ "mood": "deep",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "ep": 174,
+ "title": "How the Titanic hit the bottom",
+ "series": "TITANIC",
+ "look": "cine",
+ "style": "pro",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "tight": true,
+ "recap": false,
+ "tail": 0.2,
+ "transition": "fade",
+ "sub": 2,
+ "speed": 1.1,
+ "capY": 1700,
+ "capSize": 54,
+ "subY": 1565,
+ "subEndY": 1565,
+ "openMin": 1.6,
+ "photos_from": "169",
+ "depth_open": 12500,
+ "hook": [
+  "It hit the seabed",
+  "at *23 mph*"
+ ],
+ "hookOpen": {
+  "m": "bow",
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "label": "Real photo · the bow of the Titanic, 2004 · NOAA / IFE / URI"
+ },
+ "cta": {
+  "q": "Knew it broke in two?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Wreck_of_the_Titanic",
+ "from_long": 169,
+ "scripts": [
+  "tech.js",
+  "pro.js",
+  "169.js"
+ ],
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "The Titanic hit the seabed at twenty-three miles per hour.",
+   "de": "Die Titanic schlug mit siebenunddreißig Kilometern pro Stunde auf dem Meeresgrund auf.",
+   "es": "El Titanic chocó contra el fondo a treinta y siete kilómetros por hora.",
+   "fr": "Le Titanic a heurté le fond à trente-sept kilomètres à l'heure."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vis": "impact",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Bow first: twenty-three miles per hour, sixty feet deep into the mud.",
+     "de": "Zuerst der Bug: siebenunddreißig Kilometer pro Stunde, zwanzig Meter tief in den Schlamm.",
+     "es": "Primero la proa: treinta y siete kilómetros por hora, veinte metros dentro del lodo.",
+     "fr": "D'abord la proue : trente-sept kilomètres à l'heure, vingt mètres dans la boue.",
+     "cap": "*60 ft* into the mud."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 5000,
+   "vis": "stern",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "But the stern had it worse. Air was still trapped inside. Under the pressure, those pockets imploded and tore the hull apart.",
+     "de": "Doch das Heck traf es härter. Darin war noch Luft. Unter dem Druck implodierten diese Taschen und rissen den Rumpf auf.",
+     "es": "Pero la popa lo pasó peor. Aún tenía aire dentro. Con la presión, esas bolsas implosionaron y destrozaron el casco.",
+     "fr": "Mais la poupe a souffert davantage. De l'air y était piégé. Sous la pression, ces poches ont implosé et déchiré la coque.",
+     "cap": "Air pockets *imploded.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 6500,
+   "vis": "explode",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Survivors in the lifeboats heard explosions, about ten seconds after the stern went under.",
+     "de": "Überlebende in den Rettungsbooten hörten Explosionen, etwa zehn Sekunden nachdem das Heck versank.",
+     "es": "Los supervivientes en los botes oyeron explosiones, unos diez segundos después de hundirse la popa.",
+     "fr": "Les survivants dans les canots ont entendu des explosions, environ dix secondes après que la poupe a coulé.",
+     "cap": "*Explosions.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vis": "pancake",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Then it landed so hard, its decks collapsed on top of each other.",
+     "de": "Dann schlug es so hart auf, dass die Decks aufeinander zusammenbrachen.",
+     "es": "Luego cayó con tanta fuerza que sus cubiertas se aplastaron unas sobre otras.",
+     "fr": "Puis elle a touché le fond si fort que ses ponts se sont écrasés les uns sur les autres.",
+     "cap": "Decks *collapsed.*"
+    },
+    {
+     "at": "0.15",
+     "text": "Did you know it broke in two? Yes or no? Comment!",
+     "cta": true,
+     "de": "Wusstest du, dass sie zerbrach? Ja oder nein? Kommentier!",
+     "es": "¿Sabías que se partió en dos? ¿Sí o no? ¡Comenta!",
+     "fr": "Tu savais qu'il s'était brisé en deux ? Oui ou non ? Commente !"
+    }
+   ]
+  }
+ ]
+}

@@ -65,7 +65,11 @@ function hull169(x, y, L, o = {}) { const h = L * 0.075, part = o.part || 'all',
   g.restore(); }
 
 // ---- opener: the bow photo in the dark, title, depth counting down to the wreck
-VIS.open = (K) => { K(0.05, 'swish', 0.4); K(1.2, 'boom', 0.6);
+VIS.open = (K) => { K(0.05, 'swish', 0.4); const ho = EP_RAW.hookOpen;
+  if (ho) { K(0.3, 'boom', 0.8); return (t) => { const d = EP_RAW.depth_open ?? 12500; sea169(t, d); snow169(t, 0.7);     // 9:16 cut-downs #174–#176: hook over a real photo
+      media169(t, ho.m, Object.assign({ z0: 1.05, z1: 1.2, dur: 4 }, ho, { draw: () => { g.fillStyle = 'rgba(3,8,11,0.4)'; g.fillRect(FR169.x, FR169.y, FR169.w, FR169.h); } }));
+      const a = inA(t, 0.1, 0.3); g.save(); g.globalAlpha = a; (EP.hook || []).forEach((ln, i) => rich(ln, CX169, FR169.y + 200 + i * 104, 88, { align: 'center' })); g.restore(); meter169(t, d); }; }
+  K(1.2, 'boom', 0.6);
   return (t) => { const d = 12500; sea169(t, d); snow169(t, 0.7);
     media169(t, 'bow', { focus: [0.5, 0.5], z0: 1.18, z1: 1.04, dur: 9, dark: 0.35 + 0.3 * (1 - inA(t, 0.2, 2.5)), label: 'Real photo · the bow of the Titanic, 2004 · NOAA / Institute for Exploration / URI' });
     g.save(); g.globalAlpha = inA(t, 0.4, 0.8); ptext('A JOURNEY DOWN TO THE', CX169, FR169.y + 170, 44, 'rgba(243,247,248,0.92)', { align: 'center', ls: 10 }); rich('*Titanic*', CX169, FR169.y + 290, 130, { align: 'center' }); g.restore();
@@ -140,7 +144,8 @@ VIS.spiral = scene169('spiral', null, { label: 'Illustration · the stern spiral
   over: (t, tm) => chips169(t, [[tm.he, 'Rotating like a helicopter blade', PRO.acc]]), at: { he: ['helicopter', 3.0] } });
 VIS.impact = scene169('impact', null, { label: 'Graphic · the bow hits the seabed', draw: (t, lt, tm) => { dark169(); const floor = FR169.y + 560, p = eO(clamp((lt - 0.4) / 2.2));
     g.fillStyle = '#2A2620'; g.fillRect(FR169.x, floor, FR169.w, FR169.h - (floor - FR169.y)); g.fillStyle = '#3A342B'; g.fillRect(FR169.x, floor, FR169.w, 6);
-    hull169(FR169.x + 200, floor - 40 + 60 * p - 300 * (1 - p), 900, { part: 'bow', rot: 0.1 * (1 - p) + 0.02, lost: [1, 1, 1, 1], fill: '#1A1F22' });
+    const L169 = WIDE ? 900 : 1300, hx169 = WIDE ? FR169.x + 200 : FR169.x + (FR169.w - 0.42 * L169) / 2 - 0.58 * L169;      // tall: centre the bow piece
+    hull169(hx169, floor - 40 + 60 * p - 300 * (1 - p), L169, { part: 'bow', rot: 0.1 * (1 - p) + 0.02, lost: [1, 1, 1, 1], fill: '#1A1F22' });
     if (lt > tm.si) { const x = FR169.x + FR169.w - 210; g.strokeStyle = PRO.hi; g.lineWidth = 3; g.beginPath(); g.moveTo(x, floor); g.lineTo(x, floor + 130); g.stroke(); ptext('~60 ft into the mud', x - 16, floor + 180, 34, PRO.hi, { align: 'right', w: 800 }); } },
   sfx: (K) => K(2.4, 'boom', 0.8), over: (t, tm) => { if (t > tm.tw) bigText(t, tm.tw, '*23 mph*', CX169, FR169.y + 170, 110); }, at: { tw: ['twenty', 1.8], si: ['sixty', 4.4] } });
 VIS.pancake = scene169('pancake', null, { label: 'Graphic · the stern decks pancaked', draw: (t, lt, tm) => { dark169(); const floor = FR169.y + FR169.h - 120, p = eO(clamp((lt - tm.co) / 1.2));

@@ -1,0 +1,275 @@
+{
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 132,
+   "gain": 0.4
+  },
+  {
+   "id": "bow",
+   "file": "File:Titanic wreck bow.jpg"
+  },
+  {
+   "id": "rust",
+   "file": "File:Detached rusticles hires.jpg"
+  },
+  {
+   "id": "tub",
+   "file": "File:Captain Smith's bathroom.jpg"
+  },
+  {
+   "id": "coal",
+   "file": "File:Coal from the Titanic.jpg"
+  },
+  {
+   "id": "soton",
+   "file": "File:RMS Titanic 3.jpg"
+  },
+  {
+   "id": "berg",
+   "file": "File:Titanic iceberg.jpg"
+  },
+  {
+   "id": "nyt",
+   "file": "File:19120415 New Liner Titanic Hits an Iceberg - The New York Times.png"
+  },
+  {
+   "id": "boat",
+   "file": "File:Titanic lifeboat.jpg"
+  },
+  {
+   "id": "stower",
+   "file": "File:Stöwer Titanic.jpg"
+  },
+  {
+   "id": "surv",
+   "file": "File:Survivors of TITANIC aboard CARPATHIA LCCN2001704332.jpg"
+  },
+  {
+   "id": "plan",
+   "file": "File:Titanic side plan annotated English.png"
+  },
+  {
+   "id": "stair",
+   "file": "File:Olympic First Class Staircase.jpg"
+  },
+  {
+   "id": "gym",
+   "file": "File:Titanic's first class gymnasium.jpg"
+  },
+  {
+   "id": "rattail",
+   "file": "File:Expl9749 (14318998877).jpg"
+  },
+  {
+   "id": "alvin",
+   "file": "File:Alvin (DSV-2) raised by Atlantis II.jpg"
+  },
+  {
+   "id": "dock",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 12,
+   "len": 14,
+   "fps": 30
+  },
+  {
+   "id": "captain",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 72,
+   "len": 5,
+   "fps": 30
+  },
+  {
+   "id": "ice",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 105,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "carp",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 133,
+   "len": 14,
+   "fps": 30
+  },
+  {
+   "id": "crowd",
+   "video": "File:Titanic Disaster - Genuine Footage (1911-1912)(enhanced).webm",
+   "from": 288,
+   "len": 16,
+   "fps": 30
+  },
+  {
+   "id": "jelly",
+   "video": "File:Jellyfish - Deepwater Exploration of the Marianas expedition - April 24, 2016.webm",
+   "from": 13,
+   "len": 10,
+   "fps": 30
+  },
+  {
+   "id": "medusa",
+   "video": "File:Okeanos Explorer PR and USVI Dive 8- Psychedelic Medusa-NOAA-1280x720.webm",
+   "from": 39,
+   "len": 9,
+   "fps": 30
+  },
+  {
+   "id": "snow",
+   "video": "File:Marine snow.webm",
+   "from": 4,
+   "len": 11,
+   "fps": 30
+  },
+  {
+   "id": "chimaera",
+   "video": "File:Rhinochimera.webm",
+   "from": 30,
+   "len": 15,
+   "fps": 30
+  },
+  {
+   "id": "abyss",
+   "video": "File:Poisson et fonds abyssaux (Ifremer 00701-81286).webm",
+   "from": 0,
+   "len": 12,
+   "fps": 30
+  }
+ ],
+ "lazyClips": true,
+ "voice": "narrator",
+ "voice_style": "story",
+ "mood": "deep",
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "ep": 175,
+ "title": "The craziest plans to raise the Titanic",
+ "series": "TITANIC",
+ "look": "cine",
+ "style": "pro",
+ "captions": true,
+ "wordCaps": true,
+ "noOutro": true,
+ "tight": true,
+ "recap": false,
+ "tail": 0.2,
+ "transition": "fade",
+ "sub": 2,
+ "speed": 1.1,
+ "capY": 1700,
+ "capSize": 54,
+ "subY": 1565,
+ "subEndY": 1565,
+ "openMin": 1.6,
+ "photos_from": "169",
+ "depth_open": 12500,
+ "hook": [
+  "Raise the Titanic",
+  "with *ping-pong balls?*"
+ ],
+ "hookOpen": {
+  "m": "bow",
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "label": "Real photo · the bow of the Titanic, 2004 · NOAA / IFE / URI"
+ },
+ "cta": {
+  "q": "Craziest plan?",
+  "a": "PING-PONG",
+  "b": "ICEBERG"
+ },
+ "source": "https://en.wikipedia.org/wiki/Wreck_of_the_Titanic",
+ "from_long": 169,
+ "scripts": [
+  "tech.js",
+  "pro.js",
+  "169.js"
+ ],
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "Someone wanted to raise the Titanic with ping-pong balls.",
+   "de": "Jemand wollte die Titanic mit Tischtennisbällen heben.",
+   "es": "Alguien quiso reflotar el Titanic con pelotas de ping-pong.",
+   "fr": "Quelqu'un voulait renflouer le Titanic avec des balles de ping-pong."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vis": "pingpong",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Fill the wreck with them, and let it float up. Except the balls would be crushed long before they got there.",
+     "de": "Das Wrack damit füllen und aufschwimmen lassen. Nur wären die Bälle zerquetscht worden, lange bevor sie unten ankamen.",
+     "es": "Llenar el pecio con ellas y dejar que flote. Pero las pelotas quedarían aplastadas mucho antes de llegar.",
+     "fr": "Remplir l'épave et la laisser remonter. Sauf que les balles auraient été écrasées bien avant d'arriver.",
+     "cap": "The balls get *crushed.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vis": "psi",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Down there, the pressure is over six thousand pounds per square inch.",
+     "de": "Dort unten liegt der Druck bei über vierhundert Bar.",
+     "es": "Allí abajo, la presión supera los cuatrocientos bares.",
+     "fr": "Là-dessous, la pression dépasse les quatre cents bars.",
+     "cap": "*6,000 psi.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vis": "nitrogen",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Another plan: freeze it inside an iceberg, with half a million tons of liquid nitrogen, so it would float.",
+     "de": "Ein anderer Plan: sie in einen Eisberg einfrieren, mit einer halben Million Tonnen flüssigem Stickstoff, damit sie aufschwimmt.",
+     "es": "Otro plan: congelarlo dentro de un iceberg, con medio millón de toneladas de nitrógeno líquido, para que flotara.",
+     "fr": "Autre projet : le congeler dans un iceberg, avec un demi-million de tonnes d'azote liquide, pour qu'il flotte.",
+     "cap": "Freeze it in an *iceberg.*"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "depth": 12500,
+   "vis": "cta",
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "None of them ever worked. She is still down there.",
+     "de": "Keiner davon hat je funktioniert. Sie liegt immer noch da unten.",
+     "es": "Ninguno funcionó jamás. Sigue ahí abajo.",
+     "fr": "Aucun n'a jamais abouti. Elle est toujours là-dessous.",
+     "cap": "Still *down there.*"
+    },
+    {
+     "at": "0.15",
+     "text": "Craziest plan? Ping-pong or iceberg? Comment!",
+     "cta": true,
+     "de": "Verrücktester Plan? Tischtennis oder Eisberg? Kommentier!",
+     "es": "¿El plan más loco? ¿Ping-pong o iceberg? ¡Comenta!",
+     "fr": "Le plan le plus fou ? Ping-pong ou iceberg ? Commente !"
+    }
+   ]
+  }
+ ]
+}
