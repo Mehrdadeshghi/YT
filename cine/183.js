@@ -57,7 +57,7 @@ VIS[1] = S(() => { const dr = sw183(['draw'], 0.1), lo = sw183(['loss'], 1.0), f
       gfx183(990); }; }; });
 
 // semi-final v the Netherlands (reigning European champions): 2–2, Schmeichel saves van Basten, 5–4 on penalties
-VIS[2] = S(() => { const ne = sw183(['netherlands'], 0.3), tw = sw183(['two'], 1.6), pe = sw183(['penalties'], tw + 0.6), sc = sw183(['shmy-kel', 'shmy', 'schmeichel'], pe + 0.6), sv = sw183(['saved'], sc + 0.4), vb = sw183(['basten'], sv + 0.4);
+VIS[2] = S(() => { const ne = sw183(['netherlands'], 0.3), tw = sw183(['tied', 'two'], 1.6), pe = sw183(['penalties'], tw + 0.6), sc = sw183(['shmy-kel', 'shmy', 'schmeichel'], pe + 0.6), sv = sw183(['saved'], sc + 0.4), vb = sw183(['basten'], sv + 0.4);
   return (K) => { ks(K, [[0.2, 'whoosh', 0.8], [ne, 'hit', 0.9], [tw, 'tick', 1], [pe, 'whoosh', 0.9], [sv, 'boom', 1.2], [vb + 0.3, 'ding', 1]]);
     return (t) => { atmosphere(t); tag(t, 2, N183);
       if (t < sc) { bg183('stad', 0.3);

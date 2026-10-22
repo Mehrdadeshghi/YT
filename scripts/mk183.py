@@ -34,7 +34,7 @@ ep = {
    "Ein Unentschieden gegen England. Eine Niederlage gegen Gastgeber Schweden. Dann schlugen sie Frankreich.",
    "Un empate con Inglaterra. Una derrota ante la anfitriona Suecia. Luego vencieron a Francia.",
    "Un nul contre l'Angleterre. Une défaite contre la Suède, pays hôte. Puis ils battent la France.")]},
-  {"dur": 1.6, "vis": 2, "vo": [seg(0.45, "Next: the Netherlands, reigning European champions. Two-two, then penalties. Shmy-kel saved van Basten's kick.",
+  {"dur": 1.6, "vis": 2, "vo": [seg(0.45, "Next: the Netherlands, reigning European champions. Tied at two, then penalties. Shmy-kel saved van Basten's kick.",
    "*Schmeichel* saves *van Basten.*",
    "Dann die Niederlande, amtierender Europameister. Zwei zu zwei, dann Elfmeterschießen. Schmeichel hielt den Schuss von van Basten.",
    "Después, los Países Bajos, vigentes campeones de Europa. Dos a dos y penaltis. Schmeichel paró el disparo de van Basten.",
