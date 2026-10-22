@@ -62,7 +62,7 @@ VIS[2] = S(() => { const se = sw('sea', 0.3), hi = sw('hides', 1.0), da = sw('da
       if (t > hi && t < pr) chip('6 ARMS HIDDEN · 2 OUT', 540, 1390, t, hi + 0.4, { size: 34, bg: GOLD, fg: BG });
       if (t > pr) chip('🐍 DAMSELFISH FLEE', 540, 1390, t, pr, { size: 36, bg: RED, fg: '#FFF' }); }; }; });
 
-VIS[3] = S(() => { const fl = sw('flatfish', 0.3), fv = sw('five', 2.4), da = sw('days', 3.6);
+VIS[3] = S(() => { const fl = sw('flat', 1.0), fv = sw('five', 2.4), da = sw('days', 3.6);
   return (K) => { ks(K, [[0.1, 'whoosh', 0.8], [fl, 'hit', 1], [fv, 'boom', 1], [da, 'ding', 0.9]]);
     return (t) => { atmosphere(t); clip(t, 'swim', { box: [40, 720, 1000, 720], a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.08], dur: 6 });
       tag(t, 3, N182); footBadge(t, 0.3, 'REAL FOOTAGE · BALI', 360);
