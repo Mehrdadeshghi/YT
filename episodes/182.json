@@ -28,8 +28,8 @@
   "fr"
  ],
  "hook": [
-  "ONE OCTOPUS.",
-  "18 DISGUISES."
+  "18 DISGUISES.",
+  "ONE OCTOPUS."
  ],
  "cta": {
   "q": "Which disguise is best?",
@@ -39,11 +39,11 @@
  "source": "https://en.wikipedia.org/wiki/Mimic_octopus",
  "vo_open": [
   {
-   "at": 0.3,
-   "text": "One octopus. Up to eighteen different animals.",
-   "de": "Ein Oktopus. Bis zu achtzehn verschiedene Tiere.",
-   "es": "Un pulpo. Hasta dieciocho animales distintos.",
-   "fr": "Une pieuvre. Jusqu'à dix-huit animaux différents."
+   "at": 0.4,
+   "text": "Eighteen disguises. Just one octopus.",
+   "de": "Achtzehn Verkleidungen. Nur ein einziger Oktopus.",
+   "es": "Dieciocho disfraces. Un solo pulpo.",
+   "fr": "Dix-huit déguisements. Une seule pieuvre."
   }
  ],
  "scenes": [

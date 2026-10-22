@@ -31,7 +31,7 @@ function burrow182(t, box, tHide, tFish, tPred) { const [bx, by, bw, bh] = box; 
   g.restore(); g.lineWidth = 3; g.strokeStyle = 'rgba(255,255,255,0.16)'; rrect(bx, by, bw, bh, 30); g.stroke(); }
 
 // ---------- scenes ----------
-VIS.open = (K) => { const ei = sw('eighteen', 1.3); K(0.15, 'hit', 1.2); K(0.2, 'mute', 1, 0.4); K(ei, 'boom', 0.9);
+VIS.open = (K) => { const ei = sw('octopus', 1.6); K(0.15, 'hit', 1.2); K(0.2, 'mute', 1, 0.4); K(ei, 'boom', 0.9);
   const LIST = ['🦁 LIONFISH', '🐍 SEA SNAKE', '🐟 FLATFISH', '🪼 JELLYFISH', '🦀 CRAB', '🐙 ?'];
   return (t) => { atmosphere(t); shot(t, 'face', { a: [0.42, 0.4, 1.0], b: [0.42, 0.38, 1.1], dur: 3, anchor: [540, 1050] });
     shade182(0, 760, 0.85); tag(t); hook(t, EP.hook, 440);

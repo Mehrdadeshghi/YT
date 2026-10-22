@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""#182 OCEAN — mimic octopus (Thaumoctopus mimicus), 22 Oct 2026. Ocean track; 26–30 s; frame-1 impossible number ("one octopus, 18 disguises").
+"""#182 OCEAN — mimic octopus (Thaumoctopus mimicus), 22 Oct 2026. Ocean track; 26–30 s; frame-1 impossible number ("18 disguises, one octopus").
 Facts: English Wikipedia "Mimic octopus" (Oct 2026): first discovered off the coast of Sulawesi, Indonesia in 1998; can switch between disguises of
 up to 18 different marine animals, changing colour, shape and behaviour; lionfish: holds its arms out radially to mimic the fish's spines;
 sea snake: hides 6 of its arms and holds the remaining 2 parallel; a mimic octopus harassed by damselfish mimicked a banded sea snake, a known
@@ -11,11 +11,11 @@ E = {
  'look': 'cine', 'captions': True, 'noOutro': True, 'speed': 1.2, 'tight': True, 'sub': 2, 'transition': 'whip', 'facts': True,
  'recap': False, 'voice': 'narrator', 'wordCaps': True, 'mood': 'calm', 'prog': 3, 'capY': 1700, 'subY': 1520, 'subEndY': 1760,
  'scripts': ['tech.js'], 'langs': ['en', 'de', 'es', 'fr'],
- 'hook': ['ONE OCTOPUS.', '18 DISGUISES.'],
+ 'hook': ['18 DISGUISES.', 'ONE OCTOPUS.'],
  'cta': {'q': 'Which disguise is best?', 'a': 'LIONFISH', 'b': 'SNAKE'},
  'source': 'https://en.wikipedia.org/wiki/Mimic_octopus',
- 'vo_open': [{'at': 0.3, 'text': 'One octopus. Up to eighteen different animals.',
-   'de': 'Ein Oktopus. Bis zu achtzehn verschiedene Tiere.', 'es': 'Un pulpo. Hasta dieciocho animales distintos.', 'fr': "Une pieuvre. Jusqu'à dix-huit animaux différents."}],
+ 'vo_open': [{'at': 0.4, 'text': 'Eighteen disguises. Just one octopus.',
+   'de': 'Achtzehn Verkleidungen. Nur ein einziger Oktopus.', 'es': 'Dieciocho disfraces. Un solo pulpo.', 'fr': 'Dix-huit déguisements. Une seule pieuvre.'}],
  'scenes': [
   S(0, 'Mimic octopus. Nobody even knew it existed until nineteen ninety-eight, off Sulawesi, Indonesia.',
     'The *mimic octopus.* Discovered in *1998.*',
