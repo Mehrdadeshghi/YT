@@ -89,8 +89,8 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Reason two: no show-off. A weaver male tears off about three hundred leaf strips to impress a female. A pigeon dad may just bring sticks.",
-     "cap": "Reason two: *no show-off.* A weaver tears off *300 leaf strips.* A pigeon dad: *sticks.*",
+     "text": "Reason two: no showing off. A weaver male tears off about three hundred leaf strips to impress a female. A pigeon dad may just bring sticks.",
+     "cap": "Reason two: *no showing off.* A weaver tears off *300 leaf strips.* A pigeon dad: *sticks.*",
      "de": "Grund zwei: kein Angeben. Ein Webervogel-Männchen reißt rund dreihundert Blattstreifen ab, um ein Weibchen zu beeindrucken. Ein Tauben-Papa bringt oft nur Stöckchen.",
      "es": "Razón dos: nada de presumir. Un tejedor macho arranca unas trescientas tiras de hoja para impresionar a una hembra. Un palomo a veces solo trae palitos.",
      "fr": "Raison numéro deux : pas de frime. Un tisserin mâle arrache environ trois cents lanières de feuilles pour séduire une femelle. Un papa pigeon apporte parfois juste des brindilles."
@@ -111,11 +111,11 @@
     },
     {
      "at": "0.15",
-     "text": "Lazy or smart? Comment! And tell us your next why.",
+     "text": "Lazy or smart? Tell us below, and send us your next why.",
      "cta": true,
-     "de": "Faul oder schlau? Schreib es in die Kommentare! Und schick uns dein nächstes Warum.",
-     "es": "¿Vagas o listas? ¡Comenta! Y dinos tu próximo porqué.",
-     "fr": "Paresseux ou malins ? Commente ! Et dis-nous ton prochain pourquoi."
+     "de": "Faul oder schlau? Schreib es unten rein, und schick uns dein nächstes Warum.",
+     "es": "¿Vagas o listas? Dínoslo abajo, y mándanos tu próximo porqué.",
+     "fr": "Paresseux ou malins ? Dis-le en commentaire, et envoie-nous ton prochain pourquoi."
     }
    ]
   }
