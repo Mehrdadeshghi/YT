@@ -1,0 +1,184 @@
+{
+ "ep": 191,
+ "title": "Why do you never see baby pigeons?",
+ "series": "WHY? #6",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "gemini",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js",
+  "why.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "why": {
+  "q": [
+   "NEVER SEE",
+   "BABY PIGEONS?"
+  ],
+  "next": "YOUR NEXT WHY? COMMENT IT"
+ },
+ "hook": [
+  "WHY NO",
+  "BABY PIGEONS?"
+ ],
+ "cta": {
+  "q": "Ever seen a baby pigeon?",
+  "a": "YES",
+  "b": "NEVER"
+ },
+ "source": "https://en.wikipedia.org/wiki/Rock_dove",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "There are up to a hundred and twenty million pigeons. Ever seen a baby one? Why not?",
+   "de": "Es gibt bis zu hundertzwanzig Millionen Tauben. Schon mal ein Taubenbaby gesehen? Warum nicht?",
+   "es": "Hay hasta ciento veinte millones de palomas. ¿Alguna vez viste una cría? ¿Por qué no?",
+   "fr": "Il y a jusqu'à cent vingt millions de pigeons. Déjà vu un bébé pigeon ? Pourquoi pas ?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Reason one: hidden nests. Pigeons nest in cracks and on ledges, under cover: on cliffs, under overpasses, on skyscrapers.",
+     "cap": "Reason one: *hidden nests.* In *cracks* and on *ledges,* under *cover.*",
+     "de": "Grund eins: versteckte Nester. Tauben nisten in Spalten und auf Vorsprüngen, gut geschützt: an Klippen, unter Brücken, an Hochhäusern.",
+     "es": "Razón uno: nidos ocultos. Las palomas anidan en grietas y salientes, a cubierto: en acantilados, bajo puentes, en rascacielos.",
+     "fr": "Raison numéro un : des nids cachés. Les pigeons nichent dans des fissures et sur des corniches, à l'abri : falaises, dessous de ponts, gratte-ciel."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Reason two: the babies stay home for about a month. Both parents feed them pigeon milk, and their weight doubles in two days.",
+     "cap": "Reason two: they stay home *about a month.* *Pigeon milk.* Weight *doubles in 2 days.*",
+     "de": "Grund zwei: Die Babys bleiben etwa einen Monat im Nest. Beide Eltern füttern sie mit Taubenmilch, und ihr Gewicht verdoppelt sich in zwei Tagen.",
+     "es": "Razón dos: las crías se quedan en el nido casi un mes. Los dos padres les dan leche de paloma, y su peso se duplica en dos días.",
+     "fr": "Raison numéro deux : les bébés restent au nid environ un mois. Les deux parents les nourrissent de lait de pigeon, et leur poids double en deux jours."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Reason three: when they finally leave, they're already adult-sized. So you have seen baby pigeons. You just couldn't tell.",
+     "cap": "Reason three: they leave *adult-sized.* You *have* seen them. You just *couldn't tell.*",
+     "de": "Grund drei: Wenn sie endlich ausfliegen, sind sie schon so groß wie Erwachsene. Du hast also schon Taubenbabys gesehen. Du hast es nur nicht gemerkt.",
+     "es": "Razón tres: cuando por fin salen, ya tienen tamaño de adulto. Así que sí has visto crías de paloma. Solo que no lo notaste.",
+     "fr": "Raison numéro trois : quand ils sortent enfin, ils ont déjà la taille d'un adulte. Donc tu as déjà vu des bébés pigeons. Tu ne l'as juste pas remarqué."
+    },
+    {
+     "at": "0.15",
+     "text": "Ever seen a baby pigeon? Tell us below, and send us your next why.",
+     "cta": true,
+     "de": "Schon mal ein Taubenbaby gesehen? Schreib es unten rein, und schick uns dein nächstes Warum.",
+     "es": "¿Alguna vez viste una cría de paloma? Dínoslo abajo, y mándanos tu próximo porqué.",
+     "fr": "Déjà vu un bébé pigeon ? Dis-le en commentaire, et envoie-nous ton prochain pourquoi."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Kevin MacLeod - Scheming Weasel (faster).wav",
+   "from": 0,
+   "len": 60,
+   "gain": 0.35
+  },
+  {
+   "id": "flock",
+   "file": "File:Feral Pigeons at Stoke Newington Brooke Road.JPG"
+  },
+  {
+   "id": "adult",
+   "file": "File:Pigeon portrait 4861.jpg"
+  },
+  {
+   "id": "squab",
+   "file": "File:Pigeon baby in nest.jpg"
+  },
+  {
+   "id": "squab2",
+   "file": "File:Baby Pigeon in Mymensingh, Bangladesh.jpg"
+  },
+  {
+   "id": "sclip",
+   "video": "File:Few hours old squab.ogg",
+   "from": 0,
+   "len": 12
+  },
+  {
+   "id": "kid5",
+   "file": "File:Stadttaube kueken.jpeg"
+  },
+  {
+   "id": "d18",
+   "file": "File:Rock dove 18 days old in its nest and one egg.jpg"
+  },
+  {
+   "id": "d20",
+   "file": "File:Pigeon Chicks2 2am.jpg"
+  },
+  {
+   "id": "feed",
+   "file": "File:Feral Pigeon feeding squabs, Lithuania.jpg"
+  },
+  {
+   "id": "crevice",
+   "file": "File:Feral pigeon on cliffside at Berry Head, Devon 2.jpg"
+  },
+  {
+   "id": "overpass",
+   "file": "File:Pigeons under overpass (29328368381).jpg"
+  },
+  {
+   "id": "nyc2",
+   "file": "File:Air conditioner cage with pigeon nest in Manhattan 03.jpg"
+  },
+  {
+   "id": "juv",
+   "file": "File:Rock pigeon juvenile bob kerrey pedestrian bridge DSC 4822.jpg"
+  },
+  {
+   "id": "juv2",
+   "file": "File:Rock pigeon juvenile bob kerrey pedestrian bridge DSC 4841.jpg"
+  },
+  {
+   "id": "mex",
+   "file": "File:PigeonMexicoCity06.JPG"
+  },
+  {
+   "id": "fledg",
+   "file": "File:Feral pigeon, fledgeling, Soyaux, Nouvelle-Aquitaine, France 2024.jpg"
+  }
+ ]
+}
