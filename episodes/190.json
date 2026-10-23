@@ -75,11 +75,11 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Reason two: the sun. It lifts the water out as vapor, but the salt stays behind.",
-     "cap": "Reason two: *the sun.* The *water* leaves as *vapor.* The *salt* stays *behind.*",
-     "de": "Grund zwei: die Sonne. Sie hebt das Wasser als Dampf heraus, aber das Salz bleibt zurück.",
-     "es": "Razón dos: el sol. Saca el agua en forma de vapor, pero la sal se queda.",
-     "fr": "Raison numéro deux : le soleil. Il fait partir l'eau en vapeur, mais le sel reste."
+     "text": "Reason two: the sun. It turns the water into vapor, but the salt stays behind.",
+     "cap": "Reason two: *the sun.* The *water* turns to *vapor.* The *salt* stays *behind.*",
+     "de": "Grund zwei: die Sonne. Sie verwandelt das Wasser in Dampf, aber das Salz bleibt zurück.",
+     "es": "Razón dos: el sol. Convierte el agua en vapor, pero la sal se queda.",
+     "fr": "Raison numéro deux : le soleil. Il transforme l'eau en vapeur, mais le sel reste."
     }
    ]
   },
