@@ -41,3 +41,4 @@ Check this list before proposing a topic. Add every new episode here in the same
 #187 Why are flamingos pink? (carotenoids from brine shrimp/algae, pale = sick, preen-gland "make-up", red crop milk, parents turn pale)
 #188 Why do zebras have stripes? (camouflage busted: open plains, lions can't see stripes from afar; 2018 barrel test: no cooling difference; most evidence: biting flies, horses in zebra coats)
 #189 Why do onions make you cry? (cells hide alliinase → LFS → syn-propanethial-S-oxide tear gas, defence vs animals; tears up to 100×; fix: running water, keep the root)
+#190 Why is the ocean salty? (rain washes salt out of the ground, rivers carry it; evaporation leaves salt behind; Great Salt Lake proof, 1.1 million tons a year; chloride from volcanoes + vents)
