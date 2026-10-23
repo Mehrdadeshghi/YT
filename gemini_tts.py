@@ -7,7 +7,7 @@ the WAVs come back as a release (gemini-N). Docs: ai.google.dev/gemini-api/docs/
                                               timestamps, sped up to the target pace. Dubs stay on dub.py's voices.
   episode flags: gemini_voice (default Charon), gemini_style (delivery prompt), gemini_wpm (target pace, default 185)
 
-Output: WAV 24 kHz mono 16-bit. Free tier: requests are rate-limited per day (see aistudio.google.com/rate-limit) and
+Output: WAV 24 kHz mono 16-bit. Free tier: 3 requests/minute, 10 requests/day (aistudio.google.com/rate-limit, Oct 2026) and
 free-tier prompts may be used by Google to improve its products (our scripts are public anyway).
 """
 import base64, hashlib, json, os, subprocess, sys, time, urllib.error, urllib.request
@@ -26,14 +26,16 @@ def synth(text, voice, dst, style=STYLE):
             'generation_config': {'speech_config': [{'voice': voice}]}}
     req = urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/interactions', data=json.dumps(body).encode(),
                                  headers={'Content-Type': 'application/json', 'x-goog-api-key': os.environ['GEMINI_API_KEY']})
-    for wait in (0, 30, 90):                                       # only transient errors are retried (429 = free-tier limit)
-        time.sleep(wait)
+    # free tier (Oct 2026): 3 requests/minute, 10 requests/day per project. A daily-quota 429 stops at once (nothing is retried);
+    # a per-minute 429 waits for the next minute; 500/503 ("high demand") is retried once — each retry may count against the day.
+    for attempt in range(4):
         try:
             with urllib.request.urlopen(req, timeout=180) as r: res = json.load(r); break
         except urllib.error.HTTPError as ex:
-            msg = ex.read().decode(errors='replace')[:300]
-            if ex.code not in (429, 500, 503) or wait == 90: sys.exit(f'Gemini TTS error {ex.code}: {msg}')
-            print(f'  {ex.code}, retry in a moment: {msg[:120]}', flush=True)
+            msg = ex.read().decode(errors='replace')[:600]
+            if ex.code == 429 and 'PerDay' not in msg and attempt < 3: print('  429 per-minute limit, waiting 65 s', flush=True); time.sleep(65); continue
+            if ex.code in (500, 503) and attempt == 0: print(f'  {ex.code}, one retry in 60 s', flush=True); time.sleep(60); continue
+            sys.exit(f'Gemini TTS error {ex.code}' + (' — FREE DAILY LIMIT (10/day) used up, resets at midnight Pacific time (09:00 Berlin)' if 'PerDay' in msg else '') + f': {msg[:300]}')
     audio = [b for s in res.get('steps', []) if s.get('type') == 'model_output' for b in s.get('content', []) if b.get('type') == 'audio']
     if not audio: sys.exit('Gemini TTS: no audio in the response: ' + json.dumps(res)[:300])
     os.makedirs(os.path.dirname(dst), exist_ok=True)
