@@ -44,3 +44,6 @@ Check this list before proposing a topic. Add every new episode here in the same
 #190 Why is the ocean salty? (rain washes salt out of the ground, rivers carry it; evaporation leaves salt behind; Great Salt Lake proof, 1.1 million tons a year; chloride from volcanoes + vents)
 #194 Why do knuckles crack? (gas bubble in synovial fluid when pressure drops; 2015 study: bubble still there → forms vs bursts still debated; ~20 min refractory period; Unger's left hand 50+ years, no arthritis, Ig Nobel 2009)
 #195 Why do we get goosebumps? (arrector pili muscles + fight-or-flight nerves; fur traps air = warm coat; look bigger: scared cats, porcupine quills are hairs; leftover reflex, music/horror movies)
+#191 Why do you never see baby pigeons? (hidden nests in cracks/ledges/overpasses; squabs stay ~a month, crop milk from both parents, weight x2 in 2 days; leave adult-sized)
+#192 Why is the sky blue? (Moon black sky vs Earth; Rayleigh scattering blue >> red; violet scatters more but the eye sees the blue-violet mix as sky blue; sunset: long path, blue+green scattered out)
+#193 Why does the Moon look huge near the horizon? (Moon illusion: same angular size, 1.5% farther; pebble test 0.33 in at 25 in; textbook apparent-distance idea, ~50%; still debated since Aristotle)
