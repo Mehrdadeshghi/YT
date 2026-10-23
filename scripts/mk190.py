@@ -52,7 +52,7 @@ E = {
  ],
  'photos': [
   {'id': 'music', 'audio': 'File:Kevin MacLeod - Carefree.ogg', 'from': 0, 'len': 60, 'gain': 0.5},
-  {'id': 'river', 'file': 'File:Fortymile Wild and Scenic River, Alaska (36497858381).jpg'},
+  {'id': 'river', 'file': 'File:Fast mountain river flowing through the conifer forest.jpg'},
   {'id': 'river2', 'file': 'File:Fortymile Wild and Scenic River, Alaska (36497858011).jpg'},
   {'id': 'ocean', 'file': 'File:Big wave breaking in Santa Cruz.jpg'},
   {'id': 'ocean2', 'file': 'File:Waves in pacifica 1.jpg'},
@@ -60,7 +60,7 @@ E = {
   {'id': 'rainrocks', 'file': 'File:Jumbo Rocks campsite after heavy rain (46491397825).jpg'},
   {'id': 'runoff', 'file': 'File:Beverage Knob Rd after rain in Rock Cave, West Virginia, US, on 7 August 2023 (07).jpg'},
   {'id': 'mouth', 'file': 'File:The mouth of the Vistula River into the Baltic Sea.jpg'},
-  {'id': 'mouth2', 'file': 'File:Chapora River Mouth at Arabian Sea, Goa.jpg'},
+  {'id': 'mouth2', 'file': 'File:Endpoint of the Colorado River.jpg'},
   {'id': 'ponds', 'file': 'File:Salt ponds SF Bay (dro!d).jpg'},
   {'id': 'ponds2', 'file': 'File:Solar Evaporation Ponds, Atacama Desert.jpg'},
   {'id': 'gsl', 'file': 'File:Great Salt Lake (June 2008).jpg'},
