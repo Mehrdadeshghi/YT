@@ -43,9 +43,9 @@ def synth(text, voice, dst, style=STYLE):
 
 
 def segments(E):
-    """narrated lines in voice.py's order: opener, scenes, outro"""
+    """narrated lines in voice.py's order: opener, scenes, explicit outro (voice.py's default outro is never shown → not spoken)"""
     return ([s['text'] for s in E.get('vo_open', [])] + [v['text'] for sc in E['scenes'] for v in sc.get('vo', [])]
-            + [s['text'] for s in E.get('vo_outro', [{'text': 'Subscribe for the next random article.'}])])
+            + [s['text'] for s in E.get('vo_outro', [])])
 
 
 def tag(E):
@@ -83,6 +83,7 @@ class Take:
 
     def create(self, text, **kw):
         if self.clips is None: self._make()
+        if text not in self.clips: import numpy as np; return np.zeros(2400, np.float32), 24000   # unused default outro
         return self.clips[text]
 
 
