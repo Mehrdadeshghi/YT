@@ -1,0 +1,180 @@
+{
+ "ep": 194,
+ "title": "Why do knuckles crack?",
+ "series": "WHY? #9",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "gemini",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js",
+  "why.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "why": {
+  "q": [
+   "DO KNUCKLES",
+   "CRACK?"
+  ],
+  "next": "YOUR NEXT WHY? COMMENT IT"
+ },
+ "hook": [
+  "WHY DO",
+  "KNUCKLES CRACK?"
+ ],
+ "cta": {
+  "q": "Do you crack your knuckles?",
+  "a": "YES",
+  "b": "NEVER"
+ },
+ "source": "https://en.wikipedia.org/wiki/Cracking_joints",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "Pull a finger: crack. Try again right away: nothing. Why?",
+   "de": "Zieh an einem Finger: Knack. Gleich nochmal: nichts. Warum?",
+   "es": "Tira de un dedo: crac. Inténtalo otra vez enseguida: nada. ¿Por qué?",
+   "fr": "Tire sur un doigt : crac. Recommence tout de suite : rien. Pourquoi ?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Reason one: a gas bubble. Pull the joint, the pressure drops, and gas in the joint fluid forms a bubble.",
+     "cap": "Reason one: *a gas bubble.* Pull the joint: *pressure drops.* Gas in the *joint fluid* forms a *bubble.*",
+     "de": "Grund eins: eine Gasblase. Zieh am Gelenk, der Druck fällt, und Gas in der Gelenkflüssigkeit bildet eine Blase.",
+     "es": "Razón uno: una burbuja de gas. Tiras de la articulación, la presión baja y el gas del líquido articular forma una burbuja.",
+     "fr": "Raison numéro un : une bulle de gaz. Tire sur l'articulation, la pression chute, et le gaz du liquide articulaire forme une bulle."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Pop when it forms, or when it bursts? A twenty fifteen study saw the bubble still there after the crack. Still debated.",
+     "cap": "Pop when it *forms*, or when it *bursts?* A *2015 study:* bubble *still there* after the crack. *Still debated.*",
+     "de": "Knallt es beim Entstehen oder beim Platzen? Eine Studie von zweitausendfünfzehn sah die Blase nach dem Knacken noch. Bis heute umstritten.",
+     "es": "¿Suena al formarse o al reventar? Un estudio de dos mil quince vio la burbuja todavía ahí después del crujido. Sigue en debate.",
+     "fr": "Ça claque quand elle se forme, ou quand elle éclate ? Une étude de deux mille quinze a vu la bulle encore là après le craquement. Toujours débattu."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Reason two: the reload. The gas needs about twenty minutes to dissolve back. Until then, no crack.",
+     "cap": "Reason two: *the reload.* The gas needs about *20 minutes* to dissolve back. Until then: *no crack.*",
+     "de": "Grund zwei: das Nachladen. Das Gas braucht etwa zwanzig Minuten, um sich wieder zu lösen. Bis dahin: kein Knacken.",
+     "es": "Razón dos: la recarga. El gas necesita unos veinte minutos para disolverse de nuevo. Hasta entonces, nada de crujidos.",
+     "fr": "Raison numéro deux : la recharge. Le gaz met environ vingt minutes à se redissoudre. D'ici là, pas de craquement."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Arthritis? A doctor cracked only his left knuckles for over fifty years. Neither hand got arthritis. He won an Ig Nobel Prize.",
+     "cap": "*Arthritis?* A doctor cracked only his *left* knuckles for *50+ years.* *Neither hand* got arthritis. *Ig Nobel Prize.*",
+     "de": "Arthrose? Ein Arzt knackte über fünfzig Jahre lang nur die Knöchel seiner linken Hand. Keine Hand bekam Arthrose. Dafür gab es den Ig-Nobelpreis.",
+     "es": "¿Artritis? Un médico se crujió solo los nudillos de la mano izquierda durante más de cincuenta años. Ninguna mano tuvo artritis. Ganó un premio Ig Nobel.",
+     "fr": "L'arthrose ? Un médecin a fait craquer seulement sa main gauche pendant plus de cinquante ans. Aucune main n'a eu d'arthrose. Il a gagné un prix Ig Nobel."
+    },
+    {
+     "at": "0.15",
+     "text": "Do you crack your knuckles? Tell us below, and tell us your next why.",
+     "cta": true,
+     "de": "Knackst du mit den Fingern? Schreib es unten rein, und schick uns dein nächstes Warum.",
+     "es": "¿Te crujes los nudillos? Dínoslo abajo, y mándanos tu próximo porqué.",
+     "fr": "Tu fais craquer tes doigts ? Dis-le en commentaire, et envoie-nous ton prochain pourquoi."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Kevin MacLeod - Scheming Weasel (faster).wav",
+   "from": 0,
+   "len": 60,
+   "gain": 0.35
+  },
+  {
+   "id": "crack",
+   "file": "File:Cracking knuckles.jpg"
+  },
+  {
+   "id": "scan",
+   "file": "File:Visualization of Joint Cavitation.png"
+  },
+  {
+   "id": "joint",
+   "file": "File:Synovial Joint.png"
+  },
+  {
+   "id": "joint2",
+   "file": "File:907 Synovial Joints.jpg"
+  },
+  {
+   "id": "hand",
+   "file": "File:DIP, PIP and MCP joints of hand (cropped).jpg"
+  },
+  {
+   "id": "bend",
+   "file": "File:Hypermobile fingers.jpg"
+  },
+  {
+   "id": "finger",
+   "file": "File:Finger.agr.jpg"
+  },
+  {
+   "id": "xray",
+   "file": "File:X-ray of normal hand by dorsoplantar projection.jpg"
+  },
+  {
+   "id": "ig1",
+   "file": "File:36th Ig Nobel Prize Ceremony Zurich 005.jpg"
+  },
+  {
+   "id": "ig2",
+   "file": "File:36th Ig Nobel Prize Ceremony Zurich 015.jpg"
+  },
+  {
+   "id": "ig3",
+   "file": "File:36th Ig Nobel Prize Ceremony Zurich 023.jpg"
+  },
+  {
+   "id": "ig4",
+   "file": "File:36th Ig Nobel Prize Ceremony Zurich 034.jpg"
+  }
+ ]
+}
