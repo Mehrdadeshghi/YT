@@ -1,0 +1,194 @@
+{
+ "ep": 186,
+ "title": "Why are pigeon nests so bad?",
+ "series": "WHY? #1",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js",
+  "why.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "why": {
+  "q": [
+   "WHY ARE PIGEON",
+   "NESTS SO BAD?"
+  ],
+  "next": "YOUR NEXT WHY? COMMENT IT"
+ },
+ "hook": [
+  "WHY ARE PIGEON",
+  "NESTS SO BAD?"
+ ],
+ "cta": {
+  "q": "Pigeons: lazy or smart?",
+  "a": "LAZY",
+  "b": "SMART"
+ },
+ "source": "https://en.wikipedia.org/wiki/Rock_dove",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "Weaver birds build this. Pigeons build this. Why?",
+   "de": "Webervögel bauen das. Tauben bauen das. Warum?",
+   "es": "Los tejedores construyen esto. Las palomas, esto. ¿Por qué?",
+   "fr": "Les tisserins construisent ça. Les pigeons construisent ça. Pourquoi ?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Reason one: pigeons are cliff birds. In the wild, they nest on ledges in sea cliffs and caves.",
+     "cap": "Reason one: *cliff birds.* Wild ones nest on *ledges* in *sea cliffs* and *caves.*",
+     "de": "Grund eins: Tauben sind Felsenvögel. In freier Natur nisten sie auf Felsvorsprüngen in Klippen am Meer und in Höhlen.",
+     "es": "Razón uno: las palomas son aves de acantilado. En libertad anidan en salientes de acantilados marinos y en cuevas.",
+     "fr": "Raison numéro un : les pigeons sont des oiseaux de falaise. À l'état sauvage, ils nichent sur des corniches de falaises et dans des grottes."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Skyscrapers and highway overpasses? To a pigeon, just more cliffs.",
+     "cap": "*Skyscrapers* and *overpasses?* To a pigeon: more *cliffs.*",
+     "de": "Wolkenkratzer und Autobahnbrücken? Für eine Taube einfach noch mehr Klippen.",
+     "es": "¿Rascacielos y pasos elevados? Para una paloma, solo más acantilados.",
+     "fr": "Gratte-ciel et ponts d'autoroute ? Pour un pigeon, ce sont juste d'autres falaises."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Reason two: no show-off. A weaver male tears off about three hundred leaf strips to impress a female. A pigeon dad may just bring sticks.",
+     "cap": "Reason two: *no show-off.* A weaver tears off *300 leaf strips.* A pigeon dad: *sticks.*",
+     "de": "Grund zwei: kein Angeben. Ein Webervogel-Männchen reißt rund dreihundert Blattstreifen ab, um ein Weibchen zu beeindrucken. Ein Tauben-Papa bringt oft nur Stöckchen.",
+     "es": "Razón dos: nada de presumir. Un tejedor macho arranca unas trescientas tiras de hoja para impresionar a una hembra. Un palomo a veces solo trae palitos.",
+     "fr": "Raison numéro deux : pas de frime. Un tisserin mâle arrache environ trois cents lanières de feuilles pour séduire une femelle. Un papa pigeon apporte parfois juste des brindilles."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Reason three: nonstop babies. Pigeons make milk, so they can breed all year, up to six times. Both parents make it. Even dads.",
+     "cap": "Reason three: *nonstop babies.* Pigeons make *milk.* Up to *6 times* a year. *Both parents.* Even *dads.*",
+     "de": "Grund drei: Babys ohne Pause. Tauben machen Milch, darum können sie das ganze Jahr brüten, bis zu sechs Mal. Beide Eltern machen sie. Sogar die Väter.",
+     "es": "Razón tres: bebés sin parar. Las palomas producen leche, así que pueden criar todo el año, hasta seis veces. La producen los dos padres. Incluso los machos.",
+     "fr": "Raison numéro trois : des bébés non-stop. Les pigeons produisent du lait, donc ils peuvent se reproduire toute l'année, jusqu'à six fois. Les deux parents en font. Même les pères."
+    },
+    {
+     "at": "0.15",
+     "text": "Lazy or smart? Comment! And tell us your next why.",
+     "cta": true,
+     "de": "Faul oder schlau? Schreib es in die Kommentare! Und schick uns dein nächstes Warum.",
+     "es": "¿Vagas o listas? ¡Comenta! Y dinos tu próximo porqué.",
+     "fr": "Paresseux ou malins ? Commente ! Et dis-nous ton prochain pourquoi."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Kevin MacLeod - Scheming Weasel (faster).wav",
+   "from": 0,
+   "len": 60,
+   "gain": 0.35
+  },
+  {
+   "id": "weaver",
+   "file": "File:Weaver Bird Nest Closeup.jpg"
+  },
+  {
+   "id": "weaver2",
+   "file": "File:Village Weaver Nest 7.jpg"
+  },
+  {
+   "id": "wbuild",
+   "file": "File:Black-headed weaver (Ploceus cucullatus bohndorffi) male nest building.jpg"
+  },
+  {
+   "id": "wclip",
+   "video": "File:001 Black-headed weaver building its nest at Kibale forest National Park Video by Giles Laurent.webm",
+   "from": 4,
+   "len": 10
+  },
+  {
+   "id": "pnest",
+   "file": "File:Pigeon nest.jpg"
+  },
+  {
+   "id": "pnest2",
+   "file": "File:Feral pigeon nest, Bangalore.jpg"
+  },
+  {
+   "id": "cliff",
+   "file": "File:133109 rosh hanikra - pigeons nesting in the rock cliffs PikiWiki Israel.jpg"
+  },
+  {
+   "id": "cliff2",
+   "file": "File:133110 rosh hanikra - pigeons nesting in the rock cliffs PikiWiki Israel.jpg"
+  },
+  {
+   "id": "cliff3",
+   "file": "File:Feral pigeons on cliffs at Hunstanton, Norfolk.jpg"
+  },
+  {
+   "id": "nyc",
+   "file": "File:Air conditioner cage with pigeon nest in Manhattan 01.jpg"
+  },
+  {
+   "id": "nyc2",
+   "file": "File:Air conditioner cage with pigeon nest in Manhattan 03.jpg"
+  },
+  {
+   "id": "overpass",
+   "file": "File:Pigeons under overpass (29328368381).jpg"
+  },
+  {
+   "id": "twig",
+   "file": "File:Pigeon building nest i Eskilstuna, Sweden.jpg"
+  },
+  {
+   "id": "feed",
+   "file": "File:Feral Pigeon feeding squabs, Lithuania.jpg"
+  },
+  {
+   "id": "feed2",
+   "file": "File:Pigeon 1050170.jpg"
+  }
+ ]
+}
