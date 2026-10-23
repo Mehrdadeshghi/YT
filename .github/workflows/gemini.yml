@@ -1,0 +1,29 @@
+name: Gemini voices
+# Actions → "Gemini voices" → Run workflow: Gemini TTS (AI Studio, free tier) voice samples → Release gemini-N (mp3 per voice)
+# needs repository secret GEMINI_API_KEY (from aistudio.google.com/apikey)
+on:
+  workflow_dispatch:
+    inputs:
+      voices:
+        description: "Voices (empty = default audition set)"
+        required: false
+        default: ""
+permissions:
+  contents: write
+jobs:
+  gemini:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Synthesize
+        env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}" }
+        run: python3 gemini_tts.py samples ${{ inputs.voices }}
+      - name: Release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          command -v ffmpeg >/dev/null || sudo apt-get install -y -qq ffmpeg
+          cd assets/gemini/samples && for f in *.wav; do ffmpeg -v error -i "$f" -b:a 128k "${f%.wav}.mp3"; done
+          gh release create "gemini-${{ github.run_number }}" *.mp3 --title "Gemini voices ${{ github.run_number }}" --notes "Gemini TTS voice samples (script of #186)"
