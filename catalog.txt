@@ -1,33 +1,24 @@
-Onions | Onions
-Cut onions | Cut onions
-Chopped onions | Chopped onions
-Onion cells | Onion cells
-Allium cepa | Allium cepa
-Tears | Tears
-Garlic | Garlic
-article: Onion
-article: Syn-Propanethial-S-oxide
-article: Lachrymatory-factor synthase
-article: Alliinase
-article: Tears
-article: Lachrymatory agent
-article: Garlic
-image: cutting onion
-image: chopping onion
-image: onion cut half
-image: sliced onion
-image: whole onion
-image: onion bulb
-image: crying onion
-image: tears eye
-image: tear drop eye
-image: onion epidermis cells microscope
-image: onion skin cells
-image: garlic cloves
-image: onion field
-video: cutting onion
-video: chopping onion
-video: onion
-video: tears
+Zebras | Equus quagga
+Plains zebras | Equus quagga burchellii
+Zebra herds | Herds of zebras
+Horses | Equus caballus in fields
+Horse flies | Tabanidae
+Zebra skin | Zebra skins
+article: Zebra
+article: Plains zebra
+article: Horse-fly
+image: zebra stripes close
+image: zebra herd savanna
+image: zebra horse fly
+image: horse zebra coat
+image: horse wearing zebra rug
+image: horse in field brown
+image: plain horse grazing
+image: tabanus horse fly
+image: zebra skin black
+image: lion hunting zebra
+image: zebra foal stripes
+video: zebra
+video: zebras running
+video: horse fly
 audio: Kevin MacLeod
-audio: Rafael Krux
