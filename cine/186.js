@@ -18,7 +18,7 @@ VIS.open = (K) => { K(0.15, 'hit', 1.3); K(0.2, 'mute', 1, 0.4); const we = sw('
   return (t) => { atmosphere(t);
     whyPair(t, { id: 'wbuild', label: 'WEAVER', at: we, a: [0.47, 0.5, 1.0], b: [0.47, 0.5, 1.06] },
                { id: 'pnest', label: 'PIGEON', at: pi, a: [0.5, 0.45, 1.0], b: [0.48, 0.4, 1.15] }, 790, 1570, { cols: true }); tag(t);
-    whyBadge(t, 0, 80, 345); whyQ(t, 0.05, EP_RAW.why.q, 625, { size: 104 }); }; };
+    whyBadge(t, -0.4, 80, 345); whyQ(t, -0.5, EP_RAW.why.q, 625, { size: 104 }); }; };   // badge + question fully drawn on frame 1
 
 VIS[0] = S(() => { const cl = sw('cliff', 1.0), se = sw('sea', 2.6), ca = sw('caves', 3.2);
   return (K) => { ks(K, [[0.1, 'whoosh', 0.8], [cl, 'hit', 1], [se, 'tick', 1], [ca, 'tick', 1]]);

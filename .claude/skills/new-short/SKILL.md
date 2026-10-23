@@ -50,7 +50,7 @@ Answer Mehrdad in German. Video language English, dubs DE/ES/FR. Read `CLAUDE.md
 - Copy `scripts/mk186.py` + `cine/186.js`. Flags as the house Short (`look: cine`, `facts`, `tight`, `voice: narrator`, `wordCaps`),
   `"scripts": ["tech.js", "why.js"]`, `"series": "WHY? #n"`, `"why": {"q": ["<question line 1>", "<line 2>?"], "next": "YOUR NEXT WHY? COMMENT IT"}`.
 - Structure (24–34 s): frame 1 = `whyBadge` + `whyQ` (the question) over `whyPair(..., {cols: true})` — two REAL photos "this vs this";
-  VO "<X> does this. <Y> does this. Why?". Then 2–3 scenes, each `whyReason(t, tIn, n, 'TITLE.')` ("REASON n" chip + gold line) over one
+  VO "<X> does this. <Y> does this. Why?". Start badge + question at negative tIn (≈ -0.4) so frame 1 is complete. Then 2–3 scenes, each `whyReason(t, tIn, n, 'TITLE.')` ("REASON n" chip + gold line) over one
   photo (`shot`, box 40/690/1000/760) or two stacked photos (`whyPair`). Strongest / most surprising reason last.
   Last scene ends with the comment card (`cta {q,a,b}`, binary) + `whyNext(t, sw('next'))`; the spoken CTA ends "…and tell us your next why."
 - Every reason must be a sourced fact. Don't invent causality ("scientists think" only if the source says so).
