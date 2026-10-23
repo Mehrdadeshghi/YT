@@ -75,7 +75,7 @@ jobs:
           done
           ls assets/photos | wc -l
       - name: Build
-        env: { FPS: "${{ github.event.inputs.fps || '60' }}" }
+        env: { FPS: "${{ github.event.inputs.fps || '60' }}", GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}" }
         run: set -o pipefail; scripts/build.sh ${{ steps.eps.outputs.list }} 2>&1 | tee build.log
       - name: Publish release
         env: { GH_TOKEN: "${{ github.token }}" }
