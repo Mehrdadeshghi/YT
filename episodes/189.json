@@ -48,7 +48,7 @@
  "vo_open": [
   {
    "at": 0.3,
-   "text": "A whole onion: harmless. Cut it, and you cry. Why?",
+   "text": "Whole onion: harmless. Cut it, and you cry. Why?",
    "de": "Eine ganze Zwiebel: harmlos. Schneid sie, und du weinst. Warum?",
    "es": "Una cebolla entera: inofensiva. La cortas, y lloras. ¿Por qué?",
    "fr": "Un oignon entier : inoffensif. Coupe-le, et tu pleures. Pourquoi ?"
@@ -103,8 +103,8 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "The fix: cut it under running water, and leave the root on.",
-     "cap": "The fix: cut it under *running water.* Leave the *root* on.",
+     "text": "Quick fix: cut it under running water, and leave the root on.",
+     "cap": "Quick fix: cut it under *running water.* Leave the *root* on.",
      "de": "Der Trick: unter fließendem Wasser schneiden, und die Wurzel dranlassen.",
      "es": "El truco: córtala bajo el agua del grifo, y deja la raíz.",
      "fr": "L'astuce : coupe-le sous l'eau du robinet, et garde la racine."

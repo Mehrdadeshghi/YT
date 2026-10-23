@@ -76,7 +76,7 @@ VIS[3] = S(() => { const ru = sw('running', 1.0), ro = sw('root', 2.4), cr = sw(
     return (t) => { atmosphere(t);
       const P = shot(t, 'cross', { box: [40, 690, 1000, 760], a: [0.5, 0.62, 1.0], b: [0.5, 0.7, 1.1], dur: 6 }); if (!P) noPhoto(t); tag(t, 3, N189);
       realBadge(t, 0.3, 'REAL PHOTO · ONION, CROSS SECTION');
-      whyReason(t, 0.1, null, 'THE FIX.');
+      whyReason(t, 0.1, null, 'QUICK FIX.');
       if (t > ru && t < cr) chip('💧 CUT UNDER RUNNING WATER', 540, 790, t, ru, { size: 38, bg: GOLD, fg: BG });
       if (t > ro && t < cr) chip('KEEP THE ROOT ON ✓', 540, 1380, t, ro, { size: 38, bg: TXT, fg: BG });
       whyNext(t, nx, undefined, 1340); }; }; });
