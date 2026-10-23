@@ -37,9 +37,15 @@ Answer Mehrdad in German. Video language English, dubs DE/ES/FR. Read `CLAUDE.md
 - Read the PNGs. Fix overlaps, empty frames, wrong crops, unreadable text. Repeat until clean.
 
 ## 7. Render in CI
-- Commit + push, then one dispatch per episode (`render.yml`, `inputs[episodes]`, `inputs[fps]=30`). Poll with `gh run view`.
-- Download `shorts-N` assets. Check: duration, Whisper transcript (names, numbers, years!), frames at 4–6 times, dub tracks not silent
-  (`silencedetect`). Fix and re-render if anything is wrong — say so in the delivery.
+- Commit + push, then one dispatch per episode (`render.yml`, `inputs[episodes]`, `inputs[fps]=30`). Wait with ONE quiet
+  `gh run watch <id> --exit-status >/dev/null` (run it in the background) — never poll in a loop: several agents polling hit
+  GitHub's API rate limit.
+- Check with `.venv/bin/python scripts/check_final.py <ep>`: downloads into wr_deliver/<ep>/, prints duration, Whisper
+  transcript + word diff against the script, dub tracks (volume, silences) and writes ONE frame strip `strip.png` — look at that
+  image only. Fix and re-render if anything is wrong (every render is a new narrator take → check again) — say so in the delivery.
+- Voice `"voice": "gemini"` (Google Gemini TTS, AI Studio free tier, much more human than `narrator`): the whole English script is
+  ONE request per render (free-tier daily limit → avoid needless re-renders). Flags `gemini_voice` (default Charon), `gemini_style`,
+  `gemini_wpm` (default 185). Dubs stay on dub.py's voices. Samples: workflow "Gemini voices" → release gemini-N.
 
 ## 8. Upload text (`uploads/<ep>.md`)
 - Title EN (+ DE/ES/FR titles), description with the hook fact, comment question, source, "Voice: AI narrator",
