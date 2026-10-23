@@ -129,32 +129,8 @@
    "gain": 0.35
   },
   {
-   "id": "catgb",
-   "file": "File:Goosebumps in cat.jpg"
-  },
-  {
    "id": "arm",
    "file": "File:Goose bumps.jpg"
-  },
-  {
-   "id": "arm2",
-   "file": "File:2003-09-17 Goose bumps.jpg"
-  },
-  {
-   "id": "arm3",
-   "file": "File:Chaire de poule.jpg"
-  },
-  {
-   "id": "arm4",
-   "file": "File:Goose bumps on arm of female at beach.jpg"
-  },
-  {
-   "id": "skin",
-   "file": "File:Skin.png"
-  },
-  {
-   "id": "pilo",
-   "file": "File:Piloerección.jpg"
   },
   {
    "id": "cat2",
@@ -165,36 +141,8 @@
    "file": "File:Hannibal Poenaru - Nasty cat ! (by-sa).jpg"
   },
   {
-   "id": "catclip",
-   "video": "File:Black and white cat growl and hiss.webm",
-   "from": 2,
-   "len": 10
-  },
-  {
-   "id": "porc",
-   "file": "File:Crested Porcupine (Hystrix cristata).jpg"
-  },
-  {
    "id": "porc2",
    "file": "File:African crested Porcupine -Hystrix cristata-.jpg"
-  },
-  {
-   "id": "porc3",
-   "file": "File:Em - Hystrix cristata - 2.jpg"
-  },
-  {
-   "id": "porc4",
-   "file": "File:Crested porcupine. Photo 1.jpg"
-  },
-  {
-   "id": "porcclip",
-   "video": "File:Porcupine fight - Dream Village Zoo - Morocco.webm",
-   "from": 0,
-   "len": 12
-  },
-  {
-   "id": "orch",
-   "file": "File:The U.S. Army Orchestra concert at Rachel M. Schlesinger Concert Hall in Alexandria, Virginia on May 16, 2025 - 25.jpg"
   },
   {
    "id": "crowd",

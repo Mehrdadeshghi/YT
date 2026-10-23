@@ -42,3 +42,5 @@ Check this list before proposing a topic. Add every new episode here in the same
 #188 Why do zebras have stripes? (camouflage busted: open plains, lions can't see stripes from afar; 2018 barrel test: no cooling difference; most evidence: biting flies, horses in zebra coats)
 #189 Why do onions make you cry? (cells hide alliinase → LFS → syn-propanethial-S-oxide tear gas, defence vs animals; tears up to 100×; fix: running water, keep the root)
 #190 Why is the ocean salty? (rain washes salt out of the ground, rivers carry it; evaporation leaves salt behind; Great Salt Lake proof, 1.1 million tons a year; chloride from volcanoes + vents)
+#194 Why do knuckles crack? (gas bubble in synovial fluid when pressure drops; 2015 study: bubble still there → forms vs bursts still debated; ~20 min refractory period; Unger's left hand 50+ years, no arthritis, Ig Nobel 2009)
+#195 Why do we get goosebumps? (arrector pili muscles + fight-or-flight nerves; fur traps air = warm coat; look bigger: scared cats, porcupine quills are hairs; leftover reflex, music/horror movies)
