@@ -39,3 +39,4 @@ Check this list before proposing a topic. Add every new episode here in the same
 ## WHY? series (everyday why-questions, cine/why.js)
 #186 Why are pigeon nests so bad? (cliff birds, weaver 300 leaf strips vs pigeon sticks, crop milk / up to 6 broods a year)
 #187 Why are flamingos pink? (carotenoids from brine shrimp/algae, pale = sick, preen-gland "make-up", red crop milk, parents turn pale)
+#188 Why do zebras have stripes? (camouflage busted: open plains, lions can't see stripes from afar; 2018 barrel test: no cooling difference; most evidence: biting flies, horses in zebra coats)
