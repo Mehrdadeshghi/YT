@@ -56,18 +56,11 @@ E = {
  'photos': [
   {'id': 'music', 'audio': 'File:Kevin MacLeod - Scheming Weasel (faster).wav', 'from': 0, 'len': 60, 'gain': 0.35},
   {'id': 'whole', 'file': 'File:Liat Portal for Foodie Disorder - Red Onion.jpg'},
-  {'id': 'whole2', 'file': 'File:Liat Portal for Foodie Disorder - Onions.jpg'},
   {'id': 'chopped', 'file': 'File:Chopped red onion.jpg'},
   {'id': 'chopped2', 'file': 'File:Chopped onions on a cutting board with knife.jpg'},
-  {'id': 'cells', 'video': 'File:Cytoplasmic streaming.webm', 'from': 3, 'len': 10},
   {'id': 'cells2', 'file': 'File:Onion Epidermis Cells W.M. 40x - 177.jpg'},
-  {'id': 'cutting', 'file': 'File:Cutting onion bulb.jpg'},
-  {'id': 'cutting2', 'file': 'File:Cutting onion for salsa sauce at Kapana Single quoters in Windhoek.jpg'},
-  {'id': 'mol', 'file': 'File:Syn-propanethial-S-oxide-3D-balls.png'},
-  {'id': 'eye', 'file': 'File:A small piece of dirt has entered the eye-After some seconds tears will appear 2014-06-22 04-04.jpg'},
   {'id': 'eye2', 'file': 'File:DSCF4880 gözyaşı.JPG'},
   {'id': 'cross', 'file': 'File:Onion - Cross Section.jpg'},
-  {'id': 'halved', 'file': 'File:Berlinwohnung rote zwiebel schnitt 10.04.2012 14-59-48.jpg'},
  ],
 }
 open('episodes/189.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))
