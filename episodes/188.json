@@ -1,0 +1,168 @@
+{
+ "ep": 188,
+ "title": "Why do zebras have stripes?",
+ "series": "WHY? #3",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "sub": 2,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "narrator",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 3,
+ "capY": 1700,
+ "subY": 1520,
+ "subEndY": 1760,
+ "scripts": [
+  "tech.js",
+  "why.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "why": {
+  "q": [
+   "WHY DO ZEBRAS",
+   "HAVE STRIPES?"
+  ],
+  "next": "YOUR NEXT WHY? COMMENT IT"
+ },
+ "hook": [
+  "WHY DO ZEBRAS",
+  "HAVE STRIPES?"
+ ],
+ "cta": {
+  "q": "Did you guess flies?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Zebra",
+ "vo_open": [
+  {
+   "at": 0.3,
+   "text": "Horses are plain. Zebras wear stripes. Why?",
+   "de": "Pferde sind einfarbig. Zebras tragen Streifen. Warum?",
+   "es": "Los caballos son lisos. Las cebras llevan rayas. ¿Por qué?",
+   "fr": "Les chevaux sont unis. Les zèbres portent des rayures. Pourquoi ?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Idea one: camouflage. But zebras graze out in the open, and lions can't even see the stripes from far away.",
+     "cap": "Idea one: *camouflage.* But zebras graze in the *open.* Lions can't see the stripes from *far away.*",
+     "de": "Idee eins: Tarnung. Aber Zebras grasen im offenen Gelände, und Löwen sehen die Streifen aus der Ferne gar nicht.",
+     "es": "Idea uno: camuflaje. Pero las cebras pastan a campo abierto, y los leones ni siquiera ven las rayas de lejos.",
+     "fr": "Première idée : le camouflage. Mais les zèbres broutent à découvert, et les lions ne voient même pas les rayures de loin."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Idea two: keeping cool. One test wrapped water barrels in zebra skin. The stripes made no difference.",
+     "cap": "Idea two: *keeping cool.* Water barrels in *zebra skin.* The stripes: *no difference.*",
+     "de": "Idee zwei: Kühlung. Ein Test hüllte Wasserfässer in Zebrafell. Die Streifen machten keinen Unterschied.",
+     "es": "Idea dos: refrescarse. Una prueba envolvió barriles de agua en piel de cebra. Las rayas no cambiaron nada.",
+     "fr": "Deuxième idée : rester au frais. Un test a enveloppé des barils d'eau dans de la peau de zèbre. Les rayures n'ont rien changé."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Most evidence points to biting flies. Horse flies spread deadly diseases. Dress a horse in a zebra coat, and the flies stop landing.",
+     "cap": "Most evidence: *biting flies.* They spread *deadly diseases.* A horse in a *zebra coat?* Flies *stop landing.*",
+     "de": "Die meisten Belege sprechen für stechende Fliegen. Bremsen übertragen tödliche Krankheiten. Zieh einem Pferd einen Zebramantel an, und die Fliegen landen nicht mehr.",
+     "es": "La mayoría de las pruebas apuntan a las moscas que pican. Los tábanos transmiten enfermedades mortales. Ponle a un caballo un abrigo de cebra, y las moscas dejan de posarse.",
+     "fr": "La plupart des preuves désignent les mouches piqueuses. Les taons transmettent des maladies mortelles. Mets un manteau zébré à un cheval, et les mouches ne se posent plus."
+    },
+    {
+     "at": "0.15",
+     "text": "Did you guess flies? Tell us below, and send us your next why.",
+     "cta": true,
+     "de": "Hättest du auf Fliegen getippt? Schreib es unten rein, und schick uns dein nächstes Warum.",
+     "es": "¿Adivinaste lo de las moscas? Dínoslo abajo, y mándanos tu próximo porqué.",
+     "fr": "Tu avais deviné les mouches ? Dis-le en commentaire, et envoie-nous ton prochain pourquoi."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Kevin MacLeod - Scheming Weasel (faster).wav",
+   "from": 0,
+   "len": 60,
+   "gain": 0.35
+  },
+  {
+   "id": "horse",
+   "file": "File:Mare foal poland.jpg"
+  },
+  {
+   "id": "horse2",
+   "file": "File:Biandintz eta zaldiak - modified2.jpg"
+  },
+  {
+   "id": "zebra",
+   "file": "File:Zebra (44482375151).jpg"
+  },
+  {
+   "id": "zebra2",
+   "file": "File:Grevy Zebra of Samburu.jpg"
+  },
+  {
+   "id": "zclose",
+   "file": "File:100 Plains zebra hair patterns close-up in Etosha National Park Photo by Giles Laurent.jpg"
+  },
+  {
+   "id": "open",
+   "file": "File:Zebras grazing among acacia trees, Serengeti National Park.jpg"
+  },
+  {
+   "id": "open2",
+   "file": "File:Zebra herd, Maasai Mara National Reserve, Kenya.jpg"
+  },
+  {
+   "id": "lion",
+   "file": "File:Lioness zebras and wildbeast in Ngorongoro Crater.jpg"
+  },
+  {
+   "id": "fly",
+   "file": "File:Horse fly Tabanus 2.jpg"
+  },
+  {
+   "id": "flyhorse",
+   "file": "File:Hevoset kesälaitumella 10.jpg"
+  },
+  {
+   "id": "coat",
+   "file": "File:Horse in a zebra coat - near Hurstfold Farm - geograph.org.uk - 7236268.jpg"
+  },
+  {
+   "id": "zclip",
+   "video": "File:Nairobi National Park (August 2025) Zebra.webm",
+   "from": 1,
+   "len": 10
+  }
+ ]
+}
