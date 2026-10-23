@@ -37,7 +37,7 @@ VIS[1] = S(() => { const su = sw('sun', 0.9), va = sw('vapor', 2.4), sa = sw('sa
       if (t > va) chip('WATER ↑ VAPOR', 300, 770, t, va, { size: 38, bg: TXT, fg: BG });
       if (t > sa) chip('SALT STAYS', 760, 1360, t, sa, { size: 44, bg: GOLD, fg: BG }); }; }; });
 
-VIS[2] = S(() => { const ut = sw("Utah's", 0.4), fl = sw('flows', 1.6), mi = sw('minerals', 2.3), sl = sw('saltier', 3.6);
+VIS[2] = S(() => { const ut = sw('Great', 0.4), fl = sw('flows', 1.6), mi = sw('minerals', 2.3), sl = sw('saltier', 3.6);
   return (K) => { ks(K, [[0.1, 'whoosh', 0.8], [ut, 'hit', 1], [fl, 'tick', 1], [mi, 'tick', 1], [sl, 'thump', 1.1]]);
     return (t) => { atmosphere(t);
       whyPair(t, { id: 'gsl', label: 'GREAT SALT LAKE, UTAH', at: ut, a: [0.5, 0.5, 1.0], b: [0.5, 0.5, 1.08] },

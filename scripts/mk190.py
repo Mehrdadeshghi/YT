@@ -34,7 +34,7 @@ E = {
     "Grund zwei: die Sonne. Sie verwandelt das Wasser in Dampf, aber das Salz bleibt zurück.",
     'Razón dos: el sol. Convierte el agua en vapor, pero la sal se queda.',
     "Raison numéro deux : le soleil. Il transforme l'eau en vapeur, mais le sel reste."),
-  S(2, "Utah's Great Salt Lake: no river flows out, so its minerals pile up. It's far saltier than the ocean.",
+  S(2, 'Great Salt Lake, in Utah: no river flows out, so its minerals pile up. It is far saltier than the ocean.',
     "*Great Salt Lake,* Utah: *no river* flows out. Minerals *pile up.* Far *saltier* than the *ocean.*",
     'Der Große Salzsee in Utah: Kein Fluss fließt hinaus, also sammeln sich die Mineralien an. Er ist viel salziger als das Meer.',
     'El Gran Lago Salado de Utah: ningún río sale de él, así que sus minerales se acumulan. Es mucho más salado que el océano.',
