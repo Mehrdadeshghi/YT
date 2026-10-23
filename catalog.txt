@@ -1,34 +1,35 @@
-Rivers | Rivers of the United States
-Ocean waves | Ocean waves
-Great Salt Lake | Great Salt Lake
-Salt evaporation ponds | Salt evaporation ponds
-Hydrothermal vents | Hydrothermal vents
-Black smokers | Black smokers
-Dead Sea salt | Salt formations of the Dead Sea
-article: Seawater
-article: Salinity
-article: Water cycle
-article: Endorheic basin
-article: Great Salt Lake
-article: Hydrothermal vent
-article: Sea salt
-article: Edmond Halley
-image: mountain river clear water
-image: river rapids
-image: ocean waves beach
-image: Pacific Ocean waves
-image: rain on rocks
-image: weathering rock
-image: Great Salt Lake salt crust
-image: Bonneville Salt Flats
-image: salt evaporation pond
-image: Dead Sea salt
-image: black smoker hydrothermal vent
-image: river mouth sea
-video: hydrothermal vent
-video: black smoker
-video: ocean waves
-video: river
-video: rain
-audio: Kevin MacLeod
-audio: Rafael Krux
+Cracking joints | Joint cracking
+Goose bumps | Goose bumps
+Arrector pili muscle | Arrector pili muscles
+Porcupines | Porcupines
+Synovial joints | Synovial joints
+article: Cracking joints
+article: Goose bumps
+article: Arrector pili muscle
+article: Synovial fluid
+article: Ig Nobel Prize
+article: Frisson
+article: Porcupine
+article: Piloerection
+image: knuckle cracking
+image: cracking knuckles hand
+image: knuckles hand fist
+image: hands fingers interlaced stretch
+image: synovial joint diagram
+image: metacarpophalangeal joint
+image: hand x-ray
+image: Ig Nobel Prize ceremony
+image: goose bumps skin arm
+image: goosebumps
+image: plucked goose skin
+image: cat arched back frightened
+image: cat puffed tail
+image: angry cat hissing
+image: porcupine quills raised
+image: crested porcupine
+image: chimpanzee hair raised
+image: concert audience music
+image: orchestra concert hall
+image: shivering cold winter person
+video: porcupine
+video: cat hissing
