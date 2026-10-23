@@ -61,8 +61,8 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Idea one: camouflage. But zebras graze out in the open, and lions can't even see the stripes from far away.",
-     "cap": "Idea one: *camouflage.* But zebras graze in the *open.* Lions can't see the stripes from *far away.*",
+     "text": "Camouflage? That was idea one. But zebras graze out in the open, and lions can't even see the stripes from far away.",
+     "cap": "*Camouflage?* Idea one. But zebras graze in the *open.* Lions can't see the stripes from *far away.*",
      "de": "Idee eins: Tarnung. Aber Zebras grasen im offenen Gelände, und Löwen sehen die Streifen aus der Ferne gar nicht.",
      "es": "Idea uno: camuflaje. Pero las cebras pastan a campo abierto, y los leones ni siquiera ven las rayas de lejos.",
      "fr": "Première idée : le camouflage. Mais les zèbres broutent à découvert, et les lions ne voient même pas les rayures de loin."
@@ -75,8 +75,8 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Idea two: keeping cool. One test wrapped water barrels in zebra skin. The stripes made no difference.",
-     "cap": "Idea two: *keeping cool.* Water barrels in *zebra skin.* The stripes: *no difference.*",
+     "text": "Keeping cool? That was idea two. One test wrapped water barrels in zebra skin. The stripes made no difference.",
+     "cap": "*Keeping cool?* Idea two. Water barrels in *zebra skin.* The stripes: *no difference.*",
      "de": "Idee zwei: Kühlung. Ein Test hüllte Wasserfässer in Zebrafell. Die Streifen machten keinen Unterschied.",
      "es": "Idea dos: refrescarse. Una prueba envolvió barriles de agua en piel de cebra. Las rayas no cambiaron nada.",
      "fr": "Deuxième idée : rester au frais. Un test a enveloppé des barils d'eau dans de la peau de zèbre. Les rayures n'ont rien changé."
