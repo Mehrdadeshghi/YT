@@ -26,8 +26,8 @@ E = {
    'de': 'Flamingo-Küken sind grau. Erwachsene sind rosa. Warum?', 'es': 'Los flamencos bebé son grises. Los adultos, rosas. ¿Por qué?',
    'fr': 'Les bébés flamants sont gris. Les adultes sont roses. Pourquoi ?'}],
  'scenes': [
-  S(0, 'Reason one: they are what they eat. Brine shrimp and algae are full of pigments called carotenoids. Their liver turns them pink.',
-    'Reason one: *you are what you eat.* Brine shrimp and algae: full of *carotenoids.* The liver turns them *pink.*',
+  S(0, 'Reason one: they are what they eat. Tiny shrimp and algae are full of pigments called carotenoids. Their liver turns them pink.',
+    'Reason one: *you are what you eat.* Tiny shrimp and algae: full of *carotenoids.* The liver turns them *pink.*',
     'Grund eins: Sie sind, was sie essen. Salzkrebschen und Algen stecken voller Farbstoffe, sogenannter Carotinoide. Ihre Leber macht daraus Rosa.',
     'Razón uno: son lo que comen. Las artemias y las algas están llenas de pigmentos llamados carotenoides. Su hígado los vuelve rosa.',
     "Raison numéro un : ils sont ce qu'ils mangent. Les artémies et les algues sont pleines de pigments, les caroténoïdes. Leur foie les transforme en rose."),
@@ -37,7 +37,7 @@ E = {
     'Razón dos: rosa significa sano. Un flamenco pálido suele estar enfermo o hambriento. El rosa intenso conquista pareja, así que en celo hasta se maquillan.',
     "Raison numéro deux : rose veut dire en bonne santé. Un flamant pâle est souvent malade ou affamé. Le rose vif séduit, alors en saison des amours, ils se maquillent même."),
   {'dur': 1.6, 'vis': 2, 'vo': [
-    dict(at=0.45, text='Reason three: they feed their color away. Mom and dad feed the chick a bright red milk. It looks like blood. And the parents turn pale.',
+    dict(at=0.45, text='Reason three: they feed their color away. Mom and dad both feed the chick a bright red milk. It looks like blood. And the parents turn pale.',
          cap='Reason three: *they feed it away.* Mom and dad make *red milk.* Looks like *blood.* Parents turn *pale.*',
          de='Grund drei: Sie verfüttern ihre Farbe. Mama und Papa füttern das Küken mit knallroter Milch. Sie sieht aus wie Blut. Und die Eltern werden blass.',
          es='Razón tres: regalan su color. Mamá y papá alimentan al polluelo con una leche roja intensa. Parece sangre. Y los padres palidecen.',
