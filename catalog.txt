@@ -1,26 +1,34 @@
-Flamingo chicks | Phoenicopterus chicks
-Greater flamingo chicks | Phoenicopterus roseus chicks
-American flamingo | Phoenicopterus ruber
-Flamingos feeding | Phoenicopteridae feeding
-Brine shrimp | Artemia salina
-Lesser flamingo | Phoeniconaias minor
-article: Flamingo
-article: Greater flamingo
-article: Crop milk
-image: flamingo chick
-image: flamingo chick grey
-image: flamingo feeding chick
-image: flamingo crop milk
-image: flamingo chick feeding red
-image: flamingo pink
-image: American flamingo
-image: pale flamingo zoo
-image: flamingo preening
-image: brine shrimp
-image: Artemia
-image: flamingo filter feeding
-image: lesser flamingo lake
-video: flamingo
-video: flamingo feeding
-video: flamingo chick
+Rivers | Rivers of the United States
+Ocean waves | Ocean waves
+Great Salt Lake | Great Salt Lake
+Salt evaporation ponds | Salt evaporation ponds
+Hydrothermal vents | Hydrothermal vents
+Black smokers | Black smokers
+Dead Sea salt | Salt formations of the Dead Sea
+article: Seawater
+article: Salinity
+article: Water cycle
+article: Endorheic basin
+article: Great Salt Lake
+article: Hydrothermal vent
+article: Sea salt
+article: Edmond Halley
+image: mountain river clear water
+image: river rapids
+image: ocean waves beach
+image: Pacific Ocean waves
+image: rain on rocks
+image: weathering rock
+image: Great Salt Lake salt crust
+image: Bonneville Salt Flats
+image: salt evaporation pond
+image: Dead Sea salt
+image: black smoker hydrothermal vent
+image: river mouth sea
+video: hydrothermal vent
+video: black smoker
+video: ocean waves
+video: river
+video: rain
 audio: Kevin MacLeod
+audio: Rafael Krux
