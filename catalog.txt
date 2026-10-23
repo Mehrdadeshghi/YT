@@ -1,24 +1,26 @@
-Zebras | Equus quagga
-Plains zebras | Equus quagga burchellii
-Zebra herds | Herds of zebras
-Horses | Equus caballus in fields
-Horse flies | Tabanidae
-Zebra skin | Zebra skins
-article: Zebra
-article: Plains zebra
-article: Horse-fly
-image: zebra stripes close
-image: zebra herd savanna
-image: zebra horse fly
-image: horse zebra coat
-image: horse wearing zebra rug
-image: horse in field brown
-image: plain horse grazing
-image: tabanus horse fly
-image: zebra skin black
-image: lion hunting zebra
-image: zebra foal stripes
-video: zebra
-video: zebras running
-video: horse fly
+Flamingo chicks | Phoenicopterus chicks
+Greater flamingo chicks | Phoenicopterus roseus chicks
+American flamingo | Phoenicopterus ruber
+Flamingos feeding | Phoenicopteridae feeding
+Brine shrimp | Artemia salina
+Lesser flamingo | Phoeniconaias minor
+article: Flamingo
+article: Greater flamingo
+article: Crop milk
+image: flamingo chick
+image: flamingo chick grey
+image: flamingo feeding chick
+image: flamingo crop milk
+image: flamingo chick feeding red
+image: flamingo pink
+image: American flamingo
+image: pale flamingo zoo
+image: flamingo preening
+image: brine shrimp
+image: Artemia
+image: flamingo filter feeding
+image: lesser flamingo lake
+video: flamingo
+video: flamingo feeding
+video: flamingo chick
 audio: Kevin MacLeod
