@@ -46,6 +46,19 @@ Answer Mehrdad in German. Video language English, dubs DE/ES/FR. Read `CLAUDE.md
   credits for every used media file (author, licence, Commons page), hashtags + `#shorts`, pinned comment, audio-track list,
   settings (playlist, made for kids, altered/synthetic content, category, best upload time).
 
+## WHY? series (everyday why-questions; template #186 pigeon nests)
+- Copy `scripts/mk186.py` + `cine/186.js`. Flags as the house Short (`look: cine`, `facts`, `tight`, `voice: narrator`, `wordCaps`),
+  `"scripts": ["tech.js", "why.js"]`, `"series": "WHY? #n"`, `"why": {"q": ["<question line 1>", "<line 2>?"], "next": "YOUR NEXT WHY? COMMENT IT"}`.
+- Structure (24–34 s): frame 1 = `whyBadge` + `whyQ` (the question) over `whyPair(..., {cols: true})` — two REAL photos "this vs this";
+  VO "<X> does this. <Y> does this. Why?". Then 2–3 scenes, each `whyReason(t, tIn, n, 'TITLE.')` ("REASON n" chip + gold line) over one
+  photo (`shot`, box 40/690/1000/760) or two stacked photos (`whyPair`). Strongest / most surprising reason last.
+  Last scene ends with the comment card (`cta {q,a,b}`, binary) + `whyNext(t, sw('next'))`; the spoken CTA ends "…and tell us your next why."
+- Every reason must be a sourced fact. Don't invent causality ("scientists think" only if the source says so).
+- `uploads/<ep>.md`: title starts with "Why", Playlist "Why?", pinned comment asks for the next why-question (viewer topics → next episodes).
+- why.js: `whyBadge(t,tIn,x,y,s)`, `whyQ(t,tIn,lines,y,{size})`, `whyReason(t,tIn,n,title,{y,size})`, `whyPair(t,A,B,y0,y1,{cols,gap})`
+  with `A = {id, label, at, a, b, clip, credit}` (returns the two P() mappers; draws REAL PHOTO / REAL FOOTAGE marks), `whyNext(t,tIn,str,y)`.
+  Draw `tag()` after `whyPair` (its blurred backdrop covers the header).
+
 ## 9. Deliver + record
 - Send mp4 + md + 3 m4a. Files > 30 MB: give the release link instead.
 - Add the topic to `docs/topics.md`, commit, push. Report in German: what it is, anything he must know or decide, one next step.

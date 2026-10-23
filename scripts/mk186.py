@@ -17,7 +17,7 @@ E = {
  'look': 'cine', 'captions': True, 'noOutro': True, 'speed': 1.2, 'tight': True, 'sub': 2, 'transition': 'whip', 'facts': True,
  'recap': False, 'voice': 'narrator', 'wordCaps': True, 'mood': 'calm', 'prog': 3, 'capY': 1700, 'subY': 1520, 'subEndY': 1760,
  'scripts': ['tech.js', 'why.js'], 'langs': ['en', 'de', 'es', 'fr'],
- 'why': {'q': ['WHY ARE PIGEON', 'NESTS SO BAD?'], 'next': 'YOUR NEXT WHY? COMMENT IT'},
+ 'why': {'q': ['ARE PIGEON NESTS', 'SO BAD?'], 'next': 'YOUR NEXT WHY? COMMENT IT'},
  'hook': ['WHY ARE PIGEON', 'NESTS SO BAD?'],
  'cta': {'q': 'Pigeons: lazy or smart?', 'a': 'LAZY', 'b': 'SMART'},
  'source': 'https://en.wikipedia.org/wiki/Rock_dove',
