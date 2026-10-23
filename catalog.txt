@@ -1,25 +1,30 @@
-Euro 1992 | UEFA Euro 1992
-Euro 1992 final | UEFA Euro 1992 Final
-Peter Schmeichel | Peter Schmeichel
-Ullevi | Ullevi
-Denmark team | Denmark national football team
-Kim Vilfort | Kim Vilfort
-John Jensen | John Jensen (footballer)
-Brian Laudrup | Brian Laudrup
-van Basten | Marco van Basten
-article: UEFA Euro 1992
-article: UEFA Euro 1992 final
-article: Denmark national football team
-image: Peter Schmeichel
-image: Schmeichel Denmark goalkeeper
-image: Ullevi Gothenburg stadium
-image: Nya Ullevi
-image: Denmark football fans
-image: Danish football fans roligans
-image: Kim Vilfort
-image: John Jensen Faxe
-image: Brian Laudrup
-image: Marco van Basten
-image: Denmark national football team 1992
-image: Henri Delaunay Trophy
+Pigeon nests | Nests of Columba livia
+Pigeon nests 2 | Columba livia nests
+Rock dove wild | Columba livia in the wild
+Squabs | Squabs of Columba livia
+Weaver nests | Nests of Ploceidae
+Village weaver nests | Ploceus cucullatus nests
+Pigeons on buildings | Columba livia on buildings
+article: Rock dove
+article: Columbidae
+article: Bird nest
+article: Crop milk
+article: Village weaver
+image: pigeon nest
+image: feral pigeon nest eggs
+image: Columba livia nest
+image: pigeon nest ledge
+image: rock dove sea cliff
+image: rock pigeon cliff
+image: pigeon feeding squab
+image: pigeon squab crop milk
+image: weaver bird nest
+image: weaver bird building nest
+image: village weaver nest
+image: pigeon under bridge
+image: pigeons overpass
+video: pigeon nest
+video: weaver bird building nest
+video: pigeon feeding chick
+audio: Kevin MacLeod
 audio: Rafael Krux
