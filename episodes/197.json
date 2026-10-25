@@ -1,0 +1,208 @@
+{
+ "ep": 197,
+ "title": "The loudest animal on Earth",
+ "format": "reel2",
+ "hook_formula": "26 The Superlative",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "gemini",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 0,
+ "oneAsk": true,
+ "loop": true,
+ "capY": 1250,
+ "cardY": 1150,
+ "capSize": 76,
+ "capCX": 465,
+ "capW": 690,
+ "scripts": [
+  "tech.js",
+  "reel2.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "236 DECIBELS",
+  "LOUDEST ANIMAL"
+ ],
+ "cta": {
+  "q": "Would you swim next to one?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Sperm_whale",
+ "vo_open": [
+  {
+   "at": 0.2,
+   "text": "Two hundred thirty-six decibels. You've never heard this animal.",
+   "cap": "*236 decibels.* You've never heard this animal.",
+   "de": "Zweihundertsechsunddreißig Dezibel. Dieses Tier hast du noch nie gehört.",
+   "es": "Doscientos treinta y seis decibelios. Nunca has oído a este animal.",
+   "fr": "Deux cent trente-six décibels. Tu n'as jamais entendu cet animal."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's the sperm whale, and it hunts in total darkness.",
+     "cap": "It's the *sperm whale,* and it hunts in *total darkness.*",
+     "de": "Es ist der Pottwal, und er jagt in völliger Dunkelheit.",
+     "es": "Es el cachalote, y caza en la oscuridad total.",
+     "fr": "C'est le cachalot, et il chasse dans le noir total."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It dives up to seven thousand three hundred eighty feet, for up to two hours.",
+     "cap": "It dives up to *7,380 feet,* for up to *2 hours.*",
+     "de": "Er taucht bis zu zweitausendzweihundertfünfzig Meter tief, bis zu zwei Stunden lang.",
+     "es": "Se sumerge hasta dos mil doscientos cincuenta metros, durante hasta dos horas.",
+     "fr": "Il plonge jusqu'à deux mille deux cent cinquante mètres, pendant jusqu'à deux heures."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It sees with sound. Clicks from a head a third of its body. The echoes come back through its lower jaw.",
+     "cap": "It *sees with sound.* Clicks from a head *1/3 of its body.* The echoes come back through its *lower jaw.*",
+     "de": "Er sieht mit Schall. Klicks aus einem Kopf, der ein Drittel seines Körpers ausmacht. Das Echo kommt über den Unterkiefer zurück.",
+     "es": "Ve con el sonido. Chasquidos desde una cabeza que es un tercio de su cuerpo. El eco vuelve por su mandíbula inferior.",
+     "fr": "Il voit avec le son. Des clics venus d'une tête qui fait un tiers de son corps. L'écho revient par sa mâchoire inférieure."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It recycles its air, so it can click through a two-hour dive. Tags show it hunts upside down, for squid, even giant squid.",
+     "cap": "It *recycles its air,* so it can click through a *2-hour dive.* Tags show it hunts *upside down,* for squid, even *giant squid.*",
+     "de": "Er nutzt seine Luft immer wieder, so kann er einen zweistündigen Tauchgang lang klicken. Sender zeigen: Er jagt kopfüber, nach Tintenfischen, sogar Riesenkalmaren.",
+     "es": "Recicla su aire, así que puede chasquear durante una inmersión de dos horas. Las marcas muestran que caza boca abajo, calamares, incluso calamares gigantes.",
+     "fr": "Il recycle son air, donc il peut cliquer pendant une plongée de deux heures. Des balises montrent qu'il chasse à l'envers, des calmars, même des calmars géants."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "The loudest animal on Earth, using its voice to see.",
+     "cap": "The *loudest animal on Earth,* using its voice *to see.*",
+     "de": "Das lauteste Tier der Erde, und es benutzt seine Stimme zum Sehen.",
+     "es": "El animal más ruidoso de la Tierra, usando su voz para ver.",
+     "fr": "L'animal le plus bruyant de la Terre, qui se sert de sa voix pour voir."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 5,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Would you swim next to one? Yes or no, comment below.",
+     "de": "Würdest du neben einem schwimmen? Ja oder nein, schreib es in die Kommentare.",
+     "es": "¿Nadarías junto a uno? Sí o no, coméntalo abajo.",
+     "fr": "Tu nagerais à côté d'un cachalot ? Oui ou non, dis-le en commentaire.",
+     "cta": true
+    },
+    {
+     "at": "0.15",
+     "text": "Just not in front of two hundred thirty-six decibels.",
+     "cap": "Just not in front of *236 decibels.*",
+     "de": "Nur nicht direkt vor zweihundertsechsunddreißig Dezibel.",
+     "es": "Solo que no delante de doscientos treinta y seis decibelios.",
+     "fr": "Mais pas devant deux cent trente-six décibels."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 20,
+   "len": 60,
+   "gain": 0.5
+  },
+  {
+   "id": "mom",
+   "file": "File:Mother and baby sperm whale.jpg"
+  },
+  {
+   "id": "mom2",
+   "file": "File:Sperm whale mother with calf.jpg"
+  },
+  {
+   "id": "dive",
+   "file": "File:Dive to the deep. (9570628647).jpg"
+  },
+  {
+   "id": "fluke",
+   "file": "File:Sperm whale starting to dive (1).jpg"
+  },
+  {
+   "id": "head",
+   "file": "File:Sperm Whale. (8066472961).jpg"
+  },
+  {
+   "id": "head2",
+   "file": "File:Sperm whale. (8066489885).jpg"
+  },
+  {
+   "id": "eye",
+   "video": "File:Sperm whale eye retraction.ogv",
+   "from": 0,
+   "len": 4
+  },
+  {
+   "id": "scars",
+   "file": "File:A piece of sperm whale skin with Giant Squid sucker scars.JPG"
+  },
+  {
+   "id": "pod",
+   "file": "File:0b4a8510 by vitaly sokol-dbw6sol.jpg"
+  },
+  {
+   "id": "pod2",
+   "file": "File:0b4a8510 by vitaly sokol-dbw4sol.jpg"
+  },
+  {
+   "id": "diver",
+   "file": "File:0b4a8510 by vitaly sokol-dbw5sol.jpg"
+  },
+  {
+   "id": "xsec",
+   "file": "File:Cross section of a sperm whale head.png"
+  }
+ ]
+}

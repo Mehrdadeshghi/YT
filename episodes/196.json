@@ -1,0 +1,179 @@
+{
+ "ep": 196,
+ "title": "Why Hoover Dam is full of pipes",
+ "format": "reel2",
+ "hook_formula": "5 Time Collapse",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "gemini",
+ "wordCaps": true,
+ "mood": "epic",
+ "prog": 0,
+ "oneAsk": true,
+ "loop": true,
+ "capY": 1250,
+ "cardY": 1150,
+ "capSize": 76,
+ "capCX": 465,
+ "capW": 690,
+ "scripts": [
+  "tech.js",
+  "reel2.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "125 YEARS",
+  "CUT TO 2"
+ ],
+ "cta": {
+  "q": "Would you have thought of the pipes?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Hoover_Dam",
+ "vo_open": [
+  {
+   "at": 0.2,
+   "text": "A hundred and twenty-five years of cooling? You'd never wait that long.",
+   "cap": "*125 years* of cooling? You'd never wait that long.",
+   "de": "Hundertfünfundzwanzig Jahre Abkühlen? So lange würdest du nie warten.",
+   "es": "¿Ciento veinticinco años enfriándose? Nunca esperarías tanto.",
+   "fr": "Cent vingt-cinq ans de refroidissement ? Tu n'attendrais jamais aussi longtemps."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Concrete heats up as it cures. One giant pour would crack.",
+     "cap": "Concrete *heats up* as it cures. One giant pour would *crack.*",
+     "de": "Beton wird beim Aushärten heiß. Ein einziger riesiger Guss würde reißen.",
+     "es": "El hormigón se calienta al fraguar. Un solo vertido gigante se agrietaría.",
+     "fr": "Le béton chauffe en durcissant. Une seule coulée géante se fissurerait."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "So Hoover Dam was poured in blocks, five feet high. Inside every block: one-inch steel pipes.",
+     "cap": "So Hoover Dam was poured in *blocks,* *5 feet* high. Inside every block: *1-inch steel pipes.*",
+     "de": "Also wurde der Hoover-Damm in Blöcken gegossen, eineinhalb Meter hoch. In jedem Block: zweieinhalb Zentimeter dicke Stahlrohre.",
+     "es": "Así que la presa Hoover se vertió en bloques de metro y medio de alto. Dentro de cada bloque: tubos de acero de una pulgada.",
+     "fr": "Le barrage Hoover a donc été coulé en blocs d'un mètre cinquante de haut. Dans chaque bloc : des tuyaux d'acier de deux centimètres et demi."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "River water ran through them, then ice-cold water from a refrigeration plant. Over five hundred eighty-two miles of pipe, hidden in the concrete.",
+     "cap": "*River water* ran through them, then *ice-cold water* from a refrigeration plant. Over *582 miles* of pipe, hidden in the concrete.",
+     "de": "Erst floss Flusswasser hindurch, dann eiskaltes Wasser aus einer Kühlanlage. Über neunhundertsiebenunddreißig Kilometer Rohre, versteckt im Beton.",
+     "es": "Primero pasó agua del río, luego agua helada de una planta de refrigeración. Más de novecientos treinta y siete kilómetros de tubos, ocultos en el hormigón.",
+     "fr": "D'abord de l'eau du fleuve, puis de l'eau glacée d'une usine frigorifique. Plus de neuf cent trente-sept kilomètres de tuyaux, cachés dans le béton."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Once a block stopped shrinking, the pipes were filled with grout. About two years of pouring, not a hundred and twenty-five years of cooling.",
+     "cap": "Once a block stopped shrinking, the pipes were *filled with grout.* About *2 years* of pouring, not *125 years* of cooling.",
+     "de": "Sobald ein Block nicht mehr schrumpfte, wurden die Rohre mit Mörtel verfüllt. Etwa zwei Jahre Gießen statt hundertfünfundzwanzig Jahre Abkühlen.",
+     "es": "Cuando un bloque dejaba de encogerse, los tubos se rellenaban con lechada. Unos dos años de vertido, no ciento veinticinco años de enfriamiento.",
+     "fr": "Dès qu'un bloc cessait de rétrécir, les tuyaux étaient remplis de coulis. Environ deux ans de coulage, au lieu de cent vingt-cinq ans de refroidissement."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Would you have thought of the pipes? Yes or no, comment below.",
+     "de": "Wärst du auf die Rohre gekommen? Ja oder nein, schreib es in die Kommentare.",
+     "es": "¿Se te habrían ocurrido los tubos? Sí o no, coméntalo abajo.",
+     "fr": "Tu aurais pensé aux tuyaux ? Oui ou non, dis-le en commentaire.",
+     "cta": true
+    },
+    {
+     "at": "0.15",
+     "text": "Because the other option was a hundred and twenty-five years.",
+     "cap": "Because the other option was *125 years.*",
+     "de": "Denn die Alternative waren hundertfünfundzwanzig Jahre.",
+     "es": "Porque la otra opción eran ciento veinticinco años.",
+     "fr": "Parce que l'autre option, c'était cent vingt-cinq ans."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 0.8
+  },
+  {
+   "id": "aerial",
+   "file": "File:2017 Aerial view Hoover Dam 4774.jpg"
+  },
+  {
+   "id": "pour",
+   "file": "File:Pourdam.jpg"
+  },
+  {
+   "id": "forms",
+   "file": "File:Damforms.jpg"
+  },
+  {
+   "id": "colI",
+   "file": "File:Looking upstream through the 'I' column forms along Arizona side of middle gorge. 'H' columns at right, 'J' columns... - NARA - 293922.jpg"
+  },
+  {
+   "id": "colJ",
+   "file": "File:Placing concrete in column 'J'-4. Top of forms at elevation 575. View looks toward Arizona side - NARA - 293932.jpg"
+  },
+  {
+   "id": "pipes",
+   "file": "File:Downstream Face of Dam (214c06cd-56a3-4893-85ad-4dadcdb036f8).jpg"
+  },
+  {
+   "id": "upstream",
+   "file": "File:Damupstream.jpg"
+  },
+  {
+   "id": "film",
+   "video": "File:The Story of Hoover Dam.webm",
+   "from": 0,
+   "len": 1657,
+   "fps": 0.2
+  }
+ ]
+}
