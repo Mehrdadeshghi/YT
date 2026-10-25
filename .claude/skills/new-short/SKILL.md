@@ -47,6 +47,20 @@ Answer Mehrdad in German. Video language English, dubs DE/ES/FR. Read `CLAUDE.md
   ONE request per render. FREE TIER = 10 requests/DAY, 3/minute for the whole project (resets 09:00 Berlin) → at most ~5 episodes + a few re-renders per day; never waste renders. Flags `gemini_voice` (default Charon), `gemini_style`,
   `gemini_wpm` (default 185). Dubs stay on dub.py's voices. Samples: workflow "Gemini voices" → release gemini-N.
 
+## REEL v2 structure (experiment E8, from github.com/Jakeschincariol/instagram-agent-skill, MIT; tools in `scripts/reel/`)
+Test format vs. the house/WHY? Shorts. Episodes carry `"format": "reel2"` so the analysis can split them.
+- **Hook (0-2 s):** pick 3 formulas from `scripts/reel/hooks.json` (26), write spoken line + SEPARATE on-screen line (≤ 6 words,
+  up at frame 1 with motion). Score: `python3 -I scripts/reel/hookscore.py hooks.txt` → use the winner, must be ≥ 70 (STRONG).
+  Note the formula id in the episode (`"hook_formula": "5 Time Collapse"`). No greeting, no setup, number first.
+- **Stake (2-7 s):** one line why the viewer should care. **Body:** one idea per beat, ≤ 4 s per beat, the frame changes every beat.
+  **Payoff:** deliver what the hook promised before the last 5 s. **ONE ask** (comment question, binary). **Loop:** last spoken line
+  echoes a word from the hook so the replay lands (`"loop": true` cross-fades into frame 1).
+- Time it: `python3 -I scripts/reel/beats.py script.txt --wpm 185 --target 30` (one beat per line); fix every flag. 20-35 s.
+- Flags: `"oneAsk": true` (no subscribe pills, only the comment card), `"loop": true`, `"capY": 1250`, `"cardY": 1150`,
+  voice `gemini`. **Safe zone** (YouTube/IG overlays): all text and key visuals between y 230 and 1440, right 230 px clear below y 900;
+  media ~300-1100, captions ~1250, comment card ~1150-1350.
+- Same fact rules as always (every number sourced). Upload md: the fitting existing playlist (How It Works, Deep Sea, History Mysteries …), note "format: reel2" in the md settings.
+
 ## 8. Upload text (`uploads/<ep>.md`)
 - Title EN (+ DE/ES/FR titles), description with the hook fact, comment question, source, "Voice: AI narrator",
   credits for every used media file (author, licence, Commons page), hashtags + `#shorts`, pinned comment, audio-track list,

@@ -283,8 +283,9 @@ function build(ep, voice) {
   const comAt = ci >= 0 ? last.from + lvo[ci].at - PRE : last.from + 1.0, subEnd = ci >= 0 ? last.from + lvo[ci].at - PRE + (lvo[ci].end - lvo[ci].at) * 0.62 : null;
   CTA = Object.assign({ q: 'Did you know this?', a: 'YES', b: 'NO', related: ep.related || null }, ep.cta || {}, { subAt: mid.from + 1.0, comAt, subEnd, end: DUR });
   if (WIDE) { CTA.subs = ep.scenes.map((sc, i) => sc.sub ? SCENES[i + 1].from + (sc.subAt ?? 1.0) : null).filter((x) => x != null); if (!CTA.subs.length) CTA.subs = [CTA.subAt]; }
-  if (ep.cta !== false) { (WIDE ? CTA.subs : [CTA.subAt]).forEach((s) => { cue(s, 'pop', 0.6, 600); cue(s + 0.75, 'click', 0.9); }); cue(CTA.comAt, 'pop', 0.8, 800);
-    if (subEnd) { cue(subEnd, 'pop', 0.6, 600); cue(subEnd + 0.75, 'click', 0.9); } }
+  if (ep.oneAsk) { CTA.subAt = -99; CTA.subEnd = null; }          // reel structure: ONE ask (the comment card), no subscribe pills
+  if (ep.cta !== false) { (ep.oneAsk ? [] : WIDE ? CTA.subs : [CTA.subAt]).forEach((s) => { cue(s, 'pop', 0.6, 600); cue(s + 0.75, 'click', 0.9); }); cue(CTA.comAt, 'pop', 0.8, 800);
+    if (CTA.subEnd) { cue(subEnd, 'pop', 0.6, 600); cue(subEnd + 0.75, 'click', 0.9); } }
   CUES.sort((a, b) => a.t - b.t);
   window.DUR = DUR; window.EP = { ep: ep.ep, prog: ep.prog || 0, title: ep.title, dur: DUR, openDur, look: 'cine', mood: ep.mood || 'clock', sfx: ep.sfx || 'real', kids: !!ep.kids };
 }
@@ -350,7 +351,7 @@ function engage(t) {
   if (WIDE) { (CTA.subs || [CTA.subAt]).forEach((s) => subPill(t - s, 150, 3.2)); if (CTA.subEnd) subPill(t - CTA.subEnd, 150, 99); }
   else { subPill(t - CTA.subAt, EP_RAW.subY || 1480, 2.9); if (CTA.subEnd) subPill(t - CTA.subEnd, EP_RAW.subEndY || 1290, 99); }
   const lc = EP_RAW.noCommentCard ? -1 : t - CTA.comAt;          // kids videos: comments are off on YouTube, so no comment card                                   // ---- comment question (last scene)
-  if (lc > 0) { const s = spring(lc, 220, 18), y = (WIDE ? H - (EP_RAW.capX ? 310 : 260) : 1400) + (1 - s) * 520; g.save(); g.translate(WIDE ? (EP_RAW.capX ?? W / 2) - 430 - 70 : 0, y);
+  if (lc > 0) { const s = spring(lc, 220, 18), y = (WIDE ? H - (EP_RAW.capX ? 310 : 260) : EP_RAW.cardY || 1400) + (1 - s) * 520; g.save(); g.translate(WIDE ? (EP_RAW.capX ?? W / 2) - 430 - 70 : 0, y);
     g.shadowColor = 'rgba(0,0,0,0.55)'; g.shadowBlur = 36; const PC = EP_RAW.style === 'pro' && window.PRO, CA = PC ? PRO.acc : GOLD, CF = PC ? PRO.txt : BG;
     rrect(70, 0, 860, 200, 34); g.fillStyle = PC ? 'rgba(17,33,40,0.97)' : 'rgba(244,238,227,0.96)'; g.fill(); g.shadowBlur = 0; if (PC) { g.lineWidth = 2; g.strokeStyle = PRO.line; g.stroke(); }
     g.fillStyle = CA; rrect(104, 28, 58, 46, 13); g.fill(); g.beginPath(); g.moveTo(118, 72); g.lineTo(112, 90); g.lineTo(138, 72); g.fill();
