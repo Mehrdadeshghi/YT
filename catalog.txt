@@ -1,24 +1,16 @@
-Hoover Dam | Construction of Hoover Dam
-Hoover Dam | Hoover Dam
-image: Hoover Dam concrete pouring 1934
-image: Hoover Dam cooling pipes
-image: Boulder Dam construction columns
-video: Hoover Dam
-video: Boulder Dam construction
-Golden Gate Bridge | Golden Gate Bridge in fog
-Golden Gate Bridge | Golden Gate Bridge painting
-image: Golden Gate Bridge painters
-image: Golden Gate Bridge construction 1935
-image: Golden Gate Bridge fog tower
-video: Golden Gate Bridge fog
-Sperm whale | Physeter macrocephalus
-Sperm whale | Videos of Physeter macrocephalus
-image: sperm whale diving fluke
-image: sperm whale underwater
-video: sperm whale
-audio: sperm whale clicks
-audio: Kevin MacLeod
-article: Hoover Dam
-article: Golden Gate Bridge
-article: International orange
-article: Sperm whale
+Irving Morrow
+image: Golden Gate Bridge ironworker
+image: Golden Gate Bridge maintenance
+image: Golden Gate Bridge painter
+image: Golden Gate Bridge cable rust
+image: Golden Gate Bridge tower close up orange
+image: Golden Gate Bridge 1937
+video: Golden Gate Bridge
+video: Physeter macrocephalus
+video: cachalot
+video: sperm whale underwater
+image: sperm whale head
+image: Physeter macrocephalus underwater
+video: concrete pouring dam 1930s
+image: Hoover Dam 1934 construction
+image: Hoover Dam refrigeration plant
