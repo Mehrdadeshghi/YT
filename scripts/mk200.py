@@ -1,0 +1,66 @@
+#!/usr/bin/env python3
+"""#200 REEL v2 (E8) — Is the Yellowstone supervolcano overdue? 25 Oct 2026. voice: gemini.
+Facts: English Wikipedia (Oct 2026)
+- "Yellowstone National Park": the Yellowstone Caldera is 45 by 28 miles (72 by 45 km), created by an eruption 640,000 years ago
+  that released more than 240 mi3 of ash, rock and pyroclastic material; time between the last three cataclysmic eruptions
+  ranged from 600,000 to 800,000 years, "however, the small number of such climactic eruptions cannot be used to make an
+  accurate prediction for future volcanic events".
+- "Yellowstone Caldera": three major volcanic cycles / supereruptions (Huckleberry Ridge ~2.08 Ma, Mesa Falls ~1.3 Ma,
+  Lava Creek ~631,000 / 640,000 years ago, ~1,000 km3 = 240 mi3 of rock, dust and ash); YVO statement: "Yellowstone is not
+  'overdue' for a super eruption"; YVO does not consider an eruption imminent; 2013 analysis: magma chamber 4,000 km3, 6-8 %
+  molten, "scientists believe that the proportion of molten rock in the chamber is too low to allow for another supereruption";
+  last lava flow ~70,000 years ago; 1,000-2,000 measurable earthquakes a year.
+Hook (scripts/reel/hookscore.py): "Nobody tells you Yellowstone is not overdue." 87.0 STRONG (formula 3 Nobody Tells You)."""
+import json
+E = {
+ 'ep': 200, 'title': 'Is Yellowstone overdue?', 'format': 'reel2', 'hook_formula': '3 Nobody Tells You',
+ 'oneAsk': True, 'loop': True, 'capY': 1250, 'cardY': 1150, 'capSize': 78, 'voice': 'gemini',
+ 'look': 'cine', 'captions': True, 'noOutro': True, 'speed': 1.2, 'tight': True, 'transition': 'whip', 'facts': True,
+ 'recap': False, 'wordCaps': True, 'mood': 'calm', 'prog': 3,
+ 'scripts': ['tech.js'], 'langs': ['en', 'de', 'es', 'fr'],
+ 'hook': ['YELLOWSTONE:', 'NOT OVERDUE?'],
+ 'cta': {'q': 'Would you still visit Yellowstone?', 'a': 'YES', 'b': 'NO'},
+ 'source': 'https://en.wikipedia.org/wiki/Yellowstone_Caldera',
+ 'spell': {'USGS': 'USGS'},
+ 'vo_open': [{'at': 0.15, 'text': "Nobody tells you Yellowstone is not overdue. Even though its crater is forty-five miles long.",
+   'de': 'Kaum einer sagt es dir: Yellowstone ist nicht überfällig. Obwohl sein Krater zweiundsiebzig Kilometer lang ist.',
+   'es': 'Nadie te lo dice: Yellowstone no está atrasado. Aunque su cráter mide setenta y dos kilómetros de largo.',
+   'fr': "Personne ne te le dit : Yellowstone n'est pas en retard. Même si son cratère fait soixante-douze kilomètres de long."}],
+ 'scenes': [
+  {'dur': 1.6, 'vis': 0, 'vo': [dict(at=0.3,
+    text='It blew three times in about two million years. The last one, six hundred forty thousand years ago, threw out two hundred forty cubic miles of rock and ash.',
+    cap='It blew *three times* in about *two million years.* The last, *640,000 years ago:* *240 cubic miles* of rock and ash.',
+    de='Er ist in rund zwei Millionen Jahren dreimal ausgebrochen. Der letzte Ausbruch, vor sechshundertvierzigtausend Jahren, schleuderte tausend Kubikkilometer Gestein und Asche heraus.',
+    es='Estalló tres veces en unos dos millones de años. La última, hace seiscientos cuarenta mil años, lanzó mil kilómetros cúbicos de roca y ceniza.',
+    fr="Il a explosé trois fois en environ deux millions d'années. La dernière, il y a six cent quarante mille ans, a projeté mille kilomètres cubes de roche et de cendres.")]},
+  {'dur': 1.6, 'vis': 1, 'vo': [dict(at=0.3,
+    text="The gaps between them: six to eight hundred thousand years. So it's due? No. Three eruptions are too few to predict the next one.",
+    cap="The gaps: *600,000 to 800,000 years.* So it's due? *No.* Three eruptions are *too few to predict* the next one.",
+    de='Die Abstände: sechs- bis achthunderttausend Jahre. Also ist er fällig? Nein. Drei Ausbrüche sind zu wenige, um den nächsten vorherzusagen.',
+    es='Los intervalos: de seiscientos a ochocientos mil años. ¿Entonces le toca? No. Tres erupciones son muy pocas para predecir la siguiente.',
+    fr="Les écarts : six à huit cent mille ans. Donc c'est pour bientôt ? Non. Trois éruptions, c'est trop peu pour prédire la suivante.")]},
+  {'dur': 1.6, 'vis': 2, 'vo': [
+    dict(at=0.3,
+      text="And the magma below is only six to eight percent molten. Scientists believe that's too low for another super-eruption.",
+      cap="The magma below is only *6 to 8 percent molten.* Scientists believe that's *too low* for another *super-eruption.*",
+      de='Und das Magma darunter ist nur zu sechs bis acht Prozent geschmolzen. Forscher halten das für zu wenig für einen weiteren Superausbruch.',
+      es='Y el magma de abajo solo está fundido en un seis a ocho por ciento. Los científicos creen que es demasiado poco para otra supererupción.',
+      fr="Et le magma en dessous n'est fondu qu'à six à huit pour cent. Les scientifiques pensent que c'est trop peu pour une autre super-éruption."),
+    dict(at='0.15', text='Would you still visit Yellowstone? Comment yes or no.', cta=True,
+      de='Würdest du Yellowstone trotzdem besuchen? Schreib ja oder nein.',
+      es='¿Seguirías visitando Yellowstone? Comenta sí o no.',
+      fr='Tu visiterais quand même Yellowstone ? Commente oui ou non.')]},
+ ],
+ 'photos': [
+  {'id': 'music', 'audio': 'File:Dramatic Trailer by Rafael Krux.ogg', 'from': 0, 'len': 60, 'gain': 0.6},
+  {'id': 'prism', 'file': 'File:Aerial view of Grand Prismatic (23428929375).jpg'},
+  {'id': 'calmap', 'file': 'File:Yellowstone Caldera map2.JPG'},
+  {'id': 'calmaps', 'file': 'File:Yellowstone Major Calderas Map Simplified.jpg'},
+  {'id': 'ash', 'file': 'File:Map Volcanic Ashes Yellwostone Eruptions color.png'},
+  {'id': 'tuff', 'file': 'File:Tuff cliff yellowstone national park.jpg'},
+  {'id': 'rim', 'file': 'File:YellowstoneNP SouthwardViewAcrossCalderaFromDunravenPass.jpg'},
+  {'id': 'ofclip', 'video': 'File:Old Faithful eruption timelapse (36948540241).webm', 'from': 0, 'len': 12},
+  {'id': 'steam', 'file': 'File:Grand Prismatic Spring and boardwalk.jpg'},
+ ],
+}
+open('episodes/200.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))

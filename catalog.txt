@@ -1,16 +1,27 @@
-Irving Morrow
-image: Golden Gate Bridge ironworker
-image: Golden Gate Bridge maintenance
-image: Golden Gate Bridge painter
-image: Golden Gate Bridge cable rust
-image: Golden Gate Bridge tower close up orange
-image: Golden Gate Bridge 1937
-video: Golden Gate Bridge
-video: Physeter macrocephalus
-video: cachalot
-video: sperm whale underwater
-image: sperm whale head
-image: Physeter macrocephalus underwater
-video: concrete pouring dam 1930s
-image: Hoover Dam 1934 construction
-image: Hoover Dam refrigeration plant
+Mount Rushmore | Hall of Records (Mount Rushmore)
+Gutzon Borglum | Construction of Mount Rushmore
+Yellowstone Caldera | Yellowstone Caldera
+Lava Creek Tuff | Yellowstone Volcano Observatory
+Yellowstone National Park | Grand Prismatic Spring
+image: Mount Rushmore Hall of Records
+image: Mount Rushmore Lincoln close up
+image: Mount Rushmore construction 1930s
+image: Gutzon Borglum
+image: Mount Rushmore time capsule
+image: Mount Rushmore top behind heads
+image: Yellowstone caldera map
+image: Yellowstone ash fall map
+image: Yellowstone magma chamber
+image: Yellowstone Lake aerial
+image: Grand Prismatic Spring aerial
+image: Old Faithful eruption
+video: Mount Rushmore
+video: Yellowstone geyser
+video: Old Faithful
+video: Yellowstone
+audio: suspense
+audio: Kevin MacLeod
+article: Mount Rushmore
+article: Gutzon Borglum
+article: Yellowstone Caldera
+article: Yellowstone National Park
