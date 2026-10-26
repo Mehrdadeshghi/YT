@@ -24,7 +24,7 @@
  "capW": 690,
  "scripts": [
   "tech.js",
-  "reel2.js"
+  "r2kit.js"
  ],
  "langs": [
   "en",

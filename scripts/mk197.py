@@ -18,7 +18,7 @@ E = {
  'look': 'cine', 'captions': True, 'noOutro': True, 'speed': 1.2, 'tight': True, 'transition': 'whip', 'facts': True,
  'recap': False, 'voice': 'gemini', 'wordCaps': True, 'mood': 'calm', 'prog': 0,
  'oneAsk': True, 'loop': True, 'capY': 1250, 'cardY': 1150, 'capSize': 76, 'capCX': 465, 'capW': 690,
- 'scripts': ['tech.js', 'reel2.js'], 'langs': ['en', 'de', 'es', 'fr'],
+ 'scripts': ['tech.js', 'r2kit.js'], 'langs': ['en', 'de', 'es', 'fr'],
  'hook': ['236 DECIBELS', 'LOUDEST ANIMAL'],
  'cta': {'q': 'Would you swim next to one?', 'a': 'YES', 'b': 'NO'},
  'source': 'https://en.wikipedia.org/wiki/Sperm_whale',
