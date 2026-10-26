@@ -47,3 +47,7 @@ Check this list before proposing a topic. Add every new episode here in the same
 #191 Why do you never see baby pigeons? (hidden nests in cracks/ledges/overpasses; squabs stay ~a month, crop milk from both parents, weight x2 in 2 days; leave adult-sized)
 #192 Why is the sky blue? (Moon black sky vs Earth; Rayleigh scattering blue >> red; violet scatters more but the eye sees the blue-violet mix as sky blue; sunset: long path, blue+green scattered out)
 #193 Why does the Moon look huge near the horizon? (Moon illusion: same angular size, 1.5% farther; pebble test 0.33 in at 25 in; textbook apparent-distance idea, ~50%; still debated since Aristotle)
+
+## Reel v2 test (E8)
+#199 The room behind Lincoln's head (Mount Rushmore Hall of Records: Borglum's vault for the Declaration + Constitution, 70 ft tunnel, stopped 1939, no trail, 1998 capstone + titanium vault with 16 enamel panels)
+#200 Is Yellowstone overdue? (caldera 45 x 28 mi, 3 super-eruptions 2.1 M / 1.3 M / 640 K years ago, 240 cubic miles; gaps 600-800 K years, too few to predict; USGS/YVO: not overdue; magma only 6-8 % molten)

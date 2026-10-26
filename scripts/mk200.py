@@ -55,12 +55,9 @@ E = {
   {'id': 'music', 'audio': 'File:Dramatic Trailer by Rafael Krux.ogg', 'from': 0, 'len': 60, 'gain': 0.6},
   {'id': 'prism', 'file': 'File:Aerial view of Grand Prismatic (23428929375).jpg'},
   {'id': 'calmap', 'file': 'File:Yellowstone Caldera map2.JPG'},
-  {'id': 'calmaps', 'file': 'File:Yellowstone Major Calderas Map Simplified.jpg'},
   {'id': 'ash', 'file': 'File:Map Volcanic Ashes Yellwostone Eruptions color.png'},
-  {'id': 'tuff', 'file': 'File:Tuff cliff yellowstone national park.jpg'},
   {'id': 'rim', 'file': 'File:YellowstoneNP SouthwardViewAcrossCalderaFromDunravenPass.jpg'},
   {'id': 'ofclip', 'video': 'File:Old Faithful eruption timelapse (36948540241).webm', 'from': 0, 'len': 12},
-  {'id': 'steam', 'file': 'File:Grand Prismatic Spring and boardwalk.jpg'},
  ],
 }
 open('episodes/200.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))

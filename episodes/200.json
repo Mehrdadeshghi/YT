@@ -120,16 +120,8 @@
    "file": "File:Yellowstone Caldera map2.JPG"
   },
   {
-   "id": "calmaps",
-   "file": "File:Yellowstone Major Calderas Map Simplified.jpg"
-  },
-  {
    "id": "ash",
    "file": "File:Map Volcanic Ashes Yellwostone Eruptions color.png"
-  },
-  {
-   "id": "tuff",
-   "file": "File:Tuff cliff yellowstone national park.jpg"
   },
   {
    "id": "rim",
@@ -140,10 +132,6 @@
    "video": "File:Old Faithful eruption timelapse (36948540241).webm",
    "from": 0,
    "len": 12
-  },
-  {
-   "id": "steam",
-   "file": "File:Grand Prismatic Spring and boardwalk.jpg"
   }
  ]
 }
