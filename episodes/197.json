@@ -49,7 +49,8 @@
    "cap": "*236 decibels.* You've never heard this animal.",
    "de": "Zweihundertsechsunddreißig Dezibel. Dieses Tier hast du noch nie gehört.",
    "es": "Doscientos treinta y seis decibelios. Nunca has oído a este animal.",
-   "fr": "Deux cent trente-six décibels. Tu n'as jamais entendu cet animal."
+   "fr": "Deux cent trente-six décibels. Tu n'as jamais entendu cet animal.",
+   "show": "236 ~ ~ decibels. You've never heard this animal."
   }
  ],
  "scenes": [
@@ -77,7 +78,8 @@
      "cap": "It dives up to *7,380 feet,* for up to *2 hours.*",
      "de": "Er taucht bis zu zweitausendzweihundertfünfzig Meter tief, bis zu zwei Stunden lang.",
      "es": "Se sumerge hasta dos mil doscientos cincuenta metros, durante hasta dos horas.",
-     "fr": "Il plonge jusqu'à deux mille deux cent cinquante mètres, pendant jusqu'à deux heures."
+     "fr": "Il plonge jusqu'à deux mille deux cent cinquante mètres, pendant jusqu'à deux heures.",
+     "show": "It dives up to 7,380 ~ ~ ~ ~ feet, for up to two hours."
     }
    ]
   },
@@ -141,7 +143,8 @@
      "cap": "Just not in front of *236 decibels.*",
      "de": "Nur nicht direkt vor zweihundertsechsunddreißig Dezibel.",
      "es": "Solo que no delante de doscientos treinta y seis decibelios.",
-     "fr": "Mais pas devant deux cent trente-six décibels."
+     "fr": "Mais pas devant deux cent trente-six décibels.",
+     "show": "Just not in front of 236 ~ ~ decibels."
     }
    ]
   }

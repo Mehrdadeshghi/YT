@@ -13,6 +13,22 @@ Facts: English Wikipedia "Golden Gate Bridge" + "International orange" (Oct 2026
 NOT used: the popular "they just kept the primer colour" story — Wikipedia only says the bridge was originally painted with red lead primer.
 Media: Commons photos (CC0 / PD / CC BY / CC BY-SA), real footage (ship crossing, CC BY-SA 4.0), drawn graphics labelled GRAPHIC."""
 import json
+
+def SHOW(text, nums):
+    """caption tokens: spoken number words -> digits ("~" merges a token into the previous one)"""
+    tk = text.split(' '); out = list(tk); low = [t.lower() for t in tk]
+    for ph, dg in nums.items():
+        p = ph.lower().split(' ')
+        for i in range(len(tk) - len(p) + 1):
+            if [x.rstrip('.,?!:') for x in low[i:i + len(p)]] == p:
+                last = tk[i + len(p) - 1]; tail = last[len(last.rstrip('.,?!:')):]
+                out[i] = dg + tail; out[i + 1:i + len(p)] = ['~'] * (len(p) - 1)
+    return ' '.join(out)
+def fixshow(E, nums):
+    for sg in E['vo_open'] + [v for s in E['scenes'] for v in s['vo']]:
+        if sg.get('cta'): continue
+        s = SHOW(sg['text'], nums)
+        if s != sg['text']: sg['show'] = s
 V = lambda text, cap, de, es, fr, at=0.45, **kw: {k: v for k, v in dict(at=at, text=text, cap=cap, de=de, es=es, fr=fr, **kw).items() if v is not None}
 E = {
  'ep': 198, 'title': 'Why the Golden Gate Bridge is orange', 'format': 'reel2', 'hook_formula': '23 The Statistic',
@@ -80,4 +96,5 @@ E = {
   {'id': 'vista', 'file': 'File:Sausalito (CA, USA), Golden Gate Bridge Vista Point -- 2022 -- 3066.jpg'},
  ],
 }
+fixshow(E, {'thirty-eight': '38'})
 open('episodes/198.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))

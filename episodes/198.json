@@ -49,7 +49,8 @@
    "cap": "*38 painters* never stop painting your favorite bridge.",
    "de": "Achtunddreißig Maler hören nie auf, deine Lieblingsbrücke zu streichen.",
    "es": "Treinta y ocho pintores nunca dejan de pintar tu puente favorito.",
-   "fr": "Trente-huit peintres ne cessent jamais de peindre ton pont préféré."
+   "fr": "Trente-huit peintres ne cessent jamais de peindre ton pont préféré.",
+   "show": "38 painters never stop painting your favorite bridge."
   }
  ],
  "scenes": [
@@ -141,7 +142,8 @@
      "cap": "Either way, *38 painters* would be busy.",
      "de": "So oder so hätten achtunddreißig Maler viel zu tun.",
      "es": "De cualquier forma, treinta y ocho pintores tendrían trabajo.",
-     "fr": "Dans tous les cas, trente-huit peintres auraient du travail."
+     "fr": "Dans tous les cas, trente-huit peintres auraient du travail.",
+     "show": "Either way, 38 painters would be busy."
     }
    ]
   }

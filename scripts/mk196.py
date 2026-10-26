@@ -11,6 +11,22 @@ Facts: English Wikipedia "Hoover Dam" (Oct 2026), section Construction → Dam:
 - More than 582 miles (937 km) of cooling pipes were placed within the concrete.
 Media: Bureau of Reclamation / NARA photos (public domain), aerial photo CC BY-SA 4.0, drawn graphics labelled GRAPHIC."""
 import json
+
+def SHOW(text, nums):
+    """caption tokens: spoken number words -> digits ("~" merges a token into the previous one)"""
+    tk = text.split(' '); out = list(tk); low = [t.lower() for t in tk]
+    for ph, dg in nums.items():
+        p = ph.lower().split(' ')
+        for i in range(len(tk) - len(p) + 1):
+            if [x.rstrip('.,?!:') for x in low[i:i + len(p)]] == p:
+                last = tk[i + len(p) - 1]; tail = last[len(last.rstrip('.,?!:')):]
+                out[i] = dg + tail; out[i + 1:i + len(p)] = ['~'] * (len(p) - 1)
+    return ' '.join(out)
+def fixshow(E, nums):
+    for sg in E['vo_open'] + [v for s in E['scenes'] for v in s['vo']]:
+        if sg.get('cta'): continue
+        s = SHOW(sg['text'], nums)
+        if s != sg['text']: sg['show'] = s
 V = lambda text, cap, de, es, fr, at=0.45, **kw: {k: v for k, v in dict(at=at, text=text, cap=cap, de=de, es=es, fr=fr, **kw).items() if v is not None}
 E = {
  'ep': 196, 'title': 'Why Hoover Dam is full of pipes', 'format': 'reel2', 'hook_formula': '5 Time Collapse',
@@ -70,4 +86,5 @@ E = {
   {'id': 'cover', 'video': 'File:The Story of Hoover Dam.webm', 'from': 624, 'len': 5},
  ],
 }
+fixshow(E, {'a hundred and twenty-five': '125', 'five hundred eighty-two': '582'})
 open('episodes/196.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))

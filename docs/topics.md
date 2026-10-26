@@ -51,3 +51,6 @@ Check this list before proposing a topic. Add every new episode here in the same
 ## Reel v2 test (E8)
 #199 The room behind Lincoln's head (Mount Rushmore Hall of Records: Borglum's vault for the Declaration + Constitution, 70 ft tunnel, stopped 1939, no trail, 1998 capstone + titanium vault with 16 enamel panels)
 #200 Is Yellowstone overdue? (caldera 45 x 28 mi, 3 super-eruptions 2.1 M / 1.3 M / 640 K years ago, 240 cubic miles; gaps 600-800 K years, too few to predict; USGS/YVO: not overdue; magma only 6-8 % molten)
+#196 Why Hoover Dam is full of pipes (one pour = 125 years to cool + crack; blocks 5 ft high, up to 50 ft square; 1-inch steel pipes, river water then refrigeration-plant ice water; 582+ miles of pipe; grout; poured June 1933 – May 1935)
+#197 Sperm whale, the loudest animal on Earth (236 dB clicks, dives 7,380 ft for up to 2 hours, head up to 1/3 of length, echoes via the lower jaw, recycled air, hunts upside down, giant squid sucker scars) — replaces the planned mantis shrimp (already #160)
+#198 Why the Golden Gate Bridge is orange (38 painters, salt + fog corrosion; International Orange; US Navy wanted black-and-yellow stripes; Irving Morrow: fits surroundings + visible in fog; shade F04A00 lighter than standard BA160C for ships)

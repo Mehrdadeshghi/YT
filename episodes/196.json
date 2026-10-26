@@ -49,7 +49,8 @@
    "cap": "*125 years* of cooling? You'd never wait that long.",
    "de": "Hundertfünfundzwanzig Jahre Abkühlen? So lange würdest du nie warten.",
    "es": "¿Ciento veinticinco años enfriándose? Nunca esperarías tanto.",
-   "fr": "Cent vingt-cinq ans de refroidissement ? Tu n'attendrais jamais aussi longtemps."
+   "fr": "Cent vingt-cinq ans de refroidissement ? Tu n'attendrais jamais aussi longtemps.",
+   "show": "125 ~ ~ ~ years of cooling? You'd never wait that long."
   }
  ],
  "scenes": [
@@ -91,7 +92,8 @@
      "cap": "*River water* ran through them, then *ice-cold water* from a refrigeration plant. Over *582 miles* of pipe, hidden in the concrete.",
      "de": "Erst floss Flusswasser hindurch, dann eiskaltes Wasser aus einer Kühlanlage. Über neunhundertsiebenunddreißig Kilometer Rohre, versteckt im Beton.",
      "es": "Primero pasó agua del río, luego agua helada de una planta de refrigeración. Más de novecientos treinta y siete kilómetros de tubos, ocultos en el hormigón.",
-     "fr": "D'abord de l'eau du fleuve, puis de l'eau glacée d'une usine frigorifique. Plus de neuf cent trente-sept kilomètres de tuyaux, cachés dans le béton."
+     "fr": "D'abord de l'eau du fleuve, puis de l'eau glacée d'une usine frigorifique. Plus de neuf cent trente-sept kilomètres de tuyaux, cachés dans le béton.",
+     "show": "River water ran through them, then ice-cold water from a refrigeration plant. Over 582 ~ ~ miles of pipe, hidden in the concrete."
     }
    ]
   },
@@ -105,7 +107,8 @@
      "cap": "Once a block stopped shrinking, the pipes were *filled with grout.* About *2 years* of pouring, not *125 years* of cooling.",
      "de": "Sobald ein Block nicht mehr schrumpfte, wurden die Rohre mit Mörtel verfüllt. Etwa zwei Jahre Gießen statt hundertfünfundzwanzig Jahre Abkühlen.",
      "es": "Cuando un bloque dejaba de encogerse, los tubos se rellenaban con lechada. Unos dos años de vertido, no ciento veinticinco años de enfriamiento.",
-     "fr": "Dès qu'un bloc cessait de rétrécir, les tuyaux étaient remplis de coulis. Environ deux ans de coulage, au lieu de cent vingt-cinq ans de refroidissement."
+     "fr": "Dès qu'un bloc cessait de rétrécir, les tuyaux étaient remplis de coulis. Environ deux ans de coulage, au lieu de cent vingt-cinq ans de refroidissement.",
+     "show": "Once a block stopped shrinking, the pipes were filled with grout. About two years of pouring, not 125 ~ ~ ~ years of cooling."
     }
    ]
   },
@@ -127,7 +130,8 @@
      "cap": "Because the other option was *125 years.*",
      "de": "Denn die Alternative waren hundertfünfundzwanzig Jahre.",
      "es": "Porque la otra opción eran ciento veinticinco años.",
-     "fr": "Parce que l'autre option, c'était cent vingt-cinq ans."
+     "fr": "Parce que l'autre option, c'était cent vingt-cinq ans.",
+     "show": "Because the other option was 125 ~ ~ ~ years."
     }
    ]
   }

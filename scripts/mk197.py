@@ -12,6 +12,22 @@ Facts: English Wikipedia "Sperm whale" (Oct 2026):
 - feeds notably on the giant squid, but mainly medium-sized squid; skin with giant squid sucker scars (article photo).
 Media: Commons photos (CC0 / PD / CC BY / CC BY-SA), real footage (eye retraction, CC BY-SA 3.0), drawn graphics labelled GRAPHIC."""
 import json
+
+def SHOW(text, nums):
+    """caption tokens: spoken number words -> digits ("~" merges a token into the previous one)"""
+    tk = text.split(' '); out = list(tk); low = [t.lower() for t in tk]
+    for ph, dg in nums.items():
+        p = ph.lower().split(' ')
+        for i in range(len(tk) - len(p) + 1):
+            if [x.rstrip('.,?!:') for x in low[i:i + len(p)]] == p:
+                last = tk[i + len(p) - 1]; tail = last[len(last.rstrip('.,?!:')):]
+                out[i] = dg + tail; out[i + 1:i + len(p)] = ['~'] * (len(p) - 1)
+    return ' '.join(out)
+def fixshow(E, nums):
+    for sg in E['vo_open'] + [v for s in E['scenes'] for v in s['vo']]:
+        if sg.get('cta'): continue
+        s = SHOW(sg['text'], nums)
+        if s != sg['text']: sg['show'] = s
 V = lambda text, cap, de, es, fr, at=0.45, **kw: {k: v for k, v in dict(at=at, text=text, cap=cap, de=de, es=es, fr=fr, **kw).items() if v is not None}
 E = {
  'ep': 197, 'title': 'The loudest animal on Earth', 'format': 'reel2', 'hook_formula': '26 The Superlative',
@@ -78,4 +94,5 @@ E = {
   {'id': 'xsec', 'file': 'File:Cross section of a sperm whale head.png'},
  ],
 }
+fixshow(E, {'two hundred thirty-six': '236', 'seven thousand three hundred eighty': '7,380'})
 open('episodes/197.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))
