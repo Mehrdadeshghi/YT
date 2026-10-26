@@ -1,27 +1,20 @@
-Mount Rushmore | Hall of Records (Mount Rushmore)
-Gutzon Borglum | Construction of Mount Rushmore
-Yellowstone Caldera | Yellowstone Caldera
-Lava Creek Tuff | Yellowstone Volcano Observatory
-Yellowstone National Park | Grand Prismatic Spring
-image: Mount Rushmore Hall of Records
-image: Mount Rushmore Lincoln close up
-image: Mount Rushmore construction 1930s
-image: Gutzon Borglum
-image: Mount Rushmore time capsule
-image: Mount Rushmore top behind heads
-image: Yellowstone caldera map
-image: Yellowstone ash fall map
-image: Yellowstone magma chamber
-image: Yellowstone Lake aerial
-image: Grand Prismatic Spring aerial
-image: Old Faithful eruption
-video: Mount Rushmore
-video: Yellowstone geyser
-video: Old Faithful
-video: Yellowstone
-audio: suspense
+Statue of Liberty | Statue of Liberty
+Statue of Liberty | Statue of Liberty construction
+Statue of Liberty | Statue of Liberty in Paris
+image: Statue of Liberty face close up
+image: Statue of Liberty construction Paris
+image: Statue of Liberty copper
+image: Statue of Liberty torch
+image: Statue of Liberty 1886
+image: Statue of Liberty patina
+image: copper patina verdigris
+image: new copper roof
+image: Statue of Liberty aerial
+video: Statue of Liberty
+video: Liberty Island
 audio: Kevin MacLeod
-article: Mount Rushmore
-article: Gutzon Borglum
-article: Yellowstone Caldera
-article: Yellowstone National Park
+audio: cinematic
+article: Statue of Liberty
+article: Patina
+article: Verdigris
+article: Copper
