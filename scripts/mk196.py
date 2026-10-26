@@ -17,7 +17,7 @@ E = {
  'look': 'cine', 'captions': True, 'noOutro': True, 'speed': 1.2, 'tight': True, 'transition': 'whip', 'facts': True,
  'recap': False, 'voice': 'gemini', 'wordCaps': True, 'mood': 'epic', 'prog': 0,
  'oneAsk': True, 'loop': True, 'capY': 1250, 'cardY': 1150, 'capSize': 76, 'capCX': 465, 'capW': 690,
- 'scripts': ['tech.js', 'reel2.js'], 'langs': ['en', 'de', 'es', 'fr'],
+ 'scripts': ['tech.js', 'r2kit.js'], 'langs': ['en', 'de', 'es', 'fr'],
  'hook': ['125 YEARS', 'CUT TO 2'],
  'cta': {'q': 'Would you have thought of the pipes?', 'a': 'YES', 'b': 'NO'},
  'source': 'https://en.wikipedia.org/wiki/Hoover_Dam',
@@ -65,7 +65,9 @@ E = {
   {'id': 'colJ', 'file': "File:Placing concrete in column 'J'-4. Top of forms at elevation 575. View looks toward Arizona side - NARA - 293932.jpg"},
   {'id': 'pipes', 'file': 'File:Downstream Face of Dam (214c06cd-56a3-4893-85ad-4dadcdb036f8).jpg'},
   {'id': 'upstream', 'file': 'File:Damupstream.jpg'},
-  {'id': 'film', 'video': 'File:The Story of Hoover Dam.webm', 'from': 0, 'len': 1657, 'fps': 0.2},
+  {'id': 'cblocks', 'video': 'File:The Story of Hoover Dam.webm', 'from': 579, 'len': 5},
+  {'id': 'cbucket', 'video': 'File:The Story of Hoover Dam.webm', 'from': 599, 'len': 7},
+  {'id': 'cover', 'video': 'File:The Story of Hoover Dam.webm', 'from': 624, 'len': 5},
  ],
 }
 open('episodes/196.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False))

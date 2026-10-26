@@ -172,11 +172,11 @@ function captions(t, caps, yc = WIDE ? 960 : (EP_RAW.capY || 1300)) {
   const ch = sg.chunks.find((q) => q.includes(k)); if (!ch) return;
   const S = WIDE ? 64 : (EP_RAW.capSize || 92); g.font = F.ui(S); const sp = g.measureText(' ').width;
   const lines = [[]]; let lw = 0;
-  ch.forEach((j) => { const w = g.measureText(sg.words[j].w).width; if (lw + w > (WIDE ? 1400 : 860) && lines.at(-1).length) { lines.push([]); lw = 0; } lines.at(-1).push(j); lw += w + sp; });
+  ch.forEach((j) => { const w = g.measureText(sg.words[j].w).width; if (lw + w > (WIDE ? 1400 : (EP_RAW.capW || 860)) && lines.at(-1).length) { lines.push([]); lw = 0; } lines.at(-1).push(j); lw += w + sp; });
   const LH = WIDE ? 80 : 112, y0 = yc - (lines.length - 1) * LH / 2 + 32;
   lines.forEach((ln, li) => {
     const widths = ln.map((j) => g.measureText(sg.words[j].w).width), tot = widths.reduce((a, b) => a + b, 0) + sp * (ln.length - 1);
-    let x = W / 2 - tot / 2; const y = y0 + li * LH;
+    let x = (WIDE ? W / 2 : (EP_RAW.capCX || W / 2)) - Math.min(tot, EP_RAW.capW || 1e9) / 2; const y = y0 + li * LH;   // capCX/capW: keep captions out of the right-side app overlay (reel2)
     ln.forEach((j, q) => { const wd = sg.words[j], w = widths[q];
       if (t >= wd.t0 - 0.02) { const p = spring(t - wd.t0 + 0.02, 480, 26), now = j === k && t < sg.end + 0.08;
         g.save(); g.translate(x + w / 2, y - S * 0.35); const sc = (0.8 + 0.2 * p) * (now ? 1.06 : 1); g.scale(sc, sc); g.translate(-w / 2, S * 0.35);

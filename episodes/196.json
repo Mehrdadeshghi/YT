@@ -24,7 +24,7 @@
  "capW": 690,
  "scripts": [
   "tech.js",
-  "reel2.js"
+  "r2kit.js"
  ],
  "langs": [
   "en",
@@ -169,11 +169,22 @@
    "file": "File:Damupstream.jpg"
   },
   {
-   "id": "film",
+   "id": "cblocks",
    "video": "File:The Story of Hoover Dam.webm",
-   "from": 0,
-   "len": 1657,
-   "fps": 0.2
+   "from": 579,
+   "len": 5
+  },
+  {
+   "id": "cbucket",
+   "video": "File:The Story of Hoover Dam.webm",
+   "from": 599,
+   "len": 7
+  },
+  {
+   "id": "cover",
+   "video": "File:The Story of Hoover Dam.webm",
+   "from": 624,
+   "len": 5
   }
  ]
 }

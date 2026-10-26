@@ -19,7 +19,7 @@ E = {
  'look': 'cine', 'captions': True, 'noOutro': True, 'speed': 1.2, 'tight': True, 'transition': 'whip', 'facts': True,
  'recap': False, 'voice': 'gemini', 'wordCaps': True, 'mood': 'epic', 'prog': 0,
  'oneAsk': True, 'loop': True, 'capY': 1250, 'cardY': 1150, 'capSize': 76, 'capCX': 465, 'capW': 690,
- 'scripts': ['tech.js', 'reel2.js'], 'langs': ['en', 'de', 'es', 'fr'],
+ 'scripts': ['tech.js', 'r2kit.js'], 'langs': ['en', 'de', 'es', 'fr'],
  'hook': ['38 PAINTERS', 'NEVER STOP'],
  'cta': {'q': 'Orange or stripes?', 'a': 'ORANGE', 'b': 'STRIPES'},
  'source': 'https://en.wikipedia.org/wiki/Golden_Gate_Bridge',
@@ -76,7 +76,7 @@ E = {
   {'id': 'fogtower', 'file': 'File:Golden Gate Bridge tower in fog (July 2022).JPG'},
   {'id': 'fog2', 'file': 'File:Fog Golden Gate Bridge.jpg'},
   {'id': 'pillar', 'file': 'File:Golden Gate bridge pillar.jpg'},
-  {'id': 'ship', 'video': 'File:Ship crossing the Golden Gate.webm', 'from': 0, 'len': 31, 'fps': 1},
+  {'id': 'ship', 'video': 'File:Ship crossing the Golden Gate.webm', 'from': 4, 'len': 6},
   {'id': 'vista', 'file': 'File:Sausalito (CA, USA), Golden Gate Bridge Vista Point -- 2022 -- 3066.jpg'},
  ],
 }

@@ -24,7 +24,7 @@
  "capW": 690,
  "scripts": [
   "tech.js",
-  "reel2.js"
+  "r2kit.js"
  ],
  "langs": [
   "en",
@@ -201,9 +201,8 @@
   {
    "id": "ship",
    "video": "File:Ship crossing the Golden Gate.webm",
-   "from": 0,
-   "len": 31,
-   "fps": 1
+   "from": 4,
+   "len": 6
   },
   {
    "id": "vista",
