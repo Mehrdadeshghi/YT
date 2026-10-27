@@ -1,26 +1,35 @@
-Electric eel | Electrophorus electricus
-Flight recorder | Flight recorders
-D. B. Cooper | D. B. Cooper
-American Falls | American Falls
-Niagara Falls | Niagara Falls in 1969
-image: electric eel
-image: Electrophorus
-image: Humboldt electric eels horses
-image: flight data recorder orange
-image: cockpit voice recorder
-image: black box flight recorder crash
-image: underwater locator beacon
-image: D. B. Cooper sketch
-image: Northwest Orient Boeing 727
-image: Boeing 727 aft airstair
-image: D. B. Cooper ransom money
-image: American Falls dry 1969
-image: American Falls dewatered
-image: Niagara Falls 1969
-video: electric eel
-video: Niagara Falls
-video: American Falls
-video: Boeing 727
-video: flight recorder
+Gateway Arch | Gateway Arch
+Roanoke Colony | Roanoke Colony
+Atlantic horseshoe crab | Limulus polyphemus
+Crater Lake | Crater Lake
+Jack-o'-lantern | Jack-o'-lanterns
+article: Limulus amebocyte lysate
+article: Horseshoe crab
+article: Old Man of the Lake
+article: Crater Lake National Park
+article: Mount Mazama
+article: Halloween
+article: John White (colonist and artist)
+article: Virginia Dare
+image: Gateway Arch construction
+image: Gateway Arch 1965
+image: Gateway Arch tram
+image: Croatoan
+image: John White Roanoke
+image: Lost Colony Roanoke
+image: horseshoe crab blood
+image: horseshoe crab bleeding
+image: horseshoe crab spawning
+image: Old Man of the Lake Crater Lake
+image: Wizard Island Crater Lake
+image: Crater Lake aerial
+image: turnip jack-o'-lantern
+image: turnip lantern
+image: carved pumpkin jack-o-lantern
+video: Gateway Arch
+video: horseshoe crab
+video: Crater Lake
+video: jack-o'-lantern
+video: pumpkin
 audio: Kevin MacLeod
 audio: Rafael Krux
