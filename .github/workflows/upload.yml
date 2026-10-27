@@ -3,7 +3,8 @@ name: Upload to YouTube
 # Needs the secrets YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (docs/youtube-upload.md). Writes uploads/youtube.json.
 # Autopilot: every day at 03:00 UTC (GitHub often starts it hours late) the next rendered episodes from upload_queue.txt go into the free slots of the next 36 h.
 #   Runs only when the repo variable AUTOPILOT is "on" (Settings → Secrets and variables → Actions → Variables).
-#   Slots: repo variable UPLOAD_SLOTS (German time), default "14:00,17:00,19:30,21:30,23:00". Runs in GitHub, no local computer needed.
+#   Slots: repo variable UPLOAD_SLOTS (German time), default "14:00,17:00,19:30,21:30,23:00"; "eu@08:00" = slot for queue lines "<ep> eu"
+#   (untagged = us). SLOTS_FROM (YYYY-MM-DD) = first day the slot plan applies. Runs in GitHub, no local computer needed.
 on:
   schedule:
     - cron: "0 3 * * *"
@@ -50,7 +51,7 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            python3 scripts/yt_upload.py --queue --slots "${{ vars.UPLOAD_SLOTS || '14:00,17:00,19:30,21:30,23:00' }}"
+            python3 scripts/yt_upload.py --queue --slots "${{ vars.UPLOAD_SLOTS || '14:00,17:00,19:30,21:30,23:00' }}" --from "${{ vars.SLOTS_FROM || '2000-01-01' }}"
           else
             python3 scripts/yt_upload.py ${{ inputs.episodes }} --slots "${{ inputs.slots }}" --privacy ${{ inputs.privacy }} ${{ inputs.force && '--force' || '' }}
           fi

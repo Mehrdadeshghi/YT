@@ -16,12 +16,13 @@ BERLIN = ZoneInfo('Europe/Berlin')
 CATEGORIES = {'film & animation': '1', 'sports': '17', 'people & blogs': '22', 'entertainment': '24', 'education': '27', 'science & technology': '28'}
 LEDGER = 'uploads/youtube.json'
 QUEUE = 'upload_queue.txt'
-MAX_PER_RUN = 5                     # hard safety cap: never more than 5 uploads per run (= one day of slots), whatever the input says
+MAX_PER_RUN = 6                     # hard safety cap: never more than 6 uploads per run (= one day of slots), whatever the input says
 args = sys.argv[1:]
 opt = lambda k, d: args[args.index('--' + k) + 1] if '--' + k in args else d
 flag = lambda k: '--' + k in args
 EPS = [a.zfill(3) for a in args if re.fullmatch(r'\d{1,3}', a) and (args.index(a) == 0 or not args[args.index(a) - 1].startswith('--'))]
-SLOTS = [s.strip() for s in opt('slots', '21:00').split(',') if s.strip()]          # daily publish times, German time
+SLOTS = [s.strip() for s in opt('slots', '21:00').split(',') if s.strip()]          # daily publish times, German time; "eu@08:00" = slot for Europe-targeted episodes
+region = lambda s: s.split('@')[0] if '@' in s else 'us'                           # untagged slots and queue lines are US/North America
 PRIVACY = opt('privacy', 'scheduled')                                               # scheduled | private | unlisted | public
 
 
@@ -80,18 +81,21 @@ def set_thumbnail(yt, vid, ep):
     os.remove(name)
 
 
+REG = {}                            # slot (UTC ISO) → region of the slot it came from
+
+
 def next_slots(n, taken):
     """the next n free publish times (Europe/Berlin daily SLOTS, at least 20 min from now), as UTC ISO strings"""
-    now = dt.datetime.now(BERLIN) + dt.timedelta(minutes=20); out = []; day = now.date()
+    now = dt.datetime.now(BERLIN) + dt.timedelta(minutes=20); out = []; day = max(now.date(), dt.date.fromisoformat(opt('from', '2000-01-01')))   # --from: first day of a new slot plan
     while len(out) < n:
         for s in SLOTS:
             if ' ' in s:                                 # fixed date "2026-10-24 18:00" (e.g. the weekly long video)
                 t = dt.datetime.strptime(s, '%Y-%m-%d %H:%M').replace(tzinfo=BERLIN); iso = t.astimezone(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
                 if t <= now or iso in taken: sys.exit(f'fixed slot {s} is in the past or taken')
                 out.append(iso); return out[:n]
-            h, m = map(int, s.split(':')); t = dt.datetime(day.year, day.month, day.day, h, m, tzinfo=BERLIN)
+            h, m = map(int, s.split('@')[-1].split(':')); t = dt.datetime(day.year, day.month, day.day, h, m, tzinfo=BERLIN)
             iso = t.astimezone(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-            if t > now and iso not in taken and iso not in out: out.append(iso)
+            if t > now and iso not in taken and iso not in out: out.append(iso); REG[iso] = region(s)
             if len(out) == n: break
         day += dt.timedelta(days=1)
     return out
@@ -222,8 +226,9 @@ def main():
     taken = {v.get('publishAt') for v in led.values()}
     if flag('queue'):                                   # autopilot: free slots in the next 36 h, queue order, only rendered episodes
         horizon = (dt.datetime.now(dt.timezone.utc) + dt.timedelta(hours=36)).strftime('%Y-%m-%dT%H:%M:%SZ')
-        free = [s for s in next_slots(MAX_PER_RUN, taken) if s <= horizon]
-        queue = [l.split('#')[0].strip().zfill(3) for l in open(QUEUE) if l.split('#')[0].strip()] if os.path.exists(QUEUE) else []
+        free = sorted(s for s in next_slots(MAX_PER_RUN, taken) if s <= horizon)
+        lines = [l.split('#')[0].split() for l in open(QUEUE) if l.split('#')[0].strip()] if os.path.exists(QUEUE) else []
+        queue = [w[0].zfill(3) for w in lines]; QREG = {w[0].zfill(3): (w[1] if len(w) > 1 else 'us') for w in lines}   # "212 eu" = Europe slot
         todo = []
         pending = [e for e in queue if str(int(e)) in led and not led[str(int(e))].get('publishAt')]   # uploaded private (test) but never scheduled
         if pending and free and not flag('dry-run'):
@@ -232,13 +237,13 @@ def main():
                 if not free: break
                 at = free.pop(0); print(f'#{e}: already uploaded privately → schedule')
                 if schedule_existing(yt0, led[str(int(e))]['id'], at): led[str(int(e))]['publishAt'] = at; json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False)
-        for e in queue:
-            if len(todo) == len(free): break
-            if str(int(e)) in led: continue
-            if has_asset(e): todo.append(e)
-            else: print(f'#{e}: in the queue but not rendered yet — skipped for now')
+        when, used = [], set()
+        for at in free:                                   # each free slot takes the first rendered queue episode of its region
+            for e in queue:
+                if e in used or str(int(e)) in led or QREG[e] != REG.get(at, 'us'): continue
+                if has_asset(e): todo.append(e); when.append(at); used.add(e); break
+                print(f'#{e}: in the queue but not rendered yet — skipped for now'); used.add(e)
         if not todo: print(f'nothing to upload (free slots in the next 36 h: {len(free)}, waiting in the queue: {len([e for e in queue if str(int(e)) not in led])})'); return
-        when = free[:len(todo)]
     else:
         if not EPS: sys.exit(__doc__)
         todo = [e for e in EPS if flag('force') or str(int(e)) not in led]
