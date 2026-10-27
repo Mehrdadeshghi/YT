@@ -74,4 +74,57 @@ E = {
   {'id': 'drone', 'video': 'File:Statue Of Liberty 4k Drone.webm', 'from': 86, 'len': 7},
  ],
 }
+
+# ---- HyperFrames kit (scripts/hf_kit.py): the pilot's scenes as data
+RP, RF = 'Real photo', 'Real footage'
+E['hf'] = {'caps': {'cu': ['brown', 'copper'], 'vg': ['green', 'patina', 'protect', 'armor', 'layer'], 'rd': ['corrosion', 'paint', 'protest', 'acid']},
+           'derive': [{'fn': 'brown', 'src': 'front', 'id': 'front_brown'}]}
+E['hf_open'] = {'tpl': 'split', 'name': 'hook', 'a': 'front_brown', 'b': 'front', 'labelA': ['1886', 'Color simulation'], 'labelB': ['Today', RP],
+  'wipes': [{'to': 'A', 'at': 'brown-0.1', 'dur': 0.55}, {'to': 'B', 'at': 'green-0.25', 'dur': 0.7, 'hide_dt': 0.05}],
+  'paint': {'at': 'painted-0.05', 'to': '46%', 'dur': 0.75, 'label': ['Paint stroke', 'Graphic']},
+  'els': [{'el': 'title', 'top': 262, 'ls': '0.16px', 'items': [
+    {'kicker': 'She was', 'text': 'Born brown', 'c': 'cu'},
+    {'kicker': 'Then she', 'kat': 'then+0.05', 'out_prev': 'then', 'text': 'Turned green', 'c': 'vg', 'at': 'green-0.12'},
+    {'kicker': 'Congress almost voted to', 'kat': 'congress', 'out_prev': 'congress-0.1', 'text': 'Paint it over?', 'size': 200,
+     'at': 'congress+0.05', 'sfx': 'swish', 'gain': 0.5}]}]}
+hfs = [
+ {'tpl': 'photo', 'src': 'head', 'pos': '50% 30%', 'enter': 'whip', 'whoosh': 0.6, 'label': ['Paris, 1880s', RP], 'labelY': 700,
+  'settle': {'from': 1.12, 'until': 'less-0.12'}, 'punch': {'at': 'less-0.08', 'scale': 1.16},
+  'els': [{'el': 'title', 'kicker': 'Her skin is', 'text': 'Copper', 'c': 'cu', 'size': 250, 'top': 262, 'at': 'copper-0.08', 'out': 'less-0.07', 'out_fx': 'cut'},
+          {'el': 'counter', 'kicker': 'Thickness', 'show': 'less-0.08', 'at': 'less', 'to': 0.094, 'dec': 3, 'unit': ' in', 'ticks': 8},
+          {'el': 'ruler', 'at': 'less', 'fill_at': 'tenth', 'fill': 0.94, 'l1': '1/10 in'}]},
+ {'tpl': 'card', 'src': 'drone', 'label': ['Drone', RF],
+  'els': [{'el': 'timeline', 'kicker': 'The year', 'from': 1886, 'labels': ['1886', ['1902', 420], '1906'], 'color_until': 'by+0.6',
+           'steps': [{'to': 1902, 'fill': 0.8, 'at': 'green-0.2', 'until': 'by-0.2'}, {'to': 1906, 'fill': 1, 'at': 'by+0.15', 'dur': 0.6}]},
+          {'el': 'chip', 'in': 'card', 'text': 'Air', 'cls': 'agent', 'x': 22, 'y': 86, 'at': 'air-0.05', 'out': 'patina-0.1'},
+          {'el': 'chip', 'in': 'card', 'text': 'Water', 'cls': 'agent', 'x': 140, 'y': 86, 'at': 'water-0.05', 'out': 'patina-0.1'},
+          {'el': 'chip', 'in': 'card', 'text': 'Acid pollution', 'cls': 'agent', 'x': 300, 'y': 86, 'at': 'acid-0.05', 'out': 'patina-0.1'},
+          {'el': 'chip', 'in': 'card', 'text': ['1906', 'Fully covered'], 'cls': 'done', 'x': 22, 'y': 86, 'at': 'completely', 'fx': 'stamp',
+           'sfx': 'ding', 'gain': 0.6, 'sfx_dt': 0}]},
+ {'tpl': 'photo', 'src': 'front', 'img': {'w': 2500, 'x': -710, 'y': -150}, 'enter': 'zoom', 'drift': -60, 'label': 'Real photo', 'labelY': 640,
+  'paint': {'at': 'paint-0.1', 'to': '0%', 'dur': 0.9, 'opacity': 0.94, 'label': ['Paint', 'Graphic'], 'y': 640, 'lab_dt': 0.1, 'sfx_dt': 0},
+  'els': [{'el': 'title', 'kicker': 'U.S. Congress, 1906', 'ktop': 196},
+          {'el': 'counter', 'at': '62800-0.1', 'to': 62800, 'step': 100, 'prefix': '$', 'grow': True, 'dur': 1.3, 'top': 250,
+           'ticks': 12, 'tick_gap': 0.07, 'tick_gain': 0.45, 'end_sfx': 'coin'},
+          {'el': 'sub', 'text': 'For repairs + paint · inside and out', 'at': 'repairs-0.1'},
+          {'el': 'chip', 'text': 'Mistaken for <b>corrosion</b>', 'cls': 'myth', 'y': 720, 'at': 'corrosion-0.05', 'fx': 'slide', 'out': 'paint-0.2',
+           'out_dur': 0.2, 'sfx': 'wrong', 'gain': 0.6},
+          {'el': 'stamp', 'text': 'Paint her?', 'at': 'inside-0.1'}]},
+ {'tpl': 'photo', 'src': 'torch', 'pos': '50% 40%', 'enter': 'vwhip', 'zoom': [1.0, 1.08], 'label': ["Statue's torch hand", RP], 'labelY': 1030,
+  'els': [{'el': 'title', 'top': 230, 'items': [{'text': 'Public <span class="rd">protest</span>', 'size': 210, 'at': 'protested-0.15', 'fx': 'pop',
+                                                  'out': 'army-0.1', 'out_fx': 'up'}]},
+          {'el': 'glass', 'eyebrow': 'U.S. Army Corps of Engineers', 'line': 'The patina <span class="vg">protects</span> the copper',
+           'quote': '&ldquo;…softened the outlines of the Statue and made it beautiful.&rdquo;', 'at': 'army-0.05', 'check_at': 'protects-0.05'}]},
+ {'tpl': 'photo', 'src': 'boat2', 'vdur': 'cta+0.5', 'enter': 'iris', 'label': ['From the ferry', RF], 'labelY': 1060,
+  'els': [{'el': 'title', 'text': 'Her armor', 'c': 'vg', 'size': 230, 'top': 220, 'at': 'armor-0.1', 'dur': 0.2},
+          {'el': 'stack', 'label': ['Cross-section', 'Graphic'], 'label_at': 'inside', 'layers': [
+            {'text': 'Patina · protective layer', 'cls': 'l1', 'at': 'green-0.05', 'fx': 'drop'},
+            {'text': 'Copper skin · 0.094 in', 'cls': 'l2', 'at': 'inside-0.05', 'sfx_dt': 0.05},
+            {'text': 'Paint · inside only', 'cls': 'l3', 'at': 'inside-0.2'}]},
+          {'el': 'ab', 'q': 'Which Lady Liberty?', 'title': '<span class="cu">Brown</span> or <span class="vg">green</span>',
+           'a': {'src': 'front_brown', 'label': 'Brown', 'sub': 'simulation', 'pulse': 'brown'},
+           'b': {'src': 'front', 'label': 'Green', 'sub': 'real photo', 'pulse': 'green#2-0.05'}},
+          {'el': 'loop'}]},
+]
+for sc, h in zip(E['scenes'], hfs): sc['hf'] = h
 open('episodes/201.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False) + '\n')
