@@ -1,6 +1,6 @@
 {
  "ep": 205,
- "title": "The year America switched off Niagara Falls",
+ "title": "The year America switched off its side of Niagara Falls",
  "format": "reel2",
  "hook_formula": "3 Nobody Tells You",
  "look": "cine",
@@ -33,7 +33,7 @@
   "fr"
  ],
  "hook": [
-  "NIAGARA FALLS",
+  "AMERICAN FALLS",
   "SWITCHED OFF"
  ],
  "cta": {
@@ -45,12 +45,12 @@
  "vo_open": [
   {
    "at": 0.2,
-   "text": "Nobody tells you America switched off Niagara Falls in nineteen sixty-nine.",
-   "cap": "Nobody tells you America *switched off* *Niagara Falls* in *1969.*",
-   "de": "Kaum jemand weiß: Neunzehnhundertneunundsechzig haben die USA die Niagarafälle abgeschaltet.",
-   "es": "Nadie te lo cuenta: en mil novecientos sesenta y nueve, Estados Unidos apagó las cataratas del Niágara.",
-   "fr": "Personne ne te le dit : en mille neuf cent soixante-neuf, les États-Unis ont éteint les chutes du Niagara.",
-   "show": "Nobody tells you America switched off Niagara Falls in 1969. ~"
+   "text": "Nobody tells you America switched off part of Niagara Falls in nineteen sixty-nine.",
+   "cap": "Nobody tells you America *switched off* part of *Niagara Falls* in *1969.*",
+   "de": "Kaum jemand weiß: Neunzehnhundertneunundsechzig haben die USA einen Teil der Niagarafälle abgeschaltet.",
+   "es": "Nadie te lo cuenta: en mil novecientos sesenta y nueve, Estados Unidos apagó parte de las cataratas del Niágara.",
+   "fr": "Personne ne te le dit : en mille neuf cent soixante-neuf, les États-Unis ont éteint une partie des chutes du Niagara.",
+   "show": "Nobody tells you America switched off part of Niagara Falls in 1969. ~"
   }
  ],
  "scenes": [

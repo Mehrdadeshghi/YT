@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """#205 REEL v2 (experiment E8) — 1969: the U.S. switched off the American Falls of Niagara. 27 Oct 2026. Voice: gemini.
 Hook formula 3 "Nobody Tells You" (hookscore 84.4 STRONG): "Nobody tells you America switched off Niagara Falls in 1969."
-On screen "NIAGARA FALLS / SWITCHED OFF".
+On screen "AMERICAN FALLS / SWITCHED OFF".
 Facts: English Wikipedia "Niagara Falls" + "American Falls" (Oct 2026):
 - "In June 1969, a temporary rock and earth dam was constructed, completely diverting the Niagara River from American Falls for
   several months." "the U.S. Army Corps of Engineers blocked the flow of water over the American Falls from June to November 1969."
@@ -32,19 +32,19 @@ def fixshow(E, nums):
         if s != sg['text']: sg['show'] = s
 V = lambda text, cap, de, es, fr, at=0.45, **kw: {k: v for k, v in dict(at=at, text=text, cap=cap, de=de, es=es, fr=fr, **kw).items() if v is not None}
 E = {
- 'ep': 205, 'title': 'The year America switched off Niagara Falls', 'format': 'reel2', 'hook_formula': '3 Nobody Tells You',
+ 'ep': 205, 'title': 'The year America switched off its side of Niagara Falls', 'format': 'reel2', 'hook_formula': '3 Nobody Tells You',
  'look': 'cine', 'captions': True, 'noOutro': True, 'speed': 1.2, 'tight': True, 'transition': 'whip', 'facts': True,
  'recap': False, 'voice': 'gemini', 'wordCaps': True, 'mood': 'epic', 'prog': 0,
  'oneAsk': True, 'loop': True, 'capY': 1250, 'cardY': 1150, 'capSize': 76, 'capCX': 465, 'capW': 690,
  'scripts': ['tech.js', 'r2kit.js'], 'langs': ['en', 'de', 'es', 'fr'],
- 'hook': ['NIAGARA FALLS', 'SWITCHED OFF'],
+ 'hook': ['AMERICAN FALLS', 'SWITCHED OFF'],
  'cta': {'q': 'Would you walk on the dry falls?', 'a': 'YES', 'b': 'NO'},
  'source': 'https://en.wikipedia.org/wiki/Niagara_Falls',
- 'vo_open': [V('Nobody tells you America switched off Niagara Falls in nineteen sixty-nine.',
-   'Nobody tells you America *switched off* *Niagara Falls* in *1969.*',
-   'Kaum jemand weiß: Neunzehnhundertneunundsechzig haben die USA die Niagarafälle abgeschaltet.',
-   'Nadie te lo cuenta: en mil novecientos sesenta y nueve, Estados Unidos apagó las cataratas del Niágara.',
-   "Personne ne te le dit : en mille neuf cent soixante-neuf, les États-Unis ont éteint les chutes du Niagara.", at=0.2)],
+ 'vo_open': [V('Nobody tells you America switched off part of Niagara Falls in nineteen sixty-nine.',
+   'Nobody tells you America *switched off* part of *Niagara Falls* in *1969.*',
+   'Kaum jemand weiß: Neunzehnhundertneunundsechzig haben die USA einen Teil der Niagarafälle abgeschaltet.',
+   'Nadie te lo cuenta: en mil novecientos sesenta y nueve, Estados Unidos apagó parte de las cataratas del Niágara.',
+   "Personne ne te le dit : en mille neuf cent soixante-neuf, les États-Unis ont éteint une partie des chutes du Niagara.", at=0.2)],
  'scenes': [
   {'dur': 1.6, 'vis': 0, 'vo': [V('In June, Army engineers built a temporary dam of rock and earth. The American Falls went dry.',
     'In *June,* *Army engineers* built a temporary dam of *rock and earth.* The *American Falls* went *dry.*',

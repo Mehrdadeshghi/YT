@@ -1,5 +1,5 @@
 // Wiki Roulette #205 — REEL v2 (E8): 1969, the U.S. Army Corps of Engineers switched off the American Falls of Niagara.
-// open: REAL FOOTAGE American Falls today, hook "NIAGARA FALLS / SWITCHED OFF" → REAL PHOTO the dry falls, 1969 →
+// open: REAL FOOTAGE American Falls today, hook "AMERICAN FALLS / SWITCHED OFF" → REAL PHOTO the dry falls, 1969 →
 // GRAPHIC map: rock-and-earth dam across the American channel (JUNE 1969) → REAL PHOTO dry falls "DRY." →
 // REAL FOOTAGE Horseshoe Falls takes all the water → REAL PHOTO 1969 rock pile at the base → REAL PHOTO dry crest "BOLTED" →
 // 1969 photo "2 BODIES FOUND" → GRAPHIC dam blown up (NOVEMBER) → REAL FOOTAGE water back → comment card over the talus photo;
