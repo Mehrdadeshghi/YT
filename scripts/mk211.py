@@ -91,7 +91,7 @@ E = {
 E['hf'] = {'theme': {'cu': '#E2A85C', 'vg': '#9FC7E8', 'capcu': '#EDB86E', 'capvg': '#B3D4EE', 'chipvg': '#B3D4EE', 'chipcu': '#EDB86E', 'p0': '#E2A85C'},
            'caps': {'cu': ['brooklyn', 'bedroom', 'telescope', 'emily', 'eleven', 'first'], 'vg': ['catenary', 'material', 'cables', 'washington', 'may', '1883'],
                     'rd': ['crushed', 'tetanus', 'bends', 'paralyzed', 'foot']}}
-E['hf_open'] = {'tpl': 'photo', 'name': 'hook', 'src': 'leslie', 'img': {'w': 1500, 'x': -210, 'y': -420}, 'enter': 'none', 'zoom': [1.0, 1.08],
+E['hf_open'] = {'tpl': 'photo', 'name': 'hook', 'src': 'leslie', 'img': {'w': 1500, 'x': -210, 'y': -260}, 'enter': 'none', 'zoom': [1.0, 1.08],
   'label': ["Frank Leslie's, 1883", IL], 'labelY': 1030,
   'els': [{'el': 'title', 'top': 262, 'items': [{'kicker': 'The Brooklyn Bridge', 'text': 'From a bedroom', 'c': 'cu', 'size': 200}]}]}
 hfs = [
