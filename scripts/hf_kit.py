@@ -224,7 +224,7 @@ def tpl_split(S, c):
         else:
             js += f'      tl.to("#{S.p}-B", {{ clipPath: "{clip}", duration: {dur}, ease: "power2.inOut" }}, {at:.3f});\n'
             js += f'      tl.to("#{S.p}-div", {{ x: {dx}, duration: {dur}, ease: "power2.inOut" }}, {at:.3f});\n'
-        js += f'      tl.to("#{S.p}-chip{lose}", {{ opacity: 0, duration: 0.2 }}, {at + wp.get('hide_dt', 0.1):.3f});\n'
+        js += f'      tl.to("#{S.p}-chip{lose}", {{ opacity: 0, duration: 0.2 }}, {at + wp.get("hide_dt", 0.1):.3f});\n'
         if i: js += f'      tl.to("#{S.p}-chip{win}", {{ opacity: 1, duration: 0.25 }}, {at + 0.55:.3f});\n'
         S.cues.append((at, wp.get('sfx', 'swish' if i == 0 else 'whoosh'), wp.get('gain', 0.6 if i == 0 else 0.7)))
     S.js.insert(0, js)
@@ -420,7 +420,10 @@ def el_bars(S, e, i):
 def el_timeline(S, e, i):
     """year (or any value) counter over a progress bar: steps [{to, fill, at, until|dur, ease}], tick labels [{t, ml}]"""
     q = f'{S.p}-y{i}'; top = e.get('top', 250)
-    labs = ''.join(f'<span{f" style=\"margin-left:{lb[1]}px\"" if isinstance(lb, list) and len(lb) > 1 else ""}>{lb[0] if isinstance(lb, list) else lb}</span>' for lb in e.get('labels', []))
+    def lab(lb):
+        if isinstance(lb, list) and len(lb) > 1: return '<span style="margin-left:%spx">%s</span>' % (lb[1], lb[0])
+        return '<span>%s</span>' % (lb[0] if isinstance(lb, list) else lb)
+    labs = ''.join(lab(lb) for lb in e.get('labels', []))
     c0, c1 = e.get('colors', ['#E08A4E', '#7FD3BF'])
     html = f"""      <div class="kicker" style="top:{e.get('ktop', top - 54)}px">{e.get('kicker', 'The year')}</div>
       <div id="{q}" class="big" style="top:{top}px; font-size:{e.get('size', 260)}px; color:{c0}">{e['from']}</div>
