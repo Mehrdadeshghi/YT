@@ -103,8 +103,8 @@
    "vo": [
     {
      "at": 0.45,
-     "text": "Arthritis? A doctor cracked only his left knuckles for over fifty years. Neither hand got arthritis. He won an Ig Nobel Prize.",
-     "cap": "*Arthritis?* A doctor cracked only his *left* knuckles for *50+ years.* *Neither hand* got arthritis. *Ig Nobel Prize.*",
+     "text": "But what about arthritis? A doctor cracked only his left knuckles for over fifty years. Neither hand got arthritis. He won an Ig Nobel Prize.",
+     "cap": "But what about *arthritis?* A doctor cracked only his *left* knuckles for *50+ years.* *Neither hand* got arthritis. *Ig Nobel Prize.*",
      "de": "Arthrose? Ein Arzt knackte über fünfzig Jahre lang nur die Knöchel seiner linken Hand. Keine Hand bekam Arthrose. Dafür gab es den Ig-Nobelpreis.",
      "es": "¿Artritis? Un médico se crujió solo los nudillos de la mano izquierda durante más de cincuenta años. Ninguna mano tuvo artritis. Ganó un premio Ig Nobel.",
      "fr": "L'arthrose ? Un médecin a fait craquer seulement sa main gauche pendant plus de cinquante ans. Aucune main n'a eu d'arthrose. Il a gagné un prix Ig Nobel."
