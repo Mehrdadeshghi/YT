@@ -1,20 +1,26 @@
-Statue of Liberty | Statue of Liberty
-Statue of Liberty | Statue of Liberty construction
-Statue of Liberty | Statue of Liberty in Paris
-image: Statue of Liberty face close up
-image: Statue of Liberty construction Paris
-image: Statue of Liberty copper
-image: Statue of Liberty torch
-image: Statue of Liberty 1886
-image: Statue of Liberty patina
-image: copper patina verdigris
-image: new copper roof
-image: Statue of Liberty aerial
-video: Statue of Liberty
-video: Liberty Island
+Electric eel | Electrophorus electricus
+Flight recorder | Flight recorders
+D. B. Cooper | D. B. Cooper
+American Falls | American Falls
+Niagara Falls | Niagara Falls in 1969
+image: electric eel
+image: Electrophorus
+image: Humboldt electric eels horses
+image: flight data recorder orange
+image: cockpit voice recorder
+image: black box flight recorder crash
+image: underwater locator beacon
+image: D. B. Cooper sketch
+image: Northwest Orient Boeing 727
+image: Boeing 727 aft airstair
+image: D. B. Cooper ransom money
+image: American Falls dry 1969
+image: American Falls dewatered
+image: Niagara Falls 1969
+video: electric eel
+video: Niagara Falls
+video: American Falls
+video: Boeing 727
+video: flight recorder
 audio: Kevin MacLeod
-audio: cinematic
-article: Statue of Liberty
-article: Patina
-article: Verdigris
-article: Copper
+audio: Rafael Krux

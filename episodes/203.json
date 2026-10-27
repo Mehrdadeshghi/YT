@@ -1,0 +1,179 @@
+{
+ "ep": 203,
+ "title": "How the black box survives a crash",
+ "format": "reel2",
+ "hook_formula": "22 Contrarian Flip",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "gemini",
+ "wordCaps": true,
+ "mood": "epic",
+ "prog": 0,
+ "oneAsk": true,
+ "loop": true,
+ "capY": 1250,
+ "cardY": 1150,
+ "capSize": 76,
+ "capCX": 465,
+ "capW": 690,
+ "scripts": [
+  "tech.js",
+  "r2kit.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "3,400 G",
+  "NOT EVEN BLACK"
+ ],
+ "cta": {
+  "q": "Did you know it was orange?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Flight_recorder",
+ "vo_open": [
+  {
+   "at": 0.2,
+   "text": "Three thousand four hundred G's. The black box on your flight survives it, and it's not even black.",
+   "cap": "*3,400 G's.* The *black box* on your flight survives it, and it's *not even black.*",
+   "de": "Dreitausendvierhundert g. Die Blackbox in deinem Flugzeug übersteht das, und sie ist nicht mal schwarz.",
+   "es": "Tres mil cuatrocientas g. La caja negra de tu vuelo lo resiste, y ni siquiera es negra.",
+   "fr": "Trois mille quatre cents g. La boîte noire de ton avion y survit, et elle n'est même pas noire.",
+   "show": "3,400 ~ ~ ~ G's. The black box on your flight survives it, and it's not even black."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's bright orange, so investigators can find it. And it sits in the tail, the safest spot.",
+     "cap": "It's *bright orange,* so investigators can *find it.* And it sits in the *tail,* the safest spot.",
+     "de": "Sie ist knallorange, damit Ermittler sie finden. Und sie sitzt im Heck, dem sichersten Platz.",
+     "es": "Es naranja brillante, para que los investigadores la encuentren. Y va en la cola, el lugar más seguro.",
+     "fr": "Elle est orange vif, pour que les enquêteurs la retrouvent. Et elle est dans la queue, l'endroit le plus sûr."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Like hitting the ground at three hundred ten miles per hour. Then fire: over one thousand eight hundred thirty degrees.",
+     "cap": "Like hitting the ground at *310 mph.* Then *fire:* over *1,830 °F.*",
+     "de": "Das entspricht einem Aufprall mit rund fünfhundert Kilometern pro Stunde. Dann das Feuer: über tausend Grad Celsius.",
+     "es": "Es como chocar contra el suelo a unos quinientos kilómetros por hora. Luego el fuego: más de mil grados Celsius.",
+     "fr": "C'est comme percuter le sol à environ cinq cents kilomètres à l'heure. Puis le feu : plus de mille degrés Celsius.",
+     "show": "Like hitting the ground at 310 mph. ~ ~ ~ ~ ~ Then fire: over 1,830 °F. ~ ~ ~ ~ ~"
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "If it sinks, a beacon pings for thirty days, even twenty thousand feet down.",
+     "cap": "If it sinks, a *beacon pings* for *30 days,* even *20,000 feet* down.",
+     "de": "Versinkt sie, sendet ein Peilsender bis zu dreißig Tage lang Signale, aus bis zu sechstausend Metern Tiefe.",
+     "es": "Si se hunde, una baliza emite señales hasta treinta días, desde hasta seis mil metros de profundidad.",
+     "fr": "Si elle coule, une balise émet des signaux jusqu'à trente jours, depuis six mille mètres de profondeur.",
+     "show": "If it sinks, a beacon pings for 30 days, even 20,000 ~ feet down."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Why not build the whole plane out of it? Too heavy to fly.",
+     "cap": "Why not build the *whole plane* out of it? *Too heavy to fly.*",
+     "de": "Warum also nicht das ganze Flugzeug daraus bauen? Es wäre zu schwer zum Fliegen.",
+     "es": "¿Y por qué no construir todo el avión con eso? Sería demasiado pesado para volar.",
+     "fr": "Alors pourquoi ne pas construire tout l'avion comme ça ? Il serait trop lourd pour voler."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Did you know it was orange? Comment yes or no.",
+     "de": "Wusstest du, dass sie orange ist? Ja oder nein, schreib es in die Kommentare.",
+     "es": "¿Sabías que era naranja? Sí o no, coméntalo abajo.",
+     "fr": "Tu savais qu'elle était orange ? Oui ou non, dis-le en commentaire.",
+     "cta": true
+    },
+    {
+     "at": "0.15",
+     "text": "The black box was never black.",
+     "cap": "The *black box* was *never black.*",
+     "de": "Denn die Blackbox war nie schwarz.",
+     "es": "Porque la caja negra nunca fue negra.",
+     "fr": "Parce que la boîte noire n'a jamais été noire."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Uplifting Blockbuster (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 60,
+   "gain": 0.8
+  },
+  {
+   "id": "potomac",
+   "file": "File:Flight data recorder from NTSB recovery of crash related items on the Potomac River, 2 February 2025 - 1 (cropped).jpg"
+  },
+  {
+   "id": "pair",
+   "file": "File:FDR-CVR from 21 Air LLC Flight 7598 (55516818053).jpg"
+  },
+  {
+   "id": "tail",
+   "file": "File:Flightrecorders.JPG"
+  },
+  {
+   "id": "carry",
+   "file": "File:An NTSB investigator carries out one of the recorders from UPS 1354. (9518907464).jpg"
+  },
+  {
+   "id": "lab",
+   "file": "File:UPS Flight 1354 Recorders in the NTSB Lab (9544477945).jpg"
+  },
+  {
+   "id": "swaim",
+   "file": "File:Investigator Robert Swaim with the flight data recorder (15978107931).jpg"
+  },
+  {
+   "id": "ulb",
+   "file": "File:Underwaterlocatorbeacon.JPG"
+  },
+  {
+   "id": "atlas",
+   "file": "File:Atlas Air Flight Recorders (47218247282).jpg"
+  }
+ ]
+}

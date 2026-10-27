@@ -1,0 +1,173 @@
+{
+ "ep": 204,
+ "title": "D. B. Cooper: the jump nobody solved",
+ "format": "reel2",
+ "hook_formula": "25 Someone Else's Result",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "gemini",
+ "wordCaps": true,
+ "mood": "calm",
+ "prog": 0,
+ "oneAsk": true,
+ "loop": true,
+ "capY": 1250,
+ "cardY": 1150,
+ "capSize": 76,
+ "capCX": 465,
+ "capW": 690,
+ "scripts": [
+  "tech.js",
+  "r2kit.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "$200,000",
+  "NEVER FOUND"
+ ],
+ "cta": {
+  "q": "Did he survive the jump?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/D._B._Cooper",
+ "vo_open": [
+  {
+   "at": 0.2,
+   "text": "Two hundred thousand dollars, four parachutes, one night jump. And you still don't know his name.",
+   "cap": "*$200,000,* *4 parachutes,* one night jump. And you still don't know his *name.*",
+   "de": "Zweihunderttausend Dollar, vier Fallschirme, ein Sprung in die Nacht. Und bis heute kennt niemand seinen Namen.",
+   "es": "Doscientos mil dólares, cuatro paracaídas, un salto de noche. Y todavía nadie sabe su nombre.",
+   "fr": "Deux cent mille dollars, quatre parachutes, un saut dans la nuit. Et on ne connaît toujours pas son nom.",
+   "show": "$200,000, ~ ~ ~ 4 parachutes, one night jump. And you still don't know his name."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Nineteen seventy-one. A man calling himself Dan Cooper hijacks a jet with a bomb.",
+     "cap": "*1971.* A man calling himself *Dan Cooper* hijacks a jet with a *bomb.*",
+     "de": "Neunzehnhunderteinundsiebzig. Ein Mann, der sich Dan Cooper nennt, entführt ein Flugzeug, mit einer Bombe.",
+     "es": "Mil novecientos setenta y uno. Un hombre que se hace llamar Dan Cooper secuestra un avión con una bomba.",
+     "fr": "Mille neuf cent soixante et onze. Un homme qui se fait appeler Dan Cooper détourne un avion avec une bombe.",
+     "show": "1971. ~ A man calling himself Dan Cooper hijacks a jet with a bomb."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In Seattle, he swaps the passengers for the cash and four parachutes.",
+     "cap": "In *Seattle,* he swaps the passengers for the *cash* and *4 parachutes.*",
+     "de": "In Seattle tauscht er die Passagiere gegen das Geld und vier Fallschirme.",
+     "es": "En Seattle, cambia a los pasajeros por el dinero y cuatro paracaídas.",
+     "fr": "À Seattle, il échange les passagers contre l'argent et quatre parachutes.",
+     "show": "In Seattle, he swaps the passengers for the cash and 4 parachutes."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Over the forests of Washington, he lowers the rear stairs and jumps into the night.",
+     "cap": "Over the *forests of Washington,* he lowers the *rear stairs* and *jumps* into the night.",
+     "de": "Dann, über den Wäldern von Washington, klappt er die Hecktreppe aus und springt in die Nacht.",
+     "es": "Luego, sobre los bosques de Washington, baja la escalera trasera y salta a la noche.",
+     "fr": "Puis, au-dessus des forêts de l'État de Washington, il abaisse l'escalier arrière et saute dans la nuit."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In nineteen eighty, a boy found six thousand dollars of it by the Columbia River. Still the only unsolved airline hijacking.",
+     "cap": "In *1980,* a boy found *$6,000* of it by the *Columbia River.* Still the *only unsolved* airline hijacking.",
+     "de": "Neunzehnhundertachtzig fand ein Junge sechstausend Dollar davon am Columbia River. Es ist bis heute die einzige ungelöste Flugzeugentführung.",
+     "es": "En mil novecientos ochenta, un niño encontró seis mil dólares junto al río Columbia. Sigue siendo el único secuestro aéreo sin resolver.",
+     "fr": "En mille neuf cent quatre-vingt, un garçon a trouvé six mille dollars au bord du fleuve Columbia. C'est toujours le seul détournement d'avion jamais résolu.",
+     "show": "In 1980, ~ a boy found $6,000 ~ ~ of it by the Columbia River. Still the only unsolved airline hijacking."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Did he survive the jump? Yes or no, comment below.",
+     "de": "Hat er den Sprung überlebt? Ja oder nein, schreib es in die Kommentare.",
+     "es": "¿Sobrevivió al salto? Sí o no, coméntalo abajo.",
+     "fr": "A-t-il survécu au saut ? Oui ou non, dis-le en commentaire.",
+     "cta": true
+    },
+    {
+     "at": "0.15",
+     "text": "Most of that two hundred thousand dollars was never found.",
+     "cap": "Most of that *$200,000* was *never found.*",
+     "de": "Der Großteil der zweihunderttausend Dollar wurde nie gefunden.",
+     "es": "La mayor parte de los doscientos mil dólares nunca apareció.",
+     "fr": "L'essentiel des deux cent mille dollars n'a jamais été retrouvé.",
+     "show": "Most of that $200,000 ~ ~ ~ was never found."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 60,
+   "gain": 0.8
+  },
+  {
+   "id": "sketch",
+   "file": "File:CompositeB-FBI-1973.jpg"
+  },
+  {
+   "id": "poster",
+   "file": "File:DB Cooper Wanted Poster.jpg"
+  },
+  {
+   "id": "ticket",
+   "file": "File:July 2016 D.B. Cooper Plane Ticket (28379315406).jpg"
+  },
+  {
+   "id": "jet",
+   "file": "File:Northwest Orient 727 (6961699414).jpg"
+  },
+  {
+   "id": "stair",
+   "file": "File:Northwest Boeing 727 airstair (1975).jpg"
+  },
+  {
+   "id": "money",
+   "file": "File:Money stolen by D. B. Cooper.jpg"
+  }
+ ]
+}

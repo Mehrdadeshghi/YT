@@ -1,0 +1,193 @@
+{
+ "ep": 205,
+ "title": "The year America switched off Niagara Falls",
+ "format": "reel2",
+ "hook_formula": "3 Nobody Tells You",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "gemini",
+ "wordCaps": true,
+ "mood": "epic",
+ "prog": 0,
+ "oneAsk": true,
+ "loop": true,
+ "capY": 1250,
+ "cardY": 1150,
+ "capSize": 76,
+ "capCX": 465,
+ "capW": 690,
+ "scripts": [
+  "tech.js",
+  "r2kit.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "NIAGARA FALLS",
+  "SWITCHED OFF"
+ ],
+ "cta": {
+  "q": "Would you walk on the dry falls?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Niagara_Falls",
+ "vo_open": [
+  {
+   "at": 0.2,
+   "text": "Nobody tells you America switched off Niagara Falls in nineteen sixty-nine.",
+   "cap": "Nobody tells you America *switched off* *Niagara Falls* in *1969.*",
+   "de": "Kaum jemand weiß: Neunzehnhundertneunundsechzig haben die USA die Niagarafälle abgeschaltet.",
+   "es": "Nadie te lo cuenta: en mil novecientos sesenta y nueve, Estados Unidos apagó las cataratas del Niágara.",
+   "fr": "Personne ne te le dit : en mille neuf cent soixante-neuf, les États-Unis ont éteint les chutes du Niagara.",
+   "show": "Nobody tells you America switched off Niagara Falls in 1969. ~"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "In June, Army engineers built a temporary dam of rock and earth. The American Falls went dry.",
+     "cap": "In *June,* *Army engineers* built a temporary dam of *rock and earth.* The *American Falls* went *dry.*",
+     "de": "Im Juni baute das Ingenieurkorps der US-Armee einen provisorischen Damm aus Fels und Erde. Die American Falls fielen trocken.",
+     "es": "En junio, el Cuerpo de Ingenieros del Ejército construyó una presa provisional de roca y tierra. Las cataratas americanas se secaron.",
+     "fr": "En juin, le corps des ingénieurs de l'armée a construit un barrage provisoire de roche et de terre. Les chutes américaines se sont asséchées."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "All the water went over the Horseshoe Falls instead.",
+     "cap": "All the water went over the *Horseshoe Falls* instead.",
+     "de": "Das ganze Wasser stürzte stattdessen über die Horseshoe Falls.",
+     "es": "Toda el agua cayó por las cataratas Horseshoe.",
+     "fr": "Toute l'eau passait par les chutes du Fer-à-Cheval."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Why? Rockfalls had piled a huge mound of rock at its base. Engineers studied the riverbed and bolted weak spots.",
+     "cap": "Why? *Rockfalls* had piled a *huge mound of rock* at its base. Engineers studied the riverbed and *bolted* weak spots.",
+     "de": "Warum? Felsstürze hatten am Fuß einen riesigen Geröllberg aufgetürmt. Ingenieure untersuchten das Flussbett und verankerten die Schwachstellen.",
+     "es": "¿Por qué? Los desprendimientos habían amontonado una enorme pila de roca en la base. Los ingenieros estudiaron el lecho y atornillaron los puntos débiles.",
+     "fr": "Pourquoi ? Des éboulements avaient entassé un énorme tas de roches à la base. Les ingénieurs ont étudié le lit du fleuve et boulonné les points faibles."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Under the dry falls, they found two bodies. In November, they blew up the dam, and the falls came back.",
+     "cap": "Under the dry falls, they found *two bodies.* In *November,* they *blew up the dam,* and the falls came back.",
+     "de": "Unter den trockenen Fällen fanden sie auch zwei Leichen. Im November sprengten sie den Damm, und die Fälle kamen zurück.",
+     "es": "Bajo las cataratas secas también encontraron dos cuerpos. En noviembre volaron la presa, y las cataratas volvieron.",
+     "fr": "Sous les chutes à sec, ils ont aussi trouvé deux corps. En novembre, ils ont fait sauter le barrage, et les chutes sont revenues."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 4,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Would you walk on the dry falls? Yes or no, comment below.",
+     "de": "Würdest du über die trockenen Fälle laufen? Ja oder nein, schreib es in die Kommentare.",
+     "es": "¿Caminarías por las cataratas secas? Sí o no, coméntalo abajo.",
+     "fr": "Tu marcherais sur les chutes à sec ? Oui ou non, dis-le en commentaire.",
+     "cta": true
+    },
+    {
+     "at": "0.15",
+     "text": "Before they switch Niagara off again.",
+     "cap": "Before they *switch Niagara off* again.",
+     "de": "Bevor sie Niagara wieder abschalten.",
+     "es": "Antes de que vuelvan a apagar el Niágara.",
+     "fr": "Avant qu'ils n'éteignent encore le Niagara."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 0.8
+  },
+  {
+   "id": "dry",
+   "file": "File:1969 Drained American Falls of Niagara River During Preservation Work (PICT0302).jpg"
+  },
+  {
+   "id": "dry2",
+   "file": "File:Dewatered American Falls (1969) (Niagara Falls, northwest of Buffalo, New York State, USA) (19936707609).jpg"
+  },
+  {
+   "id": "dry3",
+   "file": "File:Dryniagara.jpg"
+  },
+  {
+   "id": "rainbow",
+   "file": "File:America Falls with rainbow - panoramio.jpg"
+  },
+  {
+   "id": "both",
+   "file": "File:American Falls and Horseshoe Falls.jpg"
+  },
+  {
+   "id": "talus",
+   "file": "File:American Falls (Niagara Falls, northwest of Buffalo, New York State, USA) 9 (19936769208).jpg"
+  },
+  {
+   "id": "camerican",
+   "video": "File:Niagara Falls montage 2025-09-06.webm",
+   "from": 0,
+   "len": 5
+  },
+  {
+   "id": "ccrest",
+   "video": "File:Niagara Falls montage 2025-09-06.webm",
+   "from": 9.9,
+   "len": 4.6
+  },
+  {
+   "id": "chorse",
+   "video": "File:Niagara Falls montage 2025-09-06.webm",
+   "from": 15.3,
+   "len": 5
+  },
+  {
+   "id": "cboat",
+   "video": "File:Niagara American and Bridal Veil Falls.ogv",
+   "from": 6,
+   "len": 8
+  }
+ ]
+}

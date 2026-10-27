@@ -1,0 +1,176 @@
+{
+ "ep": 202,
+ "title": "The electric eel is not an eel",
+ "format": "reel2",
+ "hook_formula": "23 The Statistic",
+ "look": "cine",
+ "captions": true,
+ "noOutro": true,
+ "speed": 1.2,
+ "tight": true,
+ "transition": "whip",
+ "facts": true,
+ "recap": false,
+ "voice": "gemini",
+ "wordCaps": true,
+ "mood": "epic",
+ "prog": 0,
+ "oneAsk": true,
+ "loop": true,
+ "capY": 1250,
+ "cardY": 1150,
+ "capSize": 76,
+ "capCX": 465,
+ "capW": 690,
+ "scripts": [
+  "tech.js",
+  "r2kit.js"
+ ],
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "860 VOLTS",
+  "NOT EVEN AN EEL"
+ ],
+ "cta": {
+  "q": "Would you swim in its river?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Electric_eel",
+ "vo_open": [
+  {
+   "at": 0.2,
+   "text": "Eight hundred sixty volts. Seven times your wall outlet, and it's not even an eel.",
+   "cap": "*860 volts.* *Seven times* your wall outlet, and it's not even an eel.",
+   "de": "Achthundertsechzig Volt. Fast viermal so viel wie deine Steckdose, und es ist nicht mal ein Aal.",
+   "es": "Ochocientos sesenta voltios. Más que cualquier otro animal, y ni siquiera es una anguila.",
+   "fr": "Huit cent soixante volts. Plus que n'importe quel autre animal, et ce n'est même pas une anguille.",
+   "show": "860 ~ ~ volts. Seven times your wall outlet, and it's not even an eel."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.6,
+   "vis": 0,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "It's the electric eel, actually a knifefish. It even breathes air, about every two minutes.",
+     "cap": "It's the *electric eel,* actually a *knifefish.* It even *breathes air,* about every *2 minutes.*",
+     "de": "Es ist der Zitteraal, eigentlich ein Messerfisch. Er atmet sogar Luft, etwa alle zwei Minuten.",
+     "es": "Es la anguila eléctrica, en realidad un pez cuchillo. Incluso respira aire, más o menos cada dos minutos.",
+     "fr": "C'est l'anguille électrique, en fait un poisson-couteau. Elle respire même de l'air, environ toutes les deux minutes."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 1,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Its secret: about six thousand cells stacked in a row, like tiny batteries. That's how it builds the voltage.",
+     "cap": "Its secret: about *6,000 cells* stacked in a row, like *tiny batteries.* That's how it builds the *voltage.*",
+     "de": "Sein Geheimnis: rund sechstausend Zellen in einer Reihe, wie winzige Batterien. So baut er die Spannung auf.",
+     "es": "Su secreto: unas seis mil células apiladas en fila, como pilas diminutas. Así acumula el voltaje.",
+     "fr": "Son secret : environ six mille cellules empilées en rang, comme de minuscules piles. C'est comme ça qu'elle crée la tension.",
+     "show": "Its secret: about 6,000 ~ cells stacked in a row, like tiny batteries. That's how it builds the voltage."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 2,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "When threatened, it leaps out of the water to shock. In eighteen hundred, Alexander von Humboldt watched eels attack horses. Two horses drowned.",
+     "cap": "When threatened, it *leaps out of the water* to shock. In *1800,* Alexander von *Humboldt* watched eels *attack horses.* *Two horses drowned.*",
+     "de": "Wenn er sich bedroht fühlt, springt er aus dem Wasser und schockt. Im Jahr achtzehnhundert sah Alexander von Humboldt, wie Zitteraale Pferde angriffen. Zwei Pferde ertranken.",
+     "es": "Si se siente amenazada, salta fuera del agua para dar descargas. En mil ochocientos, Alexander von Humboldt vio a anguilas atacar caballos. Dos caballos se ahogaron.",
+     "fr": "Menacée, elle bondit hors de l'eau pour électrocuter. En mille huit cent, Alexander von Humboldt a vu des anguilles attaquer des chevaux. Deux chevaux se sont noyés.",
+     "show": "When threatened, it leaps out of the water to shock. In 1800, ~ Alexander von Humboldt watched eels attack horses. Two horses drowned."
+    }
+   ]
+  },
+  {
+   "dur": 1.6,
+   "vis": 3,
+   "vo": [
+    {
+     "at": 0.45,
+     "text": "Would you swim in its river? Yes or no, comment below.",
+     "de": "Würdest du in seinem Fluss schwimmen? Ja oder nein, schreib es in die Kommentare.",
+     "es": "¿Nadarías en su río? Sí o no, coméntalo abajo.",
+     "fr": "Tu nagerais dans sa rivière ? Oui ou non, dis-le en commentaire.",
+     "cta": true
+    },
+    {
+     "at": "0.15",
+     "text": "Not with eight hundred sixty volts in the water.",
+     "cap": "Not with *860 volts* in the water.",
+     "de": "Nicht mit achthundertsechzig Volt im Wasser.",
+     "es": "No con ochocientos sesenta voltios en el agua.",
+     "fr": "Pas avec huit cent soixante volts dans l'eau.",
+     "show": "Not with 860 ~ ~ volts in the water."
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Dramatic Trailer by Rafael Krux.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 0.8
+  },
+  {
+   "id": "gdynia",
+   "file": "File:Electrophorus electricus in Gdynia Oceanarium.jpg"
+  },
+  {
+   "id": "boston",
+   "file": "File:Electric-eel.jpg"
+  },
+  {
+   "id": "pits",
+   "file": "File:Electrophorus electricus showing lateral line pits.jpg"
+  },
+  {
+   "id": "cas",
+   "file": "File:Electric eel CAS.jpg"
+  },
+  {
+   "id": "two",
+   "file": "File:Eelectricus.jpg"
+  },
+  {
+   "id": "humboldt",
+   "file": "File:Gymnoten-Humboldt battle with horses.jpg"
+  },
+  {
+   "id": "cstack",
+   "video": "File:Zitteraal funktioniert wie eine Batterie.webm",
+   "from": 26,
+   "len": 7
+  },
+  {
+   "id": "cglow",
+   "video": "File:Zitteraal funktioniert wie eine Batterie.webm",
+   "from": 97,
+   "len": 8
+  },
+  {
+   "id": "cstrike",
+   "video": "File:Electric-eels-use-high-voltage-to-track-fast-moving-prey-ncomms9638-s8.ogv",
+   "from": 57,
+   "len": 9
+  }
+ ]
+}
