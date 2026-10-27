@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+"""#207 REEL v2 (E8), HyperFrames kit: the Lost Colony of Roanoke and one carved word. 31 Oct 2026. voice: gemini.
+Facts: English Wikipedia "Roanoke Colony" (Oct 2026, catalog-75 articles.md)
+- 1587: "Approximately 115 people agreed to join the colony" (White as governor); White "returned to England with Fernandes,
+  intending to bring more supplies in 1588. The Anglo-Spanish War delayed his return to Roanoke until 1590".
+- "White and the others made landfall on the morning of August 18 (his granddaughter's third birthday)." "They also discovered the
+  letters 'CRO' carved into a tree." "Near the entrance of the fencing, the word 'CROATOAN' was carved in one of the posts. White was
+  certain these two inscriptions meant that the colonists had peacefully relocated to Croatoan Island, since they had agreed in 1587
+  that the colonists would leave a 'secret token' indicating their destination, or a cross pattée as a duress code."
+- "Within the palisade, the search party found that houses had been dismantled"; "Hopewell's anchor cable snapped ... The search
+  mission could not continue".
+- Theories: assimilation with the Croatan (suggested since 1605) vs. massacre reports from Jamestown; no conclusive evidence.
+Hook (scripts/reel/hookscore.py): "115 colonists vanished. You only get one word." 84.4 STRONG (formula 23 The Statistic).
+"""
+import json
+RP, IL = 'Real photo', 'Illustration'
+E = {
+ 'ep': 207, 'title': 'The Lost Colony left one word', 'format': 'reel2', 'hook_formula': '23 The Statistic',
+ 'engine': 'hyperframes', 'oneAsk': True, 'loop': True, 'voice': 'gemini', 'gemini_wpm': 195, 'speed': 1.2,
+ 'mood': 'calm', 'prog': 1, 'langs': ['en', 'de', 'es', 'fr'],
+ 'hook': ['115 COLONISTS', 'VANISHED'],
+ 'cta': {'q': 'What happened?', 'a': 'JOINED', 'b': 'KILLED'},
+ 'source': 'https://en.wikipedia.org/wiki/Roanoke_Colony',
+ 'vo_open': [{'at': 0.15,
+   'text': 'One hundred fifteen colonists vanished. You only get one word.',
+   'cap': '*115 colonists* vanished. You only get *one word.*',
+   'de': 'Hundertfünfzehn Siedler verschwanden. Zurück blieb nur ein Wort.',
+   'es': 'Ciento quince colonos desaparecieron. Solo queda una palabra.',
+   'fr': "Cent quinze colons ont disparu. Il ne reste qu'un seul mot."}],
+ 'scenes': [
+  {'dur': 1.0, 'beat': 'white', 'vo': [
+    dict(at=0.2, text='Roanoke Island, fifteen eighty-seven. Governor John White sailed home for supplies.',
+      cap='*Roanoke Island, 1587.* Governor *John White* sailed home for supplies.',
+      de='Roanoke Island, fünfzehnhundertsiebenundachtzig. Gouverneur John White segelte nach England, um Vorräte zu holen.',
+      es='Isla de Roanoke, mil quinientos ochenta y siete. El gobernador John White volvió a Inglaterra a por provisiones.',
+      fr="Île de Roanoke, mille cinq cent quatre-vingt-sept. Le gouverneur John White repart en Angleterre chercher des vivres."),
+    dict(at=0.1, text='War with Spain kept him away for three years.',
+      cap='War with *Spain* kept him away for *three years.*',
+      de='Der Krieg mit Spanien hielt ihn drei Jahre lang fern.',
+      es='La guerra con España lo retuvo tres años.',
+      fr="La guerre avec l'Espagne le retient trois ans.")]},
+  {'dur': 1.0, 'beat': 'gone', 'vo': [
+    dict(at=0.2, text="He came back on his granddaughter's third birthday.",
+      cap="He came back on his *granddaughter's third birthday.*",
+      de='Er kam am dritten Geburtstag seiner Enkelin zurück.',
+      es='Regresó el día del tercer cumpleaños de su nieta.',
+      fr="Il revient le jour des trois ans de sa petite-fille."),
+    dict(at=0.1, text='The houses were gone.',
+      cap='The *houses* were *gone.*',
+      de='Die Häuser waren weg.',
+      es='Las casas habían desaparecido.',
+      fr='Les maisons avaient disparu.')]},
+  {'dur': 1.0, 'beat': 'cro', 'vo': [dict(at=0.2,
+    text='On a tree: C, R, O. On a post: Croatoan.',
+    cap='On a *tree:* C, R, O. On a *post:* *Croatoan.*',
+    de='An einem Baum: C, R, O. An einem Pfosten: Croatoan.',
+    es='En un árbol: C, R, O. En un poste: Croatoan.',
+    fr='Sur un arbre : C, R, O. Sur un poteau : Croatoan.')]},
+  {'dur': 1.0, 'beat': 'cross', 'vo': [
+    dict(at=0.2, text='A carved cross would have meant danger.',
+      cap='A carved *cross* would have meant *danger.*',
+      de='Ein eingeritztes Kreuz hätte Gefahr bedeutet.',
+      es='Una cruz tallada habría significado peligro.',
+      fr='Une croix gravée aurait signifié un danger.'),
+    dict(at=0.1, text='White took it as a peaceful move to Croatoan Island.',
+      cap='White took it as a *peaceful move* to *Croatoan Island.*',
+      de='White verstand es als friedlichen Umzug auf die Insel Croatoan.',
+      es='White lo entendió como una mudanza pacífica a la isla Croatoan.',
+      fr="White y a vu un départ paisible vers l'île Croatoan.")]},
+  {'dur': 1.0, 'beat': 'anchor', 'vo': [
+    dict(at=0.2, text="Then the ship's anchor cable snapped, and the search was over.",
+      cap="Then the ship's *anchor cable snapped,* and the *search was over.*",
+      de='Dann riss das Ankertau des Schiffes, und die Suche war vorbei.',
+      es='Entonces se rompió el cable del ancla del barco, y la búsqueda terminó.',
+      fr="Puis le câble de l'ancre du navire a cédé, et les recherches ont pris fin."),
+    dict(at=0.15, text='One word. Joined the Croatan, or killed? Comment joined or killed.', cta=True,
+      cap='*One word.* Joined the *Croatan,* or *killed?* Comment *joined* or *killed.*',
+      de='Ein Wort. Bei den Croatan aufgenommen oder getötet? Schreib aufgenommen oder getötet.',
+      es='Una palabra. ¿Se unieron a los croatan o los mataron? Comenta unidos o muertos.',
+      fr='Un seul mot. Accueillis par les Croatan, ou tués ? Commente accueillis ou tués.')]},
+ ],
+ 'photos': [
+  {'id': 'music', 'audio': 'File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3', 'from': 0, 'len': 60},
+  {'id': 'croatoan', 'file': 'File:William Ludwell Sheppard & William James Linton - CROATOAN, The Lost Colony (John White).jpg'},
+  {'id': 'arrival', 'file': "File:The Englishmen's arrival in Virginia (1590).jpg"},
+  {'id': 'ruins', 'file': 'File:Ruins of the English Settlement at Roanoke.jpg'},
+  {'id': 'crotree', 'file': 'File:Lost Colony Tree - Fort Raleigh National Historic Site - Stierch.jpg'},
+  {'id': 'fort', 'file': 'File:Fort Raleigh National Historic Site earthworks 2 - Sarah Stierch.jpg'},
+  {'id': 'chief', 'file': 'File:A chiefe Herowan.jpg'},
+ ],
+}
+
+# ---- HyperFrames kit (scripts/hf_kit.py)
+E['hf'] = {'theme': {'cu': '#E3B062', 'vg': '#B9D7C9', 'capcu': '#EDBE72', 'capvg': '#C6E3D6', 'chipvg': '#C6E3D6', 'chipcu': '#EDBE72', 'p0': '#E3B062'},
+           'caps': {'cu': ['croatoan', 'word', 'cro', '1587', 'three'], 'vg': ['peaceful', 'joined', 'croatan'], 'rd': ['vanished', 'gone', 'danger', 'killed', 'cross', 'snapped']}}
+E['hf_open'] = {'tpl': 'photo', 'name': 'hook', 'src': 'croatoan', 'pos': '50% 50%', 'enter': 'none', 'zoom': [1.0, 1.08],
+  'label': ['19th-century engraving', IL], 'labelY': 1030,
+  'els': [{'el': 'title', 'top': 262, 'items': [
+    {'kicker': '115 colonists', 'text': 'Vanished', 'c': 'rd'},
+    {'kicker': 'You only get', 'kat': 'only', 'out_prev': 'only-0.1', 'text': 'One word', 'c': 'cu', 'at': 'one-0.1'}]}]}
+hfs = [
+ {'tpl': 'card', 'src': 'arrival', 'label': ['De Bry after John White, 1590', 'Engraving'],
+  'flood': 'radial-gradient(120% 70% at 50% 45%, #2A2418 0%, #12100B 55%, #090807 100%)',
+  'els': [{'el': 'timeline', 'kicker': 'Roanoke Island', 'from': 1587, 'labels': ['1587', '1590'], 'color_until': 'three+0.6',
+           'colors': ['#E3B062', '#FF5A4E'], 'grad': 'linear-gradient(90deg, #E3B062 0%, #C9773F 60%, #FF5A4E 100%)',
+           'steps': [{'to': 1590, 'fill': 1, 'at': 'war-0.1', 'until': 'three+0.3'}]},
+          {'el': 'chip', 'in': 'card', 'text': ['Governor', 'John White'], 'x': 22, 'y': 86, 'at': 'john-0.05'}]},
+ {'tpl': 'photo', 'src': 'ruins', 'pos': '50% 50%', 'enter': 'whip', 'zoom': [1.0, 1.08], 'label': ['Engraving', IL], 'labelY': 1030,
+  'els': [{'el': 'title', 'kicker': 'August 18, 1590', 'text': 'Houses gone', 'c': 'rd', 'size': 220, 'at': 'houses-0.1'},
+          {'el': 'chip', 'text': ["Granddaughter's", '3rd birthday'], 'y': 560, 'at': 'third', 'fx': 'slide'}]},
+ {'tpl': 'photo', 'src': 'crotree', 'pos': '50% 40%', 'enter': 'zoom', 'zoom': [1.0, 1.1], 'label': ['Re-enactment prop', RP], 'labelY': 1030,
+  'els': [{'el': 'title', 'top': 262, 'items': [
+    {'kicker': 'On a tree', 'text': 'C · R · O', 'c': 'cu', 'at': 'c-0.1', 'kat': 'tree-0.1'},
+    {'kicker': 'On a post', 'kat': 'post-0.1', 'out_prev': 'post-0.15', 'text': 'Croatoan', 'c': 'cu', 'at': 'croatoan-0.1'}]}]},
+ {'tpl': 'photo', 'src': 'fort', 'pos': '50% 50%', 'enter': 'vwhip', 'zoom': [1.0, 1.06], 'label': ['Fort Raleigh site', RP], 'labelY': 1030,
+  'els': [{'el': 'glass', 'eyebrow': 'The deal, 1587', 'line': 'Carved cross = <span class="rd">danger</span>', 'at': 'carved-0.1', 'lift': 120},
+          {'el': 'chip', 'text': ['White read it as', 'a peaceful move'], 'cls': 'done', 'y': 760, 'at': 'peaceful-0.1', 'fx': 'stamp', 'sfx': 'ding', 'gain': 0.6}]},
+ {'tpl': 'photo', 'src': 'croatoan', 'pos': '30% 50%', 'enter': 'iris', 'zoom': [1.1, 1.0], 'label': ['19th-century engraving', IL], 'labelY': 1030,
+  'els': [{'el': 'stamp', 'text': 'Search over', 'at': 'search', 'x': 140, 'y': 420, 'size': 150},
+          {'el': 'ab', 'q': 'What happened to them?', 'title': '<span class="vg">Joined</span> or <span class="rd">killed</span>',
+           'a': {'src': 'chief', 'label': 'Joined', 'sub': 'John White art', 'img': {'w': 520, 'x': -25, 'y': 0}, 'pulse': 'joined'},
+           'b': {'src': 'ruins', 'label': 'Killed', 'sub': 'engraving', 'img': {'w': 900, 'x': -215, 'y': 0}, 'pulse': 'killed'}},
+          {'el': 'loop'}]},
+]
+for sc, h in zip(E['scenes'], hfs): sc['hf'] = h
+open('episodes/207.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False) + '\n')

@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+"""#208 REEL v2 (E8), HyperFrames kit: the horseshoe crab's blue blood tests your injections. 31 Oct 2026. voice: gemini.
+Facts: English Wikipedia "Atlantic horseshoe crab" + "Limulus amebocyte lysate" (Oct 2026, catalog-75 articles.md)
+- "Horseshoe crabs are often referred to as living fossils, as they have changed little in the last 445 million years."
+- Blood: "copper-containing protein hemocyanin ... These creatures do not have hemoglobin (iron-containing protein), which is the basis
+  of oxygen transport in vertebrates." "it turns dark blue when exposed to the oxygen in the air, as seen when they bleed."
+- LAL: "gram-negative bacteria, even if killed, will cause the blood of the horseshoe crab to turn into a gel"; amebocytes release a
+  clotting factor "when bacterial endotoxin is encountered". "In 1977 the U.S. Food and Drug Administration (FDA) approved LAL for
+  testing drugs, products and devices that come in contact with blood." Primary application: parenteral pharmaceuticals (injections).
+- "Horseshoe crabs are returned to the ocean after bleeding ... It is estimated that between 10 and 30 percent of horseshoe crabs die
+  after bleeding."
+- rFC: "Since 2003, a recombinant protein substitute ... Named the recombinant factor C (rFC) assay"; "As of 2018, available evidence
+  shows that the rFC test is no worse than the LAL test." USP chapter <86> official May 2025.
+Blood colours on screen are a GRAPHIC (no free photo of the blood).
+Hook (scripts/reel/hookscore.py): "Before your injection is safe, an Atlantic crab bleeds blue." 81.4 STRONG (formula 19 The Deadline).
+"""
+import json
+RP, RF, GR = 'Real photo', 'Real footage', 'Graphic'
+E = {
+ 'ep': 208, 'title': 'The crab that bleeds blue for your medicine', 'format': 'reel2', 'hook_formula': '19 The Deadline',
+ 'engine': 'hyperframes', 'oneAsk': True, 'loop': True, 'voice': 'gemini', 'gemini_wpm': 195, 'speed': 1.2,
+ 'mood': 'calm', 'prog': 1, 'langs': ['en', 'de', 'es', 'fr'],
+ 'hook': ['YOUR INJECTION', 'BLUE BLOOD'],
+ 'cta': {'q': 'Who should test it?', 'a': 'BLUE', 'b': 'LAB'},
+ 'source': 'https://en.wikipedia.org/wiki/Limulus_amebocyte_lysate',
+ 'vo_open': [{'at': 0.15,
+   'text': 'Before your injection is safe, an Atlantic crab bleeds blue.',
+   'cap': 'Before your *injection* is safe, an *Atlantic crab* bleeds *blue.*',
+   'de': 'Bevor deine Spritze als sicher gilt, blutet ein Pfeilschwanzkrebs blau.',
+   'es': 'Antes de que tu inyección sea segura, un cangrejo herradura sangra azul.',
+   'fr': "Avant que ton injection soit sûre, une limule saigne bleu."}],
+ 'scenes': [
+  {'dur': 1.0, 'beat': 'old', 'vo': [dict(at=0.2,
+    text='Horseshoe crabs have barely changed in four hundred forty-five million years.',
+    cap='*Horseshoe crabs* have barely changed in *445 million years.*',
+    de='Pfeilschwanzkrebse haben sich in vierhundertfünfundvierzig Millionen Jahren kaum verändert.',
+    es='Los cangrejos herradura apenas han cambiado en cuatrocientos cuarenta y cinco millones de años.',
+    fr='Les limules ont à peine changé en quatre cent quarante-cinq millions d’années.')]},
+  {'dur': 1.0, 'beat': 'copper', 'vo': [
+    dict(at=0.2, text='Their blood carries copper, not iron.',
+      cap='Their blood carries *copper,* not *iron.*',
+      de='Ihr Blut transportiert Kupfer, nicht Eisen.',
+      es='Su sangre lleva cobre, no hierro.',
+      fr='Leur sang transporte du cuivre, pas du fer.'),
+    dict(at=0.1, text='In the air, it turns dark blue.',
+      cap='In the air, it turns *dark blue.*',
+      de='An der Luft wird es dunkelblau.',
+      es='Al aire, se vuelve azul oscuro.',
+      fr="À l'air, il devient bleu foncé.")]},
+  {'dur': 1.0, 'beat': 'test', 'vo': [
+    dict(at=0.2, text='It clots around bacterial toxins, even from dead bacteria.',
+      cap='It *clots* around *bacterial toxins,* even from *dead bacteria.*',
+      de='Es gerinnt bei Bakteriengiften, sogar von toten Bakterien.',
+      es='Se coagula ante las toxinas bacterianas, incluso de bacterias muertas.',
+      fr='Il coagule au contact des toxines bactériennes, même de bactéries mortes.'),
+    dict(at=0.1, text='Since nineteen seventy-seven, the FDA has approved it for testing drugs.',
+      cap='Since *1977,* the *FDA* has approved it for *testing drugs.*',
+      de='Seit neunzehnhundertsiebenundsiebzig ist der Test in den USA für Medikamente zugelassen.',
+      es='Desde mil novecientos setenta y siete, la FDA lo aprueba para analizar medicamentos.',
+      fr='Depuis mille neuf cent soixante-dix-sept, la FDA l’autorise pour tester les médicaments.')]},
+  {'dur': 1.0, 'beat': 'bleed', 'vo': [
+    dict(at=0.2, text='Crabs are caught, bled and released.',
+      cap='Crabs are *caught, bled* and *released.*',
+      de='Die Krebse werden gefangen, angezapft und wieder freigelassen.',
+      es='Los cangrejos se capturan, se sangran y se liberan.',
+      fr='Les limules sont capturées, saignées, puis relâchées.'),
+    dict(at=0.1, text='Ten to thirty percent die.',
+      cap='*Ten to thirty percent* die.',
+      de='Zehn bis dreißig Prozent sterben.',
+      es='Entre el diez y el treinta por ciento mueren.',
+      fr='Dix à trente pour cent en meurent.')]},
+  {'dur': 1.0, 'beat': 'lab', 'vo': [
+    dict(at=0.2, text='Now a lab-made copy, recombinant factor C, does the same test.',
+      cap='Now a *lab-made copy,* recombinant *factor C,* does the same test.',
+      de='Heute macht eine Laborkopie, rekombinanter Faktor C, denselben Test.',
+      es='Hoy una copia de laboratorio, el factor C recombinante, hace la misma prueba.',
+      fr='Aujourd’hui, une copie de labo, le facteur C recombinant, fait le même test.'),
+    dict(at=0.15, text='Blue blood or lab copy? Comment blue or lab.', cta=True,
+      cap='*Blue blood* or *lab copy?* Comment *blue* or *lab.*',
+      de='Blaues Blut oder Laborkopie? Schreib blau oder Labor.',
+      es='¿Sangre azul o copia de laboratorio? Comenta azul o laboratorio.',
+      fr='Sang bleu ou copie de labo ? Commente bleu ou labo.')]},
+ ],
+ 'photos': [
+  {'id': 'music', 'audio': 'File:Kevin MacLeod - Calmant.ogg', 'from': 0, 'len': 60},
+  {'id': 'aq', 'file': 'File:Limulus polyphemus (aq.).jpg'},
+  {'id': 'group', 'file': 'File:Group of Horseshoe crabs.JPG'},
+  {'id': 'beach', 'video': 'File:Horseshoe crabs mating on Plumb Beach (57336).webm', 'from': 3, 'len': 7},
+  {'id': 'usfws', 'file': 'File:Horseshoe Crab (4034754327).jpg'},
+  {'id': 'under', 'file': 'File:Atlantic horseshoe crab Limulus polyphemus American horseshoe crab Cape Cod Ventral.jpg'},
+ ],
+}
+
+# ---- HyperFrames kit (scripts/hf_kit.py)
+E['hf'] = {'theme': {'cu': '#E08A4E', 'vg': '#5FA8FF', 'capcu': '#F0A066', 'capvg': '#8CC2FF', 'chipvg': '#8CC2FF', 'chipcu': '#F0A066', 'p0': '#E08A4E'},
+           'caps': {'cu': ['copper', 'atlantic', '1977', 'fda'], 'vg': ['blue', 'lab', 'factor', 'released'], 'rd': ['die', 'dead', 'toxins', 'bled', 'iron']}}
+E['hf_open'] = {'tpl': 'photo', 'name': 'hook', 'src': 'aq', 'pos': '50% 50%', 'enter': 'none', 'zoom': [1.0, 1.08],
+  'label': ['Atlantic horseshoe crab', RP], 'labelY': 1030,
+  'els': [{'el': 'title', 'top': 262, 'items': [{'kicker': 'Your injection needs', 'text': 'Blue blood', 'c': 'vg'}]}]}
+hfs = [
+ {'tpl': 'photo', 'src': 'group', 'pos': '50% 50%', 'enter': 'whip', 'zoom': [1.0, 1.08], 'label': ['Delaware', RP], 'labelY': 1030,
+  'els': [{'el': 'counter', 'kicker': 'Barely changed in', 'at': '445-0.1', 'to': 445, 'unit': ' M years', 'dur': 0.9, 'ticks': 8}]},
+ {'tpl': 'plain', 'flood': 'radial-gradient(120% 70% at 50% 40%, #0F2236 0%, #08121C 60%, #05090D 100%)',
+  'els': [{'el': 'title', 'kicker': 'In the air it turns', 'text': 'Dark blue', 'c': 'vg', 'size': 230, 'at': 'dark-0.1', 'kat': 'air-0.1'},
+          {'el': 'stack', 'top': 520, 'label': ['Blood colours', GR], 'labelY': 450, 'label_at': 'copper', 'layers': [
+            {'text': 'Crab · copper · blue', 'bg': 'linear-gradient(90deg, #1B4F9C, #5FA8FF)', 'fg': '#F4EEE3', 'at': 'copper-0.1'},
+            {'text': 'Yours · iron · red', 'bg': 'linear-gradient(90deg, #7A1712, #D8453A)', 'fg': '#F4EEE3', 'at': 'iron-0.1'}]}]},
+ {'tpl': 'card', 'src': 'beach', 'label': ['Plumb Beach, New York', RF], 'flood': 'radial-gradient(120% 70% at 50% 45%, #10283E 0%, #08131E 55%, #05090D 100%)',
+  'els': [{'el': 'title', 'kicker': 'Bacterial toxins', 'text': 'It clots', 'c': 'vg', 'size': 220, 'at': 'clots-0.1', 'out': '1977-0.2', 'out_fx': 'up'},
+          {'el': 'counter', 'kicker': 'FDA approved since', 'at': '1977-0.1', 'from': 1900, 'to': 1977, 'comma': False, 'dur': 0.6, 'ticks': 5, 'grow': True, 'c': 'cu'},
+          {'el': 'chip', 'in': 'card', 'text': ['Used for', 'testing drugs'], 'x': 22, 'y': 86, 'at': 'testing-0.05'}]},
+ {'tpl': 'photo', 'src': 'usfws', 'pos': '50% 50%', 'enter': 'zoom', 'zoom': [1.0, 1.08], 'label': ['Mispillion Harbor, Delaware', RP], 'labelY': 1030,
+  'els': [{'el': 'chip', 'text': 'Caught', 'y': 560, 'x': 40, 'at': 'caught-0.05', 'out': 'ten-0.2'},
+          {'el': 'chip', 'text': 'Bled', 'y': 560, 'x': 220, 'at': 'bled-0.05', 'cls': 'myth', 'out': 'ten-0.2'},
+          {'el': 'chip', 'text': 'Released', 'y': 560, 'x': 360, 'at': 'released-0.05', 'cls': 'done', 'out': 'ten-0.2'},
+          {'el': 'title', 'kicker': 'Die after bleeding', 'text': '10–30%', 'c': 'rd', 'size': 250, 'at': 'ten-0.1'}]},
+ {'tpl': 'plain', 'flood': 'radial-gradient(120% 70% at 50% 40%, #12263A 0%, #09131D 60%, #05090D 100%)',
+  'els': [{'el': 'glass', 'eyebrow': 'Lab-made, since 2003', 'line': 'Recombinant <span class="vg">factor C</span>', 'at': 'now-0.1', 'check_at': 'same', 'lift': 120},
+          {'el': 'ab', 'q': 'Who should test your medicine?', 'title': '<span class="vg">Blue</span> or <span class="cu">lab</span>',
+           'a': {'src': 'aq', 'label': 'Blue', 'sub': 'real photo', 'img': {'w': 1100, 'x': -320, 'y': 0}, 'pulse': 'blue'},
+           'b': {'label': 'Lab', 'sub': 'graphic', 'glyph': 'rFC', 'glyphColor': '#E08A4E',
+                 'bg': 'linear-gradient(160deg, #2A3440 0%, #0E1318 100%)', 'pulse': 'lab#2'}},
+          {'el': 'loop'}]},
+]
+for sc, h in zip(E['scenes'], hfs): sc['hf'] = h
+open('episodes/208.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False) + '\n')

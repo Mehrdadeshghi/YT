@@ -192,10 +192,14 @@ def tpl_split(S, c):
     cy = c.get('chipY', 610)
     S.label_id = f'{S.p}-chipB'
     paint = paint_overlay(S, c['paint'], 'cam') if c.get('paint') else ''
+    gA, gB = c.get('imgA', g), c.get('imgB', g)     # two different photos: own geometry each (the split line stays at x 540)
     S.css.append(f"""
-  #{S.p}-A, #{S.p}-B {{ width: {w}px; left: {g['x']}px; top: {g['y']}px; }}
-  #{S.p}-B {{ clip-path: inset(0 0 0 {half}px); }}
-  #{S.p}-div {{ top: {c.get('divTop', 560)}px; height: {c.get('divH', 1360)}px; left: {g['x'] + half - 2}px; }}
+  #{S.p}-A {{ width: {gA['w']}px; left: {gA['x']}px; top: {gA['y']}px; }}
+  #{S.p}-B {{ width: {gB['w']}px; left: {gB['x']}px; top: {gB['y']}px; }}""" if 'imgA' in c or 'imgB' in c else f"""
+  #{S.p}-A, #{S.p}-B {{ width: {w}px; left: {g['x']}px; top: {g['y']}px; }}""")
+    S.css.append(f"""
+  #{S.p}-B {{ clip-path: inset(0 0 0 {540 - gB['x']}px); }}
+  #{S.p}-div {{ top: {c.get('divTop', 560)}px; height: {c.get('divH', 1360)}px; left: 538px; }}
   #{S.p}-div .knob {{ top: {c.get('knob', 330)}px; }}""")
     S.body.insert(0, f"""    <div id="{S.p}-stage" class="stage">
       <div id="{S.p}-cam" class="stage">
@@ -212,10 +216,10 @@ def tpl_split(S, c):
     js = f'      tl.fromTo("#{S.p}-cam", {{ scale: {z[0]}, transformOrigin: "{c.get("origin", "50% 40%")}" }}, {{ scale: {z[1]}, duration: D, ease: "none" }}, 0);\n'
     for i, wp in enumerate(c.get('wipes', [])):
         at, dur = S.t(wp['at']), wp.get('dur', 0.6)
-        clip, dx = (f'inset(0 0 0 {w}px)', 1082 - (g['x'] + half)) if wp['to'] == 'A' else ('inset(0 0 0 0px)', -(g['x'] + half) - 5)
+        clip, dx = (f'inset(0 0 0 {gB["w"]}px)', 542) if wp['to'] == 'A' else ('inset(0 0 0 0px)', -545)
         lose, win = ('B', 'A') if wp['to'] == 'A' else ('A', 'B')
         if i == 0:
-            js += f'      tl.fromTo("#{S.p}-B", {{ clipPath: "inset(0 0 0 {half}px)" }}, {{ clipPath: "{clip}", duration: {dur}, ease: "power2.inOut" }}, {at:.3f});\n'
+            js += f'      tl.fromTo("#{S.p}-B", {{ clipPath: "inset(0 0 0 {540 - gB["x"]}px)" }}, {{ clipPath: "{clip}", duration: {dur}, ease: "power2.inOut" }}, {at:.3f});\n'
             js += f'      tl.fromTo("#{S.p}-div", {{ x: 0 }}, {{ x: {dx}, duration: {dur}, ease: "power2.inOut" }}, {at:.3f});\n'
         else:
             js += f'      tl.to("#{S.p}-B", {{ clipPath: "{clip}", duration: {dur}, ease: "power2.inOut" }}, {at:.3f});\n'
@@ -532,7 +536,12 @@ def el_ab(S, e, i):
     q = f'{S.p}-ab'; at = S.t(e.get('at', 'cta-0.2'))
     def tile(side, t, cls):
         g = t.get('img', {'w': 1400, 'x': -470, 'y': -150})
-        m = S.media(t['src'], '', f' style="width:{g["w"]}px; left:{g["x"]}px; top:{g["y"]}px"', None, f'{q}{side}m')
+        if t.get('src'):
+            m = S.media(t['src'], '', f' style="width:{g["w"]}px; left:{g["x"]}px; top:{g["y"]}px"', None, f'{q}{side}m')
+        else:                            # GRAPHIC tile: gradient + a big glyph (label the tile "graphic" in "sub")
+            m = (f'<div style="position:absolute; inset:0; background:{t.get("bg", "linear-gradient(160deg,#1C2B33,#0A0E0D)")}"></div>'
+                 f'<div style="position:absolute; left:0; right:0; top:200px; text-align:center; font-family:\'League Gothic\', sans-serif; '
+                 f'font-size:{t.get("glyphSize", 260)}px; line-height:1; color:{t.get("glyphColor", "#F4EEE3")}">{t.get("glyph", "?")}</div>')
         sub = f'<div class="tsub">{t["sub"]}</div>' if t.get('sub') else ''
         return f'        <div id="{q}{side}" class="tile {cls}" style="top:{e.get("tileTop", 470)}px">{m}<div class="tl">{t["label"]}</div>{sub}</div>'
     html = f"""      <div id="{q}" class="stage" style="opacity:0; background: #0A0E0D">
@@ -560,10 +569,10 @@ def el_loop(S, e, i):
     """the last frames cross-fade into frame 1 (opener look + first title) so the replay lands"""
     o = S.B.open_cfg(); q = f'{S.p}-loop'
     if o['tpl'] == 'split':
-        g = o.get('img', {'w': 1700, 'x': -310, 'y': 0})
-        st = f'position:absolute; width:{g["w"]}px; left:{g["x"]}px; top:{g["y"]}px'
-        media = (f'        <img src="{S.src(o["a"])}" alt="" style="{st}" />\n'
-                 f'        <img src="{S.src(o["b"])}" alt="" style="{st}; clip-path: inset(0 0 0 {g["w"] // 2}px)" />')
+        g = o.get('img', {'w': 1700, 'x': -310, 'y': 0}); gA, gB = o.get('imgA', g), o.get('imgB', g)
+        st = lambda g: f'position:absolute; width:{g["w"]}px; left:{g["x"]}px; top:{g["y"]}px'
+        media = (f'        <img src="{S.src(o["a"])}" alt="" style="{st(gA)}" />\n'
+                 f'        <img src="{S.src(o["b"])}" alt="" style="{st(gB)}; clip-path: inset(0 0 0 {540 - gB["x"]}px)" />')
     else:
         media = '        ' + S.media(o['src'], 'fill', f' style="object-position: {o.get("pos", "50% 50%")}"', None, f'{q}m') if not S.is_video(o['src']) else \
                 f'        <img src="{S.B.first_frame(o["src"])}" alt="" class="fill" style="object-position: {o.get("pos", "50% 50%")}" />'
