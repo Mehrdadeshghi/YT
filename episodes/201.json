@@ -38,6 +38,7 @@
  ],
  "scenes": [
   {
+   "dur": 1.0,
    "beat": "copper",
    "vo": [
     {
@@ -51,6 +52,7 @@
    ]
   },
   {
+   "dur": 1.0,
    "beat": "patina",
    "vo": [
     {
@@ -64,6 +66,7 @@
    ]
   },
   {
+   "dur": 1.0,
    "beat": "money",
    "vo": [
     {
@@ -77,6 +80,7 @@
    ]
   },
   {
+   "dur": 1.0,
    "beat": "verdict",
    "vo": [
     {
@@ -90,6 +94,7 @@
    ]
   },
   {
+   "dur": 1.0,
    "beat": "armor",
    "vo": [
     {
@@ -137,10 +142,6 @@
    "file": "File:Head of the Statue of Liberty on display in a park in Paris (cropped).jpg"
   },
   {
-   "id": "craft",
-   "file": "File:French craftsmen fabricating part of torch balustrade by beating copper over a positive or negative form, October 14, 1985 - Statue of Liberty, Liberty Island, Manhattan, New HAER NY,31-NEYO,89-140.tif"
-  },
-  {
    "id": "newcu",
    "file": "File:New red copper (211283297).jpg"
   },
@@ -149,21 +150,22 @@
    "file": "File:Verdigris (37580956304).jpg"
   },
   {
-   "id": "moran",
-   "file": "File:EdwardMoran-UnveilingTheStatueofLiberty1886Large.jpg"
-  },
-  {
-   "id": "boat",
+   "id": "boat2",
    "video": "File:View of Statue of Liberty on a Boat.webm",
-   "from": 0,
-   "len": 16
+   "from": 11,
+   "len": 5
   },
   {
-   "id": "dronep",
+   "id": "drone",
    "video": "File:Statue Of Liberty 4k Drone.webm",
-   "from": 0,
-   "len": 228,
-   "fps": 0.5
+   "from": 86,
+   "len": 7
+  },
+  {
+   "id": "drone2",
+   "video": "File:Statue Of Liberty 4k Drone.webm",
+   "from": 172,
+   "len": 7
   }
  ]
 }
