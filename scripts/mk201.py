@@ -17,7 +17,7 @@ Hook (scripts/reel/hookscore.py): "Nobody tells you the Statue of Liberty was bo
 import json
 E = {
  'ep': 201, 'title': 'Why the Statue of Liberty is green', 'format': 'reel2', 'hook_formula': '3 Nobody Tells You',
- 'engine': 'hyperframes', 'oneAsk': True, 'loop': True, 'voice': 'gemini', 'speed': 1.2,
+ 'engine': 'hyperframes', 'oneAsk': True, 'loop': True, 'voice': 'gemini', 'gemini_wpm': 195, 'speed': 1.2,
  'mood': 'calm', 'prog': 1, 'langs': ['en', 'de', 'es', 'fr'],
  'hook': ['SHE WAS', 'BORN BROWN'],
  'cta': {'q': 'Which Lady Liberty?', 'a': 'BROWN', 'b': 'GREEN'},

@@ -39,7 +39,7 @@ for i, (s, c) in enumerate(zip(segs, clips)):
     if i:
         t += 0.32 if scene_of[i] != scene_of[i - 1] else (0.45 if s.get('cta') else 0.22)
     starts.append(round(t, 3)); t += c['dur']
-DUR = round(t + 1.25, 2)
+DUR = round(t + 1.1, 2)
 NSC = 1 + len(E['scenes'])
 bounds = [0.0] + [round(starts[scene_of.index(k)] - 0.12, 3) for k in range(1, NSC)] + [DUR]
 
