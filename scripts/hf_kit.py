@@ -606,12 +606,14 @@ def build_scene(B, k, cfg):
     TEMPLATES[cfg['tpl']](S, cfg)
     head_body, head_js = list(S.body), list(S.js)
     S.body, S.js = [], []
+    over = None                          # end card / loop must paint above the media card
     for i, e in enumerate(cfg.get('els', [])):
+        if e['el'] in ('ab', 'loop') and over is None: over = len([b for b in S.body if b])
         ELEMENTS[e['el']](S, e, i)
     els_html = [b for b in S.body if b]
     if hasattr(S, 'card_open'):
         card = S.card_open + ''.join('\n' + c for c in getattr(S, 'card_els', [])) + '\n      </div>'
-        els_html.append(card)
+        els_html.insert(len(els_html) if over is None else over, card)
     body = '\n'.join(head_body + els_html + ([S.tail] if S.tail else []))
     js = f'\n      const D = {S.D:.3f};\n' + ''.join(head_js) + ''.join(S.js)
     css = KIT_CSS + ''.join(S.css)

@@ -91,20 +91,20 @@ E = {
 E['hf'] = {'theme': {'cu': '#E2A85C', 'vg': '#9FC7E8', 'capcu': '#EDB86E', 'capvg': '#B3D4EE', 'chipvg': '#B3D4EE', 'chipcu': '#EDB86E', 'p0': '#E2A85C'},
            'caps': {'cu': ['brooklyn', 'bedroom', 'telescope', 'emily', 'eleven', 'first'], 'vg': ['catenary', 'material', 'cables', 'washington', 'may', '1883'],
                     'rd': ['crushed', 'tetanus', 'bends', 'paralyzed', 'foot']}}
-E['hf_open'] = {'tpl': 'photo', 'name': 'hook', 'src': 'leslie', 'pos': '50% 50%', 'enter': 'none', 'zoom': [1.0, 1.08],
+E['hf_open'] = {'tpl': 'photo', 'name': 'hook', 'src': 'leslie', 'img': {'w': 1500, 'x': -210, 'y': -420}, 'enter': 'none', 'zoom': [1.0, 1.08],
   'label': ["Frank Leslie's, 1883", IL], 'labelY': 1030,
   'els': [{'el': 'title', 'top': 262, 'items': [{'kicker': 'The Brooklyn Bridge', 'text': 'From a bedroom', 'c': 'cu', 'size': 200}]}]}
 hfs = [
  {'tpl': 'photo', 'src': 'john', 'pos': '50% 35%', 'enter': 'whip', 'zoom': [1.0, 1.06], 'label': ['John A. Roebling, c. 1869', RP], 'labelY': 1030,
   'els': [{'el': 'title', 'kicker': '1869', 'text': 'Crushed foot', 'c': 'rd', 'size': 220, 'at': 'crushed-0.1', 'kat': '1869-0.1'},
-          {'el': 'stamp', 'text': 'Tetanus', 'at': 'tetanus-0.1', 'x': 330, 'y': 560, 'size': 150}]},
+          {'el': 'stamp', 'text': 'Tetanus', 'at': 'tetanus-0.1', 'x': 520, 'y': 520, 'size': 140}]},
  {'tpl': 'card', 'src': 'caisson', 'label': ['Caisson, East River Bridge', IL], 'flood': 'radial-gradient(120% 70% at 50% 45%, #2A2216 0%, #120F0A 55%, #090807 100%)',
   'els': [{'el': 'title', 'kicker': 'Washington Roebling', 'text': 'The bends', 'c': 'rd', 'size': 230, 'at': 'bends-0.1', 'kat': 'washington-0.1'},
           {'el': 'chip', 'in': 'card', 'text': ['Caisson disease', 'paralyzed'], 'cls': 'myth', 'x': 22, 'y': 86, 'at': 'paralyzed-0.1', 'fx': 'slide', 'sfx': 'wrong', 'gain': 0.5}]},
- {'tpl': 'photo', 'src': 'tower', 'pos': '50% 40%', 'enter': 'vwhip', 'zoom': [1.0, 1.08], 'label': ['Brooklyn tower today', RP], 'labelY': 1030,
+ {'tpl': 'card', 'src': 'washington', 'pos': '50% 40%', 'box': {'x': 240, 'y': 520, 'w': 600, 'h': 620}, 'label': ['Chartran portrait', 'Painting'], 'zoom': [1.0, 1.06], 'flood': 'radial-gradient(120% 70% at 50% 45%, #1F2A33 0%, #0E1318 55%, #07090C 100%)',
   'els': [{'el': 'title', 'kicker': 'Through a telescope', 'text': 'From his bed', 'c': 'cu', 'size': 220, 'at': 'bedroom-0.1', 'kat': 'telescope-0.1'}]},
  {'tpl': 'photo', 'src': 'emily', 'pos': '50% 20%', 'enter': 'zoom', 'zoom': [1.0, 1.06], 'label': ['Emily Warren Roebling, Carolus-Duran', 'Painting'], 'labelY': 1030,
-  'els': [{'el': 'stack', 'top': 520, 'w': 620, 'label': ['What she learned', 'Graphic'], 'labelY': 450, 'label_at': 'math', 'layers': [
+  'els': [{'el': 'stack', 'top': 610, 'w': 620, 'label': ['What she learned', 'Graphic'], 'labelY': 545, 'label_at': 'math', 'layers': [
             {'text': 'Catenary curves', 'cls': 'l1', 'at': 'catenary-0.1'},
             {'text': 'Material strength', 'cls': 'l2', 'at': 'material-0.1'},
             {'text': 'Cables', 'cls': 'l3', 'at': 'cables-0.1'}]},

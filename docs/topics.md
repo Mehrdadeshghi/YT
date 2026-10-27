@@ -64,3 +64,4 @@ Check this list before proposing a topic. Add every new episode here in the same
 #208 Horseshoe crab blue blood (445 million years, copper hemocyanin, LAL clots on endotoxins even from dead bacteria, FDA 1977, 10-30 % die after bleeding, recombinant factor C)
 #209 Old Man of the Lake, Crater Lake (deepest US lake 1,949 ft, no rivers in/out, 30-ft trunk upright since at least 1896, 4 ft above water, 62.1+ miles in summer 1938, 1988 tied up → storms + August snow, released → cleared)
 #210 The first jack-o'-lanterns were turnips (19th-century Ireland/Scotland/Wales/England, windowsills vs harmful spirits, name from will-o'-the-wisp bog lights, Stingy Jack legend, immigrants → pumpkins in the US)
+#211 Brooklyn Bridge finished from a bedroom (John Roebling crushed foot 1869 → tetanus; Washington paralyzed by caisson disease, telescope from his bedroom; Emily Warren Roebling learned the engineering, ran the site 11 years, first to cross May 24 1883)

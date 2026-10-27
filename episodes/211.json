@@ -87,9 +87,9 @@
       "el": "stamp",
       "text": "Tetanus",
       "at": "tetanus-0.1",
-      "x": 330,
-      "y": 560,
-      "size": 150
+      "x": 520,
+      "y": 520,
+      "size": 140
      }
     ]
    }
@@ -157,19 +157,24 @@
     }
    ],
    "hf": {
-    "tpl": "photo",
-    "src": "tower",
+    "tpl": "card",
+    "src": "washington",
     "pos": "50% 40%",
-    "enter": "vwhip",
+    "box": {
+     "x": 240,
+     "y": 520,
+     "w": 600,
+     "h": 620
+    },
+    "label": [
+     "Chartran portrait",
+     "Painting"
+    ],
     "zoom": [
      1.0,
-     1.08
+     1.06
     ],
-    "label": [
-     "Brooklyn tower today",
-     "Real photo"
-    ],
-    "labelY": 1030,
+    "flood": "radial-gradient(120% 70% at 50% 45%, #1F2A33 0%, #0E1318 55%, #07090C 100%)",
     "els": [
      {
       "el": "title",
@@ -221,13 +226,13 @@
     "els": [
      {
       "el": "stack",
-      "top": 520,
+      "top": 610,
       "w": 620,
       "label": [
        "What she learned",
        "Graphic"
       ],
-      "labelY": 450,
+      "labelY": 545,
       "label_at": "math",
       "layers": [
        {
@@ -416,7 +421,11 @@
   "tpl": "photo",
   "name": "hook",
   "src": "leslie",
-  "pos": "50% 50%",
+  "img": {
+   "w": 1500,
+   "x": -210,
+   "y": -420
+  },
   "enter": "none",
   "zoom": [
    1.0,
