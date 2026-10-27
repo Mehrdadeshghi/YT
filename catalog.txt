@@ -1,35 +1,15 @@
-Gateway Arch | Gateway Arch
-Roanoke Colony | Roanoke Colony
-Atlantic horseshoe crab | Limulus polyphemus
-Crater Lake | Crater Lake
-Jack-o'-lantern | Jack-o'-lanterns
-article: Limulus amebocyte lysate
-article: Horseshoe crab
-article: Old Man of the Lake
-article: Crater Lake National Park
-article: Mount Mazama
-article: Halloween
-article: John White (colonist and artist)
-article: Virginia Dare
-image: Gateway Arch construction
-image: Gateway Arch 1965
-image: Gateway Arch tram
-image: Croatoan
-image: John White Roanoke
-image: Lost Colony Roanoke
-image: horseshoe crab blood
-image: horseshoe crab bleeding
-image: horseshoe crab spawning
-image: Old Man of the Lake Crater Lake
-image: Wizard Island Crater Lake
-image: Crater Lake aerial
-image: turnip jack-o'-lantern
-image: turnip lantern
-image: carved pumpkin jack-o-lantern
-video: Gateway Arch
-video: horseshoe crab
-video: Crater Lake
-video: jack-o'-lantern
-video: pumpkin
-audio: Kevin MacLeod
-audio: Rafael Krux
+image: Limulus blood
+image: horseshoe crab hemolymph
+image: horseshoe crab blue blood
+image: Limulus amebocyte lysate
+image: horseshoe crab laboratory
+image: Gateway Arch keystone
+image: Gateway Arch October 1965
+video: St. Louis Arch
+video: St. Louis riverfront
+video: Crater Lake Oregon
+video: Crater Lake National Park
+video: horseshoe crabs beach
+video: turnip
+video: candle flame dark
+video: Roanoke Island
