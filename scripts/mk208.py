@@ -100,7 +100,7 @@ E['hf_open'] = {'tpl': 'photo', 'name': 'hook', 'src': 'aq', 'pos': '50% 50%', '
 hfs = [
  {'tpl': 'photo', 'src': 'group', 'pos': '50% 50%', 'enter': 'whip', 'zoom': [1.0, 1.08], 'label': ['Delaware', RP], 'labelY': 1030,
   'els': [{'el': 'counter', 'kicker': 'Barely changed in', 'at': '445-0.1', 'to': 445, 'unit': ' M years', 'dur': 0.9, 'ticks': 8}]},
- {'tpl': 'plain', 'flood': 'radial-gradient(120% 70% at 50% 40%, #0F2236 0%, #08121C 60%, #05090D 100%)',
+ {'tpl': 'photo', 'src': 'under', 'pos': '50% 60%', 'enter': 'zoom', 'zoom': [1.0, 1.08], 'label': ['Underside, Cape Cod', RP], 'labelY': 1030,
   'els': [{'el': 'title', 'kicker': 'In the air it turns', 'text': 'Dark blue', 'c': 'vg', 'size': 230, 'at': 'dark-0.1', 'kat': 'air-0.1'},
           {'el': 'stack', 'top': 520, 'label': ['Blood colours', GR], 'labelY': 450, 'label_at': 'copper', 'layers': [
             {'text': 'Crab · copper · blue', 'bg': 'linear-gradient(90deg, #1B4F9C, #5FA8FF)', 'fg': '#F4EEE3', 'at': 'copper-0.1'},

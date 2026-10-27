@@ -149,16 +149,16 @@
    "vo": [
     {
      "at": 0.2,
-     "text": "The Old Man of the Lake: a thirty-foot tree trunk.",
-     "cap": "The *Old Man of the Lake:* a *30-foot* tree trunk.",
+     "text": "The Old Man of the Lake: a thirty-foot trunk.",
+     "cap": "The *Old Man of the Lake:* a *30-foot* trunk.",
      "de": "Der Old Man of the Lake: ein neun Meter langer Baumstamm.",
      "es": "El Viejo del Lago: un tronco de nueve metros.",
      "fr": "Le Vieil Homme du Lac : un tronc de neuf mètres."
     },
     {
      "at": 0.1,
-     "text": "About four feet of it stands above the water.",
-     "cap": "About *four feet* of it stands *above the water.*",
+     "text": "About four feet stand above the water.",
+     "cap": "About *four feet* stand *above the water.*",
      "de": "Etwa ein Meter zwanzig ragt aus dem Wasser.",
      "es": "Alrededor de un metro veinte sobresale del agua.",
      "fr": "Environ un mètre vingt dépasse de l'eau."
@@ -265,9 +265,9 @@
     },
     {
      "at": 0.15,
-     "text": "A floating coincidence, or a lake curse? Comment coincidence or curse.",
+     "text": "A floating coincidence, or a curse? Comment coincidence or curse.",
      "cta": true,
-     "cap": "A floating *coincidence,* or a lake *curse?* Comment *coincidence* or *curse.*",
+     "cap": "A floating *coincidence,* or a *curse?* Comment *coincidence* or *curse.*",
      "de": "Ein schwimmender Zufall oder ein Fluch des Sees? Schreib Zufall oder Fluch.",
      "es": "¿Una coincidencia flotante o una maldición del lago? Comenta coincidencia o maldición.",
      "fr": "Une coïncidence flottante, ou une malédiction du lac ? Commente coïncidence ou malédiction."
@@ -426,7 +426,7 @@
   "tpl": "photo",
   "name": "hook",
   "src": "oldman",
-  "pos": "50% 50%",
+  "pos": "18% 50%",
   "enter": "none",
   "zoom": [
    1.0,

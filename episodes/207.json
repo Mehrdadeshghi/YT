@@ -128,7 +128,7 @@
    ],
    "hf": {
     "tpl": "photo",
-    "src": "ruins",
+    "src": "ruins_c",
     "pos": "50% 50%",
     "enter": "whip",
     "zoom": [
@@ -305,7 +305,7 @@
      1.0
     ],
     "label": [
-     "19th-century engraving",
+     "Book illustration, 1890",
      "Illustration"
     ],
     "labelY": 1030,
@@ -334,7 +334,7 @@
        "pulse": "joined"
       },
       "b": {
-       "src": "ruins",
+       "src": "ruins_c",
        "label": "Killed",
        "sub": "engraving",
        "img": {
@@ -361,7 +361,11 @@
   },
   {
    "id": "croatoan",
-   "file": "File:William Ludwell Sheppard & William James Linton - CROATOAN, The Lost Colony (John White).jpg"
+   "file": "File:Roanoke Colonists Croatoan image from page 146 of Stories of the three Americas. Their discovery and settlement (1890).jpg"
+  },
+  {
+   "id": "croatoan2",
+   "file": "File:Roanoke Croatoan mage from page 156 of Stories of American explorers - a historical reader (1906).jpg"
   },
   {
    "id": "arrival",
@@ -394,6 +398,19 @@
    "chipcu": "#EDBE72",
    "p0": "#E3B062"
   },
+  "derive": [
+   {
+    "fn": "crop",
+    "src": "ruins",
+    "id": "ruins_c",
+    "box": [
+     0.03,
+     0.03,
+     0.97,
+     0.7
+    ]
+   }
+  ],
   "caps": {
    "cu": [
     "croatoan",
@@ -428,7 +445,7 @@
    1.08
   ],
   "label": [
-   "19th-century engraving",
+   "Book illustration, 1890",
    "Illustration"
   ],
   "labelY": 1030,

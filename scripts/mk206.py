@@ -87,7 +87,7 @@ E = {
 E['hf'] = {'theme': {'cu': '#E9A04F', 'vg': '#8FC3E6', 'capcu': '#F2B064', 'capvg': '#A9D4F2', 'chipvg': '#A9D4F2', 'chipcu': '#F2B064', 'p0': '#E9A04F'},
            'caps': {'cu': ['heat', 'shrank', 'five', 'inches'], 'vg': ['hoses', 'cooled', 'keystone', 'jack', 'fit'], 'rd': ['didnt']}}
 E['hf_open'] = {'tpl': 'split', 'name': 'hook', 'a': 'sept', 'b': 'sunset',
-  'imgA': {'w': 2833, 'x': -876, 'y': 0}, 'imgB': {'w': 1280, 'x': -100, 'y': 0},
+  'imgA': {'w': 2834, 'x': -1350, 'y': 120}, 'imgB': {'w': 1280, 'x': 158, 'y': 0},
   'labelA': ['Sept 1965', RP], 'labelB': ['Today', RP],
   'wipes': [{'to': 'A', 'at': 'didnt-0.1', 'dur': 0.55}],
   'els': [{'el': 'title', 'top': 262, 'items': [{'kicker': 'The Gateway Arch', 'text': "Didn't fit", 'c': 'cu'}]}]}
@@ -100,10 +100,10 @@ hfs = [
           {'el': 'sub', 'text': 'Gap at the top · 8.5 ft', 'at': '85foot'}]},
  {'tpl': 'plain', 'flood': 'radial-gradient(120% 70% at 50% 40%, #2B1A10 0%, #120B08 60%, #080605 100%)',
   'els': [{'el': 'title', 'kicker': 'Oct 28, 1965', 'text': 'Too tight', 'c': 'rd', 'size': 230, 'at': 'shrank-0.1'},
-          {'el': 'bars', 'top': 520, 'label': ['Gap at the top', 'Graphic'], 'labelY': 450, 'rows': [
+          {'el': 'bars', 'top': 640, 'label': ['Gap at the top', 'Graphic'], 'labelY': 570, 'rows': [
             {'label': 'Planned', 'value': 102, 'show': '102 in', 'c': 'linear-gradient(90deg,#5E7F96,#8FC3E6)', 'at': 'heat'},
             {'label': 'After the heat', 'value': 97, 'show': '97 in', 'c': 'linear-gradient(90deg,#9C4E22,#E9A04F)', 'at': 'gap'}]},
-          {'el': 'stamp', 'text': '−5 in', 'at': 'inches', 'x': 560, 'y': 860, 'size': 140, 'color': '#FF5A4E'}]},
+          {'el': 'stamp', 'text': '−5 in', 'at': 'inches', 'x': 520, 'y': 960, 'size': 140, 'color': '#FF5A4E'}]},
  {'tpl': 'photo', 'src': 'south', 'pos': '50% 50%', 'enter': 'zoom', 'zoom': [1.0, 1.08], 'label': ['South leg', RP], 'labelY': 1030,
   'els': [{'el': 'title', 'kicker': 'The fix', 'text': 'Fire hoses', 'c': 'vg', 'size': 230, 'at': 'fire-0.1'},
           {'el': 'chip', 'text': ['Cooled steel', 'contracts'], 'y': 560, 'at': 'cooled', 'fx': 'slide'}]},

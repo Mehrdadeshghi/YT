@@ -39,13 +39,13 @@ E = {
     es='Ningún río entra ni sale. Solo la lluvia y la nieve lo llenan.',
     fr="Aucune rivière n'y entre ni n'en sort. Seules la pluie et la neige le remplissent.")]},
   {'dur': 1.0, 'beat': 'oldman', 'vo': [
-    dict(at=0.2, text='The Old Man of the Lake: a thirty-foot tree trunk.',
-      cap='The *Old Man of the Lake:* a *30-foot* tree trunk.',
+    dict(at=0.2, text='The Old Man of the Lake: a thirty-foot trunk.',
+      cap='The *Old Man of the Lake:* a *30-foot* trunk.',
       de='Der Old Man of the Lake: ein neun Meter langer Baumstamm.',
       es='El Viejo del Lago: un tronco de nueve metros.',
       fr='Le Vieil Homme du Lac : un tronc de neuf mètres.'),
-    dict(at=0.1, text='About four feet of it stands above the water.',
-      cap='About *four feet* of it stands *above the water.*',
+    dict(at=0.1, text='About four feet stand above the water.',
+      cap='About *four feet* stand *above the water.*',
       de='Etwa ein Meter zwanzig ragt aus dem Wasser.',
       es='Alrededor de un metro veinte sobresale del agua.',
       fr="Environ un mètre vingt dépasse de l'eau.")]},
@@ -66,8 +66,8 @@ E = {
       de='Sie ließen ihn los, und der Himmel klarte auf.',
       es='Lo soltaron, y el cielo se despejó.',
       fr="Ils l'ont relâché, et le ciel s'est dégagé."),
-    dict(at=0.15, text='A floating coincidence, or a lake curse? Comment coincidence or curse.', cta=True,
-      cap='A floating *coincidence,* or a lake *curse?* Comment *coincidence* or *curse.*',
+    dict(at=0.15, text='A floating coincidence, or a curse? Comment coincidence or curse.', cta=True,
+      cap='A floating *coincidence,* or a *curse?* Comment *coincidence* or *curse.*',
       de='Ein schwimmender Zufall oder ein Fluch des Sees? Schreib Zufall oder Fluch.',
       es='¿Una coincidencia flotante o una maldición del lago? Comenta coincidencia o maldición.',
       fr='Une coïncidence flottante, ou une malédiction du lac ? Commente coïncidence ou malédiction.')]},
@@ -87,7 +87,7 @@ E = {
 E['hf'] = {'theme': {'cu': '#E8C36A', 'vg': '#5FB4F0', 'capcu': '#F2CF7C', 'capvg': '#86C8F5', 'chipvg': '#86C8F5', 'chipcu': '#F2CF7C', 'p0': '#E8C36A'},
            'caps': {'cu': ['1896', 'old', '30foot', 'four', '1938', '62', 'coincidence'], 'vg': ['deepest', 'crater', 'rain', 'snow', 'sky', 'upright'],
                     'rd': ['storms', 'curse', 'tied']}}
-E['hf_open'] = {'tpl': 'photo', 'name': 'hook', 'src': 'oldman', 'pos': '50% 50%', 'enter': 'none', 'zoom': [1.0, 1.08],
+E['hf_open'] = {'tpl': 'photo', 'name': 'hook', 'src': 'oldman', 'pos': '18% 50%', 'enter': 'none', 'zoom': [1.0, 1.08],
   'label': ['Old Man of the Lake', RP], 'labelY': 1030,
   'els': [{'el': 'title', 'top': 262, 'items': [{'kicker': 'Floating upright', 'text': 'Since 1896', 'c': 'vg'}]}]}
 hfs = [

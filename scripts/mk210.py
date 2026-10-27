@@ -94,10 +94,10 @@ E['hf'] = {'theme': {'cu': '#F08A2E', 'vg': '#E6D9A6', 'capcu': '#F59A44', 'capv
                     'rd': ['grotesque', 'harmful', 'spirits', 'devil', 'doomed']}}
 E['hf_open'] = {'tpl': 'split', 'name': 'hook', 'a': 'irish', 'b': 'pumpkin',
   'imgA': {'w': 1492, 'x': -206, 'y': 0}, 'imgB': {'w': 2880, 'x': -900, 'y': 0},
-  'labelA': ['Ireland, early 1900s', RP], 'labelB': ['Today', RP],
+  'labelA': ['Early 1900s', RP], 'labelB': ['Today', RP],
   'wipes': [{'to': 'A', 'at': 'turnips-0.15', 'dur': 0.55}],
   'els': [{'el': 'title', 'top': 262, 'items': [
-    {'kicker': "The first jack-o'-lanterns", 'text': "Weren't pumpkins", 'c': 'cu', 'size': 200},
+    {'kicker': "The first jack-o'-lanterns", 'text': "Weren't pumpkins", 'c': 'cu', 'size': 165},
     {'kicker': "You'd carve", 'kat': 'youd', 'out_prev': 'youd-0.1', 'text': 'Turnips', 'c': 'vg', 'at': 'turnips-0.1'}]}]}
 hfs = [
  {'tpl': 'photo', 'src': 'tumshie', 'pos': '50% 50%', 'enter': 'whip', 'zoom': [1.0, 1.08], 'label': ['Scottish turnip lantern', RP], 'labelY': 1030,
@@ -108,7 +108,7 @@ hfs = [
           {'el': 'chip', 'text': 'Wales', 'y': 630, 'x': 40, 'at': 'wales-0.05'},
           {'el': 'chip', 'text': 'England', 'y': 630, 'x': 200, 'at': 'england-0.05'}]},
  {'tpl': 'photo', 'src': 'cornish', 'pos': '50% 50%', 'enter': 'zoom', 'zoom': [1.0, 1.08], 'label': ['Cornish turnip lantern', RP], 'labelY': 1030,
-  'els': [{'el': 'title', 'kicker': 'On the windowsill', 'text': 'Spirits out', 'c': 'rd', 'size': 230, 'at': 'spirits-0.1', 'kat': 'windowsills-0.1'}]},
+  'els': [{'el': 'title', 'kicker': 'On the windowsill', 'text': 'Spirits out', 'c': 'rd', 'size': 230, 'at': 'keep-0.1', 'kat': 'windowsills-0.1'}]},
  {'tpl': 'photo', 'src': 'samhuinn', 'pos': '50% 50%', 'enter': 'vwhip', 'zoom': [1.0, 1.06], 'label': ['Edinburgh, 2016', RP], 'labelY': 1030,
   'els': [{'el': 'glass', 'eyebrow': 'The name', 'line': 'Lights over <span class="vg">peat bogs</span>', 'at': 'name-0.1', 'lift': 120,
            'quote': "Jack-o'-lantern, also called will-o'-the-wisp"}]},
@@ -116,7 +116,7 @@ hfs = [
   'els': [{'el': 'title', 'top': 262, 'items': [
     {'kicker': 'Irish legend', 'text': 'Stingy Jack', 'c': 'cu', 'at': 'stingy-0.1', 'kat': 'irish-0.1'},
     {'kicker': 'Doomed to', 'kat': 'doomed-0.05', 'out_prev': 'doomed-0.1', 'text': 'Roam the Earth', 'c': 'vg', 'size': 200, 'at': 'roam-0.1'}]}]},
- {'tpl': 'photo', 'src': 'pumpkins', 'pos': '50% 50%', 'enter': 'whip', 'zoom': [1.0, 1.08], 'label': ['Pumpkin lantern', RP], 'labelY': 1030,
+ {'tpl': 'photo', 'src': 'pumpkin', 'pos': '50% 50%', 'enter': 'whip', 'zoom': [1.0, 1.08], 'label': ['Pumpkin lantern', RP], 'labelY': 1030,
   'els': [{'el': 'title', 'kicker': 'In America', 'text': 'Pumpkins', 'c': 'cu', 'size': 230, 'at': 'pumpkin-0.1', 'kat': 'america-0.1'},
           {'el': 'ab', 'q': 'Which would you carve?', 'title': '<span class="vg">Turnip</span> or <span class="cu">pumpkin</span>', 'size': 170,
            'a': {'src': 'irish', 'label': 'Turnip', 'sub': 'early 1900s', 'img': {'w': 560, 'x': -45, 'y': 0}, 'pulse': 'turnip'},

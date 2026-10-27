@@ -353,11 +353,12 @@ def fmt_py(e, v):
 def el_counter(S, e, i):
     """big number that counts from→to on a word. show = when kicker + number appear (cut); grow = fade/scale in while counting"""
     q = f'{S.p}-n{i}'; top = e.get('top', 262); at = S.t(e['at'])
+    if e.get('show') is None and not e.get('grow'): e = dict(e, show=round(at - 0.08, 3))   # hidden until its word
     unit = f'<span class="unit">{e["unit"]}</span>' if e.get('unit') else ''
     hide = e.get('show') is not None or e.get('grow')
     html = ''
     if e.get('kicker'):
-        html += f'      <div id="{q}k" class="kicker" style="top:{e.get("ktop", top - 56)}px{"; opacity:0" if e.get("show") is not None else ""}">{e["kicker"]}</div>\n'
+        html += f'      <div id="{q}k" class="kicker" style="top:{e.get("ktop", top - 56)}px{"; opacity:0" if hide else ""}">{e["kicker"]}</div>\n'
     html += (f'      <div id="{q}w" class="big{(" " + e["c"]) if e.get("c") else ""}" style="top:{top}px; font-size:{e.get("size", 250)}px{"; opacity:0" if hide else ""}">'
              f'<span id="{q}">{fmt_py(e, e.get("from", 0))}</span>{unit}</div>')
     dur = e.get('dur', 0.7); ease = e.get('ease', 'power3.out')
@@ -368,6 +369,7 @@ def el_counter(S, e, i):
            f'        tl.fromTo(n, {{ v: {e.get("from", 0)} }}, {{ v: {e["to"]}, duration: {dur}, ease: "{ease}", onUpdate: () => {{ document.getElementById("{q}").textContent = {fmt_js(e)}; }} }}, {at:.3f}); }}\n')
     if e.get('grow'):
         js += f'      tl.fromTo("#{q}w", {{ scale: 0.9, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: {dur}, ease: "{ease}" }}, {at:.3f});\n'
+        if e.get('kicker'): js += f'      tl.fromTo("#{q}k", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.25 }}, {at:.3f});\n'
     if e.get('out') is not None:
         js += f'      tl.to({J([f"#{q}w"] + ([f"#{q}k"] if e.get("kicker") else []))}, {{ opacity: 0, y: -30, duration: 0.2, ease: "power3.in" }}, {S.t(e["out"]):.3f});\n'
     n = e.get('ticks', 8); gap = e.get('tick_gap', 0.05)

@@ -159,7 +159,7 @@
       "text": "Spirits out",
       "c": "rd",
       "size": 230,
-      "at": "spirits-0.1",
+      "at": "keep-0.1",
       "kat": "windowsills-0.1"
      }
     ]
@@ -289,7 +289,7 @@
    ],
    "hf": {
     "tpl": "photo",
-    "src": "pumpkins",
+    "src": "pumpkin",
     "pos": "50% 50%",
     "enter": "whip",
     "zoom": [
@@ -433,7 +433,7 @@
    "y": 0
   },
   "labelA": [
-   "Ireland, early 1900s",
+   "Early 1900s",
    "Real photo"
   ],
   "labelB": [
@@ -456,7 +456,7 @@
       "kicker": "The first jack-o'-lanterns",
       "text": "Weren't pumpkins",
       "c": "cu",
-      "size": 200
+      "size": 165
      },
      {
       "kicker": "You'd carve",

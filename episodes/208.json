@@ -100,8 +100,19 @@
     }
    ],
    "hf": {
-    "tpl": "plain",
-    "flood": "radial-gradient(120% 70% at 50% 40%, #0F2236 0%, #08121C 60%, #05090D 100%)",
+    "tpl": "photo",
+    "src": "under",
+    "pos": "50% 60%",
+    "enter": "zoom",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "label": [
+     "Underside, Cape Cod",
+     "Real photo"
+    ],
+    "labelY": 1030,
     "els": [
      {
       "el": "title",

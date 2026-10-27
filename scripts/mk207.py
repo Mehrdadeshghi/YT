@@ -81,7 +81,8 @@ E = {
  ],
  'photos': [
   {'id': 'music', 'audio': 'File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3', 'from': 0, 'len': 60},
-  {'id': 'croatoan', 'file': 'File:William Ludwell Sheppard & William James Linton - CROATOAN, The Lost Colony (John White).jpg'},
+  {'id': 'croatoan', 'file': 'File:Roanoke Colonists Croatoan image from page 146 of Stories of the three Americas. Their discovery and settlement (1890).jpg'},
+  {'id': 'croatoan2', 'file': 'File:Roanoke Croatoan mage from page 156 of Stories of American explorers - a historical reader (1906).jpg'},
   {'id': 'arrival', 'file': "File:The Englishmen's arrival in Virginia (1590).jpg"},
   {'id': 'ruins', 'file': 'File:Ruins of the English Settlement at Roanoke.jpg'},
   {'id': 'crotree', 'file': 'File:Lost Colony Tree - Fort Raleigh National Historic Site - Stierch.jpg'},
@@ -92,9 +93,10 @@ E = {
 
 # ---- HyperFrames kit (scripts/hf_kit.py)
 E['hf'] = {'theme': {'cu': '#E3B062', 'vg': '#B9D7C9', 'capcu': '#EDBE72', 'capvg': '#C6E3D6', 'chipvg': '#C6E3D6', 'chipcu': '#EDBE72', 'p0': '#E3B062'},
+           'derive': [{'fn': 'crop', 'src': 'ruins', 'id': 'ruins_c', 'box': [0.03, 0.03, 0.97, 0.70]}],
            'caps': {'cu': ['croatoan', 'word', 'cro', '1587', 'three'], 'vg': ['peaceful', 'joined', 'croatan'], 'rd': ['vanished', 'gone', 'danger', 'killed', 'cross', 'snapped']}}
 E['hf_open'] = {'tpl': 'photo', 'name': 'hook', 'src': 'croatoan', 'pos': '50% 50%', 'enter': 'none', 'zoom': [1.0, 1.08],
-  'label': ['19th-century engraving', IL], 'labelY': 1030,
+  'label': ['Book illustration, 1890', IL], 'labelY': 1030,
   'els': [{'el': 'title', 'top': 262, 'items': [
     {'kicker': '115 colonists', 'text': 'Vanished', 'c': 'rd'},
     {'kicker': 'You only get', 'kat': 'only', 'out_prev': 'only-0.1', 'text': 'One word', 'c': 'cu', 'at': 'one-0.1'}]}]}
@@ -105,7 +107,7 @@ hfs = [
            'colors': ['#E3B062', '#FF5A4E'], 'grad': 'linear-gradient(90deg, #E3B062 0%, #C9773F 60%, #FF5A4E 100%)',
            'steps': [{'to': 1590, 'fill': 1, 'at': 'war-0.1', 'until': 'three+0.3'}]},
           {'el': 'chip', 'in': 'card', 'text': ['Governor', 'John White'], 'x': 22, 'y': 86, 'at': 'john-0.05'}]},
- {'tpl': 'photo', 'src': 'ruins', 'pos': '50% 50%', 'enter': 'whip', 'zoom': [1.0, 1.08], 'label': ['Engraving', IL], 'labelY': 1030,
+ {'tpl': 'photo', 'src': 'ruins_c', 'pos': '50% 50%', 'enter': 'whip', 'zoom': [1.0, 1.08], 'label': ['Engraving', IL], 'labelY': 1030,
   'els': [{'el': 'title', 'kicker': 'August 18, 1590', 'text': 'Houses gone', 'c': 'rd', 'size': 220, 'at': 'houses-0.1'},
           {'el': 'chip', 'text': ["Granddaughter's", '3rd birthday'], 'y': 560, 'at': 'third', 'fx': 'slide'}]},
  {'tpl': 'photo', 'src': 'crotree', 'pos': '50% 40%', 'enter': 'zoom', 'zoom': [1.0, 1.1], 'label': ['Re-enactment prop', RP], 'labelY': 1030,
@@ -115,11 +117,11 @@ hfs = [
  {'tpl': 'photo', 'src': 'fort', 'pos': '50% 50%', 'enter': 'vwhip', 'zoom': [1.0, 1.06], 'label': ['Fort Raleigh site', RP], 'labelY': 1030,
   'els': [{'el': 'glass', 'eyebrow': 'The deal, 1587', 'line': 'Carved cross = <span class="rd">danger</span>', 'at': 'carved-0.1', 'lift': 120},
           {'el': 'chip', 'text': ['White read it as', 'a peaceful move'], 'cls': 'done', 'y': 760, 'at': 'peaceful-0.1', 'fx': 'stamp', 'sfx': 'ding', 'gain': 0.6}]},
- {'tpl': 'photo', 'src': 'croatoan', 'pos': '30% 50%', 'enter': 'iris', 'zoom': [1.1, 1.0], 'label': ['19th-century engraving', IL], 'labelY': 1030,
+ {'tpl': 'photo', 'src': 'croatoan', 'pos': '30% 50%', 'enter': 'iris', 'zoom': [1.1, 1.0], 'label': ['Book illustration, 1890', IL], 'labelY': 1030,
   'els': [{'el': 'stamp', 'text': 'Search over', 'at': 'search', 'x': 140, 'y': 420, 'size': 150},
           {'el': 'ab', 'q': 'What happened to them?', 'title': '<span class="vg">Joined</span> or <span class="rd">killed</span>',
            'a': {'src': 'chief', 'label': 'Joined', 'sub': 'John White art', 'img': {'w': 520, 'x': -25, 'y': 0}, 'pulse': 'joined'},
-           'b': {'src': 'ruins', 'label': 'Killed', 'sub': 'engraving', 'img': {'w': 900, 'x': -215, 'y': 0}, 'pulse': 'killed'}},
+           'b': {'src': 'ruins_c', 'label': 'Killed', 'sub': 'engraving', 'img': {'w': 900, 'x': -215, 'y': 0}, 'pulse': 'killed'}},
           {'el': 'loop'}]},
 ]
 for sc, h in zip(E['scenes'], hfs): sc['hf'] = h
