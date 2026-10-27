@@ -72,7 +72,6 @@ E = {
   {'id': 'head', 'file': 'File:Head of the Statue of Liberty on display in a park in Paris (cropped).jpg'},
   {'id': 'boat2', 'video': 'File:View of Statue of Liberty on a Boat.webm', 'from': 11, 'len': 5},
   {'id': 'drone', 'video': 'File:Statue Of Liberty 4k Drone.webm', 'from': 86, 'len': 7},
-  {'id': 'drone2', 'video': 'File:Statue Of Liberty 4k Drone.webm', 'from': 172, 'len': 7},
  ],
 }
 open('episodes/201.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False) + '\n')
