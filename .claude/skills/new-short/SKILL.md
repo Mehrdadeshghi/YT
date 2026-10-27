@@ -72,6 +72,8 @@ finish + dubs) + `scripts/hf_kit.py` (templates/elements, read its docstring) �
 - Check with `.venv/bin/python scripts/check_final.py <ep>`: downloads into wr_deliver/<ep>/, prints duration, Whisper
   transcript + word diff against the script, dub tracks (volume, silences) and writes ONE frame strip `strip.png` — look at that
   image only. Fix and re-render if anything is wrong (every render is a new narrator take → check again) — say so in the delivery.
+- **Render queue (machine may be off):** when today's Gemini quota is used up, add lines `hf <ep>` / `cine <ep>` to `render_queue.txt`
+  and push; workflow "Render queue" dispatches them daily at ~07:35 UTC (max 8, 75 s apart) and removes them.
 - Voice `"voice": "gemini"` (Google Gemini TTS, AI Studio free tier, much more human than `narrator`): the whole English script is
   ONE request per render. FREE TIER = 10 requests/DAY, 3/minute for the whole project (resets 09:00 Berlin) → at most ~5 episodes + a few re-renders per day; never waste renders. Flags `gemini_voice` (default Charon), `gemini_style`,
   `gemini_wpm` (default 185). Dubs stay on dub.py's voices. Samples: workflow "Gemini voices" → release gemini-N.

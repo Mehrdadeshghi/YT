@@ -1,0 +1,40 @@
+name: Render queue
+# Daily after the Gemini free-tier reset (midnight Pacific = 07:00 UTC): dispatches the renders listed in render_queue.txt,
+# so Gemini-voiced renders start even when the local machine is off. One line per render: "hf 210" (hf-render.yml) or
+# "cine 194" (render.yml). At most MAX renders per day (free tier: 10 Gemini requests/day project-wide), 75 s apart
+# (3 requests/minute). Dispatched lines are removed from the file.
+on:
+  schedule:
+    - cron: "35 7 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency: { group: render-queue, cancel-in-progress: false }
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env: { GH_TOKEN: "${{ github.token }}", MAX: "8" }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dispatch
+        run: |
+          touch render_queue.txt
+          n=0; keep=""
+          while read -r kind ep; do
+            [ -z "$kind" ] && continue
+            case "$kind" in \#*) keep="$keep$kind $ep"$'\n'; continue;; esac
+            if [ "$n" -ge "$MAX" ]; then keep="$keep$kind $ep"$'\n'; continue; fi
+            [ "$n" -gt 0 ] && sleep 75
+            if [ "$kind" = hf ]; then gh workflow run hf-render.yml --ref main -f episode="$ep"
+            else gh workflow run render.yml --ref main -f episodes="$ep" -f fps=30; fi
+            echo "dispatched $kind $ep"; n=$((n+1))
+          done < render_queue.txt
+          printf '%s' "$keep" > render_queue.txt
+          echo "dispatched $n"
+      - name: Save queue
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add render_queue.txt
+          git diff --cached --quiet || { git commit -m "Render queue: dispatched" && git pull --rebase -q && git push; }
