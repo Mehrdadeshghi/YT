@@ -1,10 +1,5 @@
-Brooklyn Bridge | Brooklyn Bridge
-article: P. T. Barnum
-image: Brooklyn Bridge 1883
-image: Brooklyn Bridge panic 1883
-image: Brooklyn Bridge elephants
-image: Barnum Jumbo
-image: Brooklyn Bridge opening
-image: Brooklyn Bridge walkway
-video: Brooklyn Bridge
-audio: Kevin MacLeod
+Emily Warren Roebling | Emily Warren Roebling
+Washington Roebling | Washington Roebling
+John A. Roebling | John A. Roebling
+image: Brooklyn Bridge construction 1877
+image: Brooklyn Bridge footbridge 1877
