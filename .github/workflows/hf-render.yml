@@ -1,0 +1,75 @@
+name: HyperFrames render
+# Pilot (#201): the same episode pipeline as render.yml (media, Gemini/Kokoro voice, Whisper timings, our score + dubs),
+# but the picture is rendered by HyperFrames (HeyGen, Apache-2.0) from hf/<ep>/ written by scripts/hf_build.py.
+# Release hf-N: wiki_roulette_<ep>.mp4, _de/_es/_fr.m4a, .md
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "Episode, e.g. 201"
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: hf-render-${{ github.event.inputs.episode }}
+  cancel-in-progress: false
+env:
+  HF_VERSION: "0.8.149"
+  HYPERFRAMES_NO_TELEMETRY: "1"
+  DO_NOT_TRACK: "1"
+  HYPERFRAMES_SKIP_SKILLS: "1"
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Voice model cache
+        uses: actions/cache@v4
+        with: { path: models, key: kokoro-v1.0 }
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          npm install --no-audit --no-fund
+          npx playwright install-deps chromium
+          npm install --no-save --no-audit --no-fund hyperframes@${HF_VERSION}
+          npx hyperframes browser ensure
+          pip install -q kokoro-onnx==0.6.1 soundfile numpy pillow piper-tts==1.8.0 faster-whisper
+          mkdir -p models models/whisper
+          [ -f models/kokoro-v1.0.onnx ] || curl -sSL -o models/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          [ -f models/voices-v1.0.bin ] || curl -sSL -o models/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+          HF=https://huggingface.co/rhasspy/piper-voices/resolve/main/de/de_DE/thorsten/high
+          [ -f models/de_DE-thorsten-high.onnx ] || curl -sSL -o models/de_DE-thorsten-high.onnx $HF/de_DE-thorsten-high.onnx
+          [ -f models/de_DE-thorsten-high.onnx.json ] || curl -sSL -o models/de_DE-thorsten-high.onnx.json $HF/de_DE-thorsten-high.onnx.json
+          [ -f models/whisper/model.bin ] || curl -sSL https://github.com/${{ github.repository }}/releases/download/model-whisper/whisper-small.en.tgz | tar xz -C models/whisper
+      - name: Restore fetched media (photos-N releases listed in media.txt)
+        run: |
+          for t in $(grep -v '^#' media.txt); do
+            curl -sSLf -o /tmp/m.zip "https://github.com/${{ github.repository }}/releases/download/$t/photos.zip" && unzip -oq /tmp/m.zip -d . && echo "restored $t" || echo "could not restore $t"
+          done
+      - name: Build
+        env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}", HF_BIN: "node_modules/.bin/hyperframes" }
+        run: |
+          set -o pipefail
+          E="${{ github.event.inputs.episode }}"
+          { python3 fetch_photos.py "$E" || echo "photo fetch had problems"
+            python3 voice.py "$E"
+            python3 scripts/hf_build.py "$E" --render --finish
+          } 2>&1 | tee build.log
+          ls -la dist
+      - name: Publish release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          E="${{ github.event.inputs.episode }}"; TAG="hf-${{ github.run_number }}"
+          gh release create "$TAG" dist/*.mp4 dist/*.md $(ls dist/*.m4a 2>/dev/null) --title "HyperFrames $E" --notes-file dist/wiki_roulette_$E.md
+      - name: Publish log on failure
+        if: failure()
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: tail -c 200000 build.log > build_tail.log; gh release create "debug-hf-${{ github.run_number }}" build_tail.log --title "HyperFrames log ${{ github.run_number }}" --notes "failed render" --prerelease
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: hf-render, path: dist/, retention-days: 30 }

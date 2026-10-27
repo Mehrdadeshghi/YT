@@ -68,11 +68,8 @@ E = {
  'photos': [
   {'id': 'music', 'audio': 'File:Rafael Krux - Uplifting Blockbuster (cc-by) (filmmusic).mp3', 'from': 2, 'len': 50, 'gain': 0.5},
   {'id': 'front', 'file': 'File:Front view of Statue of Liberty (cropped).jpg'},
-  {'id': 'nps', 'file': 'File:The Statue of Liberty on Liberty Island (3454fd91-1dd8-b71b-0b21-a93398840c35).jpg'},
   {'id': 'torch', 'file': 'File:The Torch of the Statue of Liberty (352b4d9d-1dd8-b71b-0bee-0f4169b52f62).JPG'},
   {'id': 'head', 'file': 'File:Head of the Statue of Liberty on display in a park in Paris (cropped).jpg'},
-  {'id': 'newcu', 'file': 'File:New red copper (211283297).jpg'},
-  {'id': 'verd', 'file': 'File:Verdigris (37580956304).jpg'},
   {'id': 'boat2', 'video': 'File:View of Statue of Liberty on a Boat.webm', 'from': 11, 'len': 5},
   {'id': 'drone', 'video': 'File:Statue Of Liberty 4k Drone.webm', 'from': 86, 'len': 7},
   {'id': 'drone2', 'video': 'File:Statue Of Liberty 4k Drone.webm', 'from': 172, 'len': 7},

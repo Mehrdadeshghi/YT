@@ -13,3 +13,4 @@ assets/voice/*.wav
 assets/music/
 .venv
 .claude/worktrees/
+hf/
