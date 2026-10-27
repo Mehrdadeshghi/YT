@@ -287,7 +287,7 @@ def sc_patina(k):
       <div id="p-year" class="big" style="top:250px; font-size:260px; color:#E08A4E">1886</div>
       <div class="bar"><div id="p-fill" class="fill2"></div></div>
       <div class="ticklabels"><span>1886</span><span>1902</span><span>1906</span></div>
-      <div id="p-card" class="card" style="left:40px; top:630px; width:1000px; height:562px">
+      <div id="p-card" class="card" style="left:60px; top:620px; width:960px; height:540px">
         <video id="p-clip" class="clip fill" src="assets/drone.mp4" muted playsinline data-start="0" data-duration="%DRONE%"></video>
         <div class="chip" style="left:22px; top:22px">Drone · <b>Real footage</b></div>
         <div id="p-c1" class="chip agent" style="left:22px; top:86px">Air</div>
