@@ -1,15 +1,10 @@
-image: Limulus blood
-image: horseshoe crab hemolymph
-image: horseshoe crab blue blood
-image: Limulus amebocyte lysate
-image: horseshoe crab laboratory
-image: Gateway Arch keystone
-image: Gateway Arch October 1965
-video: St. Louis Arch
-video: St. Louis riverfront
-video: Crater Lake Oregon
-video: Crater Lake National Park
-video: horseshoe crabs beach
-video: turnip
-video: candle flame dark
-video: Roanoke Island
+Brooklyn Bridge | Brooklyn Bridge
+article: P. T. Barnum
+image: Brooklyn Bridge 1883
+image: Brooklyn Bridge panic 1883
+image: Brooklyn Bridge elephants
+image: Barnum Jumbo
+image: Brooklyn Bridge opening
+image: Brooklyn Bridge walkway
+video: Brooklyn Bridge
+audio: Kevin MacLeod
