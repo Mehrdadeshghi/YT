@@ -53,6 +53,8 @@ finish + dubs) + `scripts/hf_kit.py` (templates/elements, read its docstring) â†
   (overlaps, focus of tall crops, early counters, text under captions). Kokoro 1.3 runs ~10 % shorter than Gemini at 195 wpm.
 - **Render:** `gh workflow run hf-render.yml -R Mehrdadeshghi/YT --ref main -f episode=<ep>` (release `hf-N`; one Gemini request);
   `-f test_voice=am_michael` tests the pipeline without Gemini quota. Check `.venv/bin/python scripts/check_final.py <ep> hf-N`.
+- CI runs Python 3.11 (no same-quote nesting or backslashes inside f-string braces): check kit edits with
+  `uv run --no-project --python 3.11 python -m py_compile scripts/hf_kit.py`.
 - Kit changes must keep #201 identical: build it and compare snapshot frames + `out/ep201/cues.json` before/after.
 
 ## 5. Visuals (`cine/<ep>.js`) â€” cine engine (Circles, deep-sea cut-downs, presenter, WHY?)
