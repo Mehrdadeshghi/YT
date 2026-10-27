@@ -297,15 +297,15 @@
    ],
    "hf": {
     "tpl": "photo",
-    "src": "croatoan",
-    "pos": "30% 50%",
+    "src": "croatoan2",
+    "pos": "50% 50%",
     "enter": "iris",
     "zoom": [
      1.1,
      1.0
     ],
     "label": [
-     "Book illustration, 1890",
+     "Book illustration, 1906",
      "Illustration"
     ],
     "labelY": 1030,
@@ -438,7 +438,11 @@
   "tpl": "photo",
   "name": "hook",
   "src": "croatoan",
-  "pos": "50% 50%",
+  "img": {
+   "w": 1300,
+   "x": -110,
+   "y": 330
+  },
   "enter": "none",
   "zoom": [
    1.0,

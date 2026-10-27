@@ -28,7 +28,34 @@ Answer Mehrdad in German. Video language English, dubs DE/ES/FR. Read `CLAUDE.md
   `de`/`es`/`fr` on every segment (otherwise no dub). Last scene: `{"at": "0.15", "text": "<binary question> Comment …, and subscribe!", "cta": true}`.
 - Target 25–40 s for Shorts (≈ 90–115 words with the narrator). Phonetic spellings for names + `spell` map. Years as words if critical.
 
-## 5. Visuals (`cine/<ep>.js`)
+## HyperFrames Shorts (default for normal Shorts since #201)
+Owner verdict on pilot #201: "drastically better". Use it for every normal Short; steps 5–7 below (cine.html) only for Circles,
+deep-sea/long-form cut-downs, AI presenter and the WHY? series. Pipeline: `scripts/hf_build.py` (timing, captions, cues, render,
+finish + dubs) + `scripts/hf_kit.py` (templates/elements, read its docstring) → `hf/<ep>/` (gitignored) → workflow `hf-render.yml`.
+- **Episode = data** in `scripts/mk<ep>.py` (copy `mk206.py`–`mk210.py`; `mk201.py` = pilot as data): usual script/vo/photos plus
+  `E['hf_open']` (opener) and `scenes[i]['hf']` = `{"tpl": …, …, "els": [{"el": …}, …]}`, episode-wide
+  `E['hf'] = {"theme": {cu, vg, capcu, capvg, chipcu, chipvg, p0}, "caps": {"cu"/"vg"/"rd": [word prefixes]}, "derive": [...]}`.
+- **Templates:** `split` (hook A|B with divider + `wipes`; `imgA`/`imgB` geometry when two different photos), `photo` (full-bleed photo or
+  footage; `zoom`, `settle`, `punch`, `drift`, `enter` whip/vwhip/zoom/iris/none, optional `paint` overlay), `card` (colour flood + framed
+  media card), `plain` (dark ground for graphics).
+- **Elements:** `title` (kicker + big line; `items` roll like a slot machine), `counter` (counts on its word), `ruler`, `bars`,
+  `timeline` (year counter + bar), `chip` (label/tag, can sit `in: card`), `stamp`, `sub`, `glass` (verdict card with ✓/✗ + quote),
+  `stack` (labelled layers), `ab` (end card: question, "A or B", two tiles — `src` photo or graphic `glyph` tile — and the comment ask),
+  `loop` (cross-fade back into frame 1).
+- **Times** are word specs from the Whisper timings of that scene: `"copper"`, `"green#2"`, `"less-0.08"`, `"cta-0.2"`, `"end-0.45"`;
+  numbers = seconds. Key words must appear in `cap` (spoken numbers by their cap digits: `"1949"`, `"30foot"`).
+- **Labels:** every photo/footage/graphic carries `label: [place, KIND]` (Real photo / Real footage / Illustration / Graphic / Simulation).
+- **Layout (REEL v2 safe band y 168–1330):** kicker 206, big title 262 (≤ 2 lines), chips/subs 500–720, media labels 1030, captions end
+  y≈1320 (`hf.capBottom` 600), end card tiles 470–1030 + ask pill 1060 (x 40–830, nothing under the right rail).
+- **Preview:** `python3 voice.py <ep> --voice am_michael --speed 1.3`, then `python3 scripts/hf_build.py <ep>` and
+  `hyperframes snapshot hf/<ep> --at 0.1,1.3,… --no-end --describe false` (CLI 0.8.149; env HYPERFRAMES_NO_TELEMETRY=1 DO_NOT_TRACK=1
+  HYPERFRAMES_SKIP_SKILLS=1; NO GEMINI_API_KEY in the env, `--describe` would spend Gemini quota). LOOK at the contact sheets
+  (overlaps, focus of tall crops, early counters, text under captions). Kokoro 1.3 runs ~10 % shorter than Gemini at 195 wpm.
+- **Render:** `gh workflow run hf-render.yml -R Mehrdadeshghi/YT --ref main -f episode=<ep>` (release `hf-N`; one Gemini request);
+  `-f test_voice=am_michael` tests the pipeline without Gemini quota. Check `.venv/bin/python scripts/check_final.py <ep> hf-N`.
+- Kit changes must keep #201 identical: build it and compare snapshot frames + `out/ep201/cues.json` before/after.
+
+## 5. Visuals (`cine/<ep>.js`) — cine engine (Circles, deep-sea cut-downs, presenter, WHY?)
 - Reuse libraries (`pro.js`, `football.js`, `facts.js`, …). Word-synced reveals with `sw()`. No global-name clashes.
 - 9:16 safe zones: top 120–300 header, media/graphics ~300–1450, captions ~1640–1720, subscribe pill/comment card ~1400–1600.
 
@@ -55,7 +82,7 @@ Test format vs. the house/WHY? Shorts. Episodes carry `"format": "reel2"` so the
 - **Stake (2-7 s):** one line why the viewer should care. **Body:** one idea per beat, ≤ 4 s per beat, the frame changes every beat.
   **Payoff:** deliver what the hook promised before the last 5 s. **ONE ask** (comment question, binary). **Loop:** last spoken line
   echoes a word from the hook so the replay lands (`"loop": true` cross-fades into frame 1).
-- Time it: `python3 -I scripts/reel/beats.py script.txt --wpm 185 --target 30` (one beat per line); fix every flag. 20-35 s.
+- Time it: `python3 -I scripts/reel/beats.py script.txt --wpm 190 --target 30` (one beat per line); fix every flag. 20-35 s.
 - Flags: `"oneAsk": true` (no subscribe pills, only the comment card), `"loop": true`, `"capY": 1250`, `"cardY": 1150`,
   voice `gemini`. **Safe zone** (YouTube/IG overlays): all text and key visuals between y 230 and 1440, right 230 px clear below y 900;
   media ~300-1100, captions ~1250, comment card ~1150-1350.

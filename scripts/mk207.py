@@ -95,7 +95,7 @@ E = {
 E['hf'] = {'theme': {'cu': '#E3B062', 'vg': '#B9D7C9', 'capcu': '#EDBE72', 'capvg': '#C6E3D6', 'chipvg': '#C6E3D6', 'chipcu': '#EDBE72', 'p0': '#E3B062'},
            'derive': [{'fn': 'crop', 'src': 'ruins', 'id': 'ruins_c', 'box': [0.03, 0.03, 0.97, 0.70]}],
            'caps': {'cu': ['croatoan', 'word', 'cro', '1587', 'three'], 'vg': ['peaceful', 'joined', 'croatan'], 'rd': ['vanished', 'gone', 'danger', 'killed', 'cross', 'snapped']}}
-E['hf_open'] = {'tpl': 'photo', 'name': 'hook', 'src': 'croatoan', 'pos': '50% 50%', 'enter': 'none', 'zoom': [1.0, 1.08],
+E['hf_open'] = {'tpl': 'photo', 'name': 'hook', 'src': 'croatoan', 'img': {'w': 1300, 'x': -110, 'y': 330}, 'enter': 'none', 'zoom': [1.0, 1.08],
   'label': ['Book illustration, 1890', IL], 'labelY': 1030,
   'els': [{'el': 'title', 'top': 262, 'items': [
     {'kicker': '115 colonists', 'text': 'Vanished', 'c': 'rd'},
@@ -117,7 +117,7 @@ hfs = [
  {'tpl': 'photo', 'src': 'fort', 'pos': '50% 50%', 'enter': 'vwhip', 'zoom': [1.0, 1.06], 'label': ['Fort Raleigh site', RP], 'labelY': 1030,
   'els': [{'el': 'glass', 'eyebrow': 'The deal, 1587', 'line': 'Carved cross = <span class="rd">danger</span>', 'at': 'carved-0.1', 'lift': 120},
           {'el': 'chip', 'text': ['White read it as', 'a peaceful move'], 'cls': 'done', 'y': 760, 'at': 'peaceful-0.1', 'fx': 'stamp', 'sfx': 'ding', 'gain': 0.6}]},
- {'tpl': 'photo', 'src': 'croatoan', 'pos': '30% 50%', 'enter': 'iris', 'zoom': [1.1, 1.0], 'label': ['Book illustration, 1890', IL], 'labelY': 1030,
+ {'tpl': 'photo', 'src': 'croatoan2', 'pos': '50% 50%', 'enter': 'iris', 'zoom': [1.1, 1.0], 'label': ['Book illustration, 1906', IL], 'labelY': 1030,
   'els': [{'el': 'stamp', 'text': 'Search over', 'at': 'search', 'x': 140, 'y': 420, 'size': 150},
           {'el': 'ab', 'q': 'What happened to them?', 'title': '<span class="vg">Joined</span> or <span class="rd">killed</span>',
            'a': {'src': 'chief', 'label': 'Joined', 'sub': 'John White art', 'img': {'w': 520, 'x': -25, 'y': 0}, 'pulse': 'joined'},

@@ -575,6 +575,9 @@ def el_loop(S, e, i):
         st = lambda g: f'position:absolute; width:{g["w"]}px; left:{g["x"]}px; top:{g["y"]}px'
         media = (f'        <img src="{S.src(o["a"])}" alt="" style="{st(gA)}" />\n'
                  f'        <img src="{S.src(o["b"])}" alt="" style="{st(gB)}; clip-path: inset(0 0 0 {540 - gB["x"]}px)" />')
+    elif o.get('img'):
+        g = o['img']
+        media = f'        <img src="{S.B.first_frame(o["src"]) if S.is_video(o["src"]) else S.src(o["src"])}" alt="" style="position:absolute; width:{g["w"]}px; left:{g["x"]}px; top:{g["y"]}px" />'
     else:
         media = '        ' + S.media(o['src'], 'fill', f' style="object-position: {o.get("pos", "50% 50%")}"', None, f'{q}m') if not S.is_video(o['src']) else \
                 f'        <img src="{S.B.first_frame(o["src"])}" alt="" class="fill" style="object-position: {o.get("pos", "50% 50%")}" />'
