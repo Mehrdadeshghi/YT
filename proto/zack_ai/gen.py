@@ -40,7 +40,10 @@ BASE = snapshot_download(BASE, allow_patterns=['model_index.json', 'scheduler/*'
 
 T = {}
 t0 = time.time()
-pipe = StableDiffusionXLPipeline.from_pretrained(BASE, unet=None, vae=None, torch_dtype=torch.float32, variant='fp16', use_safetensors=True)
+with init_empty_weights():   # meta UNet (no memory) so the pipeline can be built for prompt encoding
+    unet = UNet2DConditionModel.from_config(UNet2DConditionModel.load_config(BASE, subfolder='unet'))
+vae = AutoencoderKL.from_pretrained(BASE, subfolder='vae', torch_dtype=torch.float32, variant='fp16', use_safetensors=True).eval()
+pipe = StableDiffusionXLPipeline.from_pretrained(BASE, unet=unet, vae=vae, torch_dtype=torch.float32, variant='fp16', use_safetensors=True)
 emb = {}
 with torch.no_grad():
     for sid, seed, p in jobs:
@@ -52,13 +55,11 @@ del pipe; gc.collect()
 T['encode_s'] = round(time.time() - t0, 1)
 
 t0 = time.time()
-with init_empty_weights():
-    unet = UNet2DConditionModel.from_config(UNet2DConditionModel.load_config(BASE, subfolder='unet'))
 with safe_open(hf_hub_download(LIGHT, 'sdxl_lightning_4step_unet.safetensors'), 'pt') as f:   # one tensor at a time -> ~10 GB peak
     sd = {k: f.get_tensor(k).float() for k in f.keys()}
 unet.load_state_dict(sd, assign=True); del sd; gc.collect()
 unet.eval()
-pipe = StableDiffusionXLPipeline.from_pretrained(BASE, unet=unet, vae=None, text_encoder=None, text_encoder_2=None,
+pipe = StableDiffusionXLPipeline.from_pretrained(BASE, unet=unet, vae=vae, text_encoder=None, text_encoder_2=None,
                                                  tokenizer=tok_enc[0], tokenizer_2=tok_enc[1], torch_dtype=torch.float32)
 pipe.scheduler = EulerDiscreteScheduler.from_config(pipe.scheduler.config, timestep_spacing='trailing')
 T['load_unet_s'] = round(time.time() - t0, 1)
@@ -75,7 +76,7 @@ for sid, seed, p in jobs:
 del pipe, unet; gc.collect()
 # decode after the UNet is gone (fp32 VAE at 768x1344 needs several GB)
 t0 = time.time()
-vae = AutoencoderKL.from_pretrained(BASE, subfolder='vae', torch_dtype=torch.float32, variant='fp16', use_safetensors=True).eval()
+# (vae loaded at the top, kept)
 from diffusers.image_processor import VaeImageProcessor
 proc = VaeImageProcessor(vae_scale_factor=8)
 for sid, seed, _ in jobs:
