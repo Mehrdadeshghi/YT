@@ -1,0 +1,49 @@
+name: Zack images (open AI stills)
+# Prototype: 3D-animated-film style stills on CPU runners with open, commercially usable models:
+#   SDXL base 1.0 (text encoders + VAE) + ByteDance SDXL-Lightning 4-step UNet — both CreativeML OpenRAIL++-M
+#   Depth-Anything-V2-Small (Apache-2.0) depth maps for 2.5D parallax.
+# Shots come from a JSON file (default proto/zack_ai/shots.json). The work is split over N parallel runners.
+# Result: workflow artifact "zack-images" (png + _depth.png + timing_*.json); download with `gh run download <id>`.
+on:
+  workflow_dispatch:
+    inputs:
+      shots: { description: "Shot list JSON", required: false, default: "proto/zack_ai/shots.json" }
+      only: { description: "Only these shot ids, comma separated (empty = all)", required: false, default: "" }
+      shards: { description: "Parallel runners (1-8)", required: false, default: "8" }
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs: { idx: "${{ steps.m.outputs.idx }}" }
+    steps:
+      - id: m
+        run: echo "idx=$(python3 -c "import json;print(json.dumps(list(range(int('${{ inputs.shards }}')))))")" >> "$GITHUB_OUTPUT"
+  gen:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix: { shard: "${{ fromJson(needs.plan.outputs.idx) }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-sdxl-lightning4-depthv2s-v1
+      - name: CPU info
+        run: nproc; free -g; lscpu | grep -E "Model name|Flags" | sed 's/Flags:.*\(avx512[a-z_0-9]*\).*/AVX512: yes/' | head -3
+      - name: Install
+        run: |
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q diffusers==0.31.0 transformers==4.46.3 accelerate==1.1.1 safetensors pillow huggingface_hub
+      - name: Generate
+        env: { HF_HUB_DISABLE_TELEMETRY: "1", DO_NOT_TRACK: "1" }
+        run: |
+          /usr/bin/time -v -o time.txt python proto/zack_ai/gen.py "${{ inputs.shots }}" out ${{ matrix.shard }} ${{ inputs.shards }} "${{ inputs.only }}"
+          grep -E "Maximum resident|Elapsed" time.txt
+      - uses: actions/upload-artifact@v4
+        with: { name: "zack-images-${{ matrix.shard }}", path: out/, retention-days: 14 }
