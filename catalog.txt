@@ -1,32 +1,31 @@
-UEFA Champions League Anthem
-Zadok the Priest | Zadok the Priest
-George Frideric Handel | Portraits of George Frideric Handel
-Coronation of George II and Caroline
-audio: Zadok the Priest
-audio: Handel Zadok
-image: Champions League final stadium
-image: Westminster Abbey interior coronation
-Eiffel Tower | Construction of the Eiffel Tower
-Protest against the Tower
-image: Eiffel Tower antenna radio 1914
-image: Eiffel Tower construction 1888
-Man in the Iron Mask | Man in the Iron Mask
-Bénigne Dauvergne de Saint-Mars
-Pinerolo Fortress
-Île Sainte-Marguerite | Fort Royal (Île Sainte-Marguerite)
-image: Bastille 1789
-Olm | Proteus anguinus
-Postojna Cave | Postojna Cave
-image: Proteus anguinus cave
-video: Proteus anguinus
-World Wide Web
-Tim Berners-Lee | Tim Berners-Lee
-NeXT Computer | NeXTcube
-CERN | CERN
-image: first web server NeXT CERN
-Longyearbyen | Longyearbyen
-Svalbard | Svalbard
-image: Longyearbyen cemetery
-image: Svalbard Global Seed Vault
-audio: Kevin MacLeod
-audio: Musopen Grieg
+Eiffel Tower | Videos of the Eiffel Tower
+Svalbard | Videos of Svalbard
+CERN | Videos of CERN
+Postojna Cave | Videos of Postojna Cave
+video: Eiffel Tower 1900
+video: Tour Eiffel Lumière
+video: Eiffel Tower panorama
+video: Eiffel Tower
+video: Champions League
+video: football stadium fans
+video: football match
+video: Westminster Abbey
+video: Sainte-Marguerite Lérins
+video: Cannes islands
+video: Pinerolo
+video: Bastille Paris
+video: Postojna cave
+video: cave salamander
+video: CERN
+video: NeXT computer
+video: Large Hadron Collider
+video: Svalbard
+video: Longyearbyen
+video: Svalbard polar bear
+video: Svalbard reindeer
+video: aurora Svalbard
+video: Svalbard Global Seed Vault
+video: permafrost
+audio: Grieg Peer Gynt
+audio: Satie Gymnopedie
+audio: Handel Zadok the Priest
