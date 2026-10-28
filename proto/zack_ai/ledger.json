@@ -2,7 +2,7 @@
  "fps": 30,
  "seams": [
   {
-   "id": "s16_29→s16_11",
+   "id": "s16_5→s16_42",
    "cut": 2.36,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {
@@ -17,7 +17,7 @@
    }
   },
   {
-   "id": "s16_11→s01_11",
+   "id": "s16_42→s01_29",
    "cut": 3.86,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {
@@ -32,7 +32,7 @@
    }
   },
   {
-   "id": "s01_11→s02_11",
+   "id": "s01_29→s02_5",
    "cut": 5.74,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {
@@ -47,7 +47,7 @@
    }
   },
   {
-   "id": "s02_11→s15_11",
+   "id": "s02_5→s15_11",
    "cut": 7.64,
    "technique": "zoom-through (deeper)",
    "exit": {
@@ -62,7 +62,7 @@
    }
   },
   {
-   "id": "s15_11→s03_11",
+   "id": "s15_11→s03_13",
    "cut": 8.8,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {
@@ -77,7 +77,7 @@
    }
   },
   {
-   "id": "s03_11→s04_11",
+   "id": "s03_13→s04_3t",
    "cut": 11.62,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {
@@ -92,7 +92,7 @@
    }
   },
   {
-   "id": "s04_11→s05_11",
+   "id": "s04_3t→s05_7t",
    "cut": 13.9,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {
@@ -107,7 +107,7 @@
    }
   },
   {
-   "id": "s05_11→s13_11",
+   "id": "s05_7t→s13_42t",
    "cut": 16.58,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {
@@ -122,7 +122,7 @@
    }
   },
   {
-   "id": "s13_11→s06_11",
+   "id": "s13_42t→s06_42t",
    "cut": 18.34,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {
@@ -137,7 +137,7 @@
    }
   },
   {
-   "id": "s06_11→s08_11",
+   "id": "s06_42t→s08_29",
    "cut": 20.2,
    "technique": "zoom-through (deeper)",
    "exit": {
@@ -152,7 +152,7 @@
    }
   },
   {
-   "id": "s08_11→s09_11",
+   "id": "s08_29→s09_13",
    "cut": 22.98,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {
@@ -167,7 +167,7 @@
    }
   },
   {
-   "id": "s09_11→s10_11",
+   "id": "s09_13→s10_5t",
    "cut": 24.32,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {
@@ -182,7 +182,7 @@
    }
   },
   {
-   "id": "s10_11→s11_11",
+   "id": "s10_5t→s11_42t",
    "cut": 25.52,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {
@@ -197,7 +197,7 @@
    }
   },
   {
-   "id": "s11_11→s12_11",
+   "id": "s11_42t→s12_42",
    "cut": 28.46,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {
@@ -212,7 +212,7 @@
    }
   },
   {
-   "id": "s12_11→s14_11",
+   "id": "s12_42→s14_11",
    "cut": 30.12,
    "technique": "inverse zoom-through (arrival)",
    "exit": {
@@ -242,7 +242,7 @@
    }
   },
   {
-   "id": "s14_29→s07_11",
+   "id": "s14_29→s04_3t",
    "cut": 34.2,
    "technique": "cut-the-curve LEFT (camera whip)",
    "exit": {

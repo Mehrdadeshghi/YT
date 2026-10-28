@@ -52,7 +52,7 @@ labels = ['[vo]']
 for j, (i, at, g) in enumerate(mix):
     ms = max(0, int(at * 1000))
     fc.append(f'[{i}:a]aresample=48000,aformat=channel_layouts=stereo,volume={g},adelay={ms}|{ms}[s{j}]'); labels.append(f'[s{j}]')
-fc.append(''.join(labels) + f'amix=inputs={len(labels)}:normalize=0:duration=longest,atrim=0:{END:.2f},loudnorm=I=-14:TP=-1.5:LRA=11[a]')
+fc.append(''.join(labels) + f'amix=inputs={len(labels)}:normalize=0:duration=longest,apad,atrim=0:{END:.2f},loudnorm=I=-14:TP=-1.5:LRA=11[a]')
 ff(*args, '-filter_complex', ';'.join(fc), '-map', '0:v:0', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000',
    '-movflags', '+faststart', '-shortest', dst)
 print(dst)

@@ -36,24 +36,24 @@ END = WORDS[-1]['e'] + 0.75
 # ---------------------------------------------------------------- shot list
 # img: <shot>_<seed>; move: rig camera path; seam: how this shot is ENTERED (left / push / pull); fx: overlays
 SHOTS = [
-    dict(img='s16_29', at=0.0, move=('push', 1.10, 1.22, 0, 0, 0, -40), fx=[]),
-    dict(img='s16_11', at=t('and') - 0.04, move=('push', 1.18, 1.26, 0, 0, 0, 0), fx=['shake']),
-    dict(img='s01_11', at=t('rivets') - 0.04, move=('push', 1.12, 1.30, 0, 0, 0, 0), fx=['rivets']),
-    dict(img='s02_11', at=t('steel') - 0.1, move=('tilt', 1.16, 1.20, 0, 0, 120, -120), fx=['scale50']),
+    dict(img='s16_5', at=0.0, move=('push', 1.10, 1.22, 0, 0, 0, -40), fx=[]),
+    dict(img='s16_42', at=t('and') - 0.04, move=('push', 1.18, 1.26, 0, 0, 0, 0), fx=['shake']),
+    dict(img='s01_29', at=t('rivets') - 0.04, move=('push', 1.12, 1.30, 0, 0, 0, 0), fx=['rivets']),
+    dict(img='s02_5', at=t('steel') - 0.1, move=('tilt', 1.16, 1.20, 0, 0, 120, -120), fx=['scale50']),
     dict(img='s15_11', at=t('splits') - 0.04, seam='push', move=('push', 1.12, 1.26, 0, 0, 0, 30), fx=['shake']),
-    dict(img='s03_11', at=t('two') - 0.06, move=('pan', 1.20, 1.26, 60, -60, 0, 0), fx=['drops']),
-    dict(img='s04_11', at=t('brown') - 0.1, move=('tilt', 1.14, 1.20, 0, 0, 90, -90), fx=['scale25']),
-    dict(img='s05_11', at=t('rolls') - 0.04, move=('push', 1.10, 1.34, 0, 0, 0, 0), fx=['speed']),
-    dict(img='s13_11', at=t('it') - 0.04, move=('pan', 1.18, 1.24, 70, -70, 0, 0), fx=['drops']),
-    dict(img='s06_11', at=t('knocks') - 0.04, move=('push', 1.14, 1.26, 0, 0, 0, 0), fx=['shake']),
-    dict(img='s08_11', at=t('then') - 0.04, seam='push', move=('push', 1.10, 1.28, 0, 0, 0, 0), fx=['frost']),
-    dict(img='s09_11', at=t('and', 4) - 0.04, move=('push', 1.14, 1.24, 0, 0, 0, 0), fx=['frost']),
-    dict(img='s10_11', at=t('the', 7) - 0.04, move=('pan', 1.18, 1.24, -60, 60, 0, 0), fx=['frost']),
-    dict(img='s11_11', at=t('rescuers') - 0.04, move=('push', 1.12, 1.24, 0, 0, 0, 0), fx=[]),
-    dict(img='s12_11', at=t('twenty', 2) - 0.04, move=('pullback', 1.30, 1.16, 0, 0, 0, 0), fx=[]),
+    dict(img='s03_13', at=t('two') - 0.06, move=('pan', 1.20, 1.26, 60, -60, 0, 0), fx=['drops']),
+    dict(img='s04_3t', at=t('brown') - 0.1, move=('tilt', 1.14, 1.20, 0, 0, 90, -90), fx=['scale25']),
+    dict(img='s05_7t', at=t('rolls') - 0.04, move=('push', 1.10, 1.34, 0, 0, 0, 0), fx=['speed']),
+    dict(img='s13_42t', at=t('it') - 0.04, move=('pan', 1.18, 1.24, 70, -70, 0, 0), fx=['drops']),
+    dict(img='s06_42t', at=t('knocks') - 0.04, move=('push', 1.14, 1.26, 0, 0, 0, 0), fx=['shake']),
+    dict(img='s08_29', at=t('then') - 0.04, seam='push', move=('push', 1.10, 1.28, 0, 0, 0, 0), fx=['frost']),
+    dict(img='s09_13', at=t('and', 4) - 0.04, move=('push', 1.14, 1.24, 0, 0, 0, 0), fx=['frost']),
+    dict(img='s10_5t', at=t('the', 7) - 0.04, move=('pan', 1.18, 1.24, -60, 60, 0, 0), fx=['frost']),
+    dict(img='s11_42t', at=t('rescuers') - 0.04, move=('push', 1.12, 1.24, 0, 0, 0, 0), fx=[]),
+    dict(img='s12_42', at=t('twenty', 2) - 0.04, move=('pullback', 1.30, 1.16, 0, 0, 0, 0), fx=[]),
     dict(img='s14_11', at=t('and', 5) - 0.04, seam='pull', move=('push', 1.14, 1.26, 0, 0, 0, 0), fx=['smell']),
     dict(img='s14_29', at=t('the', 8) - 0.04, move=('pan', 1.18, 1.24, 60, -60, 0, 0), fx=['smell']),
-    dict(img='s07_11', at=t('could') - 0.04, move=('push', 1.12, 1.24, 0, 0, 0, 0), fx=['drops']),
+    dict(img='s04_3t', at=t('could') - 0.04, move=('push', 1.2, 1.5, 0, 60, -260, -420), fx=[]),
 ]
 for i, s in enumerate(SHOTS):
     s['end'] = SHOTS[i + 1]['at'] if i + 1 < len(SHOTS) else END
@@ -149,7 +149,7 @@ def fx_html(i, s):
 
 # scale bars in IMAGE pixels of the 1080x1920 frame (x, bottom y, top y) — set after looking at the stills
 SCALEBAR = json.load(open(f'{HERE}/scalebars.json')) if os.path.exists(f'{HERE}/scalebars.json') else {
-    's02': [880, 1560, 420], 's04': [860, 1500, 380]}
+    's02': [935, 1345, 135], 's04': [900, 1480, 330]}
 
 
 def shake_js(sel, a, b, amp, seed):
@@ -165,6 +165,14 @@ def shake_js(sel, a, b, amp, seed):
 # ---------------------------------------------------------------- build
 def main():
     os.makedirs(f'{A}/layers', exist_ok=True); os.makedirs(f'{A}/fonts', exist_ok=True)
+    # '<key>t' = tinted variant (tint.py: white AI surf -> molasses brown), band per shot below
+    TINT = {'s04_3': (0.05, 1.0), 's04_7': (0.05, 1.0), 's11_42': (0.5, 1.0), 's10_5': (0.6, 1.0), 's05_7': (0.2, 1.0), 's13_42': (0.3, 1.0), 's06_42': (0.0, 0.85)}
+    for s in SHOTS:
+        k = s['img']
+        if k.endswith('t') and not os.path.exists(f'{A}/gen/{k}.png'):
+            y0, y1 = TINT[k[:-1]]
+            subprocess.run([f'{REPO}/.venv/bin/python', f'{HERE}/tint.py', f'{A}/gen/{k[:-1]}.png', f'{A}/gen/{k}.png', str(y0), str(y1)], check=True)
+            shutil.copy(f'{A}/gen/{k[:-1]}_depth.png', f'{A}/gen/{k}_depth.png')
     need = [s['img'] for s in SHOTS if not os.path.exists(f'{A}/layers/{s["img"]}_fg.png')]
     if need:
         subprocess.run([f'{REPO}/.venv/bin/python', f'{HERE}/prep.py', f'{A}/gen', f'{A}/layers', *sorted(set(need))], check=True)
