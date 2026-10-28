@@ -1,0 +1,37 @@
+name: Gemini probe
+# On demand: which Gemini models can this free AI Studio key use for images/video? Lists image/video models and tries ONE
+# small image generation (separate quota from TTS). Prints only model names, status codes and error messages — never the key.
+on:
+  workflow_dispatch:
+    inputs:
+      model: { description: "Image model to try (empty = only list)", required: false, default: "" }
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe
+        env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}", MODEL: "${{ inputs.model }}", GH_TOKEN: "${{ github.token }}" }
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error, base64
+          K = os.environ['GEMINI_API_KEY']; H = {'x-goog-api-key': K, 'Content-Type': 'application/json'}
+          r = json.load(urllib.request.urlopen(urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200', headers=H)))
+          for m in r.get('models', []):
+              n = m['name']
+              if any(w in n for w in ('image', 'imagen', 'veo', 'video', 'flash')): print(n, m.get('supportedGenerationMethods'))
+          M = os.environ.get('MODEL')
+          if M:
+              body = {'contents': [{'parts': [{'text': 'A cute stylized 3D animated-film style scene: a scientist in a lab coat gently puts a tiny diving helmet on a pink pig, warm lighting, vertical 9:16'}]}],
+                      'generationConfig': {'responseModalities': ['IMAGE', 'TEXT']}}
+              try:
+                  res = json.load(urllib.request.urlopen(urllib.request.Request(f'https://generativelanguage.googleapis.com/v1beta/models/{M}:generateContent', data=json.dumps(body).encode(), headers=H), timeout=180))
+                  parts = res['candidates'][0]['content']['parts']; img = [p for p in parts if 'inlineData' in p]
+                  print('OK, image parts:', len(img))
+                  if img: os.makedirs('out', exist_ok=True); open('out/probe.png', 'wb').write(base64.b64decode(img[0]['inlineData']['data']))
+              except urllib.error.HTTPError as ex: print('HTTP', ex.code, ex.read().decode(errors='replace')[:700])
+          PY
+          if [ -f out/probe.png ]; then gh release create "probe-${{ github.run_number }}" out/probe.png --title "Gemini image probe ${{ github.run_number }}" --notes probe --latest=false; fi
