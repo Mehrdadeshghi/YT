@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Molasses flood (Zack-style AI probe)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("assets/fonts/Inter-800.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #main { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      .shot { position: absolute; inset: 0; overflow: hidden; background: #000; }
+      .cam, .shk, .rig { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      .bg, .fg { position: absolute; left: -5px; top: -1px; width: 1091px; height: 1922px; object-fit: cover; }
+      .fg { transform-origin: 50% 85%; }
+      .rivet { position: absolute; width: 26px; height: 26px; margin: -13px; border-radius: 50%; opacity: 0;
+        background: radial-gradient(circle at 35% 30%, #fff 0, #b9bcc2 22%, #4b4f57 70%, #1d1f24 100%); box-shadow: 0 0 12px rgba(255,190,90,.7); }
+      .drop { position: absolute; border-radius: 50% 50% 46% 54% / 58% 58% 42% 42%; opacity: 0;
+        background: radial-gradient(circle at 34% 28%, rgba(255,214,150,.95) 0, #8a4512 18%, #3a1604 62%, #1a0700 100%); box-shadow: 0 8px 18px rgba(0,0,0,.45); }
+      .streak { position: absolute; left: 540px; top: 960px; width: 0; height: 0; }
+      .streak i { position: absolute; left: 0; top: -2px; width: 220px; height: 4px; border-radius: 4px; opacity: 0; transform-origin: 0 50%;
+        background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.9)); }
+      .frost { position: absolute; inset: 0; opacity: 0; background: radial-gradient(ellipse at 50% 45%, rgba(200,230,255,0) 45%, rgba(210,235,255,.42) 85%, rgba(235,248,255,.7) 100%); }
+      .flake { position: absolute; border-radius: 50%; background: rgba(240,250,255,.85); box-shadow: 0 0 8px rgba(220,240,255,.9); }
+      .smell { position: absolute; top: 520px; width: 120px; height: 900px; overflow: visible; }
+      .smell path { fill: none; stroke: rgba(255,214,120,.85); stroke-width: 9; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1;
+        filter: drop-shadow(0 0 10px rgba(255,190,60,.9)); }
+      .sbar { position: absolute; width: 0; transform-origin: 50% 100%; }
+      .sbar b { position: absolute; left: -3px; top: 0; bottom: 0; width: 6px; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,.6); }
+      .sbar b::before, .sbar b::after { content: ""; position: absolute; left: -15px; width: 36px; height: 6px; background: #fff; }
+      .sbar b::before { top: 0; } .sbar b::after { bottom: 0; }
+      .sbar em { position: absolute; left: -190px; top: 46%; width: 160px; text-align: right; font: 800 46px Inter, sans-serif; font-style: normal; color: #fff;
+        text-shadow: 0 0 6px #000, 0 3px 12px rgba(0,0,0,.8); white-space: nowrap; opacity: 0; }
+      #caps { position: absolute; inset: 0; z-index: 50; pointer-events: none; }
+      .cap { position: absolute; left: 90px; right: 90px; top: 1180px; text-align: center; opacity: 0; transform-origin: 50% 50%;
+        font: 800 66px/1.1 Inter, sans-serif; color: #fff; letter-spacing: -0.01em;
+        text-shadow: 0 0 3px #000, 0 0 3px #000, 0 2px 4px #000, 0 4px 18px rgba(0,0,0,.75); }
+    </style>
+  </head>
+  <body>
+    <div id="main" data-composition-id="main" data-start="0" data-duration="35.85" data-width="1080" data-height="1920" data-fps="30">
+      <div id="sh0" class="clip shot" data-start="0.000" data-duration="2.360" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div id="c0" class="cam"><div id="k0" class="shk"><div id="r0" class="rig">
+          <img id="b0" class="bg" src="assets/layers/s16_29_bg.jpg" alt="" />
+          <img id="f0" class="fg" src="assets/layers/s16_29_fg.png" alt="" />
+
+        </div></div></div>
+      </div>
+      <div id="sh1" class="clip shot" data-start="2.360" data-duration="1.500" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div id="c1" class="cam"><div id="k1" class="shk"><div id="r1" class="rig">
+          <img id="b1" class="bg" src="assets/layers/s16_11_bg.jpg" alt="" />
+          <img id="f1" class="fg" src="assets/layers/s16_11_fg.png" alt="" />
+
+        </div></div></div>
+      </div>
+      <div id="sh2" class="clip shot" data-start="3.860" data-duration="1.880" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div id="c2" class="cam"><div id="k2" class="shk"><div id="r2" class="rig">
+          <img id="b2" class="bg" src="assets/layers/s01_11_bg.jpg" alt="" />
+          <img id="f2" class="fg" src="assets/layers/s01_11_fg.png" alt="" />
+          <div id="rv2_0" class="rivet" style="left:550px; top:953px"></div>
+          <div id="rv2_1" class="rivet" style="left:532px; top:1076px"></div>
+          <div id="rv2_2" class="rivet" style="left:509px; top:729px"></div>
+          <div id="rv2_3" class="rivet" style="left:502px; top:1039px"></div>
+          <div id="rv2_4" class="rivet" style="left:378px; top:980px"></div>
+          <div id="rv2_5" class="rivet" style="left:435px; top:1240px"></div>
+          <div id="rv2_6" class="rivet" style="left:578px; top:1261px"></div>
+          <div id="rv2_7" class="rivet" style="left:683px; top:761px"></div>
+          <div id="rv2_8" class="rivet" style="left:488px; top:1264px"></div>
+          <div id="rv2_9" class="rivet" style="left:500px; top:1273px"></div>
+          <div id="rv2_10" class="rivet" style="left:564px; top:1178px"></div>
+          <div id="rv2_11" class="rivet" style="left:505px; top:990px"></div>
+        </div></div></div>
+      </div>
+      <div id="sh3" class="clip shot" data-start="5.740" data-duration="1.900" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div id="c3" class="cam"><div id="k3" class="shk"><div id="r3" class="rig">
+          <img id="b3" class="bg" src="assets/layers/s02_11_bg.jpg" alt="" />
+          <img id="f3" class="fg" src="assets/layers/s02_11_fg.png" alt="" />
+          <div id="sb3" class="sbar" style="left:880px; top:420px; height:1140px"><b></b><em id="sbl3">50 ft</em></div>
+        </div></div></div>
+      </div>
+      <div id="sh4" class="clip shot" data-start="7.640" data-duration="1.160" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div id="c4" class="cam"><div id="k4" class="shk"><div id="r4" class="rig">
+          <img id="b4" class="bg" src="assets/layers/s15_11_bg.jpg" alt="" />
+          <img id="f4" class="fg" src="assets/layers/s15_11_fg.png" alt="" />
+
+        </div></div></div>
+      </div>
+      <div id="sh5" class="clip shot" data-start="8.800" data-duration="2.820" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div id="c5" class="cam"><div id="k5" class="shk"><div id="r5" class="rig">
+          <img id="b5" class="bg" src="assets/layers/s03_11_bg.jpg" alt="" />
+          <img id="f5" class="fg" src="assets/layers/s03_11_fg.png" alt="" />
+          <div id="dr5_0" class="drop" style="left:968px; top:1622px; width:82px; height:94px"></div>
+          <div id="dr5_1" class="drop" style="left:497px; top:1644px; width:47px; height:54px"></div>
+          <div id="dr5_2" class="drop" style="left:-10px; top:1764px; width:48px; height:55px"></div>
+          <div id="dr5_3" class="drop" style="left:480px; top:1824px; width:64px; height:74px"></div>
+          <div id="dr5_4" class="drop" style="left:557px; top:1459px; width:86px; height:98px"></div>
+          <div id="dr5_5" class="drop" style="left:461px; top:1499px; width:78px; height:90px"></div>
+          <div id="dr5_6" class="drop" style="left:635px; top:1473px; width:77px; height:89px"></div>
+          <div id="dr5_7" class="drop" style="left:894px; top:1679px; width:36px; height:41px"></div>
+          <div id="dr5_8" class="drop" style="left:15px; top:1838px; width:56px; height:65px"></div>
+          <div id="dr5_9" class="drop" style="left:368px; top:1576px; width:57px; height:65px"></div>
+          <div id="dr5_10" class="drop" style="left:1005px; top:1515px; width:40px; height:46px"></div>
+          <div id="dr5_11" class="drop" style="left:1009px; top:1533px; width:66px; height:76px"></div>
+          <div id="dr5_12" class="drop" style="left:984px; top:1368px; width:76px; height:87px"></div>
+          <div id="dr5_13" class="drop" style="left:623px; top:1888px; width:50px; height:58px"></div>
+        </div></div></div>
+      </div>
+      <div id="sh6" class="clip shot" data-start="11.620" data-duration="2.280" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div id="c6" class="cam"><div id="k6" class="shk"><div id="r6" class="rig">
+          <img id="b6" class="bg" src="assets/layers/s04_11_bg.jpg" alt="" />
+          <img id="f6" class="fg" src="assets/layers/s04_11_fg.png" alt="" />
+          <div id="sb6" class="sbar" style="left:860px; top:380px; height:1120px"><b></b><em id="sbl6">25 ft</em></div>
+        </div></div></div>
+      </div>
+      <div id="sh7" class="clip shot" data-start="13.900" data-duration="2.680" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div id="c7" class="cam"><div id="k7" class="shk"><div id="r7" class="rig">
+          <img id="b7" class="bg" src="assets/layers/s05_11_bg.jpg" alt="" />
+          <img id="f7" class="fg" src="assets/layers/s05_11_fg.png" alt="" />
+          <div id="sp7_0" class="streak" style="transform: rotate(308deg)"><i id="spi7_0"></i></div>
+          <div id="sp7_1" class="streak" style="transform: rotate(214deg)"><i id="spi7_1"></i></div>
+          <div id="sp7_2" class="streak" style="transform: rotate(267deg)"><i id="spi7_2"></i></div>
+          <div id="sp7_3" class="streak" style="transform: rotate(81deg)"><i id="spi7_3"></i></div>
+          <div id="sp7_4" class="streak" style="transform: rotate(228deg)"><i id="spi7_4"></i></div>
+          <div id="sp7_5" class="streak" style="transform: rotate(161deg)"><i id="spi7_5"></i></div>
+          <div id="sp7_6" class="streak" style="transform: rotate(325deg)"><i id="spi7_6"></i></div>
+          <div id="sp7_7" class="streak" style="transform: rotate(157deg)"><i id="spi7_7"></i></div>
+          <div id="sp7_8" class="streak" style="transform: rotate(333deg)"><i id="spi7_8"></i></div>
+          <div id="sp7_9" class="streak" style="transform: rotate(44deg)"><i id="spi7_9"></i></div>
+          <div id="sp7_10" class="streak" style="transform: rotate(228deg)"><i id="spi7_10"></i></div>
+          <div id="sp7_11" class="streak" style="transform: rotate(339deg)"><i id="spi7_11"></i></div>
+          <div id="sp7_12" class="streak" style="transform: rotate(106deg)"><i id="spi7_12"></i></div>
+          <div id="sp7_13" class="streak" style="transform: rotate(10deg)"><i id="spi7_13"></i></div>
+          <div id="sp7_14" class="streak" style="transform: rotate(33deg)"><i id="spi7_14"></i></div>
+          <div id="sp7_15" class="streak" style="transform: rotate(18deg)"><i id="spi7_15"></i></div>
+          <div id="sp7_16" class="streak" style="transform: rotate(44deg)"><i id="spi7_16"></i></div>
+          <div id="sp7_17" class="streak" style="transform: rotate(274deg)"><i id="spi7_17"></i></div>
+          <div id="sp7_18" class="streak" style="transform: rotate(12deg)"><i id="spi7_18"></i></div>
+          <div id="sp7_19" class="streak" style="transform: rotate(313deg)"><i id="spi7_19"></i></div>
+          <div id="sp7_20" class="streak" style="transform: rotate(66deg)"><i id="spi7_20"></i></div>
+          <div id="sp7_21" class="streak" style="transform: rotate(186deg)"><i id="spi7_21"></i></div>
+          <div id="sp7_22" class="streak" style="transform: rotate(219deg)"><i id="spi7_22"></i></div>
+          <div id="sp7_23" class="streak" style="transform: rotate(282deg)"><i id="spi7_23"></i></div>
+          <div id="sp7_24" class="streak" style="transform: rotate(41deg)"><i id="spi7_24"></i></div>
+          <div id="sp7_25" class="streak" style="transform: rotate(115deg)"><i id="spi7_25"></i></div>
+        </div></div></div>
+      </div>
+      <div id="sh8" class="clip shot" data-start="16.580" data-duration="1.760" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div id="c8" class="cam"><div id="k8" class="shk"><div id="r8" class="rig">
+          <img id="b8" class="bg" src="assets/layers/s13_11_bg.jpg" alt="" />
+          <img id="f8" class="fg" src="assets/layers/s13_11_fg.png" alt="" />
+          <div id="dr8_0" class="drop" style="left:1033px; top:1504px; width:71px; height:82px"></div>
+          <div id="dr8_1" class="drop" style="left:936px; top:1655px; width:33px; height:38px"></div>
+          <div id="dr8_2" class="drop" style="left:193px; top:1388px; width:29px; height:33px"></div>
+          <div id="dr8_3" class="drop" style="left:928px; top:1389px; width:40px; height:46px"></div>
+          <div id="dr8_4" class="drop" style="left:453px; top:1505px; width:84px; height:96px"></div>
+          <div id="dr8_5" class="drop" style="left:692px; top:1846px; width:63px; height:72px"></div>
+          <div id="dr8_6" class="drop" style="left:104px; top:1336px; width:58px; height:67px"></div>
+          <div id="dr8_7" class="drop" style="left:553px; top:1845px; width:83px; height:95px"></div>
+          <div id="dr8_8" class="drop" style="left:37px; top:1332px; width:36px; height:41px"></div>
+          <div id="dr8_9" class="drop" style="left:532px; top:1709px; width:37px; height:42px"></div>
+          <div id="dr8_10" class="drop" style="left:654px; top:1717px; width:61px; height:71px"></div>
+          <div id="dr8_11" class="drop" style="left:317px; top:1870px; width:73px; height:84px"></div>
+          <div id="dr8_12" class="drop" style="left:1064px; top:1506px; width:73px; height:84px"></div>
+          <div id="dr8_13" class="drop" style="left:868px; top:1540px; width:27px; height:31px"></div>
+        </div></div></div>
+      </div>
+      <div id="sh9" class="clip shot" data-start="18.340" data-duration="1.860" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div id="c9" class="cam"><div id="k9" class="shk"><div id="r9" class="rig">
+          <img id="b9" class="bg" src="assets/layers/s06_11_bg.jpg" alt="" />
+          <img id="f9" class="fg" src="assets/layers/s06_11_fg.png" alt="" />
+
+        </div></div></div>
+      </div>
+      <div id="sh10" class="clip shot" data-start="20.200" data-duration="2.780" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div id="c10" class="cam"><div id="k10" class="shk"><div id="r10" class="rig">
+          <img id="b10" class="bg" src="assets/layers/s08_11_bg.jpg" alt="" />
+          <img id="f10" class="fg" src="assets/layers/s08_11_fg.png" alt="" />
+          <div id="fr10" class="frost"></div>
+          <div id="fz10_0" class="flake" style="left:725px; top:1645px; width:6px; height:6px"></div>
+          <div id="fz10_1" class="flake" style="left:177px; top:839px; width:10px; height:10px"></div>
+          <div id="fz10_2" class="flake" style="left:551px; top:970px; width:12px; height:12px"></div>
+          <div id="fz10_3" class="flake" style="left:516px; top:1479px; width:7px; height:7px"></div>
+          <div id="fz10_4" class="flake" style="left:596px; top:548px; width:10px; height:10px"></div>
+          <div id="fz10_5" class="flake" style="left:982px; top:1917px; width:10px; height:10px"></div>
+          <div id="fz10_6" class="flake" style="left:206px; top:832px; width:10px; height:10px"></div>
+          <div id="fz10_7" class="flake" style="left:1000px; top:54px; width:8px; height:8px"></div>
+          <div id="fz10_8" class="flake" style="left:57px; top:1668px; width:6px; height:6px"></div>
+          <div id="fz10_9" class="flake" style="left:614px; top:457px; width:8px; height:8px"></div>
+          <div id="fz10_10" class="flake" style="left:1030px; top:171px; width:8px; height:8px"></div>
+          <div id="fz10_11" class="flake" style="left:194px; top:1199px; width:10px; height:10px"></div>
+          <div id="fz10_12" class="flake" style="left:27px; top:89px; width:9px; height:9px"></div>
+          <div id="fz10_13" class="flake" style="left:1054px; top:1596px; width:11px; height:11px"></div>
+          <div id="fz10_14" class="flake" style="left:524px; top:848px; width:11px; height:11px"></div>
+          <div id="fz10_15" class="flake" style="left:116px; top:0px; width:9px; height:9px"></div>
+          <div id="fz10_16" class="flake" style="left:585px; top:1222px; width:4px; height:4px"></div>
+          <div id="fz10_17" class="flake" style="left:260px; top:409px; width:9px; height:9px"></div>
+          <div id="fz10_18" class="flake" style="left:343px; top:1037px; width:6px; height:6px"></div>
+          <div id="fz10_19" class="flake" style="left:481px; top:1209px; width:9px; height:9px"></div>
+          <div id="fz10_20" class="flake" style="left:258px; top:919px; width:11px; height:11px"></div>
+          <div id="fz10_21" class="flake" style="left:265px; top:1569px; width:6px; height:6px"></div>
+          <div id="fz10_22" class="flake" style="left:759px; top:994px; width:7px; height:7px"></div>
+          <div id="fz10_23" class="flake" style="left:601px; top:1231px; width:7px; height:7px"></div>
+          <div id="fz10_24" class="flake" style="left:786px; top:940px; width:4px; height:4px"></div>
+          <div id="fz10_25" class="flake" style="left:776px; top:134px; width:8px; height:8px"></div>
+          <div id="fz10_26" class="flake" style="left:48px; top:1710px; width:10px; height:10px"></div>
+          <div id="fz10_27" class="flake" style="left:498px; top:781px; width:5px; height:5px"></div>
+          <div id="fz10_28" class="flake" style="left:310px; top:1737px; width:7px; height:7px"></div>
+          <div id="fz10_29" class="flake" style="left:559px; top:511px; width:5px; height:5px"></div>
+        </div></div></div>
+      </div>
+      <div id="sh11" class="clip shot" data-start="22.980" data-duration="1.340" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div id="c11" class="cam"><div id="k11" class="shk"><div id="r11" class="rig">
+          <img id="b11" class="bg" src="assets/layers/s09_11_bg.jpg" alt="" />
+          <img id="f11" class="fg" src="assets/layers/s09_11_fg.png" alt="" />
+          <div id="fr11" class="frost"></div>
+          <div id="fz11_0" class="flake" style="left:396px; top:59px; width:5px; height:5px"></div>
+          <div id="fz11_1" class="flake" style="left:478px; top:970px; width:5px; height:5px"></div>
+          <div id="fz11_2" class="flake" style="left:860px; top:729px; width:9px; height:9px"></div>
+          <div id="fz11_3" class="flake" style="left:464px; top:1093px; width:8px; height:8px"></div>
+          <div id="fz11_4" class="flake" style="left:894px; top:1028px; width:9px; height:9px"></div>
+          <div id="fz11_5" class="flake" style="left:774px; top:185px; width:11px; height:11px"></div>
+          <div id="fz11_6" class="flake" style="left:1039px; top:251px; width:10px; height:10px"></div>
+          <div id="fz11_7" class="flake" style="left:274px; top:359px; width:8px; height:8px"></div>
+          <div id="fz11_8" class="flake" style="left:60px; top:318px; width:5px; height:5px"></div>
+          <div id="fz11_9" class="flake" style="left:205px; top:1017px; width:6px; height:6px"></div>
+          <div id="fz11_10" class="flake" style="left:40px; top:865px; width:5px; height:5px"></div>
+          <div id="fz11_11" class="flake" style="left:147px; top:933px; width:8px; height:8px"></div>
+          <div id="fz11_12" class="flake" style="left:362px; top:859px; width:10px; height:10px"></div>
+          <div id="fz11_13" class="flake" style="left:834px; top:1209px; width:5px; height:5px"></div>
+          <div id="fz11_14" class="flake" style="left:42px; top:1901px; width:9px; height:9px"></div>
+          <div id="fz11_15" class="flake" style="left:854px; top:444px; width:7px; height:7px"></div>
+          <div id="fz11_16" class="flake" style="left:151px; top:859px; width:11px; height:11px"></div>
+          <div id="fz11_17" class="flake" style="left:179px; top:292px; width:11px; height:11px"></div>
+          <div id="fz11_18" class="flake" style="left:264px; top:691px; width:12px; height:12px"></div>
+          <div id="fz11_19" class="flake" style="left:670px; top:756px; width:9px; height:9px"></div>
+          <div id="fz11_20" class="flake" style="left:865px; top:1360px; width:6px; height:6px"></div>
+          <div id="fz11_21" class="flake" style="left:641px; top:991px; width:7px; height:7px"></div>
+          <div id="fz11_22" class="flake" style="left:770px; top:351px; width:6px; height:6px"></div>
+          <div id="fz11_23" class="flake" style="left:642px; top:617px; width:10px; height:10px"></div>
+          <div id="fz11_24" class="flake" style="left:647px; top:1575px; width:10px; height:10px"></div>
+          <div id="fz11_25" class="flake" style="left:948px; top:1481px; width:8px; height:8px"></div>
+          <div id="fz11_26" class="flake" style="left:679px; top:1136px; width:7px; height:7px"></div>
+          <div id="fz11_27" class="flake" style="left:897px; top:1287px; width:11px; height:11px"></div>
+          <div id="fz11_28" class="flake" style="left:933px; top:716px; width:8px; height:8px"></div>
+          <div id="fz11_29" class="flake" style="left:11px; top:236px; width:7px; height:7px"></div>
+        </div></div></div>
+      </div>
+      <div id="sh12" class="clip shot" data-start="24.320" data-duration="1.200" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div id="c12" class="cam"><div id="k12" class="shk"><div id="r12" class="rig">
+          <img id="b12" class="bg" src="assets/layers/s10_11_bg.jpg" alt="" />
+          <img id="f12" class="fg" src="assets/layers/s10_11_fg.png" alt="" />
+          <div id="fr12" class="frost"></div>
+          <div id="fz12_0" class="flake" style="left:366px; top:278px; width:6px; height:6px"></div>
+          <div id="fz12_1" class="flake" style="left:919px; top:1024px; width:6px; height:6px"></div>
+          <div id="fz12_2" class="flake" style="left:431px; top:1767px; width:8px; height:8px"></div>
+          <div id="fz12_3" class="flake" style="left:523px; top:692px; width:5px; height:5px"></div>
+          <div id="fz12_4" class="flake" style="left:605px; top:242px; width:9px; height:9px"></div>
+          <div id="fz12_5" class="flake" style="left:787px; top:1916px; width:11px; height:11px"></div>
+          <div id="fz12_6" class="flake" style="left:983px; top:981px; width:6px; height:6px"></div>
+          <div id="fz12_7" class="flake" style="left:216px; top:1788px; width:11px; height:11px"></div>
+          <div id="fz12_8" class="flake" style="left:544px; top:1669px; width:9px; height:9px"></div>
+          <div id="fz12_9" class="flake" style="left:589px; top:1290px; width:7px; height:7px"></div>
+          <div id="fz12_10" class="flake" style="left:102px; top:1517px; width:9px; height:9px"></div>
+          <div id="fz12_11" class="flake" style="left:760px; top:54px; width:10px; height:10px"></div>
+          <div id="fz12_12" class="flake" style="left:755px; top:1618px; width:4px; height:4px"></div>
+          <div id="fz12_13" class="flake" style="left:826px; top:1191px; width:10px; height:10px"></div>
+          <div id="fz12_14" class="flake" style="left:553px; top:142px; width:9px; height:9px"></div>
+          <div id="fz12_15" class="flake" style="left:425px; top:242px; width:6px; height:6px"></div>
+          <div id="fz12_16" class="flake" style="left:641px; top:1422px; width:12px; height:12px"></div>
+          <div id="fz12_17" class="flake" style="left:241px; top:1743px; width:7px; height:7px"></div>
+          <div id="fz12_18" class="flake" style="left:383px; top:1907px; width:11px; height:11px"></div>
+          <div id="fz12_19" class="flake" style="left:1075px; top:1353px; width:9px; height:9px"></div>
+          <div id="fz12_20" class="flake" style="left:482px; top:629px; width:7px; height:7px"></div>
+          <div id="fz12_21" class="flake" style="left:891px; top:1259px; width:4px; height:4px"></div>
+          <div id="fz12_22" class="flake" style="left:917px; top:1636px; width:8px; height:8px"></div>
+          <div id="fz12_23" class="flake" style="left:736px; top:1529px; width:11px; height:11px"></div>
+          <div id="fz12_24" class="flake" style="left:806px; top:1118px; width:12px; height:12px"></div>
+          <div id="fz12_25" class="flake" style="left:570px; top:587px; width:12px; height:12px"></div>
+          <div id="fz12_26" class="flake" style="left:58px; top:496px; width:11px; height:11px"></div>
+          <div id="fz12_27" class="flake" style="left:537px; top:1516px; width:12px; height:12px"></div>
+          <div id="fz12_28" class="flake" style="left:476px; top:180px; width:8px; height:8px"></div>
+          <div id="fz12_29" class="flake" style="left:26px; top:1453px; width:8px; height:8px"></div>
+        </div></div></div>
+      </div>
+      <div id="sh13" class="clip shot" data-start="25.520" data-duration="2.940" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div id="c13" class="cam"><div id="k13" class="shk"><div id="r13" class="rig">
+          <img id="b13" class="bg" src="assets/layers/s11_11_bg.jpg" alt="" />
+          <img id="f13" class="fg" src="assets/layers/s11_11_fg.png" alt="" />
+
+        </div></div></div>
+      </div>
+      <div id="sh14" class="clip shot" data-start="28.460" data-duration="1.660" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div id="c14" class="cam"><div id="k14" class="shk"><div id="r14" class="rig">
+          <img id="b14" class="bg" src="assets/layers/s12_11_bg.jpg" alt="" />
+          <img id="f14" class="fg" src="assets/layers/s12_11_fg.png" alt="" />
+
+        </div></div></div>
+      </div>
+      <div id="sh15" class="clip shot" data-start="30.120" data-duration="1.940" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div id="c15" class="cam"><div id="k15" class="shk"><div id="r15" class="rig">
+          <img id="b15" class="bg" src="assets/layers/s14_11_bg.jpg" alt="" />
+          <img id="f15" class="fg" src="assets/layers/s14_11_fg.png" alt="" />
+          <svg id="sm15_0" class="smell" style="left:250px" viewBox="0 0 120 900"><path pathLength="1" d="M60 900 C 0 780, 120 690, 60 570 S 0 360, 60 240 S 120 60, 60 0"/></svg>
+          <svg id="sm15_1" class="smell" style="left:510px" viewBox="0 0 120 900"><path pathLength="1" d="M60 900 C 0 780, 120 690, 60 570 S 0 360, 60 240 S 120 60, 60 0"/></svg>
+          <svg id="sm15_2" class="smell" style="left:770px" viewBox="0 0 120 900"><path pathLength="1" d="M60 900 C 0 780, 120 690, 60 570 S 0 360, 60 240 S 120 60, 60 0"/></svg>
+        </div></div></div>
+      </div>
+      <div id="sh16" class="clip shot" data-start="32.060" data-duration="2.140" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div id="c16" class="cam"><div id="k16" class="shk"><div id="r16" class="rig">
+          <img id="b16" class="bg" src="assets/layers/s14_29_bg.jpg" alt="" />
+          <img id="f16" class="fg" src="assets/layers/s14_29_fg.png" alt="" />
+          <svg id="sm16_0" class="smell" style="left:250px" viewBox="0 0 120 900"><path pathLength="1" d="M60 900 C 0 780, 120 690, 60 570 S 0 360, 60 240 S 120 60, 60 0"/></svg>
+          <svg id="sm16_1" class="smell" style="left:510px" viewBox="0 0 120 900"><path pathLength="1" d="M60 900 C 0 780, 120 690, 60 570 S 0 360, 60 240 S 120 60, 60 0"/></svg>
+          <svg id="sm16_2" class="smell" style="left:770px" viewBox="0 0 120 900"><path pathLength="1" d="M60 900 C 0 780, 120 690, 60 570 S 0 360, 60 240 S 120 60, 60 0"/></svg>
+        </div></div></div>
+      </div>
+      <div id="sh17" class="clip shot" data-start="34.200" data-duration="1.650" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div id="c17" class="cam"><div id="k17" class="shk"><div id="r17" class="rig">
+          <img id="b17" class="bg" src="assets/layers/s07_11_bg.jpg" alt="" />
+          <img id="f17" class="fg" src="assets/layers/s07_11_fg.png" alt="" />
+          <div id="dr17_0" class="drop" style="left:664px; top:1414px; width:32px; height:37px"></div>
+          <div id="dr17_1" class="drop" style="left:-49px; top:1471px; width:57px; height:65px"></div>
+          <div id="dr17_2" class="drop" style="left:238px; top:1739px; width:56px; height:64px"></div>
+          <div id="dr17_3" class="drop" style="left:92px; top:1846px; width:34px; height:39px"></div>
+          <div id="dr17_4" class="drop" style="left:377px; top:1474px; width:30px; height:35px"></div>
+          <div id="dr17_5" class="drop" style="left:-11px; top:1420px; width:61px; height:70px"></div>
+          <div id="dr17_6" class="drop" style="left:57px; top:1375px; width:44px; height:51px"></div>
+          <div id="dr17_7" class="drop" style="left:960px; top:1726px; width:73px; height:84px"></div>
+          <div id="dr17_8" class="drop" style="left:563px; top:1306px; width:67px; height:77px"></div>
+          <div id="dr17_9" class="drop" style="left:615px; top:1785px; width:36px; height:41px"></div>
+          <div id="dr17_10" class="drop" style="left:576px; top:1845px; width:77px; height:89px"></div>
+          <div id="dr17_11" class="drop" style="left:648px; top:1628px; width:78px; height:89px"></div>
+          <div id="dr17_12" class="drop" style="left:693px; top:1700px; width:42px; height:48px"></div>
+          <div id="dr17_13" class="drop" style="left:10px; top:1671px; width:43px; height:49px"></div>
+        </div></div></div>
+      </div>
+      <div id="caps" class="clip" data-start="0" data-duration="35.85" data-track-index="5" data-track-kind="captions">
+        <div id="cp0" class="cap">Lunchtime in Boston</div>
+        <div id="cp1" class="cap">1919</div>
+        <div id="cp2" class="cap">and the ground</div>
+        <div id="cp3" class="cap">starts shaking</div>
+        <div id="cp4" class="cap">Rivets fire out</div>
+        <div id="cp5" class="cap">like a</div>
+        <div id="cp6" class="cap">machine gun</div>
+        <div id="cp7" class="cap">A steel tank</div>
+        <div id="cp8" class="cap">50 feet tall</div>
+        <div id="cp9" class="cap">splits open</div>
+        <div id="cp10" class="cap">and 2.3 million gallons</div>
+        <div id="cp11" class="cap">of molasses</div>
+        <div id="cp12" class="cap">pour out</div>
+        <div id="cp13" class="cap">A brown wave</div>
+        <div id="cp14" class="cap">25 feet high</div>
+        <div id="cp15" class="cap">rolls down the</div>
+        <div id="cp16" class="cap">street at 35</div>
+        <div id="cp17" class="cap">miles an hour</div>
+        <div id="cp18" class="cap">It throws a</div>
+        <div id="cp19" class="cap">truck into the</div>
+        <div id="cp20" class="cap">harbor and knocks</div>
+        <div id="cp21" class="cap">a streetcar off</div>
+        <div id="cp22" class="cap">its tracks</div>
+        <div id="cp23" class="cap">Then the cold</div>
+        <div id="cp24" class="cap">hits it</div>
+        <div id="cp25" class="cap">The syrup turns</div>
+        <div id="cp26" class="cap">thick as glue</div>
+        <div id="cp27" class="cap">and the more</div>
+        <div id="cp28" class="cap">people struggle</div>
+        <div id="cp29" class="cap">the deeper</div>
+        <div id="cp30" class="cap">they sink</div>
+        <div id="cp31" class="cap">Rescuers wade</div>
+        <div id="cp32" class="cap">in knee-deep</div>
+        <div id="cp33" class="cap">pulling survivors out</div>
+        <div id="cp34" class="cap">by hand</div>
+        <div id="cp35" class="cap">21 people died</div>
+        <div id="cp36" class="cap">And for decades</div>
+        <div id="cp37" class="cap">on hot</div>
+        <div id="cp38" class="cap">summer days</div>
+        <div id="cp39" class="cap">the whole street</div>
+        <div id="cp40" class="cap">still smelled</div>
+        <div id="cp41" class="cap">of molasses</div>
+        <div id="cp42" class="cap">Could you</div>
+        <div id="cp43" class="cap">outrun it?</div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // shot 0 s16_29 [0.00–2.36] push, enter left
+      tl.fromTo("#r0", {scale: 1.1, x: 0, y: 0}, {scale: 1.22, x: 0, y: -40, duration: 2.360, ease: "none"}, 0.000);
+      tl.fromTo("#f0", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: 4, duration: 2.360, ease: "none"}, 0.000);
+      tl.to("#c0", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 2.060);
+      // shot 1 s16_11 [2.36–3.86] push, enter left
+      tl.fromTo("#r1", {scale: 1.18, x: 0, y: 0}, {scale: 1.26, x: 0, y: 0, duration: 1.500, ease: "none"}, 2.360);
+      tl.fromTo("#f1", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: 18, duration: 1.500, ease: "none"}, 2.360);
+      tl.fromTo("#c1", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 2.360);
+      tl.to("#c1", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 3.560);
+      tl.to("#k1", {x: 10.1, y: -12.9, rotation: 0.51, duration: 0.05, ease: "sine.inOut"}, 2.360);
+      tl.to("#k1", {x: 7.3, y: -7.6, rotation: -0.09, duration: 0.05, ease: "sine.inOut"}, 2.410);
+      tl.to("#k1", {x: -14.4, y: -10.9, rotation: 0.18, duration: 0.05, ease: "sine.inOut"}, 2.460);
+      tl.to("#k1", {x: 8.3, y: -9.5, rotation: 0.22, duration: 0.05, ease: "sine.inOut"}, 2.510);
+      tl.to("#k1", {x: -3.6, y: 1.4, rotation: 0.37, duration: 0.05, ease: "sine.inOut"}, 2.560);
+      tl.to("#k1", {x: -7.8, y: -9.5, rotation: -0.08, duration: 0.05, ease: "sine.inOut"}, 2.610);
+      tl.to("#k1", {x: 13.8, y: -2.7, rotation: 0.37, duration: 0.05, ease: "sine.inOut"}, 2.660);
+      tl.to("#k1", {x: -9.2, y: 7.2, rotation: 0.38, duration: 0.05, ease: "sine.inOut"}, 2.710);
+      tl.to("#k1", {x: -3.7, y: -8.2, rotation: -0.41, duration: 0.05, ease: "sine.inOut"}, 2.760);
+      tl.to("#k1", {x: -9.7, y: -5.7, rotation: 0.10, duration: 0.05, ease: "sine.inOut"}, 2.810);
+      tl.to("#k1", {x: 10.0, y: -6.5, rotation: 0.43, duration: 0.05, ease: "sine.inOut"}, 2.860);
+      tl.to("#k1", {x: -8.7, y: 0.0, rotation: 0.24, duration: 0.05, ease: "sine.inOut"}, 2.910);
+      tl.to("#k1", {x: 10.3, y: 10.6, rotation: 0.44, duration: 0.05, ease: "sine.inOut"}, 2.960);
+      tl.to("#k1", {x: -10.5, y: 9.2, rotation: -0.47, duration: 0.05, ease: "sine.inOut"}, 3.010);
+      tl.to("#k1", {x: -1.0, y: -3.3, rotation: -0.06, duration: 0.05, ease: "sine.inOut"}, 3.060);
+      tl.to("#k1", {x: -9.9, y: -2.2, rotation: 0.16, duration: 0.05, ease: "sine.inOut"}, 3.110);
+      tl.to("#k1", {x: 4.0, y: -11.6, rotation: 0.26, duration: 0.05, ease: "sine.inOut"}, 3.160);
+      tl.to("#k1", {x: -4.3, y: 0.9, rotation: -0.17, duration: 0.05, ease: "sine.inOut"}, 3.210);
+      tl.to("#k1", {x: 3.8, y: 0.1, rotation: 0.31, duration: 0.05, ease: "sine.inOut"}, 3.260);
+      tl.to("#k1", {x: -9.7, y: -2.2, rotation: 0.40, duration: 0.05, ease: "sine.inOut"}, 3.310);
+      tl.to("#k1", {x: -10.2, y: -8.4, rotation: 0.18, duration: 0.05, ease: "sine.inOut"}, 3.360);
+      tl.to("#k1", {x: 10.0, y: -8.6, rotation: -0.24, duration: 0.05, ease: "sine.inOut"}, 3.410);
+      tl.to("#k1", {x: 3.9, y: 0.2, rotation: 0.32, duration: 0.05, ease: "sine.inOut"}, 3.460);
+      tl.to("#k1", {x: -7.4, y: -7.3, rotation: -0.22, duration: 0.05, ease: "sine.inOut"}, 3.510);
+      tl.to("#k1", {x: -1.4, y: -5.0, rotation: -0.01, duration: 0.05, ease: "sine.inOut"}, 3.560);
+      tl.to("#k1", {x: -7.7, y: 1.5, rotation: -0.13, duration: 0.05, ease: "sine.inOut"}, 3.610);
+      tl.to("#k1", {x: -5.1, y: -6.4, rotation: -0.13, duration: 0.05, ease: "sine.inOut"}, 3.660);
+      tl.to("#k1", {x: -3.6, y: 8.4, rotation: 0.10, duration: 0.05, ease: "sine.inOut"}, 3.710);
+      tl.to("#k1", {x: 6.2, y: -0.4, rotation: -0.26, duration: 0.05, ease: "sine.inOut"}, 3.760);
+      tl.to("#k1", {x: 2.1, y: 4.0, rotation: 0.30, duration: 0.05, ease: "sine.inOut"}, 3.810);
+      tl.to("#k1", {x: 0, y: 0, rotation: 0, duration: 0.08}, 3.860);
+      // shot 2 s01_11 [3.86–5.74] push, enter left
+      tl.fromTo("#r2", {scale: 1.12, x: 0, y: 0}, {scale: 1.3, x: 0, y: 0, duration: 1.880, ease: "none"}, 3.860);
+      tl.fromTo("#f2", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: 18, duration: 1.880, ease: "none"}, 3.860);
+      tl.fromTo("#c2", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 3.860);
+      tl.to("#c2", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 5.440);
+      tl.to("#k2", {x: 5.8, y: -0.1, rotation: 0.08, duration: 0.05, ease: "sine.inOut"}, 3.910);
+      tl.to("#k2", {x: -2.0, y: -5.3, rotation: -0.17, duration: 0.05, ease: "sine.inOut"}, 3.960);
+      tl.to("#k2", {x: -4.4, y: -5.1, rotation: -0.39, duration: 0.05, ease: "sine.inOut"}, 4.010);
+      tl.to("#k2", {x: -6.2, y: 0.7, rotation: -0.43, duration: 0.05, ease: "sine.inOut"}, 4.060);
+      tl.to("#k2", {x: 1.6, y: -1.7, rotation: 0.46, duration: 0.05, ease: "sine.inOut"}, 4.110);
+      tl.to("#k2", {x: 2.0, y: 3.5, rotation: 0.16, duration: 0.05, ease: "sine.inOut"}, 4.160);
+      tl.to("#k2", {x: 3.2, y: 5.6, rotation: 0.54, duration: 0.05, ease: "sine.inOut"}, 4.210);
+      tl.to("#k2", {x: -4.2, y: -2.5, rotation: -0.22, duration: 0.05, ease: "sine.inOut"}, 4.260);
+      tl.to("#k2", {x: -3.5, y: 3.3, rotation: 0.44, duration: 0.05, ease: "sine.inOut"}, 4.310);
+      tl.to("#k2", {x: -5.2, y: -4.0, rotation: 0.43, duration: 0.05, ease: "sine.inOut"}, 4.360);
+      tl.to("#k2", {x: -4.6, y: -4.9, rotation: 0.40, duration: 0.05, ease: "sine.inOut"}, 4.410);
+      tl.to("#k2", {x: -2.5, y: -5.6, rotation: 0.07, duration: 0.05, ease: "sine.inOut"}, 4.460);
+      tl.to("#k2", {x: -3.5, y: -1.3, rotation: -0.17, duration: 0.05, ease: "sine.inOut"}, 4.510);
+      tl.to("#k2", {x: 3.5, y: 4.9, rotation: 0.44, duration: 0.05, ease: "sine.inOut"}, 4.560);
+      tl.to("#k2", {x: -0.0, y: 4.6, rotation: 0.17, duration: 0.05, ease: "sine.inOut"}, 4.610);
+      tl.to("#k2", {x: 0.5, y: 1.6, rotation: 0.14, duration: 0.05, ease: "sine.inOut"}, 4.660);
+      tl.to("#k2", {x: 4.3, y: -2.5, rotation: 0.37, duration: 0.05, ease: "sine.inOut"}, 4.710);
+      tl.to("#k2", {x: 3.5, y: 1.1, rotation: 0.01, duration: 0.05, ease: "sine.inOut"}, 4.760);
+      tl.to("#k2", {x: -1.9, y: 4.6, rotation: -0.07, duration: 0.05, ease: "sine.inOut"}, 4.810);
+      tl.to("#k2", {x: -4.2, y: 4.7, rotation: 0.10, duration: 0.05, ease: "sine.inOut"}, 4.860);
+      tl.to("#k2", {x: -0.5, y: -4.6, rotation: -0.07, duration: 0.05, ease: "sine.inOut"}, 4.910);
+      tl.to("#k2", {x: 4.2, y: 4.1, rotation: -0.29, duration: 0.05, ease: "sine.inOut"}, 4.960);
+      tl.to("#k2", {x: -1.8, y: 4.4, rotation: 0.15, duration: 0.05, ease: "sine.inOut"}, 5.010);
+      tl.to("#k2", {x: 0.3, y: -3.2, rotation: 0.10, duration: 0.05, ease: "sine.inOut"}, 5.060);
+      tl.to("#k2", {x: -3.9, y: -3.9, rotation: 0.16, duration: 0.05, ease: "sine.inOut"}, 5.110);
+      tl.to("#k2", {x: -3.5, y: 4.1, rotation: -0.20, duration: 0.05, ease: "sine.inOut"}, 5.160);
+      tl.to("#k2", {x: -3.6, y: -1.2, rotation: -0.16, duration: 0.05, ease: "sine.inOut"}, 5.210);
+      tl.to("#k2", {x: 3.5, y: -0.6, rotation: -0.11, duration: 0.05, ease: "sine.inOut"}, 5.260);
+      tl.to("#k2", {x: 0.2, y: -1.6, rotation: -0.32, duration: 0.05, ease: "sine.inOut"}, 5.310);
+      tl.to("#k2", {x: -3.4, y: 1.3, rotation: 0.02, duration: 0.05, ease: "sine.inOut"}, 5.360);
+      tl.to("#k2", {x: 0, y: 0, rotation: 0, duration: 0.08}, 5.410);
+      tl.fromTo("#rv2_0", {opacity: 1, scale: 0.4, x: 0, y: 0}, {scale: 4.2, x: 100, y: 543, duration: 0.32, ease: "power2.in", immediateRender: false}, 3.950);
+      tl.set("#rv2_0", {opacity: 0}, 4.270);
+      tl.fromTo("#rv2_1", {opacity: 1, scale: 0.4, x: 0, y: 0}, {scale: 4.2, x: -567, y: -540, duration: 0.32, ease: "power2.in", immediateRender: false}, 4.070);
+      tl.set("#rv2_1", {opacity: 0}, 4.390);
+      tl.fromTo("#rv2_2", {opacity: 1, scale: 0.4, x: 0, y: 0}, {scale: 4.2, x: 125, y: 806, duration: 0.32, ease: "power2.in", immediateRender: false}, 4.190);
+      tl.set("#rv2_2", {opacity: 0}, 4.510);
+      tl.fromTo("#rv2_3", {opacity: 1, scale: 0.4, x: 0, y: 0}, {scale: 4.2, x: -358, y: -718, duration: 0.32, ease: "power2.in", immediateRender: false}, 4.310);
+      tl.set("#rv2_3", {opacity: 0}, 4.630);
+      tl.fromTo("#rv2_4", {opacity: 1, scale: 0.4, x: 0, y: 0}, {scale: 4.2, x: -502, y: -715, duration: 0.32, ease: "power2.in", immediateRender: false}, 4.430);
+      tl.set("#rv2_4", {opacity: 0}, 4.750);
+      tl.fromTo("#rv2_5", {opacity: 1, scale: 0.4, x: 0, y: 0}, {scale: 4.2, x: 413, y: -577, duration: 0.32, ease: "power2.in", immediateRender: false}, 4.550);
+      tl.set("#rv2_5", {opacity: 0}, 4.870);
+      tl.fromTo("#rv2_6", {opacity: 1, scale: 0.4, x: 0, y: 0}, {scale: 4.2, x: -573, y: 226, duration: 0.32, ease: "power2.in", immediateRender: false}, 4.670);
+      tl.set("#rv2_6", {opacity: 0}, 4.990);
+      tl.fromTo("#rv2_7", {opacity: 1, scale: 0.4, x: 0, y: 0}, {scale: 4.2, x: -148, y: -743, duration: 0.32, ease: "power2.in", immediateRender: false}, 4.790);
+      tl.set("#rv2_7", {opacity: 0}, 5.110);
+      tl.fromTo("#rv2_8", {opacity: 1, scale: 0.4, x: 0, y: 0}, {scale: 4.2, x: -435, y: -356, duration: 0.32, ease: "power2.in", immediateRender: false}, 4.910);
+      tl.set("#rv2_8", {opacity: 0}, 5.230);
+      tl.fromTo("#rv2_9", {opacity: 1, scale: 0.4, x: 0, y: 0}, {scale: 4.2, x: 709, y: 420, duration: 0.32, ease: "power2.in", immediateRender: false}, 5.030);
+      tl.set("#rv2_9", {opacity: 0}, 5.350);
+      tl.fromTo("#rv2_10", {opacity: 1, scale: 0.4, x: 0, y: 0}, {scale: 4.2, x: 470, y: -253, duration: 0.32, ease: "power2.in", immediateRender: false}, 5.150);
+      tl.set("#rv2_10", {opacity: 0}, 5.470);
+      tl.fromTo("#rv2_11", {opacity: 1, scale: 0.4, x: 0, y: 0}, {scale: 4.2, x: -834, y: 39, duration: 0.32, ease: "power2.in", immediateRender: false}, 5.270);
+      tl.set("#rv2_11", {opacity: 0}, 5.590);
+      // shot 3 s02_11 [5.74–7.64] tilt, enter left
+      tl.fromTo("#r3", {scale: 1.16, x: 0, y: 120}, {scale: 1.2, x: 0, y: -120, duration: 1.900, ease: "none"}, 5.740);
+      tl.fromTo("#f3", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: -66, duration: 1.900, ease: "none"}, 5.740);
+      tl.fromTo("#c3", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 5.740);
+      tl.to("#c3", {scale: 1.2, filter: "blur(18px)", duration: 0.21, ease: "power3.in"}, 7.430);
+      tl.to("#k3", {x: 0.7, y: -5.3, rotation: -0.26, duration: 0.05, ease: "sine.inOut"}, 5.790);
+      tl.to("#k3", {x: -1.0, y: -6.7, rotation: -0.00, duration: 0.05, ease: "sine.inOut"}, 5.840);
+      tl.to("#k3", {x: 6.1, y: -1.0, rotation: 0.39, duration: 0.05, ease: "sine.inOut"}, 5.890);
+      tl.to("#k3", {x: 6.1, y: -6.4, rotation: -0.56, duration: 0.05, ease: "sine.inOut"}, 5.940);
+      tl.to("#k3", {x: -0.8, y: 6.0, rotation: -0.05, duration: 0.05, ease: "sine.inOut"}, 5.990);
+      tl.to("#k3", {x: 3.8, y: 2.2, rotation: -0.50, duration: 0.05, ease: "sine.inOut"}, 6.040);
+      tl.to("#k3", {x: -0.4, y: 1.8, rotation: -0.37, duration: 0.05, ease: "sine.inOut"}, 6.090);
+      tl.to("#k3", {x: -4.6, y: 2.1, rotation: -0.21, duration: 0.05, ease: "sine.inOut"}, 6.140);
+      tl.to("#k3", {x: 2.3, y: -2.7, rotation: -0.44, duration: 0.05, ease: "sine.inOut"}, 6.190);
+      tl.to("#k3", {x: -1.5, y: 3.4, rotation: -0.15, duration: 0.05, ease: "sine.inOut"}, 6.240);
+      tl.to("#k3", {x: 0.5, y: 3.2, rotation: -0.22, duration: 0.05, ease: "sine.inOut"}, 6.290);
+      tl.to("#k3", {x: 4.2, y: -5.3, rotation: -0.05, duration: 0.05, ease: "sine.inOut"}, 6.340);
+      tl.to("#k3", {x: -2.9, y: -3.7, rotation: 0.39, duration: 0.05, ease: "sine.inOut"}, 6.390);
+      tl.to("#k3", {x: -3.7, y: 3.1, rotation: -0.03, duration: 0.05, ease: "sine.inOut"}, 6.440);
+      tl.to("#k3", {x: 4.8, y: 4.2, rotation: -0.45, duration: 0.05, ease: "sine.inOut"}, 6.490);
+      tl.to("#k3", {x: 4.8, y: 0.6, rotation: 0.21, duration: 0.05, ease: "sine.inOut"}, 6.540);
+      tl.to("#k3", {x: -4.1, y: 2.3, rotation: 0.20, duration: 0.05, ease: "sine.inOut"}, 6.590);
+      tl.to("#k3", {x: 4.7, y: 1.0, rotation: -0.40, duration: 0.05, ease: "sine.inOut"}, 6.640);
+      tl.to("#k3", {x: 1.5, y: 1.6, rotation: -0.32, duration: 0.05, ease: "sine.inOut"}, 6.690);
+      tl.to("#k3", {x: 3.0, y: -4.5, rotation: 0.07, duration: 0.05, ease: "sine.inOut"}, 6.740);
+      tl.to("#k3", {x: 1.2, y: 4.2, rotation: -0.27, duration: 0.05, ease: "sine.inOut"}, 6.790);
+      tl.to("#k3", {x: -2.6, y: 1.6, rotation: -0.01, duration: 0.05, ease: "sine.inOut"}, 6.840);
+      tl.to("#k3", {x: 3.8, y: -3.1, rotation: 0.12, duration: 0.05, ease: "sine.inOut"}, 6.890);
+      tl.to("#k3", {x: -2.5, y: 3.8, rotation: -0.10, duration: 0.05, ease: "sine.inOut"}, 6.940);
+      tl.to("#k3", {x: -0.7, y: 0.1, rotation: 0.32, duration: 0.05, ease: "sine.inOut"}, 6.990);
+      tl.to("#k3", {x: 2.8, y: 1.0, rotation: -0.13, duration: 0.05, ease: "sine.inOut"}, 7.040);
+      tl.to("#k3", {x: 1.0, y: 3.1, rotation: -0.02, duration: 0.05, ease: "sine.inOut"}, 7.090);
+      tl.to("#k3", {x: -2.8, y: 2.3, rotation: 0.33, duration: 0.05, ease: "sine.inOut"}, 7.140);
+      tl.to("#k3", {x: -1.6, y: -3.4, rotation: -0.12, duration: 0.05, ease: "sine.inOut"}, 7.190);
+      tl.to("#k3", {x: -2.3, y: 1.1, rotation: 0.00, duration: 0.05, ease: "sine.inOut"}, 7.240);
+      tl.to("#k3", {x: 2.5, y: -2.2, rotation: 0.09, duration: 0.05, ease: "sine.inOut"}, 7.290);
+      tl.to("#k3", {x: 0, y: 0, rotation: 0, duration: 0.08}, 7.340);
+      tl.fromTo("#sb3", {scaleY: 0}, {scaleY: 1, duration: 0.5, ease: "power3.out", immediateRender: false}, 6.640);
+      tl.fromTo("#sbl3", {opacity: 0, x: -14}, {opacity: 1, x: 0, duration: 0.2, ease: "power3.out", immediateRender: false}, 6.990);
+      // shot 4 s15_11 [7.64–8.80] push, enter push
+      tl.fromTo("#r4", {scale: 1.12, x: 0, y: 0}, {scale: 1.26, x: 0, y: 30, duration: 1.160, ease: "none"}, 7.640);
+      tl.fromTo("#f4", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: 28, duration: 1.160, ease: "none"}, 7.640);
+      tl.fromTo("#c4", {x: 0, scale: 0.84, filter: "blur(18px)"}, {scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false}, 7.640);
+      tl.to("#c4", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 8.500);
+      tl.to("#k4", {x: 0.2, y: -1.5, rotation: 0.07, duration: 0.05, ease: "sine.inOut"}, 7.640);
+      tl.to("#k4", {x: -3.6, y: 10.5, rotation: -0.40, duration: 0.05, ease: "sine.inOut"}, 7.690);
+      tl.to("#k4", {x: -1.5, y: 8.1, rotation: 0.12, duration: 0.05, ease: "sine.inOut"}, 7.740);
+      tl.to("#k4", {x: 12.1, y: -6.3, rotation: -0.16, duration: 0.05, ease: "sine.inOut"}, 7.790);
+      tl.to("#k4", {x: -5.7, y: -10.8, rotation: -0.47, duration: 0.05, ease: "sine.inOut"}, 7.840);
+      tl.to("#k4", {x: 0.4, y: -5.8, rotation: 0.09, duration: 0.05, ease: "sine.inOut"}, 7.890);
+      tl.to("#k4", {x: 12.8, y: 13.8, rotation: 0.29, duration: 0.05, ease: "sine.inOut"}, 7.940);
+      tl.to("#k4", {x: -4.6, y: -3.2, rotation: 0.41, duration: 0.05, ease: "sine.inOut"}, 7.990);
+      tl.to("#k4", {x: -7.0, y: 8.6, rotation: -0.25, duration: 0.05, ease: "sine.inOut"}, 8.040);
+      tl.to("#k4", {x: -1.3, y: 1.5, rotation: 0.44, duration: 0.05, ease: "sine.inOut"}, 8.090);
+      tl.to("#k4", {x: 5.8, y: 8.5, rotation: -0.14, duration: 0.05, ease: "sine.inOut"}, 8.140);
+      tl.to("#k4", {x: -3.7, y: 9.0, rotation: 0.08, duration: 0.05, ease: "sine.inOut"}, 8.190);
+      tl.to("#k4", {x: 5.2, y: -9.5, rotation: -0.39, duration: 0.05, ease: "sine.inOut"}, 8.240);
+      tl.to("#k4", {x: -1.7, y: -4.4, rotation: -0.20, duration: 0.05, ease: "sine.inOut"}, 8.290);
+      tl.to("#k4", {x: 7.1, y: 9.4, rotation: -0.23, duration: 0.05, ease: "sine.inOut"}, 8.340);
+      tl.to("#k4", {x: -8.7, y: -6.7, rotation: -0.26, duration: 0.05, ease: "sine.inOut"}, 8.390);
+      tl.to("#k4", {x: 4.7, y: -2.5, rotation: 0.38, duration: 0.05, ease: "sine.inOut"}, 8.440);
+      tl.to("#k4", {x: -9.8, y: 0.7, rotation: -0.28, duration: 0.05, ease: "sine.inOut"}, 8.490);
+      tl.to("#k4", {x: 6.8, y: -2.3, rotation: -0.19, duration: 0.05, ease: "sine.inOut"}, 8.540);
+      tl.to("#k4", {x: 1.6, y: 7.0, rotation: -0.34, duration: 0.05, ease: "sine.inOut"}, 8.590);
+      tl.to("#k4", {x: -4.9, y: 7.3, rotation: -0.05, duration: 0.05, ease: "sine.inOut"}, 8.640);
+      tl.to("#k4", {x: -7.1, y: 7.6, rotation: 0.29, duration: 0.05, ease: "sine.inOut"}, 8.690);
+      tl.to("#k4", {x: -1.2, y: -5.1, rotation: -0.30, duration: 0.05, ease: "sine.inOut"}, 8.740);
+      tl.to("#k4", {x: 0, y: 0, rotation: 0, duration: 0.08}, 8.790);
+      // shot 5 s03_11 [8.80–11.62] pan, enter left
+      tl.fromTo("#r5", {scale: 1.2, x: 60, y: 0}, {scale: 1.26, x: -60, y: 0, duration: 2.820, ease: "none"}, 8.800);
+      tl.fromTo("#f5", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: -42, y: 18, duration: 2.820, ease: "none"}, 8.800);
+      tl.fromTo("#c5", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 8.800);
+      tl.to("#c5", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 11.320);
+      tl.fromTo("#dr5_0", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 38, y: -1297, rotation: -26, duration: 0.9, ease: "power1.out", immediateRender: false}, 9.874);
+      tl.to("#dr5_0", {y: -797, duration: 0.6, ease: "power2.in"}, 10.774);
+      tl.fromTo("#dr5_1", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 160, y: -1185, rotation: 29, duration: 0.9, ease: "power1.out", immediateRender: false}, 10.253);
+      tl.to("#dr5_1", {y: -685, duration: 0.6, ease: "power2.in"}, 11.153);
+      tl.fromTo("#dr5_2", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -211, y: -839, rotation: -37, duration: 0.9, ease: "power1.out", immediateRender: false}, 10.080);
+      tl.to("#dr5_2", {y: -339, duration: 0.6, ease: "power2.in"}, 10.980);
+      tl.fromTo("#dr5_3", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -56, y: -914, rotation: 62, duration: 0.9, ease: "power1.out", immediateRender: false}, 9.110);
+      tl.to("#dr5_3", {y: -414, duration: 0.6, ease: "power2.in"}, 10.010);
+      tl.fromTo("#dr5_4", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 86, y: -1209, rotation: -41, duration: 0.9, ease: "power1.out", immediateRender: false}, 10.363);
+      tl.to("#dr5_4", {y: -709, duration: 0.6, ease: "power2.in"}, 11.263);
+      tl.fromTo("#dr5_5", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 50, y: -1297, rotation: 59, duration: 0.9, ease: "power1.out", immediateRender: false}, 10.119);
+      tl.to("#dr5_5", {y: -797, duration: 0.6, ease: "power2.in"}, 11.019);
+      tl.fromTo("#dr5_6", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 165, y: -814, rotation: 77, duration: 0.9, ease: "power1.out", immediateRender: false}, 8.889);
+      tl.to("#dr5_6", {y: -314, duration: 0.6, ease: "power2.in"}, 9.789);
+      tl.fromTo("#dr5_7", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 15, y: -975, rotation: -82, duration: 0.9, ease: "power1.out", immediateRender: false}, 9.989);
+      tl.to("#dr5_7", {y: -475, duration: 0.6, ease: "power2.in"}, 10.889);
+      tl.fromTo("#dr5_8", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -161, y: -906, rotation: -50, duration: 0.9, ease: "power1.out", immediateRender: false}, 9.117);
+      tl.to("#dr5_8", {y: -406, duration: 0.6, ease: "power2.in"}, 10.017);
+      tl.fromTo("#dr5_9", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 238, y: -720, rotation: -12, duration: 0.9, ease: "power1.out", immediateRender: false}, 9.472);
+      tl.to("#dr5_9", {y: -220, duration: 0.6, ease: "power2.in"}, 10.372);
+      tl.fromTo("#dr5_10", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 191, y: -823, rotation: 18, duration: 0.9, ease: "power1.out", immediateRender: false}, 9.377);
+      tl.to("#dr5_10", {y: -323, duration: 0.6, ease: "power2.in"}, 10.277);
+      tl.fromTo("#dr5_11", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -69, y: -728, rotation: 63, duration: 0.9, ease: "power1.out", immediateRender: false}, 10.289);
+      tl.to("#dr5_11", {y: -228, duration: 0.6, ease: "power2.in"}, 11.189);
+      tl.fromTo("#dr5_12", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -244, y: -724, rotation: 41, duration: 0.9, ease: "power1.out", immediateRender: false}, 10.737);
+      tl.to("#dr5_12", {y: -224, duration: 0.6, ease: "power2.in"}, 11.637);
+      tl.fromTo("#dr5_13", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 66, y: -1195, rotation: -5, duration: 0.9, ease: "power1.out", immediateRender: false}, 10.237);
+      tl.to("#dr5_13", {y: -695, duration: 0.6, ease: "power2.in"}, 11.137);
+      // shot 6 s04_11 [11.62–13.90] tilt, enter left
+      tl.fromTo("#r6", {scale: 1.14, x: 0, y: 90}, {scale: 1.2, x: 0, y: -90, duration: 2.280, ease: "none"}, 11.620);
+      tl.fromTo("#f6", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: -45, duration: 2.280, ease: "none"}, 11.620);
+      tl.fromTo("#c6", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 11.620);
+      tl.to("#c6", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 13.600);
+      tl.fromTo("#sb6", {scaleY: 0}, {scaleY: 1, duration: 0.5, ease: "power3.out", immediateRender: false}, 12.620);
+      tl.fromTo("#sbl6", {opacity: 0, x: -14}, {opacity: 1, x: 0, duration: 0.2, ease: "power3.out", immediateRender: false}, 12.970);
+      // shot 7 s05_11 [13.90–16.58] push, enter left
+      tl.fromTo("#r7", {scale: 1.1, x: 0, y: 0}, {scale: 1.34, x: 0, y: 0, duration: 2.680, ease: "none"}, 13.900);
+      tl.fromTo("#f7", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: 18, duration: 2.680, ease: "none"}, 13.900);
+      tl.fromTo("#c7", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 13.900);
+      tl.to("#c7", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 16.280);
+      tl.fromTo("#spi7_0", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 15.645);
+      tl.set("#spi7_0", {opacity: 0}, 16.065);
+      tl.fromTo("#spi7_1", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 15.834);
+      tl.set("#spi7_1", {opacity: 0}, 16.254);
+      tl.fromTo("#spi7_2", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 15.665);
+      tl.set("#spi7_2", {opacity: 0}, 16.085);
+      tl.fromTo("#spi7_3", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 16.028);
+      tl.set("#spi7_3", {opacity: 0}, 16.448);
+      tl.fromTo("#spi7_4", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 15.117);
+      tl.set("#spi7_4", {opacity: 0}, 15.537);
+      tl.fromTo("#spi7_5", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 14.518);
+      tl.set("#spi7_5", {opacity: 0}, 14.938);
+      tl.fromTo("#spi7_6", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 13.971);
+      tl.set("#spi7_6", {opacity: 0}, 14.391);
+      tl.fromTo("#spi7_7", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 14.311);
+      tl.set("#spi7_7", {opacity: 0}, 14.731);
+      tl.fromTo("#spi7_8", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 15.865);
+      tl.set("#spi7_8", {opacity: 0}, 16.285);
+      tl.fromTo("#spi7_9", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 15.900);
+      tl.set("#spi7_9", {opacity: 0}, 16.320);
+      tl.fromTo("#spi7_10", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 15.844);
+      tl.set("#spi7_10", {opacity: 0}, 16.264);
+      tl.fromTo("#spi7_11", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 15.311);
+      tl.set("#spi7_11", {opacity: 0}, 15.731);
+      tl.fromTo("#spi7_12", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 14.397);
+      tl.set("#spi7_12", {opacity: 0}, 14.817);
+      tl.fromTo("#spi7_13", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 15.145);
+      tl.set("#spi7_13", {opacity: 0}, 15.565);
+      tl.fromTo("#spi7_14", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 16.021);
+      tl.set("#spi7_14", {opacity: 0}, 16.441);
+      tl.fromTo("#spi7_15", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 15.680);
+      tl.set("#spi7_15", {opacity: 0}, 16.100);
+      tl.fromTo("#spi7_16", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 14.758);
+      tl.set("#spi7_16", {opacity: 0}, 15.178);
+      tl.fromTo("#spi7_17", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 14.482);
+      tl.set("#spi7_17", {opacity: 0}, 14.902);
+      tl.fromTo("#spi7_18", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 14.490);
+      tl.set("#spi7_18", {opacity: 0}, 14.910);
+      tl.fromTo("#spi7_19", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 15.821);
+      tl.set("#spi7_19", {opacity: 0}, 16.241);
+      tl.fromTo("#spi7_20", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 14.339);
+      tl.set("#spi7_20", {opacity: 0}, 14.759);
+      tl.fromTo("#spi7_21", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 14.980);
+      tl.set("#spi7_21", {opacity: 0}, 15.400);
+      tl.fromTo("#spi7_22", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 15.862);
+      tl.set("#spi7_22", {opacity: 0}, 16.282);
+      tl.fromTo("#spi7_23", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 14.948);
+      tl.set("#spi7_23", {opacity: 0}, 15.368);
+      tl.fromTo("#spi7_24", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 14.053);
+      tl.set("#spi7_24", {opacity: 0}, 14.473);
+      tl.fromTo("#spi7_25", {x: 140, opacity: 0.0, scaleX: 0.3}, {x: 900, opacity: 0.85, scaleX: 1.6, duration: 0.42, ease: "power2.in", immediateRender: false}, 13.916);
+      tl.set("#spi7_25", {opacity: 0}, 14.336);
+      // shot 8 s13_11 [16.58–18.34] pan, enter left
+      tl.fromTo("#r8", {scale: 1.18, x: 70, y: 0}, {scale: 1.24, x: -70, y: 0, duration: 1.760, ease: "none"}, 16.580);
+      tl.fromTo("#f8", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: -49, y: 18, duration: 1.760, ease: "none"}, 16.580);
+      tl.fromTo("#c8", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 16.580);
+      tl.to("#c8", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 18.040);
+      tl.fromTo("#dr8_0", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 221, y: -730, rotation: 29, duration: 0.9, ease: "power1.out", immediateRender: false}, 17.181);
+      tl.to("#dr8_0", {y: -230, duration: 0.6, ease: "power2.in"}, 18.081);
+      tl.fromTo("#dr8_1", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -81, y: -707, rotation: 52, duration: 0.9, ease: "power1.out", immediateRender: false}, 17.507);
+      tl.to("#dr8_1", {y: -207, duration: 0.6, ease: "power2.in"}, 18.407);
+      tl.fromTo("#dr8_2", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -185, y: -762, rotation: -49, duration: 0.9, ease: "power1.out", immediateRender: false}, 16.977);
+      tl.to("#dr8_2", {y: -262, duration: 0.6, ease: "power2.in"}, 17.877);
+      tl.fromTo("#dr8_3", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -131, y: -838, rotation: 59, duration: 0.9, ease: "power1.out", immediateRender: false}, 17.001);
+      tl.to("#dr8_3", {y: -338, duration: 0.6, ease: "power2.in"}, 17.901);
+      tl.fromTo("#dr8_4", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -31, y: -975, rotation: 12, duration: 0.9, ease: "power1.out", immediateRender: false}, 17.095);
+      tl.to("#dr8_4", {y: -475, duration: 0.6, ease: "power2.in"}, 17.995);
+      tl.fromTo("#dr8_5", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -44, y: -915, rotation: 7, duration: 0.9, ease: "power1.out", immediateRender: false}, 17.343);
+      tl.to("#dr8_5", {y: -415, duration: 0.6, ease: "power2.in"}, 18.243);
+      tl.fromTo("#dr8_6", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -94, y: -1162, rotation: -3, duration: 0.9, ease: "power1.out", immediateRender: false}, 16.886);
+      tl.to("#dr8_6", {y: -662, duration: 0.6, ease: "power2.in"}, 17.786);
+      tl.fromTo("#dr8_7", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 119, y: -761, rotation: 50, duration: 0.9, ease: "power1.out", immediateRender: false}, 17.121);
+      tl.to("#dr8_7", {y: -261, duration: 0.6, ease: "power2.in"}, 18.021);
+      tl.fromTo("#dr8_8", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -35, y: -1080, rotation: -46, duration: 0.9, ease: "power1.out", immediateRender: false}, 16.911);
+      tl.to("#dr8_8", {y: -580, duration: 0.6, ease: "power2.in"}, 17.811);
+      tl.fromTo("#dr8_9", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 137, y: -889, rotation: -16, duration: 0.9, ease: "power1.out", immediateRender: false}, 17.583);
+      tl.to("#dr8_9", {y: -389, duration: 0.6, ease: "power2.in"}, 18.483);
+      tl.fromTo("#dr8_10", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -185, y: -930, rotation: -53, duration: 0.9, ease: "power1.out", immediateRender: false}, 16.654);
+      tl.to("#dr8_10", {y: -430, duration: 0.6, ease: "power2.in"}, 17.554);
+      tl.fromTo("#dr8_11", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 121, y: -1050, rotation: -43, duration: 0.9, ease: "power1.out", immediateRender: false}, 17.523);
+      tl.to("#dr8_11", {y: -550, duration: 0.6, ease: "power2.in"}, 18.423);
+      tl.fromTo("#dr8_12", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -134, y: -1183, rotation: -45, duration: 0.9, ease: "power1.out", immediateRender: false}, 17.376);
+      tl.to("#dr8_12", {y: -683, duration: 0.6, ease: "power2.in"}, 18.276);
+      tl.fromTo("#dr8_13", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 62, y: -800, rotation: -13, duration: 0.9, ease: "power1.out", immediateRender: false}, 17.387);
+      tl.to("#dr8_13", {y: -300, duration: 0.6, ease: "power2.in"}, 18.287);
+      // shot 9 s06_11 [18.34–20.20] push, enter left
+      tl.fromTo("#r9", {scale: 1.14, x: 0, y: 0}, {scale: 1.26, x: 0, y: 0, duration: 1.860, ease: "none"}, 18.340);
+      tl.fromTo("#f9", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: 18, duration: 1.860, ease: "none"}, 18.340);
+      tl.fromTo("#c9", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 18.340);
+      tl.to("#c9", {scale: 1.2, filter: "blur(18px)", duration: 0.21, ease: "power3.in"}, 19.990);
+      tl.to("#k9", {x: 9.3, y: -15.0, rotation: 0.41, duration: 0.05, ease: "sine.inOut"}, 18.340);
+      tl.to("#k9", {x: -5.7, y: -15.4, rotation: -0.51, duration: 0.05, ease: "sine.inOut"}, 18.390);
+      tl.to("#k9", {x: 0.1, y: 4.1, rotation: 0.37, duration: 0.05, ease: "sine.inOut"}, 18.440);
+      tl.to("#k9", {x: 9.7, y: -12.1, rotation: 0.42, duration: 0.05, ease: "sine.inOut"}, 18.490);
+      tl.to("#k9", {x: -12.1, y: 9.6, rotation: -0.04, duration: 0.05, ease: "sine.inOut"}, 18.540);
+      tl.to("#k9", {x: 2.4, y: 7.7, rotation: -0.32, duration: 0.05, ease: "sine.inOut"}, 18.590);
+      tl.to("#k9", {x: -12.7, y: 11.2, rotation: -0.36, duration: 0.05, ease: "sine.inOut"}, 18.640);
+      tl.to("#k9", {x: -6.1, y: -11.8, rotation: -0.11, duration: 0.05, ease: "sine.inOut"}, 18.690);
+      tl.to("#k9", {x: -5.8, y: -0.6, rotation: 0.47, duration: 0.05, ease: "sine.inOut"}, 18.740);
+      tl.to("#k9", {x: -0.2, y: -2.0, rotation: 0.27, duration: 0.05, ease: "sine.inOut"}, 18.790);
+      tl.to("#k9", {x: 5.1, y: -8.0, rotation: 0.35, duration: 0.05, ease: "sine.inOut"}, 18.840);
+      tl.to("#k9", {x: 7.8, y: -6.4, rotation: 0.02, duration: 0.05, ease: "sine.inOut"}, 18.890);
+      tl.to("#k9", {x: 3.9, y: -3.5, rotation: 0.17, duration: 0.05, ease: "sine.inOut"}, 18.940);
+      tl.to("#k9", {x: 2.9, y: -1.6, rotation: 0.27, duration: 0.05, ease: "sine.inOut"}, 18.990);
+      tl.to("#k9", {x: -8.4, y: 5.1, rotation: 0.26, duration: 0.05, ease: "sine.inOut"}, 19.040);
+      tl.to("#k9", {x: 4.1, y: 9.8, rotation: 0.28, duration: 0.05, ease: "sine.inOut"}, 19.090);
+      tl.to("#k9", {x: -1.2, y: -10.7, rotation: -0.36, duration: 0.05, ease: "sine.inOut"}, 19.140);
+      tl.to("#k9", {x: -11.4, y: -7.5, rotation: 0.25, duration: 0.05, ease: "sine.inOut"}, 19.190);
+      tl.to("#k9", {x: 9.6, y: 7.4, rotation: 0.36, duration: 0.05, ease: "sine.inOut"}, 19.240);
+      tl.to("#k9", {x: 0.9, y: 7.1, rotation: 0.12, duration: 0.05, ease: "sine.inOut"}, 19.290);
+      tl.to("#k9", {x: 10.4, y: -9.8, rotation: 0.25, duration: 0.05, ease: "sine.inOut"}, 19.340);
+      tl.to("#k9", {x: -3.6, y: -5.6, rotation: 0.25, duration: 0.05, ease: "sine.inOut"}, 19.390);
+      tl.to("#k9", {x: 0.3, y: 5.7, rotation: -0.13, duration: 0.05, ease: "sine.inOut"}, 19.440);
+      tl.to("#k9", {x: -2.5, y: 4.5, rotation: 0.13, duration: 0.05, ease: "sine.inOut"}, 19.490);
+      tl.to("#k9", {x: 0.4, y: 0.6, rotation: 0.17, duration: 0.05, ease: "sine.inOut"}, 19.540);
+      tl.to("#k9", {x: 4.2, y: 4.0, rotation: 0.20, duration: 0.05, ease: "sine.inOut"}, 19.590);
+      tl.to("#k9", {x: -8.8, y: 8.2, rotation: -0.14, duration: 0.05, ease: "sine.inOut"}, 19.640);
+      tl.to("#k9", {x: 6.1, y: -3.3, rotation: 0.19, duration: 0.05, ease: "sine.inOut"}, 19.690);
+      tl.to("#k9", {x: -4.4, y: -2.4, rotation: -0.19, duration: 0.05, ease: "sine.inOut"}, 19.740);
+      tl.to("#k9", {x: -3.7, y: -3.4, rotation: -0.04, duration: 0.05, ease: "sine.inOut"}, 19.790);
+      tl.to("#k9", {x: -2.8, y: -1.3, rotation: 0.25, duration: 0.05, ease: "sine.inOut"}, 19.840);
+      tl.to("#k9", {x: 0, y: 0, rotation: 0, duration: 0.08}, 19.890);
+      // shot 10 s08_11 [20.20–22.98] push, enter push
+      tl.fromTo("#r10", {scale: 1.1, x: 0, y: 0}, {scale: 1.28, x: 0, y: 0, duration: 2.780, ease: "none"}, 20.200);
+      tl.fromTo("#f10", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: 18, duration: 2.780, ease: "none"}, 20.200);
+      tl.fromTo("#c10", {x: 0, scale: 0.84, filter: "blur(18px)"}, {scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false}, 20.200);
+      tl.to("#c10", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 22.680);
+      tl.fromTo("#fr10", {opacity: 0}, {opacity: 1, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_0", {x: 0, y: 0}, {x: -100, y: 158, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_1", {x: 0, y: 0}, {x: -71, y: 230, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_2", {x: 0, y: 0}, {x: 18, y: 106, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_3", {x: 0, y: 0}, {x: -102, y: 175, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_4", {x: 0, y: 0}, {x: -84, y: 171, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_5", {x: 0, y: 0}, {x: 120, y: 212, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_6", {x: 0, y: 0}, {x: -116, y: 234, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_7", {x: 0, y: 0}, {x: 25, y: 182, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_8", {x: 0, y: 0}, {x: -105, y: 202, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_9", {x: 0, y: 0}, {x: -71, y: 105, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_10", {x: 0, y: 0}, {x: 112, y: 87, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_11", {x: 0, y: 0}, {x: 84, y: 237, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_12", {x: 0, y: 0}, {x: -93, y: 236, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_13", {x: 0, y: 0}, {x: -108, y: 249, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_14", {x: 0, y: 0}, {x: -111, y: 211, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_15", {x: 0, y: 0}, {x: -99, y: 253, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_16", {x: 0, y: 0}, {x: -12, y: 84, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_17", {x: 0, y: 0}, {x: 70, y: 248, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_18", {x: 0, y: 0}, {x: -2, y: 83, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_19", {x: 0, y: 0}, {x: -16, y: 111, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_20", {x: 0, y: 0}, {x: -88, y: 187, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_21", {x: 0, y: 0}, {x: 108, y: 123, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_22", {x: 0, y: 0}, {x: 94, y: 185, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_23", {x: 0, y: 0}, {x: -88, y: 240, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_24", {x: 0, y: 0}, {x: 85, y: 149, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_25", {x: 0, y: 0}, {x: 78, y: 99, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_26", {x: 0, y: 0}, {x: -29, y: 95, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_27", {x: 0, y: 0}, {x: -47, y: 172, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_28", {x: 0, y: 0}, {x: 44, y: 112, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      tl.fromTo("#fz10_29", {x: 0, y: 0}, {x: -66, y: 103, duration: 2.78, ease: "none", immediateRender: false}, 20.200);
+      // shot 11 s09_11 [22.98–24.32] push, enter left
+      tl.fromTo("#r11", {scale: 1.14, x: 0, y: 0}, {scale: 1.24, x: 0, y: 0, duration: 1.340, ease: "none"}, 22.980);
+      tl.fromTo("#f11", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: 18, duration: 1.340, ease: "none"}, 22.980);
+      tl.fromTo("#c11", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 22.980);
+      tl.to("#c11", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 24.020);
+      tl.fromTo("#fr11", {opacity: 0}, {opacity: 1, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_0", {x: 0, y: 0}, {x: -14, y: 221, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_1", {x: 0, y: 0}, {x: -8, y: 133, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_2", {x: 0, y: 0}, {x: -93, y: 118, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_3", {x: 0, y: 0}, {x: -115, y: 231, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_4", {x: 0, y: 0}, {x: 7, y: 110, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_5", {x: 0, y: 0}, {x: -64, y: 236, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_6", {x: 0, y: 0}, {x: -98, y: 154, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_7", {x: 0, y: 0}, {x: 85, y: 165, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_8", {x: 0, y: 0}, {x: -85, y: 107, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_9", {x: 0, y: 0}, {x: -75, y: 241, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_10", {x: 0, y: 0}, {x: -72, y: 136, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_11", {x: 0, y: 0}, {x: -48, y: 141, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_12", {x: 0, y: 0}, {x: -95, y: 256, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_13", {x: 0, y: 0}, {x: -83, y: 117, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_14", {x: 0, y: 0}, {x: -21, y: 175, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_15", {x: 0, y: 0}, {x: -44, y: 160, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_16", {x: 0, y: 0}, {x: 63, y: 167, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_17", {x: 0, y: 0}, {x: -43, y: 253, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_18", {x: 0, y: 0}, {x: -52, y: 100, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_19", {x: 0, y: 0}, {x: -43, y: 89, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_20", {x: 0, y: 0}, {x: 35, y: 84, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_21", {x: 0, y: 0}, {x: 99, y: 257, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_22", {x: 0, y: 0}, {x: 56, y: 147, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_23", {x: 0, y: 0}, {x: -61, y: 103, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_24", {x: 0, y: 0}, {x: -102, y: 218, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_25", {x: 0, y: 0}, {x: 10, y: 231, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_26", {x: 0, y: 0}, {x: -107, y: 130, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_27", {x: 0, y: 0}, {x: -36, y: 158, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_28", {x: 0, y: 0}, {x: 57, y: 236, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      tl.fromTo("#fz11_29", {x: 0, y: 0}, {x: -61, y: 86, duration: 1.34, ease: "none", immediateRender: false}, 22.980);
+      // shot 12 s10_11 [24.32–25.52] pan, enter left
+      tl.fromTo("#r12", {scale: 1.18, x: -60, y: 0}, {scale: 1.24, x: 60, y: 0, duration: 1.200, ease: "none"}, 24.320);
+      tl.fromTo("#f12", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 42, y: 18, duration: 1.200, ease: "none"}, 24.320);
+      tl.fromTo("#c12", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 24.320);
+      tl.to("#c12", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 25.220);
+      tl.fromTo("#fr12", {opacity: 0}, {opacity: 1, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_0", {x: 0, y: 0}, {x: -113, y: 126, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_1", {x: 0, y: 0}, {x: -83, y: 155, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_2", {x: 0, y: 0}, {x: 94, y: 252, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_3", {x: 0, y: 0}, {x: 27, y: 239, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_4", {x: 0, y: 0}, {x: 10, y: 121, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_5", {x: 0, y: 0}, {x: 109, y: 242, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_6", {x: 0, y: 0}, {x: 1, y: 146, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_7", {x: 0, y: 0}, {x: 64, y: 221, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_8", {x: 0, y: 0}, {x: 6, y: 238, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_9", {x: 0, y: 0}, {x: 4, y: 153, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_10", {x: 0, y: 0}, {x: -83, y: 223, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_11", {x: 0, y: 0}, {x: 98, y: 121, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_12", {x: 0, y: 0}, {x: 97, y: 178, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_13", {x: 0, y: 0}, {x: 50, y: 253, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_14", {x: 0, y: 0}, {x: 34, y: 198, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_15", {x: 0, y: 0}, {x: -82, y: 134, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_16", {x: 0, y: 0}, {x: 48, y: 256, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_17", {x: 0, y: 0}, {x: -12, y: 110, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_18", {x: 0, y: 0}, {x: -84, y: 165, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_19", {x: 0, y: 0}, {x: -17, y: 166, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_20", {x: 0, y: 0}, {x: 42, y: 155, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_21", {x: 0, y: 0}, {x: 56, y: 98, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_22", {x: 0, y: 0}, {x: -47, y: 140, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_23", {x: 0, y: 0}, {x: 47, y: 249, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_24", {x: 0, y: 0}, {x: -17, y: 214, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_25", {x: 0, y: 0}, {x: -57, y: 113, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_26", {x: 0, y: 0}, {x: -59, y: 245, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_27", {x: 0, y: 0}, {x: -82, y: 87, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_28", {x: 0, y: 0}, {x: 31, y: 126, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      tl.fromTo("#fz12_29", {x: 0, y: 0}, {x: -19, y: 200, duration: 1.20, ease: "none", immediateRender: false}, 24.320);
+      // shot 13 s11_11 [25.52–28.46] push, enter left
+      tl.fromTo("#r13", {scale: 1.12, x: 0, y: 0}, {scale: 1.24, x: 0, y: 0, duration: 2.940, ease: "none"}, 25.520);
+      tl.fromTo("#f13", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: 18, duration: 2.940, ease: "none"}, 25.520);
+      tl.fromTo("#c13", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 25.520);
+      tl.to("#c13", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 28.160);
+      // shot 14 s12_11 [28.46–30.12] pullback, enter left
+      tl.fromTo("#r14", {scale: 1.3, x: 0, y: 0}, {scale: 1.16, x: 0, y: 0, duration: 1.660, ease: "none"}, 28.460);
+      tl.fromTo("#f14", {scale: 1, x: 0, y: 0}, {scale: 0.95, x: 0, y: 18, duration: 1.660, ease: "none"}, 28.460);
+      tl.fromTo("#c14", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 28.460);
+      tl.to("#c14", {scale: 0.86, filter: "blur(18px)", duration: 0.21, ease: "power3.in"}, 29.910);
+      // shot 15 s14_11 [30.12–32.06] push, enter pull
+      tl.fromTo("#r15", {scale: 1.14, x: 0, y: 0}, {scale: 1.26, x: 0, y: 0, duration: 1.940, ease: "none"}, 30.120);
+      tl.fromTo("#f15", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: 18, duration: 1.940, ease: "none"}, 30.120);
+      tl.fromTo("#c15", {x: 0, scale: 1.25, filter: "blur(18px)"}, {scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false}, 30.120);
+      tl.to("#c15", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 31.760);
+      tl.fromTo("#sm15_0 path", {strokeDashoffset: 1}, {strokeDashoffset: 0, duration: 1.3, ease: "power2.out", immediateRender: false}, 30.370);
+      tl.fromTo("#sm15_0", {y: 120}, {y: -160, duration: 1.74, ease: "none", immediateRender: false}, 30.320);
+      tl.fromTo("#sm15_1 path", {strokeDashoffset: 1}, {strokeDashoffset: 0, duration: 1.3, ease: "power2.out", immediateRender: false}, 30.590);
+      tl.fromTo("#sm15_1", {y: 120}, {y: -160, duration: 1.74, ease: "none", immediateRender: false}, 30.320);
+      tl.fromTo("#sm15_2 path", {strokeDashoffset: 1}, {strokeDashoffset: 0, duration: 1.3, ease: "power2.out", immediateRender: false}, 30.810);
+      tl.fromTo("#sm15_2", {y: 120}, {y: -160, duration: 1.74, ease: "none", immediateRender: false}, 30.320);
+      // shot 16 s14_29 [32.06–34.20] pan, enter left
+      tl.fromTo("#r16", {scale: 1.18, x: 60, y: 0}, {scale: 1.24, x: -60, y: 0, duration: 2.140, ease: "none"}, 32.060);
+      tl.fromTo("#f16", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: -42, y: 18, duration: 2.140, ease: "none"}, 32.060);
+      tl.fromTo("#c16", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 32.060);
+      tl.to("#c16", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 33.900);
+      tl.fromTo("#sm16_0 path", {strokeDashoffset: 1}, {strokeDashoffset: 0, duration: 1.3, ease: "power2.out", immediateRender: false}, 32.310);
+      tl.fromTo("#sm16_0", {y: 120}, {y: -160, duration: 1.94, ease: "none", immediateRender: false}, 32.260);
+      tl.fromTo("#sm16_1 path", {strokeDashoffset: 1}, {strokeDashoffset: 0, duration: 1.3, ease: "power2.out", immediateRender: false}, 32.530);
+      tl.fromTo("#sm16_1", {y: 120}, {y: -160, duration: 1.94, ease: "none", immediateRender: false}, 32.260);
+      tl.fromTo("#sm16_2 path", {strokeDashoffset: 1}, {strokeDashoffset: 0, duration: 1.3, ease: "power2.out", immediateRender: false}, 32.750);
+      tl.fromTo("#sm16_2", {y: 120}, {y: -160, duration: 1.94, ease: "none", immediateRender: false}, 32.260);
+      // shot 17 s07_11 [34.20–35.85] push, enter left
+      tl.fromTo("#r17", {scale: 1.12, x: 0, y: 0}, {scale: 1.24, x: 0, y: 0, duration: 1.650, ease: "none"}, 34.200);
+      tl.fromTo("#f17", {scale: 1, x: 0, y: 0}, {scale: 1.045, x: 0, y: 18, duration: 1.650, ease: "none"}, 34.200);
+      tl.fromTo("#c17", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 34.200);
+      tl.fromTo("#dr17_0", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -98, y: -875, rotation: 48, duration: 0.9, ease: "power1.out", immediateRender: false}, 34.707);
+      tl.to("#dr17_0", {y: -375, duration: 0.6, ease: "power2.in"}, 35.607);
+      tl.fromTo("#dr17_1", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 191, y: -1078, rotation: 22, duration: 0.9, ease: "power1.out", immediateRender: false}, 35.177);
+      tl.to("#dr17_1", {y: -578, duration: 0.6, ease: "power2.in"}, 36.077);
+      tl.fromTo("#dr17_2", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -221, y: -1290, rotation: 25, duration: 0.9, ease: "power1.out", immediateRender: false}, 34.800);
+      tl.to("#dr17_2", {y: -790, duration: 0.6, ease: "power2.in"}, 35.700);
+      tl.fromTo("#dr17_3", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -31, y: -868, rotation: 13, duration: 0.9, ease: "power1.out", immediateRender: false}, 34.490);
+      tl.to("#dr17_3", {y: -368, duration: 0.6, ease: "power2.in"}, 35.390);
+      tl.fromTo("#dr17_4", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 146, y: -886, rotation: -85, duration: 0.9, ease: "power1.out", immediateRender: false}, 34.389);
+      tl.to("#dr17_4", {y: -386, duration: 0.6, ease: "power2.in"}, 35.289);
+      tl.fromTo("#dr17_5", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -57, y: -1018, rotation: -17, duration: 0.9, ease: "power1.out", immediateRender: false}, 34.783);
+      tl.to("#dr17_5", {y: -518, duration: 0.6, ease: "power2.in"}, 35.683);
+      tl.fromTo("#dr17_6", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 96, y: -794, rotation: -5, duration: 0.9, ease: "power1.out", immediateRender: false}, 35.131);
+      tl.to("#dr17_6", {y: -294, duration: 0.6, ease: "power2.in"}, 36.031);
+      tl.fromTo("#dr17_7", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -95, y: -873, rotation: 24, duration: 0.9, ease: "power1.out", immediateRender: false}, 34.790);
+      tl.to("#dr17_7", {y: -373, duration: 0.6, ease: "power2.in"}, 35.690);
+      tl.fromTo("#dr17_8", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 75, y: -908, rotation: 66, duration: 0.9, ease: "power1.out", immediateRender: false}, 34.459);
+      tl.to("#dr17_8", {y: -408, duration: 0.6, ease: "power2.in"}, 35.359);
+      tl.fromTo("#dr17_9", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 200, y: -1075, rotation: 60, duration: 0.9, ease: "power1.out", immediateRender: false}, 35.074);
+      tl.to("#dr17_9", {y: -575, duration: 0.6, ease: "power2.in"}, 35.974);
+      tl.fromTo("#dr17_10", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 28, y: -974, rotation: 44, duration: 0.9, ease: "power1.out", immediateRender: false}, 34.595);
+      tl.to("#dr17_10", {y: -474, duration: 0.6, ease: "power2.in"}, 35.495);
+      tl.fromTo("#dr17_11", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 204, y: -998, rotation: -81, duration: 0.9, ease: "power1.out", immediateRender: false}, 34.700);
+      tl.to("#dr17_11", {y: -498, duration: 0.6, ease: "power2.in"}, 35.600);
+      tl.fromTo("#dr17_12", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: 180, y: -1220, rotation: -8, duration: 0.9, ease: "power1.out", immediateRender: false}, 35.117);
+      tl.to("#dr17_12", {y: -720, duration: 0.6, ease: "power2.in"}, 36.017);
+      tl.fromTo("#dr17_13", {opacity: 1, x: 0, y: 0, rotation: 0}, {x: -146, y: -1120, rotation: -8, duration: 0.9, ease: "power1.out", immediateRender: false}, 34.346);
+      tl.to("#dr17_13", {y: -620, duration: 0.6, ease: "power2.in"}, 35.246);
+      tl.set("#cp0", {opacity: 1}, 0.000); tl.fromTo("#cp0", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 0.000); tl.set("#cp0", {opacity: 0}, 1.260);
+      tl.set("#cp1", {opacity: 1}, 1.260); tl.fromTo("#cp1", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 1.260); tl.set("#cp1", {opacity: 0}, 2.400);
+      tl.set("#cp2", {opacity: 1}, 2.400); tl.fromTo("#cp2", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 2.400); tl.set("#cp2", {opacity: 0}, 2.900);
+      tl.set("#cp3", {opacity: 1}, 2.900); tl.fromTo("#cp3", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 2.900); tl.set("#cp3", {opacity: 0}, 3.900);
+      tl.set("#cp4", {opacity: 1}, 3.900); tl.fromTo("#cp4", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 3.900); tl.set("#cp4", {opacity: 0}, 4.660);
+      tl.set("#cp5", {opacity: 1}, 4.660); tl.fromTo("#cp5", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 4.660); tl.set("#cp5", {opacity: 0}, 4.940);
+      tl.set("#cp6", {opacity: 1}, 4.940); tl.fromTo("#cp6", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 4.940); tl.set("#cp6", {opacity: 0}, 5.780);
+      tl.set("#cp7", {opacity: 1}, 5.780); tl.fromTo("#cp7", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 5.780); tl.set("#cp7", {opacity: 0}, 6.740);
+      tl.set("#cp8", {opacity: 1}, 6.740); tl.fromTo("#cp8", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 6.740); tl.set("#cp8", {opacity: 0}, 7.680);
+      tl.set("#cp9", {opacity: 1}, 7.680); tl.fromTo("#cp9", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 7.680); tl.set("#cp9", {opacity: 0}, 8.780);
+      tl.set("#cp10", {opacity: 1}, 8.780); tl.fromTo("#cp10", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 8.780); tl.set("#cp10", {opacity: 0}, 10.340);
+      tl.set("#cp11", {opacity: 1}, 10.340); tl.fromTo("#cp11", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 10.340); tl.set("#cp11", {opacity: 0}, 10.880);
+      tl.set("#cp12", {opacity: 1}, 10.880); tl.fromTo("#cp12", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 10.880); tl.set("#cp12", {opacity: 0}, 11.620);
+      tl.set("#cp13", {opacity: 1}, 11.620); tl.fromTo("#cp13", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 11.620); tl.set("#cp13", {opacity: 0}, 12.720);
+      tl.set("#cp14", {opacity: 1}, 12.720); tl.fromTo("#cp14", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 12.720); tl.set("#cp14", {opacity: 0}, 13.940);
+      tl.set("#cp15", {opacity: 1}, 13.940); tl.fromTo("#cp15", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 13.940); tl.set("#cp15", {opacity: 0}, 14.680);
+      tl.set("#cp16", {opacity: 1}, 14.680); tl.fromTo("#cp16", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 14.680); tl.set("#cp16", {opacity: 0}, 15.720);
+      tl.set("#cp17", {opacity: 1}, 15.720); tl.fromTo("#cp17", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 15.720); tl.set("#cp17", {opacity: 0}, 16.620);
+      tl.set("#cp18", {opacity: 1}, 16.620); tl.fromTo("#cp18", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 16.620); tl.set("#cp18", {opacity: 0}, 17.120);
+      tl.set("#cp19", {opacity: 1}, 17.120); tl.fromTo("#cp19", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 17.120); tl.set("#cp19", {opacity: 0}, 17.660);
+      tl.set("#cp20", {opacity: 1}, 17.660); tl.fromTo("#cp20", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 17.660); tl.set("#cp20", {opacity: 0}, 18.600);
+      tl.set("#cp21", {opacity: 1}, 18.600); tl.fromTo("#cp21", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 18.600); tl.set("#cp21", {opacity: 0}, 19.420);
+      tl.set("#cp22", {opacity: 1}, 19.420); tl.fromTo("#cp22", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 19.420); tl.set("#cp22", {opacity: 0}, 20.240);
+      tl.set("#cp23", {opacity: 1}, 20.240); tl.fromTo("#cp23", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 20.240); tl.set("#cp23", {opacity: 0}, 20.720);
+      tl.set("#cp24", {opacity: 1}, 20.720); tl.fromTo("#cp24", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 20.720); tl.set("#cp24", {opacity: 0}, 21.340);
+      tl.set("#cp25", {opacity: 1}, 21.340); tl.fromTo("#cp25", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 21.340); tl.set("#cp25", {opacity: 0}, 22.040);
+      tl.set("#cp26", {opacity: 1}, 22.040); tl.fromTo("#cp26", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 22.040); tl.set("#cp26", {opacity: 0}, 23.020);
+      tl.set("#cp27", {opacity: 1}, 23.020); tl.fromTo("#cp27", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 23.020); tl.set("#cp27", {opacity: 0}, 23.480);
+      tl.set("#cp28", {opacity: 1}, 23.480); tl.fromTo("#cp28", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 23.480); tl.set("#cp28", {opacity: 0}, 24.360);
+      tl.set("#cp29", {opacity: 1}, 24.360); tl.fromTo("#cp29", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 24.360); tl.set("#cp29", {opacity: 0}, 24.720);
+      tl.set("#cp30", {opacity: 1}, 24.720); tl.fromTo("#cp30", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 24.720); tl.set("#cp30", {opacity: 0}, 25.560);
+      tl.set("#cp31", {opacity: 1}, 25.560); tl.fromTo("#cp31", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 25.560); tl.set("#cp31", {opacity: 0}, 26.120);
+      tl.set("#cp32", {opacity: 1}, 26.120); tl.fromTo("#cp32", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 26.120); tl.set("#cp32", {opacity: 0}, 26.960);
+      tl.set("#cp33", {opacity: 1}, 26.960); tl.fromTo("#cp33", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 26.960); tl.set("#cp33", {opacity: 0}, 27.940);
+      tl.set("#cp34", {opacity: 1}, 27.940); tl.fromTo("#cp34", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 27.940); tl.set("#cp34", {opacity: 0}, 28.500);
+      tl.set("#cp35", {opacity: 1}, 28.500); tl.fromTo("#cp35", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 28.500); tl.set("#cp35", {opacity: 0}, 30.160);
+      tl.set("#cp36", {opacity: 1}, 30.160); tl.fromTo("#cp36", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 30.160); tl.set("#cp36", {opacity: 0}, 30.900);
+      tl.set("#cp37", {opacity: 1}, 30.900); tl.fromTo("#cp37", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 30.900); tl.set("#cp37", {opacity: 0}, 31.220);
+      tl.set("#cp38", {opacity: 1}, 31.220); tl.fromTo("#cp38", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 31.220); tl.set("#cp38", {opacity: 0}, 32.100);
+      tl.set("#cp39", {opacity: 1}, 32.100); tl.fromTo("#cp39", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 32.100); tl.set("#cp39", {opacity: 0}, 32.760);
+      tl.set("#cp40", {opacity: 1}, 32.760); tl.fromTo("#cp40", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 32.760); tl.set("#cp40", {opacity: 0}, 33.440);
+      tl.set("#cp41", {opacity: 1}, 33.440); tl.fromTo("#cp41", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 33.440); tl.set("#cp41", {opacity: 0}, 34.240);
+      tl.set("#cp42", {opacity: 1}, 34.240); tl.fromTo("#cp42", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 34.240); tl.set("#cp42", {opacity: 0}, 34.440);
+      tl.set("#cp43", {opacity: 1}, 34.440); tl.fromTo("#cp43", {scale: 0.86}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 34.440); tl.set("#cp43", {opacity: 0}, 35.600);
+      tl.set({}, {}, 35.85);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

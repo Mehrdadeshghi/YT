@@ -188,7 +188,7 @@ def main():
         js.append(f'// shot {i} {key} [{a:.2f}–{b:.2f}] {mv}, enter {s["seam"]}')
         js.append(f'tl.fromTo("#r{i}", {{scale: {s0}, x: {x0}, y: {y0}}}, {{scale: {s1}, x: {x1}, y: {y1}, duration: {b - a:.3f}, ease: "none"}}, {a:.3f});')
         # depth parallax: the near layer travels further than the far one
-        fs = 1.07 if mv != 'pullback' else 0.95
+        fs = 1.045 if mv != 'pullback' else 0.95
         js.append(f'tl.fromTo("#f{i}", {{scale: 1, x: 0, y: 0}}, {{scale: {fs}, x: {(x1 - x0) * 0.35:.0f}, y: {(y1 - y0) * 0.35 + 18:.0f}, duration: {b - a:.3f}, ease: "none"}}, {a:.3f});')
         # entry (matched to the previous exit)
         if i > 0:

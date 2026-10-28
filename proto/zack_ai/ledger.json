@@ -1,0 +1,260 @@
+{
+ "fps": 30,
+ "seams": [
+  {
+   "id": "s16_29→s16_11",
+   "cut": 2.36,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c0",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c1",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s16_11→s01_11",
+   "cut": 3.86,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c1",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c2",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s01_11→s02_11",
+   "cut": 5.74,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c2",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c3",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s02_11→s15_11",
+   "cut": 7.64,
+   "technique": "zoom-through (deeper)",
+   "exit": {
+    "selector": "#c3",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c4",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s15_11→s03_11",
+   "cut": 8.8,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c4",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c5",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s03_11→s04_11",
+   "cut": 11.62,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c5",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c6",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s04_11→s05_11",
+   "cut": 13.9,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c6",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c7",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s05_11→s13_11",
+   "cut": 16.58,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c7",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c8",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s13_11→s06_11",
+   "cut": 18.34,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c8",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c9",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s06_11→s08_11",
+   "cut": 20.2,
+   "technique": "zoom-through (deeper)",
+   "exit": {
+    "selector": "#c9",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c10",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s08_11→s09_11",
+   "cut": 22.98,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c10",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c11",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s09_11→s10_11",
+   "cut": 24.32,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c11",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c12",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s10_11→s11_11",
+   "cut": 25.52,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c12",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c13",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s11_11→s12_11",
+   "cut": 28.46,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c13",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c14",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s12_11→s14_11",
+   "cut": 30.12,
+   "technique": "inverse zoom-through (arrival)",
+   "exit": {
+    "selector": "#c14",
+    "axis": "z",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c15",
+    "axis": "z",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s14_11→s14_29",
+   "cut": 32.06,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c15",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c16",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s14_29→s07_11",
+   "cut": 34.2,
+   "technique": "cut-the-curve LEFT (camera whip)",
+   "exit": {
+    "selector": "#c16",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c17",
+    "axis": "x",
+    "dir": -1
+   }
+  }
+ ]
+}
