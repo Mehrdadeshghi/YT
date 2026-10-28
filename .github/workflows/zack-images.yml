@@ -35,7 +35,8 @@ jobs:
           path: ~/.cache/huggingface
           key: hf-sdxl-lightning4-depthv2s-v1
       - name: CPU info
-        run: nproc; free -g; lscpu | grep -E "Model name|Flags" | sed 's/Flags:.*\(avx512[a-z_0-9]*\).*/AVX512: yes/' | head -3
+        run: |
+          nproc; free -g; lscpu | grep "Model name"; grep -o -E "avx512_bf16|avx512f|amx_bf16|avx2" /proc/cpuinfo | sort -u
       - name: Install
         run: |
           pip install -q torch --index-url https://download.pytorch.org/whl/cpu
