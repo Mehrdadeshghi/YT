@@ -1,0 +1,37 @@
+<template>
+  <style>
+  #root { position: absolute; inset: 0; overflow: hidden; background: #06080C; font-family: Inter, sans-serif; color: #F5F1E8; }
+  .stage { position: absolute; inset: 0; overflow: hidden; }
+  .ph { position: absolute; left: 0; top: 0; transform-origin: 0 0; max-width: none; }
+  .gothic { font-family: "League Gothic", sans-serif; text-transform: uppercase; line-height: .88; }
+  .tag { position: absolute; left: 60px; font: 800 24px Inter, sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #F5F1E8;
+    padding: 9px 16px 8px; border-radius: 10px; background: rgba(6,8,12,.62); border: 1.5px solid rgba(245,241,232,.28); white-space: nowrap; }
+  .w { display: inline-block; will-change: transform, opacity; }
+
+  #root { background: #05060A; }
+  .ib { position: absolute; left: -6%; top: -6%; width: 112%; height: 112%; object-fit: cover; filter: blur(26px) brightness(.38); }
+  .ik { position: absolute; left: 0; right: 0; top: 330px; text-align: center; font: 900 42px Inter, sans-serif; letter-spacing: .2em; color: #F6C760; text-transform: uppercase; }
+  .it { position: absolute; left: 20px; right: 20px; top: 400px; text-align: center; font-size: 200px; color: #F5F1E8; text-shadow: 0 10px 40px rgba(0,0,0,.6); }
+  .ik .w, .it .w { margin: 0 .05em; }
+
+  </style>
+  <div id="root" data-composition-id="intro" data-width="1080" data-height="1920" data-duration="1.550">
+
+    <img class="ib" src="assets/b2.jpg" alt="" />
+    <div id="i-k" class="ik"><span class="w">#1</span> <span class="w">isn't</span> <span class="w">even</span> <span class="w">close</span></div>
+    <div id="i-t" class="it gothic"><span class="w">The</span> <span class="w">5</span> <span class="w">tallest</span><br><span class="w">buildings</span><br><span class="w">on</span> <span class="w">Earth</span></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      const ws = [...document.querySelectorAll("#i-t .w"), ...document.querySelectorAll("#i-k .w")];
+      ws.forEach((w, j) => { const out = 1.5 - 0.34 - 0.2 + j * 0.022;
+        tl.to(w, { x: -230, duration: 0.34, ease: "power4.in" }, out); tl.to(w, { opacity: 0, duration: 0.18, ease: "none" }, out + 0.1); });
+      tl.fromTo("#i-k", { scale: 1 }, { scale: 1.08, duration: 0.12, ease: "power2.out" }, 0.55);
+      tl.to("#i-k", { scale: 1, duration: 0.3, ease: "back.out(1.6)" }, 0.67);
+
+      window.__timelines["intro"] = tl;
+    })();
+  </script>
+</template>

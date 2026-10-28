@@ -1,0 +1,57 @@
+<template>
+  <style>
+  #root { position: absolute; inset: 0; overflow: hidden; background: #06080C; font-family: Inter, sans-serif; color: #F5F1E8; }
+  .stage { position: absolute; inset: 0; overflow: hidden; }
+  .ph { position: absolute; left: 0; top: 0; transform-origin: 0 0; max-width: none; }
+  .gothic { font-family: "League Gothic", sans-serif; text-transform: uppercase; line-height: .88; }
+  .tag { position: absolute; left: 60px; font: 800 24px Inter, sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #F5F1E8;
+    padding: 9px 16px 8px; border-radius: 10px; background: rgba(6,8,12,.62); border: 1.5px solid rgba(245,241,232,.28); white-space: nowrap; }
+  .w { display: inline-block; will-change: transform, opacity; }
+
+  #root { background: transparent; pointer-events: none; }
+  .hd { position: absolute; left: 60px; top: 192px; height: 46px; overflow: hidden; font: 900 38px/46px Inter, sans-serif; letter-spacing: .16em; color: #F5F1E8;
+    text-shadow: 0 3px 16px rgba(0,0,0,.8); width: 900px; }
+  .hc { position: absolute; left: 54px; top: 236px; height: 128px; overflow: hidden; width: 900px; }
+  .roll { position: absolute; left: 0; top: 0; white-space: nowrap; }
+  .hc .roll { font-family: "League Gothic", sans-serif; font-size: 128px; line-height: 128px; color: #FFB547; text-shadow: 0 6px 26px rgba(0,0,0,.7); }
+
+  </style>
+  <div id="root" data-composition-id="hud" data-width="1080" data-height="1920" data-duration="18.000">
+
+    <div class="hd"><div id="h-d0" class="roll" data-layout-allow-overlap>MAY 18, 1980</div><div id="h-d1" class="roll" data-layout-allow-overlap>MAY 18, 1980</div><div id="h-d2" class="roll" data-layout-allow-overlap>MAY 18, 1980</div><div id="h-d3" class="roll" data-layout-allow-overlap>MAY 18, 1980</div><div id="h-d4" class="roll" data-layout-allow-overlap>MAY 19, 1980</div><div id="h-d5" class="roll" data-layout-allow-overlap>WITHIN ABOUT</div></div>
+    <div class="hc"><div id="h-c0" class="roll" data-layout-allow-overlap>8:32 AM</div><div id="h-c1" class="roll" data-layout-allow-overlap>9:45 AM</div><div id="h-c2" class="roll" data-layout-allow-overlap>11:45 AM</div><div id="h-c3" class="roll" data-layout-allow-overlap>10:15 PM</div><div id="h-c4" class="roll" data-layout-allow-overlap>NEXT DAY</div><div id="h-c5" class="roll" data-layout-allow-overlap>2 WEEKS</div></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.set("#h-c0", { y: 0, opacity: 1 }, 0);
+      tl.to("#h-c0", { y: -128, duration: 0.26, ease: "power3.in" }, 6.590);
+      tl.set("#h-d0", { y: 0, opacity: 1 }, 0);
+      tl.to("#h-d0", { y: -46, duration: 0.26, ease: "power3.in" }, 10.790);
+      tl.fromTo("#h-c1", { y: 128, opacity: 1 }, { y: 0, duration: 0.3, ease: "power4.out", immediateRender: false }, 6.850);
+      tl.set("#h-c1", { y: 128 }, 0);
+      tl.to("#h-c1", { y: -128, duration: 0.26, ease: "power3.in" }, 7.990);
+      tl.set("#h-d1", { opacity: 0 }, 0);
+      tl.fromTo("#h-c2", { y: 128, opacity: 1 }, { y: 0, duration: 0.3, ease: "power4.out", immediateRender: false }, 8.250);
+      tl.set("#h-c2", { y: 128 }, 0);
+      tl.to("#h-c2", { y: -128, duration: 0.26, ease: "power3.in" }, 9.390);
+      tl.set("#h-d2", { opacity: 0 }, 0);
+      tl.fromTo("#h-c3", { y: 128, opacity: 1 }, { y: 0, duration: 0.3, ease: "power4.out", immediateRender: false }, 9.650);
+      tl.set("#h-c3", { y: 128 }, 0);
+      tl.to("#h-c3", { y: -128, duration: 0.26, ease: "power3.in" }, 10.790);
+      tl.set("#h-d3", { opacity: 0 }, 0);
+      tl.fromTo("#h-c4", { y: 128, opacity: 1 }, { y: 0, duration: 0.3, ease: "power4.out", immediateRender: false }, 11.050);
+      tl.set("#h-c4", { y: 128 }, 0);
+      tl.to("#h-c4", { y: -128, duration: 0.26, ease: "power3.in" }, 15.140);
+      tl.fromTo("#h-d4", { y: 46, opacity: 1 }, { y: 0, duration: 0.3, ease: "power4.out", immediateRender: false }, 11.050);
+      tl.set("#h-d4", { y: 46 }, 0);
+      tl.to("#h-d4", { y: -46, duration: 0.26, ease: "power3.in" }, 15.140);
+      tl.fromTo("#h-c5", { y: 128, opacity: 1 }, { y: 0, duration: 0.3, ease: "power4.out", immediateRender: false }, 15.400);
+      tl.set("#h-c5", { y: 128 }, 0);
+      tl.fromTo("#h-d5", { y: 46, opacity: 1 }, { y: 0, duration: 0.3, ease: "power4.out", immediateRender: false }, 15.400);
+      tl.set("#h-d5", { y: 46 }, 0);
+
+      window.__timelines["hud"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,35 @@
+{
+ "fps": 30,
+ "seams": [
+  {
+   "id": "round1\u2192round2",
+   "cut": 7.5,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#r1",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#r2",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "round2\u2192end",
+   "cut": 15.0,
+   "technique": "cut-the-curve UP (conclusion rises)",
+   "exit": {
+    "selector": "#r2",
+    "axis": "y",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#end",
+    "axis": "y",
+    "dir": -1
+   }
+  }
+ ]
+}

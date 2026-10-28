@@ -1,0 +1,43 @@
+<template>
+  <style>
+  #root { position: absolute; inset: 0; overflow: hidden; background: #06080C; font-family: Inter, sans-serif; color: #F5F1E8; }
+  .stage { position: absolute; inset: 0; overflow: hidden; }
+  .ph { position: absolute; left: 0; top: 0; transform-origin: 0 0; max-width: none; }
+  .gothic { font-family: "League Gothic", sans-serif; text-transform: uppercase; line-height: .88; }
+  .tag { position: absolute; left: 60px; font: 800 24px Inter, sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #F5F1E8;
+    padding: 9px 16px 8px; border-radius: 10px; background: rgba(6,8,12,.62); border: 1.5px solid rgba(245,241,232,.28); white-space: nowrap; }
+  .w { display: inline-block; will-change: transform, opacity; }
+
+  #root { background: transparent; pointer-events: none; }
+  .hk { position: absolute; left: 60px; top: 196px; font: 900 40px Inter, sans-serif; letter-spacing: .16em; color: #F5F1E8; text-transform: uppercase;
+    text-shadow: 0 4px 20px rgba(0,0,0,.6); }
+  .hb { position: absolute; left: 56px; top: 238px; font-size: 140px; color: #FFD23F; text-shadow: 0 8px 30px rgba(0,0,0,.55); }
+  .rnd { position: absolute; right: 60px; top: 200px; height: 74px; padding: 0 22px; border-radius: 18px; background: rgba(6,8,12,.7);
+    border: 2px solid rgba(245,241,232,.25); font: 900 34px/70px Inter, sans-serif; letter-spacing: .1em; overflow: hidden; white-space: nowrap; }
+  .slot { display: inline-block; position: relative; width: 24px; height: 70px; vertical-align: top; overflow: hidden; }
+  .slot span { position: absolute; left: 0; top: 0; color: #FFD23F; }
+
+  </style>
+  <div id="root" data-composition-id="hud" data-width="1080" data-height="1920" data-duration="15.050">
+
+    <div id="hud-all">
+      <div id="hud-k" class="hk"><span class="w">Guess</span> <span class="w">it</span> <span class="w">in</span></div>
+      <div id="hud-b" class="hb gothic">3 seconds</div>
+      <div class="rnd">ROUND <span class="slot"><span id="hud-r1">1</span><span id="hud-r2" style="top:70px">2</span></span>/2</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      // round counter rolls like a slot machine on the round seam
+      tl.to("#hud-r1", { y: -70, duration: 0.28, ease: "power3.in" }, 7.22);
+      tl.fromTo("#hud-r2", { y: 0 }, { y: -70, duration: 0.32, ease: "power4.out", immediateRender: false }, 7.5);
+      // the whole HUD leaves upward with the closing seam (same vector as the end card's entry)
+      tl.to("#hud-all", { y: -230, duration: 0.34, ease: "power3.in" }, 14.66);
+      tl.to("#hud-all", { opacity: 0, duration: 0.3, ease: "none" }, 14.7);
+
+      window.__timelines["hud"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,81 @@
+<template>
+  <style>
+  #root { position: absolute; inset: 0; overflow: hidden; background: #06080C; font-family: Inter, sans-serif; color: #F5F1E8; }
+  .stage { position: absolute; inset: 0; overflow: hidden; }
+  .ph { position: absolute; left: 0; top: 0; transform-origin: 0 0; max-width: none; }
+  .gothic { font-family: "League Gothic", sans-serif; text-transform: uppercase; line-height: .88; }
+  .tag { position: absolute; left: 60px; font: 800 24px Inter, sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #F5F1E8;
+    padding: 9px 16px 8px; border-radius: 10px; background: rgba(6,8,12,.62); border: 1.5px solid rgba(245,241,232,.28); white-space: nowrap; }
+  .w { display: inline-block; will-change: transform, opacity; }
+
+  #root { background: #08090B; }
+  .scrimB { position: absolute; left: 0; right: 0; bottom: 0; height: 940px; background: linear-gradient(0deg, rgba(5,6,8,.98) 0%, rgba(5,6,8,.93) 50%, rgba(5,6,8,0) 100%); }
+  .scrimT { position: absolute; left: 0; right: 0; top: 0; height: 520px; background: linear-gradient(180deg, rgba(5,6,8,.85), rgba(5,6,8,0)); }
+  .eb { position: absolute; left: 0; right: 0; top: 1104px; text-align: center; font: 900 40px Inter, sans-serif; letter-spacing: .18em; color: #F5F1E8; opacity: 0; }
+  .num { position: absolute; left: 0; right: 0; top: 1150px; text-align: center; font-size: 190px; color: #FFB547; opacity: 0; white-space: nowrap; }
+  .num small { font-size: 120px; color: #F5F1E8; }
+
+  </style>
+  <div id="root" data-composition-id="photo" data-width="1080" data-height="1920" data-duration="3.350">
+
+    <div id="p-cam" class="stage" style="background:#1B1D22"><img id="p-ph" class="ph" src="assets/erupt.jpg" alt="" style="width:2994px; height:4500px" /></div>
+    <div class="scrimT"></div><div class="scrimB"></div>
+    <div class="tag" style="top:206px; left:auto; right:60px">Real photo · USGS</div>
+    <div id="p-eb" class="eb">ASH COLUMN</div>
+    <div id="p-num" class="num gothic"><span id="p-v">0</span> <small>FT HIGH</small></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+      const EZ = {
+        lin: (u) => u,
+        io2: (u) => u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2,
+        io3: (u) => u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2,
+        o3: (u) => 1 - Math.pow(1 - u, 3), o4: (u) => 1 - Math.pow(1 - u, 4), i3: (u) => u * u * u, i4: (u) => u * u * u * u,
+        oexpo: (u) => u >= 1 ? 1 : 1 - Math.pow(2, -10 * u),
+      };
+      // keyframed value: K = [{t, v..., e}] — each key eases FROM the previous key over [prev.t, key.t]
+      function kf(K, t, prop) {
+        if (t <= K[0].t) return K[0][prop];
+        for (let i = 1; i < K.length; i++) {
+          const a = K[i - 1], b = K[i];
+          if (t <= b.t) { const u = EZ[b.e || 'io3']((t - a.t) / Math.max(1e-6, b.t - a.t)); return a[prop] + (b[prop] - a[prop]) * u; }
+        }
+        return K[K.length - 1][prop];
+      }
+      // camera over a big image: source point (cx, cy) lands on frame point (fx, fy) at scale s; zoom interpolated in log space
+      function camAt(K, t) {
+        const ls = (k) => Math.log(k.s);
+        if (t <= K[0].t) return K[0];
+        for (let i = 1; i < K.length; i++) {
+          const a = K[i - 1], b = K[i];
+          if (t <= b.t) {
+            const u = EZ[b.e || 'io3']((t - a.t) / Math.max(1e-6, b.t - a.t)), L = (p) => a[p] + (b[p] - a[p]) * u;
+            return { cx: L('cx'), cy: L('cy'), fx: L('fx'), fy: L('fy'), s: Math.exp(ls(a) + (ls(b) - ls(a)) * u) };
+          }
+        }
+        return K[K.length - 1];
+      }
+      function applyCam(el, c) {
+        el.style.transform = `translate(${(c.fx - c.cx * c.s).toFixed(2)}px, ${(c.fy - c.cy * c.s).toFixed(2)}px) scale(${c.s.toFixed(5)})`;
+      }
+      const toFrame = (c, x, y) => [c.fx + (x - c.cx) * c.s, c.fy + (y - c.cy) * c.s];
+
+      const ph = document.getElementById("p-ph"), CAM = [{"t": 0, "cx": 1497, "cy": 2700, "s": 0.56, "fx": 540, "fy": 760}, {"t": 3.2499999999999996, "cx": 1497, "cy": 1650, "s": 0.47, "fx": 540, "fy": 760, "e": "io2"}];
+      function render(t) { applyCam(ph, camAt(CAM, t));
+        const v = Math.round(80000 * EZ.io2(clamp((t - 0.35) / 2.3, 0, 1)) / 1000) * 1000, s = v.toLocaleString("en-US");
+        const el = document.getElementById("p-v"); if (el.textContent !== s) el.textContent = s; }
+      tl.set("#p-eb", { opacity: 1 }, 0.25); tl.fromTo("#p-eb", { y: 50 }, { y: 0, duration: 0.2, ease: "power4.out" }, 0.25);
+      tl.set("#p-num", { opacity: 1 }, 0.35); tl.fromTo("#p-num", { y: 80 }, { y: 0, duration: 0.24, ease: "power4.out" }, 0.35);
+      tl.fromTo("#p-num", { scale: 1 }, { scale: 1.08, duration: 0.1, ease: "power2.out", immediateRender: false }, 2.65);
+      tl.to("#p-num", { scale: 1, duration: 0.3, ease: "back.out(1.6)" }, 2.76);
+      const st = { t: 0 };
+      tl.fromTo(st, { t: 0 }, { t: 3.350, duration: 3.350, ease: "none", onUpdate: () => render(st.t) }, 0);
+      render(0);
+
+      window.__timelines["photo"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,50 @@
+{
+ "fps": 30,
+ "seams": [
+  {
+   "id": "globe\u2192photo",
+   "cut": 3.0,
+   "technique": "zoom-through (push deeper)",
+   "exit": {
+    "selector": "#globe",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#photo",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "photo\u2192map",
+   "cut": 6.3,
+   "technique": "zoom-through (push deeper)",
+   "exit": {
+    "selector": "#photo",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#map",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "map\u2192globe2",
+   "cut": 14.4,
+   "technique": "inverse zoom-through (arrival: the whole planet)",
+   "exit": {
+    "selector": "#map",
+    "axis": "z",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#globe2",
+    "axis": "z",
+    "dir": -1
+   }
+  }
+ ]
+}

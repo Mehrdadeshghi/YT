@@ -14,3 +14,11 @@ assets/music/
 .venv
 .claude/worktrees/
 hf/
+
+# format prototypes: media + build outputs
+proto/media/
+proto/*/assets/
+proto/*/renders/
+proto/*/snapshots/
+proto/__pycache__/
+proto/*/.hyperframes/

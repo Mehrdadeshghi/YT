@@ -1,0 +1,146 @@
+<template>
+  <style>
+  #root { position: absolute; inset: 0; overflow: hidden; background: #06080C; font-family: Inter, sans-serif; color: #F5F1E8; }
+  .stage { position: absolute; inset: 0; overflow: hidden; }
+  .ph { position: absolute; left: 0; top: 0; transform-origin: 0 0; max-width: none; }
+  .gothic { font-family: "League Gothic", sans-serif; text-transform: uppercase; line-height: .88; }
+  .tag { position: absolute; left: 60px; font: 800 24px Inter, sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #F5F1E8;
+    padding: 9px 16px 8px; border-radius: 10px; background: rgba(6,8,12,.62); border: 1.5px solid rgba(245,241,232,.28); white-space: nowrap; }
+  .w { display: inline-block; will-change: transform, opacity; }
+
+  .scrimT { position: absolute; left: 0; right: 0; top: 0; height: 560px; background: linear-gradient(180deg, rgba(6,8,12,.86), rgba(6,8,12,.45) 55%, rgba(6,8,12,0)); }
+  .scrimB { position: absolute; left: 0; right: 0; bottom: 0; height: 1080px; background: linear-gradient(0deg, rgba(6,8,12,.97) 0%, rgba(6,8,12,.9) 40%, rgba(6,8,12,0) 100%); }
+  .dial { position: absolute; left: 360px; top: 470px; width: 360px; height: 360px; }
+  .dial svg { position: absolute; inset: 0; overflow: visible; }
+  .disc { position: absolute; inset: 22px; border-radius: 50%; background: rgba(6,8,12,.62); box-shadow: 0 20px 60px rgba(0,0,0,.45); }
+  .num { position: absolute; left: 0; right: 0; top: 46px; text-align: center; font-family: "League Gothic", sans-serif; font-size: 300px; line-height: 1;
+    color: #FFD23F; text-shadow: 0 8px 30px rgba(0,0,0,.5); opacity: 0; }
+  .opt { position: absolute; left: 60px; width: 840px; height: 94px; border-radius: 26px; background: rgba(12,15,22,.82);
+    border: 2px solid rgba(245,241,232,.20); display: flex; align-items: center; opacity: 0; box-shadow: 0 14px 40px rgba(0,0,0,.4); }
+  .L { width: 66px; height: 66px; margin: 0 26px 0 14px; border-radius: 50%; background: #FFD23F; color: #0B0D12; text-align: center;
+    font: 900 40px/66px Inter, sans-serif; flex: none; }
+  .T { font: 900 40px Inter, sans-serif; letter-spacing: .03em; white-space: nowrap; }
+  .opt.win { background: #20B865; border-color: #6CF0A6; }
+  .opt.win .L { background: #F5F1E8; color: #138A49; }
+  .ans { position: absolute; left: 40px; right: 40px; top: 890px; text-align: center; font-size: 132px; color: #F5F1E8; text-shadow: 0 10px 40px rgba(0,0,0,.6); }
+  .ans .w { opacity: 0; margin: 0 .08em; }
+  .fact { position: absolute; left: 60px; right: 60px; top: 1138px; text-align: center; }
+  .eb { font: 900 34px Inter, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: rgba(245,241,232,.86); opacity: 0; }
+  .val { margin-top: 4px; font-size: 136px; color: #FFD23F; opacity: 0; }
+  .callout { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: visible; pointer-events: none; }
+
+  </style>
+  <div id="root" data-composition-id="r1" data-width="1080" data-height="1920" data-duration="7.550">
+
+    <div id="r1-cam" class="stage" style="background:#2F5288"><img id="r1-ph" class="ph" src="assets/liberty.jpg" alt="" style="width:3249px; height:8048px" /></div>
+    <div class="scrimT"></div><div class="scrimB"></div>
+    <div id="r1-tag" class="tag" style="top:410px">Real photo · <span id="r1-tz">zoomed in</span></div>
+    <div id="r1-dial" class="dial"><div class="disc"></div>
+      <svg viewBox="0 0 360 360"><circle cx="180" cy="180" r="166" fill="none" stroke="rgba(245,241,232,.16)" stroke-width="14" />
+        <circle id="r1-arc" cx="180" cy="180" r="166" fill="none" stroke="#FFD23F" stroke-width="14" stroke-linecap="round"
+          transform="rotate(-90 180 180)" stroke-dasharray="1043 1043" stroke-dashoffset="0" /></svg>
+      <div id="r1-n3" class="num">3</div><div id="r1-n2" class="num">2</div><div id="r1-n1" class="num">1</div>
+    </div>
+    <div id="r1-o0" class="opt" style="top:1010px"><span id="r1-L0" class="L">A</span><span class="T">CHRIST THE REDEEMER</span></div>
+    <div id="r1-o1" class="opt" style="top:1118px"><span id="r1-L1" class="L">B</span><span class="T">STATUE OF LIBERTY</span></div>
+    <div id="r1-o2" class="opt" style="top:1226px"><span id="r1-L2" class="L">C</span><span class="T">LINCOLN MEMORIAL</span></div>
+    <svg class="callout" viewBox="0 0 1080 1920"><circle id="r1-ring" cx="0" cy="0" r="100" fill="none" stroke="#FFD23F" stroke-width="9"
+      stroke-linecap="round" pathLength="100" stroke-dasharray="0 120" transform="rotate(-90)" /></svg>
+    <div id="r1-ans" class="ans gothic"><span class="w">STATUE</span> <span class="w">OF</span><br><span class="w">LIBERTY</span></div>
+    <div class="fact"><div id="r1-eb" class="eb">Her index finger is</div>
+      <div id="r1-val" class="val gothic"><span id="r1-v">0</span> FT <span style="color:#F5F1E8">1 IN</span></div></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+      const EZ = {
+        lin: (u) => u,
+        io2: (u) => u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2,
+        io3: (u) => u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2,
+        o3: (u) => 1 - Math.pow(1 - u, 3), o4: (u) => 1 - Math.pow(1 - u, 4), i3: (u) => u * u * u, i4: (u) => u * u * u * u,
+        oexpo: (u) => u >= 1 ? 1 : 1 - Math.pow(2, -10 * u),
+      };
+      // keyframed value: K = [{t, v..., e}] — each key eases FROM the previous key over [prev.t, key.t]
+      function kf(K, t, prop) {
+        if (t <= K[0].t) return K[0][prop];
+        for (let i = 1; i < K.length; i++) {
+          const a = K[i - 1], b = K[i];
+          if (t <= b.t) { const u = EZ[b.e || 'io3']((t - a.t) / Math.max(1e-6, b.t - a.t)); return a[prop] + (b[prop] - a[prop]) * u; }
+        }
+        return K[K.length - 1][prop];
+      }
+      // camera over a big image: source point (cx, cy) lands on frame point (fx, fy) at scale s; zoom interpolated in log space
+      function camAt(K, t) {
+        const ls = (k) => Math.log(k.s);
+        if (t <= K[0].t) return K[0];
+        for (let i = 1; i < K.length; i++) {
+          const a = K[i - 1], b = K[i];
+          if (t <= b.t) {
+            const u = EZ[b.e || 'io3']((t - a.t) / Math.max(1e-6, b.t - a.t)), L = (p) => a[p] + (b[p] - a[p]) * u;
+            return { cx: L('cx'), cy: L('cy'), fx: L('fx'), fy: L('fy'), s: Math.exp(ls(a) + (ls(b) - ls(a)) * u) };
+          }
+        }
+        return K[K.length - 1];
+      }
+      function applyCam(el, c) {
+        el.style.transform = `translate(${(c.fx - c.cx * c.s).toFixed(2)}px, ${(c.fy - c.cy * c.s).toFixed(2)}px) scale(${c.s.toFixed(5)})`;
+      }
+      const toFrame = (c, x, y) => [c.fx + (x - c.cx) * c.s, c.fy + (y - c.cy) * c.s];
+
+      const ph = document.getElementById("r1-ph"), cam = document.getElementById("r1-cam"), arc = document.getElementById("r1-arc");
+      const ring = document.getElementById("r1-ring"), CAM = [{"t": 0, "fx": 540, "fy": 650, "cx": 1700, "cy": 1430, "s": 2.7}, {"t": 1.35, "fx": 540, "fy": 650, "cx": 1700, "cy": 1430, "s": 2.8890000000000002, "e": "o3"}, {"t": 2.35, "fx": 540, "fy": 650, "cx": 1700, "cy": 1430, "s": 3.0912300000000004, "e": "o3"}, {"t": 3.5, "fx": 540, "fy": 650, "cx": 1700, "cy": 1430, "s": 3.0912300000000004, "e": "lin"}, {"t": 4.6, "fx": 540, "fy": 960, "e": "o4", "cx": 1625, "cy": 1900, "s": 0.42}, {"t": 5.0, "fx": 540, "fy": 960, "e": "lin", "cx": 1625, "cy": 1900, "s": 0.42}, {"t": 6.05, "e": "io3", "cx": 930, "cy": 760, "s": 1.25, "fx": 540, "fy": 600}], BL = [{"t": 0, "b": 26}, {"t": 1.0, "b": 26}, {"t": 1.25, "b": 17, "e": "o3"}, {"t": 2.0, "b": 17}, {"t": 2.25, "b": 9, "e": "o3"}, {"t": 3.4, "b": 9}, {"t": 3.75, "b": 0, "e": "o3"}], RING = {"x": 930, "y": 760, "r": 95};
+      function render(t) {
+        const c = camAt(CAM, t); applyCam(ph, c);
+        cam.style.filter = `blur(${kf(BL, t, 'b').toFixed(2)}px)`;
+        arc.setAttribute("stroke-dashoffset", (1043 * clamp(t / 3.0, 0, 1)).toFixed(1));
+        const q = toFrame(c, RING.x, RING.y);
+        ring.setAttribute("cx", q[0].toFixed(1)); ring.setAttribute("cy", q[1].toFixed(1)); ring.setAttribute("r", (RING.r * c.s).toFixed(1));
+        ring.setAttribute("transform", `rotate(-90 ${q[0].toFixed(1)} ${q[1].toFixed(1)})`);
+        const L = document.getElementById("r1-L1"), lt = t >= 3.4 ? "✓" : "B"; if (L.textContent !== lt) L.textContent = lt;
+        const tz = document.getElementById("r1-tz"), zt = t >= 3.9 ? "full frame" : "zoomed in"; if (tz.textContent !== zt) tz.textContent = zt;
+      }
+      const st = { t: 0 };
+      // countdown: 3 is on screen at frame 0 (the hook); each swap is a zoom-through (out grows + blurs, in grows into focus)
+      tl.set("#r1-n3", { opacity: 1 }, 0);
+      [["3", "2", 1.0], ["2", "1", 2.0]].forEach(([a, b, at]) => {
+        tl.to("#r1-n" + a, { scale: 1.25, filter: "blur(10px)", duration: 0.2, ease: "power3.in" }, at - 0.2);
+        tl.to("#r1-n" + a, { opacity: 0, duration: 0.2, ease: "none" }, at - 0.2);
+        tl.fromTo("#r1-n" + b, { scale: 0.75, opacity: 0.15, filter: "blur(10px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, at);
+      });
+      // time's up: the dial pushes through the camera (Z forward) — then a dead-still beat before the answer
+      tl.to("#r1-dial", { scale: 1.3, filter: "blur(10px)", duration: 0.24, ease: "power3.in" }, 2.86);
+      tl.to("#r1-dial", { opacity: 0, duration: 0.24, ease: "none" }, 2.86);
+      // options: waterfall entry from below (binary opacity, shrinking gaps)
+      [0.10, 0.24, 0.35].forEach((at, i) => {
+        tl.set("#r1-o" + i, { opacity: 1 }, at);
+        tl.fromTo("#r1-o" + i, { y: 70 }, { y: 0, duration: 0.22, ease: "power4.out" }, at);
+      });
+      // reveal @3.4: the right answer lights up (causal: the photo snaps into focus on the same frame)
+      tl.set("#r1-o1", { backgroundColor: "#20B865", borderColor: "#6CF0A6" }, 3.4);
+      tl.set("#r1-L1", { backgroundColor: "#F5F1E8", color: "#138A49" }, 3.4);
+      tl.fromTo("#r1-o1", { scale: 1 }, { scale: 1.06, duration: 0.12, ease: "power2.out" }, 3.4);
+      tl.to("#r1-o1", { scale: 1, duration: 0.3, ease: "back.out(1.6)" }, 3.52);
+      [0, 2].forEach((i) => tl.to("#r1-o" + i, { opacity: 0.28, x: -14, duration: 0.18, ease: "power2.out" }, 3.4));
+      // options leave downward as a cascade; the answer arrives as a waterfall entry
+      [2, 1, 0].forEach((i, n) => tl.to("#r1-o" + i, { y: 120, opacity: 0, duration: 0.22, ease: "power3.in" }, 4.05 + n * 0.04));
+      const W = document.querySelectorAll("#r1-ans .w");
+      W.forEach((w, i) => { const at = 4.32 + [0, 0.07, 0.13, 0.18][Math.min(i, 3)];
+        tl.set(w, { opacity: 1 }, at); tl.fromTo(w, { y: 80 }, { y: 0, duration: 0.2, ease: "power4.out" }, at); });
+      // the fact: eyebrow, then the number counts up while the camera travels onto the detail, the ring draws on arrival
+      tl.set("#r1-eb", { opacity: 1 }, 5.0); tl.fromTo("#r1-eb", { y: 40 }, { y: 0, duration: 0.2, ease: "power4.out" }, 5.0);
+      tl.set("#r1-val", { opacity: 1 }, 5.12); tl.fromTo("#r1-val", { y: 60 }, { y: 0, duration: 0.22, ease: "power4.out" }, 5.12);
+      const cnt = { v: 0 };
+      tl.fromTo(cnt, { v: 0 }, { v: 8, duration: 0.9, ease: "power2.out",
+        onUpdate: () => { document.getElementById("r1-v").textContent = Math.round(cnt.v); } }, 5.15);
+      tl.fromTo("#r1-val", { scale: 1 }, { scale: 1.08, duration: 0.1, ease: "power2.out", immediateRender: false }, 6.05);
+      tl.to("#r1-val", { scale: 1, duration: 0.25, ease: "power2.out" }, 6.15);
+      tl.fromTo(ring, { attr: { "stroke-dasharray": "0 120" } }, { attr: { "stroke-dasharray": "100 120" }, duration: 0.4, ease: "power2.inOut" }, 6.05);
+      tl.fromTo(st, { t: 0 }, { t: 7.5, duration: 7.5, ease: "none", onUpdate: () => render(st.t) }, 0);
+      render(0);
+
+      window.__timelines["r1"] = tl;
+    })();
+  </script>
+</template>

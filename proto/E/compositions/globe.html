@@ -1,0 +1,141 @@
+<template>
+  <style>
+  #root { position: absolute; inset: 0; overflow: hidden; background: #06080C; font-family: Inter, sans-serif; color: #F5F1E8; }
+  .stage { position: absolute; inset: 0; overflow: hidden; }
+  .ph { position: absolute; left: 0; top: 0; transform-origin: 0 0; max-width: none; }
+  .gothic { font-family: "League Gothic", sans-serif; text-transform: uppercase; line-height: .88; }
+  .tag { position: absolute; left: 60px; font: 800 24px Inter, sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #F5F1E8;
+    padding: 9px 16px 8px; border-radius: 10px; background: rgba(6,8,12,.62); border: 1.5px solid rgba(245,241,232,.28); white-space: nowrap; }
+  .w { display: inline-block; will-change: transform, opacity; }
+
+  #root { background: radial-gradient(120% 80% at 50% 45%, #0B1630 0%, #04060C 70%); }
+  .stars { position: absolute; inset: 0; }
+  .cv { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+  .scrimB { position: absolute; left: 0; right: 0; bottom: 0; height: 760px; background: linear-gradient(0deg, rgba(4,6,12,.96) 0%, rgba(4,6,12,.85) 40%, rgba(4,6,12,0) 100%); }
+  .head { position: absolute; left: 30px; right: 30px; top: 1010px; text-align: center; }
+  .hl { font-family: "League Gothic", sans-serif; font-size: 136px; line-height: .9; text-transform: uppercase; color: #F5F1E8; }
+  .hl .w { opacity: 0; margin: 0 .06em; }
+  .acc { color: #FFB547; }
+  .cta { position: absolute; left: 190px; width: 700px; top: 1262px; text-align: center; padding: 12px 0 10px; border-radius: 999px; background: #FFB547;
+    color: #120C04; font: 900 36px Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; opacity: 0; }
+
+  </style>
+  <div id="root" data-composition-id="globe" data-width="1080" data-height="1920" data-duration="3.050">
+
+    <div class="stars" style="background:radial-gradient(1.5px 1px at 39.5% 4.8%, rgba(255,255,255,0.79), transparent), radial-gradient(1px 1.5px at 58.3% 91.0%, rgba(255,255,255,0.43), transparent), radial-gradient(1px 2px at 41.8% 24.1%, rgba(255,255,255,0.63), transparent), radial-gradient(1px 1px at 94.7% 63.1%, rgba(255,255,255,0.65), transparent), radial-gradient(1px 2px at 5.0% 22.1%, rgba(255,255,255,0.63), transparent), radial-gradient(1px 1.5px at 41.9% 54.1%, rgba(255,255,255,0.64), transparent), radial-gradient(1px 1px at 58.2% 63.9%, rgba(255,255,255,0.52), transparent), radial-gradient(1px 1px at 61.9% 49.6%, rgba(255,255,255,0.62), transparent), radial-gradient(1.5px 2px at 58.6% 45.3%, rgba(255,255,255,0.48), transparent), radial-gradient(1px 1px at 8.2% 30.0%, rgba(255,255,255,0.60), transparent), radial-gradient(1.5px 2px at 28.8% 98.0%, rgba(255,255,255,0.37), transparent), radial-gradient(2px 1px at 75.7% 15.2%, rgba(255,255,255,0.59), transparent), radial-gradient(1px 1px at 76.5% 57.3%, rgba(255,255,255,0.83), transparent), radial-gradient(1.5px 1.5px at 69.5% 59.4%, rgba(255,255,255,0.65), transparent), radial-gradient(2px 1px at 84.0% 94.5%, rgba(255,255,255,0.58), transparent), radial-gradient(1px 1px at 73.1% 31.0%, rgba(255,255,255,0.65), transparent), radial-gradient(2px 1.5px at 71.7% 88.7%, rgba(255,255,255,0.51), transparent), radial-gradient(2px 1.5px at 16.8% 11.7%, rgba(255,255,255,0.34), transparent), radial-gradient(1.5px 1px at 73.8% 39.8%, rgba(255,255,255,0.85), transparent), radial-gradient(2px 1px at 16.6% 40.2%, rgba(255,255,255,0.47), transparent), radial-gradient(1px 2px at 86.4% 27.8%, rgba(255,255,255,0.55), transparent), radial-gradient(1.5px 2px at 95.8% 15.1%, rgba(255,255,255,0.41), transparent), radial-gradient(1px 1px at 1.2% 83.1%, rgba(255,255,255,0.41), transparent), radial-gradient(1.5px 1px at 14.6% 53.5%, rgba(255,255,255,0.67), transparent), radial-gradient(1.5px 1px at 69.0% 51.5%, rgba(255,255,255,0.67), transparent), radial-gradient(1px 2px at 90.0% 78.0%, rgba(255,255,255,0.82), transparent), radial-gradient(2px 2px at 39.9% 10.4%, rgba(255,255,255,0.68), transparent), radial-gradient(1px 1px at 6.7% 20.9%, rgba(255,255,255,0.40), transparent), radial-gradient(1.5px 1px at 10.2% 56.7%, rgba(255,255,255,0.62), transparent), radial-gradient(1.5px 1px at 7.0% 20.8%, rgba(255,255,255,0.53), transparent), radial-gradient(1.5px 1.5px at 60.2% 47.4%, rgba(255,255,255,0.37), transparent), radial-gradient(2px 2px at 48.0% 31.2%, rgba(255,255,255,0.39), transparent), radial-gradient(1.5px 1.5px at 47.9% 69.2%, rgba(255,255,255,0.61), transparent), radial-gradient(1px 1.5px at 14.7% 54.3%, rgba(255,255,255,0.32), transparent), radial-gradient(1.5px 1px at 69.6% 26.1%, rgba(255,255,255,0.52), transparent), radial-gradient(1px 1.5px at 77.2% 53.3%, rgba(255,255,255,0.77), transparent), radial-gradient(1.5px 1px at 61.3% 78.8%, rgba(255,255,255,0.75), transparent), radial-gradient(1px 1px at 81.8% 74.0%, rgba(255,255,255,0.44), transparent), radial-gradient(2px 1.5px at 73.1% 99.0%, rgba(255,255,255,0.77), transparent), radial-gradient(2px 1.5px at 19.4% 60.5%, rgba(255,255,255,0.51), transparent), radial-gradient(1.5px 1.5px at 8.1% 10.2%, rgba(255,255,255,0.58), transparent), radial-gradient(1.5px 1px at 48.3% 98.5%, rgba(255,255,255,0.67), transparent), radial-gradient(1px 2px at 90.9% 34.4%, rgba(255,255,255,0.69), transparent), radial-gradient(1px 2px at 78.2% 75.0%, rgba(255,255,255,0.59), transparent), radial-gradient(1px 2px at 78.9% 33.3%, rgba(255,255,255,0.78), transparent), radial-gradient(2px 2px at 40.1% 94.7%, rgba(255,255,255,0.73), transparent), radial-gradient(1px 1px at 2.8% 59.1%, rgba(255,255,255,0.58), transparent), radial-gradient(1px 2px at 65.7% 35.0%, rgba(255,255,255,0.63), transparent), radial-gradient(1px 1px at 1.4% 97.1%, rgba(255,255,255,0.69), transparent), radial-gradient(1px 2px at 98.7% 19.5%, rgba(255,255,255,0.82), transparent), radial-gradient(1px 1.5px at 21.3% 50.1%, rgba(255,255,255,0.76), transparent), radial-gradient(1.5px 1.5px at 54.4% 83.4%, rgba(255,255,255,0.34), transparent), radial-gradient(1.5px 2px at 66.2% 81.5%, rgba(255,255,255,0.61), transparent), radial-gradient(1px 1px at 52.4% 1.9%, rgba(255,255,255,0.56), transparent), radial-gradient(1px 1px at 77.6% 15.0%, rgba(255,255,255,0.38), transparent), radial-gradient(1px 1px at 32.6% 51.8%, rgba(255,255,255,0.63), transparent), radial-gradient(1px 1px at 24.8% 27.7%, rgba(255,255,255,0.76), transparent), radial-gradient(2px 1px at 76.0% 91.2%, rgba(255,255,255,0.57), transparent), radial-gradient(1px 1.5px at 45.2% 53.3%, rgba(255,255,255,0.59), transparent), radial-gradient(1px 1.5px at 92.3% 89.3%, rgba(255,255,255,0.42), transparent), radial-gradient(2px 1px at 41.7% 39.2%, rgba(255,255,255,0.49), transparent), radial-gradient(1px 2px at 7.3% 66.9%, rgba(255,255,255,0.77), transparent), radial-gradient(1px 1.5px at 14.3% 88.3%, rgba(255,255,255,0.88), transparent), radial-gradient(1px 1px at 39.8% 48.7%, rgba(255,255,255,0.89), transparent), radial-gradient(1px 1px at 70.6% 99.4%, rgba(255,255,255,0.54), transparent), radial-gradient(2px 1px at 35.7% 9.2%, rgba(255,255,255,0.52), transparent), radial-gradient(1.5px 2px at 44.0% 1.8%, rgba(255,255,255,0.50), transparent), radial-gradient(1.5px 1px at 11.3% 91.9%, rgba(255,255,255,0.44), transparent), radial-gradient(1px 1px at 26.6% 4.0%, rgba(255,255,255,0.77), transparent), radial-gradient(1.5px 1px at 82.0% 85.0%, rgba(255,255,255,0.71), transparent), radial-gradient(1.5px 2px at 14.9% 91.9%, rgba(255,255,255,0.64), transparent), radial-gradient(1.5px 1px at 27.9% 80.0%, rgba(255,255,255,0.41), transparent), radial-gradient(1px 1.5px at 93.8% 63.4%, rgba(255,255,255,0.78), transparent), radial-gradient(1px 1px at 6.7% 86.3%, rgba(255,255,255,0.57), transparent), radial-gradient(1.5px 2px at 92.7% 26.8%, rgba(255,255,255,0.38), transparent), radial-gradient(1px 1px at 96.9% 26.2%, rgba(255,255,255,0.41), transparent), radial-gradient(1.5px 1.5px at 53.1% 20.6%, rgba(255,255,255,0.57), transparent), radial-gradient(1px 1.5px at 34.7% 1.8%, rgba(255,255,255,0.45), transparent), radial-gradient(1px 1px at 73.3% 55.1%, rgba(255,255,255,0.41), transparent), radial-gradient(2px 1px at 93.5% 10.6%, rgba(255,255,255,0.79), transparent), radial-gradient(2px 2px at 54.6% 88.9%, rgba(255,255,255,0.88), transparent), radial-gradient(1.5px 1px at 98.2% 34.3%, rgba(255,255,255,0.80), transparent), radial-gradient(1px 2px at 98.9% 98.2%, rgba(255,255,255,0.80), transparent), radial-gradient(1px 1px at 62.5% 88.0%, rgba(255,255,255,0.56), transparent), radial-gradient(1px 1px at 66.5% 38.1%, rgba(255,255,255,0.60), transparent), radial-gradient(1.5px 1px at 69.3% 4.5%, rgba(255,255,255,0.41), transparent), radial-gradient(1.5px 2px at 0.4% 36.4%, rgba(255,255,255,0.50), transparent), radial-gradient(1.5px 1px at 3.4% 88.2%, rgba(255,255,255,0.43), transparent), radial-gradient(1px 1px at 33.5% 8.4%, rgba(255,255,255,0.47), transparent), radial-gradient(1px 1px at 50.5% 0.5%, rgba(255,255,255,0.46), transparent)"></div>
+    <img id="globe-tex" src="assets/world.jpg" alt="" style="position:absolute; width:2px; height:1px; opacity:0" />
+    <canvas id="globe-cv" class="cv" width="1080" height="1920"></canvas>
+    <div class="scrimB"></div>
+    <div class="tag" style="top:206px; left:auto; right:60px">Graphic · Natural Earth</div>
+    <div class="head"><div id="globe-h0" class="hl" style="position:absolute; left:0; right:0; top:0"><span class="w">The</span> <span class="w">day</span> <span class="w">a</span><br><span class="w acc">mountain</span> <span class="w acc">exploded</span></div></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+      const EZ = {
+        lin: (u) => u,
+        io2: (u) => u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2,
+        io3: (u) => u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2,
+        o3: (u) => 1 - Math.pow(1 - u, 3), o4: (u) => 1 - Math.pow(1 - u, 4), i3: (u) => u * u * u, i4: (u) => u * u * u * u,
+        oexpo: (u) => u >= 1 ? 1 : 1 - Math.pow(2, -10 * u),
+      };
+      // keyframed value: K = [{t, v..., e}] — each key eases FROM the previous key over [prev.t, key.t]
+      function kf(K, t, prop) {
+        if (t <= K[0].t) return K[0][prop];
+        for (let i = 1; i < K.length; i++) {
+          const a = K[i - 1], b = K[i];
+          if (t <= b.t) { const u = EZ[b.e || 'io3']((t - a.t) / Math.max(1e-6, b.t - a.t)); return a[prop] + (b[prop] - a[prop]) * u; }
+        }
+        return K[K.length - 1][prop];
+      }
+      // camera over a big image: source point (cx, cy) lands on frame point (fx, fy) at scale s; zoom interpolated in log space
+      function camAt(K, t) {
+        const ls = (k) => Math.log(k.s);
+        if (t <= K[0].t) return K[0];
+        for (let i = 1; i < K.length; i++) {
+          const a = K[i - 1], b = K[i];
+          if (t <= b.t) {
+            const u = EZ[b.e || 'io3']((t - a.t) / Math.max(1e-6, b.t - a.t)), L = (p) => a[p] + (b[p] - a[p]) * u;
+            return { cx: L('cx'), cy: L('cy'), fx: L('fx'), fy: L('fy'), s: Math.exp(ls(a) + (ls(b) - ls(a)) * u) };
+          }
+        }
+        return K[K.length - 1];
+      }
+      function applyCam(el, c) {
+        el.style.transform = `translate(${(c.fx - c.cx * c.s).toFixed(2)}px, ${(c.fy - c.cy * c.s).toFixed(2)}px) scale(${c.s.toFixed(5)})`;
+      }
+      const toFrame = (c, x, y) => [c.fx + (x - c.cx) * c.s, c.fy + (y - c.cy) * c.s];
+
+      const cv = document.getElementById("globe-cv"), ctx = cv.getContext("2d"), im = document.getElementById("globe-tex");
+      const GW = cv.width, GH = cv.height, K = [{"t": 0, "lon": -78, "lat": 28, "r": 470, "cx": 540, "cy": 800}, {"t": 2.35, "lon": -122.18, "lat": 46.2, "r": 2300, "cx": 540, "cy": 760, "e": "io3"}, {"t": 3.05, "lon": -122.18, "lat": 46.2, "r": 3600, "cx": 540, "cy": 760, "e": "i3"}], PIN = {"lon": -122.18, "lat": 46.2, "at": 1.55, "text": "MOUNT ST. HELENS"}, BAND = null;
+      let tex = null, TW = 0, TH = 0, img = null;
+      const RAD = Math.PI / 180;
+      function load() { if (tex) return true; if (!im.complete || !im.naturalWidth) return false;
+        const c = document.createElement("canvas"); c.width = im.naturalWidth; c.height = im.naturalHeight; const x = c.getContext("2d");
+        x.drawImage(im, 0, 0); tex = x.getImageData(0, 0, c.width, c.height).data; TW = c.width; TH = c.height; img = ctx.createImageData(GW, GH); return true; }
+      function gcam(t) { let a = K[0];
+        if (t <= K[0].t) return a;
+        for (let i = 1; i < K.length; i++) { const b = K[i]; if (t > b.t) { a = b; continue; }
+          const u = EZ[b.e || 'io3']((t - a.t) / (b.t - a.t)); let dl = b.lon - a.lon; if (dl > 180) dl -= 360; if (dl < -180) dl += 360;
+          return { lon: a.lon + dl * u, lat: a.lat + (b.lat - a.lat) * u, r: Math.exp(Math.log(a.r) + (Math.log(b.r) - Math.log(a.r)) * u),
+                   cx: a.cx + (b.cx - a.cx) * u, cy: a.cy + (b.cy - a.cy) * u, sw: (a.sw || 0) + ((b.sw || 0) - (a.sw || 0)) * u }; }
+        return K[K.length - 1]; }
+      function proj(c, lon, lat) { const l0 = c.lon * RAD, p0 = c.lat * RAD, l = lon * RAD, p = lat * RAD;
+        const cosc = Math.sin(p0) * Math.sin(p) + Math.cos(p0) * Math.cos(p) * Math.cos(l - l0);
+        return [c.cx + c.r * Math.cos(p) * Math.sin(l - l0), c.cy - c.r * (Math.cos(p0) * Math.sin(p) - Math.sin(p0) * Math.cos(p) * Math.cos(l - l0)), cosc]; }
+      function draw(t) {
+        if (!load()) return; const c = gcam(t), d = img.data; d.fill(0);
+        const l0 = c.lon * RAD, p0 = c.lat * RAD, sp = Math.sin(p0), cp = Math.cos(p0);
+        const Lx = -0.42, Ly = 0.48, Lz = 0.77;
+        const x0 = Math.max(0, Math.floor(c.cx - c.r)), x1 = Math.min(GW, Math.ceil(c.cx + c.r)), y0 = Math.max(0, Math.floor(c.cy - c.r)), y1 = Math.min(GH, Math.ceil(c.cy + c.r));
+        const sw = c.sw || 0, b0 = BAND ? BAND.lat0 : 0, b1 = BAND ? BAND.lat1 : 0, bs = BAND ? BAND.lon : 0;
+        for (let py = y0; py < y1; py++) { const y = (c.cy - py) / c.r;
+          for (let px = x0; px < x1; px++) { const x = (px - c.cx) / c.r, rr = x * x + y * y; if (rr >= 1) continue;
+            const z = Math.sqrt(1 - rr), lat = Math.asin(y * cp + z * sp), lon = l0 + Math.atan2(x, z * cp - y * sp);
+            let u = ((lon / RAD + 180) / 360) % 1; if (u < 0) u += 1; const v = (90 - lat / RAD) / 180;
+            const fx = u * TW - 0.5, fy = Math.min(TH - 1.001, Math.max(0, v * TH - 0.5)), ix = Math.floor(fx), iy = Math.floor(fy), ax = fx - ix, ay = fy - iy;
+            const i00 = (iy * TW + ((ix % TW) + TW) % TW) * 4, i10 = (iy * TW + (((ix + 1) % TW) + TW) % TW) * 4, i01 = i00 + TW * 4, i11 = i10 + TW * 4;
+            const sh = 0.38 + 0.72 * Math.max(0, x * Lx + y * Ly + z * Lz), rim = Math.pow(1 - z, 3) * 0.85, o = (py * GW + px) * 4;
+            let R = 0, G = 0, B = 0;
+            for (let k = 0; k < 3; k++) { const s = (tex[i00 + k] * (1 - ax) + tex[i10 + k] * ax) * (1 - ay) + (tex[i01 + k] * (1 - ax) + tex[i11 + k] * ax) * ay;
+              if (k === 0) R = s; else if (k === 1) G = s; else B = s; }
+            if (sw > 0) { const la = lat / RAD; let dl = lon / RAD - bs; dl = ((dl % 360) + 360) % 360;
+              if (la > b0 && la < b1 && dl < sw) { const e = Math.min(1, Math.min(la - b0, b1 - la) / 4) * 0.62 * Math.min(1, (sw - dl) / 25 + 0.35);
+                R = R * (1 - e) + 255 * e; G = G * (1 - e) + 170 * e; B = B * (1 - e) + 60 * e; } }
+            d[o] = Math.min(255, R * sh + 70 * rim); d[o + 1] = Math.min(255, G * sh + 130 * rim); d[o + 2] = Math.min(255, B * sh + 255 * rim); d[o + 3] = 255; } }
+        ctx.clearRect(0, 0, GW, GH);
+        const g = ctx.createRadialGradient(c.cx, c.cy, c.r * 0.98, c.cx, c.cy, c.r * 1.14); g.addColorStop(0, "rgba(110,170,255,.42)"); g.addColorStop(1, "rgba(110,170,255,0)");
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(c.cx, c.cy, c.r * 1.14, 0, 7); ctx.fill();
+        const tmp = document.createElement("canvas"); tmp.width = GW; tmp.height = GH; tmp.getContext("2d").putImageData(img, 0, 0); ctx.drawImage(tmp, 0, 0);
+        if (PIN && t >= PIN.at) { const q = proj(c, PIN.lon, PIN.lat); if (q[2] > 0.05) { const u = Math.min(1, (t - PIN.at) / 0.35), s = 1 + 1.2 * (1 - u) * (1 - u);
+          ctx.globalAlpha = u; ctx.fillStyle = "rgba(255,91,46,.3)"; ctx.beginPath(); ctx.arc(q[0], q[1], 30 * s, 0, 7); ctx.fill();
+          ctx.fillStyle = "#FFF4DE"; ctx.beginPath(); ctx.arc(q[0], q[1], 13 * s, 0, 7); ctx.fill(); ctx.lineWidth = 6; ctx.strokeStyle = "#FF5B2E"; ctx.stroke();
+          ctx.font = "900 36px Inter, sans-serif"; ctx.textBaseline = "middle"; ctx.textAlign = "left"; ctx.lineWidth = 9; ctx.strokeStyle = "rgba(0,0,0,.75)";
+          const lab = PIN.text, tx = q[0] + 34, ty = q[1]; ctx.strokeText(lab, tx, ty); ctx.fillStyle = "#FFF4DE"; ctx.fillText(lab, tx, ty); ctx.globalAlpha = 1; } }
+      }
+      const gst = { t: 0 };
+      window.__hf = window.__hf || {}; window.__hf.buildReady = window.__hf.buildReady || {};
+      window.__hf.buildReady["globe"] = new Promise((res) => { if (im.complete && im.naturalWidth) res(); else { im.onload = () => res(); im.onerror = () => res(); } }).then(() => draw(gst.t));
+
+      const LT = [0.0];
+      LT.forEach((at, i) => {
+        const ws = document.querySelectorAll("#globe-h" + i + " .w");
+        ws.forEach((w, j) => {
+          const ti = at + 0.05 * (1 - Math.pow(0.84, j)) / 0.16;
+          if (i === 0 && at <= 0.01) tl.set(w, { opacity: 1 }, 0);               // frame 0 = the hook, already composed
+          else if (i === 0) { tl.set(w, { opacity: 1 }, ti); tl.fromTo(w, { y: 70 }, { y: 0, duration: 0.2, ease: "power4.out" }, ti); }
+          else tl.fromTo(w, { x: 230, opacity: 0.35 }, { x: 0, opacity: 1, duration: 0.3, ease: "power4.out", immediateRender: false }, ti);
+          if (i < LT.length - 1) { const out = LT[i + 1] - 0.34 + j * 0.022;
+            tl.to(w, { x: -230, duration: 0.34, ease: "power4.in" }, out); tl.to(w, { opacity: 0, duration: 0.18, ease: "none" }, out); }
+        });
+        if (i > 0) tl.set(ws, { x: 230, opacity: 0 }, 0);
+      });
+
+      tl.fromTo(gst, { t: 0 }, { t: 3.050, duration: 3.050, ease: "none", onUpdate: () => draw(gst.t) }, 0);
+
+      window.__timelines["globe"] = tl;
+    })();
+  </script>
+</template>

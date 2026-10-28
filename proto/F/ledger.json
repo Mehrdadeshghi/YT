@@ -1,0 +1,80 @@
+{
+ "fps": 30,
+ "seams": [
+  {
+   "id": "intro\u2192#5",
+   "cut": 1.5,
+   "technique": "cut-the-curve LEFT (title waterfall-cuts out)",
+   "exit": {
+    "selector": "#intro",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#e5",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "#5\u2192#4",
+   "cut": 3.9,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#e5",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#e4",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "#4\u2192#3",
+   "cut": 6.3,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#e4",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#e3",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "#3\u2192#2",
+   "cut": 8.7,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#e3",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#e2",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "#2\u2192#1",
+   "cut": 11.1,
+   "technique": "inverse zoom-through (arrival: the winner lands)",
+   "exit": {
+    "selector": "#e2",
+    "axis": "z",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#e1",
+    "axis": "z",
+    "dir": -1
+   }
+  }
+ ]
+}
