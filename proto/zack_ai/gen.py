@@ -27,7 +27,7 @@ print('jobs', [(a, b) for a, b, _ in jobs], flush=True)
 
 def expand(p):
     for k, v in cfg['chars'].items(): p = p.replace('{' + k + '}', v)
-    return p + ', ' + cfg['style']
+    return cfg.get('prefix', '') + p + ', ' + cfg['style']
 
 
 from diffusers import StableDiffusionXLPipeline, UNet2DConditionModel, EulerDiscreteScheduler, AutoencoderKL
