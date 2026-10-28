@@ -81,7 +81,8 @@ def fetch(ep, spec, credits):
     print(f"   none found for {spec}")
 
 def fetch_video(ep, spec, credits):
-    """{"id": "x", "video": "File:….webm", "from": 12, "len": 5} → assets/clips/<ep>_<id>/0001.jpg … (30 fps, 1080 px wide)"""
+    """{"id": "x", "video": "File:….webm", "from": 12, "len": 5} → assets/clips/<ep>_<id>/0001.jpg … (30 fps, 1080 px wide)
+    optional "w": output width (1920 for full-bleed 9:16 crops of 1080p+ sources); "fps": 15 = 2x speed, 60 = slow motion"""
     import subprocess, shutil, tempfile
     name = spec["video"] if spec["video"].startswith("File:") else "File:" + spec["video"]
     q = api(action="query", titles=name, prop="videoinfo", viprop="url|size|derivatives|extmetadata")["query"]["pages"][0]
@@ -94,7 +95,7 @@ def fetch_video(ep, spec, credits):
     open(src, "wb").write(get(url))
     out = f"assets/clips/{ep}_{spec['id']}"; shutil.rmtree(out, ignore_errors=True); os.makedirs(out)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(spec.get("from", 0)), "-t", str(spec.get("len", 5)), "-i", src,
-                    "-vf", f"fps={spec.get('fps', 30)},scale=1080:-2", "-q:v", "3", f"{out}/%04d.jpg"], check=True)
+                    "-vf", f"fps={spec.get('fps', 30)},scale={spec.get('w', 1080)}:-2", "-q:v", "3", f"{out}/%04d.jpg"], check=True)
     n = len([x for x in os.listdir(out) if x.endswith(".jpg")]); shutil.copy(f"{out}/0001.jpg", f"{OUT}/{ep}_{spec['id']}.jpg")
     author = clean(re.sub(r"<[^>]+>", " ", meta.get("Artist", {}).get("value") or "")) or "unknown"
     credits[spec["id"]] = {"file": name, "author": author[:80], "license": lic, "page": vi.get("descriptionurl"), "frames": n,

@@ -357,9 +357,10 @@ def el_counter(S, e, i):
     unit = f'<span class="unit">{e["unit"]}</span>' if e.get('unit') else ''
     hide = e.get('show') is not None or e.get('grow')
     html = ''
+    bx = f'left:{e["box_x"]}px; right:auto; width:{e.get("box_w", 500)}px; ' if 'box_x' in e else ''   # optional column (motion v2)
     if e.get('kicker'):
-        html += f'      <div id="{q}k" class="kicker" style="top:{e.get("ktop", top - 56)}px{"; opacity:0" if hide else ""}">{e["kicker"]}</div>\n'
-    html += (f'      <div id="{q}w" class="big{(" " + e["c"]) if e.get("c") else ""}" style="top:{top}px; font-size:{e.get("size", 250)}px{"; opacity:0" if hide else ""}">'
+        html += f'      <div id="{q}k" class="kicker" style="{bx}top:{e.get("ktop", top - 56)}px{"; opacity:0" if hide else ""}">{e["kicker"]}</div>\n'
+    html += (f'      <div id="{q}w" class="big{(" " + e["c"]) if e.get("c") else ""}" style="{bx}top:{top}px; font-size:{e.get("size", 250)}px{"; opacity:0" if hide else ""}">'
              f'<span id="{q}">{fmt_py(e, e.get("from", 0))}</span>{unit}</div>')
     dur = e.get('dur', 0.7); ease = e.get('ease', 'power3.out')
     js = ''
@@ -604,6 +605,8 @@ ELEMENTS = dict(title=el_title, counter=el_counter, ruler=el_ruler, bars=el_bars
 
 def build_scene(B, k, cfg):
     """→ body, js, css, cues for one scene (same contract as the pilot's hand-written scene functions)"""
+    motion = getattr(B, 'motion', False)
+    if motion and 'enter' not in cfg: cfg = dict(cfg, enter='none')     # v2: the seam does the entering
     S = Scene(B, k, cfg)
     S.tail = ''
     TEMPLATES[cfg['tpl']](S, cfg)
@@ -620,4 +623,406 @@ def build_scene(B, k, cfg):
     body = '\n'.join(head_body + els_html + ([S.tail] if S.tail else []))
     js = f'\n      const D = {S.D:.3f};\n' + ''.join(head_js) + ''.join(S.js)
     css = KIT_CSS + ''.join(S.css)
+    if motion:
+        body, js, seam_cues = motion_wrap(S, body, js)
+        S.cues += seam_cues; css += MOTION_CSS
     return '\n' + body, js, css, S.cues
+
+
+# ====================================================================================================================
+# MOTION v2 (#212+, owner: "Qualität drastisch verbessern, Motion-Video"): opt in with E['hf']['motion'] = True.
+# Follows ~/.claude/skills motion-doctrine / cut-the-curve / seam-craft (vector law, mirrored power4 seams, no idle wobble):
+#   seams     every scene enters through a velocity-matched seam set by scene["hf"]["seam"] (the previous scene exits on the
+#             same vector, cut mid-motion, 0.3 s each side): left (default = the film's current), up (a reveal rises),
+#             push (Z forward: deeper into the same thought), pull (inverse zoom: ARRIVAL / payoff, spend once), cut (dip cut)
+#   camera    "cam": [{at, s, x, y, dur, ease}] keyframes = a camera with intent (establish → travel → arrive), never a creep
+#   templates footage (REAL FOOTAGE clips with hard cuts on words; fit cover / band / card), parallax (2.5D depth split of a
+#             photo: background + cut-out foreground at different depths), map (animated SVG map: camera, route draw-on,
+#             travelling carrier dot, pins), flip (stop-motion of archival photos, one per word)
+#   elements  globe (3D orthographic globe of a real NASA texture: camera keys, pins, expanding range rings, great-circle arcs),
+#             kinetic (waterfall-entry typography, waterfall cut between lines), plus every older element
+# ====================================================================================================================
+MOTION_CSS = """
+  .seam { position: absolute; inset: 0; will-change: transform, opacity; }
+  .layer2 { position: absolute; inset: 0; overflow: hidden; }
+  .vband { position: absolute; left: 0; overflow: hidden; box-shadow: 0 30px 90px rgba(0,0,0,.6); }
+  .vband video, .vband img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+  .vcard { border-radius: 26px; box-shadow: 0 30px 90px rgba(0,0,0,.65), 0 0 0 1.5px rgba(244,238,227,.18); }
+  .backdrop { position: absolute; left: -8%; top: -8%; width: 116%; height: 116%; object-fit: cover; filter: blur(34px) brightness(.42) saturate(1.1); }
+  .grain { position: absolute; inset: 0; pointer-events: none; opacity: .10; mix-blend-mode: overlay;
+    background: repeating-radial-gradient(circle at 30% 40%, rgba(255,255,255,.5) 0 1px, transparent 1px 3px); }
+  .kin { position: absolute; left: 40px; right: 40px; text-align: center; font-family: "League Gothic", sans-serif; text-transform: uppercase;
+    line-height: .9; color: #F4EEE3; text-shadow: 0 10px 40px rgba(0,0,0,.55); }
+  .kin .w { display: inline-block; opacity: 0; margin: 0 .09em; will-change: transform; }
+  .mapwrap { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  .pinlab { font: 800 30px Inter, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+  .flipcard { position: absolute; overflow: hidden; border-radius: 22px; box-shadow: 0 30px 90px rgba(0,0,0,.6), 0 0 0 1.5px rgba(244,238,227,.2); background: #111; }
+  .flipcard img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+  .glcanvas { position: absolute; }
+"""
+
+SEAM_SFX = {'left': ['whoosh', 'swish'], 'up': ['swish', 'whoosh'], 'push': ['whoosh'], 'pull': ['whoosh'], 'cut': ['click']}
+
+
+def _seam_exit(sel, kind, C):
+    """outgoing side: accelerate out on the incoming seam's vector, gone exactly at the cut C (local seconds)"""
+    if kind in ('left', 'up'):
+        ax = 'x' if kind == 'left' else 'y'
+        return (f'      tl.to("{sel}", {{ {ax}: -230, filter: "blur(8px)", duration: 0.3, ease: "power4.in" }}, {C - 0.3:.3f});\n'
+                f'      tl.to("{sel}", {{ opacity: 0, duration: 0.2, ease: "none" }}, {C - 0.2:.3f});\n')
+    if kind in ('push', 'pull'):
+        s = 1.2 if kind == 'push' else 0.8
+        return (f'      tl.to("{sel}", {{ scale: {s}, filter: "blur(18px)", duration: 0.22, ease: "power3.in" }}, {C - 0.22:.3f});\n'
+                f'      tl.to("{sel}", {{ opacity: 0.15, duration: 0.2, ease: "none" }}, {C - 0.2:.3f});\n'
+                f'      tl.set("{sel}", {{ opacity: 0 }}, {C:.3f});\n')
+    if kind == 'cut':                      # dip cut: the frame darkens for 3 frames, then the hard cut
+        return (f'      tl.to("{sel}", {{ filter: "brightness(0.55)", duration: 0.1, ease: "none" }}, {C - 0.1:.3f});\n'
+                f'      tl.set("{sel}", {{ opacity: 0 }}, {C:.3f});\n')
+    return ''
+
+
+def _seam_entry(sel, kind):
+    if kind in ('left', 'up'):
+        ax = 'x' if kind == 'left' else 'y'
+        return f'      tl.fromTo("{sel}", {{ {ax}: 230, opacity: 0.35, filter: "blur(8px)" }}, {{ {ax}: 0, opacity: 1, filter: "blur(0px)", duration: 0.34, ease: "power4.out" }}, 0);\n'
+    if kind == 'push':
+        return f'      tl.fromTo("{sel}", {{ scale: 0.9, opacity: 0.15, filter: "blur(18px)" }}, {{ scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }}, 0);\n'
+    if kind == 'pull':
+        return f'      tl.fromTo("{sel}", {{ scale: 1.25, opacity: 0.15, filter: "blur(18px)" }}, {{ scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }}, 0);\n'
+    return ''
+
+
+def motion_wrap(S, body, js):
+    """wrap the whole scene in a seam layer: entry on its own seam, exit on the next scene's seam"""
+    B, k = S.B, S.k
+    sel = f'#{S.p}-seam'
+    kin = S.cfg.get('seam', 'left') if k else 'none'
+    js_s = _seam_entry(sel, kin)
+    nxt = B.seam_next(k)
+    cues = []
+    if nxt:
+        C = round(B.host_start(k + 1) - B.host_start(k), 3)
+        js_s += _seam_exit(sel, nxt, C)
+        pool = SEAM_SFX.get(nxt, ['whoosh'])
+        cues.append((C - 0.1, pool[k % len(pool)], {'push': 0.75, 'pull': 0.8, 'cut': 0.5}.get(nxt, 0.55)))
+        if nxt == 'pull': cues.append((C + 0.05, 'thump', 0.6))
+    body = f'\n    <div id="{S.p}-seam" class="seam">{body}\n    </div>'
+    return body, js + js_s, cues
+
+
+def cam_js(S, sel, keys, depth=1.0):
+    """camera keyframes on a wrapper: [{at, s, x, y, dur, ease}] — the first key is the opening framing (set at 0);
+    depth scales the travel (parallax layers: background < 1 < foreground)"""
+    if not keys: return ''
+    def st(kf):
+        d = {}
+        if 's' in kf: d['scale'] = round(1 + (kf['s'] - 1) * depth, 4)
+        if 'x' in kf: d['x'] = round(kf['x'] * depth, 1)
+        if 'y' in kf: d['y'] = round(kf['y'] * depth, 1)
+        if 'r' in kf: d['rotation'] = round(kf['r'] * depth, 2)
+        return d
+    js = f'      tl.set("{sel}", {J(dict(st(keys[0]), transformOrigin=keys[0].get("o", "50% 50%")))}, 0);\n'
+    for kf in keys[1:]:
+        at = S.t(kf['at']); dur = kf.get('dur', 0.9)
+        if dur == 'end': dur = max(0.3, S.D - at)
+        if isinstance(dur, str): dur = max(0.2, S.t(dur) - at)
+        js += f'      tl.to("{sel}", {J(dict(st(kf), duration=round(dur, 3), ease=kf.get("ease", "power2.inOut")))}, {at:.3f});\n'
+        if kf.get('sfx'): S.cues.append((at, kf['sfx'], kf.get('gain', 0.5)))
+    return js
+
+
+def vtag(S, sid, cls, style, start, dur, eid):
+    ln = S.B.clip_len(sid)
+    d = max(0.1, min(dur, ln - 0.05))
+    return f'<video id="{eid}" class="clip {cls}" src="{S.src(sid)}" muted playsinline data-start="{start:.3f}" data-duration="{d:.2f}"{style}></video>'
+
+
+def tpl_footage(S, c):
+    """REAL FOOTAGE first: clips [{src, at (cut time, first = 0), fit cover|band|card, pos, ar (w/h, band/card), w, y (band centre),
+    cam [...], label, flood}] — hard cuts on words between clips (B-roll cut on the sentence), each clip with its own camera"""
+    clips = c['clips']; ats = [0.0] + [S.t(cl['at']) for cl in clips[1:]]
+    html = [f'    <div id="{S.p}-stage" class="stage">']
+    js = ''
+    for i, cl in enumerate(clips):
+        a0 = ats[i]; a1 = ats[i + 1] if i + 1 < len(ats) else S.D
+        q = f'{S.p}-L{i}'; fit = cl.get('fit', 'cover'); sid = cl['src']; isv = S.is_video(sid)
+        dur = a1 - a0 + 0.1
+        def media(cls, style, eid):
+            if isv: return vtag(S, sid, cls, style, a0, dur, eid)
+            return f'<img id="{eid}" class="{cls}" src="{S.src(sid)}" alt=""{style} />'
+        inner = ''
+        pst = ' style="object-position: %s"' % cl.get('pos', '50% 50%')
+        if fit == 'cover':
+            inner = f'<div id="{q}c" class="stage">{media("fill", pst, q + "m")}</div>'
+        else:
+            w = cl.get('w', 1080 if fit == 'band' else 980); h = round(w / cl.get('ar', 16 / 9)); x = round((W_ - w) / 2); y = round(cl.get('y', 900) - h / 2)
+            bg = (f'<div id="{q}bg" class="stage">{media("backdrop", "", q + "b")}</div>' if fit == 'band' and isv and cl.get('backdrop', True) else
+                  f'<div class="stage" style="background: {cl.get("flood", "radial-gradient(120% 70% at 50% 45%, #1A1D1F 0%, #0B0C0D 60%, #060707 100%)")}"></div>')
+            cls = 'vband' + (' vcard' if fit == 'card' else '')
+            inner = (f'{bg}<div id="{q}c" class="{cls}" style="left:{x}px; top:{y}px; width:{w}px; height:{h}px">'
+                     f'{media("", pst, q + "m")}'
+                     f'{"<div class=grain></div>" if cl.get("grain") else ""}</div>')
+        scrim = '' if cl.get('scrim') is False else '<div class="scrim-top"></div><div class="scrim-bot"></div>'
+        lab = cl.get('label')
+        labh = f'<div id="{q}lab" class="chip" style="left:{cl.get("labelX", 40)}px; top:{cl.get("labelY", 1030)}px">{label_html(lab)}</div>' if lab else ''
+        hid = '' if i == 0 else ' style="opacity:0"'
+        html.append(f'      <div id="{q}" class="layer2"{hid}>{inner}{scrim}{labh}</div>')
+        if i:
+            js += f'      tl.set("#{q}", {{ opacity: 1 }}, {a0:.3f});\n      tl.set("#{S.p}-L{i - 1}", {{ opacity: 0 }}, {a0 + 0.001:.3f});\n'
+            if cl.get('sfx', 'thump'): S.cues.append((a0, cl.get('sfx', 'thump'), cl.get('gain', 0.35)))
+        js += cam_js(S, f'#{q}c', cl.get('cam'))
+    S.body.insert(0, '\n'.join(html))
+    S.js.insert(0, js)
+    S.label_id = f'{S.p}-L0lab'
+    S.tail = '    </div>'
+
+
+def tpl_parallax(S, c):
+    """2.5D depth split of a REAL PHOTO: background = the photo, foreground = a cut-out of it (derive 'cutout', PNG) on the same
+    geometry; the camera keys move the layers at different depths (bg 0.35, fg 1.0) — the photo opens up in depth"""
+    g = c.get('img', {'w': 1080, 'x': 0, 'y': 0})
+    st = f'position:absolute; width:{g["w"]}px; left:{g["x"]}px; top:{g["y"]}px'
+    blur = c.get('bgblur', 1.5)
+    S.body.insert(0, f"""    <div id="{S.p}-stage" class="stage">
+      <div id="{S.p}-bg" class="stage"><img src="{S.src(c['src'])}" alt="" style="{st}; filter: blur({blur}px) brightness({c.get('bgdim', 0.85)})" /></div>
+      <div id="{S.p}-fg" class="stage"><img src="{S.src(c['fg'])}" alt="" style="{st}; filter: drop-shadow(0 20px 40px rgba(0,0,0,.55))" /></div>
+      <div class="scrim-top"></div><div class="scrim-bot"></div>
+      {f'<div id="{S.p}-lab" class="chip" style="left:40px; top:{c.get("labelY", 1030)}px">{label_html(c["label"])}</div>' if c.get('label') else ''}""")
+    S.label_id = f'{S.p}-lab'
+    S.js.insert(0, cam_js(S, f'#{S.p}-bg', c.get('cam'), c.get('bgdepth', 0.35)) + cam_js(S, f'#{S.p}-fg', c.get('cam'), 1.0))
+    S.tail = '    </div>'
+
+
+def tpl_map(S, c):
+    """animated SVG map GRAPHIC (geometry precomputed by scripts/hf_geo.py into c['geo'] = {w, h, d (land path), pts {name: [x, y]}}):
+    cam [{at, c: [x, y] or point name, z, dur}], route [{to: name, at, dur}] drawn on with a travelling carrier dot, pins [{p, at, text, dx, dy, anchor}]"""
+    G = c['geo']; th = c.get('style', {})
+    land, sea, coast, route = th.get('land', '#3A3428'), th.get('sea', '#0E1417'), th.get('coast', '#C9B48A'), th.get('route', '#E0573F')
+    P = G['pts']
+    def pt(v): return P[v] if isinstance(v, str) else v
+    svg = [f'<svg width="{G["w"]}" height="{G["h"]}" viewBox="0 0 {G["w"]} {G["h"]}" style="overflow:visible">',
+           f'<path d="{G["d"]}" fill="{land}" stroke="{coast}" stroke-width="{th.get("coastw", 1.6)}" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>']
+    for ex in G.get('extra', []):
+        svg.append(f'<path d="{ex["d"]}" fill="none" stroke="{ex.get("c", coast)}" stroke-width="{ex.get("sw", 1)}" stroke-dasharray="{ex.get("dash", "none")}" vector-effect="non-scaling-stroke" opacity="{ex.get("op", 0.6)}"/>')
+    js = ''
+    rts = c.get('route', [])
+    prev = pt(c.get('route_from')) if c.get('route_from') else None
+    cue = []
+    for j, r in enumerate(rts):
+        a = prev; b = pt(r['to']); prev = b
+        if a is None: continue
+        mx, my = (a[0] + b[0]) / 2, (a[1] + b[1]) / 2
+        bend = r.get('bend', 0.18); dx, dy = b[0] - a[0], b[1] - a[1]
+        cx, cy = mx - dy * bend, my + dx * bend
+        q = f'{S.p}-rt{j}'
+        svg.append(f'<path id="{q}" d="M{a[0]:.1f},{a[1]:.1f} Q{cx:.1f},{cy:.1f} {b[0]:.1f},{b[1]:.1f}" fill="none" stroke="{route}" stroke-width="{th.get("routew", 7)}" '
+                   f'stroke-linecap="round" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110" vector-effect="non-scaling-stroke"/>')
+        at = S.t(r['at']); dur = r.get('dur', 1.0)
+        js += f'      tl.to("#{q}", {{ strokeDashoffset: 0, duration: {dur}, ease: "power2.inOut" }}, {at:.3f});\n'
+        js += (f'      {{ const p = document.getElementById("{q}"), L = p.getTotalLength() || 1, o = {{ v: 0 }}, dot = document.getElementById("{S.p}-dot");\n'
+               f'        tl.fromTo(o, {{ v: 0 }}, {{ v: 1, duration: {dur}, ease: "power2.inOut", onUpdate: () => {{ const q = p.getPointAtLength(o.v * L); dot.setAttribute("cx", q.x); dot.setAttribute("cy", q.y); }} }}, {at:.3f}); }}\n')
+        if j == 0 or c.get('route_from') and j == 0:
+            js += f'      tl.set("#{S.p}-dot", {{ opacity: 1 }}, {at:.3f});\n'
+        cue.append((at, r.get('sfx', 'swish'), r.get('gain', 0.4)))
+    for j, pn in enumerate(c.get('pins', [])):
+        x, y = pt(pn['p']); q = f'{S.p}-pin{j}'; rr = pn.get('r', 9)
+        anchor = pn.get('anchor', 'start')
+        svg.append(f'<g id="{q}" style="opacity:0"><circle cx="{x:.1f}" cy="{y:.1f}" r="{rr * 2.4}" fill="{route}" opacity=".25"/><circle cx="{x:.1f}" cy="{y:.1f}" r="{rr}" fill="{th.get("pin", "#F4EEE3")}" stroke="{route}" stroke-width="3"/>'
+                   f'<text x="{x + pn.get("dx", 18):.1f}" y="{y + pn.get("dy", 10):.1f}" text-anchor="{anchor}" font-family="Inter, sans-serif" font-weight="900" font-size="{pn.get("size", 26)}" '
+                   f'letter-spacing="2" fill="{th.get("label", "#F4EEE3")}" style="text-transform:uppercase; paint-order: stroke" stroke="rgba(0,0,0,.65)" stroke-width="5">{pn.get("text", pn["p"])}</text></g>')
+        if pn.get('at') is None:
+            js += f'      tl.set("#{q}", {{ opacity: 1 }}, 0);\n'
+        else:
+            at = S.t(pn['at'])
+            js += f'      tl.fromTo("#{q}", {{ opacity: 0, scale: 1.8, transformOrigin: "{x:.1f}px {y:.1f}px" }}, {{ opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.6)" }}, {at:.3f});\n'
+            cue.append((at + 0.05, pn.get('sfx', 'pop'), pn.get('gain', 0.5)))
+    svg.append(f'<circle id="{S.p}-dot" cx="0" cy="0" r="{th.get("dotr", 11)}" fill="{th.get("dot", "#FFF1D6")}" stroke="{route}" stroke-width="4" style="opacity:0"/>')
+    svg.append('</svg>')
+    vign = th.get('vignette', 'radial-gradient(120% 80% at 50% 45%, rgba(0,0,0,0) 40%, rgba(0,0,0,.65) 100%)')
+    S.body.insert(0, f"""    <div id="{S.p}-flood" class="stage" style="background: {sea}"></div>
+    <div id="{S.p}-stage" class="stage">
+      <div id="{S.p}-map" class="mapwrap">{''.join(svg)}</div>
+      <div class="stage" style="background: {vign}; pointer-events:none"></div>
+      {f'<div id="{S.p}-lab" class="chip" style="left:40px; top:{c.get("labelY", 1030)}px">{label_html(c["label"])}</div>' if c.get('label') else ''}""")
+    S.label_id = f'{S.p}-lab'
+    # camera: map coords (x, y) at zoom z sit at the frame point (fx, fy)
+    keys = []
+    for kf in c['cam']:
+        x, y = pt(kf['c']); z = kf.get('z', 1.0); fx, fy = kf.get('f', [540, 760])
+        keys.append(dict(kf, s=z, x=round(fx - x * z, 1), y=round(fy - y * z, 1), o='0 0'))
+    js0 = f'      tl.set("#{S.p}-map", {{ scale: {keys[0]["s"]}, x: {keys[0]["x"]}, y: {keys[0]["y"]}, transformOrigin: "0 0" }}, 0);\n'
+    for kf in keys[1:]:
+        at = S.t(kf['at']); dur = kf.get('dur', 1.0)
+        js0 += f'      tl.to("#{S.p}-map", {{ scale: {kf["s"]}, x: {kf["x"]}, y: {kf["y"]}, duration: {dur}, ease: "{kf.get("ease", "power2.inOut")}" }}, {at:.3f});\n'
+    S.js.insert(0, js0 + js)
+    S.cues += cue
+    S.tail = '    </div>'
+
+
+def tpl_flip(S, c):
+    """stop-motion of archival photos in a card (frames [{src, at}] hard-cut on words, a shutter click on each) over a ground"""
+    g = c.get('box', {'x': 190, 'y': 300, 'w': 700, 'h': 1000})
+    bg = c.get('flood', 'radial-gradient(120% 70% at 50% 45%, #2A251D 0%, #13110D 60%, #090807 100%)')
+    imgs = ''.join(f'<img id="{S.p}-f{j}" src="{S.src(f["src"])}" alt="" style="object-position: {f.get("pos", "50% 50%")}{"; opacity:1" if j == 0 else ""}" />'
+                   for j, f in enumerate(c['frames']))
+    lab = c.get('label')
+    S.body.insert(0, f"""    <div id="{S.p}-flood" class="stage" style="background: {bg}"></div>
+    <div id="{S.p}-stage" class="stage">
+      <div id="{S.p}-card" class="flipcard" style="left:{g['x']}px; top:{g['y']}px; width:{g['w']}px; height:{g['h']}px">{imgs}<div class="grain"></div></div>
+      {f'<div id="{S.p}-lab" class="chip" style="left:{g["x"] + 22}px; top:{g["y"] + 22}px">{label_html(lab)}</div>' if lab else ''}""")
+    S.label_id = f'{S.p}-lab'
+    js = ''
+    for j, f in enumerate(c['frames'][1:], 1):
+        at = S.t(f['at'])
+        js += f'      tl.set("#{S.p}-f{j}", {{ opacity: 1 }}, {at:.3f});\n      tl.set("#{S.p}-f{j - 1}", {{ opacity: 0 }}, {at + 0.001:.3f});\n'
+        S.cues.append((at, f.get('sfx', 'click'), f.get('gain', 0.5)))
+    js += cam_js(S, f'#{S.p}-card', c.get('cam'))
+    S.js.insert(0, js)
+    S.tail = '    </div>'
+
+
+def el_kinetic(S, e, i):
+    """kinetic typography: lines [{text ('|' = line break, *word* = accent), at, out, c, size, top, fx rise|cut|zoom}];
+    rise = waterfall ENTRY from below (binary opacity, weight-scaled travel, accelerating gaps);
+    a line whose 'out' meets the next line's 'at' leaves on a waterfall CUT (words ramp left, power4.in) and the next arrives mid-flight"""
+    lines = e['lines']; html, js, cues = [], '', []
+    for j, L in enumerate(lines):
+        q = f'{S.p}-kn{i}_{j}'
+        rows = L['text'].split('|'); words = []
+        rh = []
+        for r in rows:
+            ws = []
+            for w in r.split():
+                acc = w.startswith('*') and w.endswith('*'); w = w.strip('*')
+                ws.append(f'<span id="{q}w{len(words)}" class="w{(" " + L.get("ac", "cu")) if acc else ""}">{w}</span>')
+                words.append(w)
+            rh.append(''.join(ws))
+        box = f'left:{L["x"]}px; right:auto; width:{L.get("w", 500)}px; text-align:{L.get("align", "left")}; ' if 'x' in L else ''
+        html.append(f'      <div id="{q}" class="kin{(" " + L["c"]) if L.get("c") else ""}" style="{box}top:{L.get("top", e.get("top", 300))}px; font-size:{L.get("size", e.get("size", 190))}px">{"<br>".join(rh)}</div>')
+        if L.get('at') is None:            # on screen from frame 0 (the thumbnail / hook line)
+            fx = 'static'; at = 0.0; js += f'      tl.set({J([f"#{q}w{n}" for n in range(len(words))])}, {{ opacity: 1 }}, 0);\n'
+        else:
+            at = S.t(L['at']); fx = L.get('fx', 'cut' if j and lines[j - 1].get('out') is not None and abs(S.t(lines[j - 1]['out']) - at) < 0.25 else 'rise')
+        t = at; gap = 0.07 if fx == 'rise' else 0.05
+        for n, w in enumerate(words if fx != 'static' else []):
+            wid = f'#{q}w{n}'
+            heavy = len(w) >= 6; light = len(w) <= 2
+            if fx == 'rise':
+                off = 70 if heavy else 34 if light else 46; d = 0.19 if heavy else 0.11 if light else 0.15
+                js += f'      tl.set("{wid}", {{ opacity: 1 }}, {t:.3f});\n      tl.fromTo("{wid}", {{ y: {off} }}, {{ y: 0, duration: {d}, ease: "power4.out" }}, {t:.3f});\n'
+            elif fx == 'zoom':
+                js += f'      tl.fromTo("{wid}", {{ opacity: 0.15, scale: 0.75, filter: "blur(10px)" }}, {{ opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }}, {t:.3f});\n'
+            else:
+                js += f'      tl.fromTo("{wid}", {{ opacity: 0.35, x: 230 }}, {{ opacity: 1, x: 0, duration: 0.3, ease: "power4.out" }}, {t:.3f});\n'
+            t += gap; gap *= 0.84
+        if L.get('sfx', e.get('sfx')): cues.append((at, L.get('sfx', e.get('sfx')), L.get('gain', 0.35)))
+        if L.get('stamp'):                 # the last word lands like a hit
+            cues.append((t - gap / 0.84 + 0.12, 'thump', 0.6))
+        if L.get('out') is not None:
+            o = S.t(L['out'])
+            for n in range(len(words)):
+                ot = o - 0.3 + 0.022 * n
+                js += (f'      tl.to("#{q}w{n}", {{ x: -230, duration: 0.34, ease: "power4.in" }}, {ot:.3f});\n'
+                       f'      tl.to("#{q}w{n}", {{ opacity: 0, duration: 0.18, ease: "none" }}, {ot + 0.12:.3f});\n')
+    S.add('\n'.join(html), js, cues)
+
+
+GLOBE_JS = r"""
+      { const cv = document.getElementById("%ID%"), ctx = cv.getContext("2d"), im = document.getElementById("%ID%t");
+        const W = cv.width, H = cv.height, K = %KEYS%, PINS = %PINS%, RINGS = %RINGS%, ARCS = %ARCS%, OPT = %OPT%;
+        let tex = null, TW = 0, TH = 0;
+        const R = Math.PI / 180, ease = (u) => u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2;
+        function load() { if (tex) return true; if (!im.complete || !im.naturalWidth) return false;
+          const c = document.createElement("canvas"); c.width = im.naturalWidth; c.height = im.naturalHeight; const x = c.getContext("2d");
+          x.drawImage(im, 0, 0); tex = x.getImageData(0, 0, c.width, c.height).data; TW = c.width; TH = c.height; return true; }
+        function cam(t) { let a = K[0];
+          for (let i = 1; i < K.length; i++) { const b = K[i]; if (t <= b.at) break;
+            const u = Math.min(1, (t - b.at) / b.dur), e = ease(u); let dl = b.lon - a.lon; if (dl > 180) dl -= 360; if (dl < -180) dl += 360;
+            a = { lon: a.lon + dl * e, lat: a.lat + (b.lat - a.lat) * e, r: a.r + (b.r - a.r) * e, cx: a.cx + (b.cx - a.cx) * e, cy: a.cy + (b.cy - a.cy) * e }; }
+          return a; }
+        function proj(c, lon, lat) { const l0 = c.lon * R, p0 = c.lat * R, l = lon * R, p = lat * R;
+          const cosc = Math.sin(p0) * Math.sin(p) + Math.cos(p0) * Math.cos(p) * Math.cos(l - l0);
+          return [c.cx + c.r * Math.cos(p) * Math.sin(l - l0), c.cy - c.r * (Math.cos(p0) * Math.sin(p) - Math.sin(p0) * Math.cos(p) * Math.cos(l - l0)), cosc]; }
+        function dest(lon, lat, d, b) { const p1 = lat * R, l1 = lon * R;
+          const p2 = Math.asin(Math.sin(p1) * Math.cos(d) + Math.cos(p1) * Math.sin(d) * Math.cos(b));
+          const l2 = l1 + Math.atan2(Math.sin(b) * Math.sin(d) * Math.cos(p1), Math.cos(d) - Math.sin(p1) * Math.sin(p2)); return [l2 / R, p2 / R]; }
+        function draw(t) {
+          if (!load()) return; const c = cam(t);
+          const img = ctx.createImageData(W, H), d = img.data;
+          const l0 = c.lon * R, p0 = c.lat * R, sp = Math.sin(p0), cp = Math.cos(p0);
+          const Lx = -0.45, Ly = 0.5, Lz = 0.74, night = OPT.night || 0;
+          const x0 = Math.max(0, Math.floor(c.cx - c.r)), x1 = Math.min(W, Math.ceil(c.cx + c.r)), y0 = Math.max(0, Math.floor(c.cy - c.r)), y1 = Math.min(H, Math.ceil(c.cy + c.r));
+          for (let py = y0; py < y1; py++) { const y = (c.cy - py) / c.r;
+            for (let px = x0; px < x1; px++) { const x = (px - c.cx) / c.r, rr = x * x + y * y; if (rr >= 1) continue;
+              const z = Math.sqrt(1 - rr), lat = Math.asin(y * cp + z * sp), lon = l0 + Math.atan2(x, z * cp - y * sp);
+              let u = ((lon / R + 180) / 360) % 1; if (u < 0) u += 1; const v = (90 - lat / R) / 180;
+              const ti = ((Math.min(TH - 1, Math.floor(v * TH)) * TW) + Math.floor(u * TW)) * 4;
+              let sh = 0.42 + 0.68 * Math.max(0, x * Lx + y * Ly + z * Lz); if (night) sh *= 1 - night * Math.max(0, Math.min(1, (0.15 - (x * Lx + y * Ly + z * Lz)) * 3));
+              const rim = Math.pow(1 - z, 3) * 0.9, o = (py * W + px) * 4;
+              d[o] = Math.min(255, tex[ti] * sh + 90 * rim); d[o + 1] = Math.min(255, tex[ti + 1] * sh + 150 * rim); d[o + 2] = Math.min(255, tex[ti + 2] * sh + 255 * rim); d[o + 3] = 255; } }
+          ctx.clearRect(0, 0, W, H);
+          const g = ctx.createRadialGradient(c.cx, c.cy, c.r * 0.98, c.cx, c.cy, c.r * 1.12); g.addColorStop(0, "rgba(120,180,255,.45)"); g.addColorStop(1, "rgba(120,180,255,0)");
+          ctx.fillStyle = g; ctx.beginPath(); ctx.arc(c.cx, c.cy, c.r * 1.12, 0, 7); ctx.fill();
+          const tmp = document.createElement("canvas"); tmp.width = W; tmp.height = H; tmp.getContext("2d").putImageData(img, 0, 0); ctx.drawImage(tmp, 0, 0);
+          for (const A of ARCS) { if (t < A.at) continue; const u = ease(Math.min(1, (t - A.at) / A.dur));
+            const a1 = A.a, b1 = A.b, n = 64; ctx.strokeStyle = A.c || OPT.accent; ctx.lineWidth = 6; ctx.lineCap = "round"; ctx.beginPath(); let pen = false;
+            const P1 = [Math.cos(a1[1] * R) * Math.cos(a1[0] * R), Math.cos(a1[1] * R) * Math.sin(a1[0] * R), Math.sin(a1[1] * R)], P2 = [Math.cos(b1[1] * R) * Math.cos(b1[0] * R), Math.cos(b1[1] * R) * Math.sin(b1[0] * R), Math.sin(b1[1] * R)];
+            const om = Math.acos(Math.max(-1, Math.min(1, P1[0] * P2[0] + P1[1] * P2[1] + P1[2] * P2[2])));
+            for (let k = 0; k <= n * u; k++) { const f = k / n, s1 = Math.sin((1 - f) * om) / Math.sin(om), s2 = Math.sin(f * om) / Math.sin(om);
+              const X = s1 * P1[0] + s2 * P2[0], Y = s1 * P1[1] + s2 * P2[1], Z = s1 * P1[2] + s2 * P2[2];
+              const q = proj(c, Math.atan2(Y, X) / R, Math.asin(Z) / R); if (q[2] < 0) { pen = false; continue; }
+              if (pen) ctx.lineTo(q[0], q[1]); else { ctx.moveTo(q[0], q[1]); pen = true; } } ctx.stroke(); }
+          for (const G of RINGS) { if (t < G.at) continue; const u = ease(Math.min(1, (t - G.at) / G.dur)), dd = (G.km / 6371) * u;
+            ctx.beginPath(); let pen = false, first = null;
+            for (let k = 0; k <= 180; k++) { const ll = dest(G.c[0], G.c[1], dd, k / 180 * 2 * Math.PI), q = proj(c, ll[0], ll[1]);
+              if (q[2] < 0) { pen = false; continue; } if (pen) ctx.lineTo(q[0], q[1]); else { ctx.moveTo(q[0], q[1]); pen = true; } }
+            ctx.fillStyle = G.fill || "rgba(255,200,90,.16)"; ctx.fill(); ctx.strokeStyle = G.c2 || OPT.accent; ctx.lineWidth = 5; ctx.stroke(); }
+          ctx.font = "900 30px Inter, sans-serif"; ctx.textBaseline = "middle";
+          for (const p of PINS) { if (t < p.at) continue; const q = proj(c, p.lon, p.lat); if (q[2] < 0.05) continue;
+            const u = Math.min(1, (t - p.at) / 0.3), s = 1 + 0.8 * (1 - u) * (1 - u);
+            ctx.fillStyle = OPT.accent; ctx.globalAlpha = 0.3 * u; ctx.beginPath(); ctx.arc(q[0], q[1], 22 * s, 0, 7); ctx.fill(); ctx.globalAlpha = u;
+            ctx.fillStyle = "#FFF4DE"; ctx.beginPath(); ctx.arc(q[0], q[1], 10 * s, 0, 7); ctx.fill(); ctx.lineWidth = 4; ctx.strokeStyle = OPT.accent; ctx.stroke();
+            if (p.text) { ctx.lineWidth = 8; ctx.strokeStyle = "rgba(0,0,0,.7)"; ctx.textAlign = p.align || "left"; const tx = q[0] + (p.dx || 24), ty = q[1] + (p.dy || 0);
+              ctx.strokeText(p.text.toUpperCase(), tx, ty); ctx.fillStyle = "#F4EEE3"; ctx.fillText(p.text.toUpperCase(), tx, ty); }
+            ctx.globalAlpha = 1; } }
+        const st = { t: 0 };
+        window.__hf = window.__hf || {}; window.__hf.buildReady = window.__hf.buildReady || {};
+        window.__hf.buildReady["%ID%"] = new Promise((res) => { if (im.complete && im.naturalWidth) res(); else { im.onload = () => res(); im.onerror = () => res(); } }).then(() => draw(st.t));
+        tl.fromTo(st, { t: 0 }, { t: D, duration: D, ease: "none", onUpdate: () => draw(st.t) }, 0); }
+"""
+
+
+def el_globe(S, e, i):
+    """3D globe (orthographic, per-pixel from a real NASA Blue Marble texture `tex`, lambert light + atmosphere rim):
+    keys [{at, lon, lat, r (radius px), cx, cy, dur}], pins [{lon, lat, at, text}], rings [{c: [lon, lat], km, at, dur}], arcs [{a, b, at, dur}]"""
+    q = f'{S.p}-gl{i}'; box = e.get('box', {'x': 0, 'y': 0, 'w': 1080, 'h': 1920})
+    keys = []
+    for j, kf in enumerate(e['keys']):
+        keys.append(dict(at=0 if j == 0 else S.t(kf['at']), dur=kf.get('dur', 1.2), lon=kf['lon'], lat=kf['lat'], r=kf.get('r', 420),
+                         cx=kf.get('cx', box['w'] / 2), cy=kf.get('cy', box['h'] / 2)))
+    pins = [dict(p, at=S.t(p['at']) if p.get('at') is not None else 0) for p in e.get('pins', [])]
+    rings = [dict(g, at=S.t(g['at'])) for g in e.get('rings', [])]
+    arcs = [dict(a, at=S.t(a['at'])) for a in e.get('arcs', [])]
+    opt = dict(accent=e.get('accent', '#F2B544'), night=e.get('night', 0))
+    html = (f'      <img id="{q}t" src="{S.src(e["tex"])}" alt="" style="position:absolute; width:2px; height:1px; opacity:0" />\n'
+            f'      <canvas id="{q}" class="glcanvas" width="{box["w"]}" height="{box["h"]}" style="left:{box["x"]}px; top:{box["y"]}px; width:{box["w"]}px; height:{box["h"]}px"></canvas>')
+    if e.get('label'):
+        html += f'\n      <div class="chip" style="left:40px; top:{e.get("labelY", 1030)}px">{label_html(e["label"])}</div>'
+    js = (GLOBE_JS.replace('%ID%', q).replace('%KEYS%', J(keys)).replace('%PINS%', J(pins)).replace('%RINGS%', J(rings))
+          .replace('%ARCS%', J(arcs)).replace('%OPT%', J(opt)))
+    cues = [(p['at'] + 0.05, 'pop', 0.5) for p in pins if p['at'] > 0] + [(g['at'], g.get('sfx', 'sonar'), g.get('gain', 0.5)) for g in rings] \
+        + [(a['at'], 'swish', 0.4) for a in arcs]
+    S.add(html, js, cues)
+
+
+def el_space(S, e, i):
+    """star field ground for the globe (seeded, static — the globe does the moving)"""
+    import random
+    rnd = random.Random(e.get('seed', 7)); dots = ', '.join(
+        f'radial-gradient({rnd.choice([1, 1, 1.5, 2])}px {rnd.choice([1, 1, 1.5, 2])}px at {rnd.uniform(0, 100):.1f}% {rnd.uniform(0, 100):.1f}%, rgba(255,255,255,{rnd.uniform(.3, .9):.2f}), transparent)'
+        for _ in range(70))
+    S.add(f'      <div class="stage" style="background: {dots}, {e.get("bg", "radial-gradient(120% 80% at 50% 40%, #0B1630 0%, #05080F 70%)")}"></div>')
+
+
+TEMPLATES.update(footage=tpl_footage, parallax=tpl_parallax, map=tpl_map, flip=tpl_flip)
+ELEMENTS.update(kinetic=el_kinetic, globe=el_globe, space=el_space)

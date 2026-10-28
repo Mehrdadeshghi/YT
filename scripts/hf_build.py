@@ -131,17 +131,35 @@ def gray(src, dst, dv=None):
     Image.open(src).convert('L').convert('RGB').save(dst, quality=92)
 
 
-DERIVE = dict(brown=brown, crop=crop, gray=gray)
+def cutout(src, dst, dv):
+    """2.5D foreground layer (PNG with alpha) of a REAL PHOTO for the parallax template:
+    method "sky": per column, the bright/flat run from the top edge is sky (towers, skylines); "poly": polygon [[x, y] fractions] kept"""
+    from PIL import ImageDraw, ImageFilter
+    im = Image.open(src).convert('RGB'); w, h = im.size
+    if dv.get('method', 'sky') == 'poly':
+        m = Image.new('L', (w, h), 0); ImageDraw.Draw(m).polygon([(x * w, y * h) for x, y in dv['poly']], fill=255)
+    else:
+        a = np.asarray(im).astype(np.float32); lum = a.mean(-1)
+        gy = np.abs(np.diff(lum, axis=0, prepend=lum[:1])); gx = np.abs(np.diff(lum, axis=1, prepend=lum[:, :1]))
+        sky = (lum > dv.get('thr', 150)) & (gx + gy < dv.get('flat', 18))
+        sky = np.cumprod(sky, axis=0).astype(bool)          # only the run connected to the top edge
+        m = Image.fromarray(((~sky) * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(3))
+    m = m.filter(ImageFilter.GaussianBlur(dv.get('feather', 1.5)))
+    out = im.convert('RGBA'); out.putalpha(m); out.save(dst.replace('.jpg', '.png'))
+
+
+DERIVE = dict(brown=brown, crop=crop, gray=gray, cutout=cutout)
 
 
 # ------------------------------------------------------------------ scenes from the kit (scripts/hf_kit.py)
 J = json.dumps
 HF = E.get('hf', {})                        # episode-wide: theme colours, caption accent words, derived images
-VIDEO_LEN = {p['id']: p.get('len', 5) for p in E['photos'] if p.get('video')}
+VIDEO_LEN = {p['id']: p.get('len', 5) * p.get('fps', 30) / 30 for p in E['photos'] if p.get('video')}   # fps 15 = 2x speed
+PNG_IDS = {dv['id'] for dv in HF.get('derive', []) if dv['fn'] == 'cutout'}
 
 
 def asset(sid):
-    return f'assets/{sid}.mp4' if sid in VIDEO_LEN else f'assets/{sid}.jpg'
+    return f'assets/{sid}.mp4' if sid in VIDEO_LEN else f'assets/{sid}.png' if sid in PNG_IDS else f'assets/{sid}.jpg'
 
 
 def cta_start():
@@ -150,7 +168,8 @@ def cta_start():
 
 B = SimpleNamespace(host_start=lambda k: host_start(k), host_end=lambda k: host_end(k), wt=lambda *a: wt(*a), cta_start=cta_start,
                     asset=asset, clip_len=lambda sid: VIDEO_LEN[sid], open_cfg=lambda: E['hf_open'],
-                    first_frame=lambda sid: f'assets/{sid}_f0.jpg')
+                    first_frame=lambda sid: f'assets/{sid}_f0.jpg', motion=bool(HF.get('motion')),
+                    seam_next=lambda k: (SCENES[k + 1][1].get('seam', 'left') if HF.get('motion') and k + 1 < NSC else None))
 SCENES = [(E['hf_open'].get('name', 'hook'), E['hf_open'])] + [(sc['hf'].get('name') or sc.get('beat') or f's{j + 1}', sc['hf'])
                                                               for j, sc in enumerate(E['scenes'])]
 assert len(SCENES) == NSC
@@ -234,7 +253,7 @@ def build():
     hosts, cues = [], []
     for k, (name, cfg) in enumerate(SCENES):
         body, js, css, sc_cues = kit.build_scene(B, k, cfg)
-        nxt = host_start(k + 1) - host_start(k) - 0.02 if k + 1 < NSC else None
+        nxt = host_start(k + 1) - host_start(k) - 0.02 if k + 1 < NSC and not HF.get('motion') else None
         open(f'{PRJ}/compositions/{name}.html', 'w').write(scene_file(name, body, js, css, nxt))
         s0, s1 = host_start(k), host_end(k)
         hosts.append(f'''      <div id="{name}" data-composition-id="{name}" data-composition-src="compositions/{name}.html" data-start="{s0:.3f}" data-duration="{s1 - s0:.3f}"
