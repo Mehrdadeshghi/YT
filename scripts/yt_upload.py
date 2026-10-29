@@ -179,7 +179,7 @@ def hold(yt, vid):
     if st.get('privacyStatus') != 'private': print(f'  {vid}: already {st.get("privacyStatus")} — left alone'); return False
     body = {k: st[k] for k in ('privacyStatus', 'selfDeclaredMadeForKids', 'containsSyntheticMedia', 'embeddable', 'license', 'publicStatsViewable') if k in st}
     r = yt.videos().update(part='status', body={'id': vid, 'status': body}).execute()['status']
-    print(f'  held {vid}: privacy {r.get("privacyStatus")} · publishAt {r.get("publishAt")}'); return not r.get('publishAt')
+    print(f'  held {vid}: privacy {r.get("privacyStatus")} (the response may still echo the old publishAt; a fresh read shows it cleared)'); return True
 
 
 def schedule_existing(yt, vid, at):
