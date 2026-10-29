@@ -44,11 +44,11 @@
    "vo": [
     {
      "at": 0.2,
-     "text": "Its name: the cocktail party effect. Colin Cherry named the problem in nineteen fifty-three.",
-     "cap": "Its *name:* the *cocktail party* effect. *Colin Cherry* named the problem in *1953.*",
-     "de": "Das nennt man den Cocktailparty-Effekt. Colin Cherry gab dem Problem neunzehnhundertdreiundfünfzig seinen Namen.",
-     "es": "Se llama el efecto cóctel. Colin Cherry le puso nombre al problema en mil novecientos cincuenta y tres.",
-     "fr": "On appelle ça l’effet cocktail. Colin Cherry a nommé le problème en mille neuf cent cinquante-trois."
+     "text": "Scientists call it the cocktail party effect. Colin Cherry named the problem in nineteen fifty-three.",
+     "cap": "Scientists call it the *cocktail party* effect. *Colin Cherry* named the problem in *1953.*",
+     "de": "Forscher nennen das den Cocktailparty-Effekt. Colin Cherry gab dem Problem neunzehnhundertdreiundfünfzig seinen Namen.",
+     "es": "Los científicos lo llaman el efecto cóctel. Colin Cherry le puso nombre al problema en mil novecientos cincuenta y tres.",
+     "fr": "Les scientifiques appellent ça l’effet cocktail. Colin Cherry a nommé le problème en mille neuf cent cinquante-trois."
     }
    ],
    "hf": {
@@ -214,7 +214,7 @@
   }
  ],
  "hf": {
-  "style": "kinetic",
+  "style": "doku",
   "caps": {
    "cu": [
     "cocktail",

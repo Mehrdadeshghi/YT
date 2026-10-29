@@ -76,6 +76,7 @@ Covered topics: `docs/topics.md` (never repeat one). Step-by-step production: `.
 - ✅✅ **HyperFrames engine (since 27.10.2026, pilot #201)**: he judged the video quality "drastisch besser". Default for new normal Shorts:
   `scripts/hf_build.py` (episode JSON + Whisper timings → `hf/<ep>/` HyperFrames project) and workflow **hf-render.yml** (`gh workflow run hf-render.yml -f episode=<ep>`,
   release `hf-N`, pinned hyperframes@0.8.149, telemetry off via HYPERFRAMES_NO_TELEMETRY=1 DO_NOT_TRACK=1). cine.html stays for Circles, deep-sea long-form, AI presenter.
+  Look: `"hf": {"style": "doku"}` (documentary cinema + 3–5 kinetic accents, `scripts/hf_doku.py`) is the house default since 29.10.2026; ❌ "kinetic" (giant slam word every second) = "du kopierst dumm 1:1".
 - ✅ **Pro look** (`style: pro`, dark calm cards, accent captions). ✅ **Deep-sea long-form #139** (depth meter, darker with depth,
   real NOAA footage) and its 9:16 cut-downs #145–#151 (`cine/139.js` has a tall layout; `scripts/mkdeepshorts.py`).
 - ✅ **Circles** (#144): "How many circles does it take to draw X?" — Fourier epicycles of a map outline (`scripts/fourier.py`,

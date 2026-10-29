@@ -22,9 +22,9 @@
   "DIDN'T BUZZ"
  ],
  "cta": {
-  "q": "Phantom buzz?",
-  "a": "YES",
-  "b": "NO"
+  "q": "How often?",
+  "a": "DAILY",
+  "b": "RARELY"
  },
  "source": "https://en.wikipedia.org/wiki/Phantom_vibration_syndrome",
  "vo_open": [
@@ -175,12 +175,12 @@
     },
     {
      "at": 0.15,
-     "text": "Has your phone ever buzzed when it didn’t? Comment yes or no, and subscribe.",
+     "text": "How often do you feel a phantom buzz? Comment daily or rarely, and subscribe.",
      "cta": true,
-     "cap": "Has your phone ever *buzzed* when it didn’t? Comment *yes* or *no,* and *subscribe.*",
-     "de": "Hat dein Handy schon mal vibriert, obwohl es nicht vibriert hat? Schreib ja oder nein, und abonniere.",
-     "es": "¿Tu móvil ha vibrado alguna vez sin vibrar? Comenta sí o no, y suscríbete.",
-     "fr": "Ton téléphone a déjà vibré alors qu’il n’a pas vibré ? Commente oui ou non, et abonne-toi."
+     "cap": "How *often* do you feel a phantom buzz? Comment *daily* or *rarely,* and *subscribe.*",
+     "de": "Wie oft spürst du ein Phantom-Vibrieren? Schreib täglich oder selten, und abonniere.",
+     "es": "¿Con qué frecuencia sientes una vibración fantasma? Comenta a diario o rara vez, y suscríbete.",
+     "fr": "Tu sens souvent une vibration fantôme ? Commente tous les jours ou rarement, et abonne-toi."
     }
    ],
    "hf": {
@@ -194,14 +194,14 @@
     "els": [
      {
       "el": "ab",
-      "q": "Phantom buzz?",
+      "q": "How often?",
       "a": {
        "src": "check",
-       "label": "Yes"
+       "label": "Daily"
       },
       "b": {
        "src": "smile",
-       "label": "No"
+       "label": "Rarely"
       }
      }
     ]
@@ -241,7 +241,7 @@
   }
  ],
  "hf": {
-  "style": "kinetic",
+  "style": "doku",
   "caps": {
    "cu": [
     "phantom",

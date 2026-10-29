@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""#219 "Why do you do that?" (unconscious psychology, HyperFrames KINETIC style): phantom vibrations. Oct 2026. voice: gemini.
+"""#219 "Why do you do that?" (unconscious psychology, HyperFrames DOKU style (documentary cinema + accents)): phantom vibrations. Oct 2026. voice: gemini.
 Facts (checked Oct 29 2026):
 - English Wikipedia "Phantom vibration syndrome": "the perception that one's mobile phone is vibrating or ringing when it is not";
   "Researcher Michelle Drouin found that almost 9 out of 10 undergraduates at her college experienced phantom vibrations";
@@ -17,7 +17,7 @@ E = {
  'engine': 'hyperframes', 'oneAsk': True, 'loop': True, 'voice': 'gemini', 'gemini_wpm': 195, 'speed': 1.2,
  'mood': 'calm', 'prog': 1, 'langs': ['en', 'de', 'es', 'fr'],
  'hook': ['YOUR PHONE', "DIDN'T BUZZ"],
- 'cta': {'q': 'Phantom buzz?', 'a': 'YES', 'b': 'NO'},
+ 'cta': {'q': 'How often?', 'a': 'DAILY', 'b': 'RARELY'},
  'source': 'https://en.wikipedia.org/wiki/Phantom_vibration_syndrome',
  'vo_open': [{'at': 0.15,
    'text': "Your phone didn't buzz. So why did you feel it?",
@@ -67,11 +67,11 @@ E = {
       de='Vibration ausschalten oder das Handy woanders tragen, half manchen.',
       es='Quitar la vibración o cambiar el móvil de sitio ayudó a algunas personas.',
       fr='Couper le vibreur ou changer le téléphone de place a aidé certaines personnes.'),
-    dict(at=0.15, text='Has your phone ever buzzed when it didn’t? Comment yes or no, and subscribe.', cta=True,
-      cap='Has your phone ever *buzzed* when it didn’t? Comment *yes* or *no,* and *subscribe.*',
-      de='Hat dein Handy schon mal vibriert, obwohl es nicht vibriert hat? Schreib ja oder nein, und abonniere.',
-      es='¿Tu móvil ha vibrado alguna vez sin vibrar? Comenta sí o no, y suscríbete.',
-      fr='Ton téléphone a déjà vibré alors qu’il n’a pas vibré ? Commente oui ou non, et abonne-toi.')]},
+    dict(at=0.15, text='How often do you feel a phantom buzz? Comment daily or rarely, and subscribe.', cta=True,
+      cap='How *often* do you feel a phantom buzz? Comment *daily* or *rarely,* and *subscribe.*',
+      de='Wie oft spürst du ein Phantom-Vibrieren? Schreib täglich oder selten, und abonniere.',
+      es='¿Con qué frecuencia sientes una vibración fantasma? Comenta a diario o rara vez, y suscríbete.',
+      fr='Tu sens souvent une vibration fantôme ? Commente tous les jours ou rarement, et abonne-toi.')]},
  ],
  'photos': [
   {'id': 'music', 'audio': 'File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3', 'from': 0, 'len': 60},
@@ -83,7 +83,7 @@ E = {
   {'id': 'smile', 'file': 'File:Woman looking at phone in a casual setting while smiling and enjoying the moment with a relaxed atmosphere.jpg'},
  ],
 }
-E['hf'] = {'style': 'kinetic',
+E['hf'] = {'style': 'doku',
            'caps': {'cu': ['phantom', 'vibration', 'hospital', 'college', 'month', 'year', 'vibrate', 'moving'], 'vg': ['waiting', 'twitch', 'clothes', 'helped'],
                     'rd': ['buzz', 'didnt', 'cause']}}
 E['hf_open'] = {'tpl': 'split', 'name': 'hook', 'a': 'check', 'b': 'walk',
@@ -95,7 +95,7 @@ hfs = [
  {'tpl': 'photo', 'src': 'walk', 'pos': '50% 30%', 'label': ['Phone in hand', RP]},
  {'tpl': 'photo', 'src': 'motor', 'pos': '40% 50%', 'label': ['A phone’s vibration motor', RP]},
  {'tpl': 'photo', 'src': 'smile', 'pos': '45% 50%', 'label': ['Phone in hand', RP],
-  'els': [{'el': 'ab', 'q': 'Phantom buzz?', 'a': {'src': 'check', 'label': 'Yes'}, 'b': {'src': 'smile', 'label': 'No'}}]},
+  'els': [{'el': 'ab', 'q': 'How often?', 'a': {'src': 'check', 'label': 'Daily'}, 'b': {'src': 'smile', 'label': 'Rarely'}}]},
 ]
 for sc, h in zip(E['scenes'], hfs): sc['hf'] = h
 open('episodes/219.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False) + '\n')

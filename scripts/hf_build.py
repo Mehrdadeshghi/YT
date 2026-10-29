@@ -6,6 +6,8 @@ An episode is DATA: "hf_open" (opener) and scenes[i]["hf"] pick a template + tim
 (see its docstring); episode-wide "hf": {"theme": {...colours}, "caps": {"cu": [...], "vg": [...], "rd": [...]}, "derive": [...]}.
 Style "kinetic" ("hf": {"style": "kinetic"} or --style kinetic): scripts/hf_kinetic.py derives every scene automatically
 (giant slam words on the Whisper timings over / through the episode's real media; no caption band, per-scene els ignored).
+Style "doku" ("hf": {"style": "doku"}, HOUSE DEFAULT for new Shorts since Oct 29 2026): scripts/hf_doku.py — documentary cinema
+(full-bleed graded media with slow camera moves, honest mono source chips, calm captions, film grain in post) + 3-5 kinetic accents.
 
     python3 scripts/hf_build.py 201                 # write hf/201/ + out/ep201/cues.json only
     python3 scripts/hf_build.py 201 --render        # + hyperframes render → out/ep201/silent.mp4
@@ -256,13 +258,19 @@ def build():
     prep_media()
     os.makedirs(f'{PRJ}/compositions', exist_ok=True)
     hosts, cues = [], []
-    KIN = HF.get('style') == 'kinetic'
-    if KIN:                              # "hf": {"style": "kinetic"} → scripts/hf_kinetic.py derives every scene from words + media
+    DOKU = HF.get('style') == 'doku'
+    KIN = HF.get('style') == 'kinetic' or DOKU
+    if KIN:                              # "hf": {"style": "kinetic" | "doku"} → scripts/hf_kinetic.py / hf_doku.py derive every scene
         import hf_kinetic
-        kin = {r[0]: r[1:] for r in hf_kinetic.build(hf_kinetic.Ctx(
+        ctx = hf_kinetic.Ctx(
             CAPS=CAPS, segs=segs, scene_of=scene_of, SCENES=SCENES, NSC=NSC, DUR=DUR, E=E, HF=HF, host_start=host_start,
             host_end=host_end, asset=asset, is_video=lambda sid: sid in VIDEO_LEN, clip_len=lambda sid: VIDEO_LEN[sid],
-            first_frame=lambda sid: f'assets/{sid}_f0.jpg', exists=lambda sid: os.path.exists(f'{PRJ}/{asset(sid)}')))}
+            first_frame=lambda sid: f'assets/{sid}_f0.jpg', exists=lambda sid: os.path.exists(f'{PRJ}/{asset(sid)}'), prj=PRJ)
+        if DOKU:
+            import hf_doku
+            kin = {r[0]: r[1:] for r in hf_doku.build(ctx)}
+        else:
+            kin = {r[0]: r[1:] for r in hf_kinetic.build(ctx)}
     for k, (name, cfg) in enumerate(SCENES):
         body, js, css, sc_cues = kin[name] if KIN else kit.build_scene(B, k, cfg)
         nxt = host_start(k + 1) - host_start(k) - 0.02 if k + 1 < NSC and not HF.get('motion') and not KIN else None
@@ -273,6 +281,11 @@ def build():
         cues += [dict(t=round(s0 + t, 3), type=ty, gain=g) for t, ty, g in sc_cues if 0 <= t < s1 - s0]
     if not KIN:                          # kinetic: the slammed words ARE the captions
       open(f'{PRJ}/compositions/captions.html', 'w').write(captions())
+      hosts.append(f'''      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="{DUR:.2f}"
+        data-track-index="3" data-track-kind="captions" data-width="{W_}" data-height="{H_}" style="z-index:50"></div>''')
+    elif DOKU:                           # doku: small calm word-synced captions (hf_doku.captions)
+      cb, cj, cc = hf_doku.captions(ctx, HF.get('doku', {}).get('accent', '#E9A84A'))
+      open(f'{PRJ}/compositions/captions.html', 'w').write(scene_file('captions', cb, cj, cc).replace(COMMON_CSS, ''))
       hosts.append(f'''      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="{DUR:.2f}"
         data-track-index="3" data-track-kind="captions" data-width="{W_}" data-height="{H_}" style="z-index:50"></div>''')
     elif os.path.exists(f'{PRJ}/compositions/captions.html'): os.remove(f'{PRJ}/compositions/captions.html')
@@ -329,6 +342,10 @@ if __name__ == '__main__':
         import time; t0 = time.time()
         hf('render', PRJ, '--output', os.path.abspath(f'{OUT}/silent.mp4'), '--fps', '30', '--quality', 'delivery')
         print(f'hyperframes render: {time.time() - t0:.0f} s')
+        if HF.get('style') == 'doku':    # film post: grain + halation + vignette on the silent picture
+            import hf_doku
+            os.replace(f'{OUT}/silent.mp4', f'{OUT}/silent_raw.mp4')
+            hf_doku.post(f'{OUT}/silent_raw.mp4', f'{OUT}/silent.mp4'); os.remove(f'{OUT}/silent_raw.mp4')
     if '--finish' in sys.argv:
         subprocess.run(['./finish.sh', EP], check=True)
         os.makedirs('dist', exist_ok=True); shutil.copy(f'{OUT}/wiki_roulette_{EP}.mp4', 'dist/')

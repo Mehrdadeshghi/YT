@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""#218 "Why do you do that?" (unconscious psychology, HyperFrames KINETIC style): the doorway effect. Oct 2026. voice: gemini.
+"""#218 "Why do you do that?" (unconscious psychology, HyperFrames DOKU style (documentary cinema + accents)): the doorway effect. Oct 2026. voice: gemini.
 Facts (checked Oct 29 2026):
 - English Wikipedia "Event perception" (redirect target of "Doorway effect"), section Relation to episodic memory:
   "Event boundaries can also lead to forgetting. According to EST, when event models are updated, information belonging to the
@@ -86,7 +86,7 @@ E = {
   {'id': 'vr', 'file': 'File:A virtual reality (25779404897).jpg'},
  ],
 }
-E['hf'] = {'style': 'kinetic',
+E['hf'] = {'style': 'doku',
            'caps': {'cu': ['doorway', 'scene', 'movie', 'files', 'radvansky', 'virtual', 'real'], 'vg': ['memory', 'older', 'young', 'busy'],
                     'rd': ['forget', 'forgot', 'catch', 'repeat']}}
 E['hf_open'] = {'tpl': 'split', 'name': 'hook', 'a': 'halpert', 'b': 'doors',

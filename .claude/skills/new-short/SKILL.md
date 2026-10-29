@@ -31,7 +31,7 @@ Answer Mehrdad in German. Video language English, dubs DE/ES/FR. Read `CLAUDE.md
 ## HyperFrames Shorts (default for normal Shorts since #201)
 Owner verdict on pilot #201: "drastically better". Use it for every normal Short; steps 5–7 below (cine.html) only for Circles,
 deep-sea/long-form cut-downs, AI presenter and the WHY? series. Pipeline: `scripts/hf_build.py` (timing, captions, cues, render,
-finish + dubs) + `scripts/hf_kit.py` (templates/elements, read its docstring) → `hf/<ep>/` (gitignored) → workflow `hf-render.yml`.
+finish + dubs) + `scripts/hf_kit.py` (templates/elements, read its docstring) → `hf/<ep>/` (gitignored) → workflow `hf-render.yml`. New Shorts use `"hf": {"style": "doku"}` (see below).
 - **Episode = data** in `scripts/mk<ep>.py` (copy `mk206.py`–`mk210.py`; `mk201.py` = pilot as data): usual script/vo/photos plus
   `E['hf_open']` (opener) and `scenes[i]['hf']` = `{"tpl": …, …, "els": [{"el": …}, …]}`, episode-wide
   `E['hf'] = {"theme": {cu, vg, capcu, capvg, chipcu, chipvg, p0}, "caps": {"cu"/"vg"/"rd": [word prefixes]}, "derive": [...]}`.
@@ -57,7 +57,25 @@ finish + dubs) + `scripts/hf_kit.py` (templates/elements, read its docstring) �
   `uv run --no-project --python 3.11 python -m py_compile scripts/hf_kit.py`.
 - Kit changes must keep #201 identical: build it and compare snapshot frames + `out/ep201/cues.json` before/after.
 
-### Style "kinetic" (experiment, release kinetic-1: #211 + #206 with the Kokoro preview voice)
+### Style "doku" = HOUSE DEFAULT for new Shorts (since 29.10.2026, #218–#220) — "Doku-Kino + Akzente"
+Owner: kinetic copied a Higgsfield reel "dumm 1:1" (black + red-orange, a slam every second). Doku is OUR look: the documentary cinema of
+proto/real (release real-1) generated AUTOMATICALLY from any HyperFrames episode (`"hf": {"style": "doku"}`, CI input `style=doku`).
+Code: `scripts/hf_doku.py` (read its docstring). Per-scene `els` are ignored (except `ab` → end-card photos), like kinetic.
+- Picture: real media LARGE + full-bleed, slow constant camera move per shot (push / drift left / pull / rise), warm doc grade
+  (CSS), film grain + halation + vignette in post (ffmpeg on silent.mp4, `hf_doku.post`). White-bordered scans/diagrams → archival
+  PLATE on a dark blurred copy (auto; `hf.doku.plate/noplate` to force). Long one-photo scenes get a rack-focus detail crop (> 3.6 s)
+  or a 2nd labelled photo of the episode (> 5.6 s).
+- Honest mono chip top-left (`● REAL PHOTO · place`; from the scene `label`), thin scene-index tick HUD top-right, small calm captions
+  (y≈1190, word-synced, *starred* pale amber, numbers amber; none under the hook title and the end card).
+- Cuts: cut-the-curve LEFT (the current), zoom-through push into the name scene, rack-focus inside scenes.
+- ACCENTS only (3–5 per video, amber `#E9A84A`): hook title at frame 1 (2nd line re-hits when spoken), the name (first multi-word
+  *starred* run of scene 1 + its lead-in as mono kicker — so write "Scientists call it the *cocktail party* effect."), up to two
+  *starred* digit numbers (counter + tick ruler; "9 out of 10" → 9 / 10; % fills the ruler), the payoff (last *starred* run before
+  the CTA, grown to 2–3 words; `hf.doku.payoff` = word to force). Write the script with that in mind: star few words, digits in `cap`.
+- End card: "YOUR TURN" + `cta.q`, the two `ab` photos light up on the spoken `cta.a`/`cta.b`, "Comment A or B" pill. Vary the answers
+  (YES/NO, DAILY/RARELY …); the names must be spoken words of the CTA line.
+
+### Style "kinetic" (experiment, release kinetic-1: #211 + #206 with the Kokoro preview voice; REJECTED as default — too much of a copy)
 Giant slam-word look (Higgsfield/Katana-like) generated AUTOMATICALLY from any HyperFrames episode — no per-scene work:
 - Opt in: `"hf": {"style": "kinetic"}` in the episode JSON, or `python3 scripts/hf_build.py <ep> --style kinetic [--render]`
   (CI: `hf-render.yml` input `style=kinetic`). Code: `scripts/hf_kinetic.py` (read its docstring). Default style is untouched.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""#220 "Why do you do that?" (unconscious psychology, HyperFrames KINETIC style): hearing your name in a loud room
+"""#220 "Why do you do that?" (unconscious psychology, HyperFrames DOKU style (documentary cinema + accents)): hearing your name in a loud room
 (cocktail party effect). Oct 2026. voice: gemini.
 Facts (checked Oct 29 2026):
 - English Wikipedia "Cocktail party effect": "The effect was first defined and named 'the cocktail party problem' by Colin Cherry in
@@ -31,11 +31,11 @@ E = {
    'fr': 'Pourquoi tu entends ton propre prénom à travers une pièce bruyante et bondée ?'}],
  'scenes': [
   {'dur': 1.0, 'beat': 'name', 'vo': [dict(at=0.2,
-    text="Its name: the cocktail party effect. Colin Cherry named the problem in nineteen fifty-three.",
-    cap="Its *name:* the *cocktail party* effect. *Colin Cherry* named the problem in *1953.*",
-    de='Das nennt man den Cocktailparty-Effekt. Colin Cherry gab dem Problem neunzehnhundertdreiundfünfzig seinen Namen.',
-    es='Se llama el efecto cóctel. Colin Cherry le puso nombre al problema en mil novecientos cincuenta y tres.',
-    fr='On appelle ça l’effet cocktail. Colin Cherry a nommé le problème en mille neuf cent cinquante-trois.')]},
+    text="Scientists call it the cocktail party effect. Colin Cherry named the problem in nineteen fifty-three.",
+    cap="Scientists call it the *cocktail party* effect. *Colin Cherry* named the problem in *1953.*",
+    de='Forscher nennen das den Cocktailparty-Effekt. Colin Cherry gab dem Problem neunzehnhundertdreiundfünfzig seinen Namen.',
+    es='Los científicos lo llaman el efecto cóctel. Colin Cherry le puso nombre al problema en mil novecientos cincuenta y tres.',
+    fr='Les scientifiques appellent ça l’effet cocktail. Colin Cherry a nommé le problème en mille neuf cent cinquante-trois.')]},
   {'dur': 1.0, 'beat': 'filter', 'vo': [dict(at=0.2,
     text="A classic theory: your brain turns the voices you ignore down, not off.",
     cap="A classic *theory:* your brain turns the *voices* you ignore *down,* not *off.*",
@@ -80,7 +80,7 @@ E = {
   {'id': 'ears', 'file': 'File:Figur 1.png'},
  ],
 }
-E['hf'] = {'style': 'kinetic',
+E['hf'] = {'style': 'doku',
            'caps': {'cu': ['cocktail', 'party', 'cherry', 'name', 'third', 'ear'], 'vg': ['ignore', 'down', 'off', 'matter', 'test', 'repeated'],
                     'rd': ['twist', 'lower', 'caught', 'blocking']}}
 E['hf_open'] = {'tpl': 'split', 'name': 'hook', 'a': 'bar', 'b': 'tags',
