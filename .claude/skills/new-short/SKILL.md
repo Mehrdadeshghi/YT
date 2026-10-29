@@ -57,6 +57,22 @@ finish + dubs) + `scripts/hf_kit.py` (templates/elements, read its docstring) �
   `uv run --no-project --python 3.11 python -m py_compile scripts/hf_kit.py`.
 - Kit changes must keep #201 identical: build it and compare snapshot frames + `out/ep201/cues.json` before/after.
 
+### Style "kinetic" (experiment, release kinetic-1: #211 + #206 with the Kokoro preview voice)
+Giant slam-word look (Higgsfield/Katana-like) generated AUTOMATICALLY from any HyperFrames episode — no per-scene work:
+- Opt in: `"hf": {"style": "kinetic"}` in the episode JSON, or `python3 scripts/hf_build.py <ep> --style kinetic [--render]`
+  (CI: `hf-render.yml` input `style=kinetic`). Code: `scripts/hf_kinetic.py` (read its docstring). Default style is untouched.
+- What it does: the Whisper words are cut into ~1 s beats of 1–3 words. In each beat one hero word slams in huge, fitted to the width
+  (League Gothic), on its spoken word. The hero is a number, a `*starred*` cap word, an `hf.caps` word or a long content word.
+  The other words sit small above/below (= the captions; no caption band). Effects rotate: slam / stretch / depth echoes / RGB glitch /
+  triangle-starburst shape. Numbers become live counters over a bright punch-in on the photo. The first beat of each scene shows the
+  photo THROUGH the letters on an accent flood. Beats leave on a zoom-through, and scenes cut on a zoom seam + flare.
+  The opener holds `hook` as the frame-1 title (words pulse + camera punch when spoken; a split opener hard-cuts to its 2nd photo).
+  The CTA types `cta.q` with a cursor and lights up the `ab` photos on the spoken names, followed by the "Comment A or B" pill.
+- Media and labels come from the scene `hf` configs (`src`/`label`, split `a`/`b`, footage `clips`, `ab` tiles). Graphics-only scenes
+  borrow a labelled photo of the episode. Per-scene `els` are ignored. Overrides: `hf.kinetic` = `{accent, ink, ground, every:[fx…], max_words}`,
+  `scenes[i].hf.kinetic.media = [ids]`.
+- Check: snapshots/ffmpeg frames as usual. `hyperframes check` must show no errors (depth echoes/glitch copies are marked as intended overlap).
+
 ## 5. Visuals (`cine/<ep>.js`) — cine engine (Circles, deep-sea cut-downs, presenter, WHY?)
 - Reuse libraries (`pro.js`, `football.js`, `facts.js`, …). Word-synced reveals with `sw()`. No global-name clashes.
 - 9:16 safe zones: top 120–300 header, media/graphics ~300–1450, captions ~1640–1720, subscribe pill/comment card ~1400–1600.

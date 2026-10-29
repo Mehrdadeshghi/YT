@@ -4,10 +4,13 @@ HyperFrames project hf/<ep>/ → silent render → our score/mix (score_cine.mjs
 
 An episode is DATA: "hf_open" (opener) and scenes[i]["hf"] pick a template + timed elements from scripts/hf_kit.py
 (see its docstring); episode-wide "hf": {"theme": {...colours}, "caps": {"cu": [...], "vg": [...], "rd": [...]}, "derive": [...]}.
+Style "kinetic" ("hf": {"style": "kinetic"} or --style kinetic): scripts/hf_kinetic.py derives every scene automatically
+(giant slam words on the Whisper timings over / through the episode's real media; no caption band, per-scene els ignored).
 
     python3 scripts/hf_build.py 201                 # write hf/201/ + out/ep201/cues.json only
     python3 scripts/hf_build.py 201 --render        # + hyperframes render → out/ep201/silent.mp4
     python3 scripts/hf_build.py 201 --render --finish   # + finish.sh (mix, -14 LUFS, upload copy) + dub.py → dist/
+    python3 scripts/hf_build.py 211 --style kinetic --render   # same episode in the kinetic look
 
 The visuals are HTML + GSAP (HyperFrames contract: paused timelines, seekable, one scene per sub-composition).
 Timing comes from the Whisper word timestamps in voice.json: every caption word, title roll, counter and stamp is
@@ -154,6 +157,8 @@ DERIVE = dict(brown=brown, crop=crop, gray=gray, cutout=cutout)
 # ------------------------------------------------------------------ scenes from the kit (scripts/hf_kit.py)
 J = json.dumps
 HF = E.get('hf', {})                        # episode-wide: theme colours, caption accent words, derived images
+if '--style' in sys.argv:                   # e.g. --style kinetic: render any episode in another look without editing its JSON
+    HF = dict(HF, style=sys.argv[sys.argv.index('--style') + 1])
 VIDEO_LEN = {p['id']: p.get('len', 5) * p.get('fps', 30) / 30 for p in E['photos'] if p.get('video')}   # fps 15 = 2x speed
 PNG_IDS = {dv['id'] for dv in HF.get('derive', []) if dv['fn'] == 'cutout'}
 
@@ -251,17 +256,26 @@ def build():
     prep_media()
     os.makedirs(f'{PRJ}/compositions', exist_ok=True)
     hosts, cues = [], []
+    KIN = HF.get('style') == 'kinetic'
+    if KIN:                              # "hf": {"style": "kinetic"} → scripts/hf_kinetic.py derives every scene from words + media
+        import hf_kinetic
+        kin = {r[0]: r[1:] for r in hf_kinetic.build(hf_kinetic.Ctx(
+            CAPS=CAPS, segs=segs, scene_of=scene_of, SCENES=SCENES, NSC=NSC, DUR=DUR, E=E, HF=HF, host_start=host_start,
+            host_end=host_end, asset=asset, is_video=lambda sid: sid in VIDEO_LEN, clip_len=lambda sid: VIDEO_LEN[sid],
+            first_frame=lambda sid: f'assets/{sid}_f0.jpg', exists=lambda sid: os.path.exists(f'{PRJ}/{asset(sid)}')))}
     for k, (name, cfg) in enumerate(SCENES):
-        body, js, css, sc_cues = kit.build_scene(B, k, cfg)
-        nxt = host_start(k + 1) - host_start(k) - 0.02 if k + 1 < NSC and not HF.get('motion') else None
+        body, js, css, sc_cues = kin[name] if KIN else kit.build_scene(B, k, cfg)
+        nxt = host_start(k + 1) - host_start(k) - 0.02 if k + 1 < NSC and not HF.get('motion') and not KIN else None
         open(f'{PRJ}/compositions/{name}.html', 'w').write(scene_file(name, body, js, css, nxt))
         s0, s1 = host_start(k), host_end(k)
         hosts.append(f'''      <div id="{name}" data-composition-id="{name}" data-composition-src="compositions/{name}.html" data-start="{s0:.3f}" data-duration="{s1 - s0:.3f}"
         data-track-index="{k % 2 + 1}" data-track-kind="graphics" data-width="{W_}" data-height="{H_}" style="z-index:{k + 1}"></div>''')
         cues += [dict(t=round(s0 + t, 3), type=ty, gain=g) for t, ty, g in sc_cues if 0 <= t < s1 - s0]
-    open(f'{PRJ}/compositions/captions.html', 'w').write(captions())
-    hosts.append(f'''      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="{DUR:.2f}"
+    if not KIN:                          # kinetic: the slammed words ARE the captions
+      open(f'{PRJ}/compositions/captions.html', 'w').write(captions())
+      hosts.append(f'''      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="{DUR:.2f}"
         data-track-index="3" data-track-kind="captions" data-width="{W_}" data-height="{H_}" style="z-index:50"></div>''')
+    elif os.path.exists(f'{PRJ}/compositions/captions.html'): os.remove(f'{PRJ}/compositions/captions.html')
     index = f"""<!doctype html>
 <html lang="en">
   <head>
