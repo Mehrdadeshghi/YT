@@ -1,0 +1,215 @@
+{
+ "fps": 30,
+ "seams": [
+  {
+   "id": "ai:l01_11→video:light/slowmo_h.webm",
+   "cut": 0.62,
+   "technique": "zoom-through + light flash",
+   "exit": {
+    "selector": "#c0",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c1",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "video:light/slowmo_h.webm→ai:l02_11",
+   "cut": 3.36,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c1",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c2",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:l02_11→ai:l03_29",
+   "cut": 5.14,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c2",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c3",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:l03_29→ai:l09_11",
+   "cut": 7.28,
+   "technique": "inverse zoom-through (arrival)",
+   "exit": {
+    "selector": "#c3",
+    "axis": "z",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c4",
+    "axis": "z",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:l09_11→ai:l10_7",
+   "cut": 11.24,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c4",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c5",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:l10_7→video:light/slowmo_v.webm",
+   "cut": 16.5,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c5",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c6",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "video:light/slowmo_v.webm→ai:l06_11",
+   "cut": 19.14,
+   "technique": "zoom-through + light flash",
+   "exit": {
+    "selector": "#c6",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c7",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:l06_11→ai:l06_29",
+   "cut": 22.74,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c7",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c8",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:l06_29→ai:l07_29",
+   "cut": 24.14,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c8",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c9",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:l07_29→ai:l07_11",
+   "cut": 25.62,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c9",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c10",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:l07_11→ai:l11_42",
+   "cut": 29.62,
+   "technique": "zoom-through + light flash",
+   "exit": {
+    "selector": "#c10",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c11",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:l11_42→video:light/slowmo_b.webm",
+   "cut": 32.08,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c11",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c12",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "video:light/slowmo_b.webm→photo:light/bolt_photo.jpg",
+   "cut": 35.74,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c12",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c13",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "photo:light/bolt_photo.jpg→photo:light/iss_milky.jpg",
+   "cut": 36.7,
+   "technique": "inverse zoom-through (arrival)",
+   "exit": {
+    "selector": "#c13",
+    "axis": "z",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c14",
+    "axis": "z",
+    "dir": -1
+   }
+  }
+ ]
+}

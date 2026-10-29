@@ -1,0 +1,275 @@
+{
+ "fps": 30,
+ "seams": [
+  {
+   "id": "photo:plane/hole_in.jpg→photo:plane/hole_out.jpg",
+   "cut": 0.62,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c0",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c1",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "photo:plane/hole_out.jpg→ai:p03_11",
+   "cut": 1.8,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c1",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c2",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:p03_11→ai:p04_11",
+   "cut": 4.18,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c2",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c3",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:p04_11→ai:p04_29",
+   "cut": 6.44,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c3",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c4",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:p04_29→ai:p02_29",
+   "cut": 8.72,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c4",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c5",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:p02_29→ai:p05_29",
+   "cut": 10.18,
+   "technique": "zoom-through + light flash",
+   "exit": {
+    "selector": "#c5",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c6",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:p05_29→ai:p01_5",
+   "cut": 11.94,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c6",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c7",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:p01_5→ai:p05_5",
+   "cut": 13.8,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c7",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c8",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:p05_5→ai:p06_11",
+   "cut": 15.68,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c8",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c9",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:p06_11→ai:p07_11",
+   "cut": 17.34,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c9",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c10",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:p07_11→ai:p07_29",
+   "cut": 19.24,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c10",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c11",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:p07_29→ai:p09_11",
+   "cut": 22.86,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c11",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c12",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:p09_11→photo:plane/hole_in2.jpg",
+   "cut": 25.04,
+   "technique": "inverse zoom-through (arrival)",
+   "exit": {
+    "selector": "#c12",
+    "axis": "z",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c13",
+    "axis": "z",
+    "dir": -1
+   }
+  },
+  {
+   "id": "photo:plane/hole_in2.jpg→photo:plane/hole_out.jpg",
+   "cut": 28.92,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c13",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c14",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "photo:plane/hole_out.jpg→ai:p05_29",
+   "cut": 30.2,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c14",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c15",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:p05_29→photo:plane/plug_yard.jpg",
+   "cut": 32.76,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c15",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c16",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "photo:plane/plug_yard.jpg→photo:plane/hole_in.jpg",
+   "cut": 33.9,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c16",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c17",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "photo:plane/hole_in.jpg→ai:p08_29",
+   "cut": 36.12,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c17",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c18",
+    "axis": "x",
+    "dir": -1
+   }
+  }
+ ]
+}

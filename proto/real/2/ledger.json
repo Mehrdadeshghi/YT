@@ -1,0 +1,275 @@
+{
+ "fps": 30,
+ "seams": [
+  {
+   "id": "ai:m12_42→ai:m06_11",
+   "cut": 0.62,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c0",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c1",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:m06_11→ai:m04_29",
+   "cut": 2.24,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c1",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c2",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:m04_29→photo:mine/rigs.jpg",
+   "cut": 3.92,
+   "technique": "inverse zoom-through (arrival)",
+   "exit": {
+    "selector": "#c2",
+    "axis": "z",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c3",
+    "axis": "z",
+    "dir": -1
+   }
+  },
+  {
+   "id": "photo:mine/rigs.jpg→ai:m02_29",
+   "cut": 7.04,
+   "technique": "zoom-through + light flash",
+   "exit": {
+    "selector": "#c3",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c4",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:m02_29→ai:m03_11",
+   "cut": 7.88,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c4",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c5",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:m03_11→ai:m01_5",
+   "cut": 10.8,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c5",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c6",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:m01_5→ai:m05_29",
+   "cut": 13.06,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c6",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c7",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:m05_29→ai:m05_11",
+   "cut": 15.88,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c7",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c8",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:m05_11→photo:mine/drill.jpg",
+   "cut": 17.32,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c8",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c9",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "photo:mine/drill.jpg→ai:m12_7",
+   "cut": 19.7,
+   "technique": "zoom-through + light flash",
+   "exit": {
+    "selector": "#c9",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c10",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:m12_7→ai:m13_7",
+   "cut": 22.76,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c10",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c11",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:m13_7→ai:m06_29",
+   "cut": 24.08,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c11",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c12",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "ai:m06_29→photo:mine/capsule_day.jpg",
+   "cut": 26.3,
+   "technique": "inverse zoom-through (arrival)",
+   "exit": {
+    "selector": "#c12",
+    "axis": "z",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c13",
+    "axis": "z",
+    "dir": -1
+   }
+  },
+  {
+   "id": "photo:mine/capsule_day.jpg→photo:mine/fenix.jpg",
+   "cut": 28.6,
+   "technique": "zoom-through",
+   "exit": {
+    "selector": "#c13",
+    "axis": "z",
+    "dir": 1
+   },
+   "entry": {
+    "selector": "#c14",
+    "axis": "z",
+    "dir": 1
+   }
+  },
+  {
+   "id": "photo:mine/fenix.jpg→photo:mine/capsule_night.jpg",
+   "cut": 30.84,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c14",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c15",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "photo:mine/capsule_night.jpg→ai:m09_11",
+   "cut": 32.3,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c15",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c16",
+    "axis": "x",
+    "dir": -1
+   }
+  },
+  {
+   "id": "ai:m09_11→photo:mine/flag.jpg",
+   "cut": 33.88,
+   "technique": "inverse zoom-through (arrival)",
+   "exit": {
+    "selector": "#c16",
+    "axis": "z",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c17",
+    "axis": "z",
+    "dir": -1
+   }
+  },
+  {
+   "id": "photo:mine/flag.jpg→ai:m06_29",
+   "cut": 36.1,
+   "technique": "cut-the-curve LEFT",
+   "exit": {
+    "selector": "#c17",
+    "axis": "x",
+    "dir": -1
+   },
+   "entry": {
+    "selector": "#c18",
+    "axis": "x",
+    "dir": -1
+   }
+  }
+ ]
+}

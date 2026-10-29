@@ -27,3 +27,4 @@ proto/real/*/assets/
 proto/real/*/renders/
 proto/real/*/.hyperframes/
 proto/real/media/
+proto/real/*/snapshots/

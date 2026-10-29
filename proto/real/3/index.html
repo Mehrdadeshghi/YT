@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Inside a lightning strike</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("assets/fonts/Inter-800.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("assets/fonts/Inter-600.woff2") format("woff2"); }
+      @font-face { font-family: "Mono"; font-weight: 500; src: url("assets/fonts/Mono-500.woff2") format("woff2"); }
+      :root { --ink: #f3efe6; --red: #ff3b2f; --dim: rgba(243,239,230,.62); --rule: rgba(243,239,230,.78); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #main { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #050505; }
+      .shot { position: absolute; inset: 0; overflow: hidden; background: #000; }
+      .vshot { opacity: 0; }
+      .cam, .shk, .rig { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      .bg, .fg { position: absolute; left: -5px; top: -3px; width: 1090px; height: 1926px; }
+      .fg { transform-origin: 50% 85%; }
+      .ph { position: absolute; }
+      .vid { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      .tag { position: absolute; left: 56px; top: 150px; z-index: 5; font: 500 25px/1 Mono, monospace; letter-spacing: .16em; color: var(--ink);
+        padding: 10px 14px 9px 36px; background: rgba(0,0,0,.42); border: 1px solid rgba(243,239,230,.35); }
+      .tag i { position: absolute; left: 13px; top: 15px; width: 11px; height: 11px; border-radius: 50%; background: var(--red); }
+      .tag.real i { background: #ffd23f; }
+      .ov { position: absolute; inset: 0; pointer-events: none; }
+      .hook { position: absolute; left: 60px; right: 60px; }
+      .hbar { width: 120px; height: 8px; background: var(--red); margin-bottom: 26px; transform-origin: 0 50%; }
+      .htxt { font: 800 84px/1.02 Inter, sans-serif; color: var(--ink); letter-spacing: -0.02em; text-transform: uppercase;
+        text-shadow: 0 2px 6px rgba(0,0,0,.55), 0 10px 40px rgba(0,0,0,.55); }
+      .stamp { position: absolute; font: 500 30px/1 Mono, monospace; letter-spacing: .08em; color: var(--ink); white-space: nowrap;
+        padding: 14px 18px 12px 44px; background: rgba(0,0,0,.5); border-left: 4px solid var(--red); }
+      .stamp .dot { position: absolute; left: 16px; top: 18px; width: 13px; height: 13px; border-radius: 50%; background: var(--red); }
+      .stamp .ch { opacity: 0; }
+      .ctr { position: absolute; width: 640px; color: var(--ink); }
+      .clab { font: 500 24px/1 Mono, monospace; letter-spacing: .2em; color: var(--dim); margin-bottom: 10px; }
+      .cnum { font: 500 92px/1 Mono, monospace; letter-spacing: -0.02em; text-shadow: 0 4px 24px rgba(0,0,0,.6); white-space: nowrap; }
+      .cnum em { font-style: normal; font-size: 38px; margin-left: 12px; color: var(--dim); }
+      .ctr.red .cnum { color: var(--red); }
+      .cticks { position: relative; height: 22px; margin-top: 12px; border-top: 2px solid var(--rule); width: 362px; }
+      .cticks i { position: absolute; top: 0; width: 2px; background: var(--rule); }
+      .cticks b { position: absolute; top: -9px; left: -7px; width: 14px; height: 14px; background: var(--red); transform: rotate(45deg); }
+      .cdot { position: absolute; width: 22px; height: 22px; margin: -11px; border-radius: 50%; border: 3px solid var(--ink); background: rgba(255,59,47,.9); }
+      .cline { position: absolute; height: 2px; background: var(--ink); transform-origin: 0 50%; }
+      .cline { transform-origin: 0 50%; }
+      .ctxt { position: absolute; font: 600 44px/1.1 Inter, sans-serif; color: var(--ink); text-shadow: 0 2px 12px rgba(0,0,0,.8); }
+      .ctxt small { display: block; font: 500 22px/1 Mono, monospace; letter-spacing: .18em; color: var(--dim); margin-bottom: 8px; }
+      .ctxt.red { color: #ff6a5f; }
+      .meas { position: absolute; height: 5px; margin-top: -2px; background: var(--red); transform-origin: 0 50%; box-shadow: 0 0 8px rgba(0,0,0,.7); }
+      .meas i { position: absolute; top: -16px; width: 5px; height: 36px; background: var(--red); }
+      .meas i:first-child { left: 0; } .meas i:last-child { right: 0; }
+      .mlab { position: absolute; width: 440px; text-align: left; font: 500 40px/1 Mono, monospace; color: var(--ink); text-shadow: 0 2px 12px rgba(0,0,0,.85); }
+      .gauge { position: absolute; width: 230px; border-right: 2px solid var(--rule); }
+      .gauge .glab { position: absolute; top: -48px; right: 0; font: 500 22px/1 Mono, monospace; letter-spacing: .2em; color: var(--dim); white-space: nowrap; }
+      .gauge i { position: absolute; right: 0; width: 16px; height: 2px; background: var(--rule); }
+      .gauge i.maj { width: 34px; }
+      .gauge em { position: absolute; right: 46px; font: 500 24px/1 Mono, monospace; font-style: normal; color: var(--dim); }
+      .gauge b { position: absolute; right: -14px; width: 0; height: 0; }
+      .gauge b::before { content: ""; position: absolute; right: 0; top: -12px; border: 12px solid transparent; border-right: 18px solid var(--red); }
+      .gauge b span { position: absolute; right: 26px; top: -27px; padding: 8px 10px; background: var(--red); color: #fff; font: 500 34px/1 Mono, monospace; white-space: nowrap; }
+      .map { position: absolute; width: 360px; padding: 0; background: rgba(5,8,10,.62); border: 1px solid rgba(243,239,230,.35); }
+      .map .land { fill: rgba(243,239,230,.10); stroke: var(--ink); stroke-width: 2; stroke-dasharray: 1; vector-effect: non-scaling-stroke; }
+      .map .tdot { fill: var(--red); } .map .ring { fill: none; stroke: var(--red); stroke-width: 3; }
+      .mapl { padding: 12px 16px 4px; font: 600 30px/1.1 Inter, sans-serif; color: var(--ink); }
+      .mapc { padding: 0 16px 14px; font: 500 22px/1 Mono, monospace; letter-spacing: .08em; color: var(--dim); }
+      .flash { position: absolute; inset: 0; opacity: 0; mix-blend-mode: screen; }
+      .note { position: absolute; left: 90px; width: 900px; padding: 34px 30px 26px; background: #efe7d6; box-shadow: 0 30px 80px rgba(0,0,0,.7); }
+      .note img { width: 840px; display: block; filter: contrast(1.3); }
+      .nlab { margin-top: 18px; font: 500 22px/1 Mono, monospace; letter-spacing: .18em; color: #6b5b45; }
+      .bars { position: absolute; left: 60px; right: 60px; padding: 26px 26px 10px; background: rgba(0,0,0,.55); border-top: 4px solid var(--red); }
+      .brow { margin-bottom: 20px; }
+      .blab { font: 500 26px/1 Mono, monospace; letter-spacing: .14em; color: var(--dim); margin-bottom: 10px; }
+      .btrack { height: 34px; }
+      .btrack b { display: block; height: 34px; background: var(--ink); transform-origin: 0 50%; }
+      .btrack b.red { background: var(--red); }
+      .bval { font: 500 52px/1.2 Mono, monospace; color: var(--ink); margin-top: 6px; }
+      .q { position: absolute; width: 64px; height: 64px; margin: -32px; border-radius: 50%; font: 800 50px/60px Inter, sans-serif; text-align: center;
+        color: #fff; border: 3px solid #fff; }
+      .q.pos { background: rgba(255,59,47,.85); } .q.neg { background: rgba(40,110,255,.85); }
+      .pth { position: absolute; left: 0; top: 0; overflow: visible; }
+      .pth path { fill: none; stroke-dasharray: 1; stroke-dashoffset: 1; stroke-linejoin: round; stroke-linecap: round; }
+      .pth .leader { stroke: rgba(200,190,255,.95); stroke-width: 6; filter: drop-shadow(0 0 10px rgba(170,150,255,1)) drop-shadow(0 0 26px rgba(150,120,255,.9)); }
+      .pth .streamer { stroke: rgba(160,220,255,.95); stroke-width: 6; filter: drop-shadow(0 0 10px rgba(140,210,255,1)); }
+      .pth .smark { fill: none; stroke: var(--ink); stroke-width: 3; }
+      .timer { position: absolute; width: 520px; color: var(--ink); }
+      .tnum { font: 500 150px/1 Mono, monospace; color: var(--red); letter-spacing: -0.03em; text-shadow: 0 6px 30px rgba(0,0,0,.6); }
+      .tsub { white-space: pre-line; font: 500 24px/1.3 Mono, monospace; letter-spacing: .1em; color: var(--dim); margin-top: 8px; }
+      .brk { position: absolute; }
+      .brk i { position: absolute; width: 46px; height: 46px; border: 0 solid var(--ink); }
+      .brk .tl { left: 0; top: 0; border-left-width: 3px; border-top-width: 3px; } .brk .tr { right: 0; top: 0; border-right-width: 3px; border-top-width: 3px; }
+      .brk .bl { left: 0; bottom: 0; border-left-width: 3px; border-bottom-width: 3px; } .brk .br { right: 0; bottom: 0; border-right-width: 3px; border-bottom-width: 3px; }
+      .brk span { position: absolute; left: 0; top: -44px; font: 500 26px/1 Mono, monospace; letter-spacing: .14em; color: var(--ink); background: var(--red); padding: 6px 10px; white-space: nowrap; }
+      #scrim { position: absolute; inset: 0; pointer-events: none; }
+      .sct { position: absolute; left: 0; right: 0; top: 0; height: 760px; background: linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.34) 45%, rgba(0,0,0,0)); }
+      .scb { position: absolute; left: 0; right: 0; top: 1120px; height: 340px; background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(0,0,0,.42), rgba(0,0,0,0)); }
+      #caps { position: absolute; inset: 0; z-index: 90; pointer-events: none; }
+      .cap { position: absolute; left: 80px; right: 80px; top: 1236px; text-align: center; opacity: 0; transform-origin: 50% 50%;
+        font: 800 60px/1.1 Inter, sans-serif; color: #fff; letter-spacing: -0.01em;
+        text-shadow: 0 0 3px #000, 0 0 3px #000, 0 2px 4px #000, 0 4px 18px rgba(0,0,0,.75); }
+      .cap b { color: #ffd23f; font-weight: 800; }
+
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-hxym" id="main" data-composition-id="main" data-start="0" data-duration="39.72" data-width="1080" data-height="1920" data-fps="30">
+      <div data-hf-id="hf-ndtf" id="sh0" class="clip shot" data-start="0.000" data-duration="0.620" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div data-hf-id="hf-k742" id="c0" class="cam"><div data-hf-id="hf-4dpf" id="k0" class="shk"><div data-hf-id="hf-klom" id="r0" class="rig"><img data-hf-id="hf-50h2" id="b0" class="bg" src="assets/layers/l01_11_bg.jpg" alt="" /><img data-hf-id="hf-vfdy" id="f0" class="fg" src="assets/layers/l01_11_fg.png" alt="" /></div></div></div>
+        <div data-hf-id="hf-8jkf" class="tag"><i data-hf-id="hf-wt6k"></i>ILLUSTRATION · AI</div>
+      </div>
+      <div data-hf-id="hf-9o2j" id="sh1" class="shot vshot"  style="z-index:2">
+        <div data-hf-id="hf-o583" id="c1" class="cam"><div data-hf-id="hf-y7zm" id="k1" class="shk"><div data-hf-id="hf-ojsn" id="r1" class="rig"><video data-hf-id="hf-wsau" id="v1" class="clip vid" src="assets/clips/light_slowmo_h_webm_580.mp4" muted playsinline data-start="0.620" data-duration="2.740" data-track-index="21"></video></div></div></div>
+        <div data-hf-id="hf-sb8r" class="tag real"><i data-hf-id="hf-zeb8"></i>REAL FOOTAGE · SLOW MOTION</div>
+      </div>
+      <div data-hf-id="hf-vquh" id="sh2" class="clip shot" data-start="3.360" data-duration="1.780" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div data-hf-id="hf-fhc8" id="c2" class="cam"><div data-hf-id="hf-u9vl" id="k2" class="shk"><div data-hf-id="hf-dob0" id="r2" class="rig"><img data-hf-id="hf-khkb" id="b2" class="bg" src="assets/layers/l02_11_bg.jpg" alt="" /><img data-hf-id="hf-8ac7" id="f2" class="fg" src="assets/layers/l02_11_fg.png" alt="" /></div></div></div>
+        <div data-hf-id="hf-b8kv" class="tag"><i data-hf-id="hf-y7e5"></i>ILLUSTRATION · AI</div>
+      </div>
+      <div data-hf-id="hf-fbcr" id="sh3" class="clip shot" data-start="5.140" data-duration="2.140" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div data-hf-id="hf-g901" id="c3" class="cam"><div data-hf-id="hf-ti7s" id="k3" class="shk"><div data-hf-id="hf-gnkl" id="r3" class="rig"><img data-hf-id="hf-k62k" id="b3" class="bg" src="assets/layers/l03_29_bg.jpg" alt="" /><img data-hf-id="hf-p384" id="f3" class="fg" src="assets/layers/l03_29_fg.png" alt="" /></div></div></div>
+        <div data-hf-id="hf-au9u" class="tag"><i data-hf-id="hf-ylp6"></i>ILLUSTRATION · AI</div>
+      </div>
+      <div data-hf-id="hf-4s7o" id="sh4" class="clip shot" data-start="7.280" data-duration="3.960" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div data-hf-id="hf-5die" id="c4" class="cam"><div data-hf-id="hf-pk3r" id="k4" class="shk"><div data-hf-id="hf-x7oi" id="r4" class="rig"><img data-hf-id="hf-l80q" id="b4" class="bg" src="assets/layers/l09_11_bg.jpg" alt="" /><img data-hf-id="hf-51ay" id="f4" class="fg" src="assets/layers/l09_11_fg.png" alt="" /></div></div></div>
+        <div data-hf-id="hf-afyt" class="tag"><i data-hf-id="hf-0l8b"></i>ILLUSTRATION · AI</div>
+      </div>
+      <div data-hf-id="hf-xohl" id="sh5" class="clip shot" data-start="11.240" data-duration="5.260" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div data-hf-id="hf-bj87" id="c5" class="cam"><div data-hf-id="hf-llzq" id="k5" class="shk"><div data-hf-id="hf-15sj" id="r5" class="rig"><img data-hf-id="hf-si52" id="b5" class="bg" src="assets/layers/l10_7_bg.jpg" alt="" /><img data-hf-id="hf-bdli" id="f5" class="fg" src="assets/layers/l10_7_fg.png" alt="" /></div></div></div>
+        <div data-hf-id="hf-d840" class="tag"><i data-hf-id="hf-0zjc"></i>ILLUSTRATION · AI</div>
+      </div>
+      <div data-hf-id="hf-6nwf" id="sh6" class="shot vshot"  style="z-index:1">
+        <div data-hf-id="hf-0nqk" id="c6" class="cam"><div data-hf-id="hf-hnvp" id="k6" class="shk"><div data-hf-id="hf-shwo" id="r6" class="rig"><video data-hf-id="hf-08cm" id="v6" class="clip vid" src="assets/clips/light_slowmo_v_webm_60.mp4" muted playsinline data-start="16.500" data-duration="2.640" data-track-index="26"></video></div></div></div>
+        <div data-hf-id="hf-sszv" class="tag real"><i data-hf-id="hf-zsm9"></i>REAL FOOTAGE · SLOW MOTION</div>
+      </div>
+      <div data-hf-id="hf-7glu" id="sh7" class="clip shot" data-start="19.140" data-duration="3.600" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div data-hf-id="hf-1fed" id="c7" class="cam"><div data-hf-id="hf-gw7w" id="k7" class="shk"><div data-hf-id="hf-t9kh" id="r7" class="rig"><img data-hf-id="hf-msr6" id="b7" class="bg" src="assets/layers/l06_11_bg.jpg" alt="" /><img data-hf-id="hf-cy5u" id="f7" class="fg" src="assets/layers/l06_11_fg.png" alt="" /></div></div></div>
+        <div data-hf-id="hf-ctsz" class="tag"><i data-hf-id="hf-06xa"></i>ILLUSTRATION · AI</div>
+      </div>
+      <div data-hf-id="hf-ke15" id="sh8" class="clip shot" data-start="22.740" data-duration="1.400" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div data-hf-id="hf-srii" id="c8" class="cam"><div data-hf-id="hf-aqi3" id="k8" class="shk"><div data-hf-id="hf-t632" id="r8" class="rig"><img data-hf-id="hf-lsk6" id="b8" class="bg" src="assets/layers/l06_29_bg.jpg" alt="" /><img data-hf-id="hf-hs7q" id="f8" class="fg" src="assets/layers/l06_29_fg.png" alt="" /></div></div></div>
+        <div data-hf-id="hf-cfhy" class="tag"><i data-hf-id="hf-26gf"></i>ILLUSTRATION · AI</div>
+      </div>
+      <div data-hf-id="hf-1z6o" id="sh9" class="clip shot" data-start="24.140" data-duration="1.480" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div data-hf-id="hf-wpmj" id="c9" class="cam"><div data-hf-id="hf-6se2" id="k9" class="shk"><div data-hf-id="hf-x473" id="r9" class="rig"><img data-hf-id="hf-cq9u" id="b9" class="bg" src="assets/layers/l07_29_bg.jpg" alt="" /><img data-hf-id="hf-22oy" id="f9" class="fg" src="assets/layers/l07_29_fg.png" alt="" /></div></div></div>
+        <div data-hf-id="hf-c16x" class="tag"><i data-hf-id="hf-2krg"></i>ILLUSTRATION · AI</div>
+      </div>
+      <div data-hf-id="hf-mya9" id="sh10" class="clip shot" data-start="25.620" data-duration="4.000" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div data-hf-id="hf-nmnl" id="c10" class="cam"><div data-hf-id="hf-c0py" id="k10" class="shk"><div data-hf-id="hf-0qwt" id="r10" class="rig"><img data-hf-id="hf-p78x" id="b10" class="bg" src="assets/layers/l07_11_bg.jpg" alt="" /><img data-hf-id="hf-r9ul" id="f10" class="fg" src="assets/layers/l07_11_fg.png" alt="" /></div></div></div>
+        <div data-hf-id="hf-8gfo" class="tag"><i data-hf-id="hf-oz7w"></i>ILLUSTRATION · AI</div>
+      </div>
+      <div data-hf-id="hf-agh2" id="sh11" class="clip shot" data-start="29.620" data-duration="2.460" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div data-hf-id="hf-muzs" id="c11" class="cam"><div data-hf-id="hf-i6fr" id="k11" class="shk"><div data-hf-id="hf-zz90" id="r11" class="rig"><img data-hf-id="hf-v77x" id="b11" class="bg" src="assets/layers/l11_42_bg.jpg" alt="" /><img data-hf-id="hf-3dt5" id="f11" class="fg" src="assets/layers/l11_42_fg.png" alt="" /></div></div></div>
+        <div data-hf-id="hf-824n" class="tag"><i data-hf-id="hf-okwv"></i>ILLUSTRATION · AI</div>
+      </div>
+      <div data-hf-id="hf-yxte" id="sh12" class="shot vshot"  style="z-index:1">
+        <div data-hf-id="hf-vivn" id="c12" class="cam"><div data-hf-id="hf-7ay4" id="k12" class="shk"><div data-hf-id="hf-8n4v" id="r12" class="rig"><video data-hf-id="hf-gqcg" id="v12" class="clip vid" src="assets/clips/light_slowmo_b_webm_1960.mp4" muted playsinline data-start="32.080" data-duration="3.660" data-track-index="32"></video></div></div></div>
+        <div data-hf-id="hf-seou" class="tag real"><i data-hf-id="hf-o6lu"></i>REAL FOOTAGE · SLOW MOTION</div>
+      </div>
+      <div data-hf-id="hf-kebf" id="sh13" class="clip shot" data-start="35.740" data-duration="0.960" data-track-index="2" data-track-kind="graphics" style="z-index:2">
+        <div data-hf-id="hf-rkrm" id="c13" class="cam"><div data-hf-id="hf-82lx" id="k13" class="shk"><div data-hf-id="hf-4p0u" id="r13" class="rig"><img data-hf-id="hf-aedv" id="b13" class="ph" src="assets/layers/ph_light_bolt_photo_jpg.jpg" alt="" style="width:2653px;height:1920px;left:-335px;top:0px" /></div></div></div>
+        <div data-hf-id="hf-pnyg" class="tag real"><i data-hf-id="hf-jqbp"></i>REAL PHOTO · F. HAAG, CC BY-SA</div>
+      </div>
+      <div data-hf-id="hf-7lhz" id="sh14" class="clip shot" data-start="36.700" data-duration="3.020" data-track-index="1" data-track-kind="graphics" style="z-index:1">
+        <div data-hf-id="hf-8t1x" id="c14" class="cam"><div data-hf-id="hf-qubm" id="k14" class="shk"><div data-hf-id="hf-dcwp" id="r14" class="rig"><img data-hf-id="hf-dhgv" id="b14" class="ph" src="assets/layers/ph_light_iss_milky_jpg.jpg" alt="" style="width:2885px;height:1920px;left:-902px;top:0px" /></div></div></div>
+        <div data-hf-id="hf-dmj3" class="tag real"><i data-hf-id="hf-qkg0"></i>REAL PHOTO · NASA, ISS</div>
+      </div>
+      <div data-hf-id="hf-0esd" id="scrim" class="clip" data-start="0" data-duration="39.72" data-track-index="29" data-track-kind="graphics" style="z-index:25"><div data-hf-id="hf-j6ky" class="sct"></div><div data-hf-id="hf-ekek" class="scb"></div></div>
+      <div data-hf-id="hf-y5ji" id="ov0" class="clip ov " data-start="0.000" data-duration="3.350" data-track-index="40" data-track-kind="graphics" style="z-index:30">
+        <div data-hf-id="hf-zpjc" class="hook" style="top:330px"><div data-hf-id="hf-gsh5" id="ov0bar" class="hbar"></div><div data-hf-id="hf-1hio" class="htxt"><span data-hf-id="hf-8zix" id="ov0w0" class="hw">It</span> <span data-hf-id="hf-es81" id="ov0w1" class="hw">doesn't</span> <span data-hf-id="hf-b3ec" id="ov0w2" class="hw">strike</span> <span data-hf-id="hf-yne7" id="ov0w3" class="hw">down.</span></div></div>
+      </div>
+      <div data-hf-id="hf-fq7n" id="ov1" class="clip ov " data-start="0.620" data-duration="0.780" data-track-index="41" data-track-kind="graphics" style="z-index:31">
+        <div data-hf-id="hf-sa1b" id="ov1f" class="flash" style="background:#e8e4ff"></div>
+      </div>
+      <div data-hf-id="hf-pz0x" id="ov2" class="clip ov " data-start="9.340" data-duration="1.900" data-track-index="42" data-track-kind="graphics" style="z-index:32">
+        <div data-hf-id="hf-cyi3" id="ov2q0" class="q pos" style="left:300px;top:520px">+</div><div data-hf-id="hf-kboa" id="ov2q1" class="q pos" style="left:540px;top:470px">+</div><div data-hf-id="hf-gzb7" id="ov2q2" class="q pos" style="left:780px;top:540px">+</div><div data-hf-id="hf-5rhk" id="ov2q3" class="q pos" style="left:420px;top:600px">+</div><div data-hf-id="hf-yyio" id="ov2q4" class="q pos" style="left:660px;top:610px">+</div><div data-hf-id="hf-9lp8" id="ov2q5" class="q neg" style="left:330px;top:900px">−</div><div data-hf-id="hf-n5sc" id="ov2q6" class="q neg" style="left:560px;top:940px">−</div><div data-hf-id="hf-ph8q" id="ov2q7" class="q neg" style="left:790px;top:890px">−</div><div data-hf-id="hf-75wz" id="ov2q8" class="q neg" style="left:450px;top:1010px">−</div><div data-hf-id="hf-ujne" id="ov2q9" class="q neg" style="left:680px;top:1020px">−</div>
+      </div>
+      <div data-hf-id="hf-roaj" id="ov3" class="clip ov " data-start="12.360" data-duration="4.140" data-track-index="43" data-track-kind="graphics" style="z-index:33">
+        <svg data-hf-id="hf-kn8n" class="pth" viewBox="0 0 1080 1920" width="1080" height="1920"><path data-hf-id="hf-p6h8" id="ov3p" class="leader" pathLength="1" d="M560,330 L500,470 L585,610 L520,760 L610,900 L545,1050 L600,1180"/><circle data-hf-id="hf-cxth" id="ov3s0" class="smark" cx="500" cy="470" r="9"/><circle data-hf-id="hf-71xd" id="ov3s1" class="smark" cx="585" cy="610" r="9"/><circle data-hf-id="hf-azw9" id="ov3s2" class="smark" cx="520" cy="760" r="9"/><circle data-hf-id="hf-07ja" id="ov3s3" class="smark" cx="610" cy="900" r="9"/><circle data-hf-id="hf-9ocf" id="ov3s4" class="smark" cx="545" cy="1050" r="9"/><circle data-hf-id="hf-906e" id="ov3s5" class="smark" cx="600" cy="1180" r="9"/></svg><div data-hf-id="hf-bsy4" id="ov3t" class="mlab" style="left:640px;top:740px">≈148 FT / STEP</div>
+      </div>
+      <div data-hf-id="hf-06el" id="ov4" class="clip ov " data-start="19.140" data-duration="1.080" data-track-index="44" data-track-kind="graphics" style="z-index:34">
+        <div data-hf-id="hf-xz2a" id="ov4f" class="flash" style="background:#ffffff"></div>
+      </div>
+      <div data-hf-id="hf-yvhu" id="ov5" class="clip ov " data-start="21.060" data-duration="1.660" data-track-index="45" data-track-kind="graphics" style="z-index:35">
+        <div data-hf-id="hf-uzua" class="ctr" style="left:70px;top:300px"><div data-hf-id="hf-2ddl" class="clab">RETURN STROKE · UP TO</div><div data-hf-id="hf-17k5" class="cnum"><span data-hf-id="hf-z2q4" id="ov5n">0</span><em data-hf-id="hf-32uc">% OF LIGHT SPEED</em></div><div data-hf-id="hf-char" class="cticks"><i data-hf-id="hf-bqlb" style="left:0px;height:18px"></i><i data-hf-id="hf-kte7" style="left:24px;height:9px"></i><i data-hf-id="hf-h35l" style="left:48px;height:9px"></i><i data-hf-id="hf-h98g" style="left:72px;height:9px"></i><i data-hf-id="hf-ib4u" style="left:96px;height:9px"></i><i data-hf-id="hf-hsd0" style="left:120px;height:18px"></i><i data-hf-id="hf-xbhm" style="left:144px;height:9px"></i><i data-hf-id="hf-zylk" style="left:168px;height:9px"></i><i data-hf-id="hf-d581" style="left:192px;height:9px"></i><i data-hf-id="hf-b7l8" style="left:216px;height:9px"></i><i data-hf-id="hf-du41" style="left:240px;height:18px"></i><i data-hf-id="hf-re3d" style="left:264px;height:9px"></i><i data-hf-id="hf-tsm7" style="left:288px;height:9px"></i><i data-hf-id="hf-vyfb" style="left:312px;height:9px"></i><i data-hf-id="hf-0nd9" style="left:336px;height:9px"></i><i data-hf-id="hf-6u7m" style="left:360px;height:18px"></i><b data-hf-id="hf-s21a" id="ov5p"></b></div></div>
+      </div>
+      <div data-hf-id="hf-6kdq" id="ov6" class="clip ov " data-start="22.760" data-duration="1.320" data-track-index="46" data-track-kind="graphics" style="z-index:36">
+        <div data-hf-id="hf-t4sn" class="ctr red" style="left:70px;top:300px"><div data-hf-id="hf-fh0e" class="clab">CURRENT · AVERAGE BOLT</div><div data-hf-id="hf-3obd" class="cnum"><span data-hf-id="hf-p0m3" id="ov6n">0</span><em data-hf-id="hf-tdho">AMPS</em></div><div data-hf-id="hf-uxgz" class="cticks"><i data-hf-id="hf-t68v" style="left:0px;height:18px"></i><i data-hf-id="hf-cb1r" style="left:24px;height:9px"></i><i data-hf-id="hf-yyvh" style="left:48px;height:9px"></i><i data-hf-id="hf-fz08" style="left:72px;height:9px"></i><i data-hf-id="hf-bv0i" style="left:96px;height:9px"></i><i data-hf-id="hf-y2uk" style="left:120px;height:18px"></i><i data-hf-id="hf-sr3i" style="left:144px;height:9px"></i><i data-hf-id="hf-6b4w" style="left:168px;height:9px"></i><i data-hf-id="hf-8td1" style="left:192px;height:9px"></i><i data-hf-id="hf-sy4k" style="left:216px;height:9px"></i><i data-hf-id="hf-64rp" style="left:240px;height:18px"></i><i data-hf-id="hf-fy0d" style="left:264px;height:9px"></i><i data-hf-id="hf-l6sf" style="left:288px;height:9px"></i><i data-hf-id="hf-11yf" style="left:312px;height:9px"></i><i data-hf-id="hf-n69t" style="left:336px;height:9px"></i><i data-hf-id="hf-k75i" style="left:360px;height:18px"></i><b data-hf-id="hf-l25v" id="ov6p"></b></div></div>
+      </div>
+      <div data-hf-id="hf-xds3" id="ov7" class="clip ov " data-start="25.640" data-duration="3.960" data-track-index="47" data-track-kind="graphics" style="z-index:37">
+        <div data-hf-id="hf-on9c" class="bars" style="top:360px"><div data-hf-id="hf-nwgu" class="brow"><div data-hf-id="hf-vj1c" class="blab">LIGHTNING CHANNEL</div><div data-hf-id="hf-z0hr" class="btrack"><b data-hf-id="hf-pjd7" id="ov7b0" class="red" style="width:760px"></b></div><div data-hf-id="hf-35yk" class="bval">54,000 °F</div></div><div data-hf-id="hf-0a9u" class="brow"><div data-hf-id="hf-lisq" class="blab">SURFACE OF THE SUN</div><div data-hf-id="hf-wuv3" class="btrack"><b data-hf-id="hf-2uar" id="ov7b1" class="" style="width:140px"></b></div><div data-hf-id="hf-7qp0" class="bval">9,930 °F</div></div></div>
+      </div>
+      <div data-hf-id="hf-qmmy" id="ov8" class="clip ov " data-start="29.620" data-duration="0.840" data-track-index="48" data-track-kind="graphics" style="z-index:38">
+        <div data-hf-id="hf-wetj" id="ov8f" class="flash" style="background:#f0e8ff"></div>
+      </div>
+      <div data-hf-id="hf-ucib" id="ov9" class="clip ov " data-start="32.100" data-duration="3.600" data-track-index="49" data-track-kind="graphics" style="z-index:39">
+        <div data-hf-id="hf-rovq" class="ctr" style="left:70px;top:300px"><div data-hf-id="hf-z3c5" class="clab">NEXT STROKE AFTER</div><div data-hf-id="hf-4v8g" class="cnum"><span data-hf-id="hf-8t48" id="ov9n">0</span><em data-hf-id="hf-h01z">MS</em></div><div data-hf-id="hf-qh6u" class="cticks"><i data-hf-id="hf-srxu" style="left:0px;height:18px"></i><i data-hf-id="hf-bwqq" style="left:24px;height:9px"></i><i data-hf-id="hf-05sk" style="left:48px;height:9px"></i><i data-hf-id="hf-es35" style="left:72px;height:9px"></i><i data-hf-id="hf-c9bj" style="left:96px;height:9px"></i><i data-hf-id="hf-wvxh" style="left:120px;height:18px"></i><i data-hf-id="hf-t5ej" style="left:144px;height:9px"></i><i data-hf-id="hf-547t" style="left:168px;height:9px"></i><i data-hf-id="hf-a0a4" style="left:192px;height:9px"></i><i data-hf-id="hf-rr7h" style="left:216px;height:9px"></i><i data-hf-id="hf-7bos" style="left:240px;height:18px"></i><i data-hf-id="hf-h4xg" style="left:264px;height:9px"></i><i data-hf-id="hf-kshe" style="left:288px;height:9px"></i><i data-hf-id="hf-0nne" style="left:312px;height:9px"></i><i data-hf-id="hf-od6w" style="left:336px;height:9px"></i><i data-hf-id="hf-klgj" style="left:360px;height:18px"></i><b data-hf-id="hf-emqq" id="ov9p"></b></div></div>
+      </div>
+      <div data-hf-id="hf-j4yy" id="ov10" class="clip ov " data-start="35.740" data-duration="0.960" data-track-index="50" data-track-kind="graphics" style="z-index:40">
+        <div data-hf-id="hf-h1rt" id="ov10f" class="flash" style="background:#e6e0ff"></div>
+      </div>
+      <div data-hf-id="hf-t1og" id="caps" class="clip" data-start="0" data-duration="39.72" data-track-index="90" data-track-kind="captions">
+        <div data-hf-id="hf-rxhd" id="cp0" class="cap">You never see</div>
+        <div data-hf-id="hf-jn0g" id="cp1" class="cap">lightning strike down</div>
+        <div data-hf-id="hf-jk3f" id="cp2" class="cap">The flash you</div>
+        <div data-hf-id="hf-7fl8" id="cp3" class="cap">see shoots up</div>
+        <div data-hf-id="hf-4hyq" id="cp4" class="cap">Deep inside a</div>
+        <div data-hf-id="hf-q90k" id="cp5" class="cap">storm cloud</div>
+        <div data-hf-id="hf-tkus" id="cp6" class="cap">ice crystals and</div>
+        <div data-hf-id="hf-9hyy" id="cp7" class="cap">soft hail collide</div>
+        <div data-hf-id="hf-kk80" id="cp8" class="cap">and the storm</div>
+        <div data-hf-id="hf-hqep" id="cp9" class="cap">splits its charge</div>
+        <div data-hf-id="hf-7alj" id="cp10" class="cap">Positive on top</div>
+        <div data-hf-id="hf-rb5r" id="cp11" class="cap">negative below</div>
+        <div data-hf-id="hf-4j1z" id="cp12" class="cap">Then an invisible</div>
+        <div data-hf-id="hf-o5o7" id="cp13" class="cap">channel creeps toward</div>
+        <div data-hf-id="hf-r43q" id="cp14" class="cap">the ground</div>
+        <div data-hf-id="hf-c47g" id="cp15" class="cap">in jumps of</div>
+        <div data-hf-id="hf-77g3" id="cp16" class="cap">about <b data-hf-id="hf-w5ls">148</b> feet</div>
+        <div data-hf-id="hf-35wl" id="cp17" class="cap">A spark rises</div>
+        <div data-hf-id="hf-13wb" id="cp18" class="cap">from the</div>
+        <div data-hf-id="hf-ak7u" id="cp19" class="cap">tallest tree</div>
+        <div data-hf-id="hf-t864" id="cp20" class="cap">They touch</div>
+        <div data-hf-id="hf-eyg1" id="cp21" class="cap">Now the real</div>
+        <div data-hf-id="hf-ic2w" id="cp22" class="cap">flash rips upward</div>
+        <div data-hf-id="hf-rowh" id="cp23" class="cap">at up to</div>
+        <div data-hf-id="hf-9coq" id="cp24" class="cap">a third of</div>
+        <div data-hf-id="hf-pew0" id="cp25" class="cap">the speed</div>
+        <div data-hf-id="hf-sgq2" id="cp26" class="cap">of light</div>
+        <div data-hf-id="hf-0rd5" id="cp27" class="cap"><b data-hf-id="hf-8lyi">30,000</b> amps</div>
+        <div data-hf-id="hf-6psw" id="cp28" class="cap">The air turns</div>
+        <div data-hf-id="hf-tnll" id="cp29" class="cap">to plasma</div>
+        <div data-hf-id="hf-b5fb" id="cp30" class="cap"><b data-hf-id="hf-pro0">54,000</b> degrees</div>
+        <div data-hf-id="hf-b8qv" id="cp31" class="cap"><b data-hf-id="hf-upv4">5</b> times hotter</div>
+        <div data-hf-id="hf-qbdj" id="cp32" class="cap">than the surface</div>
+        <div data-hf-id="hf-yfth" id="cp33" class="cap">of the Sun</div>
+        <div data-hf-id="hf-c32t" id="cp34" class="cap">The air</div>
+        <div data-hf-id="hf-ak5j" id="cp35" class="cap">explodes outward</div>
+        <div data-hf-id="hf-kow0" id="cp36" class="cap">That's the</div>
+        <div data-hf-id="hf-f75x" id="cp37" class="cap">thunder</div>
+        <div data-hf-id="hf-t9f4" id="cp38" class="cap"><b data-hf-id="hf-hnih">40</b> milliseconds</div>
+        <div data-hf-id="hf-1ntn" id="cp39" class="cap">later</div>
+        <div data-hf-id="hf-wfgs" id="cp40" class="cap">it can</div>
+        <div data-hf-id="hf-0p8g" id="cp41" class="cap">strike again</div>
+        <div data-hf-id="hf-ktkd" id="cp42" class="cap">through the</div>
+        <div data-hf-id="hf-ksk1" id="cp43" class="cap">same channel</div>
+        <div data-hf-id="hf-lwqf" id="cp44" class="cap">That's the</div>
+        <div data-hf-id="hf-z7h6" id="cp45" class="cap">flicker</div>
+        <div data-hf-id="hf-iwbt" id="cp46" class="cap">See the flash</div>
+        <div data-hf-id="hf-803l" id="cp47" class="cap">Count the seconds</div>
+        <div data-hf-id="hf-77ws" id="cp48" class="cap">or run?</div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // shot 0 ai:l01_11 [0.00-0.62] push, enter left
+      tl.fromTo("#r0", {scale: 1.06, x: 0, y: 0}, {scale: 1.18, x: 0, y: 0, duration: 0.620, ease: "none"}, 0.000);
+      tl.fromTo("#f0", {scale: 1, x: 0, y: 0}, {scale: 1.05, x: 0, y: 14, duration: 0.620, ease: "none"}, 0.000);
+      tl.to("#c0", {scale: 1.2, filter: "blur(18px)", duration: 0.21, ease: "power3.in"}, 0.410);
+      tl.to("#k0", {x: 8.2, y: -4.1, rotation: -0.04, duration: 0.05, ease: "sine.inOut"}, 0.000);
+      tl.to("#k0", {x: -6.8, y: 9.3, rotation: -0.33, duration: 0.05, ease: "sine.inOut"}, 0.050);
+      tl.to("#k0", {x: 3.1, y: 1.7, rotation: 0.19, duration: 0.05, ease: "sine.inOut"}, 0.100);
+      tl.to("#k0", {x: -1.5, y: -2.0, rotation: -0.08, duration: 0.05, ease: "sine.inOut"}, 0.150);
+      tl.to("#k0", {x: -6.6, y: -2.8, rotation: -0.17, duration: 0.05, ease: "sine.inOut"}, 0.200);
+      tl.to("#k0", {x: 4.0, y: -0.8, rotation: -0.29, duration: 0.05, ease: "sine.inOut"}, 0.250);
+      tl.to("#k0", {x: -6.1, y: -2.0, rotation: 0.32, duration: 0.05, ease: "sine.inOut"}, 0.300);
+      tl.to("#k0", {x: -5.6, y: -0.6, rotation: 0.16, duration: 0.05, ease: "sine.inOut"}, 0.350);
+      tl.to("#k0", {x: -4.0, y: 3.2, rotation: 0.20, duration: 0.05, ease: "sine.inOut"}, 0.400);
+      tl.to("#k0", {x: 3.1, y: -3.5, rotation: 0.20, duration: 0.05, ease: "sine.inOut"}, 0.450);
+      tl.to("#k0", {x: -2.3, y: 2.5, rotation: 0.12, duration: 0.05, ease: "sine.inOut"}, 0.500);
+      tl.to("#k0", {x: 0, y: 0, rotation: 0, duration: 0.08}, 0.550);
+      // shot 1 video:light/slowmo_h.webm [0.62-3.36] push, enter flash
+      tl.set("#sh1", {opacity: 1}, 0.620); tl.set("#sh1", {opacity: 0}, 3.360);
+      tl.fromTo("#r1", {scale: 1.0, x: 0, y: 0}, {scale: 1.08, x: 0, y: 0, duration: 2.740, ease: "none"}, 0.620);
+      tl.fromTo("#c1", {x: 0, scale: 0.84, filter: "blur(18px)"}, {scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false}, 0.620);
+      tl.to("#c1", {scale: 1.2, filter: "blur(18px)", duration: 0.21, ease: "power3.in"}, 3.150);
+      // shot 2 ai:l02_11 [3.36-5.14] push, enter push
+      tl.fromTo("#r2", {scale: 1.08, x: 0, y: 0}, {scale: 1.26, x: 0, y: 0, duration: 1.780, ease: "none"}, 3.360);
+      tl.fromTo("#f2", {scale: 1, x: 0, y: 0}, {scale: 1.05, x: 0, y: 14, duration: 1.780, ease: "none"}, 3.360);
+      tl.fromTo("#c2", {x: 0, scale: 0.84, filter: "blur(18px)"}, {scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false}, 3.360);
+      tl.to("#c2", {scale: 1.2, filter: "blur(18px)", duration: 0.21, ease: "power3.in"}, 4.930);
+      // shot 3 ai:l03_29 [5.14-7.28] push, enter push
+      tl.fromTo("#r3", {scale: 1.1, x: 0, y: 0}, {scale: 1.24, x: 0, y: 0, duration: 2.140, ease: "none"}, 5.140);
+      tl.fromTo("#f3", {scale: 1, x: 0, y: 0}, {scale: 1.05, x: 0, y: 14, duration: 2.140, ease: "none"}, 5.140);
+      tl.fromTo("#c3", {x: 0, scale: 0.84, filter: "blur(18px)"}, {scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false}, 5.140);
+      tl.to("#c3", {scale: 0.86, filter: "blur(18px)", duration: 0.21, ease: "power3.in"}, 7.070);
+      // shot 4 ai:l09_11 [7.28-11.24] pan, enter pull
+      tl.fromTo("#r4", {scale: 1.14, x: 50, y: 0}, {scale: 1.2, x: -50, y: 0, duration: 3.960, ease: "none"}, 7.280);
+      tl.fromTo("#f4", {scale: 1, x: 0, y: 0}, {scale: 1.05, x: -40, y: 14, duration: 3.960, ease: "none"}, 7.280);
+      tl.fromTo("#c4", {x: 0, scale: 1.25, filter: "blur(18px)"}, {scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false}, 7.280);
+      tl.to("#c4", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 10.940);
+      // shot 5 ai:l10_7 [11.24-16.50] tilt, enter left
+      tl.fromTo("#r5", {scale: 1.08, x: 0, y: 50}, {scale: 1.16, x: 0, y: -50, duration: 5.260, ease: "none"}, 11.240);
+      tl.fromTo("#f5", {scale: 1, x: 0, y: 0}, {scale: 1.05, x: 0, y: -26, duration: 5.260, ease: "none"}, 11.240);
+      tl.fromTo("#c5", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 11.240);
+      tl.to("#c5", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 16.200);
+      // shot 6 video:light/slowmo_v.webm [16.50-19.14] push, enter left
+      tl.set("#sh6", {opacity: 1}, 16.500); tl.set("#sh6", {opacity: 0}, 19.140);
+      tl.fromTo("#r6", {scale: 1.0, x: 0, y: 0}, {scale: 1.1, x: 0, y: 0, duration: 2.640, ease: "none"}, 16.500);
+      tl.fromTo("#c6", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 16.500);
+      tl.to("#c6", {scale: 1.2, filter: "blur(18px)", duration: 0.21, ease: "power3.in"}, 18.930);
+      // shot 7 ai:l06_11 [19.14-22.74] push, enter flash
+      tl.fromTo("#r7", {scale: 1.08, x: 0, y: 0}, {scale: 1.22, x: 0, y: 0, duration: 3.600, ease: "none"}, 19.140);
+      tl.fromTo("#f7", {scale: 1, x: 0, y: 0}, {scale: 1.05, x: 0, y: 14, duration: 3.600, ease: "none"}, 19.140);
+      tl.fromTo("#c7", {x: 0, scale: 0.84, filter: "blur(18px)"}, {scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false}, 19.140);
+      tl.to("#c7", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 22.440);
+      tl.to("#k7", {x: 6.0, y: -3.5, rotation: -0.26, duration: 0.05, ease: "sine.inOut"}, 19.140);
+      tl.to("#k7", {x: 6.2, y: -7.4, rotation: -0.02, duration: 0.05, ease: "sine.inOut"}, 19.190);
+      tl.to("#k7", {x: 1.1, y: 2.0, rotation: -0.32, duration: 0.05, ease: "sine.inOut"}, 19.240);
+      tl.to("#k7", {x: 2.3, y: 0.0, rotation: 0.31, duration: 0.05, ease: "sine.inOut"}, 19.290);
+      tl.to("#k7", {x: -7.8, y: 7.5, rotation: -0.27, duration: 0.05, ease: "sine.inOut"}, 19.340);
+      tl.to("#k7", {x: 4.9, y: 0.1, rotation: 0.26, duration: 0.05, ease: "sine.inOut"}, 19.390);
+      tl.to("#k7", {x: -4.7, y: -2.6, rotation: -0.30, duration: 0.05, ease: "sine.inOut"}, 19.440);
+      tl.to("#k7", {x: 3.9, y: 0.5, rotation: -0.20, duration: 0.05, ease: "sine.inOut"}, 19.490);
+      tl.to("#k7", {x: -4.0, y: -5.4, rotation: -0.19, duration: 0.05, ease: "sine.inOut"}, 19.540);
+      tl.to("#k7", {x: 0.7, y: -0.8, rotation: 0.12, duration: 0.05, ease: "sine.inOut"}, 19.590);
+      tl.to("#k7", {x: -4.8, y: 3.8, rotation: 0.27, duration: 0.05, ease: "sine.inOut"}, 19.640);
+      tl.to("#k7", {x: 2.5, y: 2.5, rotation: 0.18, duration: 0.05, ease: "sine.inOut"}, 19.690);
+      tl.to("#k7", {x: -3.8, y: -0.4, rotation: -0.20, duration: 0.05, ease: "sine.inOut"}, 19.740);
+      tl.to("#k7", {x: 2.4, y: 0.3, rotation: -0.17, duration: 0.05, ease: "sine.inOut"}, 19.790);
+      tl.to("#k7", {x: -0.4, y: 2.1, rotation: 0.02, duration: 0.05, ease: "sine.inOut"}, 19.840);
+      tl.to("#k7", {x: 0, y: 0, rotation: 0, duration: 0.08}, 19.890);
+      // shot 8 ai:l06_29 [22.74-24.14] push, enter left
+      tl.fromTo("#r8", {scale: 1.08, x: 0, y: 0}, {scale: 1.2, x: 0, y: 0, duration: 1.400, ease: "none"}, 22.740);
+      tl.fromTo("#f8", {scale: 1, x: 0, y: 0}, {scale: 1.05, x: 0, y: 14, duration: 1.400, ease: "none"}, 22.740);
+      tl.fromTo("#c8", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 22.740);
+      tl.to("#c8", {scale: 1.2, filter: "blur(18px)", duration: 0.21, ease: "power3.in"}, 23.930);
+      tl.to("#k8", {x: 3.8, y: -4.8, rotation: 0.42, duration: 0.05, ease: "sine.inOut"}, 22.740);
+      tl.to("#k8", {x: 2.6, y: -2.7, rotation: -0.07, duration: 0.05, ease: "sine.inOut"}, 22.790);
+      tl.to("#k8", {x: -4.8, y: -3.6, rotation: 0.13, duration: 0.05, ease: "sine.inOut"}, 22.840);
+      tl.to("#k8", {x: 2.6, y: -3.0, rotation: 0.16, duration: 0.05, ease: "sine.inOut"}, 22.890);
+      tl.to("#k8", {x: -1.0, y: 0.4, rotation: 0.24, duration: 0.05, ease: "sine.inOut"}, 22.940);
+      tl.to("#k8", {x: -2.1, y: -2.5, rotation: -0.05, duration: 0.05, ease: "sine.inOut"}, 22.990);
+      tl.to("#k8", {x: 3.3, y: -0.6, rotation: 0.20, duration: 0.05, ease: "sine.inOut"}, 23.040);
+      tl.to("#k8", {x: -2.0, y: 1.6, rotation: 0.18, duration: 0.05, ease: "sine.inOut"}, 23.090);
+      tl.to("#k8", {x: -0.7, y: -1.6, rotation: -0.18, duration: 0.05, ease: "sine.inOut"}, 23.140);
+      tl.to("#k8", {x: 0, y: 0, rotation: 0, duration: 0.08}, 23.190);
+      // shot 9 ai:l07_29 [24.14-25.62] push, enter push
+      tl.fromTo("#r9", {scale: 1.1, x: 0, y: 0}, {scale: 1.3, x: 0, y: 0, duration: 1.480, ease: "none"}, 24.140);
+      tl.fromTo("#f9", {scale: 1, x: 0, y: 0}, {scale: 1.05, x: 0, y: 14, duration: 1.480, ease: "none"}, 24.140);
+      tl.fromTo("#c9", {x: 0, scale: 0.84, filter: "blur(18px)"}, {scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false}, 24.140);
+      tl.to("#c9", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 25.320);
+      // shot 10 ai:l07_11 [25.62-29.62] push, enter left
+      tl.fromTo("#r10", {scale: 1.12, x: 0, y: 0}, {scale: 1.2, x: 0, y: 0, duration: 4.000, ease: "none"}, 25.620);
+      tl.fromTo("#f10", {scale: 1, x: 0, y: 0}, {scale: 1.05, x: 0, y: 14, duration: 4.000, ease: "none"}, 25.620);
+      tl.fromTo("#c10", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 25.620);
+      tl.to("#c10", {scale: 1.2, filter: "blur(18px)", duration: 0.21, ease: "power3.in"}, 29.410);
+      // shot 11 ai:l11_42 [29.62-32.08] push, enter flash
+      tl.fromTo("#r11", {scale: 1.1, x: 0, y: 0}, {scale: 1.3, x: 0, y: 0, duration: 2.460, ease: "none"}, 29.620);
+      tl.fromTo("#f11", {scale: 1, x: 0, y: 0}, {scale: 1.05, x: 0, y: 14, duration: 2.460, ease: "none"}, 29.620);
+      tl.fromTo("#c11", {x: 0, scale: 0.84, filter: "blur(18px)"}, {scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false}, 29.620);
+      tl.to("#c11", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 31.780);
+      tl.to("#k11", {x: 0.2, y: -1.7, rotation: 0.06, duration: 0.05, ease: "sine.inOut"}, 29.620);
+      tl.to("#k11", {x: -4.0, y: 11.7, rotation: -0.33, duration: 0.05, ease: "sine.inOut"}, 29.670);
+      tl.to("#k11", {x: -1.7, y: 8.9, rotation: 0.10, duration: 0.05, ease: "sine.inOut"}, 29.720);
+      tl.to("#k11", {x: 13.3, y: -6.9, rotation: -0.13, duration: 0.05, ease: "sine.inOut"}, 29.770);
+      tl.to("#k11", {x: -6.2, y: -11.7, rotation: -0.38, duration: 0.05, ease: "sine.inOut"}, 29.820);
+      tl.to("#k11", {x: 0.4, y: -6.2, rotation: 0.07, duration: 0.05, ease: "sine.inOut"}, 29.870);
+      tl.to("#k11", {x: 13.7, y: 14.7, rotation: 0.23, duration: 0.05, ease: "sine.inOut"}, 29.920);
+      tl.to("#k11", {x: -4.8, y: -3.3, rotation: 0.32, duration: 0.05, ease: "sine.inOut"}, 29.970);
+      tl.to("#k11", {x: -7.3, y: 8.9, rotation: -0.20, duration: 0.05, ease: "sine.inOut"}, 30.020);
+      tl.to("#k11", {x: -1.4, y: 1.5, rotation: 0.34, duration: 0.05, ease: "sine.inOut"}, 30.070);
+      tl.to("#k11", {x: 5.9, y: 8.7, rotation: -0.11, duration: 0.05, ease: "sine.inOut"}, 30.120);
+      tl.to("#k11", {x: -3.7, y: 9.0, rotation: 0.06, duration: 0.05, ease: "sine.inOut"}, 30.170);
+      tl.to("#k11", {x: 5.1, y: -9.4, rotation: -0.28, duration: 0.05, ease: "sine.inOut"}, 30.220);
+      tl.to("#k11", {x: -1.6, y: -4.3, rotation: -0.15, duration: 0.05, ease: "sine.inOut"}, 30.270);
+      tl.to("#k11", {x: 6.7, y: 8.9, rotation: -0.16, duration: 0.05, ease: "sine.inOut"}, 30.320);
+      tl.to("#k11", {x: -8.1, y: -6.3, rotation: -0.18, duration: 0.05, ease: "sine.inOut"}, 30.370);
+      tl.to("#k11", {x: 4.3, y: -2.3, rotation: 0.26, duration: 0.05, ease: "sine.inOut"}, 30.420);
+      tl.to("#k11", {x: -8.7, y: 0.6, rotation: -0.19, duration: 0.05, ease: "sine.inOut"}, 30.470);
+      tl.to("#k11", {x: 6.0, y: -2.0, rotation: -0.12, duration: 0.05, ease: "sine.inOut"}, 30.520);
+      tl.to("#k11", {x: 1.3, y: 6.0, rotation: -0.22, duration: 0.05, ease: "sine.inOut"}, 30.570);
+      tl.to("#k11", {x: -4.0, y: 6.0, rotation: -0.03, duration: 0.05, ease: "sine.inOut"}, 30.620);
+      tl.to("#k11", {x: -5.6, y: 6.0, rotation: 0.17, duration: 0.05, ease: "sine.inOut"}, 30.670);
+      tl.to("#k11", {x: -0.9, y: -3.9, rotation: -0.17, duration: 0.05, ease: "sine.inOut"}, 30.720);
+      tl.to("#k11", {x: 0, y: 0, rotation: 0, duration: 0.08}, 30.770);
+      // shot 12 video:light/slowmo_b.webm [32.08-35.74] push, enter left
+      tl.set("#sh12", {opacity: 1}, 32.080); tl.set("#sh12", {opacity: 0}, 35.740);
+      tl.fromTo("#r12", {scale: 1.0, x: 0, y: 0}, {scale: 1.08, x: 0, y: 0, duration: 3.660, ease: "none"}, 32.080);
+      tl.fromTo("#c12", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 32.080);
+      tl.to("#c12", {x: -130, filter: "blur(9px)", duration: 0.3, ease: "power4.in"}, 35.440);
+      // shot 13 photo:light/bolt_photo.jpg [35.74-36.70] pan, enter left
+      tl.fromTo("#r13", {scale: 1.0, x: 120, y: 0}, {scale: 1.06, x: -60, y: 0, duration: 0.960, ease: "none"}, 35.740);
+      tl.fromTo("#c13", {x: 130, scale: 1, filter: "blur(9px)"}, {x: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out", immediateRender: false}, 35.740);
+      tl.to("#c13", {scale: 0.86, filter: "blur(18px)", duration: 0.21, ease: "power3.in"}, 36.490);
+      // shot 14 photo:light/iss_milky.jpg [36.70-39.72] push, enter pull
+      tl.fromTo("#r14", {scale: 1.0, x: 0, y: 0}, {scale: 1.08, x: 0, y: 0, duration: 3.020, ease: "none"}, 36.700);
+      tl.fromTo("#c14", {x: 0, scale: 1.25, filter: "blur(18px)"}, {scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false}, 36.700);
+      tl.fromTo("#ov0bar", {scaleX: 0.35}, {scaleX: 1, duration: 0.5, ease: "power4.out"}, 0.000);
+      tl.to("#ov0 .hook", {x: -130, opacity: 0, duration: 0.3, ease: "power4.in"}, 3.050);
+      tl.fromTo("#ov1f", {opacity: 0.9}, {opacity: 0, duration: 0.5, ease: "power2.out", immediateRender: false}, 0.620);
+      tl.fromTo("#ov2q0", {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: 0.18, ease: "back.out(1.7)"}, 9.440);
+      tl.fromTo("#ov2q1", {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: 0.18, ease: "back.out(1.7)"}, 9.520);
+      tl.fromTo("#ov2q2", {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: 0.18, ease: "back.out(1.7)"}, 9.600);
+      tl.fromTo("#ov2q3", {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: 0.18, ease: "back.out(1.7)"}, 9.680);
+      tl.fromTo("#ov2q4", {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: 0.18, ease: "back.out(1.7)"}, 9.740);
+      tl.fromTo("#ov2q5", {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: 0.18, ease: "back.out(1.7)"}, 10.300);
+      tl.fromTo("#ov2q6", {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: 0.18, ease: "back.out(1.7)"}, 10.380);
+      tl.fromTo("#ov2q7", {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: 0.18, ease: "back.out(1.7)"}, 10.460);
+      tl.fromTo("#ov2q8", {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: 0.18, ease: "back.out(1.7)"}, 10.540);
+      tl.fromTo("#ov2q9", {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: 0.18, ease: "back.out(1.7)"}, 10.600);
+      tl.set("#ov3p", {strokeDashoffset: 1}, 0);
+      tl.to("#ov3p", {strokeDashoffset: 0.8333, duration: 0.06, ease: "power2.out"}, 12.360);
+      tl.fromTo("#ov3s0", {scale: 0, transformOrigin: "50% 50%"}, {scale: 1, duration: 0.12, ease: "back.out(1.7)"}, 12.410);
+      tl.to("#ov3p", {strokeDashoffset: 0.6667, duration: 0.06, ease: "power2.out"}, 12.780);
+      tl.fromTo("#ov3s1", {scale: 0, transformOrigin: "50% 50%"}, {scale: 1, duration: 0.12, ease: "back.out(1.7)"}, 12.830);
+      tl.to("#ov3p", {strokeDashoffset: 0.5000, duration: 0.06, ease: "power2.out"}, 13.200);
+      tl.fromTo("#ov3s2", {scale: 0, transformOrigin: "50% 50%"}, {scale: 1, duration: 0.12, ease: "back.out(1.7)"}, 13.250);
+      tl.to("#ov3p", {strokeDashoffset: 0.3333, duration: 0.06, ease: "power2.out"}, 13.620);
+      tl.fromTo("#ov3s3", {scale: 0, transformOrigin: "50% 50%"}, {scale: 1, duration: 0.12, ease: "back.out(1.7)"}, 13.670);
+      tl.to("#ov3p", {strokeDashoffset: 0.1667, duration: 0.06, ease: "power2.out"}, 14.040);
+      tl.fromTo("#ov3s4", {scale: 0, transformOrigin: "50% 50%"}, {scale: 1, duration: 0.12, ease: "back.out(1.7)"}, 14.090);
+      tl.to("#ov3p", {strokeDashoffset: 0.0000, duration: 0.06, ease: "power2.out"}, 14.460);
+      tl.fromTo("#ov3s5", {scale: 0, transformOrigin: "50% 50%"}, {scale: 1, duration: 0.12, ease: "back.out(1.7)"}, 14.510);
+      tl.fromTo("#ov3t", {opacity: 0, x: -20}, {opacity: 1, x: 0, duration: 0.25, ease: "power4.out"}, 12.560);
+      tl.fromTo("#ov4f", {opacity: 1.0}, {opacity: 0, duration: 0.7, ease: "power2.out", immediateRender: false}, 19.140);
+      tl.fromTo("#ov5 .ctr", {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 0.3, ease: "power4.out"}, 21.060);
+      (function(){ const o = {v: 0}, el = document.querySelector("#ov5n"); tl.to(o, {v: 33, duration: 0.80, ease: "power2.out", onUpdate: () => { el.textContent = Math.round(o.v).toLocaleString("en-US"); }}, 21.160); })();
+      tl.fromTo("#ov5p", {x: 0}, {x: 360, duration: 0.80, ease: "power2.out"}, 21.160);
+      tl.to("#ov5 .ctr", {x: -60, opacity: 0, duration: 0.25, ease: "power4.in"}, 22.470);
+      tl.fromTo("#ov6 .ctr", {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 0.3, ease: "power4.out"}, 22.760);
+      (function(){ const o = {v: 0}, el = document.querySelector("#ov6n"); tl.to(o, {v: 30000, duration: 0.80, ease: "power2.out", onUpdate: () => { el.textContent = Math.round(o.v).toLocaleString("en-US"); }}, 22.860); })();
+      tl.fromTo("#ov6p", {x: 0}, {x: 360, duration: 0.80, ease: "power2.out"}, 22.860);
+      tl.to("#ov6 .ctr", {x: -60, opacity: 0, duration: 0.25, ease: "power4.in"}, 23.830);
+      tl.fromTo("#ov7 .bars", {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 0.3, ease: "power4.out"}, 25.640);
+      tl.fromTo("#ov7b0", {scaleX: 0}, {scaleX: 1, duration: 0.7, ease: "power4.out"}, 25.710);
+      tl.fromTo("#ov7b1", {scaleX: 0}, {scaleX: 1, duration: 0.7, ease: "power4.out"}, 28.620);
+      tl.to("#ov7 .bars", {x: -60, opacity: 0, duration: 0.25, ease: "power4.in"}, 29.350);
+      tl.fromTo("#ov8f", {opacity: 0.8}, {opacity: 0, duration: 0.5, ease: "power2.out", immediateRender: false}, 29.620);
+      tl.fromTo("#ov9 .ctr", {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 0.3, ease: "power4.out"}, 32.100);
+      (function(){ const o = {v: 0}, el = document.querySelector("#ov9n"); tl.to(o, {v: 40, duration: 0.60, ease: "power2.out", onUpdate: () => { el.textContent = Math.round(o.v).toLocaleString("en-US"); }}, 32.200); })();
+      tl.fromTo("#ov9p", {x: 0}, {x: 360, duration: 0.60, ease: "power2.out"}, 32.200);
+      tl.to("#ov9 .ctr", {x: -60, opacity: 0, duration: 0.25, ease: "power4.in"}, 35.450);
+      tl.fromTo("#ov10f", {opacity: 0.6}, {opacity: 0, duration: 0.12, ease: "power2.out", immediateRender: false}, 35.740);
+      tl.fromTo("#ov10f", {opacity: 0.4}, {opacity: 0, duration: 0.12, ease: "power2.out", immediateRender: false}, 35.900);
+      tl.fromTo("#ov10f", {opacity: 0.5}, {opacity: 0, duration: 0.12, ease: "power2.out", immediateRender: false}, 36.080);
+      tl.set("#cp0", {opacity: 1}, 0.000); tl.fromTo("#cp0", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 0.000); tl.set("#cp0", {opacity: 0}, 0.560);
+      tl.set("#cp1", {opacity: 1}, 0.560); tl.fromTo("#cp1", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 0.560); tl.set("#cp1", {opacity: 0}, 1.960);
+      tl.set("#cp2", {opacity: 1}, 1.960); tl.fromTo("#cp2", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 1.960); tl.set("#cp2", {opacity: 0}, 2.440);
+      tl.set("#cp3", {opacity: 1}, 2.440); tl.fromTo("#cp3", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 2.440); tl.set("#cp3", {opacity: 0}, 3.400);
+      tl.set("#cp4", {opacity: 1}, 3.400); tl.fromTo("#cp4", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 3.400); tl.set("#cp4", {opacity: 0}, 4.080);
+      tl.set("#cp5", {opacity: 1}, 4.080); tl.fromTo("#cp5", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 4.080); tl.set("#cp5", {opacity: 0}, 5.180);
+      tl.set("#cp6", {opacity: 1}, 5.180); tl.fromTo("#cp6", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 5.180); tl.set("#cp6", {opacity: 0}, 5.920);
+      tl.set("#cp7", {opacity: 1}, 5.920); tl.fromTo("#cp7", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 5.920); tl.set("#cp7", {opacity: 0}, 7.310);
+      tl.set("#cp8", {opacity: 1}, 7.320); tl.fromTo("#cp8", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 7.320); tl.set("#cp8", {opacity: 0}, 7.860);
+      tl.set("#cp9", {opacity: 1}, 7.860); tl.fromTo("#cp9", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 7.860); tl.set("#cp9", {opacity: 0}, 9.250);
+      tl.set("#cp10", {opacity: 1}, 9.440); tl.fromTo("#cp10", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 9.440); tl.set("#cp10", {opacity: 0}, 10.300);
+      tl.set("#cp11", {opacity: 1}, 10.300); tl.fromTo("#cp11", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 10.300); tl.set("#cp11", {opacity: 0}, 11.280);
+      tl.set("#cp12", {opacity: 1}, 11.280); tl.fromTo("#cp12", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 11.280); tl.set("#cp12", {opacity: 0}, 11.960);
+      tl.set("#cp13", {opacity: 1}, 11.960); tl.fromTo("#cp13", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 11.960); tl.set("#cp13", {opacity: 0}, 13.080);
+      tl.set("#cp14", {opacity: 1}, 13.080); tl.fromTo("#cp14", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 13.080); tl.set("#cp14", {opacity: 0}, 14.000);
+      tl.set("#cp15", {opacity: 1}, 14.000); tl.fromTo("#cp15", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 14.000); tl.set("#cp15", {opacity: 0}, 14.620);
+      tl.set("#cp16", {opacity: 1}, 14.620); tl.fromTo("#cp16", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 14.620); tl.set("#cp16", {opacity: 0}, 16.540);
+      tl.set("#cp17", {opacity: 1}, 16.540); tl.fromTo("#cp17", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 16.540); tl.set("#cp17", {opacity: 0}, 17.220);
+      tl.set("#cp18", {opacity: 1}, 17.220); tl.fromTo("#cp18", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 17.220); tl.set("#cp18", {opacity: 0}, 17.600);
+      tl.set("#cp19", {opacity: 1}, 17.600); tl.fromTo("#cp19", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 17.600); tl.set("#cp19", {opacity: 0}, 18.420);
+      tl.set("#cp20", {opacity: 1}, 18.420); tl.fromTo("#cp20", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 18.420); tl.set("#cp20", {opacity: 0}, 19.220);
+      tl.set("#cp21", {opacity: 1}, 19.220); tl.fromTo("#cp21", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 19.220); tl.set("#cp21", {opacity: 0}, 19.800);
+      tl.set("#cp22", {opacity: 1}, 19.800); tl.fromTo("#cp22", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 19.800); tl.set("#cp22", {opacity: 0}, 21.100);
+      tl.set("#cp23", {opacity: 1}, 21.100); tl.fromTo("#cp23", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 21.100); tl.set("#cp23", {opacity: 0}, 21.580);
+      tl.set("#cp24", {opacity: 1}, 21.580); tl.fromTo("#cp24", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 21.580); tl.set("#cp24", {opacity: 0}, 22.060);
+      tl.set("#cp25", {opacity: 1}, 22.060); tl.fromTo("#cp25", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 22.060); tl.set("#cp25", {opacity: 0}, 22.380);
+      tl.set("#cp26", {opacity: 1}, 22.380); tl.fromTo("#cp26", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 22.380); tl.set("#cp26", {opacity: 0}, 22.780);
+      tl.set("#cp27", {opacity: 1}, 22.780); tl.fromTo("#cp27", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 22.780); tl.set("#cp27", {opacity: 0}, 24.180);
+      tl.set("#cp28", {opacity: 1}, 24.180); tl.fromTo("#cp28", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 24.180); tl.set("#cp28", {opacity: 0}, 24.740);
+      tl.set("#cp29", {opacity: 1}, 24.740); tl.fromTo("#cp29", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 24.740); tl.set("#cp29", {opacity: 0}, 25.660);
+      tl.set("#cp30", {opacity: 1}, 25.660); tl.fromTo("#cp30", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 25.660); tl.set("#cp30", {opacity: 0}, 27.350);
+      tl.set("#cp31", {opacity: 1}, 27.400); tl.fromTo("#cp31", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 27.400); tl.set("#cp31", {opacity: 0}, 28.300);
+      tl.set("#cp32", {opacity: 1}, 28.300); tl.fromTo("#cp32", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 28.300); tl.set("#cp32", {opacity: 0}, 28.820);
+      tl.set("#cp33", {opacity: 1}, 28.820); tl.fromTo("#cp33", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 28.820); tl.set("#cp33", {opacity: 0}, 29.660);
+      tl.set("#cp34", {opacity: 1}, 29.660); tl.fromTo("#cp34", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 29.660); tl.set("#cp34", {opacity: 0}, 29.920);
+      tl.set("#cp35", {opacity: 1}, 29.920); tl.fromTo("#cp35", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 29.920); tl.set("#cp35", {opacity: 0}, 31.080);
+      tl.set("#cp36", {opacity: 1}, 31.080); tl.fromTo("#cp36", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 31.080); tl.set("#cp36", {opacity: 0}, 31.380);
+      tl.set("#cp37", {opacity: 1}, 31.380); tl.fromTo("#cp37", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 31.380); tl.set("#cp37", {opacity: 0}, 32.110);
+      tl.set("#cp38", {opacity: 1}, 32.120); tl.fromTo("#cp38", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 32.120); tl.set("#cp38", {opacity: 0}, 32.680);
+      tl.set("#cp39", {opacity: 1}, 32.680); tl.fromTo("#cp39", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 32.680); tl.set("#cp39", {opacity: 0}, 33.340);
+      tl.set("#cp40", {opacity: 1}, 33.340); tl.fromTo("#cp40", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 33.340); tl.set("#cp40", {opacity: 0}, 33.560);
+      tl.set("#cp41", {opacity: 1}, 33.560); tl.fromTo("#cp41", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 33.560); tl.set("#cp41", {opacity: 0}, 34.540);
+      tl.set("#cp42", {opacity: 1}, 34.540); tl.fromTo("#cp42", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 34.540); tl.set("#cp42", {opacity: 0}, 34.900);
+      tl.set("#cp43", {opacity: 1}, 34.900); tl.fromTo("#cp43", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 34.900); tl.set("#cp43", {opacity: 0}, 35.780);
+      tl.set("#cp44", {opacity: 1}, 35.780); tl.fromTo("#cp44", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 35.780); tl.set("#cp44", {opacity: 0}, 36.080);
+      tl.set("#cp45", {opacity: 1}, 36.080); tl.fromTo("#cp45", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 36.080); tl.set("#cp45", {opacity: 0}, 36.740);
+      tl.set("#cp46", {opacity: 1}, 36.740); tl.fromTo("#cp46", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 36.740); tl.set("#cp46", {opacity: 0}, 37.660);
+      tl.set("#cp47", {opacity: 1}, 37.660); tl.fromTo("#cp47", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 37.660); tl.set("#cp47", {opacity: 0}, 38.360);
+      tl.set("#cp48", {opacity: 1}, 38.360); tl.fromTo("#cp48", {scale: 0.88}, {scale: 1, duration: 0.12, ease: "back.out(1.6)", immediateRender: false}, 38.360); tl.set("#cp48", {opacity: 0}, 39.170);
+      tl.set({}, {}, 39.72);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
