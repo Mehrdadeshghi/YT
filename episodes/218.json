@@ -1,0 +1,279 @@
+{
+ "ep": 218,
+ "title": "Why you forget why you walked into a room",
+ "format": "why-unconscious",
+ "series": "Why do you do that?",
+ "engine": "hyperframes",
+ "oneAsk": true,
+ "loop": true,
+ "voice": "gemini",
+ "gemini_wpm": 195,
+ "speed": 1.2,
+ "mood": "calm",
+ "prog": 1,
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "WALK INTO A ROOM",
+  "FORGET WHY"
+ ],
+ "cta": {
+  "q": "Happens to you?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Event_perception",
+ "vo_open": [
+  {
+   "at": 0.15,
+   "text": "Why do you walk into a room and forget why you came?",
+   "cap": "Why do you *walk* into a *room* and *forget* why you came?",
+   "de": "Warum gehst du in ein Zimmer und vergisst, was du da wolltest?",
+   "es": "¿Por qué entras en una habitación y olvidas a qué venías?",
+   "fr": "Pourquoi tu entres dans une pièce et tu oublies ce que tu venais faire ?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.0,
+   "beat": "name",
+   "vo": [
+    {
+     "at": 0.2,
+     "text": "Psychologists call it the doorway effect.",
+     "cap": "Psychologists call it the *doorway effect.*",
+     "de": "Psychologen nennen das den Türeffekt.",
+     "es": "Los psicólogos lo llaman el efecto puerta.",
+     "fr": "Les psychologues appellent ça l’effet de la porte."
+    }
+   ],
+   "hf": {
+    "tpl": "photo",
+    "src": "doors",
+    "pos": "50% 50%",
+    "label": [
+     "Hammershøi, open doors, 1905",
+     "Painting"
+    ]
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "scenes",
+   "vo": [
+    {
+     "at": 0.2,
+     "text": "Your brain cuts your day into scenes, like a movie. A doorway is a scene break.",
+     "cap": "Your brain cuts your day into *scenes,* like a *movie.* A *doorway* is a *scene break.*",
+     "de": "Dein Gehirn schneidet deinen Tag in Szenen, wie einen Film. Eine Tür ist ein Szenenwechsel.",
+     "es": "Tu cerebro corta tu día en escenas, como una película. Una puerta es un cambio de escena.",
+     "fr": "Ton cerveau découpe ta journée en scènes, comme un film. Une porte, c’est un changement de scène."
+    }
+   ],
+   "hf": {
+    "tpl": "photo",
+    "src": "strand",
+    "pos": "45% 50%",
+    "label": [
+     "Hammershøi, Strandgade 30",
+     "Painting"
+    ]
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "files",
+   "vo": [
+    {
+     "at": 0.2,
+     "text": "Walk through, and it files the last scene away, along with what you came for.",
+     "cap": "Walk through, and it *files* the last scene *away,* along with what you *came for.*",
+     "de": "Gehst du hindurch, legt es die letzte Szene ab, samt dem, wofür du gekommen bist.",
+     "es": "Al cruzarla, archiva la escena anterior, junto con lo que venías a buscar.",
+     "fr": "Tu la franchis, et il range la scène d’avant, avec ce que tu venais chercher."
+    }
+   ],
+   "hf": {
+    "tpl": "photo",
+    "src": "halpert",
+    "pos": "60% 40%",
+    "label": [
+     "Samuel Halpert, Woman in Doorway",
+     "Painting"
+    ]
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "lab",
+   "vo": [
+    {
+     "at": 0.2,
+     "text": "In Gabriel Radvansky's experiments, people forgot more after walking through a doorway, in virtual rooms and in real ones.",
+     "cap": "In *Gabriel Radvansky's* experiments, people *forgot more* after a *doorway,* in *virtual* rooms and in *real* ones.",
+     "de": "In den Experimenten von Gabriel Radvansky vergaßen Menschen nach einer Tür mehr, in virtuellen und in echten Räumen.",
+     "es": "En los experimentos de Gabriel Radvansky, la gente olvidaba más tras cruzar una puerta, en salas virtuales y reales.",
+     "fr": "Dans les expériences de Gabriel Radvansky, on oubliait davantage après une porte, dans des pièces virtuelles comme réelles."
+    }
+   ],
+   "hf": {
+    "tpl": "photo",
+    "src": "vr",
+    "pos": "62% 40%",
+    "label": [
+     "Virtual reality headset",
+     "Real photo"
+    ]
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "back",
+   "vo": [
+    {
+     "at": 0.2,
+     "text": "Walking back into the first room didn't bring the memory back.",
+     "cap": "Walking *back* into the first room didn't bring the *memory* back.",
+     "de": "Zurück ins erste Zimmer zu gehen, brachte die Erinnerung nicht zurück.",
+     "es": "Volver a la primera habitación no devolvía el recuerdo.",
+     "fr": "Retourner dans la première pièce ne faisait pas revenir le souvenir."
+    },
+    {
+     "at": 0.1,
+     "text": "And older adults weren't hit any harder than young ones.",
+     "cap": "And *older* adults weren't hit any *harder* than *young* ones.",
+     "de": "Und Ältere traf es nicht stärker als Junge.",
+     "es": "Y a los mayores no les afectaba más que a los jóvenes.",
+     "fr": "Et les plus âgés n’étaient pas plus touchés que les jeunes."
+    }
+   ],
+   "hf": {
+    "tpl": "photo",
+    "src": "white",
+    "pos": "50% 50%",
+    "label": [
+     "Hammershøi, White Doors, 1913",
+     "Painting"
+    ]
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "catch",
+   "vo": [
+    {
+     "at": 0.2,
+     "text": "One catch: a twenty twenty-one study couldn't repeat it, except when people's minds were already busy.",
+     "cap": "One *catch:* a *2021* study couldn't *repeat* it, except when people's minds were already *busy.*",
+     "de": "Ein Haken: Eine Studie von zweitausendeinundzwanzig konnte es nicht wiederholen, außer wenn der Kopf schon voll war.",
+     "es": "Un matiz: un estudio de dos mil veintiuno no pudo repetirlo, salvo cuando la mente ya estaba ocupada.",
+     "fr": "Un bémol : une étude de deux mille vingt et un n’a pas pu le reproduire, sauf quand l’esprit était déjà occupé."
+    },
+    {
+     "at": 0.15,
+     "text": "Does this happen to you? Comment yes or no, and subscribe.",
+     "cta": true,
+     "cap": "Does this *happen* to you? Comment *yes* or *no,* and *subscribe.*",
+     "de": "Passiert dir das auch? Schreib ja oder nein, und abonniere.",
+     "es": "¿Te pasa a ti? Comenta sí o no, y suscríbete.",
+     "fr": "Ça t’arrive aussi ? Commente oui ou non, et abonne-toi."
+    }
+   ],
+   "hf": {
+    "tpl": "photo",
+    "src": "strand",
+    "pos": "45% 50%",
+    "label": [
+     "Hammershøi, Strandgade 30",
+     "Painting"
+    ],
+    "els": [
+     {
+      "el": "ab",
+      "q": "Happens to you?",
+      "a": {
+       "src": "halpert",
+       "label": "Yes"
+      },
+      "b": {
+       "src": "doors",
+       "label": "No"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Kevin MacLeod - Scheming Weasel (faster).wav",
+   "from": 0,
+   "len": 60
+  },
+  {
+   "id": "halpert",
+   "file": "File:Woman in Doorway, by Samuel Halpert.jpg"
+  },
+  {
+   "id": "doors",
+   "file": "File:Vilhelm Hammershøi- Weiße Türen, offene Türen, 1905.jpg"
+  },
+  {
+   "id": "strand",
+   "file": "File:Interior. Strandgade 30 (SM 2402).png"
+  },
+  {
+   "id": "white",
+   "file": "File:Vilhelm Hammershøi - Hvide døre. Interiør fra Strandgade 25 - 1913.png"
+  },
+  {
+   "id": "vr",
+   "file": "File:A virtual reality (25779404897).jpg"
+  }
+ ],
+ "hf": {
+  "style": "kinetic",
+  "caps": {
+   "cu": [
+    "doorway",
+    "scene",
+    "movie",
+    "files",
+    "radvansky",
+    "virtual",
+    "real"
+   ],
+   "vg": [
+    "memory",
+    "older",
+    "young",
+    "busy"
+   ],
+   "rd": [
+    "forget",
+    "forgot",
+    "catch",
+    "repeat"
+   ]
+  }
+ },
+ "hf_open": {
+  "tpl": "split",
+  "name": "hook",
+  "a": "halpert",
+  "b": "doors",
+  "labelA": [
+   "Samuel Halpert, Woman in Doorway",
+   "Painting"
+  ],
+  "labelB": [
+   "Hammershøi, open doors, 1905",
+   "Painting"
+  ]
+ }
+}

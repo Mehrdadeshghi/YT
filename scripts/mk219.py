@@ -1,0 +1,101 @@
+#!/usr/bin/env python3
+"""#219 "Why do you do that?" (unconscious psychology, HyperFrames KINETIC style): phantom vibrations. Oct 2026. voice: gemini.
+Facts (checked Oct 29 2026):
+- English Wikipedia "Phantom vibration syndrome": "the perception that one's mobile phone is vibrating or ringing when it is not";
+  "Researcher Michelle Drouin found that almost 9 out of 10 undergraduates at her college experienced phantom vibrations";
+  "The cause of phantom vibrations is not known"; "Vibrations typically begin occurring after carrying a phone for between one month
+  and one year"; "It has been suggested that, when anticipating a phone call, the cerebral cortex may misinterpret other sensory
+  input (such as muscle contractions, pressure from clothing, or music) as a phone vibration"; Management: "Carrying the cell phone
+  in a different position reduces phantom vibrations for some people. Other methods include turning off the vibration".
+- Rothberg et al. (2010), BMJ 341:c6914, doi:10.1136/bmj.c6914 (survey of medical staff at an academic medical centre): "Of the 169
+  participants who answered the question, 115 (68% ...) reported having experienced phantom vibrations."
+"""
+import json
+RP, GR = 'Real photo', 'Graphic'
+E = {
+ 'ep': 219, 'title': 'Why you feel your phone buzz when it didn’t', 'format': 'why-unconscious', 'series': 'Why do you do that?',
+ 'engine': 'hyperframes', 'oneAsk': True, 'loop': True, 'voice': 'gemini', 'gemini_wpm': 195, 'speed': 1.2,
+ 'mood': 'calm', 'prog': 1, 'langs': ['en', 'de', 'es', 'fr'],
+ 'hook': ['YOUR PHONE', "DIDN'T BUZZ"],
+ 'cta': {'q': 'Phantom buzz?', 'a': 'YES', 'b': 'NO'},
+ 'source': 'https://en.wikipedia.org/wiki/Phantom_vibration_syndrome',
+ 'vo_open': [{'at': 0.15,
+   'text': "Your phone didn't buzz. So why did you feel it?",
+   'cap': "Your *phone* didn't *buzz.* So why did you *feel* it?",
+   'de': 'Dein Handy hat nicht vibriert. Warum hast du es trotzdem gespürt?',
+   'es': 'Tu móvil no vibró. ¿Entonces por qué lo sentiste?',
+   'fr': 'Ton téléphone n’a pas vibré. Alors pourquoi tu l’as senti ?'}],
+ 'scenes': [
+  {'dur': 1.0, 'beat': 'name', 'vo': [dict(at=0.2,
+    text='It has a name: phantom vibration syndrome.',
+    cap='It has a name: *phantom vibration* syndrome.',
+    de='Das hat einen Namen: Phantomvibrationssyndrom.',
+    es='Tiene nombre: síndrome de la vibración fantasma.',
+    fr='Ça porte un nom : le syndrome de la vibration fantôme.')]},
+  {'dur': 1.0, 'beat': 'hospital', 'vo': [dict(at=0.2,
+    text='In a survey of hospital staff, sixty-eight percent had felt it.',
+    cap='In a survey of *hospital* staff, *68%* had felt it.',
+    de='In einer Umfrage unter Klinikpersonal hatten es achtundsechzig Prozent schon gespürt.',
+    es='En una encuesta a personal de un hospital, el sesenta y ocho por ciento lo había sentido.',
+    fr='Dans une enquête auprès du personnel d’un hôpital, soixante-huit pour cent l’avaient déjà senti.')]},
+  {'dur': 1.0, 'beat': 'students', 'vo': [dict(at=0.2,
+    text='One researcher found almost nine out of ten students at her college had it too.',
+    cap='One researcher found almost *9* out of *10* students at her *college* had it too.',
+    de='Eine Forscherin fand: Fast neun von zehn Studierenden an ihrem College kannten es auch.',
+    es='Una investigadora vio que casi nueve de cada diez estudiantes de su universidad también.',
+    fr='Une chercheuse a trouvé que presque neuf étudiants sur dix de son université aussi.')]},
+  {'dur': 1.0, 'beat': 'starts', 'vo': [dict(at=0.2,
+    text='It usually starts after carrying a phone for one month to one year.',
+    cap='It usually *starts* after carrying a phone for one *month* to one *year.*',
+    de='Meist beginnt es, wenn man ein Handy einen Monat bis ein Jahr bei sich trägt.',
+    es='Suele empezar tras llevar un móvil entre un mes y un año.',
+    fr='En général, ça commence après avoir porté un téléphone entre un mois et un an.')]},
+  {'dur': 1.0, 'beat': 'why', 'vo': [
+    dict(at=0.2, text="Nobody knows the cause for sure.",
+      cap="Nobody knows the *cause* for *sure.*",
+      de='Die Ursache kennt niemand sicher.',
+      es='Nadie conoce la causa con certeza.',
+      fr='Personne ne connaît la cause avec certitude.'),
+    dict(at=0.1, text='One idea: your brain is waiting for a buzz, so it reads a muscle twitch or your clothes as one.',
+      cap='One idea: your brain is *waiting* for a buzz, so it reads a muscle *twitch* or your *clothes* as one.',
+      de='Eine Idee: Dein Gehirn wartet auf ein Vibrieren und hält ein Muskelzucken oder deine Kleidung dafür.',
+      es='Una idea: tu cerebro espera una vibración, así que toma un tic muscular o tu ropa por una.',
+      fr='Une idée : ton cerveau attend une vibration, alors il prend une contraction musculaire ou tes vêtements pour une.')]},
+  {'dur': 1.0, 'beat': 'fix', 'vo': [
+    dict(at=0.2, text='Turning off vibrate, or moving the phone, helped some people.',
+      cap='Turning off *vibrate,* or *moving* the phone, *helped* some people.',
+      de='Vibration ausschalten oder das Handy woanders tragen, half manchen.',
+      es='Quitar la vibración o cambiar el móvil de sitio ayudó a algunas personas.',
+      fr='Couper le vibreur ou changer le téléphone de place a aidé certaines personnes.'),
+    dict(at=0.15, text='Has your phone ever buzzed when it didn’t? Comment yes or no, and subscribe.', cta=True,
+      cap='Has your phone ever *buzzed* when it didn’t? Comment *yes* or *no,* and *subscribe.*',
+      de='Hat dein Handy schon mal vibriert, obwohl es nicht vibriert hat? Schreib ja oder nein, und abonniere.',
+      es='¿Tu móvil ha vibrado alguna vez sin vibrar? Comenta sí o no, y suscríbete.',
+      fr='Ton téléphone a déjà vibré alors qu’il n’a pas vibré ? Commente oui ou non, et abonne-toi.')]},
+ ],
+ 'photos': [
+  {'id': 'music', 'audio': 'File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3', 'from': 0, 'len': 60},
+  {'id': 'check', 'file': 'File:Checking Her Smartphone (Unsplash).jpg'},
+  {'id': 'walk', 'file': 'File:Ignoring Each Other (33390897436) (cropped).jpg'},
+  {'id': 'hosp', 'file': 'File:Covid-19 San Salvatore 09.jpg'},
+  {'id': 'students', 'file': 'File:Students on WIFI.jpg'},
+  {'id': 'motor', 'file': 'File:Nokia X3-00 - vibrating alert motor-3275.jpg'},
+  {'id': 'smile', 'file': 'File:Woman looking at phone in a casual setting while smiling and enjoying the moment with a relaxed atmosphere.jpg'},
+ ],
+}
+E['hf'] = {'style': 'kinetic',
+           'caps': {'cu': ['phantom', 'vibration', 'hospital', 'college', 'month', 'year', 'vibrate', 'moving'], 'vg': ['waiting', 'twitch', 'clothes', 'helped'],
+                    'rd': ['buzz', 'didnt', 'cause']}}
+E['hf_open'] = {'tpl': 'split', 'name': 'hook', 'a': 'check', 'b': 'walk',
+  'labelA': ['Checking a phone', RP], 'labelB': ['Phone in hand', RP]}
+hfs = [
+ {'tpl': 'photo', 'src': 'check', 'pos': '62% 45%', 'label': ['Checking a phone', RP]},
+ {'tpl': 'photo', 'src': 'hosp', 'pos': '58% 50%', 'label': ['Hospital corridor', RP]},
+ {'tpl': 'photo', 'src': 'students', 'pos': '50% 45%', 'label': ['Students with phones', RP]},
+ {'tpl': 'photo', 'src': 'walk', 'pos': '50% 30%', 'label': ['Phone in hand', RP]},
+ {'tpl': 'photo', 'src': 'motor', 'pos': '40% 50%', 'label': ['A phone’s vibration motor', RP]},
+ {'tpl': 'photo', 'src': 'smile', 'pos': '45% 50%', 'label': ['Phone in hand', RP],
+  'els': [{'el': 'ab', 'q': 'Phantom buzz?', 'a': {'src': 'check', 'label': 'Yes'}, 'b': {'src': 'smile', 'label': 'No'}}]},
+]
+for sc, h in zip(E['scenes'], hfs): sc['hf'] = h
+open('episodes/219.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False) + '\n')
