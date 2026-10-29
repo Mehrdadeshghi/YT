@@ -173,6 +173,15 @@ def stats():
     print(f'channel: {ch["statistics"]}  videos listed: {len(rows)}'); [print('\t'.join(map(str, r))) for r in rows]
 
 
+def hold(yt, vid):
+    """take a scheduled (still private) video off its publish date: it stays private and unscheduled until the autopilot or a later run schedules it"""
+    st = yt.videos().list(part='status', id=vid).execute()['items'][0]['status']
+    if st.get('privacyStatus') != 'private': print(f'  {vid}: already {st.get("privacyStatus")} — left alone'); return False
+    body = {k: st[k] for k in ('privacyStatus', 'selfDeclaredMadeForKids', 'containsSyntheticMedia', 'embeddable', 'license', 'publicStatsViewable') if k in st}
+    r = yt.videos().update(part='status', body={'id': vid, 'status': body}).execute()['status']
+    print(f'  held {vid}: privacy {r.get("privacyStatus")} · publishAt {r.get("publishAt")}'); return not r.get('publishAt')
+
+
 def schedule_existing(yt, vid, at):
     """give an already uploaded, never published private video a publish time (videos.update keeps all other status fields)"""
     st = yt.videos().list(part='status', id=vid).execute()['items'][0]['status']
@@ -220,6 +229,12 @@ def retag():
 def main():
     if 'check' in args: return check()
     if 'retag' in args: return retag()
+    if 'hold' in args:                                  # yt_upload.py hold 197 202 …: unschedule private videos (they stay uploaded, private)
+        led = json.load(open(LEDGER)); yt = youtube()
+        for e in EPS:
+            k = str(int(e))
+            if k in led and hold(yt, led[k]['id']): led[k].pop('publishAt', None); json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False)
+        return
     if 'stats' in args: return stats()
     if 'fix-playlists' in args: return fix_playlists()
     led = json.load(open(LEDGER)) if os.path.exists(LEDGER) else {}
