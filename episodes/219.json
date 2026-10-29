@@ -90,8 +90,8 @@
    "vo": [
     {
      "at": 0.2,
-     "text": "One researcher found almost nine out of ten students at her college had it too.",
-     "cap": "One researcher found almost *9* out of *10* students at her *college* had it too.",
+     "text": "A researcher found almost nine out of ten students at her college had it too.",
+     "cap": "A *researcher* found almost *9* out of *10* students at her *college* had it too.",
      "de": "Eine Forscherin fand: Fast neun von zehn Studierenden an ihrem College kannten es auch.",
      "es": "Una investigadora vio que casi nueve de cada diez estudiantes de su universidad también.",
      "fr": "Une chercheuse a trouvé que presque neuf étudiants sur dix de son université aussi."
