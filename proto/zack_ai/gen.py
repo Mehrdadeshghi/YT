@@ -55,7 +55,8 @@ del pipe; gc.collect()
 T['encode_s'] = round(time.time() - t0, 1)
 
 t0 = time.time()
-with safe_open(hf_hub_download(LIGHT, 'sdxl_lightning_4step_unet.safetensors'), 'pt') as f:   # one tensor at a time -> ~10 GB peak
+STEPS = int(cfg.get('steps', 4))   # 4 (fast) or 8 (better prompt adherence, ~2x time)
+with safe_open(hf_hub_download(LIGHT, f'sdxl_lightning_{STEPS}step_unet.safetensors'), 'pt') as f:   # one tensor at a time -> ~10 GB peak
     sd = {k: f.get_tensor(k).float() for k in f.keys()}
 unet.load_state_dict(sd, assign=True); del sd; gc.collect()
 unet.eval()
@@ -69,7 +70,7 @@ for sid, seed, p in jobs:
     t0 = time.time()
     pe, ppe = emb[sid]
     with torch.no_grad():
-        lat = pipe(prompt_embeds=pe, pooled_prompt_embeds=ppe, num_inference_steps=4, guidance_scale=0, output_type='latent',
+        lat = pipe(prompt_embeds=pe, pooled_prompt_embeds=ppe, num_inference_steps=STEPS, guidance_scale=0, output_type='latent',
                    width=cfg['width'], height=cfg['height'], generator=torch.Generator('cpu').manual_seed(seed)).images
     torch.save(lat, f'{out}/{sid}_{seed}.lat')
     per[f'{sid}_{seed}'] = round(time.time() - t0, 1); print(sid, seed, per[f'{sid}_{seed}'], 's', flush=True)

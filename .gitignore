@@ -23,3 +23,7 @@ proto/*/snapshots/
 proto/__pycache__/
 proto/*/.hyperframes/
 proto/zack_3d/vo.json
+proto/real/*/assets/
+proto/real/*/renders/
+proto/real/*/.hyperframes/
+proto/real/media/
