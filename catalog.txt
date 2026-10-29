@@ -1,31 +1,24 @@
-Eiffel Tower | Videos of the Eiffel Tower
-Svalbard | Videos of Svalbard
-CERN | Videos of CERN
-Postojna Cave | Videos of Postojna Cave
-video: Eiffel Tower 1900
-video: Tour Eiffel Lumière
-video: Eiffel Tower panorama
-video: Eiffel Tower
-video: Champions League
-video: football stadium fans
-video: football match
-video: Westminster Abbey
-video: Sainte-Marguerite Lérins
-video: Cannes islands
-video: Pinerolo
-video: Bastille Paris
-video: Postojna cave
-video: cave salamander
-video: CERN
-video: NeXT computer
-video: Large Hadron Collider
-video: Svalbard
-video: Longyearbyen
-video: Svalbard polar bear
-video: Svalbard reindeer
-video: aurora Svalbard
-video: Svalbard Global Seed Vault
-video: permafrost
-audio: Grieg Peer Gynt
-audio: Satie Gymnopedie
-audio: Handel Zadok the Priest
+article: Event perception
+article: Phantom vibration syndrome
+article: Cocktail party effect
+Doorway | Doorways
+image: open door doorway room interior
+image: person walking through doorway
+image: kitchen doorway
+image: hallway doors house
+image: woman thinking forgetting
+image: smartphone in pocket jeans
+image: mobile phone vibrate
+image: hospital pager doctor
+image: physician pager belt
+image: college students phones
+image: crowded party people talking
+image: cocktail party
+image: crowded bar people
+image: headphones listening ear
+image: name tag hello my name is
+video: walking through door
+video: crowd talking party
+video: smartphone notification
+audio: Rafael Krux
+audio: Kevin MacLeod
