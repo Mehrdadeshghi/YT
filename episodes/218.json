@@ -19,7 +19,7 @@
  ],
  "hook": [
   "WALK INTO A ROOM",
-  "FORGET WHY"
+  "FORGET"
  ],
  "cta": {
   "q": "Happens to you?",
@@ -113,8 +113,8 @@
    "vo": [
     {
      "at": 0.2,
-     "text": "In Gabriel Radvansky's experiments, people forgot more after walking through a doorway, in virtual rooms and in real ones.",
-     "cap": "In *Gabriel Radvansky's* experiments, people *forgot more* after a *doorway,* in *virtual* rooms and in *real* ones.",
+     "text": "In Gabriel Radvansky's experiments, walking through a doorway made people forget more, in virtual rooms and in real rooms.",
+     "cap": "In *Gabriel Radvansky's* experiments, walking through a *doorway* made people *forget* more, in *virtual rooms* and in *real rooms.*",
      "de": "In den Experimenten von Gabriel Radvansky vergaßen Menschen nach einer Tür mehr, in virtuellen und in echten Räumen.",
      "es": "En los experimentos de Gabriel Radvansky, la gente olvidaba más tras cruzar una puerta, en salas virtuales y reales.",
      "fr": "Dans les expériences de Gabriel Radvansky, on oubliait davantage après une porte, dans des pièces virtuelles comme réelles."
@@ -144,8 +144,8 @@
     },
     {
      "at": 0.1,
-     "text": "And older adults weren't hit any harder than young ones.",
-     "cap": "And *older* adults weren't hit any *harder* than *young* ones.",
+     "text": "And older adults were hit no harder than younger adults.",
+     "cap": "And *older* adults were hit no *harder* than *younger* adults.",
      "de": "Und Ältere traf es nicht stärker als Junge.",
      "es": "Y a los mayores no les afectaba más que a los jóvenes.",
      "fr": "Et les plus âgés n’étaient pas plus touchés que les jeunes."
@@ -168,7 +168,7 @@
     {
      "at": 0.2,
      "text": "One catch: a twenty twenty-one study couldn't repeat it, except when people's minds were already busy.",
-     "cap": "One *catch:* a *2021* study couldn't *repeat* it, except when people's minds were already *busy.*",
+     "cap": "One *catch:* a *2021* study couldn't *repeat* it, *except* when people's *minds* were already *busy.*",
      "de": "Ein Haken: Eine Studie von zweitausendeinundzwanzig konnte es nicht wiederholen, außer wenn der Kopf schon voll war.",
      "es": "Un matiz: un estudio de dos mil veintiuno no pudo repetirlo, salvo cuando la mente ya estaba ocupada.",
      "fr": "Un bémol : une étude de deux mille vingt et un n’a pas pu le reproduire, sauf quand l’esprit était déjà occupé."

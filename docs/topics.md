@@ -65,3 +65,8 @@ Check this list before proposing a topic. Add every new episode here in the same
 #209 Old Man of the Lake, Crater Lake (deepest US lake 1,949 ft, no rivers in/out, 30-ft trunk upright since at least 1896, 4 ft above water, 62.1+ miles in summer 1938, 1988 tied up → storms + August snow, released → cleared)
 #210 The first jack-o'-lanterns were turnips (19th-century Ireland/Scotland/Wales/England, windowsills vs harmful spirits, name from will-o'-the-wisp bog lights, Stingy Jack legend, immigrants → pumpkins in the US)
 #211 Brooklyn Bridge finished from a bedroom (John Roebling crushed foot 1869 → tetanus; Washington paralyzed by caisson disease, telescope from his bedroom; Emily Warren Roebling learned the engineering, ran the site 11 years, first to cross May 24 1883)
+
+## Why do you do that? (unconscious psychology, kinetic style)
+#218 Why you forget why you walked into a room (doorway effect / event boundaries; Radvansky 2011 virtual + real rooms, going back doesn't help; old = young 2015; honest: 2021 study couldn't repeat it except under working-memory load)
+#219 Why you feel your phone buzz when it didn't (phantom vibration syndrome; Rothberg 2010 BMJ 68% of hospital staff; Drouin almost 9 in 10 undergrads; starts after 1 month–1 year; cause unknown, expectation misreads twitches/clothing; turning off vibrate / moving the phone helped some)
+#220 Why you hear your name across a loud room (cocktail party effect; Cherry 1953; Treisman attenuation "down, not off"; Moray 1959 / Wood & Cowan 1995 about a third hear their name in the ignored ear; Conway 2001 name-detectors had lower working memory)
