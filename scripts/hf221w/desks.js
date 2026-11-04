@@ -96,9 +96,9 @@ export function june(P) {
     // alarm on "caught"
     const al = t > tCa - .02 && t < tHk + .6 ? 1 : 0, spin = (t - tCa) * 9; bea.visible = t > tCa - .15; bea.scale.setScalar(bk(up(t, tCa - .15, .2))); beaM.emissiveIntensity = al * (3 + Math.sin(t * 40)); beaG.material.opacity = al * .9; cone1.visible = !!al; cone1.rotation.y = spin; 
     // the claw comes down, grips the laptop, lifts it away; a clean laptop slides in
-    const cD = tCa + .1, cG = cD + .34, cU = cG + .1; const down = eo(up(t, cD, .34)), upv = ei(up(t, cU, .55)); const cy = lerp(16, 2.55, down) + upv * 16; cl.position.set(0, cy, -.7); cl.grip(ss(cG - .1, cG, t)); cl.visible = t > cD && t < cU + .6;
+    const cD = tCa + .02, cG = cD + .22, cU = cG + .06; const down = eo(up(t, cD, .22)), upv = ei(up(t, cU, .4)); const cy = lerp(16, 2.55, down) + upv * 16; cl.position.set(0, cy, -.7); cl.grip(ss(cG - .1, cG, t)); cl.visible = t > cD && t < cU + .45;
     const gone = t > cG; lap.visible = !(gone && upv >= 1); lap.position.y = gone ? upv * 16 : 0; box.position.x = 2.15; if (gone) { box.visible = t < cU; }
-    lap2.position.set(lerp(-11, 0, eo(up(t, cU + .25, .4))), 0, -.4); lap2.visible = t > cU + .25;
+    lap2.position.set(lerp(-11, 0, eo(up(t, cU + .2, .3))), 0, -.4); lap2.visible = t > cU + .2;
     const x2 = scr2.x; x2.fillStyle = '#EAF2FA'; x2.fillRect(0, 0, 320, 210); x2.fillStyle = '#38B27A'; x2.font = '30px "AB"'; x2.textAlign = 'center'; x2.fillText('NEW DEVICE', 160, 112); scr2.t.needsUpdate = t > cU + .2;
     // screen: installer progress, red on caught
     const x = scr.x, pr = up(t, tDl, Math.max(.5, tCa - tDl) * .96), red = t > tCa; x.fillStyle = red ? '#D3202A' : '#E7EEF7'; x.fillRect(0, 0, 640, 420);
@@ -114,14 +114,13 @@ export function june(P) {
   K(P, tDl - .1, [.2, 3.8, 8.2], [.5, 1, 0]);
   K(P, tTm, [1.5, 3.1, 6.6], [1.6, 1.1, .3]);
   K(P, tCa, [.5, 4.2, 8.4], [.1, 1.5, 0]);
-  K(P, tCa + .9, [.2, 5.4, 8.4], [.1, 3.2, -.3]);
+  K(P, tCa + .55, [.2, 5.2, 9], [.1, 3, -.3]);
   K(P, tHk, [.9, 5.4, 6.6], [.6, 5, -3]);
   K(P, tWa, [.1, 5.3, 6.4], [0, 4.7, -3.2]);
   K(P, next - .45, [-.6, 3.0, 7.2], [-.8, -1.5, 3.5]);
   ZONES.push({ t: T0, a: '#2F6AAD', b: '#E9A070', hemi: .7, gnd: '#6a5a70', key: '#FFE3BE', ki: 2.9, f0: 16, f1: 70 });
-  SHAKE.push([tDl, .1, .3], [cGt(tCa), .05, .25]);
+  SHAKE.push([tDl, .1, .3], [tCa + .24, .05, .25]);
 }
-const cGt = (a) => a + .44;
 
 // ================================================================== SEPTEMBER
 export function september(P) {
@@ -183,7 +182,7 @@ export function september(P) {
     fold.position.y = drop(t, tAs - .38, .38, 6, .08); fold.visible = t > tAs - .38; const fq = sq(t, tAs, .25); fold.scale.set(1 + fq * .2, 1 - fq * .5, 1 + fq * .2); flap.rotation.z = ss(tAs + .12, tAs + .42, t) * 3.0; inner.material.opacity = ss(tAs + .12, tAs + .42, t) * .6;
     dust.update(t, tAs, 1.1, .12, 2.1);
     // tendrils crawl; the scanner passes and they hide; then they come back
-    const g0 = tAs + .3, g1 = Math.max(g0 + .45, tUn + .05), S0 = tUn, S1 = Math.max(tMal + .35, tUn + .9), ug = eo(up(t, g0, g1 - g0));
+    const g0 = tAs + .3, g1 = Math.max(g0 + .45, tUn + .05), S0 = tUn, S1 = Math.min(next - .3, Math.max(tMal + .35, tUn + .9)), ug = eo(up(t, g0, g1 - g0));
     tends.forEach((m, i) => { const late = i === 4 ? ss(S1 - .1, next + .1, t) : ug; m.geometry.setDrawRange(0, Math.floor(m.n * late / 6) * 6); });
     const sx = lerp(-5, 5, up(t, S0, S1 - S0 - .05)), scanning = t > S0 && t < S1; sc.visible = scanning; sc.position.set(sx, 2.2, .6); sc.rotation.y = .25;
     const hide = ss(S0, S0 + .16, t) * (1 - ss(S1 - .05, S1 + .2, t)); tM.opacity = 1 - hide * .95; tM.emissiveIntensity = lerp(.4, .06, hide) + ss(S1, S1 + .2, t) * .6;
@@ -204,8 +203,8 @@ export function september(P) {
   K(P, tCeo + .4, [0, 4.5, 8.4], [0, 4.1, 0]);
   K(P, tAs, [.5, 3.6, 7.8], [.4, 1.1, 1.0]);
   K(P, tUn, [.3, 2.9, 6.2], [.2, .9, .2]);
-  K(P, Math.max(tMal + .35, tUn + .9), [-.2, 3.4, 7], [0, 1.2, 0]);
-  K(P, next - .45, [.8, .4, 9], [1, -6, 6.5]);
+  K(P, Math.min(next - .3, Math.max(tMal + .35, tUn + .9)), [-.2, 3.4, 7], [0, 1.2, 0]);
+  K(P, next - .12, [.8, .4, 9], [1, -6, 6.5]);
   ZONES.push({ t: T0, a: '#2B5F9F', b: '#D88A6E', hemi: .7, gnd: '#5a4a70', key: '#FFE3BE', ki: 2.9, f0: 16, f1: 70 });
   SHAKE.push([tAs, .07, .25]);
 }

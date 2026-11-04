@@ -1,7 +1,9 @@
 // #221 world entry: builds every set once, then renders any t on demand (window.__render, called from the hf-seek bridge in index.html).
 import { THREE, EV, DUR, W, H, R, scene, cam, hemi, key, sky, clamp, lerp, ss, up, eo, ei, bk, hash, grp, mat, SETS, CAM, ZONES, SHAKE, canvasTex } from './core.js';
 export function start() {
-CAM.sort((a, b) => a.t - b.t); ZONES.sort((a, b) => a.t - b.t);
+// keys stay in authored film order: with a fast voice a late key must push the next ones later, never make the camera turn back
+for (let i = 1; i < CAM.length; i++) CAM[i].t = Math.max(CAM[i].t, CAM[i - 1].t + .1);
+ZONES.sort((a, b) => a.t - b.t);
 // cubic Hermite through time-stamped keys with finite-difference tangents: the camera never stops, never cuts
 const hermite = (t, get) => { const n = CAM.length; let i = 0; while (i < n - 2 && t > CAM[i + 1].t) i++; const a = CAM[i], b = CAM[i + 1], u = clamp((t - a.t) / Math.max(.001, b.t - a.t)), o = [0, 0, 0];
   const tan = (j) => { const A = CAM[Math.max(0, j - 1)], B = CAM[Math.min(n - 1, j + 1)]; return get(B).map((v, k) => (v - get(A)[k]) / Math.max(.001, B.t - A.t)); }, ta = tan(i), tb = tan(i + 1), d = b.t - a.t, pa = get(a), pb = get(b);

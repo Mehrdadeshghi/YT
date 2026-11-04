@@ -28,7 +28,7 @@ export function buildOverlay() {
   chip('According to Binance', e.h_according, J - .35, 470);
   stamp('June', J - .05, e.j_hackers - .05, 240, 210, A, { shrink: 1, to: .62, dy: -46 });
   stamp('September', Se - .05, N - .55, 240, 190, A, { shrink: 1, to: .62, dy: -46 });
-  chip('Malware: not detected', e.s_malware, N - .35, 548, { c: '#35E08C' });
+  chip('Malware: not detected', e.s_malware, N - .35, 650, { c: '#35E08C' });
   stamp('20 Oct', N - .05, L - .55, 240, 210, A, { shrink: 1, to: .62, dy: -46 });
   stamp('29 Oct', L - .05, Dr - .55, 240, 210, A, { shrink: 1, to: .62, dy: -46 });
   // the drain: clock + counters
