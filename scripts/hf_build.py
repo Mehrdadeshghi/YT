@@ -268,10 +268,16 @@ def build():
             first_frame=lambda sid: f'assets/{sid}_f0.jpg', exists=lambda sid: os.path.exists(f'{PRJ}/{asset(sid)}'), prj=PRJ)
         if DOKU:
             import hf_doku
-            kin = {r[0]: r[1:] for r in hf_doku.build(ctx)}
+            if not HF.get('custom'): kin = {r[0]: r[1:] for r in hf_doku.build(ctx)}
         else:
             kin = {r[0]: r[1:] for r in hf_kinetic.build(ctx)}
-    for k, (name, cfg) in enumerate(SCENES):
+    if HF.get('custom'):                 # "hf": {"style": "doku", "custom": "hf221"}: scripts/hf221.py draws the whole film as one composition
+        body, js, css, sc_cues = __import__(HF['custom']).build(ctx)
+        open(f'{PRJ}/compositions/film.html', 'w').write(scene_file('film', body, js, css))
+        hosts.append(f'''      <div id="film" data-composition-id="film" data-composition-src="compositions/film.html" data-start="0" data-duration="{DUR:.2f}"
+        data-track-index="1" data-track-kind="graphics" data-width="{W_}" data-height="{H_}" style="z-index:1"></div>''')
+        cues += [dict(t=round(t, 3), type=ty, gain=g) for t, ty, g in sc_cues if 0 <= t < DUR]
+    for k, (name, cfg) in enumerate([] if HF.get('custom') else SCENES):
         body, js, css, sc_cues = kin[name] if KIN else kit.build_scene(B, k, cfg)
         nxt = host_start(k + 1) - host_start(k) - 0.02 if k + 1 < NSC and not HF.get('motion') and not KIN else None
         open(f'{PRJ}/compositions/{name}.html', 'w').write(scene_file(name, body, js, css, nxt))

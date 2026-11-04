@@ -1,0 +1,261 @@
+{
+ "ep": 221,
+ "title": "A fake job interview and the $6.3 billion Binance hack",
+ "format": "attack-chain",
+ "series": "Attack chains",
+ "engine": "hyperframes",
+ "oneAsk": true,
+ "voice": "gemini",
+ "gemini_wpm": 210,
+ "speed": 1.2,
+ "mood": "calm",
+ "prog": 1,
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "A FAKE JOB INTERVIEW",
+  "$6.3 BILLION"
+ ],
+ "cta": {
+  "q": "Weakest link?",
+  "a": "INSTALLER",
+  "b": "INTERVIEW"
+ },
+ "source": "https://x.com/binance/status/2117626126214504729",
+ "vo_open": [
+  {
+   "at": 0.15,
+   "text": "A fake job interview helped steal six point three billion dollars.",
+   "cap": "A fake job *interview* helped steal *$6.3* billion dollars.",
+   "de": "Ein gefälschtes Bewerbungsgespräch half, sechs Komma drei Milliarden Dollar zu stehlen.",
+   "es": "Una entrevista de trabajo falsa ayudó a robar seis coma tres mil millones de dólares.",
+   "fr": "Un faux entretien d’embauche a aidé à voler six virgule trois milliards de dollars."
+  },
+  {
+   "at": 0.15,
+   "text": "Here's the attack chain, according to Binance.",
+   "cap": "Here's the *attack chain,* according to *Binance.*",
+   "de": "Hier ist die Angriffskette, laut Binance.",
+   "es": "Esta es la cadena del ataque, según Binance.",
+   "fr": "Voici la chaîne d’attaque, selon Binance."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.0,
+   "beat": "june",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "June. A wallet engineer downloads a tampered Homebrew. It's caught, but now the hackers know who runs the wallets.",
+     "cap": "*June.* A wallet engineer downloads a *tampered Homebrew.* It's *caught,* but now the hackers know who runs the *wallets.*",
+     "de": "Juni. Ein Wallet-Ingenieur lädt ein manipuliertes Homebrew herunter. Es fällt auf, aber nun wissen die Hacker, wer die Wallets betreut.",
+     "es": "Junio. Un ingeniero de wallets descarga un Homebrew manipulado. Lo detectan, pero los hackers ya saben quién gestiona las wallets.",
+     "fr": "Juin. Un ingénieur wallet télécharge un Homebrew piégé. C’est repéré, mais les pirates savent désormais qui gère les wallets."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "june",
+    "src": "keys",
+    "pos": "50% 50%",
+    "label": [
+     "Keyboard in the dark",
+     "Real photo"
+    ]
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "september",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "September. A real job site. Engineer B gets two interviews, a fake CEO, then an assignment: undetected malware.",
+     "cap": "*September.* A real *job site.* Engineer *B* gets two *interviews,* a *fake CEO,* then an *assignment:* *undetected malware.*",
+     "de": "September. Eine echte Jobplattform. Ingenieur B bekommt zwei Gespräche, einen falschen CEO, dann eine Aufgabe: unentdeckte Schadsoftware.",
+     "es": "Septiembre. Un portal de empleo real. El ingeniero B tiene dos entrevistas, un falso CEO y una tarea: malware no detectado.",
+     "fr": "Septembre. Un vrai site d’emploi. L’ingénieur B passe deux entretiens, un faux PDG, puis un devoir : un malware non détecté."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "september",
+    "src": "agency",
+    "pos": "50% 40%",
+    "label": [
+     "Employment agency, archive",
+     "Real photo"
+    ]
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "oct20",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "October twentieth. An internal AI tool lets them take over engineers A and C. A holds a token for deploying containers.",
+     "cap": "*October 20th.* An *internal AI tool* lets them take over engineers *A* and *C.* A holds a *token* for deploying containers.",
+     "de": "Zwanzigster Oktober. Ein internes KI-Tool hilft ihnen, die Ingenieure A und C zu übernehmen. A hat einen Token, der Container ausrollt.",
+     "es": "Veinte de octubre. Una herramienta interna de IA les da el control de los ingenieros A y C. A tiene un token para desplegar contenedores.",
+     "fr": "Vingt octobre. Un outil d’IA interne leur livre les ingénieurs A et C. A détient un jeton pour déployer des conteneurs."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "oct20",
+    "src": "aisle",
+    "pos": "50% 50%",
+    "label": [
+     "Data center aisle",
+     "Real photo"
+    ]
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "oct29",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "October twenty-ninth. With A's stolen credentials, they deploy a container and reach the wallet signing service.",
+     "cap": "*October 29th.* With A's *stolen credentials,* they *deploy* a *container* and reach the *wallet signing service.*",
+     "de": "Neunundzwanzigster Oktober. Mit den gestohlenen Zugangsdaten von A rollen sie einen Container aus und erreichen den Wallet-Signierdienst.",
+     "es": "Veintinueve de octubre. Con las credenciales robadas de A, despliegan un contenedor y llegan al servicio de firma de wallets.",
+     "fr": "Vingt-neuf octobre. Avec les identifiants volés de A, ils déploient un conteneur et atteignent le service de signature des wallets."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "oct29",
+    "src": "baltic",
+    "pos": "30% 50%",
+    "label": [
+     "Server racks",
+     "Real photo"
+    ]
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "drain",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "The drain: two hundred thirty-three million X R P in four minutes. Then Solana, Optimism, eighteen thousand two hundred seventy Bitcoin.",
+     "cap": "The *drain:* *233* million XRP in four *minutes.* Then *Solana,* *Optimism,* *18,270* Bitcoin.",
+     "de": "Der Abfluss: zweihundertdreiunddreißig Millionen XRP in vier Minuten. Dann Solana, Optimism, achtzehntausendzweihundertsiebzig Bitcoin.",
+     "es": "El drenaje: doscientos treinta y tres millones de XRP en cuatro minutos. Luego Solana, Optimism y dieciocho mil doscientos setenta Bitcoin.",
+     "fr": "La vidange : deux cent trente-trois millions de XRP en quatre minutes. Puis Solana, Optimism, dix-huit mille deux cent soixante-dix Bitcoin."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "drain",
+    "src": "aisle",
+    "pos": "30% 50%",
+    "label": [
+     "Data center aisle",
+     "Real photo"
+    ]
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "twist",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Binance stops withdrawals, but the outflow keeps running. E I P seventy-seven-oh-two gave the attacker's contract rights on-chain. With M P C wallets, no single key can revoke it fast.",
+     "cap": "Binance *stops* withdrawals, but the *outflow* keeps running. *EIP-7702* gave the attacker's contract *rights* on-chain. With *MPC* wallets, *no single key* can revoke it fast.",
+     "de": "Binance stoppt die Auszahlungen, aber der Abfluss läuft weiter. E I P siebzig zweiundsiebzig gab dem Vertrag des Angreifers Rechte auf der Chain. Bei MPC-Wallets kann kein einzelner Schlüssel das schnell widerrufen.",
+     "es": "Binance detiene los retiros, pero la salida sigue. E I P siete siete cero dos dio derechos en la cadena al contrato del atacante. Con wallets MPC, ninguna clave única puede revocarlo rápido.",
+     "fr": "Binance coupe les retraits, mais la fuite continue. E I P sept sept zéro deux a donné des droits on-chain au contrat de l’attaquant. Avec des wallets MPC, aucune clé unique ne peut révoquer ça vite."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "twist",
+    "src": "baltic",
+    "pos": "75% 50%",
+    "label": [
+     "Server racks",
+     "Real photo"
+    ]
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "payoff",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Six point three four billion hit. Two point eight five billion frozen. Binance says users won't pay. The FBI points to North Korea. North Korea denies it.",
+     "cap": "*$6.34* billion hit. *$2.85* billion *frozen.* Binance says users *won't pay.* The *FBI* points to *North Korea.* North Korea *denies* it.",
+     "de": "Sechs Komma drei vier Milliarden Dollar betroffen. Zwei Komma acht fünf Milliarden eingefroren. Binance sagt, Nutzer zahlen nicht. Das FBI verweist auf Nordkorea. Nordkorea bestreitet es.",
+     "es": "Seis coma tres cuatro mil millones afectados. Dos coma ocho cinco mil millones congelados. Binance dice que los usuarios no pagarán. El FBI señala a Corea del Norte. Corea del Norte lo niega.",
+     "fr": "Six virgule trente-quatre milliards touchés. Deux virgule quatre-vingt-cinq milliards gelés. Binance dit que les utilisateurs ne paieront pas. Le FBI désigne la Corée du Nord. La Corée du Nord dément."
+    },
+    {
+     "at": 0.15,
+     "text": "Weakest link: the fake installer or the fake interview? Comment installer or interview, and subscribe.",
+     "cap": "Weakest *link:* the fake *installer* or the fake *interview?* Comment *installer* or *interview,* and *subscribe.*",
+     "de": "Das schwächste Glied: der falsche Installer oder das falsche Gespräch? Schreib Installer oder Interview, und abonniere.",
+     "es": "El eslabón más débil: ¿el instalador falso o la entrevista falsa? Comenta instalador o entrevista, y suscríbete.",
+     "fr": "Le maillon faible : le faux installeur ou le faux entretien ? Commente installeur ou entretien, et abonne-toi.",
+     "cta": true
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "payoff"
+   }
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 62
+  },
+  {
+   "id": "wait",
+   "file": "File:Los Angeles, California. Lockheed Employment. A worried applicant waiting to be interviewed - NARA - 532210.jpg"
+  },
+  {
+   "id": "keys",
+   "file": "File:Keyboard in dark.png"
+  },
+  {
+   "id": "agency",
+   "file": "File:People waiting to be interviewed at the employment agency 8d18038v.jpg"
+  },
+  {
+   "id": "aisle",
+   "file": "File:123Net Data Center (DC2).jpg"
+  },
+  {
+   "id": "baltic",
+   "file": "File:BalticServers data center.jpg"
+  }
+ ],
+ "hf": {
+  "style": "doku",
+  "custom": "hf221"
+ },
+ "hf_open": {
+  "tpl": "plain",
+  "name": "hook",
+  "src": "wait",
+  "label": [
+   "Job applicant, NARA archive",
+   "Real photo"
+  ]
+ }
+}

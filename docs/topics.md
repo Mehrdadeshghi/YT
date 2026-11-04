@@ -70,3 +70,6 @@ Check this list before proposing a topic. Add every new episode here in the same
 #218 Why you forget why you walked into a room (doorway effect / event boundaries; Radvansky 2011 virtual + real rooms, going back doesn't help; old = young 2015; honest: 2021 study couldn't repeat it except under working-memory load)
 #219 Why you feel your phone buzz when it didn't (phantom vibration syndrome; Rothberg 2010 BMJ 68% of hospital staff; Drouin almost 9 in 10 undergrads; starts after 1 month–1 year; cause unknown, expectation misreads twitches/clothing; turning off vibrate / moving the phone helped some)
 #220 Why you hear your name across a loud room (cocktail party effect; Cherry 1953; Treisman attenuation "down, not off"; Moray 1959 / Wood & Cowan 1995 about a third hear their name in the ignored ear; Conway 2001 name-detectors had lower working memory)
+
+## Attack chains
+#221 The Binance hack, link by link (29 Oct 2026, per Binance's preliminary report of 3 Nov: June tampered Homebrew, September fake interviews + malware, 20 Oct internal AI tool, 29 Oct container → wallet signing service, 233.46M XRP in 4 min, then SOL/OP/18,270 BTC; EIP-7702 + MPC keep it running after withdrawals stop; $6.34B hit, $2.85B frozen; FBI points to North Korea, North Korea denies it)
