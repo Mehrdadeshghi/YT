@@ -257,7 +257,7 @@ def captions():
 def build():
     prep_media()
     os.makedirs(f'{PRJ}/compositions', exist_ok=True)
-    hosts, cues = [], []
+    hosts, cues, tail = [], [], ''
     DOKU = HF.get('style') == 'doku'
     KIN = HF.get('style') == 'kinetic' or DOKU
     if KIN:                              # "hf": {"style": "kinetic" | "doku"} → scripts/hf_kinetic.py / hf_doku.py derive every scene
@@ -271,11 +271,9 @@ def build():
             if not HF.get('custom'): kin = {r[0]: r[1:] for r in hf_doku.build(ctx)}
         else:
             kin = {r[0]: r[1:] for r in hf_kinetic.build(ctx)}
-    if HF.get('custom'):                 # "hf": {"style": "doku", "custom": "hf221"}: scripts/hf221.py draws the whole film as one composition
-        body, js, css, sc_cues = __import__(HF['custom']).build(ctx)
-        open(f'{PRJ}/compositions/film.html', 'w').write(scene_file('film', body, js, css))
-        hosts.append(f'''      <div id="film" data-composition-id="film" data-composition-src="compositions/film.html" data-start="0" data-duration="{DUR:.2f}"
-        data-track-index="1" data-track-kind="graphics" data-width="{W_}" data-height="{H_}" style="z-index:1"></div>''')
+    if HF.get('custom'):                 # "hf": {"style": "doku", "custom": "hf221"}: scripts/hf221.py draws the whole film (own root hosts + tail scripts)
+        root_hosts, tail, sc_cues = __import__(HF['custom']).build(ctx)
+        hosts.append(root_hosts)
         cues += [dict(t=round(t, 3), type=ty, gain=g) for t, ty, g in sc_cues if 0 <= t < DUR]
     for k, (name, cfg) in enumerate([] if HF.get('custom') else SCENES):
         body, js, css, sc_cues = kin[name] if KIN else kit.build_scene(B, k, cfg)
@@ -319,7 +317,7 @@ def build():
       window.__timelines = window.__timelines || {{}};
       const tl = gsap.timeline({{ paused: true }});
       window.__timelines["main"] = tl;
-    </script>
+    </script>{tail}
   </body>
 </html>
 """
@@ -346,7 +344,7 @@ if __name__ == '__main__':
     build()
     if '--render' in sys.argv:
         import time; t0 = time.time()
-        hf('render', PRJ, '--output', os.path.abspath(f'{OUT}/silent.mp4'), '--fps', '30', '--quality', 'delivery')
+        hf('render', PRJ, '--output', os.path.abspath(f'{OUT}/silent.mp4'), '--fps', '30', '--quality', 'delivery', *(['--workers', str(HF['workers'])] if HF.get('workers') else []))
         print(f'hyperframes render: {time.time() - t0:.0f} s')
         if HF.get('style') == 'doku':    # film post: grain + halation + vignette on the silent picture
             import hf_doku

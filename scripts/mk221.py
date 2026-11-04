@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""#221 Attack chain: the 29 Oct 2026 Binance hack, HyperFrames doku + one custom composition (scripts/hf221.py). voice: gemini.
+"""#221 Attack chain: the 29 Oct 2026 Binance hack, HyperFrames + one animated Three.js world (scripts/hf221.py, scripts/hf221w/). voice: gemini.
 Facts: Binance's preliminary report of 3 Nov 2026 (https://x.com/binance/status/2117626126214504729), said on screen and in the VO
 as "according to Binance". Attribution + denial: en.wikipedia.org/wiki/2026_Binance_hack (FBI alert 31 Oct; KCNA statement 3 Nov).
 News explainer only: no exploit steps, no file paths, the "popular AI coding tool" stays unnamed, engineers stay A, B, C.
@@ -7,7 +7,6 @@ Report figures: 233.46M XRP 20:05-20:09 UTC from five hot wallets; ~970,500 SOL;
 EIP-7702 delegation cleared 00:10 UTC on 30 Oct; ~$6.34B impacted; ~$2.85B frozen or intercepted. The 17:15-19:56 window has no zone in the report.
 """
 import json
-RP = 'Real photo'
 def seg(text, cap, de, es, fr, **kw): return dict(at=0.15, text=text, cap=cap, de=de, es=es, fr=fr, **kw)
 E = {
  'ep': 221, 'title': 'A fake job interview and the $6.3 billion Binance hack', 'format': 'attack-chain', 'series': 'Attack chains',
@@ -68,19 +67,10 @@ E = {
  ],
  'photos': [
   {'id': 'music', 'audio': 'File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3', 'from': 0, 'len': 62},
-  {'id': 'wait', 'file': 'File:Los Angeles, California. Lockheed Employment. A worried applicant waiting to be interviewed - NARA - 532210.jpg'},
-  {'id': 'keys', 'file': 'File:Keyboard in dark.png'},
-  {'id': 'agency', 'file': 'File:People waiting to be interviewed at the employment agency 8d18038v.jpg'},
-  {'id': 'aisle', 'file': 'File:123Net Data Center (DC2).jpg'},
-  {'id': 'baltic', 'file': 'File:BalticServers data center.jpg'},
  ],
 }
-# Backdrops are dim and honest (hf221.py draws a REAL PHOTO chip for each); the chain itself is the labelled GRAPHIC.
-E['hf'] = {'style': 'doku', 'custom': 'hf221'}
-E['hf_open'] = {'tpl': 'plain', 'name': 'hook', 'src': 'wait', 'label': ['Job applicant, NARA archive', RP]}
-hfs = [('keys', 'Keyboard in the dark', '50% 50%'), ('agency', 'Employment agency, archive', '50% 40%'), ('aisle', 'Data center aisle', '50% 50%'),
-       ('baltic', 'Server racks', '30% 50%'), ('aisle', 'Data center aisle', '30% 50%'), ('baltic', 'Server racks', '75% 50%'), (None, None, None)]
-for sc, (src, lab, pos) in zip(E['scenes'], hfs):
-    sc['hf'] = {'tpl': 'plain', 'name': sc['beat']}
-    if src: sc['hf'].update(src=src, pos=pos, label=[lab, RP])
+# The picture is one continuous animated world (scripts/hf221.py + scripts/hf221w/), no photos: only the music comes from "photos".
+E['hf'] = {'style': 'doku', 'custom': 'hf221', 'workers': 3}   # WebGL capture calibrates as slow: auto would pick 1 worker
+E['hf_open'] = {'tpl': 'plain', 'name': 'hook'}
+for sc in E['scenes']: sc['hf'] = {'tpl': 'plain', 'name': sc['beat']}
 open('episodes/221.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False) + '\n')

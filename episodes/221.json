@@ -60,13 +60,7 @@
    ],
    "hf": {
     "tpl": "plain",
-    "name": "june",
-    "src": "keys",
-    "pos": "50% 50%",
-    "label": [
-     "Keyboard in the dark",
-     "Real photo"
-    ]
+    "name": "june"
    }
   },
   {
@@ -84,13 +78,7 @@
    ],
    "hf": {
     "tpl": "plain",
-    "name": "september",
-    "src": "agency",
-    "pos": "50% 40%",
-    "label": [
-     "Employment agency, archive",
-     "Real photo"
-    ]
+    "name": "september"
    }
   },
   {
@@ -108,13 +96,7 @@
    ],
    "hf": {
     "tpl": "plain",
-    "name": "oct20",
-    "src": "aisle",
-    "pos": "50% 50%",
-    "label": [
-     "Data center aisle",
-     "Real photo"
-    ]
+    "name": "oct20"
    }
   },
   {
@@ -132,13 +114,7 @@
    ],
    "hf": {
     "tpl": "plain",
-    "name": "oct29",
-    "src": "baltic",
-    "pos": "30% 50%",
-    "label": [
-     "Server racks",
-     "Real photo"
-    ]
+    "name": "oct29"
    }
   },
   {
@@ -156,13 +132,7 @@
    ],
    "hf": {
     "tpl": "plain",
-    "name": "drain",
-    "src": "aisle",
-    "pos": "30% 50%",
-    "label": [
-     "Data center aisle",
-     "Real photo"
-    ]
+    "name": "drain"
    }
   },
   {
@@ -180,13 +150,7 @@
    ],
    "hf": {
     "tpl": "plain",
-    "name": "twist",
-    "src": "baltic",
-    "pos": "75% 50%",
-    "label": [
-     "Server racks",
-     "Real photo"
-    ]
+    "name": "twist"
    }
   },
   {
@@ -223,39 +187,15 @@
    "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
    "from": 0,
    "len": 62
-  },
-  {
-   "id": "wait",
-   "file": "File:Los Angeles, California. Lockheed Employment. A worried applicant waiting to be interviewed - NARA - 532210.jpg"
-  },
-  {
-   "id": "keys",
-   "file": "File:Keyboard in dark.png"
-  },
-  {
-   "id": "agency",
-   "file": "File:People waiting to be interviewed at the employment agency 8d18038v.jpg"
-  },
-  {
-   "id": "aisle",
-   "file": "File:123Net Data Center (DC2).jpg"
-  },
-  {
-   "id": "baltic",
-   "file": "File:BalticServers data center.jpg"
   }
  ],
  "hf": {
   "style": "doku",
-  "custom": "hf221"
+  "custom": "hf221",
+  "workers": 3
  },
  "hf_open": {
   "tpl": "plain",
-  "name": "hook",
-  "src": "wait",
-  "label": [
-   "Job applicant, NARA archive",
-   "Real photo"
-  ]
+  "name": "hook"
  }
 }
