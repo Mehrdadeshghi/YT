@@ -268,7 +268,7 @@ function setWorld(t) {
   // ripples: a burst at car 1 on "broadcast", ten a second while the data line is spoken, one per hop
   let k = 0; const emit = (c, t0, big, dim = 1) => { const m = rings[k++]; if (!m) return; const dt = t - t0, on = dt > 0 && dt < .9 && !inside; m.visible = on; if (on) { m.position.copy(finOf(c, t)); m.position.y += .02; m.scale.setScalar(.15 + dt * big); m.material.opacity = (1 - dt / .9) ** 2 * dim; } };
   const tenOn = t > EV.b_broadcast - .05 && t < EV.h_one; const tenK = Math.floor((t - EV.b_broadcast) * 10);
-  for (let i = 0; i < 9; i++) emit(car1, tenOn ? EV.b_broadcast + (tenK - i) / 10 : -9, 1.6, .4);
+  for (let i = 0; i < 9; i++) emit(car1, tenOn ? EV.b_broadcast + (tenK - i) / 10 : -9, 1.6, .28);
   for (const h of hops.slice(1)) emit(h.c, h.t0, 7);
   while (k < rings.length) rings[k++].visible = false;
   // one-hop range ring around car 1
