@@ -4,7 +4,7 @@ const [out, w, h, n, spec, shard = 0, of = 1, ev = '/hf/222/ev.json'] = process.
 const T = { '.html': 'text/html', '.js': 'text/javascript', '.woff2': 'font/woff2', '.json': 'application/json' };
 const srv = http.createServer((q, s) => { const f = '.' + decodeURI(q.url.split('?')[0]); fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); s.end(); } else { s.writeHead(200, { 'content-type': T[path.extname(f)] || 'application/octet-stream' }); s.end(d); } }); }).listen(0, '127.0.0.1');
 await new Promise(r => srv.once('listening', r));
-const b = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--enable-webgl'] });
+const b = await chromium.launch({ channel: process.env.PW_CHANNEL || undefined, args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--enable-webgl'] });
 const p = await b.newPage({ viewport: { width: +w, height: +h } });
 p.on('pageerror', e => console.log('PAGEERROR', e.message)); p.on('console', m => { if (m.type() === 'error') console.log('ERR', m.text()); });
 await p.goto(`http://127.0.0.1:${srv.address().port}/scripts/hf222w/index.html?w=${w}&h=${h}&n=${n}&ev=${encodeURIComponent(ev)}`); await p.waitForFunction('window.ready', null, { timeout: 120000 });

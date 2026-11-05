@@ -20,7 +20,7 @@ env:
 jobs:
   voice:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -30,9 +30,9 @@ jobs:
       - uses: actions/cache@v4
         with: { path: models, key: kokoro-v1.0 }
       - name: Tools
-        timeout-minutes: 25
+        timeout-minutes: 55
         run: |
-          source scripts/ci_retry.sh; retry sudo apt-get update; retry sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg
+          source scripts/ci_retry.sh; retry sudo apt-get update; timeout 2400 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg
           retry pip install kokoro-onnx==0.6.1 soundfile numpy pillow piper-tts==1.8.0 faster-whisper
           mkdir -p models models/whisper
           [ -f models/kokoro-v1.0.onnx ] || curl -sSL --retry 3 --max-time 280 -o models/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 350
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix: { shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }
     steps:
       - uses: actions/checkout@v4
@@ -68,19 +68,19 @@ jobs:
       - uses: actions/download-artifact@v4
         with: { name: voice, path: . }
       - name: Tools
-        timeout-minutes: 25
-        run: |
-          source scripts/ci_retry.sh; retry npm install --no-audit --no-fund; retry npx playwright install --with-deps chromium
+        timeout-minutes: 55
+        run: |   # no browser download or apt: the runner's own Chrome (the Ubuntu mirror can crawl for hours)
+          source scripts/ci_retry.sh; retry npm install --no-audit --no-fund; google-chrome --version
       - name: Render this job's frames
         run: |
-          mkdir -p shard; node scripts/${{ github.event.inputs.world }}/render.mjs shard 1080 1920 ${{ github.event.inputs.samples }} 30 ${{ matrix.shard }} 12 /hf/${{ github.event.inputs.episode }}/ev.json
+          mkdir -p shard; PW_CHANNEL=chrome node scripts/${{ github.event.inputs.world }}/render.mjs shard 1080 1920 ${{ github.event.inputs.samples }} 30 ${{ matrix.shard }} 12 /hf/${{ github.event.inputs.episode }}/ev.json
           tar cf shard_${{ matrix.shard }}.tar -C shard .
       - uses: actions/upload-artifact@v4
         with: { name: "shard_${{ matrix.shard }}", path: "shard_${{ matrix.shard }}.tar", retention-days: 3, compression-level: 0 }
   finish:
     needs: frames
     runs-on: ubuntu-24.04
-    timeout-minutes: 60
+    timeout-minutes: 105
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -92,9 +92,9 @@ jobs:
       - uses: actions/download-artifact@v4
         with: { path: dl }
       - name: Tools
-        timeout-minutes: 25
+        timeout-minutes: 55
         run: |
-          source scripts/ci_retry.sh; retry sudo apt-get update; retry sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg
+          source scripts/ci_retry.sh; retry sudo apt-get update; timeout 2400 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg
           retry npm install --no-audit --no-fund
           retry pip install kokoro-onnx==0.6.1 soundfile numpy pillow piper-tts==1.8.0 faster-whisper
           mkdir -p models
