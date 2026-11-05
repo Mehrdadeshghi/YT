@@ -127,7 +127,7 @@ const z2 = t => { const b = 6.7, v0 = 36, v1 = 16; if (t < b) return car2.z0 + v
 car2.brakeK = t => ss(6.65, 6.85, t);
 
 // ---- car 2 interior (seen from behind the wheel) ----
-const cabin = new THREE.Group(); car2.G.add(cabin); cabin.visible = false;
+let headliner; const cabin = new THREE.Group(); car2.G.add(cabin); cabin.visible = false;
 { const dashM = std('#2a2c31', .72), paint = std('#e8552c', .3, .1), add = (g, m, x, y, z) => { const o = new THREE.Mesh(g, m); o.position.set(x, y, z); o.castShadow = o.receiveShadow = true; cabin.add(o); return o; };
   add(new RoundedBoxGeometry(1.74, .26, .62, 5, .11), dashM, 0, 1.0, .82); // dash top
   add(new RoundedBoxGeometry(1.74, .62, .12, 3, .05), std('#32343a', .85), 0, .72, .56);
@@ -138,7 +138,7 @@ const cabin = new THREE.Group(); car2.G.add(cabin); cabin.visible = false;
   const hub = add(new RoundedBoxGeometry(.11, .09, .05, 3, .02), std('#1d1e22', .5), -.36, .8, .25); hub.rotation.x = .3;
   for (const sx of [-1, 1]) { const pil = add(new RoundedBoxGeometry(.09, .9, .09, 3, .03), std('#3b3d44', .75), sx * .86, 1.32, .72); pil.rotation.x = -.72; pil.rotation.z = sx * .1;
     add(new RoundedBoxGeometry(.12, .72, 2.3, 3, .05), std('#35373d', .85), sx * .95, .98, -.3); }
-  add(new RoundedBoxGeometry(1.84, .07, 1.25, 3, .03), std('#c9c4b9', .95), 0, 1.68, -.36); // headliner
+  headliner = add(new RoundedBoxGeometry(1.84, .07, 1.25, 3, .03), std('#26282d', .9), 0, 1.68, -.36);
   const mirror = add(new RoundedBoxGeometry(.22, .07, .03, 3, .012), std('#18191c', .3), 0, 1.54, .32);
 }
 const scrC = document.createElement('canvas'); scrC.width = 512; scrC.height = 256;
@@ -210,14 +210,14 @@ function setWorld(t) {
   for (const c of cars) { const z = carZ(c, t); c.G.position.z = (c.v || c === car1 || c === car2) ? z : c.G.position.z; const sp = c === car2 ? z2vel(t) : c.v || 0; c.wheels.forEach(W => W.rotation.x = z / .385); if (!c.v && c !== car2) c.brakeM.emissiveIntensity = c === car1 ? 1 + 5 * ss(.1, .5, t) : 4.5; }
   relayA.brakeM.emissiveIntensity = relayB.brakeM.emissiveIntensity = relayC.brakeM.emissiveIntensity = 0;
   car2.brakeM.emissiveIntensity = 6 * car2.brakeK(t);
-  const inside = t > 6.14; car2.ext.forEach(o => o.visible = !inside); cabin.visible = inside;
+  const inside = t > 6.1; headliner.visible = t > 6.34; car2.ext.forEach(o => o.visible = !inside); cabin.visible = inside;
   cam.fov = 38 + 22 * ss(6.05, 6.45, t);
   // packet
   const P = packetAt(t), live = t >= hops[0].t0 - .05 && t < 6.05;
   const sz = (1 + .1 * Math.sin(t * 30)) * clamp(cam.position.distanceTo(P) * .05, .45, 1.6); packet.visible = halo.visible = live; packet.position.copy(P); halo.position.copy(P); packet.scale.setScalar(sz * 1.1); halo.scale.setScalar(sz * 4.2); halo.material.opacity = .5;
   trail.forEach((m, i) => { const tt = t - (i + 1) * .014; m.visible = live && tt > hops[0].t0; m.position.copy(packetAt(tt)); m.scale.setScalar(sz * .7 * (1 - i * .045)); m.material.opacity = .8 - i * .045; });
   // ripples leave each antenna
-  let k = 0; for (const h of hops) for (let r = 0; r < 2; r++) { const m = rings[k++]; if (!m) continue; const dt = t - h.t0 - r * .16, on = dt > 0 && dt < .9; m.visible = on; if (on) { m.position.copy(finOf(h.c, t)); m.position.y += .02; m.scale.setScalar(.15 + dt * (h.c === car1 ? 2.6 : 7)); m.material.opacity = (1 - dt / .9) ** 2 * (h.c === car1 ? .55 : 1); } }
+  let k = 0; for (const h of hops) for (let r = 0; r < 2; r++) { const m = rings[k++]; if (!m) continue; const dt = t - h.t0 - r * .16, on = dt > 0 && dt < .9 && t < 6.1; m.visible = on; if (on) { m.position.copy(finOf(h.c, t)); m.position.y += .02; m.scale.setScalar(.15 + dt * (h.c === car1 ? 2.6 : 7)); m.material.opacity = (1 - dt / .9) ** 2 * (h.c === car1 ? .55 : 1); } }
 }
 
 scene.traverse(o => { if (o.material && o.material.isMeshStandardMaterial && o.material.envMapIntensity === 1) o.material.envMapIntensity = .55; });
@@ -227,7 +227,7 @@ const LBL = [
   { from: .45, to: 1.75, txt: 'TRAFFIC JAM', sub: 'CARS HAVE STOPPED', at: t => new THREE.Vector3(3.4, 2.1, carZ(car1, t) + 12) },
   { from: 2.0, to: 2.95, txt: 'ROOF ANTENNA', sub: 'SENDS THE WARNING', at: t => finOf(car1, t) },
   { from: 3.4, to: 4.9, txt: 'NEXT CAR PASSES IT ON', sub: 'HOP BY HOP', at: t => packetAt(t) },
-  { from: 5.5, to: 6.25, txt: 'CAR 2', sub: 'STILL AT FULL SPEED', at: t => finOf(car2, t) },
+  { from: 5.3, to: 5.9, txt: 'CAR 2', sub: 'STILL AT FULL SPEED', at: t => finOf(car2, t) },
 ];
 const o = ov.getContext('2d');
 const cl = v => v;

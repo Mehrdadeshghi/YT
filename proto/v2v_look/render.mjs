@@ -10,5 +10,5 @@ p.on('pageerror', e => console.log('PAGEERROR', e.message)); p.on('console', m =
 await p.goto(`http://127.0.0.1:${srv.address().port}/proto/v2v_look/index.html?w=${w}&h=${h}&n=${n}`); await p.waitForFunction('window.ready', null, { timeout: 120000 });
 const end = await p.evaluate('END'), ts = spec.includes(',') ? spec.split(',').map(Number) : Array.from({ length: Math.round(end * +spec) }, (_, i) => i / +spec);
 let t0 = Date.now();
-for (let i = +shard; i < ts.length; i += +of) { await p.evaluate(t => seek(t), ts[i]); await p.screenshot({ path: `${out}/f${String(i).padStart(4, '0')}.jpg`, type: 'jpeg', quality: 95 }); }
+for (let i = +shard; i < ts.length; i += +of) { const f = `${out}/f${String(i).padStart(4, '0')}.jpg`; if (fs.existsSync(f)) continue; await p.evaluate(t => seek(t), ts[i]); await p.screenshot({ path: f, type: 'jpeg', quality: 95, timeout: 0 }); }
 console.log('done', ((Date.now() - t0) / Math.ceil((ts.length - +shard) / +of) / 1000).toFixed(2), 's/frame'); await b.close(); srv.close();
