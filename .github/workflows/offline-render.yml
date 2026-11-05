@@ -1,0 +1,115 @@
+name: Offline 3D render
+# Films too heavy for the HyperFrames capture loop (#222): voice + timings once, then the frames in parallel jobs, then the normal score, dubs and release.
+# Each frame averages many jittered WebGL renders (scripts/hf222w/render.mjs). Costs one Gemini request, unless test_voice is set.
+on:
+  workflow_dispatch:
+    inputs:
+      episode: { description: "Episode, e.g. 222", required: true }
+      world: { description: "World folder under scripts/", required: true, default: "hf222w" }
+      samples: { description: "Renders averaged per frame (1 = fast pipeline test)", required: false, default: "12" }
+      test_voice: { description: "Kokoro voice for a test without Gemini quota; empty = the episode's voice", required: false, default: "" }
+permissions:
+  contents: write
+concurrency:
+  group: offline-${{ github.event.inputs.episode }}
+  cancel-in-progress: false
+env:
+  HYPERFRAMES_NO_TELEMETRY: "1"
+  DO_NOT_TRACK: "1"
+  HYPERFRAMES_SKIP_SKILLS: "1"
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - uses: actions/cache@v4
+        with: { path: models, key: kokoro-v1.0 }
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q kokoro-onnx==0.6.1 soundfile numpy pillow piper-tts==1.8.0 faster-whisper
+          mkdir -p models models/whisper
+          [ -f models/kokoro-v1.0.onnx ] || curl -sSL -o models/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          [ -f models/voices-v1.0.bin ] || curl -sSL -o models/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+          [ -f models/whisper/model.bin ] || curl -sSL https://github.com/${{ github.repository }}/releases/download/model-whisper/whisper-small.en.tgz | tar xz -C models/whisper
+      - name: Voice and timings
+        env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}" }
+        run: |
+          E="${{ github.event.inputs.episode }}"; python3 fetch_photos.py "$E" || echo "media fetch had problems"
+          if [ -n "${{ github.event.inputs.test_voice }}" ]; then python3 voice.py "$E" --voice "${{ github.event.inputs.test_voice }}" --speed 1.15; else python3 voice.py "$E"; fi
+          python3 scripts/hf_build.py "$E"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voice
+          retention-days: 7
+          path: |
+            episodes/${{ github.event.inputs.episode }}.voice.json
+            hf/${{ github.event.inputs.episode }}/ev.json
+            out/ep${{ github.event.inputs.episode }}/
+            assets/photos/
+            assets/music/
+  frames:
+    needs: voice
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: true
+      matrix: { shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/download-artifact@v4
+        with: { name: voice, path: . }
+      - name: Tools
+        run: npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+      - name: Render this job's frames
+        run: |
+          mkdir -p shard; node scripts/${{ github.event.inputs.world }}/render.mjs shard 1080 1920 ${{ github.event.inputs.samples }} 30 ${{ matrix.shard }} 12 /hf/${{ github.event.inputs.episode }}/ev.json
+          tar cf shard_${{ matrix.shard }}.tar -C shard .
+      - uses: actions/upload-artifact@v4
+        with: { name: "shard_${{ matrix.shard }}", path: "shard_${{ matrix.shard }}.tar", retention-days: 3, compression-level: 0 }
+  finish:
+    needs: frames
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - uses: actions/cache@v4
+        with: { path: models, key: kokoro-v1.0 }
+      - uses: actions/download-artifact@v4
+        with: { path: dl }
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          npm install --no-audit --no-fund
+          pip install -q kokoro-onnx==0.6.1 soundfile numpy pillow piper-tts==1.8.0 faster-whisper
+          mkdir -p models
+          [ -f models/kokoro-v1.0.onnx ] || curl -sSL -o models/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          [ -f models/voices-v1.0.bin ] || curl -sSL -o models/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+          HF=https://huggingface.co/rhasspy/piper-voices/resolve/main/de/de_DE/thorsten/high
+          [ -f models/de_DE-thorsten-high.onnx ] || curl -sSL -o models/de_DE-thorsten-high.onnx $HF/de_DE-thorsten-high.onnx
+          [ -f models/de_DE-thorsten-high.onnx.json ] || curl -sSL -o models/de_DE-thorsten-high.onnx.json $HF/de_DE-thorsten-high.onnx.json
+      - name: Assemble, score, dubs
+        env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}" }
+        run: |
+          set -o pipefail
+          E="${{ github.event.inputs.episode }}"; cp -r dl/voice/. .
+          mkdir -p fr; for f in dl/shard_*/*.tar; do tar xf "$f" -C fr; done
+          N=$(ls fr | wc -l); echo "$N frames"
+          mkdir -p "out/ep$E"; ffmpeg -y -loglevel error -framerate 30 -i fr/f%04d.jpg -c:v libx264 -crf 15 -preset medium -pix_fmt yuv420p "out/ep$E/silent.mp4"
+          python3 scripts/hf_build.py "$E" --finish 2>&1 | tee build.log; ls -la dist
+      - name: Publish release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          E="${{ github.event.inputs.episode }}"; TAG="hf-off-${{ github.run_number }}"
+          gh release create "$TAG" dist/*.mp4 dist/*.md $(ls dist/*.m4a 2>/dev/null) --title "Offline render $E" --notes-file dist/wiki_roulette_$E.md

@@ -73,3 +73,6 @@ Check this list before proposing a topic. Add every new episode here in the same
 
 ## Attack chains
 #221 The Binance hack, link by link (29 Oct 2026, per Binance's preliminary report of 3 Nov: June tampered Homebrew, September fake interviews + malware, 20 Oct internal AI tool, 29 Oct container → wallet signing service, 233.46M XRP in 4 min, then SOL/OP/18,270 BTC; EIP-7702 + MPC keep it running after withdrawals stop; $6.34B hit, $2.85B frozen; FBI points to North Korea, North Korea denies it)
+
+## How cars talk
+#222 How some cars warn each other about a traffic jam (V2V/Car2X; NHTSA: heading, speed, location up to 10× a second; DSRC ~1,000 ft; ETSI multi-hop allowed; only works if the other car has it; Dec 2016 DOT proposal, Nov 2020 FCC 45 of 75 MHz to Wi-Fi, cars kept 30 MHz) — first offline-rendered 3D world

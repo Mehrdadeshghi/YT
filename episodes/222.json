@@ -1,0 +1,182 @@
+{
+ "ep": 222,
+ "title": "How some cars warn each other about a traffic jam",
+ "format": "how-it-works",
+ "series": "How It Works",
+ "engine": "hyperframes",
+ "oneAsk": true,
+ "voice": "gemini",
+ "gemini_wpm": 175,
+ "speed": 1.0,
+ "mood": "calm",
+ "prog": 0,
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "CARS THAT WARN",
+  "EACH OTHER"
+ ],
+ "cta": {
+  "q": "Talk to every stranger?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://www.nhtsa.gov/document/v2v-communications-factsheet",
+ "vo_open": [
+  {
+   "at": 0.15,
+   "text": "Some cars can warn each other about a traffic jam you can't even see yet.",
+   "cap": "Some cars can *warn* each other about a traffic *jam* you can't even see yet.",
+   "de": "Manche Autos warnen sich gegenseitig vor einem Stau, den du noch gar nicht sehen kannst.",
+   "es": "Algunos coches se avisan entre sí de un atasco que aún ni puedes ver.",
+   "fr": "Certaines voitures s’avertissent d’un bouchon que tu ne vois même pas encore."
+  },
+  {
+   "at": 0.15,
+   "text": "How does a warning jump between strangers?",
+   "cap": "How does a warning *jump* between *strangers?*",
+   "de": "Wie springt eine Warnung zwischen Fremden?",
+   "es": "¿Cómo salta un aviso entre desconocidos?",
+   "fr": "Comment une alerte saute-t-elle entre inconnus ?"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.0,
+   "beat": "brake",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "A car reaches the back of a jam and brakes hard. A small radio inside it starts to broadcast. No phone call. No cell tower.",
+     "cap": "A car reaches the back of a *jam* and *brakes* hard. A small *radio* inside it starts to *broadcast.* No phone call. No *cell tower.*",
+     "de": "Ein Auto erreicht das Stauende und bremst stark. Ein kleines Funkgerät darin beginnt zu senden. Kein Anruf. Kein Mobilfunkmast.",
+     "es": "Un coche llega al final del atasco y frena fuerte. Una pequeña radio empieza a emitir. Sin llamadas. Sin antenas de móvil.",
+     "fr": "Une voiture arrive au bout du bouchon et freine fort. Une petite radio se met à émettre. Pas d’appel. Pas d’antenne-relais."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "brake"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "data",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Up to ten times a second, these cars share where they are, how fast they're going, and which way.",
+     "cap": "Up to *10 times* a second, these cars share *where* they are, how *fast* they're going, and which *way.*",
+     "de": "Bis zu zehnmal pro Sekunde teilen diese Autos mit, wo sie sind, wie schnell sie fahren und in welche Richtung.",
+     "es": "Hasta diez veces por segundo, estos coches comparten dónde están, a qué velocidad van y hacia dónde.",
+     "fr": "Jusqu’à dix fois par seconde, ces voitures partagent où elles sont, à quelle vitesse et dans quelle direction."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "data"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "hop",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "One broadcast only reaches about a thousand feet. So here's the trick: the standard lets the next car pass it on, hop by hop.",
+     "cap": "One *broadcast* only reaches about a *1,000 feet.* So here's the *trick:* the standard lets the *next car* pass it on, *hop by hop.*",
+     "de": "Eine Sendung reicht nur etwa dreihundert Meter. Der Trick: Der Standard lässt das nächste Auto sie weitergeben, Sprung für Sprung.",
+     "es": "Una emisión solo llega a unos trescientos metros. El truco: el estándar deja que el siguiente coche la pase, salto a salto.",
+     "fr": "Une émission ne porte qu’à environ trois cents mètres. L’astuce : la norme laisse la voiture suivante la relayer, de saut en saut."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "hop"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "arrive",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Far behind, a driver still doing eighty gets the warning on the dashboard: jam ahead, slow down. Before the jam is even in sight.",
+     "cap": "Far *behind,* a driver still doing *80* gets the *warning* on the dashboard: *jam ahead,* slow down. Before the jam is even in *sight.*",
+     "de": "Weit dahinter bekommt ein Fahrer mit hundertdreißig die Warnung aufs Display: Stau voraus, langsamer fahren. Noch bevor der Stau in Sicht ist.",
+     "es": "Muy atrás, un conductor a ciento treinta recibe el aviso en el tablero: atasco adelante, reduce. Antes de ver siquiera el atasco.",
+     "fr": "Loin derrière, un conducteur à cent trente reçoit l’alerte au tableau de bord : bouchon devant, ralentis. Avant même de voir le bouchon."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "arrive"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "catch",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "The catch: it only works if the other car has one too.",
+     "cap": "The *catch:* it only works if the *other car* has one *too.*",
+     "de": "Der Haken: Es funktioniert nur, wenn das andere Auto auch eins hat.",
+     "es": "La trampa: solo funciona si el otro coche también tiene una.",
+     "fr": "Le hic : ça ne marche que si l’autre voiture en a une aussi."
+    },
+    {
+     "at": 0.15,
+     "text": "In twenty sixteen, the U S proposed requiring it. In twenty twenty, the F C C gave most of its airwaves to Wi-Fi. Cars kept the rest.",
+     "cap": "In *2016,* the U.S. *proposed* requiring it. In *2020,* the *FCC* gave most of its airwaves to *Wi-Fi.* Cars kept the *rest.*",
+     "de": "Zweitausendsechzehn schlugen die USA vor, es vorzuschreiben. Zweitausendzwanzig gab die FCC den größten Teil der Funkfrequenzen an WLAN. Autos behielten den Rest.",
+     "es": "En dos mil dieciséis, Estados Unidos propuso exigirlo. En dos mil veinte, la FCC dio la mayor parte de sus frecuencias al wifi. Los coches se quedaron con el resto.",
+     "fr": "En deux mille seize, les États-Unis ont proposé de l’imposer. En deux mille vingt, la FCC a donné l’essentiel de ses fréquences au wifi. Les voitures ont gardé le reste."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "catch"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "cta",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Would you let your car talk to every stranger on the road? Comment yes or no, and subscribe.",
+     "cap": "Would you let your car talk to every *stranger* on the road? Comment *yes* or *no,* and *subscribe.*",
+     "de": "Würdest du dein Auto mit jedem Fremden auf der Straße reden lassen? Schreib Ja oder Nein, und abonniere.",
+     "es": "¿Dejarías que tu coche hablara con cada desconocido en la carretera? Comenta sí o no, y suscríbete.",
+     "fr": "Laisserais-tu ta voiture parler à chaque inconnu sur la route ? Commente oui ou non, et abonne-toi.",
+     "cta": true
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "cta"
+   }
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Inspiring Teaser (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 60
+  }
+ ],
+ "hf": {
+  "style": "doku",
+  "custom": "hf222"
+ },
+ "hf_open": {
+  "tpl": "plain",
+  "name": "hook"
+ }
+}
