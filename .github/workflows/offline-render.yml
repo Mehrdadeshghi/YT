@@ -30,6 +30,7 @@ jobs:
       - uses: actions/cache@v4
         with: { path: models, key: kokoro-v1.0 }
       - name: Tools
+        timeout-minutes: 12
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
           pip install -q kokoro-onnx==0.6.1 soundfile numpy pillow piper-tts==1.8.0 faster-whisper
@@ -67,6 +68,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with: { name: voice, path: . }
       - name: Tools
+        timeout-minutes: 12
         run: npm install --no-audit --no-fund && npx playwright install --with-deps chromium
       - name: Render this job's frames
         run: |
@@ -89,6 +91,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with: { path: dl }
       - name: Tools
+        timeout-minutes: 12
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
           npm install --no-audit --no-fund
