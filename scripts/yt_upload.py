@@ -183,14 +183,13 @@ def hold(yt, vid):
 
 
 def publish_now(yt, vid):
-    """make a scheduled, still private video public right now (same video, no second upload); the fresh read below is what counts"""
+    """make a scheduled, still private video public right now (same video, no second upload)"""
     st = yt.videos().list(part='status', id=vid).execute()['items'][0]['status']
     if st.get('privacyStatus') != 'private': print(f'  {vid}: already {st.get("privacyStatus")} — left alone'); return False
     body = {k: st[k] for k in ('selfDeclaredMadeForKids', 'containsSyntheticMedia', 'embeddable', 'license', 'publicStatsViewable') if k in st}
     body['privacyStatus'] = 'public'
-    yt.videos().update(part='status', body={'id': vid, 'status': body}).execute()
-    now = yt.videos().list(part='status', id=vid).execute()['items'][0]['status']
-    print(f'  {vid}: privacy {now.get("privacyStatus")} · publishAt {now.get("publishAt")}'); return now.get('privacyStatus') == 'public'
+    r = yt.videos().update(part='status', body={'id': vid, 'status': body}).execute()['status']
+    print(f'  {vid}: update returned privacy {r.get("privacyStatus")} (a read right after can still show the old state)'); return r.get('privacyStatus') == 'public'
 
 
 def schedule_existing(yt, vid, at):
