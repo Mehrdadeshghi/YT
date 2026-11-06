@@ -53,7 +53,7 @@ function gate(x, flip) {
   // antenna coil: wound copper wire loops inside the panel
   const pts = [], lw = Pw - .1, lh = Ph - .2, rc = .05; const curve = new THREE.CurvePath(); const P = (z, y) => new THREE.Vector3(0, y, z);
   const rect = (dz, dy) => { const c = new THREE.CatmullRomCurve3([P(-dz, -dy), P(dz, -dy), P(dz, dy), P(-dz, dy)], true, 'catmullrom', .04); return c; };
-  for (let i = 0; i < 4; i++) { const m = new THREE.Mesh(new THREE.TubeGeometry(rect(lw / 2 - i * .006, lh / 2 - i * .006), 200, .0028, 6, true), copper); m.position.set((i - 1.5) * .0048, y0 + Ph / 2, 0); m.castShadow = true; G.add(m); }
+  for (let i = 0; i < 4; i++) { const m = new THREE.Mesh(new THREE.TubeGeometry(rect(lw / 2 - i * .006, lh / 2 - i * .006), 200, .0042, 6, true), copper); m.position.set((i - 1.5) * .0085, y0 + Ph / 2, 0); m.castShadow = true; G.add(m); }
   const led = new THREE.MeshStandardMaterial({ color: '#111', emissive: '#ff1a10', emissiveIntensity: 0, roughness: .3 }); lampM.push(led); add(new RoundedBoxGeometry(.055, .018, Pw - .06, 2, .007), led, 0, y0 + Ph + .04, 0, G);
   const logo = add(new RoundedBoxGeometry(.012, .1, .28, 2, .005), std('#d8dadd', .45), flip * .02, .35, 0, G);
   return G;
@@ -146,7 +146,7 @@ const CK = [ // ref 0 world, 1 tag in the cart, 2 tag on the pad
  KEY(EV.t_tag - .1, [.17, .19, .3], [0, 0, 0], 1), KEY(EV.t_strip, [.05, .055, .1], [0, 0, 0], 1), KEY(EV.t_vib, [.045, .05, .085], [.002, 0, 0], 1), KEY(EV.t_magnet, [-.04, .048, .082], [0, 0, 0], 1),
  KEY(EV.b_burst, [.15, .18, .3], [0, 0, 0], 1), KEY(EV.b_58 + .5, [.28, .3, .52], [-.06, -.02, 0], 1), KEY(EV.b_pitch, [.06, .07, .13], [0, 0, 0], 1), KEY(EV.b_fork, [.04, .046, .08], [0, 0, 0], 1),
  KEY(EV.l_trick, [.1, .11, .2], [0, 0, 0], 1), KEY(EV.l_stops, [.9, .55, .95], [.1, .05, 0], 1), KEY(EV.l_quiet, [1.05, .55, 1.1], [.1, .05, 0], 1), KEY(EV.l_ring, [.05, .055, .1], [0, 0, 0], 1),
- KEY(EV.l_sig, [.08, .08, .14], [.015, 0, 0], 1), KEY(EV.l_ant, [.2, 1.02, .62], [.72, .98, 0], 0), KEY(EV.l_pitch, [.7, 1.04, .9], [.3, .92, 0], 0), KEY(EV.l_alarm, [1.9, 1.15, 1.55], [0, .88, -.1], 0), KEY(EV.p_pay - .5, [1.9, 1.15, 1.55], [0, .88, -.1], 0),
+ KEY(EV.l_sig, [.08, .08, .14], [.015, 0, 0], 1), KEY(EV.l_ant, [.42, 1.1, 1.0], [.72, .85, 0], 0), KEY(EV.l_pitch, [.44, 1.12, 1.15], [.72, .85, 0], 0), KEY(EV.l_alarm, [1.9, 1.15, 1.55], [0, .88, -.1], 0), KEY(EV.p_pay - .5, [1.9, 1.15, 1.55], [0, .88, -.1], 0),
  KEY(EV.p_pay + .15, [1.9, 1.5, -1.3], [2.72, .98, -2.32], 0), KEY(EV.p_check + .4, [2.1, 1.35, -1.75], [2.72, .98, -2.35], 0), KEY(EV.p_dem, [.1, .12, .19], [0, 0, 0], 2), KEY(EV.p_tune, [.055, .06, .1], [0, 0, 0], 2), KEY(EV.p_hear + .25, [.055, .06, .1], [0, 0, 0], 2),
  KEY(EV.f_miss - .35, [1.9, 1.2, 1.5], [0, .8, -.5], 0), KEY(EV.f_store, [1.7, 1.15, 1.35], [0, .82, -.2], 0), KEY(EV.f_beep, [1.55, 1.15, 1.25], [0, .88, 0], 0), KEY(END + .1, [2.1, 1.2, 1.7], [0, .9, .1], 0),
 ];
@@ -169,7 +169,7 @@ function setWorld(t) {
   field.forEach((m, i) => { const ph = ((t * 2.3 + i / field.length) % 1), act = burstOn(t) ? 1 : 0; m.visible = act > 0; if (act) { m.position.x = -.72 + 1.44 * ph; m.position.z = 0; m.material.opacity = .055 * Math.sin(ph * Math.PI); } });
   const T = TA(); rings.forEach((m, i) => { const phase = (t * 1.6 + i / 5) % 1, onR = t > EV.l_ring - .1 && t < EV.l_ant + .4 && !sec; m.visible = onR; if (onR) { m.position.copy(T); m.position.y += .005; m.scale.setScalar(.012 + phase * .09); m.material.opacity = (1 - phase) ** 2 * .9; } });
   signal.forEach((s, i) => { const a = t > EV.l_sig - .1 && t < EV.l_pitch + .2 && !sec; s.visible = a; if (a) { const u = ((t - EV.l_sig) * .9 + i / signal.length) % 1; s.position.copy(T).lerp(GATE, u); s.position.y += Math.sin(u * Math.PI) * .18 + Math.sin(u * 40 - t * 12) * .012; const sc = .008 + .022 * u; s.scale.setScalar(sc); s.material.opacity = Math.sin(u * Math.PI) * .95; } });
-  copper.emissiveIntensity = 3 * ss(EV.l_sig, EV.l_ant, t) * (1 - ss(EV.l_pitch + .25, EV.l_alarm + .1, t));
+  copper.emissiveIntensity = 5 * ss(EV.l_sig, EV.l_ant, t) * (1 - ss(EV.l_pitch + .25, EV.l_alarm + .1, t));
 }
 
 // ---- type: title, labels, caption, scope, end card ----
@@ -177,7 +177,7 @@ const o = ov.getContext('2d');
 const LBL = [
  { from: EV.t_strip - .1, to: EV.t_magnet - .05, txt: 'METAL STRIP', sub: 'LOOSE ENOUGH TO VIBRATE', at: () => TA().add(new THREE.Vector3(.008, .0015, 0)) },
  { from: EV.t_magnet - .05, to: EV.b_burst - .2, txt: 'MAGNET', sub: 'SITS RIGHT BESIDE IT', at: () => TA().add(new THREE.Vector3(-.012, .0004, 0)) },
- { from: EV.l_ant - .25, to: EV.l_pitch + .1, txt: 'ANTENNA COIL', sub: 'HEARS THE TINY SIGNAL', at: () => new THREE.Vector3(.72, 1.2, 0) },
+ { from: EV.l_ant - .25, to: EV.l_pitch + .1, txt: 'ANTENNA COIL', sub: 'HEARS THE TINY SIGNAL', at: () => new THREE.Vector3(.72, .5, .2) },
  { from: EV.p_pay + .1, to: EV.p_dem - .15, txt: 'CHECKOUT PAD', sub: 'DEMAGNETIZER', at: () => new THREE.Vector3(2.8, .93, -2.3) },
  { from: EV.p_dem + .35, to: EV.p_tune - .05, txt: 'MAGNET', sub: 'NOW DEMAGNETIZED', at: () => TB().add(new THREE.Vector3(-.012, .0004, 0)) },
  { from: EV.f_store - .1, to: EV.e_beep - .1, txt: 'TAG FROM ANOTHER STORE', sub: 'NOBODY DEACTIVATED IT', at: t => { strayTagGroup.updateWorldMatrix(true, false); return new THREE.Vector3().setFromMatrixPosition(strayTagGroup.matrixWorld); } },
@@ -197,7 +197,7 @@ function drawOverlay(t) {
   o.font = '500 21px Mono'; o.fillStyle = 'rgba(255,255,255,.78)'; o.textAlign = 'right'; o.fillText('ILLUSTRATION · ONE COMMON TYPE OF GATE', 1030, 128);
   const tA = 1 - ss(EV.o_ring + .1, EV.t_tag - .25, t); if (tA > 0) { o.globalAlpha = tA; o.textAlign = 'center'; o.shadowColor = 'rgba(0,0,0,.7)'; o.shadowBlur = 24; o.font = '96px AB'; o.fillStyle = '#fff'; o.fillText('THE GATE IS', 540, 340); o.fillStyle = '#ffc85a'; o.fillText('LISTENING', 540, 452); o.shadowBlur = 0; o.globalAlpha = 1; }
   const v = new THREE.Vector3();
-  for (const L of LBL) { const a = ss(L.from, L.from + .2, t) * (1 - ss(L.to - .18, L.to, t)); if (a <= 0) continue; v.copy(L.at(t)).project(cam); if (v.z > 1) continue; const x = clamp((v.x + 1) * 540, 110, 970), y = clamp((1 - v.y) * 960, 590, 1330), right = x < 540, tx = x + (right ? 70 : -70), ty = y - 120; o.globalAlpha = a; o.strokeStyle = '#fff'; o.lineWidth = 2.5; o.beginPath(); o.moveTo(x, y - 6); o.lineTo(tx, ty); o.stroke(); o.fillStyle = '#fff'; o.beginPath(); o.arc(x, y - 6, 6, 0, 7); o.fill(); o.textAlign = right ? 'left' : 'right'; const dx = right ? 8 : -8; o.shadowColor = 'rgba(0,0,0,.8)'; o.shadowBlur = 14; o.font = '700 40px Inter'; o.fillStyle = '#ffc85a'; o.fillText(L.txt, tx + dx, ty - 28); o.font = '500 25px Mono'; o.fillStyle = '#fff'; o.fillText(L.sub, tx + dx, ty + 4); o.shadowBlur = 0; o.globalAlpha = 1; }
+  for (const L of LBL) { const a = ss(L.from, L.from + .2, t) * (1 - ss(L.to - .18, L.to, t)); if (a <= 0) continue; v.copy(L.at(t)).project(cam); if (v.z > 1) continue; const x = clamp((v.x + 1) * 540, 110, 970), y = clamp((1 - v.y) * 960, 720, 1330), right = x < 540, tx = x + (right ? 70 : -70), ty = y - 120; o.globalAlpha = a; o.strokeStyle = '#fff'; o.lineWidth = 2.5; o.beginPath(); o.moveTo(x, y - 6); o.lineTo(tx, ty); o.stroke(); o.fillStyle = '#fff'; o.beginPath(); o.arc(x, y - 6, 6, 0, 7); o.fill(); o.textAlign = right ? 'left' : 'right'; const dx = right ? 8 : -8; o.shadowColor = 'rgba(0,0,0,.8)'; o.shadowBlur = 14; o.font = '700 40px Inter'; o.fillStyle = '#ffc85a'; o.fillText(L.txt, tx + dx, ty - 28); o.font = '500 25px Mono'; o.fillStyle = '#fff'; o.fillText(L.sub, tx + dx, ty + 4); o.shadowBlur = 0; o.globalAlpha = 1; }
   const sc = scopeOn(t); if (sc > 0) drawScope(t, clamp(sc));
   const fA = ss(EV.b_fork - .05, EV.b_fork + .15, t) * (1 - ss(EV.l_trick - .3, EV.l_trick - .05, t)); if (fA > 0) { o.globalAlpha = fA; o.textAlign = 'center'; o.shadowColor = 'rgba(0,0,0,.7)'; o.shadowBlur = 18; o.font = '66px AB'; o.fillStyle = '#ffc85a'; o.fillText('LIKE A TUNING FORK', 540, 590); o.shadowBlur = 0; o.globalAlpha = 1; }
   const aA = ss(EV.l_alarm - .03, EV.l_alarm + .1, t) * (1 - ss(EV.p_pay - .75, EV.p_pay - .5, t)); if (aA > 0) { o.save(); o.translate(540, 410); const k = 1.25 - .25 * ss(EV.l_alarm - .03, EV.l_alarm + .15, t); o.scale(k, k); o.globalAlpha = aA; o.textAlign = 'center'; o.shadowColor = 'rgba(0,0,0,.7)'; o.shadowBlur = 22; o.font = '124px AB'; o.fillStyle = '#ff5a4c'; o.fillText('ALARM', 0, 0); o.restore(); o.shadowBlur = 0; o.globalAlpha = 1; }
