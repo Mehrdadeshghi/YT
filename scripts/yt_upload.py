@@ -182,6 +182,17 @@ def hold(yt, vid):
     print(f'  held {vid}: privacy {r.get("privacyStatus")} (the response may still echo the old publishAt; a fresh read shows it cleared)'); return True
 
 
+def publish_now(yt, vid):
+    """make a scheduled, still private video public right now (same video, no second upload); the fresh read below is what counts"""
+    st = yt.videos().list(part='status', id=vid).execute()['items'][0]['status']
+    if st.get('privacyStatus') != 'private': print(f'  {vid}: already {st.get("privacyStatus")} — left alone'); return False
+    body = {k: st[k] for k in ('selfDeclaredMadeForKids', 'containsSyntheticMedia', 'embeddable', 'license', 'publicStatsViewable') if k in st}
+    body['privacyStatus'] = 'public'
+    yt.videos().update(part='status', body={'id': vid, 'status': body}).execute()
+    now = yt.videos().list(part='status', id=vid).execute()['items'][0]['status']
+    print(f'  {vid}: privacy {now.get("privacyStatus")} · publishAt {now.get("publishAt")}'); return now.get('privacyStatus') == 'public'
+
+
 def schedule_existing(yt, vid, at):
     """give an already uploaded, never published private video a publish time (videos.update keeps all other status fields)"""
     st = yt.videos().list(part='status', id=vid).execute()['items'][0]['status']
@@ -234,6 +245,12 @@ def main():
         for e in EPS:
             k = str(int(e))
             if k in led and hold(yt, led[k]['id']): led[k].pop('publishAt', None); json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False)
+        return
+    if 'publish' in args:                               # yt_upload.py publish 222: public now
+        led = json.load(open(LEDGER)); yt = youtube()
+        for e in EPS:
+            k = str(int(e))
+            if k in led and publish_now(yt, led[k]['id']): led[k]['publishAt'] = dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'); json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False)
         return
     if 'stats' in args: return stats()
     if 'fix-playlists' in args: return fix_playlists()
