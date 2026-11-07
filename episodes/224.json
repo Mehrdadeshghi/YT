@@ -1,0 +1,166 @@
+{
+ "ep": 224,
+ "title": "How adaptive cruise control and lane keeping work",
+ "format": "how-it-works",
+ "series": "How It Works",
+ "engine": "hyperframes",
+ "oneAsk": true,
+ "voice": "gemini",
+ "gemini_wpm": 175,
+ "speed": 1.0,
+ "mood": "calm",
+ "prog": 0,
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "ONE RADAR.",
+  "ONE CAMERA."
+ ],
+ "cta": {
+  "q": "Trust it on a long drive?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Adaptive_cruise_control",
+ "vo_open": [
+  {
+   "at": 0.15,
+   "text": "On the highway, some cars steer and brake by themselves. Their secret: one radar and one camera.",
+   "cap": "On the highway, some cars *steer* and *brake* by themselves. Their secret: one *radar* and one *camera.*",
+   "de": "Auf der Autobahn lenken und bremsen manche Autos von selbst. Ihr Geheimnis: ein Radar und eine Kamera.",
+   "es": "En la autopista, algunos coches giran y frenan solos. Su secreto: un radar y una cámara.",
+   "fr": "Sur l’autoroute, certaines voitures tournent et freinent toutes seules. Leur secret : un radar et une caméra."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.0,
+   "beat": "radar",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Behind the front bumper, the radar sends out radio waves. They bounce off the car ahead, and the time they take to come back gives the distance, out to about five hundred feet.",
+     "cap": "Behind the front *bumper,* the radar sends out *radio waves.* They *bounce* off the car ahead, and the *time* they take to come back gives the *distance,* out to about *500 feet.*",
+     "de": "Hinter der vorderen Stoßstange sendet das Radar Funkwellen aus. Sie prallen vom Auto davor ab, und ihre Laufzeit ergibt den Abstand, bis etwa hundertfünfzig Meter.",
+     "es": "Detrás del parachoques, el radar emite ondas de radio. Rebotan en el coche de delante, y el tiempo que tardan en volver da la distancia, hasta unos ciento cincuenta metros.",
+     "fr": "Derrière le pare-chocs, le radar envoie des ondes radio. Elles rebondissent sur la voiture devant, et leur temps de retour donne la distance, jusqu’à environ cent cinquante mètres."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "radar"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "gap",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "If that car slows down, yours eases off and brakes. When the gap opens up again, it speeds back up to the speed you set.",
+     "cap": "If that car *slows* down, yours eases off and *brakes.* When the *gap* opens up again, it speeds back *up* to the speed you *set.*",
+     "de": "Wird das Auto davor langsamer, geht deins vom Gas und bremst. Wird die Lücke wieder größer, beschleunigt es zurück auf dein eingestelltes Tempo.",
+     "es": "Si ese coche frena, el tuyo suelta el gas y frena. Cuando el hueco se abre, vuelve a la velocidad que elegiste.",
+     "fr": "Si cette voiture ralentit, la tienne lève le pied et freine. Quand l’écart se rouvre, elle revient à la vitesse que tu as choisie."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "gap"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "camera",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Staying in the lane is the camera's job. It sits behind the windshield and looks for the edges of the painted lines.",
+     "cap": "Staying in the *lane* is the camera's job. It sits behind the *windshield* and looks for the *edges* of the painted *lines.*",
+     "de": "In der Spur bleiben ist Aufgabe der Kamera. Sie sitzt hinter der Windschutzscheibe und sucht die Kanten der aufgemalten Linien.",
+     "es": "Mantenerse en el carril es trabajo de la cámara. Está detrás del parabrisas y busca los bordes de las líneas pintadas.",
+     "fr": "Rester dans la voie, c’est le travail de la caméra. Elle est derrière le pare-brise et cherche les bords des lignes peintes."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "camera"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "drift",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Start to drift, and a little force on the steering turns you back.",
+     "cap": "Start to *drift,* and a little *force* on the steering turns you *back.*",
+     "de": "Driftest du ab, lenkt dich eine kleine Kraft an der Lenkung zurück.",
+     "es": "Si empiezas a desviarte, una pequeña fuerza en la dirección te devuelve.",
+     "fr": "Si tu dérives, une petite force sur la direction te ramène."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "drift"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "catch",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "But it only knows what it can see. Faded lines or snow can hide the lane. And when AAA tested a simulated broken-down car in the lane, the cars hit it sixty-six percent of the time.",
+     "cap": "But it only knows what it can *see.* *Faded* lines or *snow* can hide the lane. And when *AAA* tested a simulated *broken-down* car in the lane, the cars hit it *66 percent* of the time.",
+     "de": "Aber es weiß nur, was es sieht. Verblasste Linien oder Schnee können die Spur verbergen. Und als der AAA ein simuliertes Pannenauto in die Spur stellte, fuhren die Autos in sechsundsechzig Prozent der Fälle dagegen.",
+     "es": "Pero solo sabe lo que ve. Las líneas borrosas o la nieve pueden ocultar el carril. Y cuando AAA probó con un coche averiado simulado en el carril, los coches chocaron el sesenta y seis por ciento de las veces.",
+     "fr": "Mais elle ne connaît que ce qu’elle voit. Des lignes effacées ou la neige peuvent cacher la voie. Et quand AAA a testé une voiture en panne simulée dans la voie, les voitures l’ont percutée soixante-six pour cent du temps."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "catch"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "cta",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "That's why your hands stay on the wheel. Would you trust it on a long drive? Comment yes or no, and subscribe.",
+     "cap": "That's why your *hands* stay on the wheel. Would you *trust* it on a long drive? Comment *yes* or *no,* and *subscribe.*",
+     "de": "Deshalb bleiben deine Hände am Lenkrad. Würdest du ihm auf einer langen Fahrt vertrauen? Schreib Ja oder Nein, und abonniere.",
+     "es": "Por eso tus manos siguen en el volante. ¿Confiarías en él en un viaje largo? Comenta sí o no, y suscríbete.",
+     "fr": "C’est pour ça que tes mains restent sur le volant. Lui ferais-tu confiance sur un long trajet ? Commente oui ou non, et abonne-toi.",
+     "cta": true
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "cta"
+   }
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Inspiring Teaser (cc-by) (filmmusic).mp3",
+   "from": 0,
+   "len": 60
+  }
+ ],
+ "hf": {
+  "style": "doku",
+  "custom": "hf224"
+ },
+ "hf_open": {
+  "tpl": "plain",
+  "name": "hook"
+ }
+}
