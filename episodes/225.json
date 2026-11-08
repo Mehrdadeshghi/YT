@@ -1,0 +1,167 @@
+{
+ "ep": 225,
+ "title": "How an airbag works",
+ "format": "how-it-works",
+ "series": "How It Works",
+ "engine": "hyperframes",
+ "oneAsk": true,
+ "voice": "gemini",
+ "gemini_wpm": 175,
+ "speed": 1.0,
+ "mood": "calm",
+ "prog": 0,
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "hook": [
+  "0.04 SECONDS",
+  "TO SAVE YOU"
+ ],
+ "cta": {
+  "q": "Knew it was this fast?",
+  "a": "YES",
+  "b": "NO"
+ },
+ "source": "https://en.wikipedia.org/wiki/Airbag",
+ "vo_open": [
+  {
+   "at": 0.15,
+   "text": "In a crash, your airbag has about four hundredths of a second to do its job. Here's what happens in that time.",
+   "cap": "In a crash, your airbag has about *four hundredths* of a second to do its job. Here's what happens in that *time.*",
+   "de": "Bei einem Unfall hat dein Airbag etwa vier Hundertstelsekunden für seinen Job. Das passiert in dieser Zeit.",
+   "es": "En un choque, tu airbag tiene unas cuatro centésimas de segundo para hacer su trabajo. Esto es lo que pasa en ese tiempo.",
+   "fr": "Lors d’un choc, ton airbag a environ quatre centièmes de seconde pour faire son travail. Voici ce qui se passe pendant ce temps."
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.0,
+   "beat": "sense",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "The car hits something. Tiny acceleration sensors feel the sudden stop, and a control unit decides, in fifteen to thirty milliseconds: fire, or don't.",
+     "cap": "The car *hits* something. Tiny acceleration *sensors* feel the sudden *stop,* and a *control unit* decides, in *15 to 30 milliseconds:* fire, or don't.",
+     "de": "Das Auto prallt auf. Winzige Beschleunigungssensoren spüren den plötzlichen Stopp, und ein Steuergerät entscheidet in fünfzehn bis dreißig Millisekunden: zünden oder nicht.",
+     "es": "El coche choca. Unos diminutos sensores de aceleración notan el frenazo, y una unidad de control decide, en quince a treinta milisegundos: disparar o no.",
+     "fr": "La voiture percute. De minuscules capteurs d’accélération sentent l’arrêt brutal, et un calculateur décide, en quinze à trente millisecondes : déclencher ou pas."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "sense"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "fire",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "If it fires, an igniter sets off a small charge inside the steering wheel. It burns and makes nitrogen gas, and the bag fills in about twenty to thirty milliseconds.",
+     "cap": "If it *fires,* an *igniter* sets off a small charge inside the steering wheel. It burns and makes *nitrogen* gas, and the bag *fills* in about *20 to 30 milliseconds.*",
+     "de": "Wenn es zündet, löst ein Zünder eine kleine Ladung im Lenkrad aus. Sie verbrennt zu Stickstoff, und der Sack füllt sich in etwa zwanzig bis dreißig Millisekunden.",
+     "es": "Si dispara, un iniciador enciende una pequeña carga dentro del volante. Arde y produce nitrógeno, y la bolsa se llena en unos veinte a treinta milisegundos.",
+     "fr": "S’il se déclenche, un allumeur met à feu une petite charge dans le volant. Elle brûle et produit de l’azote, et le sac se remplit en vingt à trente millisecondes."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "fire"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "vent",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "But a rock-hard balloon would hurt. So the gas is already escaping through vents, and the bag softens as you sink into it.",
+     "cap": "But a *rock-hard* balloon would hurt. So the gas is already escaping through *vents,* and the bag *softens* as you sink into it.",
+     "de": "Aber ein steinharter Ballon würde verletzen. Deshalb entweicht das Gas schon durch Öffnungen, und der Sack wird weich, während du hineinsinkst.",
+     "es": "Pero un globo duro como una piedra haría daño. Así que el gas ya sale por unas rejillas, y la bolsa se ablanda mientras te hundes en ella.",
+     "fr": "Mais un ballon dur comme la pierre ferait mal. Alors le gaz s’échappe déjà par des évents, et le sac se ramollit quand tu t’y enfonces."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "vent"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "dust",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "And that white dust? Powder like cornstarch or talc, so the bag can unfold smoothly.",
+     "cap": "And that white *dust?* Powder like *cornstarch* or *talc,* so the bag can *unfold* smoothly.",
+     "de": "Und der weiße Staub? Puder wie Maisstärke oder Talk, damit sich der Sack glatt entfalten kann.",
+     "es": "¿Y ese polvo blanco? Polvo como maicena o talco, para que la bolsa se despliegue suavemente.",
+     "fr": "Et cette poussière blanche ? De la poudre comme de l’amidon de maïs ou du talc, pour que le sac se déplie en douceur."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "dust"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "rule",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "In the U S, front airbags must fire in a crash like hitting a wall at fourteen miles an hour. And never put a rear-facing child seat in front of one.",
+     "cap": "In the U.S., front airbags must fire in a crash like hitting a *wall* at *14 miles an hour.* And *never* put a rear-facing *child seat* in front of one.",
+     "de": "In den USA müssen Front-Airbags bei einem Aufprall zünden, der einem Wandaufprall mit zweiundzwanzig Kilometern pro Stunde entspricht. Und setz nie einen rückwärtsgerichteten Kindersitz vor einen Airbag.",
+     "es": "En Estados Unidos, los airbags frontales deben dispararse en un choque como contra un muro a veintidós kilómetros por hora. Y nunca pongas una silla infantil a contramarcha delante de uno.",
+     "fr": "Aux États-Unis, les airbags frontaux doivent se déclencher dans un choc comme contre un mur à vingt-deux kilomètres-heure. Et ne mets jamais un siège enfant dos à la route devant un airbag."
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "rule"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "cta",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Did you know it was this fast? Comment yes or no, and subscribe.",
+     "cap": "Did you know it was this *fast?* Comment *yes* or *no,* and *subscribe.*",
+     "de": "Wusstest du, dass er so schnell ist? Schreib Ja oder Nein, und abonniere.",
+     "es": "¿Sabías que era tan rápido? Comenta sí o no, y suscríbete.",
+     "fr": "Tu savais que c’était aussi rapide ? Commente oui ou non, et abonne-toi.",
+     "cta": true
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "cta"
+   }
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Epic Trailer by Rafael Krux.ogg",
+   "from": 0,
+   "len": 60,
+   "gain": 0.6
+  }
+ ],
+ "hf": {
+  "style": "doku",
+  "custom": "hf225"
+ },
+ "hf_open": {
+  "tpl": "plain",
+  "name": "hook"
+ }
+}
