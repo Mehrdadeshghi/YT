@@ -9,8 +9,9 @@ await new Promise(r => vid.readyState >= 1 ? r() : vid.addEventListener('loadedm
 // clip offsets in nhtsa.webm (source seconds in the Commons file → concatenated): see scripts/mk225.py
 // [t0, t1, clipAt(t0), clipAt(t1), crop centre x0, x1, zoom0, zoom1, src0 (Commons file second at clip start), ms/s of that camera, ms zero second]
 const SEG = [
- [0, EV.s_hits + .8, 1.8, 1.8 + EV.s_hits + .8, 560, 520, 1.0, 1.08, 4, 0, 0],
- [EV.s_hits + .8, EV.f_fires - .3, 11, 19, 760, 640, 1.02, 1.12, 29.5, 38, 30.53],
+ [0, 3.4, 8.0, 10.3, 600, 520, 1.0, 1.1, 4, 0, 0],                           // real speed: the car arrives and hits in the first second
+ [3.4, EV.s_hits + .8, 11, 13, 760, 720, 1.0, 1.06, 29.5, 0, 0],             // the same impact again in slow motion
+ [EV.s_hits + .8, EV.f_fires - .3, 13, 19, 720, 640, 1.04, 1.12, 29.5, 38, 30.53],
  [EV.f_fires - .3, EV.v_rock, 19.79, 26.63, 860, 860, 1.05, 1.16, 19.79, 19, 20.316],   // this camera is slowed 2x more (interpolated): 19 ms per second
  [EV.v_rock, EV.d_dust - .2, 36.4, 45.8, 820, 800, 1.05, 1.12, 86.6, 39, 87.59],
  [EV.d_dust - .2, EV.u_wall - .5, 45.8, 55.8, 830, 830, 1.02, 1.1, 77, 37.5, 78.2],
