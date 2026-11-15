@@ -6,11 +6,19 @@ research/<ep>.json = {"commons_search": ["airbag test", ...], "commons_files": [
 → research/<ep>/wiki_<title>.txt (plain article text, for fact checks)
 → research/<ep>/files.md + sheet_<i>_<k>.jpg (per file: licence, size, duration; contact sheets 1 frame/s with the source second burnt in)
 """
-import json, os, re, subprocess, sys, urllib.parse, urllib.request
+import json, os, re, subprocess, sys, urllib.error, urllib.parse, urllib.request
 EP = sys.argv[1].zfill(3); os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 Q = json.load(open(f'research/{EP}.json')); OUT = f'research/{EP}'; os.makedirs(OUT, exist_ok=True)
 UA = {'User-Agent': 'WikiRouletteBot/1.0 (github.com/Mehrdadeshghi/YT)'}
-get = lambda u: json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=60))
+import time
+def get(u):
+    """Wikimedia answers 429 when asked too fast: pause between calls, back off and retry"""
+    for k in range(6):
+        time.sleep(1.5)
+        try: return json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=60))
+        except urllib.error.HTTPError as ex:
+            if ex.code != 429 or k == 5: raise
+            time.sleep(int(ex.headers.get('Retry-After') or 0) or 15 * (k + 1))
 API = 'https://commons.wikimedia.org/w/api.php?format=json&'
 def info(titles):
     d = get(API + 'action=query&prop=imageinfo&iiprop=extmetadata|size|url&titles=' + urllib.parse.quote('|'.join(titles)))
