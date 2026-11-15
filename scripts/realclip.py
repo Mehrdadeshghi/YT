@@ -11,6 +11,11 @@ EP = sys.argv[1].zfill(3)
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(ROOT)
 R = json.load(open(f'episodes/{EP}.json'))['real']
 os.makedirs(f'hf/{EP}/src', exist_ok=True)
+# licence gate: only free files (public domain, CC0, CC BY, CC BY-SA)
+_u = 'https://commons.wikimedia.org/w/api.php?format=json&action=query&prop=imageinfo&iiprop=extmetadata&titles=' + urllib.parse.quote('|'.join(R['sources']))
+for _p in json.load(urllib.request.urlopen(urllib.request.Request(_u, headers={'User-Agent': 'WikiRouletteBot/1.0 (github.com/Mehrdadeshghi/YT)'}), timeout=60))['query']['pages'].values():
+    _lic = _p.get('imageinfo', [{}])[0].get('extmetadata', {}).get('LicenseShortName', {}).get('value', '')
+    if not any(x in _lic.lower() for x in ('public domain', 'cc0', 'cc by', 'cc-by', 'pdm')): sys.exit(f'{_p.get("title")}: licence "{_lic}" not free, stopping')
 files = []
 for i, f in enumerate(R['sources']):
     dst = f'hf/{EP}/src/{i}' + os.path.splitext(f)[1].lower()

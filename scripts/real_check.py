@@ -41,10 +41,12 @@ for c in R.get('cues', []):
     if c[0] not in known: errs.append(f'cue on unknown event {c[0]}')
 for i, sp in enumerate(spans):
     if sp.get('src', 99) >= len(srcs): errs.append(f'span {i}: no source {sp.get("src")}')
+d = None
 if srcs:
     u = 'https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata|size&format=json&titles=' + urllib.parse.quote('|'.join(srcs))
-    d = json.load(urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'WikiRouletteBot/1.0 (github.com/Mehrdadeshghi/YT)'}), timeout=60))
-    for p in d['query']['pages'].values():
+    try: d = json.load(urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'WikiRouletteBot/1.0 (github.com/Mehrdadeshghi/YT)'}), timeout=60))
+    except Exception as ex: print(f'  (Commons not reachable here: {ex}; licences are checked again by realclip.py in CI)')
+    for p in (d['query']['pages'].values() if d else []):
         if 'imageinfo' not in p: errs.append(f'Commons file not found: {p.get("title")}'); continue
         lic = p['imageinfo'][0]['extmetadata'].get('LicenseShortName', {}).get('value', '')
         dur = p['imageinfo'][0].get('duration')

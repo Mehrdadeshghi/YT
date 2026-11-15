@@ -1,0 +1,30 @@
+name: Research
+# The daily cloud routine can't reach Wikimedia: it pushes research/<ep>.json, this fetches Commons search hits, Wikipedia texts and
+# footage contact sheets (scripts/research.py) and commits them to research/<ep>/ for the routine to read.
+on:
+  push:
+    branches: [main]
+    paths: ["research/*.json"]
+permissions:
+  contents: write
+concurrency:
+  group: research
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 2 }
+      - name: ffmpeg (static, no apt)
+        run: |
+          curl -sSL --retry 3 --max-time 280 https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz | tar xJ -C /tmp
+          echo "$(ls -d /tmp/ffmpeg-*/bin)" >> "$GITHUB_PATH"
+      - name: Research
+        run: |
+          for f in $(git diff --name-only HEAD~1 HEAD -- 'research/*.json'); do E=$(basename "$f" .json); python3 scripts/research.py "$E"; done
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research; git diff --cached --quiet || { git commit -m "Research results" && git pull --rebase -q && git push; }
