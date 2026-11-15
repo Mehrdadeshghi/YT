@@ -1,0 +1,50 @@
+name: Approve upload
+# The owner answers "ok" on a "Review #<ep>" issue (label review) → the Short is scheduled for the next free 19:30 slot (German time), the issue closes.
+# Only comments from the repository owner count.
+on:
+  issue_comment:
+    types: [created]
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: youtube-upload
+  cancel-in-progress: false
+jobs:
+  approve:
+    if: >-
+      github.event.comment.user.login == github.repository_owner &&
+      contains(github.event.issue.labels.*.name, 'review') &&
+      startsWith(github.event.issue.title, 'Review #')
+    runs-on: ubuntu-24.04
+    steps:
+      - id: ok
+        env: { BODY: "${{ github.event.comment.body }}", TITLE: "${{ github.event.issue.title }}" }
+        run: |
+          b=$(printf '%s' "$BODY" | tr '[:upper:]' '[:lower:]' | head -c 20 | tr -d ' .!\n\r')
+          E=$(printf '%s' "$TITLE" | sed -n 's/^Review #\([0-9]\{3\}\).*/\1/p')
+          echo "episode=$E" >> "$GITHUB_OUTPUT"
+          if [ "$b" = "ok" ] || [ "$b" = "ja" ] || [ "$b" = "yes" ]; then echo "go=1" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@v4
+        if: steps.ok.outputs.go == '1'
+      - uses: actions/setup-python@v5
+        if: steps.ok.outputs.go == '1'
+        with: { python-version: "3.11" }
+      - name: Upload (scheduled)
+        if: steps.ok.outputs.go == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          pip install -q google-api-python-client google-auth
+          python3 scripts/yt_upload.py ${{ steps.ok.outputs.episode }} --slots "${{ vars.UPLOAD_SLOTS || '19:30' }}" --privacy scheduled | tee up.log
+      - name: Save ledger, close issue
+        if: steps.ok.outputs.go == '1'
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add uploads/youtube.json; git diff --cached --quiet || { git commit -m "YouTube uploads: ${{ steps.ok.outputs.episode }} (approved)" && git pull --rebase -q && git push; }
+          gh issue comment ${{ github.event.issue.number }} --body "Scheduled: $(grep -m1 '^#' up.log | cut -c1-200)"
+          gh issue close ${{ github.event.issue.number }}

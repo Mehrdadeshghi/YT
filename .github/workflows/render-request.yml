@@ -1,0 +1,28 @@
+name: Render request
+# The daily cloud agent can't start workflows itself: it commits requests/<ep>.txt, this renders that episode in the real-footage style
+# (offline-render.yml with review=true → GitHub issue for the owner's OK). One request file per push.
+on:
+  push:
+    branches: [main]
+    paths: ["requests/*.txt"]
+permissions:
+  contents: write
+  issues: write
+jobs:
+  pick:
+    runs-on: ubuntu-24.04
+    outputs: { episode: "${{ steps.p.outputs.episode }}" }
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 2 }
+      - id: p
+        run: |
+          f=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'requests/*.txt' | head -1)
+          [ -n "$f" ] || { echo "no new request file"; exit 1; }
+          E=$(basename "$f" .txt); [[ "$E" =~ ^[0-9]{3}$ ]] || { echo "bad name $f"; exit 1; }
+          echo "episode=$E" >> "$GITHUB_OUTPUT"
+  render:
+    needs: pick
+    uses: ./.github/workflows/offline-render.yml
+    secrets: inherit
+    with: { episode: "${{ needs.pick.outputs.episode }}", world: realfilm, samples: "1", review: "true" }

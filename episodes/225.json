@@ -158,10 +158,459 @@
  ],
  "hf": {
   "style": "doku",
-  "custom": "hf225"
+  "custom": "hf_real"
  },
  "hf_open": {
   "tpl": "plain",
   "name": "hook"
+ },
+ "real": {
+  "sources": [
+   "File:New NHTSA frontal oblique overlap crash test-2017 Honda Ridgeline.ogv"
+  ],
+  "spans": [
+   {
+    "src": 0,
+    "from": 4,
+    "to": 15
+   },
+   {
+    "src": 0,
+    "from": 29.5,
+    "to": 37.5
+   },
+   {
+    "src": 0,
+    "from": 58.8,
+    "to": 67.5,
+    "slow": 2
+   },
+   {
+    "src": 0,
+    "from": 86.6,
+    "to": 96
+   },
+   {
+    "src": 0,
+    "from": 77,
+    "to": 87
+   },
+   {
+    "src": 0,
+    "from": 130.5,
+    "to": 142.5
+   },
+   {
+    "src": 0,
+    "from": 143,
+    "to": 150
+   }
+  ],
+  "crop_bottom": 58,
+  "tag": "REAL CRASH TEST · NHTSA",
+  "title_until": "hits-0.1",
+  "events": {
+   "four": [
+    0,
+    "four"
+   ],
+   "time": [
+    0,
+    "time"
+   ],
+   "hits": [
+    1,
+    "hits"
+   ],
+   "sens": [
+    1,
+    "sensors"
+   ],
+   "stop": [
+    1,
+    "stop"
+   ],
+   "unit": [
+    1,
+    "control"
+   ],
+   "ms15": [
+    1,
+    "15"
+   ],
+   "fire": [
+    1,
+    "fire"
+   ],
+   "fires": [
+    2,
+    "fires"
+   ],
+   "ign": [
+    2,
+    "igniter"
+   ],
+   "nitro": [
+    2,
+    "nitrogen"
+   ],
+   "fills": [
+    2,
+    "fills"
+   ],
+   "ms20": [
+    2,
+    "20"
+   ],
+   "rock": [
+    3,
+    "rockhard"
+   ],
+   "vents": [
+    3,
+    "vents"
+   ],
+   "sink": [
+    3,
+    "sink"
+   ],
+   "dust": [
+    4,
+    "dust"
+   ],
+   "corn": [
+    4,
+    "cornstarch"
+   ],
+   "wall": [
+    5,
+    "wall"
+   ],
+   "mph": [
+    5,
+    "14"
+   ],
+   "never": [
+    5,
+    "never"
+   ],
+   "child": [
+    5,
+    "child"
+   ]
+  },
+  "shots": [
+   {
+    "from": 0,
+    "to": 3.4,
+    "span": 0,
+    "at": [
+     4.0,
+     6.3
+    ],
+    "cx": [
+     600,
+     520
+    ],
+    "zoom": [
+     1,
+     1.1
+    ]
+   },
+   {
+    "from": 3.4,
+    "to": "hits+0.8",
+    "span": 1,
+    "at": [
+     0,
+     2
+    ],
+    "cx": [
+     760,
+     720
+    ],
+    "zoom": [
+     1,
+     1.06
+    ]
+   },
+   {
+    "from": "hits+0.8",
+    "to": "fires-0.3",
+    "span": 1,
+    "at": [
+     2,
+     8
+    ],
+    "cx": [
+     720,
+     640
+    ],
+    "zoom": [
+     1.04,
+     1.12
+    ],
+    "clock": {
+     "label": "TEST CAMERA · 1,000 FPS",
+     "ms_per_s": 38,
+     "zero": 1.03
+    }
+   },
+   {
+    "from": "fires-0.3",
+    "to": "rock",
+    "span": 2,
+    "at": [
+     0.79,
+     7.63
+    ],
+    "cx": [
+     860,
+     860
+    ],
+    "zoom": [
+     1.05,
+     1.16
+    ],
+    "clock": {
+     "label": "TEST CAMERA · 1,000 FPS",
+     "ms_per_s": 19,
+     "zero": 1.316
+    }
+   },
+   {
+    "from": "rock",
+    "to": "dust-0.2",
+    "span": 3,
+    "at": [
+     0,
+     9.4
+    ],
+    "cx": [
+     820,
+     800
+    ],
+    "zoom": [
+     1.05,
+     1.12
+    ],
+    "clock": {
+     "label": "TEST CAMERA · 1,000 FPS",
+     "ms_per_s": 39,
+     "zero": 0.99
+    }
+   },
+   {
+    "from": "dust-0.2",
+    "to": "wall-0.5",
+    "span": 4,
+    "at": [
+     0,
+     10
+    ],
+    "cx": [
+     830,
+     830
+    ],
+    "zoom": [
+     1.02,
+     1.1
+    ],
+    "clock": {
+     "label": "TEST CAMERA · 1,000 FPS",
+     "ms_per_s": 37.5,
+     "zero": 1.2
+    }
+   },
+   {
+    "from": "wall-0.5",
+    "to": "cta-0.3",
+    "span": 5,
+    "at": [
+     4.5,
+     11.5
+    ],
+    "cx": [
+     660,
+     620
+    ],
+    "zoom": [
+     1.04,
+     1.12
+    ]
+   },
+   {
+    "from": "cta-0.3",
+    "to": "end",
+    "span": 6,
+    "at": [
+     0,
+     5.4
+    ],
+    "cx": [
+     640,
+     640
+    ],
+    "zoom": [
+     1,
+     1.06
+    ]
+   }
+  ],
+  "stamps": [
+   {
+    "from": "fire-0.05",
+    "to": "fires-0.15",
+    "big": "FIRE?",
+    "sub": "THE CONTROL UNIT DECIDES",
+    "color": "#ff5a4c",
+    "y": 830,
+    "size": 110,
+    "pop": false
+   },
+   {
+    "from": "ms20-0.05",
+    "to": "rock-0.1",
+    "big": "20–30 ms",
+    "sub": "TO FILL THE BAG",
+    "y": 830
+   },
+   {
+    "from": "corn-0.1",
+    "to": "wall-0.55",
+    "big": "POWDER",
+    "sub": "CORNSTARCH OR TALC",
+    "color": "#ffffff",
+    "size": 110,
+    "pop": false
+   },
+   {
+    "from": "mph-0.05",
+    "to": "never-0.05",
+    "big": "14 MPH",
+    "sub": "WALL CRASH: FRONT AIRBAGS MUST FIRE",
+    "size": 140
+   },
+   {
+    "from": "never-0.05",
+    "to": "cta-0.2",
+    "big": "NEVER",
+    "sub": "A REAR-FACING CHILD SEAT IN FRONT OF AN AIRBAG",
+    "color": "#ff5a4c",
+    "size": 140
+   }
+  ],
+  "labels": [
+   {
+    "from": "fills-0.1",
+    "to": "ms20-0.05",
+    "x": 760,
+    "y": 980,
+    "txt": "AIRBAG",
+    "sub": "FILLING WITH GAS",
+    "side": "left"
+   },
+   {
+    "from": "dust-0.05",
+    "to": "corn",
+    "x": 700,
+    "y": 980,
+    "txt": "DUST",
+    "sub": "POWDER FROM THE BAG",
+    "side": "left"
+   }
+  ],
+  "cues": [
+   [
+    "four",
+    0,
+    "tick",
+    0.4
+   ],
+   [
+    "hits",
+    0,
+    "hit",
+    0.9
+   ],
+   [
+    "hits",
+    0.05,
+    "crack",
+    0.7
+   ],
+   [
+    "unit",
+    0,
+    "beep",
+    0.5
+   ],
+   [
+    "fire",
+    0,
+    "click",
+    0.7
+   ],
+   [
+    "ign",
+    0,
+    "zap",
+    0.6
+   ],
+   [
+    "nitro",
+    0,
+    "whoosh",
+    0.6
+   ],
+   [
+    "fills",
+    0,
+    "hit",
+    0.6
+   ],
+   [
+    "vents",
+    0,
+    "whoosh",
+    0.45
+   ],
+   [
+    "dust",
+    0,
+    "pop",
+    0.4
+   ],
+   [
+    "wall",
+    0,
+    "thump",
+    0.6
+   ],
+   [
+    "never",
+    0,
+    "flat",
+    0.5
+   ],
+   [
+    "cta_a",
+    0,
+    "pop",
+    0.7
+   ],
+   [
+    "cta_b",
+    0,
+    "pop",
+    0.7
+   ],
+   [
+    "cta_sub",
+    0,
+    "coin",
+    0.5
+   ]
+  ]
  }
 }

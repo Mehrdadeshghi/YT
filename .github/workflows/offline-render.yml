@@ -1,17 +1,28 @@
 name: Offline 3D render
 # Films too heavy for the HyperFrames capture loop (#222): voice + timings once, then the frames in parallel jobs, then the normal score, dubs and release.
 # Each frame averages many jittered WebGL renders (scripts/hf222w/render.mjs). Costs one Gemini request, unless test_voice is set.
+# Real-footage Shorts (house style since 9.11.2026): world=realfilm, samples=1; the voice job also cuts hf/<ep>/clip.webm (scripts/realclip.py).
+# review=true (set by render-request.yml for the daily cloud agent): opens a GitHub issue with the video and a contact sheet; the owner answers "ok" → approve.yml schedules the upload.
 on:
   workflow_dispatch:
     inputs:
       episode: { description: "Episode, e.g. 222", required: true }
-      world: { description: "World folder under scripts/", required: true, default: "hf222w" }
-      samples: { description: "Renders averaged per frame (1 = fast pipeline test)", required: false, default: "12" }
+      world: { description: "World folder under scripts/", required: true, default: "realfilm" }
+      samples: { description: "Renders averaged per frame (1 = fast pipeline test)", required: false, default: "1" }
       test_voice: { description: "Kokoro voice for a test without Gemini quota; empty = the episode's voice", required: false, default: "" }
+      review: { description: "Open a review issue when done", required: false, default: "false" }
+  workflow_call:
+    inputs:
+      episode: { type: string, required: true }
+      world: { type: string, required: false, default: "realfilm" }
+      samples: { type: string, required: false, default: "1" }
+      test_voice: { type: string, required: false, default: "" }
+      review: { type: string, required: false, default: "true" }
 permissions:
   contents: write
+  issues: write
 concurrency:
-  group: offline-${{ github.event.inputs.episode }}
+  group: offline-${{ inputs.episode }}
   cancel-in-progress: false
 env:
   HYPERFRAMES_NO_TELEMETRY: "1"
@@ -41,17 +52,20 @@ jobs:
       - name: Voice and timings
         env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}" }
         run: |
-          E="${{ github.event.inputs.episode }}"; python3 fetch_photos.py "$E" || echo "media fetch had problems"
-          if [ -n "${{ github.event.inputs.test_voice }}" ]; then python3 voice.py "$E" --voice "${{ github.event.inputs.test_voice }}" --speed 1.15; else python3 voice.py "$E"; fi
+          E="${{ inputs.episode }}"; python3 fetch_photos.py "$E" || echo "media fetch had problems"
+          if [ -n "${{ inputs.test_voice }}" ]; then python3 voice.py "$E" --voice "${{ inputs.test_voice }}" --speed 1.15; else python3 voice.py "$E"; fi
+          if python3 -c "import json,sys; sys.exit(0 if 'real' in json.load(open('episodes/$E.json')) else 1)"; then python3 scripts/realclip.py "$E"; fi
           python3 scripts/hf_build.py "$E"
       - uses: actions/upload-artifact@v4
         with:
           name: voice
           retention-days: 7
           path: |
-            episodes/${{ github.event.inputs.episode }}.voice.json
-            hf/${{ github.event.inputs.episode }}/ev.json
-            out/ep${{ github.event.inputs.episode }}/
+            episodes/${{ inputs.episode }}.voice.json
+            hf/${{ inputs.episode }}/ev.json
+            hf/${{ inputs.episode }}/clip.webm
+            hf/${{ inputs.episode }}/clip.json
+            out/ep${{ inputs.episode }}/
             assets/photos/
             assets/music/
   frames:
@@ -73,12 +87,13 @@ jobs:
           source scripts/ci_retry.sh; retry npm install --no-audit --no-fund; google-chrome --version
       - name: Render this job's frames
         run: |
-          mkdir -p shard; PW_CHANNEL=chrome node scripts/${{ github.event.inputs.world }}/render.mjs shard 1080 1920 ${{ github.event.inputs.samples }} 30 ${{ matrix.shard }} 12 /hf/${{ github.event.inputs.episode }}/ev.json
+          mkdir -p shard; PW_CHANNEL=chrome node scripts/${{ inputs.world }}/render.mjs shard 1080 1920 ${{ inputs.samples }} 30 ${{ matrix.shard }} 12 /hf/${{ inputs.episode }}/ev.json
           tar cf shard_${{ matrix.shard }}.tar -C shard .
       - uses: actions/upload-artifact@v4
         with: { name: "shard_${{ matrix.shard }}", path: "shard_${{ matrix.shard }}.tar", retention-days: 3, compression-level: 0 }
   finish:
     needs: frames
+    permissions: { contents: write, issues: write }
     runs-on: ubuntu-24.04
     timeout-minutes: 105
     steps:
@@ -107,13 +122,24 @@ jobs:
         env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}" }
         run: |
           set -o pipefail
-          E="${{ github.event.inputs.episode }}"; cp -r dl/voice/. .
+          E="${{ inputs.episode }}"; cp -r dl/voice/. .
           mkdir -p fr; for f in dl/shard_*/*.tar; do tar xf "$f" -C fr; done
           N=$(ls fr | wc -l); echo "$N frames"
           mkdir -p "out/ep$E"; ffmpeg -y -loglevel error -framerate 30 -i fr/f%04d.jpg -c:v libx264 -crf 15 -preset medium -pix_fmt yuv420p "out/ep$E/silent.mp4"
           python3 scripts/hf_build.py "$E" --finish 2>&1 | tee build.log; ls -la dist
       - name: Publish release
+        id: rel
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
-          E="${{ github.event.inputs.episode }}"; TAG="hf-off-${{ github.run_number }}"
+          E="${{ inputs.episode }}"; TAG="hf-off-${{ github.run_number }}"
           gh release create "$TAG" dist/*.mp4 dist/*.md $(ls dist/*.m4a 2>/dev/null) --title "Offline render $E" --notes-file dist/wiki_roulette_$E.md
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+      - name: Review issue
+        if: inputs.review == 'true'
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          E="${{ inputs.episode }}"; TAG="hf-off-${{ github.run_number }}"; U="https://github.com/${{ github.repository }}/releases/download/$TAG"
+          ffmpeg -v error -y -i dist/wiki_roulette_$E.mp4 -vf "fps=0.5,scale=180:-1,tile=9x3" -frames:v 1 sheet_$E.jpg && gh release upload "$TAG" sheet_$E.jpg --clobber
+          T=$(grep -m1 '^\*\*Title:\*\*' uploads/$E.md | sed 's/\*\*Title:\*\* *//')
+          printf '%s\n' "New Short ready: **#$E $T**" "" "▶️ Video: $U/wiki_roulette_$E.mp4" "" "![contact sheet]($U/sheet_$E.jpg)" "" "Reply **ok** to schedule it for the next free 19:30 slot (German time). Reply with anything else to hold it; the next daily run reads your comment." > body.md
+          gh issue create --title "Review #$E: $T" --label review --body-file body.md
