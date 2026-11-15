@@ -1,21 +1,3 @@
-{
- "commons_search": [
-  "seat belt crash test",
-  "NHTSA crash test dummy",
-  "antilock brake test",
-  "smoke detector",
-  "microwave oven",
-  "lightning strike",
-  "tornado formation",
-  "windshield wiper",
-  "car crash test slow motion",
-  "helmet impact test"
- ],
- "wiki": [
-  "Seat belt",
-  "Seat belt pretensioner",
-  "Anti-lock braking system",
-  "Smoke detector",
-  "Crumple zone"
- ]
-}
+{"commons_search": ["seat belt crash test", "NHTSA crash test dummy", "antilock brake test", "smoke detector", "microwave oven", "lightning strike", "tornado formation", "windshield wiper", "car crash test slow motion", "helmet impact test"],
+ "wiki": ["Seat belt", "Seat belt pretensioner", "Anti-lock braking system", "Smoke detector", "Crumple zone"],
+ "commons_files": ["File:How smoke detectors work.webm", "File:Radioactive Smoke Detector - Americium 241.webm", "File:Blinking smoke alarm.webm"]}
