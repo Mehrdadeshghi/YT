@@ -1,0 +1,3 @@
+- 0: File:How smoke detectors work.webm | CC BY 3.0 | 224.2 s | 1920x1080 | engineerguy → sheet_0_*.jpg (1 frame/s, source second in yellow)
+- 1: File:Radioactive Smoke Detector - Americium 241.webm | CC BY 3.0 | 86.3 s | 480x360 | uyt384 → sheet_1_*.jpg (1 frame/s, source second in yellow)
+- 2: File:Blinking smoke alarm.webm | CC BY 4.0 | 10.0 s | 1080x1920 | Fumikas Sagisavas → sheet_2_*.jpg (1 frame/s, source second in yellow)
