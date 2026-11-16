@@ -10,6 +10,7 @@ on:
       steps: { description: "Sampling steps", required: false, default: "30" }
       width: { required: false, default: "480" }
       height: { required: false, default: "832" }
+      fetch_only: { description: "Only fetch the last run's output/log", required: false, default: "false" }
 env:
   KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
 permissions:
@@ -28,6 +29,7 @@ jobs:
           pip install -q -U kaggle
           if [ -n "$KAGGLE_KEY" ]; then mkdir -p ~/.kaggle; printf '{"username":"%s","key":"%s"}' "$KAGGLE_USERNAME" "$KAGGLE_KEY" > ~/.kaggle/kaggle.json; chmod 600 ~/.kaggle/kaggle.json; fi
       - name: Push kernel
+        if: inputs.fetch_only != 'true'
         env: { KAGGLE_USERNAME: "${{ secrets.KAGGLE_USERNAME }}", PROMPT: "${{ inputs.prompt }}" }
         run: |
           mkdir k; cp scripts/animate/kernel.py k/
@@ -47,9 +49,11 @@ jobs:
           K="$KAGGLE_USERNAME/wr-animate"
           for i in $(seq 1 270); do s=$(kaggle kernels status "$K" 2>&1 | tail -1); echo "$(date +%H:%M) $s"; case "$s" in *COMPLETE*|*complete*) break;; *ERROR*|*error*|*CANCEL*) break;; esac; sleep 60; done
           mkdir -p out; kaggle kernels output "$K" -p out || true; ls -la out
+      - name: Kernel log
+        if: always()
+        run: python3 -c "import json,sys;d=json.load(open(sys.argv[1]));print(''.join(x.get('data','') for x in d)[-6000:])" out/wr-animate.log 2>/dev/null || tail -c 6000 out/*.log 2>/dev/null || true
       - name: Publish
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
-          T="anim-${{ github.run_number }}"; f=$(ls out/*.mp4 2>/dev/null | head -1); logs=$(ls out/*.log out/*.txt 2>/dev/null)
-          gh release create "$T" $f $logs --title "Animation test ${{ github.run_number }}" --notes "${{ inputs.image }}: ${{ inputs.prompt }}" --prerelease
-          [ -n "$f" ] || { echo "no video produced"; tail -c 4000 $logs 2>/dev/null; exit 1; }
+          f=$(ls out/*.mp4 2>/dev/null | head -1); [ -n "$f" ] || { echo "no video produced"; exit 1; }
+          gh release create "anim-${{ github.run_number }}" "$f" out/*.log --title "Animation test ${{ github.run_number }}" --notes "${{ inputs.image }}: ${{ inputs.prompt }}" --prerelease
