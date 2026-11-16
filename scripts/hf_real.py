@@ -18,7 +18,7 @@ def find(C, k, key, nth=1, exact=False):
     return None
 
 def build(C):
-    R = C.E['real']; ev = {}
+    R = C.E.get('real') or C.E['comic']; ev = {}   # 'comic' = animated mini-series (scripts/comic/series.js), same events + cues
     for name, spec in R.get('events', {}).items():
         k, key, nth = spec[0], spec[1], (spec[2] if len(spec) > 2 else 1)
         v = find(C, k, key, nth)
@@ -29,7 +29,7 @@ def build(C):
         ev.setdefault(name, find(C, last, word, 1, exact=True) or find(C, last, word) or C.DUR - 1.5)
     ev.setdefault('cta', min(w['s'] for i, ws in enumerate(C.CAPS) if C.scene_of[i] == last for w in ws))
     os.makedirs(C.prj, exist_ok=True)
-    json.dump({'ev': ev, 'dur': C.DUR, 'caps': C.CAPS, 'real': R, 'cta': cta, 'hook': C.E.get('hook', [])}, open(f'{C.prj}/ev.json', 'w'))
+    json.dump({'ev': ev, 'dur': C.DUR, 'caps': C.CAPS, 'real': R, 'comic': R, 'cta': cta, 'hook': C.E.get('hook', [])}, open(f'{C.prj}/ev.json', 'w'))
     cues = []
     for name, off, sfx, gain in R.get('cues', []):
         if sfx not in SFX: print(f'  (cue {sfx} unknown to score_cine.mjs, skipped)'); continue

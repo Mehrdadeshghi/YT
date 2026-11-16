@@ -1,0 +1,59 @@
+// Animated mini-series Short (strategy since 16.11.2026): illustrated frames (generated in Figma, one consistent character) brought to life:
+// slow camera moves, rain on windows, phone glow, message pop-ups with glitch, knock shakes, heartbeat pulses, lamp flicker, captions, end card.
+// Data: episodes/<ep>.json → "comic" (shots with img/zoom/focus/fx, events, cues). Every frame is a pure function of t.
+const q = new URLSearchParams(location.search), W = +(q.get('w') || 540), H = +(q.get('h') || 960);
+const cv = document.getElementById('cv'), o = cv.getContext('2d'); cv.width = 1080; cv.height = 1920; cv.style.width = W + 'px'; cv.style.height = H + 'px';
+const D = await (await fetch(q.get('ev'))).json(), EV = D.ev, END = D.dur, C = D.comic;
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), ss = (a, b, x) => { const u = clamp((x - a) / (b - a)); return u * u * (3 - 2 * u); }, lerp = (a, b, u) => a + (b - a) * u;
+const hash = n => { const x = Math.sin(n * 127.1) * 43758.5453; return x - Math.floor(x); };
+const T = x => { if (typeof x === 'number') return x; if (x === 'end') return END; const m = /^([a-z0-9_]+)([+-][\d.]+)?$/i.exec(x); if (!m || EV[m[1]] === undefined) throw new Error('unknown time ' + x); return EV[m[1]] + (+m[2] || 0); };
+const IMG = {}; await Promise.all([...new Set(C.shots.map(s => s.img))].map(f => new Promise((r, j) => { const im = new Image(); im.onload = () => { IMG[f] = im; r(); }; im.onerror = () => j(new Error('missing ' + f)); im.src = '/' + C.dir + '/' + f; })));
+const SH = C.shots.map(s => ({ ...s, t0: T(s.from), t1: T(s.to) })); for (let i = 1; i < SH.length; i++) SH[i].t0 = SH[i - 1].t1; SH[SH.length - 1].t1 = END + .3;
+// camera: image covers 1080x1920; zoom around a focus point (image-normalised), eased
+function camOf(s, t) { const u = ss(s.t0, s.t1, t), z = lerp(s.zoom[0], s.zoom[1], u), f = [lerp(s.focus[0][0], s.focus[1][0], u), lerp(s.focus[0][1], s.focus[1][1], u)];
+  const im = IMG[s.img], k = Math.max(1080 / im.width, 1920 / im.height) * z, w = im.width * k, h = im.height * k; let x = 540 - f[0] * w, y = 960 - f[1] * h; x = clamp(x, 1080 - w, 0); y = clamp(y, 1920 - h, 0); return { x, y, w, h, k }; }
+const P = (c, nx, ny) => [c.x + nx * c.w, c.y + ny * c.h];
+function drawShot(s, t, a) {
+  const c = camOf(s, t), fx = s.fx || {}; let sx = 0, sy = 0;
+  for (const k of [].concat(fx.knock || [])) { const e = Math.max(0, 1 - Math.abs(t - T(k)) * 7); sx += Math.sin(t * 95) * 16 * e; sy += Math.cos(t * 77) * 10 * e; }
+  if (fx.heartbeat) { const b = Math.pow(Math.max(0, Math.sin(t * 7.5)), 12); c.x -= b * 8; c.y -= b * 14; c.w += b * 16; c.h += b * 28; }
+  o.save(); o.globalAlpha = a; o.translate(sx, sy); o.drawImage(IMG[s.img], c.x, c.y, c.w, c.h);
+  if (fx.rain) { const [x0, y0] = P(c, fx.rain[0], fx.rain[1]), [x1, y1] = P(c, fx.rain[2], fx.rain[3]); o.save(); o.beginPath(); o.rect(x0, y0, x1 - x0, y1 - y0); o.clip(); o.lineWidth = 2; for (let i = 0; i < 90; i++) { const x = x0 + hash(i) * (x1 - x0), sp = 500 + hash(i + 9) * 600, yy = y0 + ((hash(i + 3) * (y1 - y0) + t * sp) % (y1 - y0)), len = 30 + hash(i + 5) * 60; o.strokeStyle = `rgba(190,215,255,${.25 + hash(i + 7) * .35})`; o.beginPath(); o.moveTo(x, yy); o.lineTo(x - 5, yy + len); o.stroke(); } o.restore(); }
+  if (fx.glow) { const [gx, gy] = P(c, fx.glow[0], fx.glow[1]), r = fx.glow[2] * c.w, fl = .8 + .2 * Math.sin(t * 6.3) * Math.sin(t * 2.2); const g = o.createRadialGradient(gx, gy, 2, gx, gy, r); g.addColorStop(0, fx.glow[3] + 'aa'); g.addColorStop(1, fx.glow[3] + '00'); o.globalCompositeOperation = 'lighter'; o.globalAlpha = a * .55 * fl; o.fillStyle = g; o.fillRect(gx - r, gy - r, 2 * r, 2 * r); o.globalCompositeOperation = 'source-over'; o.globalAlpha = a; }
+  if (fx.underlight) { const [lx, ly] = P(c, fx.underlight[0], fx.underlight[1]), fl = .75 + .25 * Math.sin(t * 11) * Math.sin(t * 4.7); const g = o.createRadialGradient(lx, ly, 5, lx, ly, c.w * .4); g.addColorStop(0, 'rgba(255,190,100,.55)'); g.addColorStop(1, 'rgba(255,190,100,0)'); o.globalCompositeOperation = 'lighter'; o.globalAlpha = a * fl; o.fillStyle = g; o.fillRect(lx - c.w * .4, ly - c.w * .4, c.w * .8, c.w * .8); o.globalCompositeOperation = 'source-over'; o.globalAlpha = a; }
+  if (fx.screen) { const [x0, y0] = P(c, fx.screen.rect[0], fx.screen.rect[1]), [x1, y1] = P(c, fx.screen.rect[2], fx.screen.rect[3]), w = x1 - x0, h = y1 - y0; o.save(); o.beginPath(); o.roundRect(x0, y0, w, h, w * .06); o.clip(); o.fillStyle = '#f2f6fb'; o.fillRect(x0, y0, w, h); o.textAlign = 'center'; o.fillStyle = '#12141c'; o.font = `700 ${w * .085}px Inter`; o.fillText('Me', x0 + w / 2, y0 + h * .12); o.font = `500 ${w * .045}px Mono`; o.fillStyle = '#80869a'; o.fillText('your number', x0 + w / 2, y0 + h * .17);
+    for (const m of fx.screen.msgs) { const ta = T(m.at), u = ss(ta - .05, ta + .25, t); if (u <= 0) continue; const bw = w * .82, bh = h * .2, bx = x0 + w * .09, by = y0 + h * .48, kk = .7 + .3 * u; o.save(); o.translate(bx + bw / 2, by + bh / 2); o.scale(kk, kk); o.globalAlpha = a * u; o.fillStyle = '#dfe3ec'; o.beginPath(); o.roundRect(-bw / 2, -bh / 2, bw, bh, bh * .3); o.fill(); o.fillStyle = '#10121a'; o.font = `700 ${w * .075}px Inter`; const words = m.txt.split(' '), half = Math.ceil(words.length / 2); o.fillText(words.slice(0, half).join(' '), 0, -bh * .02); o.fillText(words.slice(half).join(' '), 0, bh * .3); o.restore();
+      if (m.sub) { const v = ss(T(m.sub_at || m.at) - .05, T(m.sub_at || m.at) + .2, t); o.globalAlpha = a * v; o.fillStyle = '#ff3d6e'; o.font = `700 ${w * .05}px Mono`; o.fillText(m.sub, x0 + w / 2, y0 + h * .42); o.globalAlpha = a; } }
+    o.restore(); }
+  if (fx.flicker) { const n = Math.floor(t * 18), d = hash(n) > .85 ? .35 : hash(n) > .7 ? .12 : 0; o.fillStyle = `rgba(0,0,0,${d})`; o.fillRect(-50, -50, 1180, 2020); }
+  o.restore();
+  // message toast over the picture (a second text arriving)
+  if (fx.msg) { const ta = T(fx.msg.at), u = ss(ta - .05, ta + .25, t); if (u > 0) { const y = lerp(-180, 150, ss(ta - .05, ta + .3, t)); o.save(); o.globalAlpha = a; o.fillStyle = 'rgba(242,246,251,.96)'; o.beginPath(); o.roundRect(70, y, 940, 210, 40); o.fill(); o.fillStyle = '#80869a'; o.font = '500 28px Mono'; o.textAlign = 'left'; o.fillText('MESSAGE · ' + (fx.msg.from || 'Me').toUpperCase() + ' · SENT TOMORROW', 110, y + 56); o.fillStyle = '#10121a'; o.font = '700 46px Inter'; const ws = fx.msg.txt.split(' '); let line = '', ly = y + 118; for (const wd of ws) { if (o.measureText(line + wd).width > 860) { o.fillText(line, 110, ly); line = ''; ly += 56; } line += wd + ' '; } o.fillText(line, 110, ly); o.restore(); } }
+  // KNOCK lettering
+  for (const k of [].concat(fx.knock || [])) { const tk = T(k), u = ss(tk - .02, tk + .06, t) * (1 - ss(tk + .5, tk + .8, t)); if (u <= 0) continue; const i = [].concat(fx.knock).indexOf(k), s2 = 1 + .3 * (1 - ss(tk, tk + .12, t)); o.save(); o.globalAlpha = u; o.translate(i ? 700 : 360, i ? 980 : 760); o.rotate(i ? .1 : -.12); o.scale(s2, s2); o.font = '150px AB'; o.textAlign = 'center'; o.lineWidth = 18; o.strokeStyle = '#0b0712'; o.strokeText('KNOCK', 0, 0); o.fillStyle = '#ffd23f'; o.fillText('KNOCK', 0, 0); o.restore(); }
+  if (fx.glitch) { const tg = T(fx.glitch), e = Math.max(0, 1 - Math.abs(t - tg - .1) * 3.5); if (e > 0) for (let i = 0; i < 9; i++) { if (hash(Math.floor(t * 30) + i) > .45) { const y = hash(i * 7 + Math.floor(t * 30)) * 1920, hh = 20 + hash(i) * 70; o.drawImage(cv, 0, y, 1080, hh, (hash(i + 3) - .5) * 120 * e, y, 1080, hh); } } }
+  if (fx.buzz) { const tb = T(fx.buzz), e = Math.max(0, 1 - Math.abs(t - tb - .3) * 2.5); if (e > 0) { o.save(); o.globalAlpha = e * .8; o.strokeStyle = '#5ef0ff'; o.lineWidth = 6; for (let i = 0; i < 3; i++) { o.beginPath(); o.arc(540, 960, 200 + i * 70 + (t - tb) * 300, 0, 7); o.stroke(); } o.restore(); } }
+  if (fx.sting) { const ts = T(fx.sting), e = Math.max(0, 1 - Math.abs(t - ts) * 6); if (e > 0) { o.fillStyle = `rgba(255,255,255,${e * .5})`; o.fillRect(0, 0, 1080, 1920); } }
+}
+const CAPS = D.caps.flat(), LINES = []; { let cur = []; for (const w of CAPS) { cur.push(w); if (cur.length >= 4 || /[.,?:]$/.test(w.w)) { LINES.push(cur); cur = []; } } if (cur.length) LINES.push(cur); }
+window.seek = async function (t) {
+  o.globalAlpha = 1; o.globalCompositeOperation = 'source-over'; o.fillStyle = '#000'; o.fillRect(0, 0, 1080, 1920);
+  let i = SH.findIndex(s => t >= s.t0 && t < s.t1); if (i < 0) i = SH.length - 1; const s = SH[i], prev = SH[i - 1], fi = i ? ss(s.t0, s.t0 + .22, t) : 1;
+  if (prev && fi < 1) drawShot(prev, s.t0, 1); drawShot(s, t, fi);
+  // vignette + grain
+  const v = o.createRadialGradient(540, 960, 520, 540, 960, 1240); v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,.6)'); o.fillStyle = v; o.fillRect(0, 0, 1080, 1920);
+  const n = Math.floor(t * 24); for (let k = 0; k < 1800; k++) { o.fillStyle = hash(k + n * 3.1) > .5 ? 'rgba(255,255,255,.035)' : 'rgba(0,0,0,.06)'; o.fillRect(hash(k * 1.7 + n) * 1080, hash(k * 2.3 + n) * 1920, 2, 2); }
+  o.font = '500 24px Mono'; o.fillStyle = 'rgba(255,255,255,.75)'; o.textAlign = 'left'; o.fillText(C.tag || '', 60, 110);
+  // hook title
+  const hk = D.hook || [], tA = 1 - ss(T(C.title_until) - .3, T(C.title_until), t); if (hk.length && tA > 0) { o.save(); o.globalAlpha = tA; o.textAlign = 'center'; o.shadowColor = 'rgba(0,0,0,.85)'; o.shadowBlur = 30; o.font = '92px AB'; o.fillStyle = '#fff'; o.fillText(hk[0], 540, 330); o.fillStyle = '#5ef0ff'; o.fillText(hk[1] || '', 540, 432); o.restore(); }
+  // end card
+  const cta = D.cta || {}, fA = ss(EV.cta - .1, EV.cta + .25, t); if (fA > 0) { o.save(); o.globalAlpha = fA; o.textAlign = 'center'; o.shadowColor = 'rgba(0,0,0,.85)'; o.shadowBlur = 26; o.font = '80px AB'; o.fillStyle = '#fff'; const qq = cta.q.toUpperCase(), cut = qq.lastIndexOf(' ', Math.ceil(qq.length / 2) + 2); o.fillText(qq.slice(0, cut), 540, 330); o.fillStyle = '#5ef0ff'; o.fillText(qq.slice(cut + 1), 540, 425); o.shadowBlur = 0;
+    for (const [lbl, ts, x, col] of [[cta.a.toUpperCase(), EV.cta_a, 340, '#39c98a'], [cta.b.toUpperCase(), EV.cta_b, 740, '#ef5a4c']]) { const u = ss(ts - .05, ts + .12, t), k = u > 0 ? 1 + .22 * (1 - u) : .92; o.save(); o.translate(x, 540); o.scale(k, k); o.globalAlpha = fA * (u > 0 ? 1 : .6); o.fillStyle = u > 0 ? col : 'rgba(10,14,22,.78)'; o.beginPath(); o.roundRect(-150, -56, 300, 112, 56); o.fill(); o.fillStyle = '#fff'; o.font = '56px AB'; o.fillText(lbl, 0, 20); o.restore(); }
+    o.globalAlpha = fA * ss(EV.cta_sub - .05, EV.cta_sub + .2, t); o.font = '700 46px Inter'; o.fillStyle = '#ffd23f'; o.fillText('PART 2 TOMORROW', 540, 700); o.restore(); }
+  const line = LINES.find(l => t >= l[0].s - .05 && t <= l[l.length - 1].e + .18);
+  if (line) { o.font = '700 52px Inter'; o.textAlign = 'left'; const sp = 14, ws = line.map(w => o.measureText(w.w).width), tot = ws.reduce((a, b) => a + b, 0) + sp * (line.length - 1); let x = 540 - tot / 2; const Y = 1690; o.fillStyle = 'rgba(6,6,14,.72)'; o.beginPath(); o.roundRect(540 - tot / 2 - 28, Y - 58, tot + 56, 84, 22); o.fill(); line.forEach((w, k) => { const said = t >= w.s - .02; o.fillStyle = w.k ? (said ? '#5ef0ff' : 'rgba(94,240,255,.5)') : (said ? '#fff' : 'rgba(255,255,255,.5)'); o.fillText(w.w, x, Y); x += ws[k] + sp; }); }
+  const fade = ss(0, .12, t) * (1 - ss(END - .15, END, t)); if (fade < 1) { o.fillStyle = `rgba(0,0,0,${1 - fade})`; o.fillRect(0, 0, 1080, 1920); }
+};
+window.END = END;
+await Promise.all(['700 37px Inter', '500 23px Mono', '84px AB'].map(f => document.fonts.load(f)));
+window.ready = true;
