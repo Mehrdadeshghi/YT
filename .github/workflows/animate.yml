@@ -1,0 +1,52 @@
+name: Animate a frame (Kaggle GPU)
+# Animates one drawn frame (repo path) with an open video model (Wan 2.2 TI2V-5B, Apache-2.0) on Kaggle's free GPU, without the owner's PC.
+# Needs secrets KAGGLE_USERNAME + KAGGLE_KEY. Result: release anim-<run> with out.mp4 and the kernel log.
+on:
+  workflow_dispatch:
+    inputs:
+      image: { description: "Repo path of the start frame, e.g. scripts/comic/ep229/wall.jpg", required: true }
+      prompt: { description: "What should move", required: true }
+      frames: { description: "Frames (81 ≈ 3.4 s at 24 fps)", required: false, default: "81" }
+      steps: { description: "Sampling steps", required: false, default: "30" }
+      width: { required: false, default: "480" }
+      height: { required: false, default: "832" }
+permissions:
+  contents: write
+concurrency: { group: kaggle-animate, cancel-in-progress: false }
+jobs:
+  animate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - name: Kaggle CLI
+        env: { KAGGLE_USERNAME: "${{ secrets.KAGGLE_USERNAME }}", KAGGLE_KEY: "${{ secrets.KAGGLE_KEY }}" }
+        run: |
+          pip install -q kaggle
+          mkdir -p ~/.kaggle; printf '{"username":"%s","key":"%s"}' "$KAGGLE_USERNAME" "$KAGGLE_KEY" > ~/.kaggle/kaggle.json; chmod 600 ~/.kaggle/kaggle.json
+      - name: Push kernel
+        env: { KAGGLE_USERNAME: "${{ secrets.KAGGLE_USERNAME }}", PROMPT: "${{ inputs.prompt }}" }
+        run: |
+          mkdir k; cp scripts/animate/kernel.py k/
+          python3 - <<'P'
+          import json, os
+          d = {'image_url': f"https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/${{ inputs.image }}", 'prompt': os.environ['PROMPT'],
+               'frames': int('${{ inputs.frames }}'), 'steps': int('${{ inputs.steps }}'), 'width': int('${{ inputs.width }}'), 'height': int('${{ inputs.height }}')}
+          src = open('k/kernel.py').read().replace("P = json.load(", "P = " + repr(d) + " or json.load(", 1)
+          open('k/kernel.py', 'w').write(src)
+          json.dump({'id': os.environ['KAGGLE_USERNAME'] + '/wr-animate', 'title': 'wr-animate', 'code_file': 'kernel.py', 'language': 'python', 'kernel_type': 'script',
+                     'is_private': True, 'enable_gpu': True, 'enable_internet': True, 'machine_shape': 'NvidiaTeslaT4'}, open('k/kernel-metadata.json', 'w'))
+          P
+          kaggle kernels push -p k
+      - name: Wait for the GPU run
+        env: { KAGGLE_USERNAME: "${{ secrets.KAGGLE_USERNAME }}" }
+        run: |
+          K="$KAGGLE_USERNAME/wr-animate"
+          for i in $(seq 1 270); do s=$(kaggle kernels status "$K" 2>&1 | tail -1); echo "$(date +%H:%M) $s"; case "$s" in *COMPLETE*|*complete*) break;; *ERROR*|*error*|*CANCEL*) break;; esac; sleep 60; done
+          mkdir -p out; kaggle kernels output "$K" -p out || true; ls -la out
+      - name: Publish
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          T="anim-${{ github.run_number }}"; f=$(ls out/*.mp4 2>/dev/null | head -1); logs=$(ls out/*.log out/*.txt 2>/dev/null)
+          gh release create "$T" $f $logs --title "Animation test ${{ github.run_number }}" --notes "${{ inputs.image }}: ${{ inputs.prompt }}" --prerelease
+          [ -n "$f" ] || { echo "no video produced"; tail -c 4000 $logs 2>/dev/null; exit 1; }
