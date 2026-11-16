@@ -37,7 +37,7 @@ jobs:
           import json, os
           d = {'image_url': f"https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/${{ inputs.image }}", 'prompt': os.environ['PROMPT'],
                'frames': int('${{ inputs.frames }}'), 'steps': int('${{ inputs.steps }}'), 'width': int('${{ inputs.width }}'), 'height': int('${{ inputs.height }}')}
-          src = open('k/kernel.py').read().replace("P = json.load(", "P = " + repr(d) + " or json.load(", 1)
+          src = open('k/kernel.py').read().replace("P = None  # PARAMS", "P = " + repr(d) + "  # PARAMS", 1)
           open('k/kernel.py', 'w').write(src)
           json.dump({'id': os.environ['KAGGLE_USERNAME'] + '/wr-animate', 'title': 'wr-animate', 'code_file': 'kernel.py', 'language': 'python', 'kernel_type': 'script',
                      'is_private': True, 'enable_gpu': True, 'enable_internet': True, 'machine_shape': 'NvidiaTeslaT4'}, open('k/kernel-metadata.json', 'w'))

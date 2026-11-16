@@ -2,7 +2,7 @@
 # Parameters come from params.json next to this script (written by .github/workflows/animate.yml).
 import json, os, subprocess, sys, time, urllib.request
 t0 = time.time()
-P = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'params.json'))) if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'params.json')) else json.loads(open('/kaggle/input/params.json').read()) if os.path.exists('/kaggle/input/params.json') else None
+P = None  # PARAMS (the workflow replaces this line with the run's parameters)
 print('params', P, flush=True)
 subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', '-U', 'diffusers>=0.35', 'transformers', 'accelerate', 'ftfy', 'imageio', 'imageio-ffmpeg', 'sentencepiece'], check=True)
 os.environ['HF_HOME'] = '/tmp/hf'
