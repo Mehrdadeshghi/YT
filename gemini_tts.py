@@ -42,6 +42,12 @@ def synth(text, voice, dst, style=STYLE):
     open(dst, 'wb').write(base64.b64decode(audio[-1]['data']))    # unary output is a complete WAV file
 
 
+def segments_tts(E):
+    """what Gemini is asked to say: a segment's "tts" (the line with inline vocal tags like <whispers>, <breath>, <gasp>, <short pause>) or its plain text"""
+    segs = list(E.get('vo_open', [])) + [v for sc in E['scenes'] for v in sc.get('vo', [])] + list(E.get('vo_outro', []))
+    return [s.get('tts', s['text']) for s in segs]
+
+
 def segments(E):
     """narrated lines in voice.py's order: opener, scenes, explicit outro (voice.py's default outro is never shown → not spoken)"""
     return ([s['text'] for s in E.get('vo_open', [])] + [v['text'] for sc in E['scenes'] for v in sc.get('vo', [])]
@@ -60,8 +66,9 @@ class Take:
     def _make(self):
         import align, numpy as np, soundfile as sf
         lines = segments(self.E)
-        full = f"{self.out}/gemini_{hashlib.md5((tag(self.E) + '|' + chr(10).join(lines)).encode()).hexdigest()[:10]}.wav"
-        if not os.path.exists(full): synth(chr(10).join(lines), self.E.get('gemini_voice', 'Charon'), full, self.E.get('gemini_style', STYLE))
+        spoken = segments_tts(self.E)   # tags are performed, not spoken; alignment below uses the plain lines
+        full = f"{self.out}/gemini_{hashlib.md5((tag(self.E) + '|' + chr(10).join(spoken)).encode()).hexdigest()[:10]}.wav"
+        if not os.path.exists(full): synth(chr(10).join(spoken), self.E.get('gemini_voice', 'Charon'), full, self.E.get('gemini_style', STYLE))
         s, sr = sf.read(full, dtype='float32'); s = s if s.ndim == 1 else s.mean(1)
         W = align.words(full, ' '.join(lines))                  # same tokenisation as align.words → split by token count
         n = [len([t for t in ln.replace('...', '… ').replace('…', '… ').split() if align.norm(t)]) for ln in lines]

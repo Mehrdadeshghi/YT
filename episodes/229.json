@@ -7,7 +7,7 @@
  "oneAsk": true,
  "voice": "gemini",
  "gemini_voice": "Leda",
- "gemini_wpm": 165,
+ "gemini_wpm": 100,
  "speed": 1.0,
  "mood": "calm",
  "prog": 0,
@@ -17,22 +17,20 @@
   "es",
   "fr"
  ],
- "gemini_style": "A 17-year-old girl telling a true story that still scares her: hushed, tense, intimate, natural pauses before the reveals, rising fear at the end. Not theatrical.",
- "hook": [
-  "A TEXT FROM",
-  "MY OWN NUMBER"
- ],
+ "gemini_style": "scared teenage girl, close to the mic, tense and real",
+ "hook": [],
  "cta": {
   "q": "Who is outside the door?"
  },
  "vo_open": [
   {
    "at": 0.15,
-   "text": "At eleven fifty-eight p m, I got a text from my own number.",
-   "cap": "At *11:58 p.m.,* I got a text from my *own number.*",
-   "de": "Um 23:58 Uhr bekam ich eine Nachricht von meiner eigenen Nummer.",
-   "es": "A las 11:58 de la noche recibí un mensaje de mi propio número.",
-   "fr": "À 23h58, j’ai reçu un message de mon propre numéro."
+   "text": "Someone is knocking on my door, and my phone just told me not to open it.",
+   "cap": "Someone is *knocking* on my door, and my phone just told me *not* to open it.",
+   "de": "Jemand klopft an meine Tür, und mein Handy hat mir gerade gesagt, dass ich nicht aufmachen soll.",
+   "es": "Alguien está llamando a mi puerta, y mi móvil me acaba de decir que no abra.",
+   "fr": "Quelqu’un frappe à ma porte, et mon téléphone vient de me dire de ne pas ouvrir.",
+   "tts": "<whispers> Someone is knocking on my door... <short pause> and my phone just told me NOT to open it."
   }
  ],
  "scenes": [
@@ -42,11 +40,12 @@
    "vo": [
     {
      "at": 0.15,
-     "text": "It said: don't open the door. Sent... tomorrow.",
-     "cap": "It said: *don't open the door.* Sent... *tomorrow.*",
-     "de": "Da stand: Mach die Tür nicht auf. Gesendet… morgen.",
-     "es": "Decía: no abras la puerta. Enviado… mañana.",
-     "fr": "Il disait : n’ouvre pas la porte. Envoyé… demain."
+     "text": "Twelve minutes ago, I got a text from my own number. Don't open the door. Sent... tomorrow.",
+     "cap": "*Twelve minutes* ago, I got a text from my *own number.* *Don't* open the door. Sent... *tomorrow.*",
+     "de": "Vor zwölf Minuten bekam ich eine Nachricht von meiner eigenen Nummer. Mach die Tür nicht auf. Gesendet… morgen.",
+     "es": "Hace doce minutos recibí un mensaje de mi propio número. No abras la puerta. Enviado… mañana.",
+     "fr": "Il y a douze minutes, j’ai reçu un message de mon propre numéro. N’ouvre pas la porte. Envoyé… demain.",
+     "tts": "<breath> Twelve minutes ago, I got a text. From my OWN number. <short pause> Don't open the door. <short pause> Sent... tomorrow."
     }
    ],
    "hf": {
@@ -60,11 +59,12 @@
    "vo": [
     {
      "at": 0.15,
-     "text": "I laughed. A glitch, right? Then someone knocked.",
-     "cap": "I *laughed.* A *glitch,* right? Then someone *knocked.*",
-     "de": "Ich lachte. Ein Fehler, oder? Dann klopfte jemand.",
-     "es": "Me reí. Un fallo, ¿no? Entonces alguien llamó a la puerta.",
-     "fr": "J’ai ri. Un bug, non ? Puis quelqu’un a frappé."
+     "text": "I thought it was a glitch. Then the knocking started.",
+     "cap": "I thought it was a *glitch.* Then the *knocking* started.",
+     "de": "Ich dachte, es wäre ein Fehler. Dann fing das Klopfen an.",
+     "es": "Pensé que era un fallo. Entonces empezaron los golpes.",
+     "fr": "J’ai cru à un bug. Puis on a commencé à frapper.",
+     "tts": "<chuckle> I thought it was a glitch. <long pause> Then the knocking started."
     }
    ],
    "hf": {
@@ -78,11 +78,12 @@
    "vo": [
     {
      "at": 0.15,
-     "text": "Mom was on a night shift. I was alone.",
-     "cap": "Mom was on a *night shift.* I was *alone.*",
-     "de": "Mama hatte Nachtschicht. Ich war allein.",
-     "es": "Mamá tenía turno de noche. Estaba sola.",
-     "fr": "Maman était de garde de nuit. J’étais seule."
+     "text": "Mom's on a night shift. I'm alone.",
+     "cap": "Mom's on a *night shift.* I'm *alone.*",
+     "de": "Mama hat Nachtschicht. Ich bin allein.",
+     "es": "Mamá tiene turno de noche. Estoy sola.",
+     "fr": "Maman est de garde de nuit. Je suis seule.",
+     "tts": "<whispers> Mom's on a night shift. <breath> I'm alone."
     }
    ],
    "hf": {
@@ -96,11 +97,12 @@
    "vo": [
     {
      "at": 0.15,
-     "text": "Another text from me: look through the peephole. Don't make a sound.",
-     "cap": "Another text from *me:* look through the *peephole.* Don't make a *sound.*",
-     "de": "Noch eine Nachricht von mir: Schau durch den Türspion. Mach kein Geräusch.",
-     "es": "Otro mensaje mío: mira por la mirilla. No hagas ruido.",
-     "fr": "Un autre message de moi : regarde par le judas. Ne fais pas de bruit."
+     "text": "Then another text, from me. Look through the peephole. Don't make a sound.",
+     "cap": "Then *another* text, from *me.* Look through the *peephole.* Don't make a *sound.*",
+     "de": "Dann noch eine Nachricht, von mir. Schau durch den Türspion. Mach kein Geräusch.",
+     "es": "Luego otro mensaje, mío. Mira por la mirilla. No hagas ruido.",
+     "fr": "Puis un autre message, de moi. Regarde par le judas. Ne fais pas de bruit.",
+     "tts": "<gasp> Then another text... from me. <whispers> Look through the peephole. Don't make a sound."
     }
    ],
    "hf": {
@@ -114,11 +116,12 @@
    "vo": [
     {
      "at": 0.15,
-     "text": "So I looked. And the girl standing outside... was me.",
-     "cap": "So I *looked.* And the girl standing outside... was *me.*",
-     "de": "Also schaute ich. Und das Mädchen da draußen… war ich.",
-     "es": "Así que miré. Y la chica que estaba afuera… era yo.",
-     "fr": "Alors j’ai regardé. Et la fille dehors… c’était moi."
+     "text": "So I looked. And the girl standing outside was me.",
+     "cap": "So I *looked.* And the girl standing outside was *me.*",
+     "de": "Also schaute ich. Und das Mädchen da draußen war ich.",
+     "es": "Así que miré. Y la chica de afuera era yo.",
+     "fr": "Alors j’ai regardé. Et la fille dehors, c’était moi.",
+     "tts": "<heavy breath> So I looked... <long pause> <whispers> and the girl standing outside... was ME."
     }
    ],
    "hf": {
@@ -132,11 +135,12 @@
    "vo": [
     {
      "at": 0.15,
-     "text": "So who is standing outside my door? Part two tomorrow.",
-     "cap": "So who is standing outside my *door?* Part *two* tomorrow.",
-     "de": "Wer steht also vor meiner Tür? Teil zwei morgen.",
-     "es": "¿Entonces quién está frente a mi puerta? Segunda parte mañana.",
-     "fr": "Alors qui est devant ma porte ? Deuxième partie demain.",
+     "text": "She's still out there.",
+     "cap": "She's *still* out there.",
+     "de": "Sie ist immer noch da draußen.",
+     "es": "Sigue ahí fuera.",
+     "fr": "Elle est toujours dehors.",
+     "tts": "<whispers> She's still out there.",
      "cta": true
     }
    ],
@@ -166,19 +170,28 @@
  "comic": {
   "dir": "scripts/comic/ep229",
   "tag": "SENT TOMORROW · PART 1",
-  "title_until": "said-0.1",
+  "title_until": "ago",
+  "look": "raw",
   "events": {
-   "own": [
+   "knocking0": [
     0,
+    "knocking"
+   ],
+   "not": [
+    0,
+    "not"
+   ],
+   "ago": [
+    1,
+    "twelve"
+   ],
+   "own": [
+    1,
     "own"
    ],
-   "said": [
+   "dont": [
     1,
-    "said"
-   ],
-   "door": [
-    1,
-    "door"
+    "dont"
    ],
    "sent": [
     1,
@@ -188,21 +201,21 @@
     1,
     "tomorrow"
    ],
-   "laughed": [
+   "thought": [
     2,
-    "laughed"
+    "thought"
    ],
    "glitch": [
     2,
     "glitch"
    ],
-   "knocked": [
+   "knocking": [
     2,
-    "knocked"
+    "knocking"
    ],
    "mom": [
     3,
-    "mom"
+    "moms"
    ],
    "alone": [
     3,
@@ -216,10 +229,6 @@
     4,
     "peephole"
    ],
-   "sound": [
-    4,
-    "sound"
-   ],
    "looked": [
     5,
     "looked"
@@ -231,12 +240,51 @@
    "me": [
     5,
     "me"
+   ],
+   "still": [
+    6,
+    "still"
    ]
   },
   "shots": [
    {
     "from": 0,
-    "to": "said-0.2",
+    "to": "ago-0.2",
+    "img": "door.jpg",
+    "zoom": [
+     1.06,
+     1.16
+    ],
+    "focus": [
+     [
+      0.5,
+      0.52
+     ],
+     [
+      0.5,
+      0.56
+     ]
+    ],
+    "fx": {
+     "knock": [
+      0.12,
+      0.5,
+      "knocking0"
+     ],
+     "underlight": [
+      0.5,
+      0.63
+     ],
+     "msg": {
+      "at": "not",
+      "txt": "DON’T OPEN THE DOOR.",
+      "from": "Me"
+     }
+    }
+   },
+   {
+    "from": "ago-0.2",
+    "to": "dont-0.25",
     "zoom": [
      1.0,
      1.06
@@ -247,8 +295,8 @@
       0.55
      ],
      [
-      0.4,
-      0.62
+      0.42,
+      0.6
      ]
     ],
     "fx": {
@@ -258,19 +306,13 @@
       1,
       0.42
      ],
-     "glow": [
-      0.45,
-      0.63,
-      0.22,
-      "#5ef0ff"
-     ],
-     "buzz": "own-1.2"
+     "buzz": "own-0.4"
     },
     "vid": "clips/bed.webm"
    },
    {
-    "from": "said-0.2",
-    "to": "laughed-0.25",
+    "from": "dont-0.25",
+    "to": "thought-0.2",
     "img": "phone.jpg",
     "zoom": [
      1.0,
@@ -296,7 +338,7 @@
       ],
       "msgs": [
        {
-        "at": "said",
+        "at": "dont",
         "from": "Me",
         "txt": "Don’t open the door.",
         "sub": "SENT: TOMORROW 11:58 PM",
@@ -308,8 +350,8 @@
     }
    },
    {
-    "from": "laughed-0.25",
-    "to": "knocked-0.15",
+    "from": "thought-0.2",
+    "to": "knocking-0.1",
     "zoom": [
      1.0,
      1.06
@@ -330,38 +372,33 @@
       0,
       1,
       0.4
-     ],
-     "glow": [
-      0.55,
-      0.5,
-      0.2,
-      "#5ef0ff"
      ]
     },
     "vid": "clips/laugh.webm"
    },
    {
-    "from": "knocked-0.15",
-    "to": "another-0.3",
+    "from": "knocking-0.1",
+    "to": "mom-0.15",
     "img": "door.jpg",
     "zoom": [
-     1.0,
-     1.2
+     1.12,
+     1.24
     ],
     "focus": [
      [
       0.5,
-      0.5
+      0.62
      ],
      [
       0.5,
-      0.55
+      0.66
      ]
     ],
     "fx": {
      "knock": [
-      "knocked",
-      "knocked+0.45"
+      "knocking",
+      "knocking+0.4",
+      "knocking+0.8"
      ],
      "underlight": [
       0.5,
@@ -370,8 +407,8 @@
     }
    },
    {
-    "from": "another-0.3",
-    "to": "looked-0.25",
+    "from": "mom-0.15",
+    "to": "looked-0.2",
     "zoom": [
      1.0,
      1.06
@@ -387,12 +424,6 @@
      ]
     ],
     "fx": {
-     "glow": [
-      0.37,
-      0.33,
-      0.16,
-      "#5ef0ff"
-     ],
      "buzz": "another",
      "heartbeat": true,
      "msg": {
@@ -404,7 +435,7 @@
     "vid": "clips/wall.webm"
    },
    {
-    "from": "looked-0.25",
+    "from": "looked-0.2",
     "to": "outside-0.1",
     "zoom": [
      1.0,
@@ -416,8 +447,8 @@
       0.3
      ],
      [
-      0.78,
-      0.25
+      0.76,
+      0.26
      ]
     ],
     "fx": {
@@ -452,16 +483,22 @@
   ],
   "cues": [
    [
-    "own",
-    -1.2,
+    "knocking0",
+    0,
+    "thump",
+    1
+   ],
+   [
+    "not",
+    -0.1,
     "beep",
     0.5
    ],
    [
-    "said",
-    0,
-    "pop",
-    0.4
+    "own",
+    -0.4,
+    "beep",
+    0.45
    ],
    [
     "tomorrow",
@@ -470,20 +507,20 @@
     0.6
    ],
    [
-    "laughed",
-    0,
-    "bloop",
-    0.3
-   ],
-   [
-    "knocked",
+    "knocking",
     0,
     "thump",
     1
    ],
    [
-    "knocked",
-    0.45,
+    "knocking",
+    0.4,
+    "thump",
+    1
+   ],
+   [
+    "knocking",
+    0.8,
     "thump",
     1
    ],
@@ -491,43 +528,25 @@
     "alone",
     0,
     "riser",
-    0.35
+    0.3
    ],
    [
     "another",
-    0,
+    -0.2,
     "beep",
     0.5
-   ],
-   [
-    "peephole",
-    0,
-    "tick",
-    0.4
    ],
    [
     "looked",
     0,
     "swish",
-    0.4
+    0.35
    ],
    [
     "me",
     0,
     "hit",
     0.9
-   ],
-   [
-    "cta_a",
-    0,
-    "pop",
-    0.6
-   ],
-   [
-    "cta_b",
-    0,
-    "pop",
-    0.6
    ]
   ]
  }

@@ -20,8 +20,9 @@ async function drawShot(s, t, a) {
   if (s.vid) await vidFrame(VID[s.vid], (t - s.t0) * (s.rate || 1) + (s.vstart || 0));
   const c = camOf(s, t), fx = s.fx || {}; let sx = 0, sy = 0;
   for (const k of [].concat(fx.knock || [])) { const e = Math.max(0, 1 - Math.abs(t - T(k)) * 7); sx += Math.sin(t * 95) * 16 * e; sy += Math.cos(t * 77) * 10 * e; }
+  if (C.look === 'raw') { sx += (Math.sin(t * 1.7) + Math.sin(t * 2.9 + 1) * .6) * 6; sy += (Math.sin(t * 1.3 + 2) + Math.sin(t * 3.7) * .5) * 5; }   // handheld drift
   if (fx.heartbeat) { const b = Math.pow(Math.max(0, Math.sin(t * 7.5)), 12); c.x -= b * 8; c.y -= b * 14; c.w += b * 16; c.h += b * 28; }
-  o.save(); o.globalAlpha = a; o.translate(sx, sy); o.drawImage(s.vid ? VID[s.vid] : IMG[s.img], c.x, c.y, c.w, c.h);
+  o.save(); o.globalAlpha = a; o.translate(sx, sy); if (C.look === 'raw') o.filter = 'saturate(.76) contrast(1.14) brightness(.94)'; o.drawImage(s.vid ? VID[s.vid] : IMG[s.img], c.x, c.y, c.w, c.h); o.filter = 'none';
   if (fx.rain) { const [x0, y0] = P(c, fx.rain[0], fx.rain[1]), [x1, y1] = P(c, fx.rain[2], fx.rain[3]); o.save(); o.beginPath(); o.rect(x0, y0, x1 - x0, y1 - y0); o.clip(); o.lineWidth = 2; for (let i = 0; i < 90; i++) { const x = x0 + hash(i) * (x1 - x0), sp = 500 + hash(i + 9) * 600, yy = y0 + ((hash(i + 3) * (y1 - y0) + t * sp) % (y1 - y0)), len = 30 + hash(i + 5) * 60; o.strokeStyle = `rgba(190,215,255,${.25 + hash(i + 7) * .35})`; o.beginPath(); o.moveTo(x, yy); o.lineTo(x - 5, yy + len); o.stroke(); } o.restore(); }
   if (fx.glow) { const [gx, gy] = P(c, fx.glow[0], fx.glow[1]), r = fx.glow[2] * c.w, fl = .8 + .2 * Math.sin(t * 6.3) * Math.sin(t * 2.2); const g = o.createRadialGradient(gx, gy, 2, gx, gy, r); g.addColorStop(0, fx.glow[3] + 'aa'); g.addColorStop(1, fx.glow[3] + '00'); o.globalCompositeOperation = 'lighter'; o.globalAlpha = a * .55 * fl; o.fillStyle = g; o.fillRect(gx - r, gy - r, 2 * r, 2 * r); o.globalCompositeOperation = 'source-over'; o.globalAlpha = a; }
   if (fx.underlight) { const [lx, ly] = P(c, fx.underlight[0], fx.underlight[1]), fl = .75 + .25 * Math.sin(t * 11) * Math.sin(t * 4.7); const g = o.createRadialGradient(lx, ly, 5, lx, ly, c.w * .4); g.addColorStop(0, 'rgba(255,190,100,.55)'); g.addColorStop(1, 'rgba(255,190,100,0)'); o.globalCompositeOperation = 'lighter'; o.globalAlpha = a * fl; o.fillStyle = g; o.fillRect(lx - c.w * .4, ly - c.w * .4, c.w * .8, c.w * .8); o.globalCompositeOperation = 'source-over'; o.globalAlpha = a; }
@@ -46,7 +47,7 @@ window.seek = async function (t) {
   if (prev && fi < 1) await drawShot(prev, s.t0, 1); await drawShot(s, t, fi);
   // vignette + grain
   const v = o.createRadialGradient(540, 960, 520, 540, 960, 1240); v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,.6)'); o.fillStyle = v; o.fillRect(0, 0, 1080, 1920);
-  const n = Math.floor(t * 24); for (let k = 0; k < 1800; k++) { o.fillStyle = hash(k + n * 3.1) > .5 ? 'rgba(255,255,255,.035)' : 'rgba(0,0,0,.06)'; o.fillRect(hash(k * 1.7 + n) * 1080, hash(k * 2.3 + n) * 1920, 2, 2); }
+  const n = Math.floor(t * 24), raw = C.look === 'raw'; for (let k = 0; k < (raw ? 5200 : 1800); k++) { o.fillStyle = hash(k + n * 3.1) > .5 ? `rgba(255,255,255,${raw ? .06 : .035})` : `rgba(0,0,0,${raw ? .1 : .06})`; o.fillRect(hash(k * 1.7 + n) * 1080, hash(k * 2.3 + n) * 1920, 2, 2); }
   o.font = '500 24px Mono'; o.fillStyle = 'rgba(255,255,255,.75)'; o.textAlign = 'left'; o.fillText(C.tag || '', 60, 110);
   // hook title
   const hk = D.hook || [], tA = 1 - ss(T(C.title_until) - .3, T(C.title_until), t); if (hk.length && tA > 0) { o.save(); o.globalAlpha = tA; o.textAlign = 'center'; o.shadowColor = 'rgba(0,0,0,.85)'; o.shadowBlur = 30; o.font = '92px AB'; o.fillStyle = '#fff'; o.fillText(hk[0], 540, 330); o.fillStyle = '#5ef0ff'; o.fillText(hk[1] || '', 540, 432); o.restore(); }
