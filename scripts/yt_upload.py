@@ -245,6 +245,14 @@ def main():
             k = str(int(e))
             if k in led and hold(yt, led[k]['id']): led[k].pop('publishAt', None); json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False)
         return
+    if 'delete' in args:                                # yt_upload.py delete 229: removes that episode's video from YouTube for good (owner's request only) and frees the ledger entry
+        led = json.load(open(LEDGER)); yt = youtube()
+        for e in EPS:
+            k = str(int(e))
+            if k not in led: print(f'#{k}: not in the ledger, nothing deleted'); continue
+            vid = led[k]['id']; yt.videos().delete(id=vid).execute(); print(f'#{k}: deleted {vid} ({led[k].get("title", "")})')
+            led.pop(k); json.dump(led, open(LEDGER, 'w'), indent=1, ensure_ascii=False)
+        return
     if 'publish' in args:                               # yt_upload.py publish 222: public now
         led = json.load(open(LEDGER)); yt = youtube()
         for e in EPS:
