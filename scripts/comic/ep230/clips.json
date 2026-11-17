@@ -1,0 +1,17 @@
+{"clips": [
+ {"name": "note", "image": "scripts/comic/ep230/note.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, slow and eerie. Floor-level view of the bottom of a dark front door: a folded white paper note slowly slides in through the warm light gap under the door and stops on the floor. Dust floats in the light. No people. Camera still.",
+   "2D hand-drawn anime style animation, slow and eerie. The note lies still on the dark floor; the shadows of two feet in the light gap under the door slowly step away and the light flickers once. No people. Camera still."]},
+ {"name": "unfold", "image": "scripts/comic/ep230/unfold.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, slow. Trembling hands in yellow hoodie sleeves slowly unfold the creased paper note, the paper rustles, the phone on the floor glows. Camera still.",
+   "2D hand-drawn anime style animation, slow. The hands hold the open note still, trembling slightly, the phone light flickers. Camera still."]},
+ {"name": "floor", "image": "scripts/comic/ep230/floor.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, slow. The girl with the brown ponytail in the yellow hoodie sits on the hallway floor with her back against the door, hugging her knees, staring at her glowing phone, breathing fast. She stays in frame, camera still.",
+   "2D hand-drawn anime style animation. The phone in her hands starts to vibrate and light up brighter, she flinches and stares at the screen in fear. She stays in frame, camera still."]},
+ {"name": "empty", "image": "scripts/comic/ep230/empty.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, eerie and slow. Fisheye view through a door peephole into an empty dim apartment corridor; the ceiling lamp flickers, nobody is there. Camera still.",
+   "2D hand-drawn anime style animation, eerie and slow. The empty corridor in the peephole view, the lamp flickers and goes dark for a moment, then back on. Nobody is there. Camera still."]},
+ {"name": "answer", "image": "scripts/comic/ep230/answer.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, slow. The girl with the brown ponytail in the yellow hoodie holds the phone to her ear and listens, her eyes slowly widen in horror. She stays in frame, camera still.",
+   "2D hand-drawn anime style animation, slow. The girl keeps the phone at her ear, frozen in horror, her lips tremble and a tear runs down her cheek. She stays in frame, camera still."]}
+]}
