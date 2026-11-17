@@ -12,15 +12,22 @@ print('torch', torch.__version__, torch.cuda.get_device_name(0), torch.cuda.get_
 img = Image.open(urllib.request.urlopen(P['image_url'])).convert('RGB')
 from diffusers import AutoencoderKLWan, WanImageToVideoPipeline
 from diffusers.utils import export_to_video
+from transformers import UMT5EncoderModel
 mid = P.get('model', 'Wan-AI/Wan2.2-TI2V-5B-Diffusers')
 dt = torch.float16 if torch.cuda.get_device_capability(0)[0] < 8 else torch.bfloat16
+# a T4 has 15 GB: the 11 GB text encoder runs once on the CPU (bf16), then leaves; transformer + VAE live on the GPU
+te = UMT5EncoderModel.from_pretrained(mid, subfolder='text_encoder', torch_dtype=torch.bfloat16)
 vae = AutoencoderKLWan.from_pretrained(mid, subfolder='vae', torch_dtype=torch.float32)
-pipe = WanImageToVideoPipeline.from_pretrained(mid, vae=vae, torch_dtype=dt)
-pipe.enable_model_cpu_offload()
+pipe = WanImageToVideoPipeline.from_pretrained(mid, vae=vae, text_encoder=te, torch_dtype=dt)
+neg = P.get('negative', 'blurry, distorted face, extra limbs, deformed hands, flicker, photo, 3d render, text, watermark')
+with torch.no_grad(): pe, ne = pipe.encode_prompt(prompt=P['prompt'], negative_prompt=neg, do_classifier_free_guidance=True, device=torch.device('cpu'), dtype=torch.bfloat16)
+pipe.text_encoder = None; del te; import gc; gc.collect()
+pipe.transformer.to('cuda', dt); pipe.vae.to('cuda'); pipe.vae.enable_tiling() if hasattr(pipe.vae, 'enable_tiling') else None
+pe, ne = pe.to('cuda', dt), ne.to('cuda', dt)
 print('loaded', round(time.time() - t0), 's', flush=True)
 W, H = P.get('width', 480), P.get('height', 832)
 img = img.resize((W, H))
-out = pipe(image=img, prompt=P['prompt'], negative_prompt=P.get('negative', 'blurry, distorted face, extra limbs, deformed hands, flicker, photo, 3d render, text, watermark'),
+out = pipe(image=img, prompt_embeds=pe, negative_prompt_embeds=ne,
            height=H, width=W, num_frames=P.get('frames', 81), guidance_scale=P.get('guidance', 5.0), num_inference_steps=P.get('steps', 30),
            generator=torch.Generator('cpu').manual_seed(P.get('seed', 7))).frames[0]
 export_to_video(out, '/kaggle/working/out.mp4', fps=P.get('fps', 24))
