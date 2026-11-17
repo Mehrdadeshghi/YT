@@ -8,7 +8,7 @@ E = {
  'ep': 229, 'title': 'SENT TOMORROW · Part 1', 'format': 'mini-series', 'series': 'SENT TOMORROW',
  'engine': 'hyperframes', 'oneAsk': True, 'voice': 'gemini', 'gemini_voice': 'Leda', 'gemini_wpm': 165, 'speed': 1.0, 'mood': 'calm', 'prog': 0, 'langs': ['en', 'de', 'es', 'fr'],
  'gemini_style': 'A 17-year-old girl telling a true story that still scares her: hushed, tense, intimate, natural pauses before the reveals, rising fear at the end. Not theatrical.',
- 'hook': ['A TEXT FROM', 'MY OWN NUMBER'], 'cta': {'q': 'Should I open the door?', 'a': 'yes', 'b': 'no'},
+ 'hook': ['A TEXT FROM', 'MY OWN NUMBER'], 'cta': {'q': 'Who is outside the door?'},
  'vo_open': [seg('At eleven fifty-eight p m, I got a text from my own number.', 'At *11:58 p.m.,* I got a text from my *own number.*',
     'Um 23:58 Uhr bekam ich eine Nachricht von meiner eigenen Nummer.', 'A las 11:58 de la noche recibí un mensaje de mi propio número.', 'À 23h58, j’ai reçu un message de mon propre numéro.')],
  'scenes': [
@@ -22,8 +22,8 @@ E = {
     'Noch eine Nachricht von mir: Schau durch den Türspion. Mach kein Geräusch.', 'Otro mensaje mío: mira por la mirilla. No hagas ruido.', 'Un autre message de moi : regarde par le judas. Ne fais pas de bruit.')]},
   {'dur': 1.0, 'beat': 'reveal', 'vo': [seg("So I looked. And the girl standing outside... was me.", "So I *looked.* And the girl standing outside... was *me.*",
     'Also schaute ich. Und das Mädchen da draußen… war ich.', 'Así que miré. Y la chica que estaba afuera… era yo.', 'Alors j’ai regardé. Et la fille dehors… c’était moi.')]},
-  {'dur': 1.0, 'beat': 'cta', 'vo': [seg("Should I open the door? Comment yes or no. Part two tomorrow.", "Should I open the door? Comment *yes* or *no.* Part *two* tomorrow.",
-    'Soll ich die Tür aufmachen? Schreib Ja oder Nein. Teil zwei morgen.', '¿Abro la puerta? Comenta sí o no. Segunda parte mañana.', 'Je dois ouvrir la porte ? Commente oui ou non. Deuxième partie demain.', cta=True)]},
+  {'dur': 1.0, 'beat': 'cta', 'vo': [seg("So who is standing outside my door? Part two tomorrow.", "So who is standing outside my *door?* Part *two* tomorrow.",
+    'Wer steht also vor meiner Tür? Teil zwei morgen.', '¿Entonces quién está frente a mi puerta? Segunda parte mañana.', 'Alors qui est devant ma porte ? Deuxième partie demain.', cta=True)]},
  ],
  'photos': [{'id': 'music', 'audio': 'File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3', 'from': 0, 'len': 60, 'gain': .9}],
 }
@@ -45,4 +45,8 @@ E['comic'] = {
  ],
  'cues': [['own', -1.2, 'beep', .5], ['said', 0, 'pop', .4], ['tomorrow', 0, 'zap', .6], ['laughed', 0, 'bloop', .3], ['knocked', 0, 'thump', 1], ['knocked', .45, 'thump', 1], ['alone', 0, 'riser', .35], ['another', 0, 'beep', .5], ['peephole', 0, 'tick', .4], ['looked', 0, 'swish', .4], ['me', 0, 'hit', .9], ['cta_a', 0, 'pop', .6], ['cta_b', 0, 'pop', .6]],
 }
+# animated clips (Wan 2.2 on Kaggle, scripts/comic/ep229/clips.json → clips/*.webm) replace the stills; the door clip opened the door, so the door stays a still
+for s in E['comic']['shots']:
+    v = {'bed.jpg': 'bed', 'laugh.jpg': 'laugh', 'wall.jpg': 'wall', 'peek.jpg': 'peek', 'peephole.jpg': 'peephole'}.get(s.get('img'))
+    if v: s['vid'] = f'clips/{v}.webm'; s.pop('img'); s['zoom'] = [1.0, 1.06]; s.update({'rate': .85} if v == 'peek' else {})
 open('episodes/229.json', 'w').write(json.dumps(E, indent=1, ensure_ascii=False) + '\n')

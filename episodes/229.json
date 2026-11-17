@@ -23,9 +23,7 @@
   "MY OWN NUMBER"
  ],
  "cta": {
-  "q": "Should I open the door?",
-  "a": "yes",
-  "b": "no"
+  "q": "Who is outside the door?"
  },
  "vo_open": [
   {
@@ -134,11 +132,11 @@
    "vo": [
     {
      "at": 0.15,
-     "text": "Should I open the door? Comment yes or no. Part two tomorrow.",
-     "cap": "Should I open the door? Comment *yes* or *no.* Part *two* tomorrow.",
-     "de": "Soll ich die Tür aufmachen? Schreib Ja oder Nein. Teil zwei morgen.",
-     "es": "¿Abro la puerta? Comenta sí o no. Segunda parte mañana.",
-     "fr": "Je dois ouvrir la porte ? Commente oui ou non. Deuxième partie demain.",
+     "text": "So who is standing outside my door? Part two tomorrow.",
+     "cap": "So who is standing outside my *door?* Part *two* tomorrow.",
+     "de": "Wer steht also vor meiner Tür? Teil zwei morgen.",
+     "es": "¿Entonces quién está frente a mi puerta? Segunda parte mañana.",
+     "fr": "Alors qui est devant ma porte ? Deuxième partie demain.",
      "cta": true
     }
    ],
@@ -239,10 +237,9 @@
    {
     "from": 0,
     "to": "said-0.2",
-    "img": "bed.jpg",
     "zoom": [
      1.0,
-     1.14
+     1.06
     ],
     "focus": [
      [
@@ -268,7 +265,8 @@
       "#5ef0ff"
      ],
      "buzz": "own-1.2"
-    }
+    },
+    "vid": "clips/bed.webm"
    },
    {
     "from": "said-0.2",
@@ -312,10 +310,9 @@
    {
     "from": "laughed-0.25",
     "to": "knocked-0.15",
-    "img": "laugh.jpg",
     "zoom": [
-     1.02,
-     1.1
+     1.0,
+     1.06
     ],
     "focus": [
      [
@@ -340,7 +337,8 @@
       0.2,
       "#5ef0ff"
      ]
-    }
+    },
+    "vid": "clips/laugh.webm"
    },
    {
     "from": "knocked-0.15",
@@ -374,10 +372,9 @@
    {
     "from": "another-0.3",
     "to": "looked-0.25",
-    "img": "wall.jpg",
     "zoom": [
-     1.04,
-     1.16
+     1.0,
+     1.06
     ],
     "focus": [
      [
@@ -403,15 +400,15 @@
       "txt": "Look through the peephole. Don’t make a sound.",
       "from": "Me"
      }
-    }
+    },
+    "vid": "clips/wall.webm"
    },
    {
     "from": "looked-0.25",
     "to": "outside-0.1",
-    "img": "peek.jpg",
     "zoom": [
      1.0,
-     1.18
+     1.06
     ],
     "focus": [
      [
@@ -425,15 +422,16 @@
     ],
     "fx": {
      "heartbeat": true
-    }
+    },
+    "vid": "clips/peek.webm",
+    "rate": 0.85
    },
    {
     "from": "outside-0.1",
     "to": "end",
-    "img": "peephole.jpg",
     "zoom": [
      1.0,
-     1.3
+     1.06
     ],
     "focus": [
      [
@@ -448,7 +446,8 @@
     "fx": {
      "flicker": true,
      "sting": "me"
-    }
+    },
+    "vid": "clips/peephole.webm"
    }
   ],
   "cues": [

@@ -1,7 +1,7 @@
 // node render.mjs out_dir w h samples "t1,t2,.." or fps [shard of] (run from repo root; serves over a local port)
 import { chromium } from 'playwright'; import http from 'http'; import fs from 'fs'; import path from 'path';
 const [out, w, h, n, spec, shard = 0, of = 1, ev] = process.argv.slice(2); fs.mkdirSync(out, { recursive: true });
-const T = { '.html': 'text/html', '.js': 'text/javascript', '.woff2': 'font/woff2', '.jpg': 'image/jpeg', '.webm': 'video/webm', '.hdr': 'application/octet-stream', '.json': 'application/json' };
+const T = { '.html': 'text/html', '.js': 'text/javascript', '.woff2': 'font/woff2', '.jpg': 'image/jpeg', '.webm': 'video/webm', '.webm': 'video/webm', '.hdr': 'application/octet-stream', '.json': 'application/json' };
 // byte ranges: the page seeks inside the video, Chrome needs 206 responses for that
 const srv = http.createServer((q, s) => { const f = '.' + decodeURI(q.url.split('?')[0]); fs.stat(f, (e, st) => { if (e) { s.writeHead(404); s.end(); return; } const type = T[path.extname(f)] || 'application/octet-stream', r = /bytes=(\d*)-(\d*)/.exec(q.headers.range || '');
   if (r) { const a = r[1] ? +r[1] : 0, b = r[2] ? +r[2] : st.size - 1; s.writeHead(206, { 'content-type': type, 'accept-ranges': 'bytes', 'content-range': `bytes ${a}-${b}/${st.size}`, 'content-length': b - a + 1 }); fs.createReadStream(f, { start: a, end: b }).pipe(s); }
