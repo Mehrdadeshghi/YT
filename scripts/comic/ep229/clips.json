@@ -1,0 +1,20 @@
+{"clips": [
+ {"name": "bed", "image": "scripts/comic/ep229/bed.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, slow and subtle. The girl with the brown ponytail in the yellow hoodie lies in bed in the dark rainy room, her phone buzzes and lights up, she lifts it closer to her face, her eyes widen as she reads. Rain runs down the window. She stays in frame, camera still.",
+   "2D hand-drawn anime style animation, slow and subtle. The girl in bed stares at her glowing phone in disbelief, blinks, frowns, slowly sits up a little. Rain on the window. She stays in frame, camera still."]},
+ {"name": "laugh", "image": "scripts/comic/ep229/laugh.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation. The girl in the yellow hoodie sitting in bed laughs nervously at her phone and rubs the back of her neck. She stays in frame, camera still.",
+   "2D hand-drawn anime style animation. The girl in bed suddenly freezes, her smile drops, and she slowly turns her head toward the bedroom door, scared. She stays in frame, camera still."]},
+ {"name": "door", "image": "scripts/comic/ep229/door.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation. A dark apartment front door seen from inside; someone outside knocks hard, the door shakes slightly twice, the shadows of two feet in the warm light under the door shift. No people inside. Camera still.",
+   "2D hand-drawn anime style animation. The dark front door is still, the warm light under the door flickers, the two foot shadows stand still. No people inside. Camera still."]},
+ {"name": "wall", "image": "scripts/comic/ep229/wall.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, slow. The scared girl with the brown ponytail in the yellow hoodie is pressed against the hallway wall, breathing fast, clutching her glowing phone; she looks down at the phone as it lights up again. She stays in frame, camera still.",
+   "2D hand-drawn anime style animation, slow. The scared girl slowly turns her head to look at the front door next to her, swallowing, still pressed against the wall. Ponytail stays visible. She stays in frame, camera still."]},
+ {"name": "peek", "image": "scripts/comic/ep229/peek.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, very slow. Side view: the girl with the ponytail in the yellow hoodie slowly leans her eye closer to the door peephole, her hand flat on the door, holding her breath. Camera still.",
+   "2D hand-drawn anime style animation, very slow. The girl keeps her eye on the peephole, her eye widens in shock, her fingers tense on the door. Camera still."]},
+ {"name": "peephole", "image": "scripts/comic/ep229/peephole.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, eerie and slow. Fisheye view through a door peephole: in the dim corridor the girl in the yellow hoodie stands still, the ceiling lamp flickers, she slowly lifts her head and stares straight into the peephole. Camera still.",
+   "2D hand-drawn anime style animation, eerie and slow. Fisheye peephole view: the girl in the corridor keeps staring into the peephole, then slowly tilts her head and almost smiles. The lamp flickers. Camera still."]}
+]}

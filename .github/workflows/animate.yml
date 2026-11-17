@@ -4,8 +4,9 @@ name: Animate a frame (Kaggle GPU)
 on:
   workflow_dispatch:
     inputs:
-      image: { description: "Repo path of the start frame, e.g. scripts/comic/ep229/wall.jpg", required: true }
-      prompt: { description: "What should move", required: true }
+      spec: { description: "Repo path of a clips JSON (e.g. scripts/comic/ep229/clips.json): {clips: [{name, image, prompts: [...], frames}]}", required: false, default: "" }
+      image: { description: "Or one start frame (repo path)", required: false, default: "" }
+      prompt: { description: "…and what should move", required: false, default: "" }
       frames: { description: "Frames (121 = 5 s at 24 fps, the minimum the owner wants)", required: false, default: "121" }
       steps: { description: "Sampling steps", required: false, default: "30" }
       width: { required: false, default: "480" }
@@ -35,8 +36,13 @@ jobs:
           mkdir k; cp scripts/animate/kernel.py k/
           python3 - <<'P'
           import json, os
-          d = {'image_url': f"https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/${{ inputs.image }}", 'prompt': os.environ['PROMPT'],
-               'frames': int('${{ inputs.frames }}'), 'steps': int('${{ inputs.steps }}'), 'width': int('${{ inputs.width }}'), 'height': int('${{ inputs.height }}')}
+          raw = "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/"
+          if '${{ inputs.spec }}':
+              d = json.load(open('${{ inputs.spec }}'))
+              for c in d['clips']: c['image_url'] = raw + c.pop('image')
+          else:
+              d = {'clips': [{'name': 'out', 'image_url': raw + '${{ inputs.image }}', 'prompts': [os.environ['PROMPT']], 'frames': int('${{ inputs.frames }}')}]}
+          d.update({'steps': int('${{ inputs.steps }}'), 'width': int('${{ inputs.width }}'), 'height': int('${{ inputs.height }}')})
           src = open('k/kernel.py').read().replace("P = None  # PARAMS", "P = " + repr(d) + "  # PARAMS", 1)
           open('k/kernel.py', 'w').write(src)
           json.dump({'id': os.environ['KAGGLE_USERNAME'] + '/wr-animate', 'title': 'wr-animate', 'code_file': 'kernel.py', 'language': 'python', 'kernel_type': 'script',
@@ -47,7 +53,7 @@ jobs:
         env: { KAGGLE_USERNAME: "${{ secrets.KAGGLE_USERNAME }}" }
         run: |
           K="$KAGGLE_USERNAME/wr-animate"
-          for i in $(seq 1 270); do s=$(kaggle kernels status "$K" 2>&1 | tail -1); echo "$(date +%H:%M) $s"; case "$s" in *COMPLETE*|*complete*) break;; *ERROR*|*error*|*CANCEL*) break;; esac; sleep 60; done
+          for i in $(seq 1 285); do s=$(kaggle kernels status "$K" 2>&1 | tail -1); echo "$(date +%H:%M) $s"; case "$s" in *COMPLETE*|*complete*) break;; *ERROR*|*error*|*CANCEL*) break;; esac; sleep 60; done
           mkdir -p out; kaggle kernels output "$K" -p out || true; ls -la out
       - name: Kernel log
         if: always()
@@ -55,5 +61,5 @@ jobs:
       - name: Publish
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
-          f=$(ls out/*.mp4 2>/dev/null | head -1); [ -n "$f" ] || { echo "no video produced"; exit 1; }
-          gh release create "anim-${{ github.run_number }}" "$f" out/*.log --title "Animation test ${{ github.run_number }}" --notes "${{ inputs.image }}: ${{ inputs.prompt }}" --prerelease
+          ls out/*.mp4 >/dev/null 2>&1 || { echo "no video produced"; exit 1; }
+          gh release create "anim-${{ github.run_number }}" out/*.mp4 out/*.log --title "Animation test ${{ github.run_number }}" --notes "${{ inputs.spec }}${{ inputs.image }} ${{ inputs.prompt }}" --prerelease
