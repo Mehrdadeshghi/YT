@@ -33,8 +33,8 @@ E['comic'] = {
  'events': {'knock': [0, 'knock'], 'slid': [0, 'slid'], 'note': [1, 'note'], 'hand': [1, 'handwriting'], 'dont': [1, 'dont'], 'six': [2, '1206'], 'rang': [3, 'rang'], 'mom': [3, 'mom'],
             'peephole': [4, 'peephole'], 'empty': [4, 'empty'], 'answered': [5, 'answered'], 'mine': [5, 'mine']},
  'shots': [
-  {'from': 0, 'to': 'note-0.2', 'vid': 'clips/note.webm', 'zoom': [1.0, 1.08], 'focus': [[.5, .55], [.5, .6]], 'fx': {}},
-  {'from': 'note-0.2', 'to': 'six-0.2', 'vid': 'clips/unfold.webm', 'rate': .25, 'zoom': [1.0, 1.06], 'focus': [[.45, .5], [.45, .5]], 'fx': {'note': {'at': 'hand', 'lines': ['Don’t trust', 'Mom’s call', 'at 12:07.', '— M']}}},
+  {'from': 0, 'to': 'note-0.2', 'vid': 'clips/note.webm', 'rate': .55, 'zoom': [1.0, 1.08], 'focus': [[.5, .55], [.5, .6]], 'fx': {}},
+  {'from': 'note-0.2', 'to': 'six-0.2', 'vid': 'clips/unfold.webm', 'rate': .12, 'zoom': [1.0, 1.06], 'focus': [[.45, .5], [.45, .5]], 'fx': {'note': {'at': 'hand', 'lines': ['Don’t trust', 'Mom’s call', 'at 12:07.', '— M']}}},
   {'from': 'six-0.2', 'to': 'rang-0.15', 'img': 'phone.jpg', 'zoom': [1.0, 1.12], 'focus': [[.5, .45], [.5, .42]], 'fx': {'screen': {'rect': [.308, .226, .692, .649], 'clock': {'from': '12:06', 'to': '12:07', 'change': 'six+0.9', 'label': 'MONDAY'}, 'msgs': []}}},
   {'from': 'rang-0.15', 'to': 'peephole-0.2', 'vid': 'clips/floor.webm', 'rate': .75, 'zoom': [1.0, 1.08], 'focus': [[.45, .45], [.45, .42]], 'fx': {'call': {'at': 'rang', 'name': 'Mom'}, 'buzz': 'rang', 'heartbeat': True}},
   {'from': 'peephole-0.2', 'to': 'answered-0.2', 'vid': 'clips/empty.webm', 'zoom': [1.0, 1.12], 'focus': [[.5, .5], [.5, .48]], 'fx': {'flicker': True}},

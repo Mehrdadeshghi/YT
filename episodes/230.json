@@ -214,6 +214,7 @@
     "from": 0,
     "to": "note-0.2",
     "vid": "clips/note.webm",
+    "rate": 0.55,
     "zoom": [
      1.0,
      1.08
@@ -234,7 +235,7 @@
     "from": "note-0.2",
     "to": "six-0.2",
     "vid": "clips/unfold.webm",
-    "rate": 0.25,
+    "rate": 0.12,
     "zoom": [
      1.0,
      1.06
