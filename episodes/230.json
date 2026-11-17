@@ -1,0 +1,428 @@
+{
+ "ep": 230,
+ "title": "SENT TOMORROW · Part 2",
+ "format": "mini-series",
+ "series": "SENT TOMORROW",
+ "engine": "hyperframes",
+ "oneAsk": true,
+ "voice": "gemini",
+ "gemini_voice": "Leda",
+ "gemini_wpm": 100,
+ "speed": 1.0,
+ "mood": "calm",
+ "prog": 0,
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "gemini_style": "scared teenage girl, close to the mic, tense and real",
+ "hook": [],
+ "cta": {
+  "q": "Whose voice was it?"
+ },
+ "vo_open": [
+  {
+   "at": 0.15,
+   "text": "She didn't knock again. She slid something under my door.",
+   "cap": "She didn't *knock* again. She *slid* something under my door.",
+   "de": "Sie klopfte nicht noch einmal. Sie schob etwas unter meiner Tür durch.",
+   "es": "No volvió a llamar. Deslizó algo por debajo de mi puerta.",
+   "fr": "Elle n’a plus frappé. Elle a glissé quelque chose sous ma porte.",
+   "tts": "She didn't knock again... <short pause> She slid something under my door.",
+   "style": "shaky whisper, frightened"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.0,
+   "beat": "note",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "A note. In my handwriting. Don't trust Mom's call at twelve oh seven.",
+     "cap": "A *note.* In *my* handwriting. Don't trust Mom's call at *12:07.*",
+     "de": "Ein Zettel. In meiner Handschrift. Trau Mamas Anruf um 0:07 Uhr nicht.",
+     "es": "Una nota. Con mi letra. No confíes en la llamada de mamá a las 12:07.",
+     "fr": "Un mot. De mon écriture. Ne crois pas l’appel de maman à minuit sept.",
+     "tts": "<breath> A note. In MY handwriting. <short pause> Don't trust Mom's call at twelve oh seven.",
+     "style": "disbelief, quiet, reading slowly"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "note"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "clock",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "It was twelve oh six.",
+     "cap": "It was *12:06.*",
+     "de": "Es war 0:06 Uhr.",
+     "es": "Eran las 12:06.",
+     "fr": "Il était minuit six.",
+     "style": "barely breathing whisper"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "clock"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "call",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Then my phone rang. Mom.",
+     "cap": "Then my phone *rang.* *Mom.*",
+     "de": "Dann klingelte mein Handy. Mama.",
+     "es": "Entonces sonó mi móvil. Mamá.",
+     "fr": "Puis mon téléphone a sonné. Maman.",
+     "tts": "<gasp> Then my phone rang. <short pause> Mom.",
+     "style": "startled, scared"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "call"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "empty",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "I checked the peephole again. The hallway was empty.",
+     "cap": "I checked the *peephole* again. The hallway was *empty.*",
+     "de": "Ich schaute wieder durch den Türspion. Der Flur war leer.",
+     "es": "Volví a mirar por la mirilla. El pasillo estaba vacío.",
+     "fr": "J’ai regardé par le judas. Le couloir était vide.",
+     "style": "tense whisper"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "empty"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "reveal",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "So I answered. And it wasn't Mom's voice. It was mine.",
+     "cap": "So I *answered.* And it wasn't *Mom's* voice. It was *mine.*",
+     "de": "Also ging ich ran. Und es war nicht Mamas Stimme. Es war meine.",
+     "es": "Así que contesté. Y no era la voz de mamá. Era la mía.",
+     "fr": "Alors j’ai répondu. Et ce n’était pas la voix de maman. C’était la mienne.",
+     "tts": "So I answered... <short pause> and it wasn't Mom's voice. <breath> It was MINE.",
+     "style": "trembling, horrified whisper",
+     "cta": true
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "reveal"
+   }
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 20,
+   "len": 60,
+   "gain": 0.9
+  }
+ ],
+ "hf": {
+  "style": "doku",
+  "custom": "hf_real"
+ },
+ "hf_open": {
+  "tpl": "plain",
+  "name": "hook"
+ },
+ "comic": {
+  "dir": "scripts/comic/ep230",
+  "tag": "SENT TOMORROW · PART 2",
+  "title_until": "slid",
+  "look": "raw",
+  "next": "PART 3",
+  "events": {
+   "knock": [
+    0,
+    "knock"
+   ],
+   "slid": [
+    0,
+    "slid"
+   ],
+   "note": [
+    1,
+    "note"
+   ],
+   "hand": [
+    1,
+    "handwriting"
+   ],
+   "dont": [
+    1,
+    "dont"
+   ],
+   "six": [
+    2,
+    "1206"
+   ],
+   "rang": [
+    3,
+    "rang"
+   ],
+   "mom": [
+    3,
+    "mom"
+   ],
+   "peephole": [
+    4,
+    "peephole"
+   ],
+   "empty": [
+    4,
+    "empty"
+   ],
+   "answered": [
+    5,
+    "answered"
+   ],
+   "mine": [
+    5,
+    "mine"
+   ]
+  },
+  "shots": [
+   {
+    "from": 0,
+    "to": "note-0.2",
+    "vid": "clips/note.webm",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "focus": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.5,
+      0.6
+     ]
+    ],
+    "fx": {}
+   },
+   {
+    "from": "note-0.2",
+    "to": "six-0.2",
+    "vid": "clips/unfold.webm",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "focus": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.45,
+      0.5
+     ]
+    ],
+    "fx": {
+     "note": {
+      "at": "hand",
+      "lines": [
+       "Don’t trust",
+       "Mom’s call",
+       "at 12:07.",
+       "— M"
+      ]
+     }
+    }
+   },
+   {
+    "from": "six-0.2",
+    "to": "rang-0.15",
+    "img": "phone.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "focus": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "fx": {
+     "screen": {
+      "rect": [
+       0.308,
+       0.226,
+       0.692,
+       0.649
+      ],
+      "clock": {
+       "from": "12:06",
+       "to": "12:07",
+       "change": "rang-0.3",
+       "label": "MONDAY"
+      },
+      "msgs": []
+     }
+    }
+   },
+   {
+    "from": "rang-0.15",
+    "to": "peephole-0.2",
+    "vid": "clips/floor.webm",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "focus": [
+     [
+      0.45,
+      0.45
+     ],
+     [
+      0.45,
+      0.42
+     ]
+    ],
+    "fx": {
+     "call": {
+      "at": "rang",
+      "name": "Mom"
+     },
+     "buzz": "rang",
+     "heartbeat": true
+    }
+   },
+   {
+    "from": "peephole-0.2",
+    "to": "answered-0.2",
+    "vid": "clips/empty.webm",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "focus": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ],
+    "fx": {
+     "flicker": true
+    }
+   },
+   {
+    "from": "answered-0.2",
+    "to": "end",
+    "vid": "clips/answer.webm",
+    "zoom": [
+     1.0,
+     1.14
+    ],
+    "focus": [
+     [
+      0.45,
+      0.38
+     ],
+     [
+      0.45,
+      0.34
+     ]
+    ],
+    "fx": {
+     "heartbeat": true,
+     "sting": "mine"
+    }
+   }
+  ],
+  "cues": [
+   [
+    "slid",
+    0,
+    "scratch",
+    0.5
+   ],
+   [
+    "note",
+    0,
+    "pen",
+    0.4
+   ],
+   [
+    "six",
+    0,
+    "tick",
+    0.5
+   ],
+   [
+    "rang",
+    0,
+    "beep",
+    0.9
+   ],
+   [
+    "rang",
+    0.5,
+    "beep",
+    0.9
+   ],
+   [
+    "rang",
+    1.0,
+    "beep",
+    0.9
+   ],
+   [
+    "empty",
+    0,
+    "riser",
+    0.3
+   ],
+   [
+    "answered",
+    0,
+    "click",
+    0.6
+   ],
+   [
+    "mine",
+    0,
+    "hit",
+    0.9
+   ]
+  ]
+ }
+}

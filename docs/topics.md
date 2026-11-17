@@ -85,3 +85,4 @@ Check this list before proposing a topic. Add every new episode here in the same
 
 ## Mini-series (animated fiction, since 16.11.2026)
 #229 SENT TOMORROW · Part 1 (Maya gets a text from her own number, sent tomorrow: don't open the door; knock; second text: look through the peephole; the girl outside is her)
+#230 SENT TOMORROW · Part 2 (note under the door in her own handwriting: don't trust Mom's call at 12:07; 12:06; phone rings: Mom; peephole: hallway empty; she answers: it's her own voice)
