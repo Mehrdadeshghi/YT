@@ -42,7 +42,7 @@ E['comic'] = {
             'thought': [2, 'thought'], 'glitch': [2, 'glitch'], 'knocking': [2, 'knocking'], 'mom': [3, 'moms'], 'alone': [3, 'alone'], 'another': [4, 'another'], 'peephole': [4, 'peephole'],
             'looked': [5, 'looked'], 'outside': [5, 'outside'], 'me': [5, 'me'], 'still': [6, 'still']},
  'shots': [
-  {'from': 0, 'to': 'ago-0.2', 'img': 'door.jpg', 'zoom': [1.06, 1.16], 'focus': [[.5, .52], [.5, .56]], 'fx': {'knock': [0.12, 0.5, 'knocking0'], 'underlight': [.5, .63], 'msg': {'at': 'not', 'txt': 'DON\u2019T OPEN THE DOOR.', 'from': 'Me'}}},
+  {'from': 0, 'to': 'ago-0.2', 'img': 'door.jpg', 'zoom': [1.06, 1.16], 'focus': [[.5, .52], [.5, .56]], 'fx': {'knock': [0.12, 0.5, 'knocking0'], 'underlight': [.5, .63], 'msg': {'at': 0.05, 'txt': 'DON\u2019T OPEN THE DOOR.', 'from': 'Me'}}},
   {'from': 'ago-0.2', 'to': 'dont-0.25', 'img': 'bed.jpg', 'zoom': [1.0, 1.08], 'focus': [[.45, .55], [.42, .6]], 'fx': {'rain': [.5, 0, 1, .42], 'buzz': 'own-0.4'}},
   {'from': 'dont-0.25', 'to': 'thought-0.2', 'img': 'phone.jpg', 'zoom': [1.0, 1.1], 'focus': [[.5, .45], [.5, .42]], 'fx': {'screen': {'rect': [.308, .226, .692, .649], 'msgs': [{'at': 'dont', 'from': 'Me', 'txt': 'Don\u2019t open the door.', 'sub': 'SENT: TOMORROW 11:58 PM', 'sub_at': 'sent'}]}, 'glitch': 'tomorrow'}},
   {'from': 'thought-0.2', 'to': 'knocking-0.1', 'img': 'laugh.jpg', 'zoom': [1.02, 1.08], 'focus': [[.45, .4], [.45, .38]], 'fx': {'rain': [.5, 0, 1, .4]}},
