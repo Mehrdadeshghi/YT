@@ -27,8 +27,18 @@ pe, ne = pe.to('cuda', dt), ne.to('cuda', dt)
 print('loaded', round(time.time() - t0), 's', flush=True)
 W, H = P.get('width', 480), P.get('height', 832)
 img = img.resize((W, H))
-out = pipe(image=img, prompt_embeds=pe, negative_prompt_embeds=ne,
-           height=H, width=W, num_frames=P.get('frames', 81), guidance_scale=P.get('guidance', 5.0), num_inference_steps=P.get('steps', 30),
-           generator=torch.Generator('cpu').manual_seed(P.get('seed', 7))).frames[0]
+# a T4 runs out of memory above ~61 frames: long clips are chained, each part starting on the previous part's last frame
+total, seg = P.get('frames', 121), P.get('seg_frames', 61)
+prompts = P.get('prompts') or [P['prompt']]
+out, start, k = [], img, 0
+while len(out) < total:
+    n = seg if total - len(out) + (1 if out else 0) > seg else max(5, ((total - len(out) + (1 if out else 0) - 1) // 4) * 4 + 1)
+    pe_k, ne_k = pe, ne
+    if len(prompts) > 1 and k < len(prompts): pass   # shortcut: one prompt embedding for all parts; per-part prompts would need the text encoder again
+    fr = pipe(image=start, prompt_embeds=pe_k, negative_prompt_embeds=ne_k, height=H, width=W, num_frames=n, guidance_scale=P.get('guidance', 5.0),
+              num_inference_steps=P.get('steps', 30), generator=torch.Generator('cpu').manual_seed(P.get('seed', 7) + k)).frames[0]
+    out += list(fr if not out else fr[1:]); start = Image.fromarray((np.clip(fr[-1], 0, 1) * 255).astype('uint8')) if not isinstance(fr[-1], Image.Image) else fr[-1]
+    k += 1; print('part', k, len(out), 'frames', round(time.time() - t0), 's', flush=True); torch.cuda.empty_cache()
+out = out[:total]
 export_to_video(out, '/kaggle/working/out.mp4', fps=P.get('fps', 24))
 print('done', round(time.time() - t0), 's', flush=True)
