@@ -30,7 +30,8 @@
    "de": "Jemand klopft an meine Tür, und mein Handy hat mir gerade gesagt, dass ich nicht aufmachen soll.",
    "es": "Alguien está llamando a mi puerta, y mi móvil me acaba de decir que no abra.",
    "fr": "Quelqu’un frappe à ma porte, et mon téléphone vient de me dire de ne pas ouvrir.",
-   "tts": "<whispers> Someone is knocking on my door... <short pause> and my phone just told me NOT to open it."
+   "tts": "Someone is knocking on my door... <short pause> and my phone just told me NOT to open it.",
+   "style": "terrified whisper, breathless, very close to the mic"
   }
  ],
  "scenes": [
@@ -45,7 +46,8 @@
      "de": "Vor zwölf Minuten bekam ich eine Nachricht von meiner eigenen Nummer. Mach die Tür nicht auf. Gesendet… morgen.",
      "es": "Hace doce minutos recibí un mensaje de mi propio número. No abras la puerta. Enviado… mañana.",
      "fr": "Il y a douze minutes, j’ai reçu un message de mon propre numéro. N’ouvre pas la porte. Envoyé… demain.",
-     "tts": "<breath> Twelve minutes ago, I got a text. From my OWN number. <short pause> Don't open the door. <short pause> Sent... tomorrow."
+     "tts": "<breath> Twelve minutes ago, I got a text. From my OWN number. <short pause> Don't open the door. Sent... tomorrow.",
+     "style": "tense, low voice, remembering, a little shaky"
     }
    ],
    "hf": {
@@ -64,7 +66,8 @@
      "de": "Ich dachte, es wäre ein Fehler. Dann fing das Klopfen an.",
      "es": "Pensé que era un fallo. Entonces empezaron los golpes.",
      "fr": "J’ai cru à un bug. Puis on a commencé à frapper.",
-     "tts": "<chuckle> I thought it was a glitch. <long pause> Then the knocking started."
+     "tts": "<chuckle> I thought it was a glitch... <short pause> Then the knocking started.",
+     "style": "nervous half laugh that turns to fear"
     }
    ],
    "hf": {
@@ -83,7 +86,8 @@
      "de": "Mama hat Nachtschicht. Ich bin allein.",
      "es": "Mamá tiene turno de noche. Estoy sola.",
      "fr": "Maman est de garde de nuit. Je suis seule.",
-     "tts": "<whispers> Mom's on a night shift. <breath> I'm alone."
+     "tts": "Mom's on a night shift. <breath> I'm alone.",
+     "style": "quiet whisper, scared"
     }
    ],
    "hf": {
@@ -102,7 +106,8 @@
      "de": "Dann noch eine Nachricht, von mir. Schau durch den Türspion. Mach kein Geräusch.",
      "es": "Luego otro mensaje, mío. Mira por la mirilla. No hagas ruido.",
      "fr": "Puis un autre message, de moi. Regarde par le judas. Ne fais pas de bruit.",
-     "tts": "<gasp> Then another text... from me. <whispers> Look through the peephole. Don't make a sound."
+     "tts": "<gasp> Then another text... from me. Look through the peephole. Don't make a sound.",
+     "style": "panicked whisper, fast breathing"
     }
    ],
    "hf": {
@@ -121,7 +126,8 @@
      "de": "Also schaute ich. Und das Mädchen da draußen war ich.",
      "es": "Así que miré. Y la chica de afuera era yo.",
      "fr": "Alors j’ai regardé. Et la fille dehors, c’était moi.",
-     "tts": "<heavy breath> So I looked... <long pause> <whispers> and the girl standing outside... was ME."
+     "tts": "<heavy breath> So I looked... <short pause> and the girl standing outside... was ME.",
+     "style": "trembling whisper, horrified at the end"
     }
    ],
    "hf": {
@@ -140,7 +146,8 @@
      "de": "Sie ist immer noch da draußen.",
      "es": "Sigue ahí fuera.",
      "fr": "Elle est toujours dehors.",
-     "tts": "<whispers> She's still out there.",
+     "tts": "She's still out there.",
+     "style": "barely audible terrified whisper",
      "cta": true
     }
    ],

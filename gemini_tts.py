@@ -19,9 +19,10 @@ OUT = 'assets/gemini'
 
 
 def synth(text, voice, dst, style=STYLE):
+    # text may be a list of (line, style): one text item per line, each with its own delivery (whispering, panicked …), same voice
+    items = [(text, style)] if isinstance(text, str) else text
     body = {'model': MODEL,
-            'input': [{'type': 'user_input', 'content': [{'type': 'text', 'text': text,
-                                                          'annotations': [{'type': 'speech_metadata', 'style': style}]}]}],
+            'input': [{'type': 'user_input', 'content': [{'type': 'text', 'text': t, 'annotations': [{'type': 'speech_metadata', 'style': st or style}]} for t, st in items]}],
             'response_format': {'type': 'audio'},
             'generation_config': {'speech_config': [{'voice': voice}]}}
     req = urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/interactions', data=json.dumps(body).encode(),
@@ -48,6 +49,12 @@ def segments_tts(E):
     return [s.get('tts', s['text']) for s in segs]
 
 
+def segments_style(E):
+    """per-line delivery ("style" on a segment), None where the episode style applies"""
+    segs = list(E.get('vo_open', [])) + [v for sc in E['scenes'] for v in sc.get('vo', [])] + list(E.get('vo_outro', []))
+    return [s.get('style') for s in segs]
+
+
 def segments(E):
     """narrated lines in voice.py's order: opener, scenes, explicit outro (voice.py's default outro is never shown → not spoken)"""
     return ([s['text'] for s in E.get('vo_open', [])] + [v['text'] for sc in E['scenes'] for v in sc.get('vo', [])]
@@ -67,8 +74,9 @@ class Take:
         import align, numpy as np, soundfile as sf
         lines = segments(self.E)
         spoken = segments_tts(self.E)   # tags are performed, not spoken; alignment below uses the plain lines
-        full = f"{self.out}/gemini_{hashlib.md5((tag(self.E) + '|' + chr(10).join(spoken)).encode()).hexdigest()[:10]}.wav"
-        if not os.path.exists(full): synth(chr(10).join(spoken), self.E.get('gemini_voice', 'Charon'), full, self.E.get('gemini_style', STYLE))
+        full = f"{self.out}/gemini_{hashlib.md5((tag(self.E) + '|' + chr(10).join(spoken) + '|' + '|'.join(map(str, segments_style(self.E)))).encode()).hexdigest()[:10]}.wav"
+        styles = segments_style(self.E)
+        if not os.path.exists(full): synth(list(zip(spoken, styles)) if any(styles) else chr(10).join(spoken), self.E.get('gemini_voice', 'Charon'), full, self.E.get('gemini_style', STYLE))
         s, sr = sf.read(full, dtype='float32'); s = s if s.ndim == 1 else s.mean(1)
         W = align.words(full, ' '.join(lines))                  # same tokenisation as align.words → split by token count
         n = [len([t for t in ln.replace('...', '… ').replace('…', '… ').split() if align.norm(t)]) for ln in lines]
