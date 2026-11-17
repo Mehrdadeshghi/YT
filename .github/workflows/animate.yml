@@ -6,7 +6,7 @@ on:
     inputs:
       image: { description: "Repo path of the start frame, e.g. scripts/comic/ep229/wall.jpg", required: true }
       prompt: { description: "What should move", required: true }
-      frames: { description: "Frames (81 ≈ 3.4 s at 24 fps)", required: false, default: "81" }
+      frames: { description: "Frames (121 = 5 s at 24 fps, the minimum the owner wants)", required: false, default: "121" }
       steps: { description: "Sampling steps", required: false, default: "30" }
       width: { required: false, default: "480" }
       height: { required: false, default: "832" }
