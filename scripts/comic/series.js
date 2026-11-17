@@ -7,17 +7,21 @@ const D = await (await fetch(q.get('ev'))).json(), EV = D.ev, END = D.dur, C = D
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), ss = (a, b, x) => { const u = clamp((x - a) / (b - a)); return u * u * (3 - 2 * u); }, lerp = (a, b, u) => a + (b - a) * u;
 const hash = n => { const x = Math.sin(n * 127.1) * 43758.5453; return x - Math.floor(x); };
 const T = x => { if (typeof x === 'number') return x; if (x === 'end') return END; const m = /^([a-z0-9_]+)([+-][\d.]+)?$/i.exec(x); if (!m || EV[m[1]] === undefined) throw new Error('unknown time ' + x); return EV[m[1]] + (+m[2] || 0); };
-const IMG = {}; await Promise.all([...new Set(C.shots.map(s => s.img))].map(f => new Promise((r, j) => { const im = new Image(); im.onload = () => { IMG[f] = im; r(); }; im.onerror = () => j(new Error('missing ' + f)); im.src = '/' + C.dir + '/' + f; })));
+// "vid": an animated clip (Wan 2.2 on Kaggle, scripts/animate) replaces the still; it plays at its own speed and holds its last frame
+const VID = {}; await Promise.all([...new Set(C.shots.filter(s => s.vid).map(s => s.vid))].map(f => new Promise((r, j) => { const v = document.createElement('video'); v.muted = true; v.preload = 'auto'; v.playsInline = true; v.addEventListener('loadeddata', () => { VID[f] = v; r(); }, { once: true }); v.addEventListener('error', () => j(new Error('missing ' + f)), { once: true }); v.src = '/' + C.dir + '/' + f; })));
+async function vidFrame(v, ct) { ct = Math.min(Math.max(0, ct), v.duration - .04); if (Math.abs(v.currentTime - ct) < 1e-4 && v.readyState >= 2) return; await new Promise(r => { v.addEventListener('seeked', r, { once: true }); v.currentTime = ct; }); if (v.requestVideoFrameCallback) await new Promise(r => { let d = false; v.requestVideoFrameCallback(() => { d = true; r(); }); setTimeout(() => { if (!d) r(); }, 150); }); }
+const IMG = {}; await Promise.all([...new Set(C.shots.filter(s => s.img).map(s => s.img))].map(f => new Promise((r, j) => { const im = new Image(); im.onload = () => { IMG[f] = im; r(); }; im.onerror = () => j(new Error('missing ' + f)); im.src = '/' + C.dir + '/' + f; })));
 const SH = C.shots.map(s => ({ ...s, t0: T(s.from), t1: T(s.to) })); for (let i = 1; i < SH.length; i++) SH[i].t0 = SH[i - 1].t1; SH[SH.length - 1].t1 = END + .3;
 // camera: image covers 1080x1920; zoom around a focus point (image-normalised), eased
 function camOf(s, t) { const u = ss(s.t0, s.t1, t), z = lerp(s.zoom[0], s.zoom[1], u), f = [lerp(s.focus[0][0], s.focus[1][0], u), lerp(s.focus[0][1], s.focus[1][1], u)];
-  const im = IMG[s.img], k = Math.max(1080 / im.width, 1920 / im.height) * z, w = im.width * k, h = im.height * k; let x = 540 - f[0] * w, y = 960 - f[1] * h; x = clamp(x, 1080 - w, 0); y = clamp(y, 1920 - h, 0); return { x, y, w, h, k }; }
+  const im = s.vid ? { width: VID[s.vid].videoWidth, height: VID[s.vid].videoHeight } : IMG[s.img], k = Math.max(1080 / im.width, 1920 / im.height) * z, w = im.width * k, h = im.height * k; let x = 540 - f[0] * w, y = 960 - f[1] * h; x = clamp(x, 1080 - w, 0); y = clamp(y, 1920 - h, 0); return { x, y, w, h, k }; }
 const P = (c, nx, ny) => [c.x + nx * c.w, c.y + ny * c.h];
-function drawShot(s, t, a) {
+async function drawShot(s, t, a) {
+  if (s.vid) await vidFrame(VID[s.vid], (t - s.t0) * (s.rate || 1) + (s.vstart || 0));
   const c = camOf(s, t), fx = s.fx || {}; let sx = 0, sy = 0;
   for (const k of [].concat(fx.knock || [])) { const e = Math.max(0, 1 - Math.abs(t - T(k)) * 7); sx += Math.sin(t * 95) * 16 * e; sy += Math.cos(t * 77) * 10 * e; }
   if (fx.heartbeat) { const b = Math.pow(Math.max(0, Math.sin(t * 7.5)), 12); c.x -= b * 8; c.y -= b * 14; c.w += b * 16; c.h += b * 28; }
-  o.save(); o.globalAlpha = a; o.translate(sx, sy); o.drawImage(IMG[s.img], c.x, c.y, c.w, c.h);
+  o.save(); o.globalAlpha = a; o.translate(sx, sy); o.drawImage(s.vid ? VID[s.vid] : IMG[s.img], c.x, c.y, c.w, c.h);
   if (fx.rain) { const [x0, y0] = P(c, fx.rain[0], fx.rain[1]), [x1, y1] = P(c, fx.rain[2], fx.rain[3]); o.save(); o.beginPath(); o.rect(x0, y0, x1 - x0, y1 - y0); o.clip(); o.lineWidth = 2; for (let i = 0; i < 90; i++) { const x = x0 + hash(i) * (x1 - x0), sp = 500 + hash(i + 9) * 600, yy = y0 + ((hash(i + 3) * (y1 - y0) + t * sp) % (y1 - y0)), len = 30 + hash(i + 5) * 60; o.strokeStyle = `rgba(190,215,255,${.25 + hash(i + 7) * .35})`; o.beginPath(); o.moveTo(x, yy); o.lineTo(x - 5, yy + len); o.stroke(); } o.restore(); }
   if (fx.glow) { const [gx, gy] = P(c, fx.glow[0], fx.glow[1]), r = fx.glow[2] * c.w, fl = .8 + .2 * Math.sin(t * 6.3) * Math.sin(t * 2.2); const g = o.createRadialGradient(gx, gy, 2, gx, gy, r); g.addColorStop(0, fx.glow[3] + 'aa'); g.addColorStop(1, fx.glow[3] + '00'); o.globalCompositeOperation = 'lighter'; o.globalAlpha = a * .55 * fl; o.fillStyle = g; o.fillRect(gx - r, gy - r, 2 * r, 2 * r); o.globalCompositeOperation = 'source-over'; o.globalAlpha = a; }
   if (fx.underlight) { const [lx, ly] = P(c, fx.underlight[0], fx.underlight[1]), fl = .75 + .25 * Math.sin(t * 11) * Math.sin(t * 4.7); const g = o.createRadialGradient(lx, ly, 5, lx, ly, c.w * .4); g.addColorStop(0, 'rgba(255,190,100,.55)'); g.addColorStop(1, 'rgba(255,190,100,0)'); o.globalCompositeOperation = 'lighter'; o.globalAlpha = a * fl; o.fillStyle = g; o.fillRect(lx - c.w * .4, ly - c.w * .4, c.w * .8, c.w * .8); o.globalCompositeOperation = 'source-over'; o.globalAlpha = a; }
@@ -39,7 +43,7 @@ const CAPS = D.caps.flat(), LINES = []; { let cur = []; for (const w of CAPS) { 
 window.seek = async function (t) {
   o.globalAlpha = 1; o.globalCompositeOperation = 'source-over'; o.fillStyle = '#000'; o.fillRect(0, 0, 1080, 1920);
   let i = SH.findIndex(s => t >= s.t0 && t < s.t1); if (i < 0) i = SH.length - 1; const s = SH[i], prev = SH[i - 1], fi = i ? ss(s.t0, s.t0 + .22, t) : 1;
-  if (prev && fi < 1) drawShot(prev, s.t0, 1); drawShot(s, t, fi);
+  if (prev && fi < 1) await drawShot(prev, s.t0, 1); await drawShot(s, t, fi);
   // vignette + grain
   const v = o.createRadialGradient(540, 960, 520, 540, 960, 1240); v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,.6)'); o.fillStyle = v; o.fillRect(0, 0, 1080, 1920);
   const n = Math.floor(t * 24); for (let k = 0; k < 1800; k++) { o.fillStyle = hash(k + n * 3.1) > .5 ? 'rgba(255,255,255,.035)' : 'rgba(0,0,0,.06)'; o.fillRect(hash(k * 1.7 + n) * 1080, hash(k * 2.3 + n) * 1920, 2, 2); }
