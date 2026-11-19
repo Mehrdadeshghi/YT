@@ -22,7 +22,7 @@ E = {
     tts="<breath> On the third floor... I saw Mom's car in the parking lot.", style='confused, breathless, quiet')]},
   {'dur': 1.0, 'beat': 'below', 'vo': [seg("Then a voice from the stairs below. Maya? Come down, sweetie.", "Then a voice from the stairs *below.* *Maya?* Come down, sweetie.",
     'Dann eine Stimme von unten. Maya? Komm runter, Schatz.', 'Entonces una voz desde abajo. ¿Maya? Baja, cariño.', 'Puis une voix, plus bas dans l’escalier. Maya ? Descends, ma chérie.',
-    tts="Then a voice from the stairs below. <long pause> Maya? <short pause> Come down, sweetie.", style='frightened whisper, then a warm, too calm mother voice')]},
+    tts="Then a voice from the stairs below... <short pause> Maya? <short pause> Come down, sweetie.", style='frightened whisper, then a warm, too calm mother voice')]},
   {'dur': 1.0, 'beat': 'reveal', 'vo': [seg("And my own voice whispered: that's not Mom.", "And my own voice whispered: that's *not* Mom.",
     'Und meine eigene Stimme flüsterte: Das ist nicht Mama.', 'Y mi propia voz susurró: esa no es mamá.', 'Et ma propre voix a chuchoté : ce n’est pas maman.',
     tts="And my own voice whispered... <short pause> that's NOT Mom.", style='barely audible terrified whisper', cta=True)]},
@@ -39,7 +39,7 @@ E['comic'] = {
  'shots': [
   {'from': 0, 'to': 'elevator-0.4', 'vid': 'clips/answer.webm', 'zoom': [1.06, 1.16], 'focus': [[.45, .36], [.45, .32]], 'fx': {'heartbeat': True, 'sting': 'now'}},
   {'from': 'elevator-0.4', 'to': 'ran-0.2', 'vid': 'clips/elevator.webm', 'zoom': [1.0, 1.1], 'focus': [[.5, .45], [.5, .42]], 'fx': {'flicker': True}},
-  {'from': 'ran-0.2', 'to': 'third-0.2', 'vid': 'clips/run.webm', 'rate': .6, 'zoom': [1.0, 1.06], 'focus': [[.5, .5], [.5, .5]], 'fx': {'heartbeat': True}},
+  {'from': 'ran-0.2', 'to': 'third-0.2', 'vid': 'clips/run.webm', 'rate': .38, 'zoom': [1.0, 1.06], 'focus': [[.5, .5], [.5, .5]], 'fx': {'heartbeat': True}},
   {'from': 'third-0.2', 'to': 'below-0.2', 'vid': 'clips/window.webm', 'zoom': [1.0, 1.1], 'focus': [[.6, .4], [.65, .35]], 'fx': {}},
   {'from': 'below-0.2', 'to': 'whispered-0.2', 'vid': 'clips/below.webm', 'zoom': [1.0, 1.15], 'focus': [[.5, .5], [.5, .5]], 'fx': {'flicker': True}},
   {'from': 'whispered-0.2', 'to': 'end', 'vid': 'clips/frozen.webm', 'zoom': [1.0, 1.12], 'focus': [[.45, .38], [.45, .34]], 'fx': {'heartbeat': True, 'sting': 'not'}},

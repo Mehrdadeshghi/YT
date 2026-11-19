@@ -105,7 +105,7 @@
      "de": "Dann eine Stimme von unten. Maya? Komm runter, Schatz.",
      "es": "Entonces una voz desde abajo. ¿Maya? Baja, cariño.",
      "fr": "Puis une voix, plus bas dans l’escalier. Maya ? Descends, ma chérie.",
-     "tts": "Then a voice from the stairs below. <long pause> Maya? <short pause> Come down, sweetie.",
+     "tts": "Then a voice from the stairs below... <short pause> Maya? <short pause> Come down, sweetie.",
      "style": "frightened whisper, then a warm, too calm mother voice"
     }
    ],
@@ -268,7 +268,7 @@
     "from": "ran-0.2",
     "to": "third-0.2",
     "vid": "clips/run.webm",
-    "rate": 0.6,
+    "rate": 0.38,
     "zoom": [
      1.0,
      1.06
