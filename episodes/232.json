@@ -66,7 +66,7 @@
      "de": "Das habe ich nie geschickt. Dann summten beide Handys. Sie ist schon drin.",
      "es": "Yo nunca lo envié. Entonces vibraron los dos móviles. Ya está dentro.",
      "fr": "Je ne l’ai jamais envoyé. Puis nos deux téléphones ont vibré. Elle est déjà à l’intérieur.",
-     "tts": "I never sent that. <gasp> Then BOTH our phones buzzed. <short pause> She's already inside.",
+     "tts": "I never sent that. <gasp> Then BOTH of our phones buzzed. <short pause> She's already inside.",
      "style": "urgent, panicked whisper"
     }
    ],
@@ -230,7 +230,7 @@
     "from": "shaking-0.2",
     "to": "never-0.2",
     "vid": "clips/momphone.webm",
-    "rate": 0.7,
+    "rate": 0.42,
     "zoom": [
      1.0,
      1.1
@@ -286,7 +286,7 @@
     "from": "grabbed-0.2",
     "to": "window-0.2",
     "vid": "clips/flee.webm",
-    "rate": 0.45,
+    "rate": 0.3,
     "zoom": [
      1.0,
      1.06
