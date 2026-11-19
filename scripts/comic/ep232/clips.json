@@ -1,0 +1,17 @@
+{"clips": [
+ {"name": "mom", "image": "scripts/comic/ep232/mom.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation. The woman in light blue nurse scrubs climbs the last stairs up into the green light, breathing hard, looking up in fear. She stays in frame, camera still.",
+   "2D hand-drawn anime style animation. The woman in scrubs stops on the landing, catches her breath and stares up at the camera, frightened. She stays in frame, camera still."]},
+ {"name": "momphone", "image": "scripts/comic/ep232/momphone.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, slow. The woman in nurse scrubs holds her glowing phone toward the camera with a trembling hand, her eyes wide, lips trembling. The phone screen stays plain white. Camera still.",
+   "2D hand-drawn anime style animation, slow. The woman keeps holding the phone up, shaking, she glances behind her down the stairs. The phone screen stays plain white. Camera still."]},
+ {"name": "phones", "image": "scripts/comic/ep232/phones.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation. Two hands hold two smartphones; both phones vibrate and flash bright at the same moment, the hands tremble. The screens stay plain white. Camera still.",
+   "2D hand-drawn anime style animation. The two phones keep vibrating and flashing in the trembling hands, the green emergency light flickers. The screens stay plain white. Camera still."]},
+ {"name": "flee", "image": "scripts/comic/ep232/flee.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, fast. The woman in nurse scrubs pulls the girl in the yellow hoodie by the hand, both run down the concrete stairs toward the camera, smooth running motion. They stay in frame.",
+   "2D hand-drawn anime style animation, fast. The two keep running down the stairs hand in hand, the girl looks back over her shoulder. Smooth running motion, they stay in frame."]},
+ {"name": "mirror", "image": "scripts/comic/ep232/mirror.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime horror animation, very slow. The reflection of the girl in the yellow hoodie in the dark rainy window stays perfectly still while rain runs down the glass; slowly her lips curl into a calm, wide, wrong smile. Camera slowly pushes in.",
+   "2D hand-drawn anime horror animation, very slow. The reflection keeps smiling and slowly tilts her head, staring at the viewer, eyes glinting green. Rain runs down the glass. Camera still."]}
+]}
