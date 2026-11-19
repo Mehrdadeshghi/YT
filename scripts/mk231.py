@@ -39,7 +39,7 @@ E['comic'] = {
  'shots': [
   {'from': 0, 'to': 'elevator-0.4', 'vid': 'clips/answer.webm', 'zoom': [1.06, 1.16], 'focus': [[.45, .36], [.45, .32]], 'fx': {'heartbeat': True, 'sting': 'now'}},
   {'from': 'elevator-0.4', 'to': 'ran-0.2', 'vid': 'clips/elevator.webm', 'zoom': [1.0, 1.1], 'focus': [[.5, .45], [.5, .42]], 'fx': {'flicker': True}},
-  {'from': 'ran-0.2', 'to': 'third-0.2', 'vid': 'clips/run.webm', 'zoom': [1.0, 1.06], 'focus': [[.5, .5], [.5, .5]], 'fx': {'heartbeat': True}},
+  {'from': 'ran-0.2', 'to': 'third-0.2', 'vid': 'clips/run.webm', 'rate': .6, 'zoom': [1.0, 1.06], 'focus': [[.5, .5], [.5, .5]], 'fx': {'heartbeat': True}},
   {'from': 'third-0.2', 'to': 'below-0.2', 'vid': 'clips/window.webm', 'zoom': [1.0, 1.1], 'focus': [[.6, .4], [.65, .35]], 'fx': {}},
   {'from': 'below-0.2', 'to': 'whispered-0.2', 'vid': 'clips/below.webm', 'zoom': [1.0, 1.15], 'focus': [[.5, .5], [.5, .5]], 'fx': {'flicker': True}},
   {'from': 'whispered-0.2', 'to': 'end', 'vid': 'clips/frozen.webm', 'zoom': [1.0, 1.12], 'focus': [[.45, .38], [.45, .34]], 'fx': {'heartbeat': True, 'sting': 'not'}},
