@@ -1,0 +1,394 @@
+{
+ "ep": 231,
+ "title": "SENT TOMORROW · Part 3",
+ "format": "mini-series",
+ "series": "SENT TOMORROW",
+ "engine": "hyperframes",
+ "oneAsk": true,
+ "voice": "gemini",
+ "gemini_voice": "Leda",
+ "gemini_wpm": 100,
+ "speed": 1.0,
+ "mood": "calm",
+ "prog": 0,
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "gemini_style": "scared teenage girl, close to the mic, tense and real",
+ "hook": [],
+ "cta": {
+  "q": "Who is on the stairs?"
+ },
+ "vo_open": [
+  {
+   "at": 0.15,
+   "text": "The voice on the phone was mine. And it said: get out. Now.",
+   "cap": "The voice on the phone was *mine.* And it said: get *out.* *Now.*",
+   "de": "Die Stimme am Telefon war meine. Und sie sagte: Raus. Sofort.",
+   "es": "La voz del teléfono era la mía. Y dijo: sal. Ya.",
+   "fr": "La voix au téléphone, c’était la mienne. Et elle a dit : sors. Maintenant.",
+   "tts": "The voice on the phone was mine. <short pause> And it said... get out. NOW.",
+   "style": "shaky whisper, then urgent"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.0,
+   "beat": "elevator",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Someone is in the elevator. Coming up to your floor. Take the stairs.",
+     "cap": "Someone is in the *elevator.* Coming up to *your* floor. Take the *stairs.*",
+     "de": "Jemand ist im Aufzug. Er kommt zu deinem Stockwerk. Nimm die Treppe.",
+     "es": "Alguien está en el ascensor. Sube a tu piso. Ve por las escaleras.",
+     "fr": "Quelqu’un est dans l’ascenseur. Il monte à ton étage. Prends l’escalier.",
+     "style": "fast urgent whisper, like giving orders"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "elevator"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "run",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "So I ran. Six floors down. In my socks.",
+     "cap": "So I *ran.* Six floors *down.* In my *socks.*",
+     "de": "Also rannte ich. Sechs Stockwerke runter. In Socken.",
+     "es": "Así que corrí. Seis pisos abajo. En calcetines.",
+     "fr": "Alors j’ai couru. Six étages. En chaussettes.",
+     "tts": "<heavy breath> So I ran. Six floors down... in my socks.",
+     "style": "out of breath, running"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "run"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "window",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "On the third floor, I saw Mom's car in the parking lot.",
+     "cap": "On the third floor, I saw *Mom's car* in the parking lot.",
+     "de": "Im dritten Stock sah ich Mamas Auto auf dem Parkplatz.",
+     "es": "En el tercer piso vi el coche de mamá en el aparcamiento.",
+     "fr": "Au troisième étage, j’ai vu la voiture de maman sur le parking.",
+     "tts": "<breath> On the third floor... I saw Mom's car in the parking lot.",
+     "style": "confused, breathless, quiet"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "window"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "below",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Then a voice from the stairs below. Maya? Come down, sweetie.",
+     "cap": "Then a voice from the stairs *below.* *Maya?* Come down, sweetie.",
+     "de": "Dann eine Stimme von unten. Maya? Komm runter, Schatz.",
+     "es": "Entonces una voz desde abajo. ¿Maya? Baja, cariño.",
+     "fr": "Puis une voix, plus bas dans l’escalier. Maya ? Descends, ma chérie.",
+     "tts": "Then a voice from the stairs below. <long pause> Maya? <short pause> Come down, sweetie.",
+     "style": "frightened whisper, then a warm, too calm mother voice"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "below"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "reveal",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "And my own voice whispered: that's not Mom.",
+     "cap": "And my own voice whispered: that's *not* Mom.",
+     "de": "Und meine eigene Stimme flüsterte: Das ist nicht Mama.",
+     "es": "Y mi propia voz susurró: esa no es mamá.",
+     "fr": "Et ma propre voix a chuchoté : ce n’est pas maman.",
+     "tts": "And my own voice whispered... <short pause> that's NOT Mom.",
+     "style": "barely audible terrified whisper",
+     "cta": true
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "reveal"
+   }
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 40,
+   "len": 60,
+   "gain": 0.9
+  }
+ ],
+ "hf": {
+  "style": "doku",
+  "custom": "hf_real"
+ },
+ "hf_open": {
+  "tpl": "plain",
+  "name": "hook"
+ },
+ "comic": {
+  "dir": "scripts/comic/ep231",
+  "tag": "SENT TOMORROW · PART 3",
+  "title_until": "out",
+  "look": "raw",
+  "next": "PART 4",
+  "next_at": "not+0.8",
+  "events": {
+   "mine0": [
+    0,
+    "mine"
+   ],
+   "out": [
+    0,
+    "out"
+   ],
+   "now": [
+    0,
+    "now"
+   ],
+   "elevator": [
+    1,
+    "elevator"
+   ],
+   "stairs": [
+    1,
+    "stairs"
+   ],
+   "ran": [
+    2,
+    "ran"
+   ],
+   "socks": [
+    2,
+    "socks"
+   ],
+   "third": [
+    3,
+    "third"
+   ],
+   "car": [
+    3,
+    "car"
+   ],
+   "below": [
+    4,
+    "below"
+   ],
+   "maya": [
+    4,
+    "maya"
+   ],
+   "sweetie": [
+    4,
+    "sweetie"
+   ],
+   "whispered": [
+    5,
+    "whispered"
+   ],
+   "not": [
+    5,
+    "not"
+   ]
+  },
+  "shots": [
+   {
+    "from": 0,
+    "to": "elevator-0.4",
+    "vid": "clips/answer.webm",
+    "zoom": [
+     1.06,
+     1.16
+    ],
+    "focus": [
+     [
+      0.45,
+      0.36
+     ],
+     [
+      0.45,
+      0.32
+     ]
+    ],
+    "fx": {
+     "heartbeat": true,
+     "sting": "now"
+    }
+   },
+   {
+    "from": "elevator-0.4",
+    "to": "ran-0.2",
+    "vid": "clips/elevator.webm",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "focus": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "fx": {
+     "flicker": true
+    }
+   },
+   {
+    "from": "ran-0.2",
+    "to": "third-0.2",
+    "vid": "clips/run.webm",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "focus": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "fx": {
+     "heartbeat": true
+    }
+   },
+   {
+    "from": "third-0.2",
+    "to": "below-0.2",
+    "vid": "clips/window.webm",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "focus": [
+     [
+      0.6,
+      0.4
+     ],
+     [
+      0.65,
+      0.35
+     ]
+    ],
+    "fx": {}
+   },
+   {
+    "from": "below-0.2",
+    "to": "whispered-0.2",
+    "vid": "clips/below.webm",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "focus": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "fx": {
+     "flicker": true
+    }
+   },
+   {
+    "from": "whispered-0.2",
+    "to": "end",
+    "vid": "clips/frozen.webm",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "focus": [
+     [
+      0.45,
+      0.38
+     ],
+     [
+      0.45,
+      0.34
+     ]
+    ],
+    "fx": {
+     "heartbeat": true,
+     "sting": "not"
+    }
+   }
+  ],
+  "cues": [
+   [
+    "now",
+    0,
+    "hit",
+    0.7
+   ],
+   [
+    "elevator",
+    0,
+    "riser",
+    0.35
+   ],
+   [
+    "ran",
+    0,
+    "whoosh",
+    0.6
+   ],
+   [
+    "car",
+    0,
+    "tick",
+    0.4
+   ],
+   [
+    "maya",
+    0,
+    "riser",
+    0.4
+   ],
+   [
+    "not",
+    0,
+    "hit",
+    0.9
+   ]
+  ]
+ }
+}
