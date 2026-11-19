@@ -1,0 +1,375 @@
+{
+ "ep": 232,
+ "title": "SENT TOMORROW · Part 4",
+ "format": "mini-series",
+ "series": "SENT TOMORROW",
+ "engine": "hyperframes",
+ "oneAsk": true,
+ "voice": "gemini",
+ "gemini_voice": "Leda",
+ "gemini_wpm": 100,
+ "speed": 1.0,
+ "mood": "calm",
+ "prog": 0,
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "gemini_style": "scared teenage girl telling it fast, close to the mic, tense and real",
+ "hook": [],
+ "cta": {
+  "q": "What is in the reflection?"
+ },
+ "vo_open": [
+  {
+   "at": 0.15,
+   "text": "The woman on the stairs was Mom. The real one.",
+   "cap": "The woman on the stairs was *Mom.* The *real* one.",
+   "de": "Die Frau auf der Treppe war Mama. Die echte.",
+   "es": "La mujer de la escalera era mamá. La de verdad.",
+   "fr": "La femme dans l’escalier, c’était maman. La vraie.",
+   "tts": "The woman on the stairs was Mom. <short pause> The REAL one.",
+   "style": "breathless, fast, relieved and scared at once"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.0,
+   "beat": "text",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "She was shaking. She showed me a text. From me. Don't trust Maya.",
+     "cap": "She was *shaking.* She showed me a text. From *me.* Don't trust *Maya.*",
+     "de": "Sie zitterte. Sie zeigte mir eine Nachricht. Von mir. Trau Maya nicht.",
+     "es": "Estaba temblando. Me enseñó un mensaje. Mío. No confíes en Maya.",
+     "fr": "Elle tremblait. Elle m’a montré un message. De moi. Ne fais pas confiance à Maya.",
+     "tts": "She was shaking. She showed me a text... from ME. <short pause> Don't trust Maya.",
+     "style": "fast, confused, rising fear"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "text"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "both",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "I never sent that. Then both our phones buzzed. She's already inside.",
+     "cap": "I never *sent* that. Then *both* our phones buzzed. She's *already inside.*",
+     "de": "Das habe ich nie geschickt. Dann summten beide Handys. Sie ist schon drin.",
+     "es": "Yo nunca lo envié. Entonces vibraron los dos móviles. Ya está dentro.",
+     "fr": "Je ne l’ai jamais envoyé. Puis nos deux téléphones ont vibré. Elle est déjà à l’intérieur.",
+     "tts": "I never sent that. <gasp> Then BOTH our phones buzzed. <short pause> She's already inside.",
+     "style": "urgent, panicked whisper"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "both"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "flee",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Mom grabbed my hand and we ran.",
+     "cap": "Mom grabbed my hand and we *ran.*",
+     "de": "Mama packte meine Hand und wir rannten.",
+     "es": "Mamá me agarró la mano y corrimos.",
+     "fr": "Maman m’a pris la main et on a couru.",
+     "tts": "<heavy breath> Mom grabbed my hand and we RAN.",
+     "style": "out of breath, running"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "flee"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "mirror",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "But in the window, my reflection wasn't running. It was smiling.",
+     "cap": "But in the window, my reflection *wasn't* running. It was *smiling.*",
+     "de": "Aber im Fenster rannte mein Spiegelbild nicht. Es lächelte.",
+     "es": "Pero en la ventana, mi reflejo no corría. Sonreía.",
+     "fr": "Mais dans la vitre, mon reflet ne courait pas. Il souriait.",
+     "tts": "But in the window... <short pause> my reflection wasn't running. <breath> It was smiling.",
+     "style": "slow, horrified whisper",
+     "cta": true
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "mirror"
+   }
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 60,
+   "len": 60,
+   "gain": 0.9
+  }
+ ],
+ "hf": {
+  "style": "doku",
+  "custom": "hf_real"
+ },
+ "hf_open": {
+  "tpl": "plain",
+  "name": "hook"
+ },
+ "comic": {
+  "dir": "scripts/comic/ep232",
+  "tag": "SENT TOMORROW · PART 4",
+  "title_until": "real",
+  "look": "raw",
+  "next": "PART 5",
+  "next_at": "smiling+0.8",
+  "events": {
+   "mom0": [
+    0,
+    "mom"
+   ],
+   "real": [
+    0,
+    "real"
+   ],
+   "shaking": [
+    1,
+    "shaking"
+   ],
+   "text": [
+    1,
+    "text"
+   ],
+   "me": [
+    1,
+    "me"
+   ],
+   "maya": [
+    1,
+    "maya"
+   ],
+   "never": [
+    2,
+    "never"
+   ],
+   "both": [
+    2,
+    "both"
+   ],
+   "buzzed": [
+    2,
+    "buzzed"
+   ],
+   "inside": [
+    2,
+    "inside"
+   ],
+   "grabbed": [
+    3,
+    "grabbed"
+   ],
+   "ran": [
+    3,
+    "ran"
+   ],
+   "window": [
+    4,
+    "window"
+   ],
+   "reflection": [
+    4,
+    "reflection"
+   ],
+   "smiling": [
+    4,
+    "smiling"
+   ]
+  },
+  "shots": [
+   {
+    "from": 0,
+    "to": "shaking-0.2",
+    "vid": "clips/mom.webm",
+    "zoom": [
+     1.04,
+     1.14
+    ],
+    "focus": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.36
+     ]
+    ],
+    "fx": {
+     "sting": "real"
+    }
+   },
+   {
+    "from": "shaking-0.2",
+    "to": "never-0.2",
+    "vid": "clips/momphone.webm",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "focus": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.35,
+      0.45
+     ]
+    ],
+    "fx": {
+     "msg": {
+      "at": "me",
+      "txt": "Don’t trust Maya.",
+      "from": "Maya"
+     },
+     "heartbeat": true
+    }
+   },
+   {
+    "from": "never-0.2",
+    "to": "grabbed-0.2",
+    "vid": "clips/phones.webm",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "focus": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "fx": {
+     "msg": {
+      "at": "buzzed",
+      "txt": "SHE’S ALREADY INSIDE.",
+      "from": "Unknown"
+     },
+     "buzz": "buzzed",
+     "glitch": "inside"
+    }
+   },
+   {
+    "from": "grabbed-0.2",
+    "to": "window-0.2",
+    "vid": "clips/flee.webm",
+    "rate": 0.6,
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "focus": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "fx": {
+     "heartbeat": true
+    }
+   },
+   {
+    "from": "window-0.2",
+    "to": "end",
+    "vid": "clips/mirror.webm",
+    "zoom": [
+     1.0,
+     1.18
+    ],
+    "focus": [
+     [
+      0.45,
+      0.35
+     ],
+     [
+      0.42,
+      0.3
+     ]
+    ],
+    "fx": {
+     "sting": "smiling"
+    }
+   }
+  ],
+  "cues": [
+   [
+    "real",
+    0,
+    "hit",
+    0.7
+   ],
+   [
+    "me",
+    0,
+    "ding",
+    0.5
+   ],
+   [
+    "buzzed",
+    0,
+    "zap",
+    0.6
+   ],
+   [
+    "inside",
+    0,
+    "hit",
+    0.8
+   ],
+   [
+    "ran",
+    0,
+    "whoosh",
+    0.6
+   ],
+   [
+    "reflection",
+    0,
+    "riser",
+    0.4
+   ],
+   [
+    "smiling",
+    0,
+    "hit",
+    0.9
+   ]
+  ]
+ }
+}
