@@ -1,0 +1,17 @@
+{"clips": [
+ {"name": "elevator", "image": "scripts/comic/ep231/elevator.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, eerie and slow. Empty dim corridor with closed elevator doors; the ceiling light flickers, the amber arrow above the doors glows brighter. The doors stay closed. No people. Camera slowly pushes in.",
+   "2D hand-drawn anime style animation, eerie and slow. The closed elevator doors in the dim corridor, light flickering, a faint shadow moves in the gap between the doors. The doors stay closed. No people. Camera still."]},
+ {"name": "run", "image": "scripts/comic/ep231/run.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, fast. The girl with the brown ponytail in the yellow hoodie runs down the concrete stairs toward the camera, ponytail bouncing, hand sliding along the railing, phone glowing in her hand. Smooth running motion, she stays in frame.",
+   "2D hand-drawn anime style animation, fast. The girl keeps running down the stairs, looking back over her shoulder in fear, then running on. Smooth running motion, she stays in frame."]},
+ {"name": "window", "image": "scripts/comic/ep231/window.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, slow. Rain runs down the stairwell window, the girl in the yellow hoodie presses her hand on the glass and looks down at the car in the parking lot, its headlights glow. Camera still.",
+   "2D hand-drawn anime style animation, slow. Rain on the window, the car's headlights flicker off in the dark parking lot, the girl leans closer to the glass. Camera still."]},
+ {"name": "below", "image": "scripts/comic/ep231/below.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, eerie and slow. Looking down a deep spiral stairwell; far below, the woman in light blue scrubs stands still and slowly tilts her head up toward the camera, face in shadow. Emergency light flickers. Camera still.",
+   "2D hand-drawn anime style animation, eerie and slow. The woman far below slowly puts her foot on the first step and begins to climb the stairs. Face in shadow. Camera still."]},
+ {"name": "frozen", "image": "scripts/comic/ep231/frozen.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, slow. The girl in the yellow hoodie presses against the wall, hand over her mouth, phone at her ear, breathing fast, eyes wide, trembling. She stays in frame, camera still.",
+   "2D hand-drawn anime style animation, slow. The girl stays frozen against the wall, a tear runs down her cheek, her eyes move toward the stairs below. She stays in frame, camera still."]}
+]}
