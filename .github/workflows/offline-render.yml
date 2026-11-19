@@ -141,5 +141,5 @@ jobs:
           E="${{ inputs.episode }}"; TAG="hf-off-${{ github.run_number }}"; U="https://github.com/${{ github.repository }}/releases/download/$TAG"
           ffmpeg -v error -y -i dist/wiki_roulette_$E.mp4 -vf "fps=0.5,scale=180:-1,tile=9x3" -frames:v 1 sheet_$E.jpg && gh release upload "$TAG" sheet_$E.jpg --clobber
           T=$(grep -m1 '^\*\*Title:\*\*' uploads/$E.md | sed 's/\*\*Title:\*\* *//')
-          printf '%s\n' "New Short ready: **#$E $T**" "" "▶️ Video: $U/wiki_roulette_$E.mp4" "" "![contact sheet]($U/sheet_$E.jpg)" "" "Reply **ok** to schedule it for the next free 19:30 slot (German time). Reply with anything else to hold it; the next daily run reads your comment." > body.md
-          gh issue create --title "Review #$E: $T" --label review --body-file body.md
+          printf '%s\n' "New Short ready: **#$E $T**" "" "▶️ Video: $U/wiki_roulette_$E.mp4" "" "![contact sheet]($U/sheet_$E.jpg)" "" "Goes online **automatically** at the next free 19:30 slot (German time; auto-approve.yml checks at 17:00 UTC). Reply **nein** / **no** to hold it, **ok** to schedule it right away." > body.md
+          gh issue create --title "Review #$E: $T" --label review --label auto --body-file body.md

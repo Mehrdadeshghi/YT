@@ -1,0 +1,54 @@
+name: Auto-approve upload
+# Owner's rule (19.11.2026): a finished Short goes online by itself unless he says no.
+# Daily at 17:00 UTC: the oldest open "Review #<ep>" issue with labels review+auto, at least 3 h old and without an owner
+# comment other than ok/ja/yes, is scheduled for the next free 19:30 slot (German time), then the issue closes. One per day (1 Short/day).
+on:
+  schedule: [{ cron: "0 17 * * *" }]
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: youtube-upload
+  cancel-in-progress: false
+jobs:
+  auto:
+    runs-on: ubuntu-24.04
+    steps:
+      - id: pick
+        env: { GH_TOKEN: "${{ github.token }}", OWNER: "${{ github.repository_owner }}" }
+        run: |
+          gh issue list -R "$GITHUB_REPOSITORY" --label review --label auto --state open --json number,title,createdAt,comments > iss.json
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os, re, datetime as d
+          now = d.datetime.now(d.timezone.utc)
+          for i in sorted(json.load(open('iss.json')), key=lambda i: i['createdAt']):
+              m = re.match(r'Review #(\d{3})', i['title'])
+              if not m: continue
+              if now - d.datetime.fromisoformat(i['createdAt'].replace('Z', '+00:00')) < d.timedelta(hours=3): continue
+              said = [c['body'].strip().lower().strip(' .!') for c in i['comments'] if c['author']['login'] == os.environ['OWNER']]
+              if any(b not in ('ok', 'ja', 'yes') for b in said): continue   # owner held it
+              print(f"episode={m.group(1)}\nissue={i['number']}"); break
+          PY
+      - uses: actions/checkout@v4
+        if: steps.pick.outputs.episode != ''
+      - uses: actions/setup-python@v5
+        if: steps.pick.outputs.episode != ''
+        with: { python-version: "3.11" }
+      - name: Upload (scheduled)
+        if: steps.pick.outputs.episode != ''
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          pip install -q google-api-python-client google-auth
+          python3 scripts/yt_upload.py ${{ steps.pick.outputs.episode }} --slots "${{ vars.UPLOAD_SLOTS || '19:30' }}" --privacy scheduled | tee up.log
+      - name: Save ledger, close issue
+        if: steps.pick.outputs.episode != ''
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add uploads/youtube.json; git diff --cached --quiet || { git commit -m "YouTube uploads: ${{ steps.pick.outputs.episode }} (auto-approved)" && git pull --rebase -q && git push; }
+          gh issue comment ${{ steps.pick.outputs.issue }} --body "Auto-scheduled (no objection): $(grep -m1 '^#' up.log | cut -c1-200)"
+          gh issue close ${{ steps.pick.outputs.issue }}
