@@ -230,6 +230,7 @@
     "from": "shaking-0.2",
     "to": "never-0.2",
     "vid": "clips/momphone.webm",
+    "rate": 0.7,
     "zoom": [
      1.0,
      1.1
@@ -256,7 +257,7 @@
    {
     "from": "never-0.2",
     "to": "grabbed-0.2",
-    "vid": "clips/phones.webm",
+    "img": "phones.jpg",
     "zoom": [
      1.0,
      1.1
@@ -285,7 +286,7 @@
     "from": "grabbed-0.2",
     "to": "window-0.2",
     "vid": "clips/flee.webm",
-    "rate": 0.6,
+    "rate": 0.45,
     "zoom": [
      1.0,
      1.06
@@ -306,24 +307,48 @@
    },
    {
     "from": "window-0.2",
-    "to": "end",
+    "to": "smiling-0.25",
     "vid": "clips/mirror.webm",
+    "grade": "saturate(.85) contrast(1.3) brightness(2.1)",
     "zoom": [
-     1.0,
-     1.18
+     1.25,
+     1.45
+    ],
+    "focus": [
+     [
+      0.42,
+      0.3
+     ],
+     [
+      0.42,
+      0.28
+     ]
+    ],
+    "fx": {
+     "rain": true
+    }
+   },
+   {
+    "from": "smiling-0.25",
+    "to": "end",
+    "img": "smile.jpg",
+    "zoom": [
+     1.05,
+     1.3
     ],
     "focus": [
      [
       0.45,
-      0.35
+      0.38
      ],
      [
-      0.42,
-      0.3
+      0.45,
+      0.36
      ]
     ],
     "fx": {
-     "sting": "smiling"
+     "sting": "smiling",
+     "rain": true
     }
    }
   ],

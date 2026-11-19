@@ -37,10 +37,11 @@ E['comic'] = {
             'buzzed': [2, 'buzzed'], 'inside': [2, 'inside'], 'grabbed': [3, 'grabbed'], 'ran': [3, 'ran'], 'window': [4, 'window'], 'reflection': [4, 'reflection'], 'smiling': [4, 'smiling']},
  'shots': [
   {'from': 0, 'to': 'shaking-0.2', 'vid': 'clips/mom.webm', 'zoom': [1.04, 1.14], 'focus': [[.5, .4], [.5, .36]], 'fx': {'sting': 'real'}},
-  {'from': 'shaking-0.2', 'to': 'never-0.2', 'vid': 'clips/momphone.webm', 'zoom': [1.0, 1.1], 'focus': [[.4, .45], [.35, .45]], 'fx': {'msg': {'at': 'me', 'txt': 'Don’t trust Maya.', 'from': 'Maya'}, 'heartbeat': True}},
-  {'from': 'never-0.2', 'to': 'grabbed-0.2', 'vid': 'clips/phones.webm', 'zoom': [1.0, 1.1], 'focus': [[.5, .45], [.5, .45]], 'fx': {'msg': {'at': 'buzzed', 'txt': 'SHE’S ALREADY INSIDE.', 'from': 'Unknown'}, 'buzz': 'buzzed', 'glitch': 'inside'}},
-  {'from': 'grabbed-0.2', 'to': 'window-0.2', 'vid': 'clips/flee.webm', 'rate': .6, 'zoom': [1.0, 1.06], 'focus': [[.5, .5], [.5, .5]], 'fx': {'heartbeat': True}},
-  {'from': 'window-0.2', 'to': 'end', 'vid': 'clips/mirror.webm', 'zoom': [1.0, 1.18], 'focus': [[.45, .35], [.42, .3]], 'fx': {'sting': 'smiling'}},
+  {'from': 'shaking-0.2', 'to': 'never-0.2', 'vid': 'clips/momphone.webm', 'rate': .7, 'zoom': [1.0, 1.1], 'focus': [[.4, .45], [.35, .45]], 'fx': {'msg': {'at': 'me', 'txt': 'Don’t trust Maya.', 'from': 'Maya'}, 'heartbeat': True}},
+  {'from': 'never-0.2', 'to': 'grabbed-0.2', 'img': 'phones.jpg', 'zoom': [1.0, 1.1], 'focus': [[.5, .45], [.5, .45]], 'fx': {'msg': {'at': 'buzzed', 'txt': 'SHE’S ALREADY INSIDE.', 'from': 'Unknown'}, 'buzz': 'buzzed', 'glitch': 'inside'}},
+  {'from': 'grabbed-0.2', 'to': 'window-0.2', 'vid': 'clips/flee.webm', 'rate': .45, 'zoom': [1.0, 1.06], 'focus': [[.5, .5], [.5, .5]], 'fx': {'heartbeat': True}},
+  {'from': 'window-0.2', 'to': 'smiling-0.25', 'vid': 'clips/mirror.webm', 'grade': 'saturate(.85) contrast(1.3) brightness(2.1)', 'zoom': [1.25, 1.45], 'focus': [[.42, .3], [.42, .28]], 'fx': {'rain': True}},
+  {'from': 'smiling-0.25', 'to': 'end', 'img': 'smile.jpg', 'zoom': [1.05, 1.3], 'focus': [[.45, .38], [.45, .36]], 'fx': {'sting': 'smiling', 'rain': True}},
  ],
  'cues': [['real', 0, 'hit', .7], ['me', 0, 'ding', .5], ['buzzed', 0, 'zap', .6], ['inside', 0, 'hit', .8], ['ran', 0, 'whoosh', .6], ['reflection', 0, 'riser', .4], ['smiling', 0, 'hit', .9]],
 }
