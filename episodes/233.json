@@ -209,6 +209,7 @@
     "from": 0,
     "to": "last-0.2",
     "vid": "clips/crack.webm",
+    "grade": "saturate(.85) contrast(1.2) brightness(1.7)",
     "zoom": [
      1.0,
      1.12
@@ -259,10 +260,10 @@
    {
     "from": "grabbed-0.2",
     "to": "sunrise-0.2",
-    "vid": "clips/smash.webm",
+    "img": "smash.jpg",
     "zoom": [
      1.0,
-     1.08
+     1.2
     ],
     "focus": [
      [

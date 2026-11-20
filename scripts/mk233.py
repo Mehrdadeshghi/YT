@@ -35,9 +35,9 @@ E['comic'] = {
  'events': {'glass0': [0, 'glass'], 'cracked': [0, 'cracked'], 'last': [1, 'last'], 'me': [1, 'me'], 'break': [1, 'break'], 'only': [1, 'only'], 'grabbed': [2, 'grabbed'], 'smashed': [2, 'smashed'],
             'sunrise': [3, 'sunrise'], 'myself': [3, 'myself'], 'dont': [3, 'dont'], 'send': [3, 'send'], 'car': [4, 'car'], 'moms': [4, 'moms'], 'smiling': [4, 'smiling']},
  'shots': [
-  {'from': 0, 'to': 'last-0.2', 'vid': 'clips/crack.webm', 'zoom': [1.0, 1.12], 'focus': [[.45, .4], [.45, .38]], 'fx': {'sting': 'cracked', 'rain': True}},
+  {'from': 0, 'to': 'last-0.2', 'vid': 'clips/crack.webm', 'grade': 'saturate(.85) contrast(1.2) brightness(1.7)', 'zoom': [1.0, 1.12], 'focus': [[.45, .4], [.45, .38]], 'fx': {'sting': 'cracked', 'rain': True}},
   {'from': 'last-0.2', 'to': 'grabbed-0.2', 'img': 'phone.jpg', 'zoom': [1.0, 1.12], 'focus': [[.5, .45], [.5, .42]], 'fx': {'msg': {'at': 'me', 'txt': 'Break the glass. She can only come through glass.', 'from': 'Me'}, 'buzz': 'last', 'glitch': 'only'}},
-  {'from': 'grabbed-0.2', 'to': 'sunrise-0.2', 'vid': 'clips/smash.webm', 'zoom': [1.0, 1.08], 'focus': [[.45, .45], [.45, .45]], 'fx': {'sting': 'smashed'}},
+  {'from': 'grabbed-0.2', 'to': 'sunrise-0.2', 'img': 'smash.jpg', 'zoom': [1.0, 1.2], 'focus': [[.45, .45], [.45, .45]], 'fx': {'sting': 'smashed'}},
   {'from': 'sunrise-0.2', 'to': 'car-0.2', 'vid': 'clips/dawn.webm', 'zoom': [1.0, 1.1], 'focus': [[.35, .55], [.3, .55]], 'fx': {'msg': {'at': 'dont', 'txt': 'Don’t open the door.', 'from': 'To: Me · SENT'}}},
   {'from': 'car-0.2', 'to': 'end', 'img': 'carwin.jpg', 'zoom': [1.0, 1.25], 'focus': [[.4, .4], [.4, .36]], 'fx': {'sting': 'smiling'}},
  ],
