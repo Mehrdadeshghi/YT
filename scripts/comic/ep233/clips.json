@@ -1,0 +1,11 @@
+{"clips": [
+ {"name": "crack", "image": "scripts/comic/ep233/crack.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime horror animation, slow. The smiling reflection of the girl presses her palm harder against the inside of the window glass; thin cracks slowly spread outward from her hand across the glass. Rain runs down. Camera still.",
+   "2D hand-drawn anime horror animation. More cracks race across the window glass from the reflection's palm, the glass trembles, the reflection keeps smiling. Camera slowly pushes in."]},
+ {"name": "smash", "image": "scripts/comic/ep233/smash.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime action animation, fast. The girl in the yellow hoodie swings the red fire extinguisher into the window, the glass explodes into glittering shards that fly toward the camera. She stays in frame.",
+   "2D hand-drawn anime action animation. Glass shards keep flying and falling through the green light, the girl lowers the fire extinguisher, breathing hard. She stays in frame, camera still."]},
+ {"name": "dawn", "image": "scripts/comic/ep233/dawn.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, calm and slow. At sunrise the girl and her mother sit on the curb wrapped in a blanket; the girl types on her glowing phone with her thumb, the mother leans her head on her shoulder. Soft warm light, a breeze moves their hair. Camera still.",
+   "2D hand-drawn anime style animation, calm and slow. The girl presses send on her phone and looks up at the sunrise, the mother breathes calmly. Soft warm light. Camera still."]}
+]}
