@@ -1,0 +1,379 @@
+{
+ "ep": 234,
+ "title": "LAST STOP · Part 1",
+ "format": "mini-series",
+ "series": "LAST STOP",
+ "engine": "hyperframes",
+ "oneAsk": true,
+ "voice": "gemini",
+ "gemini_voice": "Fenrir",
+ "gemini_wpm": 100,
+ "speed": 1.0,
+ "mood": "calm",
+ "prog": 0,
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "gemini_style": "scared teenage boy telling it fast, close to the mic, tense and real",
+ "hook": [],
+ "cta": {
+  "q": "Would you get off?"
+ },
+ "vo_open": [
+  {
+   "at": 0.15,
+   "text": "The last train stopped at a station with my name on the sign.",
+   "cap": "The last train stopped at a station with *my name* on the sign.",
+   "de": "Die letzte Bahn hielt an einer Station mit meinem Namen auf dem Schild.",
+   "es": "El último tren paró en una estación con mi nombre en el letrero.",
+   "fr": "Le dernier métro s’est arrêté à une station qui portait mon nom.",
+   "tts": "The last train stopped... at a station with MY name on the sign.",
+   "style": "stunned, fast, low voice"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.0,
+   "beat": "stare",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Every passenger turned to look at me. None of them blinked.",
+     "cap": "Every passenger turned to look at me. *None* of them *blinked.*",
+     "de": "Alle Fahrgäste drehten sich zu mir um. Keiner blinzelte.",
+     "es": "Todos los pasajeros se giraron a mirarme. Ninguno parpadeaba.",
+     "fr": "Tous les passagers se sont tournés vers moi. Aucun ne clignait des yeux.",
+     "tts": "Every passenger turned to look at me. <short pause> None of them blinked.",
+     "style": "creeped out whisper"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "stare"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "ticket",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "The conductor handed me a ticket. One way. Tonight.",
+     "cap": "The conductor handed me a ticket. *One way.* *Tonight.*",
+     "de": "Der Schaffner gab mir ein Ticket. Nur Hinfahrt. Heute Nacht.",
+     "es": "El revisor me dio un billete. Solo ida. Esta noche.",
+     "fr": "Le contrôleur m’a tendu un ticket. Aller simple. Ce soir.",
+     "tts": "The conductor handed me a ticket. <short pause> One way. <short pause> Tonight.",
+     "style": "tense, quiet, reading it"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "ticket"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "rule",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "An old woman whispered: don't get off. Whoever gets off here becomes the station.",
+     "cap": "An old woman whispered: *don't* get off. Whoever gets off here *becomes the station.*",
+     "de": "Eine alte Frau flüsterte: Steig nicht aus. Wer hier aussteigt, wird zur Station.",
+     "es": "Una anciana susurró: no te bajes. Quien baja aquí se convierte en la estación.",
+     "fr": "Une vieille dame a chuchoté : ne descends pas. Celui qui descend ici devient la station.",
+     "tts": "An old woman whispered... don't get off. Whoever gets off here... becomes the station.",
+     "style": "urgent raspy whisper"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "rule"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "mom",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "Then the doors opened. And my mom was on the platform, waving at me.",
+     "cap": "Then the doors *opened.* And my *mom* was on the platform, *waving* at me.",
+     "de": "Dann gingen die Türen auf. Und meine Mutter stand auf dem Bahnsteig und winkte mir.",
+     "es": "Entonces se abrieron las puertas. Y mi madre estaba en el andén, saludándome.",
+     "fr": "Puis les portes se sont ouvertes. Et ma mère était sur le quai, à me faire signe.",
+     "tts": "Then the doors opened. <short pause> And my mom was on the platform... waving at me.",
+     "style": "disbelief, breaking voice",
+     "cta": true
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "mom"
+   }
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 100,
+   "len": 60,
+   "gain": 0.9
+  }
+ ],
+ "hf": {
+  "style": "doku",
+  "custom": "hf_real"
+ },
+ "hf_open": {
+  "tpl": "plain",
+  "name": "hook"
+ },
+ "comic": {
+  "dir": "scripts/comic/ep234",
+  "tag": "LAST STOP · PART 1",
+  "title_until": "sign",
+  "look": "raw",
+  "next": "PART 2",
+  "next_at": "waving+0.8",
+  "events": {
+   "name": [
+    0,
+    "name"
+   ],
+   "sign": [
+    0,
+    "sign"
+   ],
+   "every": [
+    1,
+    "every"
+   ],
+   "blinked": [
+    1,
+    "blinked"
+   ],
+   "ticket": [
+    2,
+    "ticket"
+   ],
+   "oneway": [
+    2,
+    "one"
+   ],
+   "tonight": [
+    2,
+    "tonight"
+   ],
+   "whispered": [
+    3,
+    "whispered"
+   ],
+   "dont": [
+    3,
+    "dont"
+   ],
+   "becomes": [
+    3,
+    "becomes"
+   ],
+   "station": [
+    3,
+    "station"
+   ],
+   "opened": [
+    4,
+    "opened"
+   ],
+   "mom": [
+    4,
+    "mom"
+   ],
+   "waving": [
+    4,
+    "waving"
+   ]
+  },
+  "shots": [
+   {
+    "from": 0,
+    "to": "every-0.2",
+    "vid": "clips/wake.webm",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "focus": [
+     [
+      0.55,
+      0.45
+     ],
+     [
+      0.6,
+      0.42
+     ]
+    ],
+    "fx": {
+     "sign": {
+      "at": "name",
+      "txt": "LEO MARTIN",
+      "sub": "LAST STOP · NO RETURN",
+      "y": 360
+     }
+    }
+   },
+   {
+    "from": "every-0.2",
+    "to": "ticket-0.2",
+    "vid": "clips/passengers.webm",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "focus": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "fx": {
+     "flicker": true,
+     "sting": "blinked"
+    }
+   },
+   {
+    "from": "ticket-0.2",
+    "to": "whispered-0.2",
+    "vid": "clips/conductor.webm",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "focus": [
+     [
+      0.45,
+      0.55
+     ],
+     [
+      0.4,
+      0.6
+     ]
+    ],
+    "fx": {
+     "sign": {
+      "at": "oneway",
+      "style": "ticket",
+      "txt": "ONE WAY",
+      "sub": "ADMIT ONE · LEO MARTIN",
+      "foot": "TONIGHT · NO RETURN",
+      "y": 1150
+     }
+    }
+   },
+   {
+    "from": "whispered-0.2",
+    "to": "opened-0.2",
+    "vid": "clips/oldlady.webm",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "focus": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.38
+     ]
+    ],
+    "fx": {
+     "heartbeat": true,
+     "sting": "station"
+    }
+   },
+   {
+    "from": "opened-0.2",
+    "to": "end",
+    "vid": "clips/platform.webm",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "focus": [
+     [
+      0.55,
+      0.35
+     ],
+     [
+      0.55,
+      0.32
+     ]
+    ],
+    "fx": {
+     "sting": "waving"
+    }
+   }
+  ],
+  "cues": [
+   [
+    "name",
+    0,
+    "hit",
+    0.7
+   ],
+   [
+    "every",
+    0,
+    "riser",
+    0.35
+   ],
+   [
+    "blinked",
+    0,
+    "hit",
+    0.6
+   ],
+   [
+    "ticket",
+    0,
+    "paper",
+    0.5
+   ],
+   [
+    "oneway",
+    0,
+    "stamp",
+    0.7
+   ],
+   [
+    "station",
+    0,
+    "hit",
+    0.8
+   ],
+   [
+    "opened",
+    0,
+    "whoosh",
+    0.6
+   ],
+   [
+    "waving",
+    0,
+    "hit",
+    0.9
+   ]
+  ]
+ }
+}
