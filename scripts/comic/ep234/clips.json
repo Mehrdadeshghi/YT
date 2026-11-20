@@ -1,0 +1,17 @@
+{"clips": [
+ {"name": "wake", "image": "scripts/comic/ep234/wake.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime style animation, slow. The boy with curly dark hair and red headphones on the subway seat slowly turns his head toward the window and stares out at the foggy platform, his eyes widen. The fluorescent light flickers. He stays in frame, camera still.",
+   "2D hand-drawn anime style animation, slow. The boy leans closer to the window, frozen in disbelief, fog drifts on the platform outside. He stays in frame, camera still."]},
+ {"name": "passengers", "image": "scripts/comic/ep234/passengers.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime horror animation, very slow. Inside the subway car all the pale passengers sit perfectly still and slowly turn their heads toward the camera at the same time, staring without blinking. The lights flicker. Camera slowly pushes in down the aisle.",
+   "2D hand-drawn anime horror animation, very slow. The passengers keep staring at the camera without blinking, perfectly still, the lights flicker. Camera slowly pushes in."]},
+ {"name": "conductor", "image": "scripts/comic/ep234/conductor.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime horror animation, slow. The tall conductor in the dark uniform slowly holds out the small paper ticket toward the camera, his thin smile widens under the shadow of his cap. Lights flicker. He stays in frame, camera still.",
+   "2D hand-drawn anime horror animation, slow. The conductor holds the ticket still and tilts his head slightly, smiling. He stays in frame, camera still."]},
+ {"name": "oldlady", "image": "scripts/comic/ep234/oldlady.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime horror animation, slow. The tiny old woman with the grey headscarf leans closer to the camera and whispers, her lips move, finger near her lips, cloudy eyes wide. She stays in frame, camera still.",
+   "2D hand-drawn anime horror animation, slow. The old woman keeps whispering urgently and glances to the side in fear. She stays in frame, camera still."]},
+ {"name": "platform", "image": "scripts/comic/ep234/platform.jpg", "frames": 121, "prompts": [
+   "2D hand-drawn anime horror animation, slow. Through the open subway doors, the woman in the beige coat on the foggy platform smiles warmly and waves slowly; the lamp above her flickers, fog drifts. The boy in the foreground stays still. Camera still.",
+   "2D hand-drawn anime horror animation, slow. The woman on the platform keeps waving, her smile stays fixed and too still, the lamp flickers. The boy in the foreground stays still. Camera slowly pushes in."]}
+]}
