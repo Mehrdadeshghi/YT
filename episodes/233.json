@@ -259,7 +259,7 @@
    },
    {
     "from": "grabbed-0.2",
-    "to": "sunrise-0.2",
+    "to": "smashed+1.0",
     "img": "smash.jpg",
     "zoom": [
      1.0,
@@ -280,7 +280,7 @@
     }
    },
    {
-    "from": "sunrise-0.2",
+    "from": "smashed+1.0",
     "to": "car-0.2",
     "vid": "clips/dawn.webm",
     "zoom": [

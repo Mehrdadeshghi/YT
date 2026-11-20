@@ -37,8 +37,8 @@ E['comic'] = {
  'shots': [
   {'from': 0, 'to': 'last-0.2', 'vid': 'clips/crack.webm', 'grade': 'saturate(.85) contrast(1.2) brightness(1.7)', 'zoom': [1.0, 1.12], 'focus': [[.45, .4], [.45, .38]], 'fx': {'sting': 'cracked', 'rain': True}},
   {'from': 'last-0.2', 'to': 'grabbed-0.2', 'img': 'phone.jpg', 'zoom': [1.0, 1.12], 'focus': [[.5, .45], [.5, .42]], 'fx': {'msg': {'at': 'me', 'txt': 'Break the glass. She can only come through glass.', 'from': 'Me'}, 'buzz': 'last', 'glitch': 'only'}},
-  {'from': 'grabbed-0.2', 'to': 'sunrise-0.2', 'img': 'smash.jpg', 'zoom': [1.0, 1.2], 'focus': [[.45, .45], [.45, .45]], 'fx': {'sting': 'smashed'}},
-  {'from': 'sunrise-0.2', 'to': 'car-0.2', 'vid': 'clips/dawn.webm', 'zoom': [1.0, 1.1], 'focus': [[.35, .55], [.3, .55]], 'fx': {'msg': {'at': 'dont', 'txt': 'Don’t open the door.', 'from': 'To: Me · SENT'}}},
+  {'from': 'grabbed-0.2', 'to': 'smashed+1.0', 'img': 'smash.jpg', 'zoom': [1.0, 1.2], 'focus': [[.45, .45], [.45, .45]], 'fx': {'sting': 'smashed'}},
+  {'from': 'smashed+1.0', 'to': 'car-0.2', 'vid': 'clips/dawn.webm', 'zoom': [1.0, 1.1], 'focus': [[.35, .55], [.3, .55]], 'fx': {'msg': {'at': 'dont', 'txt': 'Don’t open the door.', 'from': 'To: Me · SENT'}}},
   {'from': 'car-0.2', 'to': 'end', 'img': 'carwin.jpg', 'zoom': [1.0, 1.25], 'focus': [[.4, .4], [.4, .36]], 'fx': {'sting': 'smiling'}},
  ],
  'cues': [['cracked', 0, 'crack', .9], ['me', 0, 'ding', .5], ['grabbed', 0, 'whoosh', .5], ['smashed', 0, 'boom', 1.0], ['smashed', .05, 'crack', .9], ['send', 0, 'pop', .5], ['car', 0, 'riser', .4], ['smiling', 0, 'hit', .9]],
