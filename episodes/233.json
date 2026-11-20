@@ -1,0 +1,381 @@
+{
+ "ep": 233,
+ "title": "SENT TOMORROW · Part 5 (Finale)",
+ "format": "mini-series",
+ "series": "SENT TOMORROW",
+ "engine": "hyperframes",
+ "oneAsk": true,
+ "voice": "gemini",
+ "gemini_voice": "Leda",
+ "gemini_wpm": 100,
+ "speed": 1.0,
+ "mood": "calm",
+ "prog": 0,
+ "langs": [
+  "en",
+  "de",
+  "es",
+  "fr"
+ ],
+ "gemini_style": "teenage girl telling it fast, close to the mic, tense and real",
+ "hook": [],
+ "cta": {
+  "q": "Season 2?"
+ },
+ "vo_open": [
+  {
+   "at": 0.15,
+   "text": "My reflection pressed its hand on the glass. And the glass cracked.",
+   "cap": "My reflection pressed its hand on the glass. And the glass *cracked.*",
+   "de": "Mein Spiegelbild drückte die Hand ans Glas. Und das Glas bekam Risse.",
+   "es": "Mi reflejo apoyó la mano en el cristal. Y el cristal se agrietó.",
+   "fr": "Mon reflet a posé sa main sur la vitre. Et la vitre s’est fissurée.",
+   "tts": "My reflection pressed its hand on the glass... <short pause> and the glass CRACKED.",
+   "style": "terrified, fast, breathless"
+  }
+ ],
+ "scenes": [
+  {
+   "dur": 1.0,
+   "beat": "rule",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "One last text from me. Break the glass. She can only come through glass.",
+     "cap": "One last text from *me.* Break the glass. She can only come through *glass.*",
+     "de": "Eine letzte Nachricht von mir. Zerbrich das Glas. Sie kommt nur durch Glas.",
+     "es": "Un último mensaje mío. Rompe el cristal. Solo puede pasar a través del cristal.",
+     "fr": "Un dernier message de moi. Casse la vitre. Elle ne peut passer que par le verre.",
+     "tts": "<gasp> One last text from me. <short pause> Break the glass. She can only come through glass.",
+     "style": "urgent whisper, reading fast"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "rule"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "smash",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "So I grabbed the fire extinguisher. And I smashed it.",
+     "cap": "So I grabbed the *fire extinguisher.* And I *smashed* it.",
+     "de": "Also packte ich den Feuerlöscher. Und schlug zu.",
+     "es": "Así que agarré el extintor. Y lo rompí.",
+     "fr": "Alors j’ai attrapé l’extincteur. Et je l’ai brisée.",
+     "tts": "So I grabbed the fire extinguisher... <breath> and I SMASHED it.",
+     "style": "fierce, determined, shouting the last word"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "smash"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "loop",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "At sunrise, we were safe. I typed one text to myself. Don't open the door. And hit send.",
+     "cap": "At *sunrise,* we were safe. I typed one text to *myself.* Don't open the door. And hit *send.*",
+     "de": "Bei Sonnenaufgang waren wir sicher. Ich schrieb mir selbst eine Nachricht. Mach die Tür nicht auf. Und drückte auf Senden.",
+     "es": "Al amanecer estábamos a salvo. Me escribí un mensaje a mí misma. No abras la puerta. Y lo envié.",
+     "fr": "Au lever du soleil, on était en sécurité. Je me suis écrit un message. N’ouvre pas la porte. Et j’ai appuyé sur envoyer.",
+     "tts": "<sigh> At sunrise, we were safe. <short pause> I typed one text to myself... Don't open the door. <short pause> And hit send.",
+     "style": "calm, exhausted, relieved, quiet"
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "loop"
+   }
+  },
+  {
+   "dur": 1.0,
+   "beat": "twist",
+   "vo": [
+    {
+     "at": 0.15,
+     "text": "But in the car window, Mom's reflection was still smiling.",
+     "cap": "But in the car window, *Mom's* reflection was still *smiling.*",
+     "de": "Aber in der Autoscheibe lächelte Mamas Spiegelbild immer noch.",
+     "es": "Pero en la ventanilla del coche, el reflejo de mamá seguía sonriendo.",
+     "fr": "Mais dans la vitre de la voiture, le reflet de maman souriait encore.",
+     "tts": "But in the car window... <short pause> Mom's reflection was still smiling.",
+     "style": "slow, chilling whisper",
+     "cta": true
+    }
+   ],
+   "hf": {
+    "tpl": "plain",
+    "name": "twist"
+   }
+  }
+ ],
+ "photos": [
+  {
+   "id": "music",
+   "audio": "File:Rafael Krux - Lights - Creepy Ambient Suspense (cc-by) (filmmusic).mp3",
+   "from": 80,
+   "len": 60,
+   "gain": 0.9
+  }
+ ],
+ "hf": {
+  "style": "doku",
+  "custom": "hf_real"
+ },
+ "hf_open": {
+  "tpl": "plain",
+  "name": "hook"
+ },
+ "comic": {
+  "dir": "scripts/comic/ep233",
+  "tag": "SENT TOMORROW · FINALE",
+  "title_until": "cracked",
+  "look": "raw",
+  "next": "THE END?",
+  "next2": "",
+  "next_at": "smiling+0.8",
+  "events": {
+   "glass0": [
+    0,
+    "glass"
+   ],
+   "cracked": [
+    0,
+    "cracked"
+   ],
+   "last": [
+    1,
+    "last"
+   ],
+   "me": [
+    1,
+    "me"
+   ],
+   "break": [
+    1,
+    "break"
+   ],
+   "only": [
+    1,
+    "only"
+   ],
+   "grabbed": [
+    2,
+    "grabbed"
+   ],
+   "smashed": [
+    2,
+    "smashed"
+   ],
+   "sunrise": [
+    3,
+    "sunrise"
+   ],
+   "myself": [
+    3,
+    "myself"
+   ],
+   "dont": [
+    3,
+    "dont"
+   ],
+   "send": [
+    3,
+    "send"
+   ],
+   "car": [
+    4,
+    "car"
+   ],
+   "moms": [
+    4,
+    "moms"
+   ],
+   "smiling": [
+    4,
+    "smiling"
+   ]
+  },
+  "shots": [
+   {
+    "from": 0,
+    "to": "last-0.2",
+    "vid": "clips/crack.webm",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "focus": [
+     [
+      0.45,
+      0.4
+     ],
+     [
+      0.45,
+      0.38
+     ]
+    ],
+    "fx": {
+     "sting": "cracked",
+     "rain": true
+    }
+   },
+   {
+    "from": "last-0.2",
+    "to": "grabbed-0.2",
+    "img": "phone.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "focus": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "fx": {
+     "msg": {
+      "at": "me",
+      "txt": "Break the glass. She can only come through glass.",
+      "from": "Me"
+     },
+     "buzz": "last",
+     "glitch": "only"
+    }
+   },
+   {
+    "from": "grabbed-0.2",
+    "to": "sunrise-0.2",
+    "vid": "clips/smash.webm",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "focus": [
+     [
+      0.45,
+      0.45
+     ],
+     [
+      0.45,
+      0.45
+     ]
+    ],
+    "fx": {
+     "sting": "smashed"
+    }
+   },
+   {
+    "from": "sunrise-0.2",
+    "to": "car-0.2",
+    "vid": "clips/dawn.webm",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "focus": [
+     [
+      0.35,
+      0.55
+     ],
+     [
+      0.3,
+      0.55
+     ]
+    ],
+    "fx": {
+     "msg": {
+      "at": "dont",
+      "txt": "Don’t open the door.",
+      "from": "To: Me · SENT"
+     }
+    }
+   },
+   {
+    "from": "car-0.2",
+    "to": "end",
+    "img": "carwin.jpg",
+    "zoom": [
+     1.0,
+     1.25
+    ],
+    "focus": [
+     [
+      0.4,
+      0.4
+     ],
+     [
+      0.4,
+      0.36
+     ]
+    ],
+    "fx": {
+     "sting": "smiling"
+    }
+   }
+  ],
+  "cues": [
+   [
+    "cracked",
+    0,
+    "crack",
+    0.9
+   ],
+   [
+    "me",
+    0,
+    "ding",
+    0.5
+   ],
+   [
+    "grabbed",
+    0,
+    "whoosh",
+    0.5
+   ],
+   [
+    "smashed",
+    0,
+    "boom",
+    1.0
+   ],
+   [
+    "smashed",
+    0.05,
+    "crack",
+    0.9
+   ],
+   [
+    "send",
+    0,
+    "pop",
+    0.5
+   ],
+   [
+    "car",
+    0,
+    "riser",
+    0.4
+   ],
+   [
+    "smiling",
+    0,
+    "hit",
+    0.9
+   ]
+  ]
+ }
+}
