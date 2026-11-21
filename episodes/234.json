@@ -30,7 +30,7 @@
    "de": "Die letzte Bahn hielt an einer Station mit meinem Namen auf dem Schild.",
    "es": "El último tren paró en una estación con mi nombre en el letrero.",
    "fr": "Le dernier métro s’est arrêté à une station qui portait mon nom.",
-   "tts": "The last train stopped... at a station with MY name on the sign.",
+   "tts": "The last train stopped at a station with MY name on the sign.",
    "style": "stunned, fast, low voice"
   }
  ],
@@ -220,7 +220,7 @@
     ],
     "fx": {
      "sign": {
-      "at": "name",
+      "at": 0.3,
       "txt": "LEO MARTIN",
       "sub": "LAST STOP · NO RETURN",
       "y": 360

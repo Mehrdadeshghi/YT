@@ -11,7 +11,7 @@ E = {
  'gemini_style': 'scared teenage boy telling it fast, close to the mic, tense and real', 'hook': [], 'cta': {'q': 'Would you get off?'},
  'vo_open': [seg("The last train stopped at a station with my name on the sign.", "The last train stopped at a station with *my name* on the sign.",
     'Die letzte Bahn hielt an einer Station mit meinem Namen auf dem Schild.', 'El último tren paró en una estación con mi nombre en el letrero.', 'Le dernier métro s’est arrêté à une station qui portait mon nom.',
-    tts="The last train stopped... at a station with MY name on the sign.", style='stunned, fast, low voice')],
+    tts="The last train stopped at a station with MY name on the sign.", style='stunned, fast, low voice')],
  'scenes': [
   {'dur': 1.0, 'beat': 'stare', 'vo': [seg("Every passenger turned to look at me. None of them blinked.", "Every passenger turned to look at me. *None* of them *blinked.*",
     'Alle Fahrgäste drehten sich zu mir um. Keiner blinzelte.', 'Todos los pasajeros se giraron a mirarme. Ninguno parpadeaba.', 'Tous les passagers se sont tournés vers moi. Aucun ne clignait des yeux.',
@@ -36,7 +36,7 @@ E['comic'] = {
  'events': {'name': [0, 'name'], 'sign': [0, 'sign'], 'every': [1, 'every'], 'blinked': [1, 'blinked'], 'ticket': [2, 'ticket'], 'oneway': [2, 'one'], 'tonight': [2, 'tonight'],
             'whispered': [3, 'whispered'], 'dont': [3, 'dont'], 'becomes': [3, 'becomes'], 'station': [3, 'station'], 'opened': [4, 'opened'], 'mom': [4, 'mom'], 'waving': [4, 'waving']},
  'shots': [
-  {'from': 0, 'to': 'every-0.2', 'vid': 'clips/wake.webm', 'zoom': [1.0, 1.1], 'focus': [[.55, .45], [.6, .42]], 'fx': {'sign': {'at': 'name', 'txt': 'LEO MARTIN', 'sub': 'LAST STOP · NO RETURN', 'y': 360}}},
+  {'from': 0, 'to': 'every-0.2', 'vid': 'clips/wake.webm', 'zoom': [1.0, 1.1], 'focus': [[.55, .45], [.6, .42]], 'fx': {'sign': {'at': 0.3, 'txt': 'LEO MARTIN', 'sub': 'LAST STOP · NO RETURN', 'y': 360}}},
   {'from': 'every-0.2', 'to': 'ticket-0.2', 'vid': 'clips/passengers.webm', 'grade': 'saturate(.8) contrast(1.15) brightness(1.4)', 'zoom': [1.0, 1.12], 'focus': [[.5, .45], [.5, .45]], 'fx': {'flicker': True, 'sting': 'blinked'}},
   {'from': 'ticket-0.2', 'to': 'whispered-0.2', 'vid': 'clips/conductor.webm', 'zoom': [1.0, 1.1], 'focus': [[.45, .55], [.4, .6]], 'fx': {'sign': {'at': 'oneway', 'style': 'ticket', 'txt': 'ONE WAY', 'sub': 'ADMIT ONE · LEO MARTIN', 'foot': 'TONIGHT · NO RETURN', 'y': 1150}}},
   {'from': 'whispered-0.2', 'to': 'opened-0.2', 'vid': 'clips/oldlady.webm', 'zoom': [1.0, 1.12], 'focus': [[.5, .4], [.5, .38]], 'fx': {'heartbeat': True, 'sting': 'station'}},
