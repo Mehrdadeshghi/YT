@@ -231,6 +231,7 @@
     "from": "every-0.2",
     "to": "ticket-0.2",
     "vid": "clips/passengers.webm",
+    "grade": "saturate(.8) contrast(1.15) brightness(1.4)",
     "zoom": [
      1.0,
      1.12
